@@ -38,7 +38,7 @@ xmlns:fn="http://www.w3.org/2005/xpath-functions">
 
 <xsl:template name="documentedItem">
     <xsl:variable name="description" select="fn:normalize-space(detaileddescription)"/>
-* <xsl:if test="type != 'void'">''<xsl:value-of select="fn:replace(type, 'Q_SCRIPTABLE ', '')"/>'' </xsl:if>'''<xsl:value-of select="name"/><xsl:value-of select="argsstring"/>'''<xsl:if test="fn:string-length($description) != 0">: <xsl:value-of select="$description"/></xsl:if>
+* <xsl:if test="type != 'void' and type != 'Q_INVOKABLE void' and type != 'Q_SCRIPTABLE void'">''<xsl:value-of select="fn:replace(fn:replace(type, 'Q_SCRIPTABLE ', ''), 'Q_INVOKABLE ','')"/>'' </xsl:if>'''<xsl:value-of select="name"/><xsl:value-of select="argsstring"/>'''<xsl:if test="fn:string-length($description) != 0">: <xsl:value-of select="$description"/></xsl:if>
 </xsl:template>
 
 </xsl:stylesheet>
