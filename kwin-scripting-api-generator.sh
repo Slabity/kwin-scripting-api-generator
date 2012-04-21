@@ -24,7 +24,5 @@ saxonb-xslt -xsl:${XSLT_FILE} -s:${CURRENT_DIR}/docs/xml/class_k_win_1_1_options
 saxonb-xslt -xsl:${XSLT_FILE} -s:${CURRENT_DIR}/docs/xml/class_k_win_1_1_toplevel.xml >> ${OUTPUT_FILE}
 # client
 saxonb-xslt -xsl:${XSLT_FILE} -s:${CURRENT_DIR}/docs/xml/class_k_win_1_1_client.xml >> ${OUTPUT_FILE}
-# tabgroup
-saxonb-xslt -xsl:${XSLT_FILE} -s:${CURRENT_DIR}/docs/xml/class_k_win_1_1_tab_group.xml >> ${OUTPUT_FILE}
 
 rm ${DOXYFILE_GENERATED}
