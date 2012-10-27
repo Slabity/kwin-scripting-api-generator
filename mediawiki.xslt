@@ -9,6 +9,13 @@ xmlns:fn="http://www.w3.org/2005/xpath-functions">
 <xsl:if test="fn:string-length(fn:normalize-space(basecompoundref)) != 0">
 '''Inherits:''' <xsl:value-of select="fn:normalize-space(basecompoundref)"/>
 </xsl:if>
+=== Enums ===
+  <xsl:for-each select="sectiondef[@kind='public-type']/memberdef[@kind='enum']">
+==== <xsl:value-of select="name"/> ====
+    <xsl:for-each select="enumvalue">
+* '''<xsl:value-of select="name"/>''': <xsl:value-of select="fn:normalize-space(detaileddescription)"/>
+    </xsl:for-each>
+  </xsl:for-each>
 === Read-only Properties ===
   <xsl:for-each select="sectiondef[@kind='property']/memberdef[@writable='no']">
     <xsl:call-template name="documentedItem"/>
