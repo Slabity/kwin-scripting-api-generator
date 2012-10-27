@@ -9,6 +9,7 @@ xmlns:fn="http://www.w3.org/2005/xpath-functions">
 <xsl:if test="fn:string-length(fn:normalize-space(basecompoundref)) != 0">
 '''Inherits:''' <xsl:value-of select="fn:normalize-space(basecompoundref)"/>
 </xsl:if>
+<xsl:if test="count(sectiondef[@kind='public-type']/memberdef[@kind='enum']) != 0">
 === Enums ===
   <xsl:for-each select="sectiondef[@kind='public-type']/memberdef[@kind='enum']">
 ==== <xsl:value-of select="name"/> ====
@@ -16,18 +17,25 @@ xmlns:fn="http://www.w3.org/2005/xpath-functions">
 * '''<xsl:value-of select="name"/>''': <xsl:value-of select="fn:normalize-space(detaileddescription)"/>
     </xsl:for-each>
   </xsl:for-each>
+</xsl:if>
+<xsl:if test="count(sectiondef[@kind='property']/memberdef[@writable='no']) != 0">
 === Read-only Properties ===
   <xsl:for-each select="sectiondef[@kind='property']/memberdef[@writable='no']">
     <xsl:call-template name="documentedItem"/>
   </xsl:for-each>
+</xsl:if>
+<xsl:if test="count(sectiondef[@kind='property']/memberdef[@writable='yes']) != 0">
 === Read-write Properties ===
   <xsl:for-each select="sectiondef[@kind='property']/memberdef[@writable='yes']">
     <xsl:call-template name="documentedItem"/>
   </xsl:for-each>
+</xsl:if>
+<xsl:if test="count(sectiondef[@kind='signal']/memberdef) != 0">
 === Signals ===
   <xsl:for-each select="sectiondef[@kind='signal']/memberdef">
     <xsl:call-template name="documentedItem"/>
   </xsl:for-each>
+</xsl:if>
 === Functions ===
   <xsl:for-each select="sectiondef[@kind='public-slot']/memberdef">
     <xsl:call-template name="documentedItem"/>
