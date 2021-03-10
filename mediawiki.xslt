@@ -6,9 +6,9 @@ xmlns:fn="http://www.w3.org/2005/xpath-functions">
 <xsl:template match="/doxygen/compounddef">
 == <xsl:value-of select="compoundname"/> ==
 <xsl:value-of select="fn:normalize-space(briefdescription)"/>
-<xsl:if test="fn:string-length(fn:normalize-space(basecompoundref)) != 0">
-'''Inherits:''' <xsl:value-of select="fn:normalize-space(basecompoundref)"/>
-</xsl:if>
+<!-- <xsl:if test="fn:string-length(fn:normalize-space(basecompoundref)) != 0"> -->
+<!-- '''Inherits:''' <xsl:value-of select="fn:normalize-space(basecompoundref)"/> -->
+<!-- </xsl:if> -->
 <xsl:if test="count(sectiondef[@kind='public-type']/memberdef[@kind='enum']) != 0">
 === Enums ===
   <xsl:for-each select="sectiondef[@kind='public-type']/memberdef[@kind='enum']">

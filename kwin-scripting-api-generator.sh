@@ -15,14 +15,16 @@ sed s*KWIN_SRC_DIR*${KWIN_SRC_DIR}*g Doxyfile > ${DOXYFILE_GENERATED}
 doxygen ${DOXYFILE_GENERATED}
 
 # global
-saxonb-xslt -xsl:${XSLT_FILE} -s:${KWIN_SRC_DIR}/scripting/documentation-global.xml > ${OUTPUT_FILE}
+# TODO Once KWin 5.22 is released change to src/scripting
+saxon8 ${KWIN_SRC_DIR}/scripting/documentation-global.xml mediawiki.xslt > ${OUTPUT_FILE}
+
 # workspace wrapper
-saxonb-xslt -xsl:${XSLT_FILE} -s:${CURRENT_DIR}/docs/xml/class_k_win_1_1_workspace_wrapper.xml >> ${OUTPUT_FILE}
+saxon8 ${CURRENT_DIR}/docs/xml/class_k_win_1_1_workspace_wrapper.xml mediawiki.xslt >> ${OUTPUT_FILE}
 # options
-saxonb-xslt -xsl:${XSLT_FILE} -s:${CURRENT_DIR}/docs/xml/class_k_win_1_1_options.xml >> ${OUTPUT_FILE}
+saxon8 ${CURRENT_DIR}/docs/xml/class_k_win_1_1_options.xml mediawiki.xslt >> ${OUTPUT_FILE}
 # toplevel
-saxonb-xslt -xsl:${XSLT_FILE} -s:${CURRENT_DIR}/docs/xml/class_k_win_1_1_toplevel.xml >> ${OUTPUT_FILE}
-# client
-saxonb-xslt -xsl:${XSLT_FILE} -s:${CURRENT_DIR}/docs/xml/class_k_win_1_1_client.xml >> ${OUTPUT_FILE}
+saxon8 ${CURRENT_DIR}/docs/xml/class_k_win_1_1_toplevel.xml mediawiki.xslt >> ${OUTPUT_FILE}
+#abstractclient
+saxon8 ${CURRENT_DIR}/docs/xml/class_k_win_1_1_abstract_client.xml mediawiki.xslt >> ${OUTPUT_FILE}
 
 rm ${DOXYFILE_GENERATED}
