@@ -1,0 +1,772 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_system_bell_effect" kind="class" language="C++" prot="public">
+    <compoundname>KWin::SystemBellEffect</compoundname>
+    <basecompoundref refid="class_k_win_1_1_offscreen_effect" prot="public" virt="non-virtual">KWin::OffscreenEffect</basecompoundref>
+    <includes refid="systembell_8h" local="no">systembell.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="class_k_win_1_1_system_bell_effect_1a84f3ef8aa0c01f8c51995d59d383768b" prot="private" static="no" strong="no">
+        <type></type>
+        <name>Mode</name>
+        <qualifiedname>KWin::SystemBellEffect::Mode</qualifiedname>
+        <enumvalue id="class_k_win_1_1_system_bell_effect_1a84f3ef8aa0c01f8c51995d59d383768ba6436bdf7d8587448671d398c186b621a" prot="private">
+          <name>Invert</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_system_bell_effect_1a84f3ef8aa0c01f8c51995d59d383768baf84827b4b20b5962c9edef1c0489f2ba" prot="private">
+          <name>Color</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="53" column="5" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="53" bodyend="56"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_system_bell_effect_1a8b369ebdc36e6ab303495fc967657a6a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::SystemBellEffect::m_inited</definition>
+        <argsstring></argsstring>
+        <name>m_inited</name>
+        <qualifiedname>KWin::SystemBellEffect::m_inited</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="64" column="10" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_system_bell_effect_1a788716379825e253584de16d5727cd9a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::SystemBellEffect::m_valid</definition>
+        <argsstring></argsstring>
+        <name>m_valid</name>
+        <qualifiedname>KWin::SystemBellEffect::m_valid</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="65" column="10" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_system_bell_effect_1a9ac00732a7695029fcbf7bf898471b75" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_g_l_shader" kindref="compound">GLShader</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;GLShader&gt; KWin::SystemBellEffect::m_shader</definition>
+        <argsstring></argsstring>
+        <name>m_shader</name>
+        <qualifiedname>KWin::SystemBellEffect::m_shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="66" column="21" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_system_bell_effect_1abc4c07bd2a4af723faa6986ef521a7f7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::SystemBellEffect::m_allWindows</definition>
+        <argsstring></argsstring>
+        <name>m_allWindows</name>
+        <qualifiedname>KWin::SystemBellEffect::m_allWindows</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="67" column="10" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_system_bell_effect_1a3745beb97dbeccfedf6d1e702aa94187" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> * &gt;</type>
+        <definition>QList&lt;EffectWindow *&gt; KWin::SystemBellEffect::m_windows</definition>
+        <argsstring></argsstring>
+        <name>m_windows</name>
+        <qualifiedname>KWin::SystemBellEffect::m_windows</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="68" column="11" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_system_bell_effect_1a52e6f06e2603ebd7da235d81db97176a" prot="private" static="no" mutable="no">
+        <type>QColor</type>
+        <definition>QColor KWin::SystemBellEffect::m_color</definition>
+        <argsstring></argsstring>
+        <name>m_color</name>
+        <qualifiedname>KWin::SystemBellEffect::m_color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="69" column="12" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_system_bell_effect_1a509a6c01a413f83c18d357964161f1c8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KWin::SystemBellEffect::m_duration</definition>
+        <argsstring></argsstring>
+        <name>m_duration</name>
+        <qualifiedname>KWin::SystemBellEffect::m_duration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="70" column="9" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_system_bell_effect_1ac1e776b96c565d7636538fff90802f93" prot="private" static="no" mutable="no">
+        <type>Mode</type>
+        <definition>Mode KWin::SystemBellEffect::m_mode</definition>
+        <argsstring></argsstring>
+        <name>m_mode</name>
+        <qualifiedname>KWin::SystemBellEffect::m_mode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="71" column="10" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_system_bell_effect_1a7055db6b59fbf594b619996f8cd79e66" prot="private" static="no" mutable="no">
+        <type>ca_context *</type>
+        <definition>ca_context* KWin::SystemBellEffect::m_caContext</definition>
+        <argsstring></argsstring>
+        <name>m_caContext</name>
+        <qualifiedname>KWin::SystemBellEffect::m_caContext</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="72" column="16" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_system_bell_effect_1afc626c5fcc1c71ac7fbb44164906e523" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::SystemBellEffect::m_visibleBell</definition>
+        <argsstring></argsstring>
+        <name>m_visibleBell</name>
+        <qualifiedname>KWin::SystemBellEffect::m_visibleBell</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="73" column="10" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_system_bell_effect_1a19cf94e55c82e2a7109a950bb886925a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::SystemBellEffect::m_audibleBell</definition>
+        <argsstring></argsstring>
+        <name>m_audibleBell</name>
+        <qualifiedname>KWin::SystemBellEffect::m_audibleBell</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="74" column="10" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_system_bell_effect_1ae1fff8e747914d1ba7661569997ede9c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::SystemBellEffect::m_customBell</definition>
+        <argsstring></argsstring>
+        <name>m_customBell</name>
+        <qualifiedname>KWin::SystemBellEffect::m_customBell</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="75" column="10" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_system_bell_effect_1a1f47ed3867b61ebeae1c391e03b27172" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString KWin::SystemBellEffect::m_customBellFile</definition>
+        <argsstring></argsstring>
+        <name>m_customBellFile</name>
+        <qualifiedname>KWin::SystemBellEffect::m_customBellFile</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="76" column="13" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_system_bell_effect_1ab53aae19f9d3c206a12e5e71a686c3a9" prot="private" static="no" mutable="no">
+        <type>KConfigWatcher::Ptr</type>
+        <definition>KConfigWatcher::Ptr KWin::SystemBellEffect::m_configWatcher</definition>
+        <argsstring></argsstring>
+        <name>m_configWatcher</name>
+        <qualifiedname>KWin::SystemBellEffect::m_configWatcher</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="77" column="25" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_system_bell_effect_1a3df866c77e32fbcfa54d792e62420676" prot="private" static="no" mutable="no">
+        <type>KConfig</type>
+        <definition>KConfig KWin::SystemBellEffect::m_kdeglobals</definition>
+        <argsstring></argsstring>
+        <name>m_kdeglobals</name>
+        <qualifiedname>KWin::SystemBellEffect::m_kdeglobals</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="78" column="13" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_system_bell_effect_1ab055345d7f6da42e7e97301984197c3a" prot="private" static="no" mutable="no">
+        <type>KConfigGroup</type>
+        <definition>KConfigGroup KWin::SystemBellEffect::m_bellConfig</definition>
+        <argsstring></argsstring>
+        <name>m_bellConfig</name>
+        <qualifiedname>KWin::SystemBellEffect::m_bellConfig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="79" column="18" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_system_bell_effect_1a3762412ada98620f8a268efc8a1879b1" prot="private" static="no" mutable="no">
+        <type>QTimer</type>
+        <definition>QTimer KWin::SystemBellEffect::m_audioThrottleTimer</definition>
+        <argsstring></argsstring>
+        <name>m_audioThrottleTimer</name>
+        <qualifiedname>KWin::SystemBellEffect::m_audioThrottleTimer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="82" column="12" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_system_bell_effect_1ad03008aad18f1637997c130e9dc02718" prot="private" static="yes" mutable="no">
+        <type>QTimer *</type>
+        <definition>QTimer * KWin::SystemBellEffect::s_systemBellRemoveTimer</definition>
+        <argsstring></argsstring>
+        <name>s_systemBellRemoveTimer</name>
+        <qualifiedname>KWin::SystemBellEffect::s_systemBellRemoveTimer</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="81" column="19" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_system_bell_effect_1aeeb503fdcd0812aedb1a6452746d4086" prot="private" static="yes" mutable="no">
+        <type><ref refid="class_k_win_1_1_xdg_system_bell_v1_interface" kindref="compound">XdgSystemBellV1Interface</ref> *</type>
+        <definition>XdgSystemBellV1Interface * KWin::SystemBellEffect::s_systemBell</definition>
+        <argsstring></argsstring>
+        <name>s_systemBell</name>
+        <qualifiedname>KWin::SystemBellEffect::s_systemBell</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="83" column="37" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_system_bell_effect_1ac8f278972a94f4672697c82238001191" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::SystemBellEffect::SystemBellEffect</definition>
+        <argsstring>()</argsstring>
+        <name>SystemBellEffect</name>
+        <qualifiedname>KWin::SystemBellEffect::SystemBellEffect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="31" column="5" bodyfile="kwin/src/plugins/systembell/systembell.cpp" bodystart="45" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_system_bell_effect_1a9630b36570cd9dca2d3669f0f83054e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::SystemBellEffect::~SystemBellEffect</definition>
+        <argsstring>() override</argsstring>
+        <name>~SystemBellEffect</name>
+        <qualifiedname>KWin::SystemBellEffect::~SystemBellEffect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="32" column="5" bodyfile="kwin/src/plugins/systembell/systembell.cpp" bodystart="111" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_system_bell_effect_1af2906166b0bdf678d0604e9068580481" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::SystemBellEffect::isActive</definition>
+        <argsstring>() const override</argsstring>
+        <name>isActive</name>
+        <qualifiedname>KWin::SystemBellEffect::isActive</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga596b6c0ed146b97b293f5db5f27fc40f">isActive</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Overwrite this method to indicate whether your effect will be doing something in the next frame to be rendered. If the method returns <computeroutput>false</computeroutput> the effect will be excluded from the chained methods in the next rendered frame.</para>
+<para>This method is called always directly before the paint loop begins. So it is totally fine to e.g. react on a window event, issue a repaint to trigger an animation and change a flag to indicate that this method returns <computeroutput>true</computeroutput>.</para>
+<para>As the method is called each frame, you should not perform complex calculations. Best use just a boolean flag.</para>
+<para>The default implementation of this method returns <computeroutput>true</computeroutput>. <simplesect kind="since"><para>4.8 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="34" column="10" bodyfile="kwin/src/plugins/systembell/systembell.cpp" bodystart="245" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_system_bell_effect_1ad7b89d939d0ac295dac04ab9d4d0b468" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>int KWin::SystemBellEffect::requestedEffectChainPosition</definition>
+        <argsstring>() const override</argsstring>
+        <name>requestedEffectChainPosition</name>
+        <qualifiedname>KWin::SystemBellEffect::requestedEffectChainPosition</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga120531588e58691a5a18028158d2947a">requestedEffectChainPosition</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reimplement this method to indicate where in the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> chain the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> should be placed.</para>
+<para>A low number indicates early chain position, thus before other Effects got called, a high number indicates a late position. The returned number should be in the interval [0, 100]. The default value is 0.</para>
+<para>In KWin4 this information was provided in the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref>&apos;s desktop file as property X-KDE-Ordering. In the case of Scripted Effects this property is still used.</para>
+<para><simplesect kind="since"><para>5.0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="35" column="9" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="86" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_system_bell_effect_1a175eb7e5fb5b338487e0e3da38051492" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::SystemBellEffect::provides</definition>
+        <argsstring>(Feature f) override</argsstring>
+        <name>provides</name>
+        <qualifiedname>KWin::SystemBellEffect::provides</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga30fc2cbbdd90f95568a9e350f34bf2b7">provides</reimplements>
+        <param>
+          <type><ref refid="group__kwineffects_1ga6337b2a9b5aadfbb6b696119144b56ae" kindref="member">Feature</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called on Transparent resizes. return true if your effect substitutes questioned feature </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="36" column="10" bodyfile="kwin/src/plugins/systembell/systembell.cpp" bodystart="250" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_system_bell_effect_1adbbbd832f84a4730c283f8716bc7bed1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::SystemBellEffect::perform</definition>
+        <argsstring>(Feature feature, const QVariantList &amp;arguments) override</argsstring>
+        <name>perform</name>
+        <qualifiedname>KWin::SystemBellEffect::perform</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga5fb1bc87ff54dcc2cfe87b070816ab00">perform</reimplements>
+        <param>
+          <type><ref refid="group__kwineffects_1ga6337b2a9b5aadfbb6b696119144b56ae" kindref="member">Feature</ref></type>
+          <declname>feature</declname>
+        </param>
+        <param>
+          <type>const QVariantList &amp;</type>
+          <declname>arguments</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs the <computeroutput>feature</computeroutput> with the <computeroutput>arguments</computeroutput>.</para>
+<para>This allows to have specific protocols between <ref refid="namespace_k_win" kindref="compound">KWin</ref> core and an <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref>.</para>
+<para>The method is supposed to return <computeroutput>true</computeroutput> if it performed the features, <computeroutput>false</computeroutput> otherwise.</para>
+<para>The default implementation returns <computeroutput>false</computeroutput>. <simplesect kind="since"><para>5.8 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="37" column="10" bodyfile="kwin/src/plugins/systembell/systembell.cpp" bodystart="255" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_system_bell_effect_1ae45d386100483ca87186c20aac51e1a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::SystemBellEffect::reconfigure</definition>
+        <argsstring>(ReconfigureFlags flags) override</argsstring>
+        <name>reconfigure</name>
+        <qualifiedname>KWin::SystemBellEffect::reconfigure</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga737c6d80eb8f8b24fdc6398209c38e3d">reconfigure</reimplements>
+        <param>
+          <type>ReconfigureFlags</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when configuration changes (either the effect&apos;s or <ref refid="namespace_k_win" kindref="compound">KWin</ref>&apos;s global).</para>
+<para>In OpenGL based compositing, the frameworks ensures that the context is current when the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> is reconfigured. If this method is called from within the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> it is required to ensure that the context is current if the implementation does OpenGL calls. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="38" column="10" bodyfile="kwin/src/plugins/systembell/systembell.cpp" bodystart="122" bodyend="132"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_system_bell_effect_1a749038361bdd548e5533eb910ef73cdc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::SystemBellEffect::supported</definition>
+        <argsstring>()</argsstring>
+        <name>supported</name>
+        <qualifiedname>KWin::SystemBellEffect::supported</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="40" column="17" bodyfile="kwin/src/plugins/systembell/systembell.cpp" bodystart="134" bodyend="137"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_k_win_1_1_system_bell_effect_1ac8d9e7c1e6ba5ad0b9747625378337b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SystemBellEffect::triggerScreen</definition>
+        <argsstring>()</argsstring>
+        <name>triggerScreen</name>
+        <qualifiedname>KWin::SystemBellEffect::triggerScreen</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="43" column="10" bodyfile="kwin/src/plugins/systembell/systembell.cpp" bodystart="182" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_system_bell_effect_1aad28a8f8de93c8afa894c82371557319" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SystemBellEffect::triggerWindow</definition>
+        <argsstring>()</argsstring>
+        <name>triggerWindow</name>
+        <qualifiedname>KWin::SystemBellEffect::triggerWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="44" column="10" bodyfile="kwin/src/plugins/systembell/systembell.cpp" bodystart="213" bodyend="216"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_k_win_1_1_system_bell_effect_1ac0fb5061424d129248b1c23250df4be9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SystemBellEffect::slotWindowClosed</definition>
+        <argsstring>(KWin::EffectWindow *w)</argsstring>
+        <name>slotWindowClosed</name>
+        <qualifiedname>KWin::SystemBellEffect::slotWindowClosed</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="47" column="10" bodyfile="kwin/src/plugins/systembell/systembell.cpp" bodystart="177" bodyend="180"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_k_win_1_1_system_bell_effect_1ae33ebbcb058c12ebedfa097b105f84d9" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::SystemBellEffect::loadData</definition>
+        <argsstring>()</argsstring>
+        <name>loadData</name>
+        <qualifiedname>KWin::SystemBellEffect::loadData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="50" column="10" bodyfile="kwin/src/plugins/systembell/systembell.cpp" bodystart="154" bodyend="175"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_system_bell_effect_1a62f92188dd02c20d32033282a30cc608" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SystemBellEffect::triggerWindow</definition>
+        <argsstring>(EffectWindow *window)</argsstring>
+        <name>triggerWindow</name>
+        <qualifiedname>KWin::SystemBellEffect::triggerWindow</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="58" column="10" bodyfile="kwin/src/plugins/systembell/systembell.cpp" bodystart="218" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_system_bell_effect_1a38a17c45ea533a85a0966912a4160f36" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SystemBellEffect::flash</definition>
+        <argsstring>(EffectWindow *window)</argsstring>
+        <name>flash</name>
+        <qualifiedname>KWin::SystemBellEffect::flash</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="59" column="10" bodyfile="kwin/src/plugins/systembell/systembell.cpp" bodystart="139" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_system_bell_effect_1a2639af3e340bd425e322865f29dc2162" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SystemBellEffect::unflash</definition>
+        <argsstring>(EffectWindow *window)</argsstring>
+        <name>unflash</name>
+        <qualifiedname>KWin::SystemBellEffect::unflash</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="60" column="10" bodyfile="kwin/src/plugins/systembell/systembell.cpp" bodystart="149" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_system_bell_effect_1a1d420fda28539da09d14753824d03a8b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SystemBellEffect::loadConfig</definition>
+        <argsstring>(const KConfigGroup &amp;group)</argsstring>
+        <name>loadConfig</name>
+        <qualifiedname>KWin::SystemBellEffect::loadConfig</qualifiedname>
+        <param>
+          <type>const KConfigGroup &amp;</type>
+          <declname>group</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="61" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_system_bell_effect_1a3a1f2a1e687ff1aea253624bf115c8f5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SystemBellEffect::playAudibleBell</definition>
+        <argsstring>()</argsstring>
+        <name>playAudibleBell</name>
+        <qualifiedname>KWin::SystemBellEffect::playAudibleBell</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/systembell/systembell.h" line="62" column="10" bodyfile="kwin/src/plugins/systembell/systembell.cpp" bodystart="261" bodyend="289"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>KWin::Effect</label>
+        <link refid="class_k_win_1_1_effect"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::OffscreenEffect</label>
+        <link refid="class_k_win_1_1_offscreen_effect"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::SystemBellEffect</label>
+        <link refid="class_k_win_1_1_system_bell_effect"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>KWin::Effect</label>
+        <link refid="class_k_win_1_1_effect"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::OffscreenEffect</label>
+        <link refid="class_k_win_1_1_offscreen_effect"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::SystemBellEffect</label>
+        <link refid="class_k_win_1_1_system_bell_effect"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/plugins/systembell/systembell.h" line="27" column="1" bodyfile="kwin/src/plugins/systembell/systembell.h" bodystart="28" bodyend="84"/>
+    <listofallmembers>
+      <member refid="group__kwineffects_1gab9bcf52072fe74567496b0a894d1d873" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>animationTime</name></member>
+      <member refid="group__kwineffects_1ga3a167fe6d9c46376ed46db13caf2d135" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>animationTime</name></member>
+      <member refid="group__kwineffects_1ga0ba05f1463195d0f92ea1dd3396a5d16" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>animationTime</name></member>
+      <member refid="class_k_win_1_1_offscreen_effect_1a770fb27f108f87402051ca3f320092b2" prot="protected" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>apply</name></member>
+      <member refid="class_k_win_1_1_offscreen_effect_1a112119e708233a1ddcfac249089f2fee" prot="protected" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>blocksDirectScanout</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea67d120ab5ce1dc424476e63c132af6c1" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>Blur</name></member>
+      <member refid="group__kwineffects_1gab8a94f591b743b59b7285911e641e7d5" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>borderActivated</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a84f3ef8aa0c01f8c51995d59d383768baf84827b4b20b5962c9edef1c0489f2ba" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>Color</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aead805f717a48c23959a1e9ecd7722d15d" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>Contrast</name></member>
+      <member refid="group__kwineffects_1ga4da344d8b8f2cb9eecd6e64a9b758740" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>cursorPos</name></member>
+      <member refid="group__kwineffects_1ga0c159e00c3a51ca733bea49cf8d52691" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>debug</name></member>
+      <member refid="class_k_win_1_1_offscreen_effect_1a0a6ba121aa03a17457d3080054ef1615" prot="protected" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>drawWindow</name></member>
+      <member refid="group__kwineffects_1ga7bd8262f4cb2c5c3090c748eb388ad7e" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>Effect</name></member>
+      <member refid="group__kwineffects_1ga6337b2a9b5aadfbb6b696119144b56ae" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>Feature</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a38a17c45ea533a85a0966912a4160f36" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>flash</name></member>
+      <member refid="group__kwineffects_1gab5e0581ae4b2dffe8014ff5cf6c21158" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>grabbedKeyboardEvent</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aeaecbb77ad241419970ece3d45296c4838" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>HighlightWindows</name></member>
+      <member refid="group__kwineffects_1ga7b0ecb57667179e95c188f0ee7416d00" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>interpolate</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a84f3ef8aa0c01f8c51995d59d383768ba6436bdf7d8587448671d398c186b621a" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>Invert</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1af2906166b0bdf678d0604e9068580481" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>isActive</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a1d420fda28539da09d14753824d03a8b" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>loadConfig</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1ae33ebbcb058c12ebedfa097b105f84d9" prot="protected" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>loadData</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1abc4c07bd2a4af723faa6986ef521a7f7" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>m_allWindows</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a19cf94e55c82e2a7109a950bb886925a" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>m_audibleBell</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a3762412ada98620f8a268efc8a1879b1" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>m_audioThrottleTimer</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1ab055345d7f6da42e7e97301984197c3a" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>m_bellConfig</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a7055db6b59fbf594b619996f8cd79e66" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>m_caContext</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a52e6f06e2603ebd7da235d81db97176a" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>m_color</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1ab53aae19f9d3c206a12e5e71a686c3a9" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>m_configWatcher</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1ae1fff8e747914d1ba7661569997ede9c" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>m_customBell</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a1f47ed3867b61ebeae1c391e03b27172" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>m_customBellFile</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a509a6c01a413f83c18d357964161f1c8" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>m_duration</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a8b369ebdc36e6ab303495fc967657a6a" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>m_inited</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a3df866c77e32fbcfa54d792e62420676" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>m_kdeglobals</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1ac1e776b96c565d7636538fff90802f93" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>m_mode</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a9ac00732a7695029fcbf7bf898471b75" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>m_shader</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a788716379825e253584de16d5727cd9a" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>m_valid</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1afc626c5fcc1c71ac7fbb44164906e523" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>m_visibleBell</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a3745beb97dbeccfedf6d1e702aa94187" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>m_windows</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a84f3ef8aa0c01f8c51995d59d383768b" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>Mode</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea170229312ed2ec0e446ee89ba7f6b6ca" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>Nothing</name></member>
+      <member refid="class_k_win_1_1_offscreen_effect_1ac2af5bb9d718ff03474cdd2d6715a055" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>OffscreenEffect</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dab0de2932c45bde6df3de10d00dbd6fcd" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>PAINT_SCREEN_BACKGROUND_FIRST</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da43acbfc913cae9eb3c363aeb0524f18f" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>PAINT_SCREEN_REGION</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da3e731594d83c3e92742bff7c420fb7f8" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>PAINT_SCREEN_TRANSFORMED</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da124dd798e5f793087e81da77e11a9b1e" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>PAINT_SCREEN_WITH_TRANSFORMED_WINDOWS</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dac606d3dcf2dd150234f71c4c39083c7d" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>PAINT_WINDOW_OPAQUE</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da684bb6c6c278b900b6d0c889e79233b8" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>PAINT_WINDOW_TRANSFORMED</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dac7237bf4bb4d6ea6d6fb1215db19b45e" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>PAINT_WINDOW_TRANSLUCENT</name></member>
+      <member refid="group__kwineffects_1ga44ee94161446ce6fb2502376af6515a8" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>paintScreen</name></member>
+      <member refid="group__kwineffects_1ga0f0292db2bf016a0843ef7cc06219378" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>paintWindow</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1adbbbd832f84a4730c283f8716bc7bed1" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>perform</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a3a1f2a1e687ff1aea253624bf115c8f5" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>playAudibleBell</name></member>
+      <member refid="group__kwineffects_1ga10021cf9704c00d60beae284d53846e2" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>postPaintScreen</name></member>
+      <member refid="group__kwineffects_1ga9b7cf82c6f74331cffabb06c63ef914c" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>postPaintWindow</name></member>
+      <member refid="group__kwineffects_1ga2edc1b757e36bb6bcbbacde454dfc05c" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>prePaintScreen</name></member>
+      <member refid="group__kwineffects_1ga2832c7831c0f49f9f5cf0267ffc53672" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>prePaintWindow</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a175eb7e5fb5b338487e0e3da38051492" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>provides</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1ae45d386100483ca87186c20aac51e1a5" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>reconfigure</name></member>
+      <member refid="group__kwineffects_1gga4aebd7d0f695e37678debaa118fa92dca19d3e23e53788c8d9cc9c18fbf75fc7d" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>ReconfigureAll</name></member>
+      <member refid="group__kwineffects_1ga4aebd7d0f695e37678debaa118fa92dc" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>ReconfigureFlag</name></member>
+      <member refid="class_k_win_1_1_offscreen_effect_1a6f9911e49dbaf73975c2f238937930be" prot="protected" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>redirect</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1ad7b89d939d0ac295dac04ab9d4d0b468" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>requestedEffectChainPosition</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1aeeb503fdcd0812aedb1a6452746d4086" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>s_systemBell</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1ad03008aad18f1637997c130e9dc02718" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>s_systemBellRemoveTimer</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea592ea0de7a4d658a1ef9bbb48b18e15a" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>ScreenInversion</name></member>
+      <member refid="group__kwineffects_1ga1efc42cd9be15e8200c6e55f6bf47cb8" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>setPositionTransformations</name></member>
+      <member refid="class_k_win_1_1_offscreen_effect_1ae98f808ad3750003d4a1f7f24fa284a5" prot="protected" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>setShader</name></member>
+      <member refid="class_k_win_1_1_offscreen_effect_1ae390a8c07620d899b467b6c919901649" prot="protected" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>setVertexSnappingMode</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1ac0fb5061424d129248b1c23250df4be9" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>slotWindowClosed</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a749038361bdd548e5533eb910ef73cdc" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>supported</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea19036d413806c53978a3234e7eb197c4" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>SystemBell</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1ac8f278972a94f4672697c82238001191" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>SystemBellEffect</name></member>
+      <member refid="group__kwineffects_1ga2d22a8f0b8a4d81615dff67dc1ef970f" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>tabletPadButtonEvent</name></member>
+      <member refid="group__kwineffects_1gaa084e5a45597f5775213715eb5506f63" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>tabletPadRingEvent</name></member>
+      <member refid="group__kwineffects_1ga4998fb0983bd97163935cad2c4dedd76" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>tabletPadStripEvent</name></member>
+      <member refid="group__kwineffects_1ga1d4ae01f5935ea887a12018d59191cbf" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>tabletToolAxis</name></member>
+      <member refid="group__kwineffects_1ga7a984d7d83dfa97962b8404301c6aba9" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>tabletToolButtonEvent</name></member>
+      <member refid="group__kwineffects_1ga4ed77506be381680bf664dbc8c20e036" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>tabletToolProximity</name></member>
+      <member refid="group__kwineffects_1gaf16e9ca42cceb738fb859d1a1a462548" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>tabletToolTip</name></member>
+      <member refid="group__kwineffects_1gaa31554949bc00085e6380b50be16138e" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>touchCancel</name></member>
+      <member refid="group__kwineffects_1ga315fd305e7570f41e7bce7db6812381f" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>touchDown</name></member>
+      <member refid="group__kwineffects_1ga54d00a9e05b5d4597db40c2f5b1d36de" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>touchMotion</name></member>
+      <member refid="group__kwineffects_1gaf3871967d6199eb7c87621bc75b925bb" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>touchUp</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1ac8d9e7c1e6ba5ad0b9747625378337b7" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>triggerScreen</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1aad28a8f8de93c8afa894c82371557319" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>triggerWindow</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a62f92188dd02c20d32033282a30cc608" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>triggerWindow</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a2639af3e340bd425e322865f29dc2162" prot="private" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>unflash</name></member>
+      <member refid="class_k_win_1_1_offscreen_effect_1a503d5105f32353e6a0046b8a0ea91b22" prot="protected" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>unredirect</name></member>
+      <member refid="group__kwineffects_1ga7b142933c38cb9b4a433b768b266e7cb" prot="public" virt="virtual"><scope>KWin::SystemBellEffect</scope><name>windowInputMouseEvent</name></member>
+      <member refid="group__kwineffects_1ga50174eb0169aebceb78ebd5aff71c481" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>~Effect</name></member>
+      <member refid="class_k_win_1_1_offscreen_effect_1ac913e0092c54576890821b0bcb3e7033" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>~OffscreenEffect</name></member>
+      <member refid="class_k_win_1_1_system_bell_effect_1a9630b36570cd9dca2d3669f0f83054e2" prot="public" virt="non-virtual"><scope>KWin::SystemBellEffect</scope><name>~SystemBellEffect</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

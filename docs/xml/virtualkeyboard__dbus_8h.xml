@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="virtualkeyboard__dbus_8h" kind="file" language="C++">
+    <compoundname>virtualkeyboard_dbus.h</compoundname>
+    <includes refid="inputmethod_8h" local="yes">inputmethod.h</includes>
+    <includes local="no">QObject</includes>
+    <includedby refid="inputmethod_8cpp" local="yes">kwin/src/inputmethod.cpp</includedby>
+    <includedby refid="virtualkeyboard__dbus_8cpp" local="yes">kwin/src/virtualkeyboard_dbus.cpp</includedby>
+    <incdepgraph>
+      <node id="12">
+        <label>input_event_spy.h</label>
+        <link refid="input__event__spy_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>inputmethod.h</label>
+        <link refid="inputmethod_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/virtualkeyboard_dbus.h</label>
+        <link refid="virtualkeyboard__dbus_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>textinput.h</label>
+        <link refid="textinput_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wayland/textinput_v2.h</label>
+        <link refid="textinput__v2_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>QMetaType</label>
+      </node>
+      <node id="5">
+        <label>QObject</label>
+      </node>
+      <node id="14">
+        <label>QPointer</label>
+      </node>
+      <node id="15">
+        <label>QTimer</label>
+      </node>
+      <node id="9">
+        <label>QtGlobal</label>
+      </node>
+      <node id="13">
+        <label>chrono</label>
+      </node>
+      <node id="4">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="6">
+        <label>memory</label>
+      </node>
+      <node id="10">
+        <label>utility</label>
+      </node>
+      <node id="11">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/inputmethod.cpp</label>
+        <link refid="inputmethod_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/virtualkeyboard_dbus.cpp</label>
+        <link refid="virtualkeyboard__dbus_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/virtualkeyboard_dbus.h</label>
+        <link refid="virtualkeyboard__dbus_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_virtual_keyboard_d_bus" prot="public">KWin::VirtualKeyboardDBus</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2017<sp/>Martin<sp/>Flöser<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="inputmethod_8h" kindref="compound">inputmethod.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="class_k_win_1_1_virtual_keyboard_d_bus" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1af1a9a891209b75c916a3c05aacecfa79" kindref="member">VirtualKeyboardDBus</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_CLASSINFO(</highlight><highlight class="stringliteral">&quot;D-Bus<sp/>Interface&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;org.kde.kwin.VirtualKeyboard&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="21" refid="class_k_win_1_1_virtual_keyboard_d_bus_1a96a7eb2bf06f08d1f82b0c63ed96844c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a96a7eb2bf06f08d1f82b0c63ed96844c" kindref="member">available</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a15ec2893cd64225ec1248001a7fc0d4d" kindref="member">isAvailable</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1ab2a7f8afbbcd7ae1bee6339b400be459" kindref="member">availableChanged</ref>)</highlight></codeline>
+<codeline lineno="22" refid="class_k_win_1_1_virtual_keyboard_d_bus_1aaf234fd93d816ef22e5370b96a34bdf6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1aaf234fd93d816ef22e5370b96a34bdf6" kindref="member">enabled</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a6dcfcc07bf2f3caf07329715090fd6c4" kindref="member">isEnabled</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a78fd7a0a6ab33535380ba973a5fe812c" kindref="member">setEnabled</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1aa9c3b809ce999766fc013c14190b569e" kindref="member">enabledChanged</ref>)</highlight></codeline>
+<codeline lineno="23" refid="class_k_win_1_1_virtual_keyboard_d_bus_1ad0617289f1c8781cc16d79c3e3720152" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1ad0617289f1c8781cc16d79c3e3720152" kindref="member">active</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a740ff1b0264b59a5515ebfe88b3a25b9" kindref="member">isActive</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1ae9ff191ebb15d9093f88b93127f26cb5" kindref="member">setActive</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1adaf792a3ae74af701aa32df1ec9cfb8b" kindref="member">activeChanged</ref>)</highlight></codeline>
+<codeline lineno="24" refid="class_k_win_1_1_virtual_keyboard_d_bus_1ab81434b62c7fedc49a70f7bd54a0fbeb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1ab81434b62c7fedc49a70f7bd54a0fbeb" kindref="member">visible</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a7fb674cb2ea5abdb5c87f6addbe60a96" kindref="member">isVisible</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1ad09108b08c3b220c0fe9a856c2883fab" kindref="member">visibleChanged</ref>)</highlight></codeline>
+<codeline lineno="25" refid="class_k_win_1_1_virtual_keyboard_d_bus_1a8974c27b44550f60cb90145ff0c3c2a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a8974c27b44550f60cb90145ff0c3c2a5" kindref="member">activeClientSupportsTextInput</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a8974c27b44550f60cb90145ff0c3c2a5" kindref="member">activeClientSupportsTextInput</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1aed47d2d82d002dc25bc0b7fba0ee5147" kindref="member">activeClientSupportsTextInputChanged</ref>)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>explicit<sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1af1a9a891209b75c916a3c05aacecfa79" kindref="member">VirtualKeyboardDBus</ref>(<ref refid="class_k_win_1_1_input_method" kindref="compound">InputMethod</ref><sp/>*inputMethod);</highlight></codeline>
+<codeline lineno="28" refid="class_k_win_1_1_virtual_keyboard_d_bus_1a01094317363abb474e9940f508446544" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1af1a9a891209b75c916a3c05aacecfa79" kindref="member">VirtualKeyboardDBus</ref>()<sp/>override;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a6dcfcc07bf2f3caf07329715090fd6c4" kindref="member">isEnabled</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a8974c27b44550f60cb90145ff0c3c2a5" kindref="member">activeClientSupportsTextInput</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a7fb674cb2ea5abdb5c87f6addbe60a96" kindref="member">isVisible</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a740ff1b0264b59a5515ebfe88b3a25b9" kindref="member">isActive</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a15ec2893cd64225ec1248001a7fc0d4d" kindref="member">isAvailable</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a78fd7a0a6ab33535380ba973a5fe812c" kindref="member">setEnabled</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1aaf234fd93d816ef22e5370b96a34bdf6" kindref="member">enabled</ref>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1ae9ff191ebb15d9093f88b93127f26cb5" kindref="member">setActive</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1ad0617289f1c8781cc16d79c3e3720152" kindref="member">active</ref>);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1acfba404b63c84886f003763961537e4d" kindref="member">willShowOnActive</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1ac062001ff08602b36299b33bb048b775" kindref="member">forceActivate</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="42" refid="class_k_win_1_1_virtual_keyboard_d_bus_1aa9c3b809ce999766fc013c14190b569e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1aa9c3b809ce999766fc013c14190b569e" kindref="member">enabledChanged</ref>();</highlight></codeline>
+<codeline lineno="43" refid="class_k_win_1_1_virtual_keyboard_d_bus_1adaf792a3ae74af701aa32df1ec9cfb8b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1adaf792a3ae74af701aa32df1ec9cfb8b" kindref="member">activeChanged</ref>();</highlight></codeline>
+<codeline lineno="44" refid="class_k_win_1_1_virtual_keyboard_d_bus_1ad09108b08c3b220c0fe9a856c2883fab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1ad09108b08c3b220c0fe9a856c2883fab" kindref="member">visibleChanged</ref>();</highlight></codeline>
+<codeline lineno="45" refid="class_k_win_1_1_virtual_keyboard_d_bus_1ab2a7f8afbbcd7ae1bee6339b400be459" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1ab2a7f8afbbcd7ae1bee6339b400be459" kindref="member">availableChanged</ref>();</highlight></codeline>
+<codeline lineno="46" refid="class_k_win_1_1_virtual_keyboard_d_bus_1aed47d2d82d002dc25bc0b7fba0ee5147" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1aed47d2d82d002dc25bc0b7fba0ee5147" kindref="member">activeClientSupportsTextInputChanged</ref>();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">private:</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_input_method" kindref="compound">InputMethod</ref><sp/>*const<sp/>m_inputMethod;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/virtualkeyboard_dbus.h"/>
+  </compounddef>
+</doxygen>

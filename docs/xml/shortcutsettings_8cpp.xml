@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="shortcutsettings_8cpp" kind="file" language="C++">
+    <compoundname>shortcutsettings.cpp</compoundname>
+    <includes refid="shortcutsettings_8h" local="yes">shortcutsettings.h</includes>
+    <includes local="no">QAction</includes>
+    <includes local="no">KActionCollection</includes>
+    <includes local="no">KGlobalAccel</includes>
+    <includes local="no">KLocalizedString</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/kcms/tabbox/shortcutsettings.cpp</label>
+        <link refid="shortcutsettings_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>shortcutsettings.h</label>
+        <link refid="shortcutsettings_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>KActionCollection</label>
+      </node>
+      <node id="4">
+        <label>KConfigSkeleton</label>
+      </node>
+      <node id="7">
+        <label>KGlobalAccel</label>
+      </node>
+      <node id="8">
+        <label>KLocalizedString</label>
+      </node>
+      <node id="5">
+        <label>QAction</label>
+      </node>
+      <node id="3">
+        <label>QKeySequence</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_shortcut_item" prot="public">ShortcutItem</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <innernamespace refid="namespace_k_win_1_1_tab_box">KWin::TabBox</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2023<sp/>Ismael<sp/>Asensio<sp/>&lt;isma.af@gmail.com&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="shortcutsettings_8h" kindref="compound">shortcutsettings.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QAction&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KActionCollection&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KGlobalAccel&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KLocalizedString&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Implementation<sp/>of<sp/>a<sp/>KConfigSkeletonItem<sp/>that<sp/>uses<sp/>KGlobalAccel<sp/>to<sp/>retrieve<sp/>and<sp/>store</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>shortcut<sp/>settings<sp/>instead<sp/>of<sp/>storing<sp/>them<sp/>in<sp/>a<sp/>config<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="class_shortcut_item" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_shortcut_item_1afca04ea33d8350474194d11d2dfe34bc" kindref="member">ShortcutItem</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>KConfigSkeletonItem</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_shortcut_item_1afca04ea33d8350474194d11d2dfe34bc" kindref="member">ShortcutItem</ref>(QAction<sp/>*action,<sp/>KActionCollection<sp/>*actionCollection);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_shortcut_item_1aeb76062091eaab11d3b34a6f2353f9b6" kindref="member">readConfig</ref>(KConfig<sp/>*config)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_shortcut_item_1a5412a7ea0db0ebf37eb360f902c98f72" kindref="member">writeConfig</ref>(KConfig<sp/>*config)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_shortcut_item_1ae882877951793332b0082c0ab90d56ee" kindref="member">readDefault</ref>(KConfig<sp/>*config)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_shortcut_item_1ab7b69aadbd0f1c5f1b92733048ca440c" kindref="member">setDefault</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_shortcut_item_1afd9d3817df57329cc8f1bf0883bf30ab" kindref="member">swapDefault</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_shortcut_item_1a4c7f20da5d536c9a4a4d41fc962ab8e8" kindref="member">isEqual</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QVariant<sp/>&amp;p)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>QVariant<sp/><ref refid="class_shortcut_item_1a12c97d10eec338bbeba24a938317ad18" kindref="member">property</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_shortcut_item_1a7b1224e1408448974cd814b700e3cfcc" kindref="member">setProperty</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QVariant<sp/>&amp;p)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>KActionCollection<sp/>*m_actionCollection<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>QAction<sp/>*m_action<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>QKeySequence<sp/>m_savedShortcut;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="class_shortcut_item_1afca04ea33d8350474194d11d2dfe34bc" refkind="member"><highlight class="normal"><ref refid="class_shortcut_item_1afca04ea33d8350474194d11d2dfe34bc" kindref="member">ShortcutItem::ShortcutItem</ref>(QAction<sp/>*action,<sp/>KActionCollection<sp/>*actionCollection)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>KConfigSkeletonItem(actionCollection-&gt;componentName(),<sp/>action-&gt;text())</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_actionCollection(actionCollection)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_action(action)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>setGetDefaultImpl([</highlight><highlight class="keyword">this</highlight><highlight class="normal">]<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_actionCollection-&gt;defaultShortcut(m_action);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>setIsDefaultImpl([</highlight><highlight class="keyword">this</highlight><highlight class="normal">]<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_action-&gt;shortcut()<sp/>==<sp/>m_actionCollection-&gt;defaultShortcut(m_action);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>setIsSaveNeededImpl([</highlight><highlight class="keyword">this</highlight><highlight class="normal">]<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(m_action-&gt;shortcut()<sp/>!=<sp/>m_savedShortcut);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="class_shortcut_item_1aeb76062091eaab11d3b34a6f2353f9b6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_shortcut_item_1aeb76062091eaab11d3b34a6f2353f9b6" kindref="member">ShortcutItem::readConfig</ref>(KConfig<sp/>*config)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>shortcuts<sp/>=<sp/>KGlobalAccel::self()-&gt;globalShortcut(m_actionCollection-&gt;componentName(),<sp/>m_action-&gt;objectName());</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>m_savedShortcut<sp/>=<sp/>shortcuts.isEmpty()<sp/>?<sp/>QKeySequence()<sp/>:<sp/>shortcuts.first();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>m_action-&gt;setShortcut(m_savedShortcut);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="class_shortcut_item_1a5412a7ea0db0ebf37eb360f902c98f72" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_shortcut_item_1a5412a7ea0db0ebf37eb360f902c98f72" kindref="member">ShortcutItem::writeConfig</ref>(KConfig<sp/>*config)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>m_savedShortcut<sp/>=<sp/>m_action-&gt;shortcut();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>KGlobalAccel::self()-&gt;setShortcut(m_action,<sp/>{m_action-&gt;shortcut()},<sp/>KGlobalAccel::NoAutoloading);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="class_shortcut_item_1ae882877951793332b0082c0ab90d56ee" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_shortcut_item_1ae882877951793332b0082c0ab90d56ee" kindref="member">ShortcutItem::readDefault</ref>(KConfig<sp/>*config)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="class_shortcut_item_1ab7b69aadbd0f1c5f1b92733048ca440c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_shortcut_item_1ab7b69aadbd0f1c5f1b92733048ca440c" kindref="member">ShortcutItem::setDefault</ref>()</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>m_action-&gt;setShortcut(m_actionCollection-&gt;defaultShortcut(m_action));</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="class_shortcut_item_1afd9d3817df57329cc8f1bf0883bf30ab" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_shortcut_item_1afd9d3817df57329cc8f1bf0883bf30ab" kindref="member">ShortcutItem::swapDefault</ref>()</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>QKeySequence<sp/>previousShortcut<sp/>=<sp/>m_action-&gt;shortcut();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>m_action-&gt;setShortcut(m_actionCollection-&gt;defaultShortcut(m_action));</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>m_actionCollection-&gt;setDefaultShortcut(m_action,<sp/>previousShortcut);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="class_shortcut_item_1a4c7f20da5d536c9a4a4d41fc962ab8e8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_shortcut_item_1a4c7f20da5d536c9a4a4d41fc962ab8e8" kindref="member">ShortcutItem::isEqual</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QVariant<sp/>&amp;p)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="90"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!p.canConvert&lt;QKeySequence&gt;())<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_action-&gt;shortcut()<sp/>==<sp/>p.value&lt;QKeySequence&gt;();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="class_shortcut_item_1a12c97d10eec338bbeba24a938317ad18" refkind="member"><highlight class="normal">QVariant<sp/><ref refid="class_shortcut_item_1a12c97d10eec338bbeba24a938317ad18" kindref="member">ShortcutItem::property</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="98"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QVariant::fromValue&lt;QKeySequence&gt;(m_action-&gt;shortcut());</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="class_shortcut_item_1a7b1224e1408448974cd814b700e3cfcc" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_shortcut_item_1a7b1224e1408448974cd814b700e3cfcc" kindref="member">ShortcutItem::setProperty</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QVariant<sp/>&amp;p)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>m_action-&gt;setShortcut(p.value&lt;QKeySequence&gt;());</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">TabBox</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="class_k_win_1_1_tab_box_1_1_shortcut_settings_1a38e6537d64394842fd104ef11a482d94" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_shortcut_settings_1a38e6537d64394842fd104ef11a482d94" kindref="member">ShortcutSettings::ShortcutSettings</ref>(QObject<sp/>*parent)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>KConfigSkeleton(nullptr,<sp/>parent)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_actionCollection(new<sp/>KActionCollection(this,<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;kwin&quot;</highlight><highlight class="normal">)))</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>m_actionCollection-&gt;setConfigGroup(</highlight><highlight class="stringliteral">&quot;Navigation&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>m_actionCollection-&gt;setConfigGlobal(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>addShortcut<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>KLocalizedString<sp/>&amp;name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QKeySequence<sp/>&amp;sequence<sp/>=<sp/>QKeySequence())<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>untranslatedName<sp/>=<sp/>QString::fromUtf8(name.untranslatedText());</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QAction<sp/>*action<sp/>=<sp/>m_actionCollection-&gt;addAction(untranslatedName);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>action-&gt;setObjectName(untranslatedName);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>action-&gt;setProperty(</highlight><highlight class="stringliteral">&quot;isConfigurationAction&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>action-&gt;setText(name.toString());</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_actionCollection-&gt;setDefaultShortcut(action,<sp/>sequence);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>addItem(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_shortcut_item" kindref="compound">ShortcutItem</ref>(action,<sp/>m_actionCollection));</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TabboxType::Main</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>addShortcut(ki18nd(</highlight><highlight class="stringliteral">&quot;kwin&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Walk<sp/>Through<sp/>Windows&quot;</highlight><highlight class="normal">),<sp/>Qt::ALT<sp/>|<sp/>Qt::Key_Tab);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>addShortcut(ki18nd(</highlight><highlight class="stringliteral">&quot;kwin&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Walk<sp/>Through<sp/>Windows<sp/>(Reverse)&quot;</highlight><highlight class="normal">),<sp/>Qt::ALT<sp/>|<sp/>Qt::SHIFT<sp/>|<sp/>Qt::Key_Tab);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>addShortcut(ki18nd(</highlight><highlight class="stringliteral">&quot;kwin&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Walk<sp/>Through<sp/>Windows<sp/>of<sp/>Current<sp/>Application&quot;</highlight><highlight class="normal">),<sp/>Qt::ALT<sp/>|<sp/>Qt::Key_QuoteLeft);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>addShortcut(ki18nd(</highlight><highlight class="stringliteral">&quot;kwin&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Walk<sp/>Through<sp/>Windows<sp/>of<sp/>Current<sp/>Application<sp/>(Reverse)&quot;</highlight><highlight class="normal">),<sp/>Qt::ALT<sp/>|<sp/>Qt::Key_AsciiTilde);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TabboxType::Alternative</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>addShortcut(ki18nd(</highlight><highlight class="stringliteral">&quot;kwin&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Walk<sp/>Through<sp/>Windows<sp/>Alternative&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>addShortcut(ki18nd(</highlight><highlight class="stringliteral">&quot;kwin&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Walk<sp/>Through<sp/>Windows<sp/>Alternative<sp/>(Reverse)&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>addShortcut(ki18nd(</highlight><highlight class="stringliteral">&quot;kwin&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Walk<sp/>Through<sp/>Windows<sp/>of<sp/>Current<sp/>Application<sp/>Alternative&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>addShortcut(ki18nd(</highlight><highlight class="stringliteral">&quot;kwin&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Walk<sp/>Through<sp/>Windows<sp/>of<sp/>Current<sp/>Application<sp/>Alternative<sp/>(Reverse)&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="class_k_win_1_1_tab_box_1_1_shortcut_settings_1a9ca3db8b29187eb41d11df8ce6deab07" refkind="member"><highlight class="normal">KActionCollection<sp/>*<ref refid="class_k_win_1_1_tab_box_1_1_shortcut_settings_1a9ca3db8b29187eb41d11df8ce6deab07" kindref="member">ShortcutSettings::actionCollection</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="144"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_actionCollection;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="class_k_win_1_1_tab_box_1_1_shortcut_settings_1a096624be63cdc8c729ad356be2b7d2a2" refkind="member"><highlight class="normal">QKeySequence<sp/><ref refid="class_k_win_1_1_tab_box_1_1_shortcut_settings_1a096624be63cdc8c729ad356be2b7d2a2" kindref="member">ShortcutSettings::shortcut</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;name)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="149"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>QAction<sp/>*action<sp/>=<sp/>m_actionCollection-&gt;action(name);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_ASSERT(action);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>action-&gt;shortcut();</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155" refid="class_k_win_1_1_tab_box_1_1_shortcut_settings_1a4a0a55601ae7476741b77b9f179ba1bb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_shortcut_settings_1a4a0a55601ae7476741b77b9f179ba1bb" kindref="member">ShortcutSettings::setShortcut</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QKeySequence<sp/>&amp;seq)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>QAction<sp/>*action<sp/>=<sp/>m_actionCollection-&gt;action(name);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_ASSERT(action);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>action-&gt;setShortcut(seq);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162" refid="class_k_win_1_1_tab_box_1_1_shortcut_settings_1a6cfe9d28c5230e30ee551ce8c52db738" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_shortcut_settings_1a6cfe9d28c5230e30ee551ce8c52db738" kindref="member">ShortcutSettings::isDefault</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;name)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="163"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>QAction<sp/>*action<sp/>=<sp/>m_actionCollection-&gt;action(name);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_ASSERT(action);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>action-&gt;shortcut()<sp/>==<sp/>m_actionCollection-&gt;defaultShortcut(action);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>TabBox</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/kcms/tabbox/shortcutsettings.cpp"/>
+  </compounddef>
+</doxygen>

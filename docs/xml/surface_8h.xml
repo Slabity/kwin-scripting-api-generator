@@ -1,0 +1,1111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="surface_8h" kind="file" language="C++">
+    <compoundname>surface.h</compoundname>
+    <includes refid="colorspace_8h" local="yes">core/colorspace.h</includes>
+    <includes refid="core_2output_8h" local="yes">core/output.h</includes>
+    <includes refid="renderbackend_8h" local="yes">core/renderbackend.h</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">QRegion</includes>
+    <includedby refid="drm__egl__layer_8cpp" local="yes">kwin/src/backends/drm/drm_egl_layer.cpp</includedby>
+    <includedby refid="drm__virtual__egl__layer_8cpp" local="yes">kwin/src/backends/drm/drm_virtual_egl_layer.cpp</includedby>
+    <includedby refid="wayland__egl__backend_8cpp" local="yes">kwin/src/backends/wayland/wayland_egl_backend.cpp</includedby>
+    <includedby refid="compositor_8cpp" local="yes">kwin/src/compositor.cpp</includedby>
+    <includedby refid="outputlayer_8cpp" local="yes">kwin/src/core/outputlayer.cpp</includedby>
+    <includedby refid="cursorsource_8cpp" local="yes">kwin/src/cursorsource.cpp</includedby>
+    <includedby refid="debug__console_8cpp" local="yes">kwin/src/debug_console.cpp</includedby>
+    <includedby refid="idle__inhibition_8cpp" local="yes">kwin/src/idle_inhibition.cpp</includedby>
+    <includedby refid="input_8cpp" local="yes">kwin/src/input.cpp</includedby>
+    <includedby refid="inputmethod_8cpp" local="yes">kwin/src/inputmethod.cpp</includedby>
+    <includedby refid="inputpanelv1window_8cpp" local="yes">kwin/src/inputpanelv1window.cpp</includedby>
+    <includedby refid="layershellv1window_8cpp" local="yes">kwin/src/layershellv1window.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">kwin/src/main.cpp</includedby>
+    <includedby refid="plugins_2backgroundcontrast_2contrast_8cpp" local="yes">kwin/src/plugins/backgroundcontrast/contrast.cpp</includedby>
+    <includedby refid="plugins_2blur_2blur_8cpp" local="yes">kwin/src/plugins/blur/blur.cpp</includedby>
+    <includedby refid="slidingpopups_8cpp" local="yes">kwin/src/plugins/slidingpopups/slidingpopups.cpp</includedby>
+    <includedby refid="systembell_8cpp" local="yes">kwin/src/plugins/systembell/systembell.cpp</includedby>
+    <includedby refid="pointer__input_8cpp" local="yes">kwin/src/pointer_input.cpp</includedby>
+    <includedby refid="dndiconitem_8cpp" local="yes">kwin/src/scene/dndiconitem.cpp</includedby>
+    <includedby refid="surfaceitem__wayland_8cpp" local="yes">kwin/src/scene/surfaceitem_wayland.cpp</includedby>
+    <includedby refid="workspacescene_8cpp" local="yes">kwin/src/scene/workspacescene.cpp</includedby>
+    <includedby refid="shadow_8cpp" local="yes">kwin/src/shadow.cpp</includedby>
+    <includedby refid="subsurfacemonitor_8cpp" local="yes">kwin/src/utils/subsurfacemonitor.cpp</includedby>
+    <includedby refid="alphamodifier__v1_8cpp" local="yes">kwin/src/wayland/alphamodifier_v1.cpp</includedby>
+    <includedby refid="wayland_2appmenu_8cpp" local="yes">kwin/src/wayland/appmenu.cpp</includedby>
+    <includedby refid="colormanagement__v1_8cpp" local="yes">kwin/src/wayland/colormanagement_v1.cpp</includedby>
+    <includedby refid="wayland_2compositor_8cpp" local="yes">kwin/src/wayland/compositor.cpp</includedby>
+    <includedby refid="wayland_2compositor_8h" local="yes">kwin/src/wayland/compositor.h</includedby>
+    <includedby refid="contenttype__v1_8h" local="yes">kwin/src/wayland/contenttype_v1.h</includedby>
+    <includedby refid="cursorshape__v1_8cpp" local="yes">kwin/src/wayland/cursorshape_v1.cpp</includedby>
+    <includedby refid="datacontroldevice__v1_8cpp" local="yes">kwin/src/wayland/datacontroldevice_v1.cpp</includedby>
+    <includedby refid="datadevice_8cpp" local="yes">kwin/src/wayland/datadevice.cpp</includedby>
+    <includedby refid="frog__colormanagement__v1_8cpp" local="yes">kwin/src/wayland/frog_colormanagement_v1.cpp</includedby>
+    <includedby refid="inputmethod__v1_8cpp" local="yes">kwin/src/wayland/inputmethod_v1.cpp</includedby>
+    <includedby refid="keyboard_8cpp" local="yes">kwin/src/wayland/keyboard.cpp</includedby>
+    <includedby refid="keyboard__shortcuts__inhibit__v1_8cpp" local="yes">kwin/src/wayland/keyboard_shortcuts_inhibit_v1.cpp</includedby>
+    <includedby refid="keyboard__shortcuts__inhibit__v1_8h" local="yes">kwin/src/wayland/keyboard_shortcuts_inhibit_v1.h</includedby>
+    <includedby refid="layershell__v1_8cpp" local="yes">kwin/src/wayland/layershell_v1.cpp</includedby>
+    <includedby refid="linux__drm__syncobj__v1_8cpp" local="yes">kwin/src/wayland/linux_drm_syncobj_v1.cpp</includedby>
+    <includedby refid="lockscreen__overlay__v1_8cpp" local="yes">kwin/src/wayland/lockscreen_overlay_v1.cpp</includedby>
+    <includedby refid="plasmashell_8cpp" local="yes">kwin/src/wayland/plasmashell.cpp</includedby>
+    <includedby refid="plasmawindowmanagement_8cpp" local="yes">kwin/src/wayland/plasmawindowmanagement.cpp</includedby>
+    <includedby refid="pointer_8cpp" local="yes">kwin/src/wayland/pointer.cpp</includedby>
+    <includedby refid="pointerconstraints__v1__p_8h" local="yes">kwin/src/wayland/pointerconstraints_v1_p.h</includedby>
+    <includedby refid="pointergestures__v1_8cpp" local="yes">kwin/src/wayland/pointergestures_v1.cpp</includedby>
+    <includedby refid="presentationtime_8cpp" local="yes">kwin/src/wayland/presentationtime.cpp</includedby>
+    <includedby refid="relativepointer__v1_8cpp" local="yes">kwin/src/wayland/relativepointer_v1.cpp</includedby>
+    <includedby refid="screenedge__v1_8cpp" local="yes">kwin/src/wayland/screenedge_v1.cpp</includedby>
+    <includedby refid="seat_8cpp" local="yes">kwin/src/wayland/seat.cpp</includedby>
+    <includedby refid="server__decoration_8cpp" local="yes">kwin/src/wayland/server_decoration.cpp</includedby>
+    <includedby refid="server__decoration__palette_8cpp" local="yes">kwin/src/wayland/server_decoration_palette.cpp</includedby>
+    <includedby refid="surface_8cpp" local="yes">kwin/src/wayland/surface.cpp</includedby>
+    <includedby refid="surface__p_8h" local="yes">kwin/src/wayland/surface_p.h</includedby>
+    <includedby refid="tablet__v2_8cpp" local="yes">kwin/src/wayland/tablet_v2.cpp</includedby>
+    <includedby refid="tearingcontrol__v1_8h" local="yes">kwin/src/wayland/tearingcontrol_v1.h</includedby>
+    <includedby refid="textinput__v1_8cpp" local="yes">kwin/src/wayland/textinput_v1.cpp</includedby>
+    <includedby refid="textinput__v1__p_8h" local="yes">kwin/src/wayland/textinput_v1_p.h</includedby>
+    <includedby refid="wayland_2touch_8cpp" local="yes">kwin/src/wayland/touch.cpp</includedby>
+    <includedby refid="xdgactivation__v1_8cpp" local="yes">kwin/src/wayland/xdgactivation_v1.cpp</includedby>
+    <includedby refid="xdgsystembell__v1_8cpp" local="yes">kwin/src/wayland/xdgsystembell_v1.cpp</includedby>
+    <includedby refid="xdgtopleveldrag__v1_8cpp" local="yes">kwin/src/wayland/xdgtopleveldrag_v1.cpp</includedby>
+    <includedby refid="xwaylandkeyboardgrab__v1_8cpp" local="yes">kwin/src/wayland/xwaylandkeyboardgrab_v1.cpp</includedby>
+    <includedby refid="xwaylandshell__v1_8cpp" local="yes">kwin/src/wayland/xwaylandshell_v1.cpp</includedby>
+    <includedby refid="waylandwindow_8cpp" local="yes">kwin/src/waylandwindow.cpp</includedby>
+    <includedby refid="window_8cpp" local="yes">kwin/src/window.cpp</includedby>
+    <includedby refid="x11window_8cpp" local="yes">kwin/src/x11window.cpp</includedby>
+    <includedby refid="xdgactivationv1_8cpp" local="yes">kwin/src/xdgactivationv1.cpp</includedby>
+    <includedby refid="xdgshellwindow_8cpp" local="yes">kwin/src/xdgshellwindow.cpp</includedby>
+    <includedby refid="drag__wl_8cpp" local="yes">kwin/src/xwayland/drag_wl.cpp</includedby>
+    <includedby refid="drag__x_8cpp" local="yes">kwin/src/xwayland/drag_x.cpp</includedby>
+    <includedby refid="xwayland_8cpp" local="no">kwin/src/xwayland/xwayland.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>core/colorspace.h</label>
+        <link refid="colorspace_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>core/output.h</label>
+        <link refid="core_2output_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>core/renderbackend.h</label>
+        <link refid="renderbackend_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>renderloop.h</label>
+        <link refid="renderloop_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>core/rendertarget.h</label>
+        <link refid="rendertarget_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>utils/edid.h</label>
+        <link refid="edid_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>utils/filedescriptor.h</label>
+        <link refid="filedescriptor_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/wayland/surface.h</label>
+        <link refid="surface_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>QByteArray</label>
+      </node>
+      <node id="11">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="20">
+        <label>QDebug</label>
+      </node>
+      <node id="12">
+        <label>QImage</label>
+      </node>
+      <node id="18">
+        <label>QList</label>
+      </node>
+      <node id="4">
+        <label>QMatrix4x4</label>
+      </node>
+      <node id="15">
+        <label>QObject</label>
+      </node>
+      <node id="13">
+        <label>QPoint</label>
+      </node>
+      <node id="26">
+        <label>QPointer</label>
+      </node>
+      <node id="21">
+        <label>QRect</label>
+      </node>
+      <node id="28">
+        <label>QRegion</label>
+      </node>
+      <node id="19">
+        <label>QSize</label>
+      </node>
+      <node id="22">
+        <label>QUuid</label>
+      </node>
+      <node id="14">
+        <label>QVariant</label>
+      </node>
+      <node id="5">
+        <label>QVector2D</label>
+      </node>
+      <node id="10">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="6">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="27">
+        <label>memory</label>
+      </node>
+      <node id="3">
+        <label>optional</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/backends/drm/drm_egl_layer.cpp</label>
+        <link refid="drm__egl__layer_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/backends/drm/drm_virtual_egl_layer.cpp</label>
+        <link refid="drm__virtual__egl__layer_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/backends/wayland/wayland_egl_backend.cpp</label>
+        <link refid="wayland__egl__backend_8cpp"/>
+      </node>
+      <node id="5">
+        <label>kwin/src/compositor.cpp</label>
+        <link refid="compositor_8cpp"/>
+      </node>
+      <node id="6">
+        <label>kwin/src/core/outputlayer.cpp</label>
+        <link refid="outputlayer_8cpp"/>
+      </node>
+      <node id="7">
+        <label>kwin/src/cursorsource.cpp</label>
+        <link refid="cursorsource_8cpp"/>
+      </node>
+      <node id="8">
+        <label>kwin/src/debug_console.cpp</label>
+        <link refid="debug__console_8cpp"/>
+      </node>
+      <node id="9">
+        <label>kwin/src/idle_inhibition.cpp</label>
+        <link refid="idle__inhibition_8cpp"/>
+      </node>
+      <node id="10">
+        <label>kwin/src/input.cpp</label>
+        <link refid="input_8cpp"/>
+      </node>
+      <node id="11">
+        <label>kwin/src/inputmethod.cpp</label>
+        <link refid="inputmethod_8cpp"/>
+      </node>
+      <node id="12">
+        <label>kwin/src/inputpanelv1window.cpp</label>
+        <link refid="inputpanelv1window_8cpp"/>
+      </node>
+      <node id="13">
+        <label>kwin/src/layershellv1window.cpp</label>
+        <link refid="layershellv1window_8cpp"/>
+      </node>
+      <node id="14">
+        <label>kwin/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="15">
+        <label>kwin/src/plugins/backgroundcontrast/contrast.cpp</label>
+        <link refid="plugins_2backgroundcontrast_2contrast_8cpp"/>
+      </node>
+      <node id="16">
+        <label>kwin/src/plugins/blur/blur.cpp</label>
+        <link refid="plugins_2blur_2blur_8cpp"/>
+      </node>
+      <node id="17">
+        <label>kwin/src/plugins/slidingpopups/slidingpopups.cpp</label>
+        <link refid="slidingpopups_8cpp"/>
+      </node>
+      <node id="18">
+        <label>kwin/src/plugins/systembell/systembell.cpp</label>
+        <link refid="systembell_8cpp"/>
+      </node>
+      <node id="19">
+        <label>kwin/src/pointer_input.cpp</label>
+        <link refid="pointer__input_8cpp"/>
+      </node>
+      <node id="20">
+        <label>kwin/src/scene/dndiconitem.cpp</label>
+        <link refid="dndiconitem_8cpp"/>
+      </node>
+      <node id="21">
+        <label>kwin/src/scene/surfaceitem_wayland.cpp</label>
+        <link refid="surfaceitem__wayland_8cpp"/>
+      </node>
+      <node id="22">
+        <label>kwin/src/scene/workspacescene.cpp</label>
+        <link refid="workspacescene_8cpp"/>
+      </node>
+      <node id="23">
+        <label>kwin/src/shadow.cpp</label>
+        <link refid="shadow_8cpp"/>
+      </node>
+      <node id="24">
+        <label>kwin/src/utils/subsurfacemonitor.cpp</label>
+        <link refid="subsurfacemonitor_8cpp"/>
+      </node>
+      <node id="25">
+        <label>kwin/src/wayland/alphamodifier_v1.cpp</label>
+        <link refid="alphamodifier__v1_8cpp"/>
+      </node>
+      <node id="26">
+        <label>kwin/src/wayland/appmenu.cpp</label>
+        <link refid="wayland_2appmenu_8cpp"/>
+      </node>
+      <node id="59">
+        <label>kwin/src/wayland/blur.cpp</label>
+        <link refid="wayland_2blur_8cpp"/>
+      </node>
+      <node id="27">
+        <label>kwin/src/wayland/colormanagement_v1.cpp</label>
+        <link refid="colormanagement__v1_8cpp"/>
+      </node>
+      <node id="28">
+        <label>kwin/src/wayland/compositor.cpp</label>
+        <link refid="wayland_2compositor_8cpp"/>
+      </node>
+      <node id="29">
+        <label>kwin/src/wayland/compositor.h</label>
+        <link refid="wayland_2compositor_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>kwin/src/wayland/contenttype_v1.cpp</label>
+        <link refid="contenttype__v1_8cpp"/>
+      </node>
+      <node id="33">
+        <label>kwin/src/wayland/contenttype_v1.h</label>
+        <link refid="contenttype__v1_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>kwin/src/wayland/contrast.cpp</label>
+        <link refid="wayland_2contrast_8cpp"/>
+      </node>
+      <node id="35">
+        <label>kwin/src/wayland/cursorshape_v1.cpp</label>
+        <link refid="cursorshape__v1_8cpp"/>
+      </node>
+      <node id="36">
+        <label>kwin/src/wayland/datacontroldevice_v1.cpp</label>
+        <link refid="datacontroldevice__v1_8cpp"/>
+      </node>
+      <node id="37">
+        <label>kwin/src/wayland/datadevice.cpp</label>
+        <link refid="datadevice_8cpp"/>
+      </node>
+      <node id="61">
+        <label>kwin/src/wayland/fractionalscale_v1.cpp</label>
+        <link refid="fractionalscale__v1_8cpp"/>
+      </node>
+      <node id="38">
+        <label>kwin/src/wayland/frog_colormanagement_v1.cpp</label>
+        <link refid="frog__colormanagement__v1_8cpp"/>
+      </node>
+      <node id="62">
+        <label>kwin/src/wayland/idleinhibit_v1.cpp</label>
+        <link refid="idleinhibit__v1_8cpp"/>
+      </node>
+      <node id="39">
+        <label>kwin/src/wayland/inputmethod_v1.cpp</label>
+        <link refid="inputmethod__v1_8cpp"/>
+      </node>
+      <node id="40">
+        <label>kwin/src/wayland/keyboard.cpp</label>
+        <link refid="keyboard_8cpp"/>
+      </node>
+      <node id="41">
+        <label>kwin/src/wayland/keyboard_shortcuts_inhibit_v1.cpp</label>
+        <link refid="keyboard__shortcuts__inhibit__v1_8cpp"/>
+      </node>
+      <node id="42">
+        <label>kwin/src/wayland/keyboard_shortcuts_inhibit_v1.h</label>
+        <link refid="keyboard__shortcuts__inhibit__v1_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>kwin/src/wayland/layershell_v1.cpp</label>
+        <link refid="layershell__v1_8cpp"/>
+      </node>
+      <node id="44">
+        <label>kwin/src/wayland/linux_drm_syncobj_v1.cpp</label>
+        <link refid="linux__drm__syncobj__v1_8cpp"/>
+      </node>
+      <node id="63">
+        <label>kwin/src/wayland/linuxdmabufv1clientbuffer.cpp</label>
+        <link refid="linuxdmabufv1clientbuffer_8cpp"/>
+      </node>
+      <node id="45">
+        <label>kwin/src/wayland/lockscreen_overlay_v1.cpp</label>
+        <link refid="lockscreen__overlay__v1_8cpp"/>
+      </node>
+      <node id="46">
+        <label>kwin/src/wayland/plasmashell.cpp</label>
+        <link refid="plasmashell_8cpp"/>
+      </node>
+      <node id="47">
+        <label>kwin/src/wayland/plasmawindowmanagement.cpp</label>
+        <link refid="plasmawindowmanagement_8cpp"/>
+      </node>
+      <node id="48">
+        <label>kwin/src/wayland/pointer.cpp</label>
+        <link refid="pointer_8cpp"/>
+      </node>
+      <node id="50">
+        <label>kwin/src/wayland/pointerconstraints_v1.cpp</label>
+        <link refid="pointerconstraints__v1_8cpp"/>
+      </node>
+      <node id="49">
+        <label>kwin/src/wayland/pointerconstraints_v1_p.h</label>
+        <link refid="pointerconstraints__v1__p_8h"/>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>kwin/src/wayland/pointergestures_v1.cpp</label>
+        <link refid="pointergestures__v1_8cpp"/>
+      </node>
+      <node id="52">
+        <label>kwin/src/wayland/presentationtime.cpp</label>
+        <link refid="presentationtime_8cpp"/>
+      </node>
+      <node id="53">
+        <label>kwin/src/wayland/relativepointer_v1.cpp</label>
+        <link refid="relativepointer__v1_8cpp"/>
+      </node>
+      <node id="54">
+        <label>kwin/src/wayland/screenedge_v1.cpp</label>
+        <link refid="screenedge__v1_8cpp"/>
+      </node>
+      <node id="55">
+        <label>kwin/src/wayland/seat.cpp</label>
+        <link refid="seat_8cpp"/>
+      </node>
+      <node id="56">
+        <label>kwin/src/wayland/server_decoration.cpp</label>
+        <link refid="server__decoration_8cpp"/>
+      </node>
+      <node id="57">
+        <label>kwin/src/wayland/server_decoration_palette.cpp</label>
+        <link refid="server__decoration__palette_8cpp"/>
+      </node>
+      <node id="64">
+        <label>kwin/src/wayland/shadow.cpp</label>
+        <link refid="wayland_2shadow_8cpp"/>
+      </node>
+      <node id="65">
+        <label>kwin/src/wayland/slide.cpp</label>
+        <link refid="wayland_2slide_8cpp"/>
+      </node>
+      <node id="66">
+        <label>kwin/src/wayland/subcompositor.cpp</label>
+        <link refid="subcompositor_8cpp"/>
+      </node>
+      <node id="30">
+        <label>kwin/src/wayland/surface.cpp</label>
+        <link refid="surface_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/wayland/surface.h</label>
+        <link refid="surface_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="87" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>kwin/src/wayland/surface_p.h</label>
+        <link refid="surface__p_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>kwin/src/wayland/tablet_v2.cpp</label>
+        <link refid="tablet__v2_8cpp"/>
+      </node>
+      <node id="67">
+        <label>kwin/src/wayland/tearingcontrol_v1.cpp</label>
+        <link refid="tearingcontrol__v1_8cpp"/>
+      </node>
+      <node id="80">
+        <label>kwin/src/wayland/tearingcontrol_v1.h</label>
+        <link refid="tearingcontrol__v1_8h"/>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>kwin/src/wayland/textinput_v1.cpp</label>
+        <link refid="textinput__v1_8cpp"/>
+      </node>
+      <node id="81">
+        <label>kwin/src/wayland/textinput_v1_p.h</label>
+        <link refid="textinput__v1__p_8h"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>kwin/src/wayland/textinput_v2.cpp</label>
+        <link refid="textinput__v2_8cpp"/>
+      </node>
+      <node id="70">
+        <label>kwin/src/wayland/textinput_v3.cpp</label>
+        <link refid="textinput__v3_8cpp"/>
+      </node>
+      <node id="82">
+        <label>kwin/src/wayland/touch.cpp</label>
+        <link refid="wayland_2touch_8cpp"/>
+      </node>
+      <node id="71">
+        <label>kwin/src/wayland/transaction.cpp</label>
+        <link refid="transaction_8cpp"/>
+      </node>
+      <node id="72">
+        <label>kwin/src/wayland/viewporter.cpp</label>
+        <link refid="viewporter_8cpp"/>
+      </node>
+      <node id="83">
+        <label>kwin/src/wayland/xdgactivation_v1.cpp</label>
+        <link refid="xdgactivation__v1_8cpp"/>
+      </node>
+      <node id="76">
+        <label>kwin/src/wayland/xdgdecoration_v1.cpp</label>
+        <link refid="xdgdecoration__v1_8cpp"/>
+      </node>
+      <node id="74">
+        <label>kwin/src/wayland/xdgforeign_v2.cpp</label>
+        <link refid="xdgforeign__v2_8cpp"/>
+      </node>
+      <node id="73">
+        <label>kwin/src/wayland/xdgforeign_v2_p.h</label>
+        <link refid="xdgforeign__v2__p_8h"/>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="77">
+        <label>kwin/src/wayland/xdgshell.cpp</label>
+        <link refid="xdgshell_8cpp"/>
+      </node>
+      <node id="75">
+        <label>kwin/src/wayland/xdgshell_p.h</label>
+        <link refid="xdgshell__p_8h"/>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+      </node>
+      <node id="84">
+        <label>kwin/src/wayland/xdgsystembell_v1.cpp</label>
+        <link refid="xdgsystembell__v1_8cpp"/>
+      </node>
+      <node id="85">
+        <label>kwin/src/wayland/xdgtopleveldrag_v1.cpp</label>
+        <link refid="xdgtopleveldrag__v1_8cpp"/>
+      </node>
+      <node id="78">
+        <label>kwin/src/wayland/xdgtoplevelicon_v1.cpp</label>
+        <link refid="xdgtoplevelicon__v1_8cpp"/>
+      </node>
+      <node id="86">
+        <label>kwin/src/wayland/xwaylandkeyboardgrab_v1.cpp</label>
+        <link refid="xwaylandkeyboardgrab__v1_8cpp"/>
+      </node>
+      <node id="87">
+        <label>kwin/src/wayland/xwaylandshell_v1.cpp</label>
+        <link refid="xwaylandshell__v1_8cpp"/>
+      </node>
+      <node id="31">
+        <label>kwin/src/wayland_server.cpp</label>
+        <link refid="wayland__server_8cpp"/>
+      </node>
+      <node id="88">
+        <label>kwin/src/waylandwindow.cpp</label>
+        <link refid="waylandwindow_8cpp"/>
+      </node>
+      <node id="89">
+        <label>kwin/src/window.cpp</label>
+        <link refid="window_8cpp"/>
+      </node>
+      <node id="90">
+        <label>kwin/src/x11window.cpp</label>
+        <link refid="x11window_8cpp"/>
+      </node>
+      <node id="91">
+        <label>kwin/src/xdgactivationv1.cpp</label>
+        <link refid="xdgactivationv1_8cpp"/>
+      </node>
+      <node id="92">
+        <label>kwin/src/xdgshellwindow.cpp</label>
+        <link refid="xdgshellwindow_8cpp"/>
+      </node>
+      <node id="32">
+        <label>kwin/src/xwayland/dnd.cpp</label>
+        <link refid="dnd_8cpp"/>
+      </node>
+      <node id="93">
+        <label>kwin/src/xwayland/drag_wl.cpp</label>
+        <link refid="drag__wl_8cpp"/>
+      </node>
+      <node id="94">
+        <label>kwin/src/xwayland/drag_x.cpp</label>
+        <link refid="drag__x_8cpp"/>
+      </node>
+      <node id="95">
+        <label>kwin/src/xwayland/xwayland.cpp</label>
+        <link refid="xwayland_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_surface_role" prot="public">KWin::SurfaceRole</innerclass>
+    <innerclass refid="class_k_win_1_1_surface_interface" prot="public">KWin::SurfaceInterface</innerclass>
+    <innerclass refid="class_k_win_1_1_surface_extension" prot="public">KWin::SurfaceExtension</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2014<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2020<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>LGPL-2.1-only<sp/>OR<sp/>LGPL-3.0-only<sp/>OR<sp/>LicenseRef-KDE-Accepted-LGPL</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="colorspace_8h" kindref="compound">core/colorspace.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="core_2output_8h" kindref="compound">core/output.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="renderbackend_8h" kindref="compound">core/renderbackend.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QRegion&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_resource;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_blur_interface" kindref="compound">BlurInterface</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_client_connection" kindref="compound">ClientConnection</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_confined_pointer_v1_interface" kindref="compound">ConfinedPointerV1Interface</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_contrast_interface" kindref="compound">ContrastInterface</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_compositor_interface" kindref="compound">CompositorInterface</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_linux_dma_buf_v1_feedback" kindref="compound">LinuxDmaBufV1Feedback</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_locked_pointer_v1_interface" kindref="compound">LockedPointerV1Interface</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_output_interface" kindref="compound">OutputInterface</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_shadow_interface" kindref="compound">ShadowInterface</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_slide_interface" kindref="compound">SlideInterface</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_sub_surface_interface" kindref="compound">SubSurfaceInterface</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_surface_interface_private" kindref="compound">SurfaceInterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_transaction" kindref="compound">Transaction</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_sync_release_point" kindref="compound">SyncReleasePoint</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="class_k_win_1_1_surface_role" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_surface_role_1af45a87a00a3134d208075f92cde8b844" kindref="member">SurfaceRole</ref></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_role_1af45a87a00a3134d208075f92cde8b844" kindref="member">SurfaceRole</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray<sp/>&amp;<ref refid="class_k_win_1_1_surface_role_1a411cfed0650df13c4094fbc76ddca2a2" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>QByteArray<sp/><ref refid="class_k_win_1_1_surface_role_1a411cfed0650df13c4094fbc76ddca2a2" kindref="member">name</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>QByteArray<sp/>m_name;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="class_k_win_1_1_surface_interface" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_surface_interface_1a89a3676d287e67529ad85f250dbfbeb5" kindref="member">SurfaceInterface</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="86" refid="class_k_win_1_1_surface_interface_1afe2b6c1fb2b1cc64ca1e349e39b90e20" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QRegion<sp/><ref refid="class_k_win_1_1_surface_interface_1afe2b6c1fb2b1cc64ca1e349e39b90e20" kindref="member">opaque</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_surface_interface_1afe2b6c1fb2b1cc64ca1e349e39b90e20" kindref="member">opaque</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_surface_interface_1a990be21e77584e95208a49d66353d821" kindref="member">opaqueChanged</ref>)</highlight></codeline>
+<codeline lineno="90" refid="class_k_win_1_1_surface_interface_1a2252ccfdaefae7974f9682cb5d190cda" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QRegion<sp/><ref refid="class_k_win_1_1_surface_interface_1a2252ccfdaefae7974f9682cb5d190cda" kindref="member">input</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_surface_interface_1a2252ccfdaefae7974f9682cb5d190cda" kindref="member">input</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_surface_interface_1a4e06e3af734c27dccf5334428e21b993" kindref="member">inputChanged</ref>)</highlight></codeline>
+<codeline lineno="91" refid="class_k_win_1_1_surface_interface_1ad4b3c49e2e99aa0f949c85507850a6b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QSizeF<sp/><ref refid="class_k_win_1_1_surface_interface_1ad4b3c49e2e99aa0f949c85507850a6b6" kindref="member">size</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_surface_interface_1ad4b3c49e2e99aa0f949c85507850a6b6" kindref="member">size</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_surface_interface_1a2315d2fdbb80fbe41cfcc84feaab2d26" kindref="member">sizeChanged</ref>)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>explicit<sp/><ref refid="class_k_win_1_1_surface_interface_1a89a3676d287e67529ad85f250dbfbeb5" kindref="member">SurfaceInterface</ref>(<ref refid="class_k_win_1_1_compositor_interface" kindref="compound">CompositorInterface</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1ab5ff7cfdde87bd781a4df782d3930245" kindref="member">compositor</ref>,<sp/>wl_resource<sp/>*<ref refid="class_k_win_1_1_surface_interface_1a967a6d17b9be9b1ec2e6f3c3c60d667d" kindref="member">resource</ref>);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="class_k_win_1_1_surface_interface_1a89a3676d287e67529ad85f250dbfbeb5" kindref="member">SurfaceInterface</ref>()<sp/>override;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">()<sp/>const;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_client_connection" kindref="compound">ClientConnection</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1a12f9073812125fc1dd668fe73fc0285a" kindref="member">client</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_resource<sp/>*<ref refid="class_k_win_1_1_surface_interface_1a967a6d17b9be9b1ec2e6f3c3c60d667d" kindref="member">resource</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_compositor_interface" kindref="compound">CompositorInterface</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1ab5ff7cfdde87bd781a4df782d3930245" kindref="member">compositor</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_surface_role" kindref="compound">SurfaceRole</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1a74d8c5aef926651948ae88d70feb0ffe" kindref="member">role</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1af7fc1b7a86682bcd55e1195f471213e4" kindref="member">setRole</ref>(<ref refid="class_k_win_1_1_surface_role" kindref="compound">SurfaceRole</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1a74d8c5aef926651948ae88d70feb0ffe" kindref="member">role</ref>);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>QPointF<sp/><ref refid="class_k_win_1_1_surface_interface_1a5e267a0c51c75519a475004bd3437cef" kindref="member">mapToChild</ref>(<ref refid="class_k_win_1_1_surface_interface_1a89a3676d287e67529ad85f250dbfbeb5" kindref="member">SurfaceInterface</ref><sp/>*child,<sp/>const<sp/>QPointF<sp/>&amp;point)<sp/>const;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1aa8db310a54de302b6528ea4ac0d1bd29" kindref="member">frameRendered</ref>(quint32<sp/>msec);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1afc16532a55ee920009490477944d014c" kindref="member">hasFrameCallbacks</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;<ref refid="class_k_win_1_1_presentation_feedback" kindref="compound">PresentationFeedback</ref>&gt;<sp/><ref refid="class_k_win_1_1_surface_interface_1a0de5f3bc96df584e06784cd3e1b302d0" kindref="member">takePresentationFeedback</ref>(<ref refid="class_k_win_1_1_output" kindref="compound">Output</ref><sp/>*output);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>QRegion<sp/><ref refid="class_k_win_1_1_surface_interface_1afe2b6c1fb2b1cc64ca1e349e39b90e20" kindref="member">opaque</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>QRegion<sp/><ref refid="class_k_win_1_1_surface_interface_1a2252ccfdaefae7974f9682cb5d190cda" kindref="member">input</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>QRegion<sp/><ref refid="class_k_win_1_1_surface_interface_1a45b8549b5bfff00c85812c836c975995" kindref="member">bufferDamage</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>QRectF<sp/><ref refid="class_k_win_1_1_surface_interface_1a3ff230bfc9b49793c1493c306435eb03" kindref="member">bufferSourceBox</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_output_transform" kindref="compound">OutputTransform</ref><sp/><ref refid="class_k_win_1_1_surface_interface_1a651c492e0b9e149c49215562606f2f2e" kindref="member">bufferTransform</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1a6f53ff0fca97e468e7ccf6681f4a5030" kindref="member">buffer</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>QPoint<sp/><ref refid="class_k_win_1_1_surface_interface_1a5a6b83bbb0260f80c8b98c918cafcba3" kindref="member">offset</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>QSizeF<sp/><ref refid="class_k_win_1_1_surface_interface_1ad4b3c49e2e99aa0f949c85507850a6b6" kindref="member">size</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>QRectF<sp/><ref refid="class_k_win_1_1_surface_interface_1ac312d3dd7257a9e1c7d5465a0c35fc2e" kindref="member">boundingRect</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_sub_surface_interface" kindref="compound">SubSurfaceInterface</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1a8c35c1fcb861e552405f054fc2386def" kindref="member">subSurface</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;<ref refid="class_k_win_1_1_sub_surface_interface" kindref="compound">SubSurfaceInterface</ref><sp/>*&gt;<sp/><ref refid="class_k_win_1_1_surface_interface_1abb75b79f52d1243adff87dafe40c82c3" kindref="member">below</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;<ref refid="class_k_win_1_1_sub_surface_interface" kindref="compound">SubSurfaceInterface</ref><sp/>*&gt;<sp/><ref refid="class_k_win_1_1_surface_interface_1aa2e1595bf1af4314836b40d1e7063591" kindref="member">above</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_shadow_interface" kindref="compound">ShadowInterface</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1a76a84d1cdeca1c0c219a863a1c1fa42c" kindref="member">shadow</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_blur_interface" kindref="compound">BlurInterface</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1a496b8ea7a9daee6fca45c95e80bb8a0c" kindref="member">blur</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_slide_interface" kindref="compound">SlideInterface</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1a03bedbd16808f5fde244cd1ecddabc5c" kindref="member">slideOnShowHide</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_contrast_interface" kindref="compound">ContrastInterface</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1a8c228ce629146acad506722342999f26" kindref="member">contrast</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a5859a70ac95110b480eae0160b1b83f0" kindref="member">isMapped</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_surface_interface_1a89a3676d287e67529ad85f250dbfbeb5" kindref="member">SurfaceInterface</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1a121877c312e955cc43e6aa4d337a525d" kindref="member">surfaceAt</ref>(const<sp/>QPointF<sp/>&amp;position);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_surface_interface_1a89a3676d287e67529ad85f250dbfbeb5" kindref="member">SurfaceInterface</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1af7a3a3ccbdff6ffd690e357fd02f2fcc" kindref="member">inputSurfaceAt</ref>(const<sp/>QPointF<sp/>&amp;position);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1abad9449df6afe4574c7f48f3a31f53a3" kindref="member">setOutputs</ref>(const<sp/>QList&lt;<ref refid="class_k_win_1_1_output_interface" kindref="compound">OutputInterface</ref><sp/>*&gt;<sp/>&amp;<ref refid="class_k_win_1_1_surface_interface_1a7715aa26db105726d096236a94df69d5" kindref="member">outputs</ref>,<sp/><ref refid="class_k_win_1_1_output_interface" kindref="compound">OutputInterface</ref><sp/>*primaryOutput);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;<ref refid="class_k_win_1_1_output_interface" kindref="compound">OutputInterface</ref><sp/>*&gt;<sp/><ref refid="class_k_win_1_1_surface_interface_1a7715aa26db105726d096236a94df69d5" kindref="member">outputs</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_confined_pointer_v1_interface" kindref="compound">ConfinedPointerV1Interface</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1ab47d49e9938d4a0ffc6c04699827bca9" kindref="member">confinedPointer</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_locked_pointer_v1_interface" kindref="compound">LockedPointerV1Interface</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1adcc92bcb7baae24e72f17d6891251db4" kindref="member">lockedPointer</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1ad04a4a624f04e1ea740924752a4229db" kindref="member">inhibitsIdle</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_linux_dma_buf_v1_feedback" kindref="compound">LinuxDmaBufV1Feedback</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1aa70cfee0dba3485d83ab4fc95bd87b0c" kindref="member">dmabufFeedbackV1</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1ae822402a75b1dbd6c2afc72f87fa60a6" kindref="member">ContentType</ref><sp/><ref refid="class_k_win_1_1_surface_interface_1a30d780e9ac910cb9b990b78778762b8f" kindref="member">contentType</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>static<sp/><ref refid="class_k_win_1_1_surface_interface_1a89a3676d287e67529ad85f250dbfbeb5" kindref="member">SurfaceInterface</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1a24ac16f7936d889771c2ab09d973175b" kindref="member">get</ref>(wl_resource<sp/>*native);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>static<sp/><ref refid="class_k_win_1_1_surface_interface_1a89a3676d287e67529ad85f250dbfbeb5" kindref="member">SurfaceInterface</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1a24ac16f7936d889771c2ab09d973175b" kindref="member">get</ref>(quint32<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>const<sp/><ref refid="class_k_win_1_1_client_connection" kindref="compound">ClientConnection</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1a12f9073812125fc1dd668fe73fc0285a" kindref="member">client</ref>);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>qreal<sp/><ref refid="class_k_win_1_1_surface_interface_1aedcd504f5954c1ed715e34d868096a61" kindref="member">scaleOverride</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>QPoint<sp/><ref refid="class_k_win_1_1_surface_interface_1a72be072046416f8e0c7e7689c76cdd77" kindref="member">toSurfaceLocal</ref>(const<sp/>QPoint<sp/>&amp;point)<sp/>const;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/>QPointF<sp/><ref refid="class_k_win_1_1_surface_interface_1a72be072046416f8e0c7e7689c76cdd77" kindref="member">toSurfaceLocal</ref>(const<sp/>QPointF<sp/>&amp;point)<sp/>const;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a9b2c7d76c9b9021af62d089e13e456d6" kindref="member">PresentationModeHint</ref><sp/><ref refid="class_k_win_1_1_surface_interface_1a1d4a2ed7869d836e854c323c9ab6da15" kindref="member">presentationModeHint</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a361edd675ef00ecf53b25cc0886993ea" kindref="member">setPreferredBufferScale</ref>(qreal<sp/>scale);</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a4d261ead21e8952d3b136fb17e60a0cb" kindref="member">setPreferredBufferTransform</ref>(<ref refid="class_k_win_1_1_output_transform" kindref="compound">OutputTransform</ref><sp/>transform);</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_transaction" kindref="compound">Transaction</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1aa8823a4917971939e10f6bbaf33c08e2" kindref="member">firstTransaction</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a81e1ee5acae349923c0c72c4b8a51409" kindref="member">setFirstTransaction</ref>(<ref refid="class_k_win_1_1_transaction" kindref="compound">Transaction</ref><sp/>*transaction);</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_transaction" kindref="compound">Transaction</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1afca7daaa7341bed830b250e84e3a8b43" kindref="member">lastTransaction</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a5f6f5f6c29fa8f1438b2cd2dfa1e8ef4" kindref="member">setLastTransaction</ref>(<ref refid="class_k_win_1_1_transaction" kindref="compound">Transaction</ref><sp/>*transaction);</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/><ref refid="class_k_win_1_1_color_description" kindref="compound">ColorDescription</ref><sp/>&amp;<ref refid="class_k_win_1_1_surface_interface_1a0f4fc57574afca45ef63a20e004cb5c7" kindref="member">colorDescription</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a72b8a93022757874f9e6f85fcf9bc4e9" kindref="member">RenderingIntent</ref><sp/><ref refid="class_k_win_1_1_surface_interface_1a608048fe714d1f56d16c3eab604a3ef5" kindref="member">renderingIntent</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1ac68a339a2abcc856493392bed36087e9" kindref="member">setPreferredColorDescription</ref>(const<sp/><ref refid="class_k_win_1_1_color_description" kindref="compound">ColorDescription</ref><sp/>&amp;descr);</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a8cf8570b2d56ec00d5b4f8612aee08eb" kindref="member">alphaMultiplier</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;<ref refid="class_k_win_1_1_sync_release_point" kindref="compound">SyncReleasePoint</ref>&gt;<sp/><ref refid="class_k_win_1_1_surface_interface_1abfedbb06b4fff6bad9515db700823d8f" kindref="member">bufferReleasePoint</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a57406faaa8efaae58d1ed4428059b0b3" kindref="member">traverseTree</ref>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(<ref refid="class_k_win_1_1_surface_interface_1a89a3676d287e67529ad85f250dbfbeb5" kindref="member">SurfaceInterface</ref><sp/>*surface)&gt;<sp/>callback);</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_surface_interface_1a89a3676d287e67529ad85f250dbfbeb5" kindref="member">SurfaceInterface</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1a6b90cf6b6f8c6fbf42764d98d690c865" kindref="member">mainSurface</ref>();</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="371" refid="class_k_win_1_1_surface_interface_1a547a07eb856d80205eb584e50571d1ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a547a07eb856d80205eb584e50571d1ee" kindref="member">aboutToBeDestroyed</ref>();</highlight></codeline>
+<codeline lineno="380" refid="class_k_win_1_1_surface_interface_1a15e2a6742bca026a3031cc31e82bbe89" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a15e2a6742bca026a3031cc31e82bbe89" kindref="member">damaged</ref>(const<sp/>QRegion<sp/>&amp;);</highlight></codeline>
+<codeline lineno="381" refid="class_k_win_1_1_surface_interface_1a990be21e77584e95208a49d66353d821" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a990be21e77584e95208a49d66353d821" kindref="member">opaqueChanged</ref>(const<sp/>QRegion<sp/>&amp;);</highlight></codeline>
+<codeline lineno="382" refid="class_k_win_1_1_surface_interface_1a4e06e3af734c27dccf5334428e21b993" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a4e06e3af734c27dccf5334428e21b993" kindref="member">inputChanged</ref>(const<sp/>QRegion<sp/>&amp;);</highlight></codeline>
+<codeline lineno="386" refid="class_k_win_1_1_surface_interface_1a7f24e07a7d774bfdb1d9f712c6ae7caa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a7f24e07a7d774bfdb1d9f712c6ae7caa" kindref="member">bufferTransformChanged</ref>(<ref refid="namespace_k_win" kindref="compound">KWin</ref>::<ref refid="class_k_win_1_1_output_transform" kindref="compound">OutputTransform</ref>);</highlight></codeline>
+<codeline lineno="387" refid="class_k_win_1_1_surface_interface_1ad96d966bd10142622e779c02af8abd21" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1ad96d966bd10142622e779c02af8abd21" kindref="member">bufferSourceBoxChanged</ref>();</highlight></codeline>
+<codeline lineno="388" refid="class_k_win_1_1_surface_interface_1a772968460eef93c5f8e6178f93aaebcf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a772968460eef93c5f8e6178f93aaebcf" kindref="member">bufferChanged</ref>();</highlight></codeline>
+<codeline lineno="392" refid="class_k_win_1_1_surface_interface_1a6c32a9d40e65dd4be9825da9f05058e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a6c32a9d40e65dd4be9825da9f05058e3" kindref="member">mapped</ref>();</highlight></codeline>
+<codeline lineno="396" refid="class_k_win_1_1_surface_interface_1ab2512fea14715e29cd251d58774c29b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1ab2512fea14715e29cd251d58774c29b3" kindref="member">unmapped</ref>();</highlight></codeline>
+<codeline lineno="400" refid="class_k_win_1_1_surface_interface_1a2315d2fdbb80fbe41cfcc84feaab2d26" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a2315d2fdbb80fbe41cfcc84feaab2d26" kindref="member">sizeChanged</ref>();</highlight></codeline>
+<codeline lineno="401" refid="class_k_win_1_1_surface_interface_1a49924ca95caf16d4ad2c98e270f0dba6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a49924ca95caf16d4ad2c98e270f0dba6" kindref="member">shadowChanged</ref>();</highlight></codeline>
+<codeline lineno="402" refid="class_k_win_1_1_surface_interface_1a0df97396a64813308cc0153ba6c04523" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a0df97396a64813308cc0153ba6c04523" kindref="member">blurChanged</ref>();</highlight></codeline>
+<codeline lineno="403" refid="class_k_win_1_1_surface_interface_1a57836355f625e4d52c635422f74bcfbf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a57836355f625e4d52c635422f74bcfbf" kindref="member">slideOnShowHideChanged</ref>();</highlight></codeline>
+<codeline lineno="404" refid="class_k_win_1_1_surface_interface_1acbc9e09b874fbf82fa04541d423223bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1acbc9e09b874fbf82fa04541d423223bf" kindref="member">contrastChanged</ref>();</highlight></codeline>
+<codeline lineno="408" refid="class_k_win_1_1_surface_interface_1aa08394431df363f71792548e7eb6e381" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1aa08394431df363f71792548e7eb6e381" kindref="member">childSubSurfaceAdded</ref>(<ref refid="class_k_win_1_1_sub_surface_interface" kindref="compound">SubSurfaceInterface</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1a8c35c1fcb861e552405f054fc2386def" kindref="member">subSurface</ref>);</highlight></codeline>
+<codeline lineno="412" refid="class_k_win_1_1_surface_interface_1a56d6013e32b2614e4152b74fd6ff7dac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a56d6013e32b2614e4152b74fd6ff7dac" kindref="member">childSubSurfaceRemoved</ref>(<ref refid="class_k_win_1_1_sub_surface_interface" kindref="compound">SubSurfaceInterface</ref><sp/>*<ref refid="class_k_win_1_1_surface_interface_1a8c35c1fcb861e552405f054fc2386def" kindref="member">subSurface</ref>);</highlight></codeline>
+<codeline lineno="416" refid="class_k_win_1_1_surface_interface_1a32a2a03ff78575bf79d52d443f734edd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a32a2a03ff78575bf79d52d443f734edd" kindref="member">childSubSurfacesChanged</ref>();</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"></highlight></codeline>
+<codeline lineno="427" refid="class_k_win_1_1_surface_interface_1a5803fb462f3383b3e561f8a909c96af9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a5803fb462f3383b3e561f8a909c96af9" kindref="member">pointerConstraintsChanged</ref>();</highlight></codeline>
+<codeline lineno="428"><highlight class="normal"></highlight></codeline>
+<codeline lineno="433" refid="class_k_win_1_1_surface_interface_1a34ea306cdf0022c7eac856718d55caf0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a34ea306cdf0022c7eac856718d55caf0" kindref="member">inhibitsIdleChanged</ref>();</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"></highlight></codeline>
+<codeline lineno="435" refid="class_k_win_1_1_surface_interface_1ac096152d38861a34171292c8f83e793e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1ac096152d38861a34171292c8f83e793e" kindref="member">colorDescriptionChanged</ref>();</highlight></codeline>
+<codeline lineno="436" refid="class_k_win_1_1_surface_interface_1a95b7027fe568ed53eb86428499d74691" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a95b7027fe568ed53eb86428499d74691" kindref="member">presentationModeHintChanged</ref>();</highlight></codeline>
+<codeline lineno="437" refid="class_k_win_1_1_surface_interface_1a108132d4885a243efcfd7c1f9b1dcb79" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a108132d4885a243efcfd7c1f9b1dcb79" kindref="member">bufferReleasePointChanged</ref>();</highlight></codeline>
+<codeline lineno="438" refid="class_k_win_1_1_surface_interface_1aca39df0efda6a78d6e89937ab2e6436f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1aca39df0efda6a78d6e89937ab2e6436f" kindref="member">alphaMultiplierChanged</ref>();</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"></highlight></codeline>
+<codeline lineno="446" refid="class_k_win_1_1_surface_interface_1a0ef181bc149455033328ca56afc61697" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a0ef181bc149455033328ca56afc61697" kindref="member">committed</ref>();</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"></highlight></codeline>
+<codeline lineno="452" refid="class_k_win_1_1_surface_interface_1ae854062d52a6f90fa795e287174f3d82" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1ae854062d52a6f90fa795e287174f3d82" kindref="member">stateStashed</ref>(quint32<sp/>serial);</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"></highlight></codeline>
+<codeline lineno="458" refid="class_k_win_1_1_surface_interface_1a3679d710107ea3aa2f6e17cd33aa436d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_interface_1a3679d710107ea3aa2f6e17cd33aa436d" kindref="member">stateApplied</ref>(quint32<sp/>serial);</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"></highlight></codeline>
+<codeline lineno="460"><highlight class="normal">private:</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;<ref refid="class_k_win_1_1_surface_interface_1a190f6b81c407c3225216fc0b52b733e7" kindref="member">SurfaceInterfacePrivate</ref>&gt;<sp/>d;</highlight></codeline>
+<codeline lineno="462" refid="class_k_win_1_1_surface_interface_1a190f6b81c407c3225216fc0b52b733e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>friend<sp/>class<sp/><ref refid="class_k_win_1_1_surface_interface_1a190f6b81c407c3225216fc0b52b733e7" kindref="member">SurfaceInterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="463"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="464"><highlight class="normal"></highlight></codeline>
+<codeline lineno="469"><highlight class="normal">template&lt;typename<sp/>Commit&gt;</highlight></codeline>
+<codeline lineno="470" refid="class_k_win_1_1_surface_extension" refkind="compound"><highlight class="normal">class<sp/><ref refid="class_k_win_1_1_surface_extension_1a6206b89a2aff7f9a1c8272e6a040243a" kindref="member">SurfaceExtension</ref><sp/>:<sp/>public<sp/>QObject</highlight></codeline>
+<codeline lineno="471"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="473" refid="class_k_win_1_1_surface_extension_1a6206b89a2aff7f9a1c8272e6a040243a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_extension_1a6206b89a2aff7f9a1c8272e6a040243a" kindref="member">SurfaceExtension</ref>(<ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref><sp/>*surface)</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>connect(surface,<sp/>&amp;<ref refid="class_k_win_1_1_surface_interface_1ae854062d52a6f90fa795e287174f3d82" kindref="member">SurfaceInterface::stateStashed</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;SurfaceExtension::stashState);</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>connect(surface,<sp/>&amp;<ref refid="class_k_win_1_1_surface_interface_1a3679d710107ea3aa2f6e17cd33aa436d" kindref="member">SurfaceInterface::stateApplied</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;SurfaceExtension::applyState);</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"></highlight></codeline>
+<codeline lineno="479" refid="class_k_win_1_1_surface_extension_1a89296c07d3f7183d13c1c872c1e1650d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_surface_extension_1a89296c07d3f7183d13c1c872c1e1650d" kindref="member">apply</ref>(Commit<sp/>*commit)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"></highlight></codeline>
+<codeline lineno="481" refid="class_k_win_1_1_surface_extension_1ae7fbf78e0e497576115103c8118df23a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Commit<sp/><ref refid="class_k_win_1_1_surface_extension_1ae7fbf78e0e497576115103c8118df23a" kindref="member">pending</ref>;</highlight></codeline>
+<codeline lineno="482" refid="class_k_win_1_1_surface_extension_1a8da10b95bcea16f5b41b785727d56814" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QMap&lt;quint32,<sp/>Commit&gt;<sp/><ref refid="class_k_win_1_1_surface_extension_1a8da10b95bcea16f5b41b785727d56814" kindref="member">stashed</ref>;</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"></highlight></codeline>
+<codeline lineno="484"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>stashState(quint32<sp/>serial)</highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Commit<sp/>stash<sp/>=<sp/>std::exchange(<ref refid="class_k_win_1_1_surface_extension_1ae7fbf78e0e497576115103c8118df23a" kindref="member">pending</ref>,<sp/>Commit{});</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_surface_extension_1a8da10b95bcea16f5b41b785727d56814" kindref="member">stashed</ref>.insert(serial,<sp/>stash);</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="490"><highlight class="normal"></highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>applyState(quint32<sp/>serial)</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!stashed.isEmpty())<sp/>{</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(stashed.firstKey()<sp/>==<sp/>serial)<sp/>{</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Commit<sp/>stash<sp/>=<sp/>stashed.take(serial);</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>apply(&amp;stash);</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="500"><highlight class="normal"></highlight></codeline>
+<codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>apply(&amp;pending);</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pending<sp/>=<sp/>Commit{};</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="504"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="505"><highlight class="normal"></highlight></codeline>
+<codeline lineno="506"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="507"><highlight class="normal"></highlight></codeline>
+<codeline lineno="508"><highlight class="normal">Q_DECLARE_METATYPE(KWin::SurfaceInterface<sp/>*)</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/wayland/surface.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="thumbnailitem_8cpp" kind="file" language="C++">
+    <compoundname>thumbnailitem.cpp</compoundname>
+    <includes refid="thumbnailitem_8h" local="yes">thumbnailitem.h</includes>
+    <includes local="yes">config-kwin.h</includes>
+    <includes local="no">QDebug</includes>
+    <includes local="no">QQuickWindow</includes>
+    <includes local="no">QSGImageNode</includes>
+    <includes local="no">QStandardPaths</includes>
+    <includes local="yes">moc_thumbnailitem.cpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/kcms/tabbox/thumbnailitem.cpp</label>
+        <link refid="thumbnailitem_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>thumbnailitem.h</label>
+        <link refid="thumbnailitem_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>QDebug</label>
+      </node>
+      <node id="3">
+        <label>QImage</label>
+      </node>
+      <node id="4">
+        <label>QQuickItem</label>
+      </node>
+      <node id="7">
+        <label>QQuickWindow</label>
+      </node>
+      <node id="8">
+        <label>QSGImageNode</label>
+      </node>
+      <node id="9">
+        <label>QStandardPaths</label>
+      </node>
+      <node id="5">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="10">
+        <label>moc_thumbnailitem.cpp</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2011,<sp/>2014<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="thumbnailitem_8h" kindref="compound">thumbnailitem.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;config-kwin.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Qt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDebug&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QQuickWindow&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QSGImageNode&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QStandardPaths&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="class_k_win_1_1_window_thumbnail_item_1ab574c9ee0d77683da19b46920ae42ff8" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_window_thumbnail_item_1ab574c9ee0d77683da19b46920ae42ff8" kindref="member">WindowThumbnailItem::WindowThumbnailItem</ref>(QQuickItem<sp/>*parent)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QQuickItem(parent)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_wId(0)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_image()</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_sourceSize(QSize())</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>setFlag(ItemHasContents);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="class_k_win_1_1_window_thumbnail_item_1a79af69c5b78129e9aa075acebd5ea2b1" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_window_thumbnail_item_1a79af69c5b78129e9aa075acebd5ea2b1" kindref="member">WindowThumbnailItem::~WindowThumbnailItem</ref>()</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="class_k_win_1_1_window_thumbnail_item_1a22e4c8c627e7f20d7ea96fb5cda143c3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_thumbnail_item_1a22e4c8c627e7f20d7ea96fb5cda143c3" kindref="member">WindowThumbnailItem::setWId</ref>(qulonglong<sp/><ref refid="class_k_win_1_1_window_thumbnail_item_1abc8092fce882520b61569642548df26d" kindref="member">wId</ref>)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>m_wId<sp/>=<sp/><ref refid="class_k_win_1_1_window_thumbnail_item_1abc8092fce882520b61569642548df26d" kindref="member">wId</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_window_thumbnail_item_1a7118696c1ea208bd5d84e306dfa33897" kindref="member">wIdChanged</ref>(<ref refid="class_k_win_1_1_window_thumbnail_item_1abc8092fce882520b61569642548df26d" kindref="member">wId</ref>);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>findImage();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>WindowThumbnailItem::findImage()</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>imagePath;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(m_wId)<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_thumbnail_item_1a280897ea784c91c152824021e55cac14a5cefab723ad10ecc832af240b9438bae" kindref="member">Konqueror</ref>:</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imagePath<sp/>=<sp/>QStandardPaths::locate(QStandardPaths::GenericDataLocation,<sp/></highlight><highlight class="stringliteral">&quot;kwin-wayland/kcm_kwintabbox/falkon.png&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_thumbnail_item_1a280897ea784c91c152824021e55cac14a21e82cd34813035d3f61f67ed1d76c30" kindref="member">Systemsettings</ref>:</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imagePath<sp/>=<sp/>QStandardPaths::locate(QStandardPaths::GenericDataLocation,<sp/></highlight><highlight class="stringliteral">&quot;kwin-wayland/kcm_kwintabbox/systemsettings.png&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_thumbnail_item_1a280897ea784c91c152824021e55cac14a0f5ba8b7b8e22191f2ddd92c13117c7f" kindref="member">KMail</ref>:</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imagePath<sp/>=<sp/>QStandardPaths::locate(QStandardPaths::GenericDataLocation,<sp/></highlight><highlight class="stringliteral">&quot;kwin-wayland/kcm_kwintabbox/kmail.png&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_thumbnail_item_1a280897ea784c91c152824021e55cac14afd7e1d21fa2903953e7cc9356ea696db" kindref="member">Dolphin</ref>:</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imagePath<sp/>=<sp/>QStandardPaths::locate(QStandardPaths::GenericDataLocation,<sp/></highlight><highlight class="stringliteral">&quot;kwin-wayland/kcm_kwintabbox/dolphin.png&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1ad892545facf36d334d4558298117fbc7a2310408a63388fe57e3a4177168a8798" kindref="member">Desktop</ref>:</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imagePath<sp/>=<sp/>QStandardPaths::locate(QStandardPaths::GenericDataLocation,<sp/></highlight><highlight class="stringliteral">&quot;wallpapers/Next/contents/images/1280x800.png&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(imagePath.isNull())<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imagePath<sp/>=<sp/>QStandardPaths::locate(QStandardPaths::GenericDataLocation,<sp/></highlight><highlight class="stringliteral">&quot;kwin-wayland/kcm_kwintabbox/desktop.png&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ignore</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(imagePath.isNull())<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_image<sp/>=<sp/>QImage();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_image<sp/>=<sp/>QImage(imagePath);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>setImplicitSize(m_image.width(),<sp/>m_image.height());</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="class_k_win_1_1_window_thumbnail_item_1a27e840180f3036db1e89af7339439a4e" refkind="member"><highlight class="normal">QSGNode<sp/>*<ref refid="class_k_win_1_1_window_thumbnail_item_1a27e840180f3036db1e89af7339439a4e" kindref="member">WindowThumbnailItem::updatePaintNode</ref>(QSGNode<sp/>*oldNode,<sp/>UpdatePaintNodeData<sp/>*updatePaintNodeData)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>*node<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">QSGImageNode<sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(oldNode);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!node)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node<sp/>=<sp/>window()-&gt;createImageNode();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node-&gt;setOwnsTexture(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qsgnode_set_description(node,<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;windowthumbnail&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node-&gt;setFiltering(QSGTexture::Linear);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>node-&gt;setTexture(window()-&gt;createTextureFromImage(m_image));</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QSize<sp/>size(m_image.size().scaled(boundingRect().size().toSize(),<sp/>Qt::KeepAspectRatio));</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>qreal<sp/>x<sp/>=<sp/>boundingRect().x()<sp/>+<sp/>(boundingRect().width()<sp/>-<sp/>size.width())<sp/>/<sp/>2;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>qreal<sp/>y<sp/>=<sp/>boundingRect().y()<sp/>+<sp/>(boundingRect().height()<sp/>-<sp/>size.height())<sp/>/<sp/>2;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>node-&gt;setRect(QRectF(QPointF(x,<sp/>y),<sp/>size));</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>node;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="class_k_win_1_1_window_thumbnail_item_1a1acb37e2ac00c01e00282f7906d18086" refkind="member"><highlight class="normal">QSize<sp/><ref refid="class_k_win_1_1_window_thumbnail_item_1af10a14b329843ecc9ede9a21af51879b" kindref="member">WindowThumbnailItem::sourceSize</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="100"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_sourceSize;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="class_k_win_1_1_window_thumbnail_item_1a8637fee5b76b8713ec769f6f05155efc" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_thumbnail_item_1a8637fee5b76b8713ec769f6f05155efc" kindref="member">WindowThumbnailItem::setSourceSize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QSize<sp/>&amp;size)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_sourceSize<sp/>==<sp/>size)<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>m_sourceSize<sp/>=<sp/>size;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>update();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_window_thumbnail_item_1a02626b9ad3f03af48020a6e648de8d1c" kindref="member">sourceSizeChanged</ref>();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;moc_thumbnailitem.cpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/kcms/tabbox/thumbnailitem.cpp"/>
+  </compounddef>
+</doxygen>

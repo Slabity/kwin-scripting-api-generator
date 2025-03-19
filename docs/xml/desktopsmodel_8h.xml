@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="desktopsmodel_8h" kind="file" language="C++">
+    <compoundname>desktopsmodel.h</compoundname>
+    <includes local="no">QAbstractListModel</includes>
+    <includes refid="virtualdesktopsdbustypes_8h" local="yes">virtualdesktopsdbustypes.h</includes>
+    <includedby refid="desktopsmodel_8cpp" local="yes">kwin/src/kcms/desktop/desktopsmodel.cpp</includedby>
+    <includedby refid="kcms_2desktop_2virtualdesktops_8cpp" local="yes">kwin/src/kcms/desktop/virtualdesktops.cpp</includedby>
+    <includedby refid="virtualdesktopsdata_8cpp" local="yes">kwin/src/kcms/desktop/virtualdesktopsdata.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/kcms/desktop/desktopsmodel.h</label>
+        <link refid="desktopsmodel_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>virtualdesktopsdbustypes.h</label>
+        <link refid="virtualdesktopsdbustypes_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QAbstractListModel</label>
+      </node>
+      <node id="4">
+        <label>QDBusArgument</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/kcms/desktop/desktopsmodel.cpp</label>
+        <link refid="desktopsmodel_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/kcms/desktop/desktopsmodel.h</label>
+        <link refid="desktopsmodel_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>kwin/src/kcms/desktop/virtualdesktops.cpp</label>
+        <link refid="kcms_2desktop_2virtualdesktops_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/kcms/desktop/virtualdesktopsdata.cpp</label>
+        <link refid="virtualdesktopsdata_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_desktops_model" prot="public">KWin::DesktopsModel</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2018<sp/>Eike<sp/>Hein<sp/>&lt;hein@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2018<sp/>Marco<sp/>Martin<sp/>&lt;mart@kde.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QAbstractListModel&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="virtualdesktopsdbustypes_8h" kindref="compound">virtualdesktopsdbustypes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QDBusArgument;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QDBusMessage;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QDBusServiceWatcher;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="class_k_win_1_1_desktops_model" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_desktops_model_1a456f9e5471f79e9489f7b32ed6671cd3" kindref="member">DesktopsModel</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QAbstractListModel</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="47" refid="class_k_win_1_1_desktops_model_1a0dd34608494c87f1f0df360668f3e842" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a0dd34608494c87f1f0df360668f3e842" kindref="member">ready</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_desktops_model_1a0dd34608494c87f1f0df360668f3e842" kindref="member">ready</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_desktops_model_1a65a0803a5fdac30f507b43395c695c87" kindref="member">readyChanged</ref>)</highlight></codeline>
+<codeline lineno="48" refid="class_k_win_1_1_desktops_model_1a278ad2a763f9644cbcdcacc7a7efb059" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QString<sp/><ref refid="class_k_win_1_1_desktops_model_1a278ad2a763f9644cbcdcacc7a7efb059" kindref="member">error</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_desktops_model_1a278ad2a763f9644cbcdcacc7a7efb059" kindref="member">error</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_desktops_model_1aed505fe58b012dce147fb165e37c9389" kindref="member">errorChanged</ref>)</highlight></codeline>
+<codeline lineno="49" refid="class_k_win_1_1_desktops_model_1a437a0f69d255c59f2f32ed3222fb9097" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a437a0f69d255c59f2f32ed3222fb9097" kindref="member">userModified</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_desktops_model_1a437a0f69d255c59f2f32ed3222fb9097" kindref="member">userModified</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_desktops_model_1aabcb17fab136acc882dc874a023e7c90" kindref="member">userModifiedChanged</ref>)</highlight></codeline>
+<codeline lineno="50" refid="class_k_win_1_1_desktops_model_1aa7243b3a28d0071d3f6bdabbdcd4a0b8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1aa7243b3a28d0071d3f6bdabbdcd4a0b8" kindref="member">serverModified</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_desktops_model_1aa7243b3a28d0071d3f6bdabbdcd4a0b8" kindref="member">serverModified</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_desktops_model_1a1751b6f45def9b74b6be852ea46d2e69" kindref="member">serverModifiedChanged</ref>)</highlight></codeline>
+<codeline lineno="51" refid="class_k_win_1_1_desktops_model_1a252aa0c5cc0b873b254e4f087f3ef1c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a252aa0c5cc0b873b254e4f087f3ef1c0" kindref="member">rows</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_desktops_model_1a252aa0c5cc0b873b254e4f087f3ef1c0" kindref="member">rows</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_desktops_model_1a13b36f495921ed0b3bb4bc101343b81c" kindref="member">setRows</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_desktops_model_1a27955b290d349c02c854fcb0f2384b80" kindref="member">rowsChanged</ref>)</highlight></codeline>
+<codeline lineno="52" refid="class_k_win_1_1_desktops_model_1a0ea07064e9383b44037d4ff4402d8e9a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a0ea07064e9383b44037d4ff4402d8e9a" kindref="member">desktopCount</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_desktops_model_1a0ea07064e9383b44037d4ff4402d8e9a" kindref="member">desktopCount</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_desktops_model_1a1906e63f0684329cbf910e31f1e73ae7" kindref="member">desktopCountChanged</ref>)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="55" refid="class_k_win_1_1_desktops_model_1ace81ebdf8ec628c61146d7f39cf952d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>enum<sp/><ref refid="class_k_win_1_1_desktops_model_1ace81ebdf8ec628c61146d7f39cf952d5" kindref="member">AdditionalRoles</ref><sp/>{</highlight></codeline>
+<codeline lineno="56" refid="class_k_win_1_1_desktops_model_1ace81ebdf8ec628c61146d7f39cf952d5a500209bf9cedaffc66e58984bd953fd4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_desktops_model_1ace81ebdf8ec628c61146d7f39cf952d5a500209bf9cedaffc66e58984bd953fd4" kindref="member">Id</ref><sp/>=<sp/>Qt::UserRole<sp/>+<sp/>1,</highlight></codeline>
+<codeline lineno="57" refid="class_k_win_1_1_desktops_model_1ace81ebdf8ec628c61146d7f39cf952d5ae3b913a1d2566e11ad59db3a6ccf4b60" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_desktops_model_1ace81ebdf8ec628c61146d7f39cf952d5ae3b913a1d2566e11ad59db3a6ccf4b60" kindref="member">DesktopRow</ref>,</highlight></codeline>
+<codeline lineno="58" refid="class_k_win_1_1_desktops_model_1ace81ebdf8ec628c61146d7f39cf952d5a5f1da86dd39f7fdea034d0300c63817c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_desktops_model_1ace81ebdf8ec628c61146d7f39cf952d5a5f1da86dd39f7fdea034d0300c63817c" kindref="member">IsDefault</ref>,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_ENUM(<ref refid="class_k_win_1_1_desktops_model_1ace81ebdf8ec628c61146d7f39cf952d5" kindref="member">AdditionalRoles</ref>)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a456f9e5471f79e9489f7b32ed6671cd3" kindref="member">DesktopsModel</ref>(QObject<sp/>*parent<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_desktops_model_1a23a4f557b7186aba343e37934faf56eb" kindref="member">~DesktopsModel</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>QHash&lt;int,<sp/>QByteArray&gt;<sp/><ref refid="class_k_win_1_1_desktops_model_1ab7c35d2ad68ea67e73d416a15b8cea47" kindref="member">roleNames</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>QVariant<sp/><ref refid="class_k_win_1_1_desktops_model_1a20183f658f7961ab6a76d2b6184d3c50" kindref="member">data</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>role<sp/>=<sp/>Qt::DisplayRole)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a454a2e2437f312a5b5e670db6f8cd119" kindref="member">rowCount</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;parent<sp/>=<sp/>{})<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a0dd34608494c87f1f0df360668f3e842" kindref="member">ready</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_desktops_model_1a278ad2a763f9644cbcdcacc7a7efb059" kindref="member">error</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a437a0f69d255c59f2f32ed3222fb9097" kindref="member">userModified</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1aa7243b3a28d0071d3f6bdabbdcd4a0b8" kindref="member">serverModified</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a252aa0c5cc0b873b254e4f087f3ef1c0" kindref="member">rows</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a13b36f495921ed0b3bb4bc101343b81c" kindref="member">setRows</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a252aa0c5cc0b873b254e4f087f3ef1c0" kindref="member">rows</ref>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a0ea07064e9383b44037d4ff4402d8e9a" kindref="member">desktopCount</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_desktops_model_1a2a2453ba70f1c3b9d71a89e1ced03ca4" kindref="member">createDesktopName</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_INVOKABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1aa3a88461ebe224ea3a06a8dd42f3e531" kindref="member">createDesktop</ref>();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_INVOKABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1ac9e2a20264e2e2b9f1bd6937a387c6f5" kindref="member">removeDesktop</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_INVOKABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1ae24ab77ed7db4cec1cf3e4754942f00c" kindref="member">setDesktopName</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;name);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_INVOKABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a3c4d7ae30dfc4b83cb9ec1a44b0aae33" kindref="member">syncWithServer</ref>();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a123e6a8d36f00d7b21eb2269890b9145" kindref="member">needsSave</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1ac830975098841cbd428b829b89ac0708" kindref="member">load</ref>();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a6b6ea52e406887e130f84aab1685c615" kindref="member">defaults</ref>();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a81c81465e078b80ed3e4e2efeb35eb3a" kindref="member">isDefaults</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="94" refid="class_k_win_1_1_desktops_model_1a65a0803a5fdac30f507b43395c695c87" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a65a0803a5fdac30f507b43395c695c87" kindref="member">readyChanged</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95" refid="class_k_win_1_1_desktops_model_1aed505fe58b012dce147fb165e37c9389" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1aed505fe58b012dce147fb165e37c9389" kindref="member">errorChanged</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96" refid="class_k_win_1_1_desktops_model_1aabcb17fab136acc882dc874a023e7c90" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1aabcb17fab136acc882dc874a023e7c90" kindref="member">userModifiedChanged</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97" refid="class_k_win_1_1_desktops_model_1a1751b6f45def9b74b6be852ea46d2e69" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a1751b6f45def9b74b6be852ea46d2e69" kindref="member">serverModifiedChanged</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98" refid="class_k_win_1_1_desktops_model_1a27955b290d349c02c854fcb0f2384b80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a27955b290d349c02c854fcb0f2384b80" kindref="member">rowsChanged</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99" refid="class_k_win_1_1_desktops_model_1a1906e63f0684329cbf910e31f1e73ae7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a1906e63f0684329cbf910e31f1e73ae7" kindref="member">desktopCountChanged</ref>();</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a198dd68bb1bee1b8a2c0b8cd96b0c8e8" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1adc50f4ce99aa5bced23bd750e1767840" kindref="member">getAllAndConnect</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QDBusMessage<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a27c90e2980e3e5c2d5a47882ad7d7637" kindref="member">desktopCreated</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_d_bus_desktop_data_struct" kindref="compound">KWin::DBusDesktopDataStruct</ref><sp/>&amp;<ref refid="class_k_win_1_1_desktops_model_1a20183f658f7961ab6a76d2b6184d3c50" kindref="member">data</ref>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1ac23155204615a08f24391a5d6ac7914d" kindref="member">desktopRemoved</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a7f0ab2006442f2e1641f8e6719cd2f6a" kindref="member">desktopDataChanged</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_d_bus_desktop_data_struct" kindref="compound">KWin::DBusDesktopDataStruct</ref><sp/>&amp;<ref refid="class_k_win_1_1_desktops_model_1a20183f658f7961ab6a76d2b6184d3c50" kindref="member">data</ref>);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a1a0c90e80c610f0ce377ff9d70f4862f" kindref="member">desktopRowsChanged</ref>(uint<sp/><ref refid="class_k_win_1_1_desktops_model_1a252aa0c5cc0b873b254e4f087f3ef1c0" kindref="member">rows</ref>);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a055b157c381a718d5b5bfa82de73334e" kindref="member">updateModifiedState</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>server<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_desktops_model_1a8f7319bf0147594f8004af4909a0fd8d" kindref="member">handleCallError</ref>();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>QDBusServiceWatcher<sp/>*m_serviceWatcher;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>m_error;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_userModified;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_serverModified;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>QStringList<sp/>m_serverSideDesktops;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>QHash&lt;QString,<sp/>QString&gt;<sp/>m_serverSideNames;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_serverSideRows;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>QStringList<sp/>m_desktops;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>QHash&lt;QString,<sp/>QString&gt;<sp/>m_names;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_rows;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_pendingCalls<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/kcms/desktop/desktopsmodel.h"/>
+  </compounddef>
+</doxygen>

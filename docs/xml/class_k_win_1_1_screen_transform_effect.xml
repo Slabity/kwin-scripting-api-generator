@@ -1,0 +1,420 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_screen_transform_effect" kind="class" language="C++" prot="public">
+    <compoundname>KWin::ScreenTransformEffect</compoundname>
+    <basecompoundref refid="class_k_win_1_1_effect" prot="public" virt="non-virtual">KWin::Effect</basecompoundref>
+    <includes refid="screentransform_8h" local="no">screentransform.h</includes>
+    <innerclass refid="struct_k_win_1_1_screen_transform_effect_1_1_screen_state" prot="private">KWin::ScreenTransformEffect::ScreenState</innerclass>
+    <innerclass refid="struct_k_win_1_1_screen_transform_effect_1_1_snapshot" prot="private">KWin::ScreenTransformEffect::Snapshot</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_screen_transform_effect_1ad4ae89d8562adb1db3543f9065940fb4" prot="private" static="no" mutable="no">
+        <type>QHash&lt; <ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *, ScreenState &gt;</type>
+        <definition>QHash&lt;Output *, ScreenState&gt; KWin::ScreenTransformEffect::m_states</definition>
+        <argsstring></argsstring>
+        <name>m_states</name>
+        <qualifiedname>KWin::ScreenTransformEffect::m_states</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screentransform/screentransform.h" line="60" column="11" bodyfile="kwin/src/plugins/screentransform/screentransform.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_transform_effect_1ac82319eec5851a8328c720c08fa635fc" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_g_l_shader" kindref="compound">GLShader</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;GLShader&gt; KWin::ScreenTransformEffect::m_shader</definition>
+        <argsstring></argsstring>
+        <name>m_shader</name>
+        <qualifiedname>KWin::ScreenTransformEffect::m_shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screentransform/screentransform.h" line="62" column="21" bodyfile="kwin/src/plugins/screentransform/screentransform.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_transform_effect_1a0d5854e3c42d3ec396dc956779a743d5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KWin::ScreenTransformEffect::m_previousTextureLocation</definition>
+        <argsstring></argsstring>
+        <name>m_previousTextureLocation</name>
+        <qualifiedname>KWin::ScreenTransformEffect::m_previousTextureLocation</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screentransform/screentransform.h" line="63" column="9" bodyfile="kwin/src/plugins/screentransform/screentransform.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_transform_effect_1aaf66b934e1ac32d1d0c6e7f9b46d052f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KWin::ScreenTransformEffect::m_currentTextureLocation</definition>
+        <argsstring></argsstring>
+        <name>m_currentTextureLocation</name>
+        <qualifiedname>KWin::ScreenTransformEffect::m_currentTextureLocation</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screentransform/screentransform.h" line="64" column="9" bodyfile="kwin/src/plugins/screentransform/screentransform.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_transform_effect_1a5e72e5aeb848ee778578071f8ed804c4" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KWin::ScreenTransformEffect::m_modelViewProjectioMatrixLocation</definition>
+        <argsstring></argsstring>
+        <name>m_modelViewProjectioMatrixLocation</name>
+        <qualifiedname>KWin::ScreenTransformEffect::m_modelViewProjectioMatrixLocation</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screentransform/screentransform.h" line="65" column="9" bodyfile="kwin/src/plugins/screentransform/screentransform.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_transform_effect_1aee84e383bf5ccbf286c85b29651db880" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KWin::ScreenTransformEffect::m_blendFactorLocation</definition>
+        <argsstring></argsstring>
+        <name>m_blendFactorLocation</name>
+        <qualifiedname>KWin::ScreenTransformEffect::m_blendFactorLocation</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screentransform/screentransform.h" line="66" column="9" bodyfile="kwin/src/plugins/screentransform/screentransform.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_transform_effect_1a87803f6b42bc911abcb9240f6649fad9" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::ScreenTransformEffect::m_capturing</definition>
+        <argsstring></argsstring>
+        <name>m_capturing</name>
+        <qualifiedname>KWin::ScreenTransformEffect::m_capturing</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screentransform/screentransform.h" line="67" column="10" bodyfile="kwin/src/plugins/screentransform/screentransform.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_screen_transform_effect_1af7ad9311447f8d04ea23af848974e020" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::ScreenTransformEffect::ScreenTransformEffect</definition>
+        <argsstring>()</argsstring>
+        <name>ScreenTransformEffect</name>
+        <qualifiedname>KWin::ScreenTransformEffect::ScreenTransformEffect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screentransform/screentransform.h" line="26" column="5" bodyfile="kwin/src/plugins/screentransform/screentransform.cpp" bodystart="32" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_transform_effect_1a50e605b0445afe0317a216fa560c68cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::ScreenTransformEffect::~ScreenTransformEffect</definition>
+        <argsstring>() override</argsstring>
+        <name>~ScreenTransformEffect</name>
+        <qualifiedname>KWin::ScreenTransformEffect::~ScreenTransformEffect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screentransform/screentransform.h" line="27" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_transform_effect_1a79c0084e41a4dc2fd03d5ff4aa77949a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenTransformEffect::prePaintScreen</definition>
+        <argsstring>(ScreenPrePaintData &amp;data, std::chrono::milliseconds presentTime) override</argsstring>
+        <name>prePaintScreen</name>
+        <qualifiedname>KWin::ScreenTransformEffect::prePaintScreen</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga2edc1b757e36bb6bcbbacde454dfc05c">prePaintScreen</reimplements>
+        <param>
+          <type><ref refid="class_k_win_1_1_screen_pre_paint_data" kindref="compound">ScreenPrePaintData</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>std::chrono::milliseconds</type>
+          <declname>presentTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called before starting to paint the screen. In this method you can: <itemizedlist>
+<listitem><para>set whether the windows or the entire screen will be transformed </para>
+</listitem>
+<listitem><para>change the region of the screen that will be painted </para>
+</listitem>
+<listitem><para>do various housekeeping tasks such as initing your effect&apos;s variables for the upcoming paint pass or updating animation&apos;s progress</para>
+</listitem>
+</itemizedlist>
+<emphasis>presentTime</emphasis> specifies the expected monotonic time when the rendered frame will be displayed on the screen. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screentransform/screentransform.h" line="29" column="10" bodyfile="kwin/src/plugins/screentransform/screentransform.cpp" bodystart="124" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_transform_effect_1a3204fcd2e0051f6847a691a2d967d81f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenTransformEffect::paintScreen</definition>
+        <argsstring>(const RenderTarget &amp;renderTarget, const RenderViewport &amp;viewport, int mask, const QRegion &amp;region, KWin::Output *screen) override</argsstring>
+        <name>paintScreen</name>
+        <qualifiedname>KWin::ScreenTransformEffect::paintScreen</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga44ee94161446ce6fb2502376af6515a8">paintScreen</reimplements>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref> &amp;</type>
+          <declname>renderTarget</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref> &amp;</type>
+          <declname>viewport</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_output" kindref="compound">KWin::Output</ref> *</type>
+          <declname>screen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>In this method you can: <itemizedlist>
+<listitem><para>paint something on top of the windows (by painting after calling effects-&gt;<ref refid="class_k_win_1_1_screen_transform_effect_1a3204fcd2e0051f6847a691a2d967d81f" kindref="member">paintScreen()</ref>) </para>
+</listitem>
+<listitem><para>paint multiple desktops and/or multiple copies of the same desktop by calling effects-&gt;<ref refid="class_k_win_1_1_screen_transform_effect_1a3204fcd2e0051f6847a691a2d967d81f" kindref="member">paintScreen()</ref> multiple times</para>
+</listitem>
+</itemizedlist>
+In OpenGL based compositing, the frameworks ensures that the context is current when this method is invoked. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screentransform/screentransform.h" line="30" column="10" bodyfile="kwin/src/plugins/screentransform/screentransform.cpp" bodystart="197" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_transform_effect_1a84fe62fc3d69ea50f1f3168a42c52f69" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::ScreenTransformEffect::isActive</definition>
+        <argsstring>() const override</argsstring>
+        <name>isActive</name>
+        <qualifiedname>KWin::ScreenTransformEffect::isActive</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga596b6c0ed146b97b293f5db5f27fc40f">isActive</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Overwrite this method to indicate whether your effect will be doing something in the next frame to be rendered. If the method returns <computeroutput>false</computeroutput> the effect will be excluded from the chained methods in the next rendered frame.</para>
+<para>This method is called always directly before the paint loop begins. So it is totally fine to e.g. react on a window event, issue a repaint to trigger an animation and change a flag to indicate that this method returns <computeroutput>true</computeroutput>.</para>
+<para>As the method is called each frame, you should not perform complex calculations. Best use just a boolean flag.</para>
+<para>The default implementation of this method returns <computeroutput>true</computeroutput>. <simplesect kind="since"><para>4.8 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screentransform/screentransform.h" line="32" column="10" bodyfile="kwin/src/plugins/screentransform/screentransform.cpp" bodystart="270" bodyend="273"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_transform_effect_1a14f2a9db5547a6c3948d0de7756dd8b1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>int KWin::ScreenTransformEffect::requestedEffectChainPosition</definition>
+        <argsstring>() const override</argsstring>
+        <name>requestedEffectChainPosition</name>
+        <qualifiedname>KWin::ScreenTransformEffect::requestedEffectChainPosition</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga120531588e58691a5a18028158d2947a">requestedEffectChainPosition</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reimplement this method to indicate where in the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> chain the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> should be placed.</para>
+<para>A low number indicates early chain position, thus before other Effects got called, a high number indicates a late position. The returned number should be in the interval [0, 100]. The default value is 0.</para>
+<para>In KWin4 this information was provided in the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref>&apos;s desktop file as property X-KDE-Ordering. In the case of Scripted Effects this property is still used.</para>
+<para><simplesect kind="since"><para>5.0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screentransform/screentransform.h" line="34" column="9" bodyfile="kwin/src/plugins/screentransform/screentransform.h" bodystart="34" bodyend="37"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_screen_transform_effect_1a2b222e7217d3098c97b53922f4a99eca" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::ScreenTransformEffect::supported</definition>
+        <argsstring>()</argsstring>
+        <name>supported</name>
+        <qualifiedname>KWin::ScreenTransformEffect::supported</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screentransform/screentransform.h" line="38" column="17" bodyfile="kwin/src/plugins/screentransform/screentransform.cpp" bodystart="58" bodyend="61"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_screen_transform_effect_1a6ea6b38abffd99d8bc864125cbde9675" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenTransformEffect::addScreen</definition>
+        <argsstring>(Output *screen)</argsstring>
+        <name>addScreen</name>
+        <qualifiedname>KWin::ScreenTransformEffect::addScreen</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+          <declname>screen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screentransform/screentransform.h" line="57" column="10" bodyfile="kwin/src/plugins/screentransform/screentransform.cpp" bodystart="73" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_transform_effect_1adfa3009a3d3f346bdae39fcfda86531c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenTransformEffect::removeScreen</definition>
+        <argsstring>(Output *screen)</argsstring>
+        <name>removeScreen</name>
+        <qualifiedname>KWin::ScreenTransformEffect::removeScreen</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+          <declname>screen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screentransform/screentransform.h" line="58" column="10" bodyfile="kwin/src/plugins/screentransform/screentransform.cpp" bodystart="115" bodyend="122"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>KWin::Effect</label>
+        <link refid="class_k_win_1_1_effect"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::ScreenTransformEffect</label>
+        <link refid="class_k_win_1_1_screen_transform_effect"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>KWin::Effect</label>
+        <link refid="class_k_win_1_1_effect"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::ScreenTransformEffect</label>
+        <link refid="class_k_win_1_1_screen_transform_effect"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/plugins/screentransform/screentransform.h" line="21" column="1" bodyfile="kwin/src/plugins/screentransform/screentransform.h" bodystart="22" bodyend="68"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_screen_transform_effect_1a6ea6b38abffd99d8bc864125cbde9675" prot="private" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>addScreen</name></member>
+      <member refid="group__kwineffects_1gab9bcf52072fe74567496b0a894d1d873" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>animationTime</name></member>
+      <member refid="group__kwineffects_1ga3a167fe6d9c46376ed46db13caf2d135" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>animationTime</name></member>
+      <member refid="group__kwineffects_1ga0ba05f1463195d0f92ea1dd3396a5d16" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>animationTime</name></member>
+      <member refid="group__kwineffects_1ga7cf8035c970fcde177e3038d79015289" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>blocksDirectScanout</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea67d120ab5ce1dc424476e63c132af6c1" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>Blur</name></member>
+      <member refid="group__kwineffects_1gab8a94f591b743b59b7285911e641e7d5" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>borderActivated</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aead805f717a48c23959a1e9ecd7722d15d" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>Contrast</name></member>
+      <member refid="group__kwineffects_1ga4da344d8b8f2cb9eecd6e64a9b758740" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>cursorPos</name></member>
+      <member refid="group__kwineffects_1ga0c159e00c3a51ca733bea49cf8d52691" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>debug</name></member>
+      <member refid="group__kwineffects_1ga254b1a3e8bb8b9b671e9b000ca027b7c" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>drawWindow</name></member>
+      <member refid="group__kwineffects_1ga7bd8262f4cb2c5c3090c748eb388ad7e" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>Effect</name></member>
+      <member refid="group__kwineffects_1ga6337b2a9b5aadfbb6b696119144b56ae" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>Feature</name></member>
+      <member refid="group__kwineffects_1gab5e0581ae4b2dffe8014ff5cf6c21158" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>grabbedKeyboardEvent</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aeaecbb77ad241419970ece3d45296c4838" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>HighlightWindows</name></member>
+      <member refid="group__kwineffects_1ga7b0ecb57667179e95c188f0ee7416d00" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>interpolate</name></member>
+      <member refid="class_k_win_1_1_screen_transform_effect_1a84fe62fc3d69ea50f1f3168a42c52f69" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>isActive</name></member>
+      <member refid="class_k_win_1_1_screen_transform_effect_1aee84e383bf5ccbf286c85b29651db880" prot="private" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>m_blendFactorLocation</name></member>
+      <member refid="class_k_win_1_1_screen_transform_effect_1a87803f6b42bc911abcb9240f6649fad9" prot="private" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>m_capturing</name></member>
+      <member refid="class_k_win_1_1_screen_transform_effect_1aaf66b934e1ac32d1d0c6e7f9b46d052f" prot="private" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>m_currentTextureLocation</name></member>
+      <member refid="class_k_win_1_1_screen_transform_effect_1a5e72e5aeb848ee778578071f8ed804c4" prot="private" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>m_modelViewProjectioMatrixLocation</name></member>
+      <member refid="class_k_win_1_1_screen_transform_effect_1a0d5854e3c42d3ec396dc956779a743d5" prot="private" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>m_previousTextureLocation</name></member>
+      <member refid="class_k_win_1_1_screen_transform_effect_1ac82319eec5851a8328c720c08fa635fc" prot="private" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>m_shader</name></member>
+      <member refid="class_k_win_1_1_screen_transform_effect_1ad4ae89d8562adb1db3543f9065940fb4" prot="private" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>m_states</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea170229312ed2ec0e446ee89ba7f6b6ca" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>Nothing</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dab0de2932c45bde6df3de10d00dbd6fcd" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>PAINT_SCREEN_BACKGROUND_FIRST</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da43acbfc913cae9eb3c363aeb0524f18f" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>PAINT_SCREEN_REGION</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da3e731594d83c3e92742bff7c420fb7f8" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>PAINT_SCREEN_TRANSFORMED</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da124dd798e5f793087e81da77e11a9b1e" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>PAINT_SCREEN_WITH_TRANSFORMED_WINDOWS</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dac606d3dcf2dd150234f71c4c39083c7d" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>PAINT_WINDOW_OPAQUE</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da684bb6c6c278b900b6d0c889e79233b8" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>PAINT_WINDOW_TRANSFORMED</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dac7237bf4bb4d6ea6d6fb1215db19b45e" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>PAINT_WINDOW_TRANSLUCENT</name></member>
+      <member refid="class_k_win_1_1_screen_transform_effect_1a3204fcd2e0051f6847a691a2d967d81f" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>paintScreen</name></member>
+      <member refid="group__kwineffects_1ga0f0292db2bf016a0843ef7cc06219378" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>paintWindow</name></member>
+      <member refid="group__kwineffects_1ga5fb1bc87ff54dcc2cfe87b070816ab00" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>perform</name></member>
+      <member refid="group__kwineffects_1ga10021cf9704c00d60beae284d53846e2" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>postPaintScreen</name></member>
+      <member refid="group__kwineffects_1ga9b7cf82c6f74331cffabb06c63ef914c" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>postPaintWindow</name></member>
+      <member refid="class_k_win_1_1_screen_transform_effect_1a79c0084e41a4dc2fd03d5ff4aa77949a" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>prePaintScreen</name></member>
+      <member refid="group__kwineffects_1ga2832c7831c0f49f9f5cf0267ffc53672" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>prePaintWindow</name></member>
+      <member refid="group__kwineffects_1ga30fc2cbbdd90f95568a9e350f34bf2b7" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>provides</name></member>
+      <member refid="group__kwineffects_1ga737c6d80eb8f8b24fdc6398209c38e3d" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>reconfigure</name></member>
+      <member refid="group__kwineffects_1gga4aebd7d0f695e37678debaa118fa92dca19d3e23e53788c8d9cc9c18fbf75fc7d" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>ReconfigureAll</name></member>
+      <member refid="group__kwineffects_1ga4aebd7d0f695e37678debaa118fa92dc" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>ReconfigureFlag</name></member>
+      <member refid="class_k_win_1_1_screen_transform_effect_1adfa3009a3d3f346bdae39fcfda86531c" prot="private" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>removeScreen</name></member>
+      <member refid="class_k_win_1_1_screen_transform_effect_1a14f2a9db5547a6c3948d0de7756dd8b1" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>requestedEffectChainPosition</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea592ea0de7a4d658a1ef9bbb48b18e15a" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>ScreenInversion</name></member>
+      <member refid="class_k_win_1_1_screen_transform_effect_1af7ad9311447f8d04ea23af848974e020" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>ScreenTransformEffect</name></member>
+      <member refid="group__kwineffects_1ga1efc42cd9be15e8200c6e55f6bf47cb8" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>setPositionTransformations</name></member>
+      <member refid="class_k_win_1_1_screen_transform_effect_1a2b222e7217d3098c97b53922f4a99eca" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>supported</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea19036d413806c53978a3234e7eb197c4" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>SystemBell</name></member>
+      <member refid="group__kwineffects_1ga2d22a8f0b8a4d81615dff67dc1ef970f" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>tabletPadButtonEvent</name></member>
+      <member refid="group__kwineffects_1gaa084e5a45597f5775213715eb5506f63" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>tabletPadRingEvent</name></member>
+      <member refid="group__kwineffects_1ga4998fb0983bd97163935cad2c4dedd76" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>tabletPadStripEvent</name></member>
+      <member refid="group__kwineffects_1ga1d4ae01f5935ea887a12018d59191cbf" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>tabletToolAxis</name></member>
+      <member refid="group__kwineffects_1ga7a984d7d83dfa97962b8404301c6aba9" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>tabletToolButtonEvent</name></member>
+      <member refid="group__kwineffects_1ga4ed77506be381680bf664dbc8c20e036" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>tabletToolProximity</name></member>
+      <member refid="group__kwineffects_1gaf16e9ca42cceb738fb859d1a1a462548" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>tabletToolTip</name></member>
+      <member refid="group__kwineffects_1gaa31554949bc00085e6380b50be16138e" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>touchCancel</name></member>
+      <member refid="group__kwineffects_1ga315fd305e7570f41e7bce7db6812381f" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>touchDown</name></member>
+      <member refid="group__kwineffects_1ga54d00a9e05b5d4597db40c2f5b1d36de" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>touchMotion</name></member>
+      <member refid="group__kwineffects_1gaf3871967d6199eb7c87621bc75b925bb" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>touchUp</name></member>
+      <member refid="group__kwineffects_1ga7b142933c38cb9b4a433b768b266e7cb" prot="public" virt="virtual"><scope>KWin::ScreenTransformEffect</scope><name>windowInputMouseEvent</name></member>
+      <member refid="group__kwineffects_1ga50174eb0169aebceb78ebd5aff71c481" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>~Effect</name></member>
+      <member refid="class_k_win_1_1_screen_transform_effect_1a50e605b0445afe0317a216fa560c68cb" prot="public" virt="non-virtual"><scope>KWin::ScreenTransformEffect</scope><name>~ScreenTransformEffect</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

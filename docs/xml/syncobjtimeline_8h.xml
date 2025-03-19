@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="syncobjtimeline_8h" kind="file" language="C++">
+    <compoundname>syncobjtimeline.h</compoundname>
+    <includes local="yes">kwin_export.h</includes>
+    <includes refid="filedescriptor_8h" local="yes">utils/filedescriptor.h</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="drm__egl__backend_8cpp" local="yes">kwin/src/backends/drm/drm_egl_backend.cpp</includedby>
+    <includedby refid="renderbackend_8cpp" local="yes">kwin/src/core/renderbackend.cpp</includedby>
+    <includedby refid="syncobjtimeline_8cpp" local="yes">kwin/src/core/syncobjtimeline.cpp</includedby>
+    <includedby refid="screencastbuffer_8h" local="yes">kwin/src/plugins/screencast/screencastbuffer.h</includedby>
+    <includedby refid="itemrenderer__opengl_8cpp" local="yes">kwin/src/scene/itemrenderer_opengl.cpp</includedby>
+    <includedby refid="linux__drm__syncobj__v1_8cpp" local="yes">kwin/src/wayland/linux_drm_syncobj_v1.cpp</includedby>
+    <includedby refid="transaction_8cpp" local="yes">kwin/src/wayland/transaction.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/core/syncobjtimeline.h</label>
+        <link refid="syncobjtimeline_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>utils/filedescriptor.h</label>
+        <link refid="filedescriptor_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/backends/drm/drm_egl_backend.cpp</label>
+        <link refid="drm__egl__backend_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/core/renderbackend.cpp</label>
+        <link refid="renderbackend_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/core/syncobjtimeline.cpp</label>
+        <link refid="syncobjtimeline_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/core/syncobjtimeline.h</label>
+        <link refid="syncobjtimeline_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>kwin/src/plugins/screencast/screencastbuffer.cpp</label>
+        <link refid="screencastbuffer_8cpp"/>
+      </node>
+      <node id="5">
+        <label>kwin/src/plugins/screencast/screencastbuffer.h</label>
+        <link refid="screencastbuffer_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>kwin/src/plugins/screencast/screencaststream.cpp</label>
+        <link refid="screencaststream_8cpp"/>
+      </node>
+      <node id="8">
+        <label>kwin/src/scene/itemrenderer_opengl.cpp</label>
+        <link refid="itemrenderer__opengl_8cpp"/>
+      </node>
+      <node id="9">
+        <label>kwin/src/wayland/linux_drm_syncobj_v1.cpp</label>
+        <link refid="linux__drm__syncobj__v1_8cpp"/>
+      </node>
+      <node id="10">
+        <label>kwin/src/wayland/transaction.cpp</label>
+        <link refid="transaction_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_sync_release_point" prot="public">KWin::SyncReleasePoint</innerclass>
+    <innerclass refid="class_k_win_1_1_sync_timeline" prot="public">KWin::SyncTimeline</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2024<sp/>Xaver<sp/>Hugl<sp/>&lt;xaver.hugl@gmail.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;kwin_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="filedescriptor_8h" kindref="compound">utils/filedescriptor.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_sync_timeline" kindref="compound">SyncTimeline</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="class_k_win_1_1_sync_release_point" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_sync_release_point_1a6d28430db9341a185fb5869fff2640a5" kindref="member">SyncReleasePoint</ref></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_sync_release_point_1a6d28430db9341a185fb5869fff2640a5" kindref="member">SyncReleasePoint</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;SyncTimeline&gt;<sp/>&amp;<ref refid="class_k_win_1_1_sync_release_point_1a50fbd6d4b989f18b828eed0b8ccfec5b" kindref="member">timeline</ref>,<sp/>uint64_t<sp/><ref refid="class_k_win_1_1_sync_release_point_1af5001f0174dcdcae8231f03b2150fa0d" kindref="member">timelinePoint</ref>);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_sync_release_point_1a6d28430db9341a185fb5869fff2640a5" kindref="member">~SyncReleasePoint</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_sync_timeline" kindref="compound">SyncTimeline</ref><sp/>*<ref refid="class_k_win_1_1_sync_release_point_1a50fbd6d4b989f18b828eed0b8ccfec5b" kindref="member">timeline</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="class_k_win_1_1_sync_release_point_1af5001f0174dcdcae8231f03b2150fa0d" kindref="member">timelinePoint</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_sync_release_point_1a3831e6b452fa34b6aa0bdc472bb026cf" kindref="member">addReleaseFence</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>&amp;fd);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;SyncTimeline&gt;<sp/>m_timeline;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>m_timelinePoint;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>m_releaseFence;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="class_k_win_1_1_sync_timeline" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_sync_timeline_1a2bc02783ca7ae2d9e47ed282ecc1816e" kindref="member">SyncTimeline</ref></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_sync_timeline_1a2bc02783ca7ae2d9e47ed282ecc1816e" kindref="member">SyncTimeline</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>drmFd,<sp/>uint32_t<sp/>handle);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_sync_timeline_1a2bc02783ca7ae2d9e47ed282ecc1816e" kindref="member">SyncTimeline</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>drmFd);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_sync_timeline_1a2bc02783ca7ae2d9e47ed282ecc1816e" kindref="member">~SyncTimeline</ref>();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/><ref refid="class_k_win_1_1_sync_timeline_1aac5c45511e4a4ff66059e4a2cb35185f" kindref="member">eventFd</ref>(uint64_t<sp/>timelinePoint)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>&amp;<ref refid="class_k_win_1_1_sync_timeline_1af33495700e4e60b4b379bf4fb67a1ae4" kindref="member">fileDescriptor</ref>();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_sync_timeline_1afc6d509775c52e445c7a5aabf4fec715" kindref="member">signal</ref>(uint64_t<sp/>timelinePoint);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_sync_timeline_1a8c4906232459d49fd555c23854edd92c" kindref="member">moveInto</ref>(uint64_t<sp/>timelinePoint,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>&amp;fd);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/><ref refid="class_k_win_1_1_sync_timeline_1a9f9813257489fe32c1a1dc01df1e73d3" kindref="member">exportSyncFile</ref>(uint64_t<sp/>timelinePoint);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_sync_timeline_1adaf95b3daba89e2e49e2ad783eabb2c7" kindref="member">isMaterialized</ref>(uint64_t<sp/>timelinePoint);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>int32_t<sp/>m_drmFd;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>m_handle<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>m_fileDescriptor;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/core/syncobjtimeline.h"/>
+  </compounddef>
+</doxygen>

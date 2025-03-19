@@ -1,0 +1,452 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="cursortheme_8cpp" kind="file" language="C++">
+    <compoundname>cursortheme.cpp</compoundname>
+    <includes refid="cursortheme_8h" local="yes">utils/cursortheme.h</includes>
+    <includes refid="svgcursorreader_8h" local="yes">utils/svgcursorreader.h</includes>
+    <includes refid="xcursorreader_8h" local="yes">utils/xcursorreader.h</includes>
+    <includes local="no">KConfig</includes>
+    <includes local="no">KConfigGroup</includes>
+    <includes local="no">KShell</includes>
+    <includes local="no">QDir</includes>
+    <includes local="no">QSet</includes>
+    <includes local="no">QSharedData</includes>
+    <includes local="no">QStack</includes>
+    <includes local="no">QStandardPaths</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/utils/cursortheme.cpp</label>
+        <link refid="cursortheme_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>utils/cursortheme.h</label>
+        <link refid="cursortheme_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>utils/svgcursorreader.h</label>
+        <link refid="svgcursorreader_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>utils/xcursorreader.h</label>
+        <link refid="xcursorreader_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>KConfig</label>
+      </node>
+      <node id="11">
+        <label>KConfigGroup</label>
+      </node>
+      <node id="12">
+        <label>KShell</label>
+      </node>
+      <node id="13">
+        <label>QDir</label>
+      </node>
+      <node id="4">
+        <label>QImage</label>
+      </node>
+      <node id="5">
+        <label>QList</label>
+      </node>
+      <node id="14">
+        <label>QSet</label>
+      </node>
+      <node id="15">
+        <label>QSharedData</label>
+      </node>
+      <node id="6">
+        <label>QSharedDataPointer</label>
+      </node>
+      <node id="16">
+        <label>QStack</label>
+      </node>
+      <node id="17">
+        <label>QStandardPaths</label>
+      </node>
+      <node id="7">
+        <label>chrono</label>
+      </node>
+      <node id="3">
+        <label>kwin_export.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_k_win_1_1_cursor_sprite_private" prot="public">KWin::CursorSpritePrivate</innerclass>
+    <innerclass refid="struct_k_win_1_1_cursor_theme_x_entry_info" prot="public">KWin::CursorThemeXEntryInfo</innerclass>
+    <innerclass refid="struct_k_win_1_1_cursor_theme_svg_entry_info" prot="public">KWin::CursorThemeSvgEntryInfo</innerclass>
+    <innerclass refid="class_k_win_1_1_cursor_theme_entry" prot="public">KWin::CursorThemeEntry</innerclass>
+    <innerclass refid="class_k_win_1_1_cursor_theme_private" prot="public">KWin::CursorThemePrivate</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2020<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="cursortheme_8h" kindref="compound">utils/cursortheme.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="svgcursorreader_8h" kindref="compound">utils/svgcursorreader.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="xcursorreader_8h" kindref="compound">utils/xcursorreader.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KConfig&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KConfigGroup&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KShell&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDir&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QSet&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QSharedData&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QStack&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QStandardPaths&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="class_k_win_1_1_cursor_sprite_private" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_cursor_sprite_private" kindref="compound">CursorSpritePrivate</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QSharedData</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27" refid="class_k_win_1_1_cursor_sprite_private_1a2299291b3d0e3c8858f8375d54139f14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QImage<sp/><ref refid="class_k_win_1_1_cursor_sprite_private_1a2299291b3d0e3c8858f8375d54139f14" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="28" refid="class_k_win_1_1_cursor_sprite_private_1a631b8fff9fee218fdfc7b9a20364ab53" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QPointF<sp/><ref refid="class_k_win_1_1_cursor_sprite_private_1a631b8fff9fee218fdfc7b9a20364ab53" kindref="member">hotspot</ref>;</highlight></codeline>
+<codeline lineno="29" refid="class_k_win_1_1_cursor_sprite_private_1a1f3f7070bdabc972af3ed39f56c6b0d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::milliseconds<sp/><ref refid="class_k_win_1_1_cursor_sprite_private_1a1f3f7070bdabc972af3ed39f56c6b0d0" kindref="member">delay</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="struct_k_win_1_1_cursor_theme_x_entry_info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_k_win_1_1_cursor_theme_x_entry_info" kindref="compound">CursorThemeXEntryInfo</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34" refid="struct_k_win_1_1_cursor_theme_x_entry_info_1ad222c4d96ad9d22d57d82b8f6383fedb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="struct_k_win_1_1_cursor_theme_x_entry_info_1ad222c4d96ad9d22d57d82b8f6383fedb" kindref="member">path</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="struct_k_win_1_1_cursor_theme_svg_entry_info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_k_win_1_1_cursor_theme_svg_entry_info" kindref="compound">CursorThemeSvgEntryInfo</ref></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39" refid="struct_k_win_1_1_cursor_theme_svg_entry_info_1a14759b599953669b4ff805b7ea3d54d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="struct_k_win_1_1_cursor_theme_svg_entry_info_1a14759b599953669b4ff805b7ea3d54d5" kindref="member">path</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="namespace_k_win_1a744e4984950d2b4bcd270bd1a57df2f0" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win_1a744e4984950d2b4bcd270bd1a57df2f0" kindref="member">CursorThemeEntryInfo</ref><sp/>=<sp/>std::variant&lt;<ref refid="struct_k_win_1_1_cursor_theme_x_entry_info" kindref="compound">CursorThemeXEntryInfo</ref>,</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_k_win_1_1_cursor_theme_svg_entry_info" kindref="compound">CursorThemeSvgEntryInfo</ref>&gt;;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="class_k_win_1_1_cursor_theme_entry" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_cursor_theme_entry_1a848d4ecc8d50f7a336a930f89fbac77c" kindref="member">CursorThemeEntry</ref></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_entry_1a848d4ecc8d50f7a336a930f89fbac77c" kindref="member">CursorThemeEntry</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a744e4984950d2b4bcd270bd1a57df2f0" kindref="member">CursorThemeEntryInfo</ref><sp/>&amp;<ref refid="class_k_win_1_1_cursor_theme_entry_1a12dd02d61d783061c520bd889d24a98a" kindref="member">info</ref>);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_entry_1a56d6b9318dcaa904d91692ab3d9606d6" kindref="member">load</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size,<sp/>qreal<sp/>devicePixelRatio);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="class_k_win_1_1_cursor_theme_entry_1a12dd02d61d783061c520bd889d24a98a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a744e4984950d2b4bcd270bd1a57df2f0" kindref="member">CursorThemeEntryInfo</ref><sp/><ref refid="class_k_win_1_1_cursor_theme_entry_1a12dd02d61d783061c520bd889d24a98a" kindref="member">info</ref>;</highlight></codeline>
+<codeline lineno="53" refid="class_k_win_1_1_cursor_theme_entry_1ad8454b0f37525bb9fe3c400b1d43de06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;CursorSprite&gt;<sp/><ref refid="class_k_win_1_1_cursor_theme_entry_1ad8454b0f37525bb9fe3c400b1d43de06" kindref="member">sprites</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="class_k_win_1_1_cursor_theme_private" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_cursor_theme_private_1a1543a197b0cf94b598d61a7e8267cfd5" kindref="member">CursorThemePrivate</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QSharedData</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a1543a197b0cf94b598d61a7e8267cfd5" kindref="member">CursorThemePrivate</ref>();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a1543a197b0cf94b598d61a7e8267cfd5" kindref="member">CursorThemePrivate</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;themeName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a0fca48fff77f8a71df34395a07758081" kindref="member">size</ref>,<sp/>qreal<sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a183285009596a3215f713013501851bf" kindref="member">devicePixelRatio</ref>);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a331f4d09357aa569193e2a7ac7d13abd" kindref="member">discover</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;searchPaths);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a01496447f1a673975bec26bdc42b406d" kindref="member">discoverXCursors</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;packagePath);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a15e638973a7f152b759f93ad26e7c6f3" kindref="member">discoverSvgCursors</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;packagePath);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="class_k_win_1_1_cursor_theme_private_1a52c201f34435332c070d675c32455731" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a52c201f34435332c070d675c32455731" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="67" refid="class_k_win_1_1_cursor_theme_private_1a0fca48fff77f8a71df34395a07758081" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a0fca48fff77f8a71df34395a07758081" kindref="member">size</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="68" refid="class_k_win_1_1_cursor_theme_private_1a183285009596a3215f713013501851bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>qreal<sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a183285009596a3215f713013501851bf" kindref="member">devicePixelRatio</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="class_k_win_1_1_cursor_theme_private_1a90d71fc993998636987c83217f451fae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QHash&lt;QByteArray,<sp/>std::shared_ptr&lt;CursorThemeEntry&gt;&gt;<sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a90d71fc993998636987c83217f451fae" kindref="member">registry</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="class_k_win_1_1_cursor_sprite_1a232db3cc4f310ec72d0d4276cd8920ff" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_cursor_sprite_1a232db3cc4f310ec72d0d4276cd8920ff" kindref="member">CursorSprite::CursorSprite</ref>()</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>d(new<sp/><ref refid="class_k_win_1_1_cursor_sprite_private" kindref="compound">CursorSpritePrivate</ref>)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="class_k_win_1_1_cursor_sprite_1a1869ab8efabd3e1b6a6e8d51b46e9bd8" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_cursor_sprite_1a232db3cc4f310ec72d0d4276cd8920ff" kindref="member">CursorSprite::CursorSprite</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_sprite_1a232db3cc4f310ec72d0d4276cd8920ff" kindref="member">CursorSprite</ref><sp/>&amp;other)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>d(other.d)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="class_k_win_1_1_cursor_sprite_1acd836991e1ab928c0969e5b73c94a733" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_cursor_sprite_1acd836991e1ab928c0969e5b73c94a733" kindref="member">CursorSprite::~CursorSprite</ref>()</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="class_k_win_1_1_cursor_sprite_1a782ffbfca9e752005f3d5eb0603afcc4" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_cursor_sprite_1a232db3cc4f310ec72d0d4276cd8920ff" kindref="member">CursorSprite</ref><sp/>&amp;<ref refid="class_k_win_1_1_cursor_sprite_1a782ffbfca9e752005f3d5eb0603afcc4" kindref="member">CursorSprite::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_sprite_1a232db3cc4f310ec72d0d4276cd8920ff" kindref="member">CursorSprite</ref><sp/>&amp;other)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>d<sp/>=<sp/>other.d;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="class_k_win_1_1_cursor_sprite_1a1d681e46eb7afdd0c091f14fb7b91640" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_cursor_sprite_1a232db3cc4f310ec72d0d4276cd8920ff" kindref="member">CursorSprite::CursorSprite</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QImage<sp/>&amp;<ref refid="class_k_win_1_1_cursor_sprite_1a89b29693c3290f54122429e0103480c0" kindref="member">data</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>&amp;<ref refid="class_k_win_1_1_cursor_sprite_1ab72f5f72cb4ee2d2604f71090b61c269" kindref="member">hotspot</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::chrono::milliseconds<sp/>&amp;<ref refid="class_k_win_1_1_cursor_sprite_1a04c195f49de4fc286086f0d17d6ac9d4" kindref="member">delay</ref>)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>d(new<sp/><ref refid="class_k_win_1_1_cursor_sprite_private" kindref="compound">CursorSpritePrivate</ref>)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;data<sp/>=<sp/><ref refid="class_k_win_1_1_cursor_sprite_1a89b29693c3290f54122429e0103480c0" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;hotspot<sp/>=<sp/><ref refid="class_k_win_1_1_cursor_sprite_1ab72f5f72cb4ee2d2604f71090b61c269" kindref="member">hotspot</ref>;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;delay<sp/>=<sp/><ref refid="class_k_win_1_1_cursor_sprite_1a04c195f49de4fc286086f0d17d6ac9d4" kindref="member">delay</ref>;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="class_k_win_1_1_cursor_sprite_1a89b29693c3290f54122429e0103480c0" refkind="member"><highlight class="normal">QImage<sp/><ref refid="class_k_win_1_1_cursor_sprite_1a89b29693c3290f54122429e0103480c0" kindref="member">CursorSprite::data</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="102"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;data;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="class_k_win_1_1_cursor_sprite_1ab72f5f72cb4ee2d2604f71090b61c269" refkind="member"><highlight class="normal">QPointF<sp/><ref refid="class_k_win_1_1_cursor_sprite_1ab72f5f72cb4ee2d2604f71090b61c269" kindref="member">CursorSprite::hotspot</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="107"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;hotspot;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="class_k_win_1_1_cursor_sprite_1a04c195f49de4fc286086f0d17d6ac9d4" refkind="member"><highlight class="normal">std::chrono::milliseconds<sp/><ref refid="class_k_win_1_1_cursor_sprite_1a04c195f49de4fc286086f0d17d6ac9d4" kindref="member">CursorSprite::delay</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="112"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;delay;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="class_k_win_1_1_cursor_theme_private_1a1543a197b0cf94b598d61a7e8267cfd5" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_cursor_theme_private_1a1543a197b0cf94b598d61a7e8267cfd5" kindref="member">CursorThemePrivate::CursorThemePrivate</ref>()</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="class_k_win_1_1_cursor_theme_private_1a2b1b597fef59134ab4137bf6030e86c5" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_cursor_theme_private_1a1543a197b0cf94b598d61a7e8267cfd5" kindref="member">CursorThemePrivate::CursorThemePrivate</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;themeName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a0fca48fff77f8a71df34395a07758081" kindref="member">size</ref>,<sp/>qreal<sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a183285009596a3215f713013501851bf" kindref="member">devicePixelRatio</ref>)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a52c201f34435332c070d675c32455731" kindref="member">name</ref>(themeName)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a0fca48fff77f8a71df34395a07758081" kindref="member">size</ref>(<ref refid="class_k_win_1_1_cursor_theme_private_1a0fca48fff77f8a71df34395a07758081" kindref="member">size</ref>)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a183285009596a3215f713013501851bf" kindref="member">devicePixelRatio</ref>(<ref refid="class_k_win_1_1_cursor_theme_private_1a183285009596a3215f713013501851bf" kindref="member">devicePixelRatio</ref>)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="class_k_win_1_1_cursor_theme_entry_1a848d4ecc8d50f7a336a930f89fbac77c" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_cursor_theme_entry_1a848d4ecc8d50f7a336a930f89fbac77c" kindref="member">CursorThemeEntry::CursorThemeEntry</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a744e4984950d2b4bcd270bd1a57df2f0" kindref="member">CursorThemeEntryInfo</ref><sp/>&amp;<ref refid="class_k_win_1_1_cursor_theme_entry_1a12dd02d61d783061c520bd889d24a98a" kindref="member">info</ref>)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="class_k_win_1_1_cursor_theme_entry_1a12dd02d61d783061c520bd889d24a98a" kindref="member">info</ref>(<ref refid="class_k_win_1_1_cursor_theme_entry_1a12dd02d61d783061c520bd889d24a98a" kindref="member">info</ref>)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="class_k_win_1_1_cursor_theme_entry_1a56d6b9318dcaa904d91692ab3d9606d6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_entry_1a56d6b9318dcaa904d91692ab3d9606d6" kindref="member">CursorThemeEntry::load</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size,<sp/>qreal<sp/>devicePixelRatio)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="class_k_win_1_1_cursor_theme_entry_1ad8454b0f37525bb9fe3c400b1d43de06" kindref="member">sprites</ref>.isEmpty())<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>raster<sp/>=<sp/>std::get_if&lt;CursorThemeXEntryInfo&gt;(&amp;<ref refid="class_k_win_1_1_cursor_theme_entry_1a12dd02d61d783061c520bd889d24a98a" kindref="member">info</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_cursor_theme_entry_1ad8454b0f37525bb9fe3c400b1d43de06" kindref="member">sprites</ref><sp/>=<sp/><ref refid="class_k_win_1_1_x_cursor_reader_1a5657d071b57a4bb287b3598fc6aa5a1c" kindref="member">XCursorReader::load</ref>(raster-&gt;path,<sp/>size,<sp/>devicePixelRatio);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>svg<sp/>=<sp/>std::get_if&lt;CursorThemeSvgEntryInfo&gt;(&amp;<ref refid="class_k_win_1_1_cursor_theme_entry_1a12dd02d61d783061c520bd889d24a98a" kindref="member">info</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_cursor_theme_entry_1ad8454b0f37525bb9fe3c400b1d43de06" kindref="member">sprites</ref><sp/>=<sp/><ref refid="class_k_win_1_1_svg_cursor_reader_1a64035b497f9e694fa90547f8ccc1bd63" kindref="member">SvgCursorReader::load</ref>(svg-&gt;path,<sp/>size,<sp/>devicePixelRatio);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="class_k_win_1_1_cursor_theme_private_1a01496447f1a673975bec26bdc42b406d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a01496447f1a673975bec26bdc42b406d" kindref="member">CursorThemePrivate::discoverXCursors</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;packagePath)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QDir<sp/>dir(packagePath);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>QFileInfoList<sp/>entries<sp/>=<sp/>dir.entryInfoList(QDir::Files<sp/>|<sp/>QDir::NoDotAndDotDot);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>std::partition(entries.begin(),<sp/>entries.end(),<sp/>[](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QFileInfo<sp/>&amp;fileInfo)<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>!fileInfo.isSymLink();</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QFileInfo<sp/>&amp;entry<sp/>:<sp/>std::as_const(entries))<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray<sp/>shape<sp/>=<sp/>QFile::encodeName(entry.fileName());</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_k_win_1_1_cursor_theme_private_1a90d71fc993998636987c83217f451fae" kindref="member">registry</ref>.contains(shape))<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(entry.isSymLink())<sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QFileInfo<sp/>symLinkInfo(entry.symLinkTarget());</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(symLinkInfo.absolutePath()<sp/>==<sp/>entry.absolutePath())<sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>alias<sp/>=<sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a90d71fc993998636987c83217f451fae" kindref="member">registry</ref>.value(QFile::encodeName(symLinkInfo.fileName())))<sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a90d71fc993998636987c83217f451fae" kindref="member">registry</ref>.insert(shape,<sp/>alias);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a90d71fc993998636987c83217f451fae" kindref="member">registry</ref>.insert(shape,<sp/>std::make_shared&lt;CursorThemeEntry&gt;(<ref refid="struct_k_win_1_1_cursor_theme_x_entry_info" kindref="compound">CursorThemeXEntryInfo</ref>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.path<sp/>=<sp/>entry.absoluteFilePath(),</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}));</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173" refid="class_k_win_1_1_cursor_theme_private_1a15e638973a7f152b759f93ad26e7c6f3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a15e638973a7f152b759f93ad26e7c6f3" kindref="member">CursorThemePrivate::discoverSvgCursors</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;packagePath)</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QDir<sp/>dir(packagePath);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>QFileInfoList<sp/>entries<sp/>=<sp/>dir.entryInfoList(QDir::Dirs<sp/>|<sp/>QDir::NoDotAndDotDot);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>std::partition(entries.begin(),<sp/>entries.end(),<sp/>[](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QFileInfo<sp/>&amp;fileInfo)<sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>!fileInfo.isSymLink();</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QFileInfo<sp/>&amp;entry<sp/>:<sp/>std::as_const(entries))<sp/>{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray<sp/>shape<sp/>=<sp/>QFile::encodeName(entry.fileName());</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_k_win_1_1_cursor_theme_private_1a90d71fc993998636987c83217f451fae" kindref="member">registry</ref>.contains(shape))<sp/>{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(entry.isSymLink())<sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QFileInfo<sp/>symLinkInfo(entry.symLinkTarget());</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(symLinkInfo.absolutePath()<sp/>==<sp/>entry.absolutePath())<sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>alias<sp/>=<sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a90d71fc993998636987c83217f451fae" kindref="member">registry</ref>.value(QFile::encodeName(symLinkInfo.fileName())))<sp/>{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a90d71fc993998636987c83217f451fae" kindref="member">registry</ref>.insert(shape,<sp/>alias);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a90d71fc993998636987c83217f451fae" kindref="member">registry</ref>.insert(shape,<sp/>std::make_shared&lt;CursorThemeEntry&gt;(<ref refid="struct_k_win_1_1_cursor_theme_svg_entry_info" kindref="compound">CursorThemeSvgEntryInfo</ref>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.path<sp/>=<sp/>entry.absoluteFilePath(),</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}));</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>QStringList<sp/>defaultSearchPaths()</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>QStringList<sp/>paths;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(paths.isEmpty())<sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>env<sp/>=<sp/>qEnvironmentVariable(</highlight><highlight class="stringliteral">&quot;XCURSOR_PATH&quot;</highlight><highlight class="normal">);<sp/>!env.isEmpty())<sp/>{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>rawPaths<sp/>=<sp/>env.split(</highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">,<sp/>Qt::SkipEmptyParts);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;rawPath<sp/>:<sp/>rawPaths)<sp/>{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>paths.append(KShell::tildeExpand(rawPath));</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>home<sp/>=<sp/>QDir::homePath();</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!home.isEmpty())<sp/>{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>paths.append(home<sp/>+<sp/>QLatin1String(</highlight><highlight class="stringliteral">&quot;/.icons&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>dataDirs<sp/>=<sp/>QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;dataDir<sp/>:<sp/>dataDirs)<sp/>{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>paths.append(dataDir<sp/>+<sp/>QLatin1String(</highlight><highlight class="stringliteral">&quot;/icons&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>paths;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224" refid="class_k_win_1_1_cursor_theme_private_1a331f4d09357aa569193e2a7ac7d13abd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a331f4d09357aa569193e2a7ac7d13abd" kindref="member">CursorThemePrivate::discover</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;searchPaths)</highlight></codeline>
+<codeline lineno="225"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>paths<sp/>=<sp/>!searchPaths.isEmpty()<sp/>?<sp/>searchPaths<sp/>:<sp/>defaultSearchPaths();</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>QStack&lt;QString&gt;<sp/>stack;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>QSet&lt;QString&gt;<sp/>loaded;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>stack.push(<ref refid="class_k_win_1_1_cursor_theme_private_1a52c201f34435332c070d675c32455731" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!stack.isEmpty())<sp/>{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>themeName<sp/>=<sp/>stack.pop();</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(loaded.contains(themeName))<sp/>{</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QStringList<sp/>inherits;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;path<sp/>:<sp/>paths)<sp/>{</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QDir<sp/>dir(path<sp/>+<sp/>QLatin1Char(</highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal">)<sp/>+<sp/>themeName);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!dir.exists())<sp/>{</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QDir<sp/>package<sp/>=<sp/>dir.filePath(QLatin1String(</highlight><highlight class="stringliteral">&quot;cursors_scalable&quot;</highlight><highlight class="normal">));<sp/>package.exists())<sp/>{</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a15e638973a7f152b759f93ad26e7c6f3" kindref="member">discoverSvgCursors</ref>(package.path());</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QDir<sp/>package<sp/>=<sp/>dir.filePath(QLatin1String(</highlight><highlight class="stringliteral">&quot;cursors&quot;</highlight><highlight class="normal">));<sp/>package.exists())<sp/>{</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_cursor_theme_private_1a01496447f1a673975bec26bdc42b406d" kindref="member">discoverXCursors</ref>(package.path());</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(inherits.isEmpty())<sp/>{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>KConfig<sp/>config(dir.filePath(QStringLiteral(</highlight><highlight class="stringliteral">&quot;index.theme&quot;</highlight><highlight class="normal">)),<sp/>KConfig::NoGlobals);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inherits<sp/>&lt;&lt;<sp/>KConfigGroup(&amp;config,<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;Icon<sp/>Theme&quot;</highlight><highlight class="normal">)).readEntry(</highlight><highlight class="stringliteral">&quot;Inherits&quot;</highlight><highlight class="normal">,<sp/>QStringList());</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loaded.insert(themeName);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>inherits.crbegin();<sp/>it<sp/>!=<sp/>inherits.crend();<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stack.push(*it);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264" refid="class_k_win_1_1_cursor_theme_1a9379633b4afe9fb61da5f9d701ca9586" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_cursor_theme_1a9379633b4afe9fb61da5f9d701ca9586" kindref="member">CursorTheme::CursorTheme</ref>()</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>d(new<sp/><ref refid="class_k_win_1_1_cursor_theme_private" kindref="compound">CursorThemePrivate</ref>)</highlight></codeline>
+<codeline lineno="266"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="267"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269" refid="class_k_win_1_1_cursor_theme_1aef2ba73bc5208d5d6dde665a4a23698e" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_cursor_theme_1a9379633b4afe9fb61da5f9d701ca9586" kindref="member">CursorTheme::CursorTheme</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;themeName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_1a749281eb7ffcc9f5e7716bcffc40dfc9" kindref="member">size</ref>,<sp/>qreal<sp/><ref refid="class_k_win_1_1_cursor_theme_1aaa7632d368a0a88b71c8f64343c6dcd9" kindref="member">devicePixelRatio</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;searchPaths)</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>d(new<sp/><ref refid="class_k_win_1_1_cursor_theme_private" kindref="compound">CursorThemePrivate</ref>(themeName,<sp/><ref refid="class_k_win_1_1_cursor_theme_1a749281eb7ffcc9f5e7716bcffc40dfc9" kindref="member">size</ref>,<sp/><ref refid="class_k_win_1_1_cursor_theme_1aaa7632d368a0a88b71c8f64343c6dcd9" kindref="member">devicePixelRatio</ref>))</highlight></codeline>
+<codeline lineno="271"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;discover(searchPaths);</highlight></codeline>
+<codeline lineno="273"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275" refid="class_k_win_1_1_cursor_theme_1a898873330a14c097a8feedcf0670e0ee" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_cursor_theme_1a9379633b4afe9fb61da5f9d701ca9586" kindref="member">CursorTheme::CursorTheme</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_1a9379633b4afe9fb61da5f9d701ca9586" kindref="member">CursorTheme</ref><sp/>&amp;other)</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>d(other.d)</highlight></codeline>
+<codeline lineno="277"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="278"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280" refid="class_k_win_1_1_cursor_theme_1a1fb9d8532a4ae2e46349fcaf26dc07bf" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_cursor_theme_1a1fb9d8532a4ae2e46349fcaf26dc07bf" kindref="member">CursorTheme::~CursorTheme</ref>()</highlight></codeline>
+<codeline lineno="281"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="282"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284" refid="class_k_win_1_1_cursor_theme_1ae1893c6f807bacfb296906eb074ff96a" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_cursor_theme_1a9379633b4afe9fb61da5f9d701ca9586" kindref="member">CursorTheme</ref><sp/>&amp;<ref refid="class_k_win_1_1_cursor_theme_1ae1893c6f807bacfb296906eb074ff96a" kindref="member">CursorTheme::operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_1a9379633b4afe9fb61da5f9d701ca9586" kindref="member">CursorTheme</ref><sp/>&amp;other)</highlight></codeline>
+<codeline lineno="285"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>d<sp/>=<sp/>other.d;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290" refid="class_k_win_1_1_cursor_theme_1a3b4a07892c4c507c95e1a5104c39f671" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_1a3b4a07892c4c507c95e1a5104c39f671" kindref="member">CursorTheme::operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_1a9379633b4afe9fb61da5f9d701ca9586" kindref="member">CursorTheme</ref><sp/>&amp;other)</highlight></codeline>
+<codeline lineno="291"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d<sp/>==<sp/>other.d;</highlight></codeline>
+<codeline lineno="293"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295" refid="class_k_win_1_1_cursor_theme_1a42b5a3fbf3972a06757e52b9821a814b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_1a42b5a3fbf3972a06757e52b9821a814b" kindref="member">CursorTheme::operator!=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_1a9379633b4afe9fb61da5f9d701ca9586" kindref="member">CursorTheme</ref><sp/>&amp;other)</highlight></codeline>
+<codeline lineno="296"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>==<sp/>other);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300" refid="class_k_win_1_1_cursor_theme_1ad8f21d42f3a87e3feb7900fa20f91fc5" refkind="member"><highlight class="normal">QString<sp/><ref refid="class_k_win_1_1_cursor_theme_1ad8f21d42f3a87e3feb7900fa20f91fc5" kindref="member">CursorTheme::name</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="301"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;name;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305" refid="class_k_win_1_1_cursor_theme_1a749281eb7ffcc9f5e7716bcffc40dfc9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_1a749281eb7ffcc9f5e7716bcffc40dfc9" kindref="member">CursorTheme::size</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="306"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;size;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight></codeline>
+<codeline lineno="310" refid="class_k_win_1_1_cursor_theme_1aaa7632d368a0a88b71c8f64343c6dcd9" refkind="member"><highlight class="normal">qreal<sp/><ref refid="class_k_win_1_1_cursor_theme_1aaa7632d368a0a88b71c8f64343c6dcd9" kindref="member">CursorTheme::devicePixelRatio</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="311"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;devicePixelRatio;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315" refid="class_k_win_1_1_cursor_theme_1ac88b86ca4e889433d4f5d26893424c6b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cursor_theme_1ac88b86ca4e889433d4f5d26893424c6b" kindref="member">CursorTheme::isEmpty</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="316"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;registry.isEmpty();</highlight></codeline>
+<codeline lineno="318"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320" refid="class_k_win_1_1_cursor_theme_1a7787b10cae219d16ecd8a658acc78a4d" refkind="member"><highlight class="normal">QList&lt;CursorSprite&gt;<sp/><ref refid="class_k_win_1_1_cursor_theme_1a7787b10cae219d16ecd8a658acc78a4d" kindref="member">CursorTheme::shape</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray<sp/>&amp;<ref refid="class_k_win_1_1_cursor_theme_1ad8f21d42f3a87e3feb7900fa20f91fc5" kindref="member">name</ref>)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="321"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>entry<sp/>=<sp/>d-&gt;registry.value(<ref refid="class_k_win_1_1_cursor_theme_1ad8f21d42f3a87e3feb7900fa20f91fc5" kindref="member">name</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>entry-&gt;load(d-&gt;size,<sp/>d-&gt;devicePixelRatio);</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>entry-&gt;sprites;</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QList&lt;CursorSprite&gt;();</highlight></codeline>
+<codeline lineno="327"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/utils/cursortheme.cpp"/>
+  </compounddef>
+</doxygen>

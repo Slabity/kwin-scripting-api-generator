@@ -1,0 +1,276 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dbusinterface_8h" kind="file" language="C++">
+    <compoundname>dbusinterface.h</compoundname>
+    <includes local="no">QDBusContext</includes>
+    <includes local="no">QDBusMessage</includes>
+    <includes local="no">QObject</includes>
+    <includes refid="virtualdesktopsdbustypes_8h" local="yes">virtualdesktopsdbustypes.h</includes>
+    <includedby refid="compositor_8cpp" local="yes">kwin/src/compositor.cpp</includedby>
+    <includedby refid="dbusinterface_8cpp" local="yes">kwin/src/dbusinterface.cpp</includedby>
+    <includedby refid="pluginmanager_8cpp" local="yes">kwin/src/pluginmanager.cpp</includedby>
+    <includedby refid="workspace_8cpp" local="yes">kwin/src/workspace.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/dbusinterface.h</label>
+        <link refid="dbusinterface_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>virtualdesktopsdbustypes.h</label>
+        <link refid="virtualdesktopsdbustypes_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>QDBusArgument</label>
+      </node>
+      <node id="2">
+        <label>QDBusContext</label>
+      </node>
+      <node id="3">
+        <label>QDBusMessage</label>
+      </node>
+      <node id="4">
+        <label>QObject</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/compositor.cpp</label>
+        <link refid="compositor_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/dbusinterface.cpp</label>
+        <link refid="dbusinterface_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/dbusinterface.h</label>
+        <link refid="dbusinterface_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>kwin/src/pluginmanager.cpp</label>
+        <link refid="pluginmanager_8cpp"/>
+      </node>
+      <node id="5">
+        <label>kwin/src/workspace.cpp</label>
+        <link refid="workspace_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_d_bus_interface" prot="public">KWin::DBusInterface</innerclass>
+    <innerclass refid="class_k_win_1_1_compositor_d_bus_interface" prot="public">KWin::CompositorDBusInterface</innerclass>
+    <innerclass refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface" prot="public">KWin::VirtualDesktopManagerDBusInterface</innerclass>
+    <innerclass refid="class_k_win_1_1_plugin_manager_d_bus_interface" prot="public">KWin::PluginManagerDBusInterface</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2012<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDBusContext&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDBusMessage&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="virtualdesktopsdbustypes_8h" kindref="compound">virtualdesktopsdbustypes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_compositor" kindref="compound">Compositor</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_plugin_manager" kindref="compound">PluginManager</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_virtual_desktop_manager" kindref="compound">VirtualDesktopManager</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="class_k_win_1_1_d_bus_interface" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_d_bus_interface_1a444bdfa9c44fdd6764e303c046409767" kindref="member">DBusInterface</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject,<sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/>QDBusContext</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_CLASSINFO(</highlight><highlight class="stringliteral">&quot;D-Bus<sp/>Interface&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;org.kde.KWin&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_interface_1a444bdfa9c44fdd6764e303c046409767" kindref="member">DBusInterface</ref>(QObject<sp/>*parent);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_d_bus_interface_1a7fc9bef1c6243a960cce24d1e9e705a8" kindref="member">~DBusInterface</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>PROPERTIES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="class_k_win_1_1_d_bus_interface_1ac9f68747a59108b88302f8249a027a29" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_interface_1ac9f68747a59108b88302f8249a027a29" kindref="member">showingDesktop</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_d_bus_interface_1ac9f68747a59108b88302f8249a027a29" kindref="member">showingDesktop</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_d_bus_interface_1a97a7d01fa315e1c65161fc2c6b3a8796" kindref="member">showingDesktopChanged</ref>)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_interface_1ac9f68747a59108b88302f8249a027a29" kindref="member">showingDesktop</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Q_SLOTS:<sp/></highlight><highlight class="comment">//<sp/>METHODS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_NOREPLY<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_interface_1a7c12d95909a49f47d03a2eab53e35785" kindref="member">cascadeDesktop</ref>();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_interface_1ac287f4c26383ea2c8e34f64cb19f9de5" kindref="member">currentDesktop</ref>();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_NOREPLY<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_interface_1aa339d60b7fdeca9516c060ab0e5d1248" kindref="member">killWindow</ref>();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_interface_1abf2760676363214c55512a6177b9b9a4" kindref="member">nextDesktop</ref>();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_interface_1a1e7be74c26e9cc0b7690582c2350e117" kindref="member">previousDesktop</ref>();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_NOREPLY<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_interface_1a951c1095afba3ab4ca3c410647380e78" kindref="member">reconfigure</ref>();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_interface_1a289e9fa90b8ce3ca94db302dc90c040b" kindref="member">setCurrentDesktop</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desktop);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_interface_1a3ca30bb23c7f55d470248e66596a2b3b" kindref="member">startActivity</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;in0);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_interface_1a0cb49c51b43fd177542a7f427b3102ae" kindref="member">stopActivity</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;in0);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_d_bus_interface_1a5096c770913a65734eeef448d29627bc" kindref="member">supportInformation</ref>();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_d_bus_interface_1a846f7eb1cdfbfa9bf02994dbfa736896" kindref="member">activeOutputName</ref>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_NOREPLY<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_interface_1a27352df1bd69e7efa91bedad506e982b" kindref="member">unclutterDesktop</ref>();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_NOREPLY<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_interface_1a2e1355afd94e6d53b7d01e5cbe15fa77" kindref="member">showDebugConsole</ref>();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_NOREPLY<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_interface_1a6a71d35f3c2aa6d95f22fc4d0cd4fa09" kindref="member">replace</ref>();</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>QVariantMap<sp/><ref refid="class_k_win_1_1_d_bus_interface_1a6d287a57ec49fac88e85dfbf86fcb521" kindref="member">queryWindowInfo</ref>();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>QVariantMap<sp/><ref refid="class_k_win_1_1_d_bus_interface_1ae4623f15e4f957807c053ad189e115f9" kindref="member">getWindowInfo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;uuid);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_NOREPLY<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_interface_1a77fa3e5f8e38e71d6da10b94ab0cc3b5" kindref="member">showDesktop</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>show);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="95" refid="class_k_win_1_1_d_bus_interface_1a97a7d01fa315e1c65161fc2c6b3a8796" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_interface_1a97a7d01fa315e1c65161fc2c6b3a8796" kindref="member">showingDesktopChanged</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>showing);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onShowingDesktopChanged(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>show,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">/*animated*/</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>m_serviceName;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>QDBusMessage<sp/>m_replyQueryWindowInfo;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="class_k_win_1_1_compositor_d_bus_interface" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_compositor_d_bus_interface_1ad02da65238b74f00514479a98c8e0ab9" kindref="member">CompositorDBusInterface</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_CLASSINFO(</highlight><highlight class="stringliteral">&quot;D-Bus<sp/>Interface&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;org.kde.kwin.Compositing&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="114" refid="class_k_win_1_1_compositor_d_bus_interface_1a28da43bd17652053b55223b80cef4b88" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1a28da43bd17652053b55223b80cef4b88" kindref="member">active</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1a6aa17d9b9b96efb76d072e6a154872bd" kindref="member">isActive</ref>)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="class_k_win_1_1_compositor_d_bus_interface_1a906636b777562b4df740d3a1648e8945" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1a906636b777562b4df740d3a1648e8945" kindref="member">compositingPossible</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1ae07bc0d7c5fe6827645c4c626b5072ad" kindref="member">isCompositingPossible</ref>)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="class_k_win_1_1_compositor_d_bus_interface_1a5549303fb63d4c5f7d2f867884b3d5ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QString<sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1a5549303fb63d4c5f7d2f867884b3d5ed" kindref="member">compositingNotPossibleReason</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1a5549303fb63d4c5f7d2f867884b3d5ed" kindref="member">compositingNotPossibleReason</ref>)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="class_k_win_1_1_compositor_d_bus_interface_1ad1b75e255e972dd6a5fa2e10cc417fd8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1ad1b75e255e972dd6a5fa2e10cc417fd8" kindref="member">openGLIsBroken</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1a57f9f43fedd7d66b7103d6e706d47e56" kindref="member">isOpenGLBroken</ref>)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="class_k_win_1_1_compositor_d_bus_interface_1a6cc8e78b89c8b53acadf4773f558e53a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QString<sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1a6cc8e78b89c8b53acadf4773f558e53a" kindref="member">compositingType</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1a6cc8e78b89c8b53acadf4773f558e53a" kindref="member">compositingType</ref>)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="class_k_win_1_1_compositor_d_bus_interface_1a5b481b2c2b7c2591284a29fa4be3d995" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QStringList<sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1a5b481b2c2b7c2591284a29fa4be3d995" kindref="member">supportedOpenGLPlatformInterfaces</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1a5b481b2c2b7c2591284a29fa4be3d995" kindref="member">supportedOpenGLPlatformInterfaces</ref>)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151" refid="class_k_win_1_1_compositor_d_bus_interface_1aac0d461a2b50c3028178dde85cab2a08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1aac0d461a2b50c3028178dde85cab2a08" kindref="member">platformRequiresCompositing</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1aac0d461a2b50c3028178dde85cab2a08" kindref="member">platformRequiresCompositing</ref>)</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>explicit<sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1ad02da65238b74f00514479a98c8e0ab9" kindref="member">CompositorDBusInterface</ref>(<ref refid="class_k_win_1_1_compositor" kindref="compound">Compositor</ref><sp/>*parent);</highlight></codeline>
+<codeline lineno="154" refid="class_k_win_1_1_compositor_d_bus_interface_1a13446d66a587d8eade404a49ebe26918" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="class_k_win_1_1_compositor_d_bus_interface_1ad02da65238b74f00514479a98c8e0ab9" kindref="member">CompositorDBusInterface</ref>()<sp/>override<sp/>=<sp/>default;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1a6aa17d9b9b96efb76d072e6a154872bd" kindref="member">isActive</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1ae07bc0d7c5fe6827645c4c626b5072ad" kindref="member">isCompositingPossible</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1a5549303fb63d4c5f7d2f867884b3d5ed" kindref="member">compositingNotPossibleReason</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1a57f9f43fedd7d66b7103d6e706d47e56" kindref="member">isOpenGLBroken</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1a6cc8e78b89c8b53acadf4773f558e53a" kindref="member">compositingType</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>QStringList<sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1a5b481b2c2b7c2591284a29fa4be3d995" kindref="member">supportedOpenGLPlatformInterfaces</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1aac0d461a2b50c3028178dde85cab2a08" kindref="member">platformRequiresCompositing</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal">public<sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1a6b5576cdd7093380ab324859e5c30a10" kindref="member">reinitialize</ref>();</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="173" refid="class_k_win_1_1_compositor_d_bus_interface_1a69fe3b936861a9bf02f3452c105359b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1a69fe3b936861a9bf02f3452c105359b4" kindref="member">compositingToggled</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_compositor_d_bus_interface_1a28da43bd17652053b55223b80cef4b88" kindref="member">active</ref>);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal">private:</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_compositor" kindref="compound">Compositor</ref><sp/>*m_compositor;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TODO:<sp/>disable<sp/>all<sp/>of<sp/>this<sp/>in<sp/>case<sp/>of<sp/>kiosk?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181" refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface" refkind="compound"><highlight class="normal">class<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a2f131574b827c55033f46363cdefb492" kindref="member">VirtualDesktopManagerDBusInterface</ref><sp/>:<sp/>public<sp/>QObject</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_CLASSINFO(</highlight><highlight class="stringliteral">&quot;D-Bus<sp/>Interface&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;org.kde.KWin.VirtualDesktopManager&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="190" refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a6759a154d86ade7f419fd7819ee3cd67" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(uint<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a6759a154d86ade7f419fd7819ee3cd67" kindref="member">count</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a6759a154d86ade7f419fd7819ee3cd67" kindref="member">count</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a570a8c4fcd4722537e0d78863a26600d" kindref="member">countChanged</ref>)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195" refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a80c75e6d475c6d09834e85b63534ad1c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(uint<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a80c75e6d475c6d09834e85b63534ad1c" kindref="member">rows</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a80c75e6d475c6d09834e85b63534ad1c" kindref="member">rows</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1acc2cb37100a49694e8f3a735c090c6c9" kindref="member">setRows</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1afe663abbd33bb4f9aba7048b344cac15" kindref="member">rowsChanged</ref>)</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200" refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a6ae7a3d5629ea3e5c651665dfcedc14c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QString<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a6ae7a3d5629ea3e5c651665dfcedc14c" kindref="member">current</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a6ae7a3d5629ea3e5c651665dfcedc14c" kindref="member">current</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1ac66f0099daf377a409278615c0292a32" kindref="member">setCurrent</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1adc70e67ad23c9830e94e220c27f9c6b6" kindref="member">currentChanged</ref>)</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205" refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1acc34ccf9b132e28320bff6dfb5a6593d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1acc34ccf9b132e28320bff6dfb5a6593d" kindref="member">navigationWrappingAround</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a784bf64645362713be181e679f2aaab4" kindref="member">isNavigationWrappingAround</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a63731f127550aab151159192729fb68c" kindref="member">setNavigationWrappingAround</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a92dc3a5a4c660d6cbb0e255b743e7b34" kindref="member">navigationWrappingAroundChanged</ref>)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210" refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a313a23b40bd2b4770484649d460a8fd5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(<ref refid="namespace_k_win" kindref="compound">KWin</ref>::<ref refid="namespace_k_win_1a462eec72df279c1e20733e203f83fdf4" kindref="member">DBusDesktopDataVector</ref><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a313a23b40bd2b4770484649d460a8fd5" kindref="member">desktops</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a313a23b40bd2b4770484649d460a8fd5" kindref="member">desktops</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1ade353464b457fb3832a3fc3ca6cf571b" kindref="member">desktopsChanged</ref>);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a2f131574b827c55033f46363cdefb492" kindref="member">VirtualDesktopManagerDBusInterface</ref>(<ref refid="class_k_win_1_1_virtual_desktop_manager" kindref="compound">VirtualDesktopManager</ref><sp/>*parent);</highlight></codeline>
+<codeline lineno="214" refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1aadf4b8d9237b1e36a3d08ff4c627d9a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a2f131574b827c55033f46363cdefb492" kindref="member">VirtualDesktopManagerDBusInterface</ref>()<sp/>override<sp/>=<sp/>default;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>uint<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a6759a154d86ade7f419fd7819ee3cd67" kindref="member">count</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1acc2cb37100a49694e8f3a735c090c6c9" kindref="member">setRows</ref>(uint<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a80c75e6d475c6d09834e85b63534ad1c" kindref="member">rows</ref>);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>uint<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a80c75e6d475c6d09834e85b63534ad1c" kindref="member">rows</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1ac66f0099daf377a409278615c0292a32" kindref="member">setCurrent</ref>(const<sp/>QString<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a6ae7a3d5629ea3e5c651665dfcedc14c" kindref="member">current</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a63731f127550aab151159192729fb68c" kindref="member">setNavigationWrappingAround</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>wraps);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a784bf64645362713be181e679f2aaab4" kindref="member">isNavigationWrappingAround</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win" kindref="compound">KWin</ref>::<ref refid="namespace_k_win_1a462eec72df279c1e20733e203f83fdf4" kindref="member">DBusDesktopDataVector</ref><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a313a23b40bd2b4770484649d460a8fd5" kindref="member">desktops</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="230" refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a570a8c4fcd4722537e0d78863a26600d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a570a8c4fcd4722537e0d78863a26600d" kindref="member">countChanged</ref>(uint<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a6759a154d86ade7f419fd7819ee3cd67" kindref="member">count</ref>);</highlight></codeline>
+<codeline lineno="231" refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1afe663abbd33bb4f9aba7048b344cac15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1afe663abbd33bb4f9aba7048b344cac15" kindref="member">rowsChanged</ref>(uint<sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a80c75e6d475c6d09834e85b63534ad1c" kindref="member">rows</ref>);</highlight></codeline>
+<codeline lineno="232" refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1adc70e67ad23c9830e94e220c27f9c6b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1adc70e67ad23c9830e94e220c27f9c6b6" kindref="member">currentChanged</ref>(const<sp/>QString<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="233" refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a92dc3a5a4c660d6cbb0e255b743e7b34" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a92dc3a5a4c660d6cbb0e255b743e7b34" kindref="member">navigationWrappingAroundChanged</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>wraps);</highlight></codeline>
+<codeline lineno="234" refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1ade353464b457fb3832a3fc3ca6cf571b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1ade353464b457fb3832a3fc3ca6cf571b" kindref="member">desktopsChanged</ref>(<ref refid="namespace_k_win" kindref="compound">KWin</ref>::<ref refid="namespace_k_win_1a462eec72df279c1e20733e203f83fdf4" kindref="member">DBusDesktopDataVector</ref>);</highlight></codeline>
+<codeline lineno="235" refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a83755ce781f9c296b40ff9fd4ab00bc4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a83755ce781f9c296b40ff9fd4ab00bc4" kindref="member">desktopDataChanged</ref>(const<sp/>QString<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/><ref refid="namespace_k_win" kindref="compound">KWin</ref>::<ref refid="struct_k_win_1_1_d_bus_desktop_data_struct" kindref="compound">DBusDesktopDataStruct</ref>);</highlight></codeline>
+<codeline lineno="236" refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1ad790b05abee9a2105d9438cf06020a68" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1ad790b05abee9a2105d9438cf06020a68" kindref="member">desktopCreated</ref>(const<sp/>QString<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/><ref refid="namespace_k_win" kindref="compound">KWin</ref>::<ref refid="struct_k_win_1_1_d_bus_desktop_data_struct" kindref="compound">DBusDesktopDataStruct</ref>);</highlight></codeline>
+<codeline lineno="237" refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a0f8452d7f768bef8c6ea58f4f0d2d7a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a0f8452d7f768bef8c6ea58f4f0d2d7a5" kindref="member">desktopRemoved</ref>(const<sp/>QString<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal">public<sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1ae4e69a74203f841db449d1c1f13a82e1" kindref="member">createDesktop</ref>(uint<sp/>position,<sp/>const<sp/>QString<sp/>&amp;name);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1a9fbc61635398d76643ac098b02ded0b5" kindref="member">setDesktopName</ref>(const<sp/>QString<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>const<sp/>QString<sp/>&amp;name);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager_d_bus_interface_1ab56c230d006fe7273c3e8e7691a15122" kindref="member">removeDesktop</ref>(const<sp/>QString<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal">private:</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_virtual_desktop_manager" kindref="compound">VirtualDesktopManager</ref><sp/>*m_manager;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252" refid="class_k_win_1_1_plugin_manager_d_bus_interface" refkind="compound"><highlight class="normal">class<sp/><ref refid="class_k_win_1_1_plugin_manager_d_bus_interface_1a2265a3ac76bd2df2c9b656aa4b133f5c" kindref="member">PluginManagerDBusInterface</ref><sp/>:<sp/>public<sp/>QObject</highlight></codeline>
+<codeline lineno="253"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_CLASSINFO(</highlight><highlight class="stringliteral">&quot;D-Bus<sp/>Interface&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;org.kde.KWin.Plugins&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257" refid="class_k_win_1_1_plugin_manager_d_bus_interface_1ab3ffe0a2c081d0e512a9c1b19bb4d9b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QStringList<sp/><ref refid="class_k_win_1_1_plugin_manager_d_bus_interface_1ab3ffe0a2c081d0e512a9c1b19bb4d9b0" kindref="member">LoadedPlugins</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_plugin_manager_d_bus_interface_1a6e65a9fbaf69a00e9ef5f664308190b1" kindref="member">loadedPlugins</ref>)</highlight></codeline>
+<codeline lineno="258" refid="class_k_win_1_1_plugin_manager_d_bus_interface_1abc23668cc2b799402fffd535646ea96b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QStringList<sp/><ref refid="class_k_win_1_1_plugin_manager_d_bus_interface_1abc23668cc2b799402fffd535646ea96b" kindref="member">AvailablePlugins</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_plugin_manager_d_bus_interface_1a48748d56a39dc5ba375537e50be153bb" kindref="member">availablePlugins</ref>)</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>explicit<sp/><ref refid="class_k_win_1_1_plugin_manager_d_bus_interface_1a2265a3ac76bd2df2c9b656aa4b133f5c" kindref="member">PluginManagerDBusInterface</ref>(<ref refid="class_k_win_1_1_plugin_manager" kindref="compound">PluginManager</ref><sp/>*manager);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>QStringList<sp/><ref refid="class_k_win_1_1_plugin_manager_d_bus_interface_1a6e65a9fbaf69a00e9ef5f664308190b1" kindref="member">loadedPlugins</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>QStringList<sp/><ref refid="class_k_win_1_1_plugin_manager_d_bus_interface_1a48748d56a39dc5ba375537e50be153bb" kindref="member">availablePlugins</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal">public<sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plugin_manager_d_bus_interface_1aedd89acfc70dd90e3d0a06e1ad18038d" kindref="member">LoadPlugin</ref>(const<sp/>QString<sp/>&amp;name);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plugin_manager_d_bus_interface_1a2471330f60ceb901eea4e8a6b75936e5" kindref="member">UnloadPlugin</ref>(const<sp/>QString<sp/>&amp;name);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal">private:</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_plugin_manager" kindref="compound">PluginManager</ref><sp/>*m_manager;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/dbusinterface.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="datasource__p_8h" kind="file" language="C++">
+    <compoundname>datasource_p.h</compoundname>
+    <includes local="no">qwayland-server-wayland.h</includes>
+    <includes refid="datadevicemanager_8h" local="yes">datadevicemanager.h</includes>
+    <includedby refid="wayland_2datasource_8cpp" local="yes">kwin/src/wayland/datasource.cpp</includedby>
+    <includedby refid="xdgtopleveldrag__v1_8cpp" local="yes">kwin/src/wayland/xdgtopleveldrag_v1.cpp</includedby>
+    <incdepgraph>
+      <node id="8">
+        <label>abstract_drop_handler.h</label>
+        <link refid="abstract__drop__handler_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>datadevice.h</label>
+        <link refid="datadevice_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>datadevicemanager.h</label>
+        <link refid="datadevicemanager_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/wayland/datasource_p.h</label>
+        <link refid="datasource__p_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QObject</label>
+      </node>
+      <node id="4">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="6">
+        <label>memory</label>
+      </node>
+      <node id="2">
+        <label>qwayland-server-wayland.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/wayland/datasource.cpp</label>
+        <link refid="wayland_2datasource_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/wayland/datasource_p.h</label>
+        <link refid="datasource__p_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>kwin/src/wayland/xdgtopleveldrag_v1.cpp</label>
+        <link refid="xdgtopleveldrag__v1_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_data_source_interface_private" prot="public">KWin::DataSourceInterfacePrivate</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2014<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2020<sp/>David<sp/>Edmundson<sp/>&lt;davidedmundson@kde.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>LGPL-2.1-only<sp/>OR<sp/>LGPL-3.0-only<sp/>OR<sp/>LicenseRef-KDE-Accepted-LGPL</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;qwayland-server-wayland.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="datadevicemanager_8h" kindref="compound">datadevicemanager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_data_source_interface" kindref="compound">DataSourceInterface</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_xdg_toplevel_drag_v1_interface" kindref="compound">XdgToplevelDragV1Interface</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="class_k_win_1_1_data_source_interface_private" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_data_source_interface_private_1a46bb925de4df31611225f9a2a49baca1" kindref="member">DataSourceInterfacePrivate</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QtWaylandServer::wl_data_source</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_data_source_interface_private_1a46bb925de4df31611225f9a2a49baca1" kindref="member">DataSourceInterfacePrivate</ref>(<ref refid="class_k_win_1_1_data_source_interface" kindref="compound">DataSourceInterface</ref><sp/>*_q,<sp/>::wl_resource<sp/>*resource);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_private_1a46bb925de4df31611225f9a2a49baca1" kindref="member">DataSourceInterfacePrivate</ref><sp/>*<ref refid="class_k_win_1_1_data_source_interface_private_1ac4a1c13cde9f629d55b73411dcd63cdc" kindref="member">get</ref>(<ref refid="class_k_win_1_1_data_source_interface" kindref="compound">DataSourceInterface</ref><sp/>*dataSource);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="class_k_win_1_1_data_source_interface_private_1ac9e3cd3db74733c154c346aca19634fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_data_source_interface" kindref="compound">DataSourceInterface</ref><sp/>*<ref refid="class_k_win_1_1_data_source_interface_private_1ac9e3cd3db74733c154c346aca19634fa" kindref="member">q</ref>;</highlight></codeline>
+<codeline lineno="27" refid="class_k_win_1_1_data_source_interface_private_1a4bae63af2ea2b25ffaa3c075972f0848" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QStringList<sp/><ref refid="class_k_win_1_1_data_source_interface_private_1a4bae63af2ea2b25ffaa3c075972f0848" kindref="member">mimeTypes</ref>;</highlight></codeline>
+<codeline lineno="28" refid="class_k_win_1_1_data_source_interface_private_1a87c3be914d91d146cd9690da2e706ba0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>DataDeviceManagerInterface::DnDActions<sp/><ref refid="class_k_win_1_1_data_source_interface_private_1a87c3be914d91d146cd9690da2e706ba0" kindref="member">supportedDnDActions</ref><sp/>=<sp/>DataDeviceManagerInterface::DnDAction::None;</highlight></codeline>
+<codeline lineno="29" refid="class_k_win_1_1_data_source_interface_private_1a21ac8f4b2704a45bbe9fa84a819de664" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_data_device_manager_interface_1a8aae415a2e33ca11c48d18e128f627b4" kindref="member">DataDeviceManagerInterface::DnDAction</ref><sp/><ref refid="class_k_win_1_1_data_source_interface_private_1a21ac8f4b2704a45bbe9fa84a819de664" kindref="member">selectedDndAction</ref><sp/>=<sp/>DataDeviceManagerInterface::DnDAction::None;</highlight></codeline>
+<codeline lineno="30" refid="class_k_win_1_1_data_source_interface_private_1a9a4bfb800934aeeef0c25710b5d4c0a3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_private_1a9a4bfb800934aeeef0c25710b5d4c0a3" kindref="member">isAccepted</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31" refid="class_k_win_1_1_data_source_interface_private_1abc6036d140aeeaa49fdbb92321771914" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_private_1abc6036d140aeeaa49fdbb92321771914" kindref="member">dropPerformed</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32" refid="class_k_win_1_1_data_source_interface_private_1af72f1a045aa2e811bf56f4c9940eb06f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_private_1af72f1a045aa2e811bf56f4c9940eb06f" kindref="member">isCanceled</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33" refid="class_k_win_1_1_data_source_interface_private_1a75558ea045b98d538bedaa82afdee93c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xdg_toplevel_drag_v1_interface" kindref="compound">XdgToplevelDragV1Interface</ref><sp/>*<ref refid="class_k_win_1_1_data_source_interface_private_1a75558ea045b98d538bedaa82afdee93c" kindref="member">xdgToplevelDrag</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_private_1aa858ba76af9363bb53e2b88c6a3bdbff" kindref="member">data_source_destroy_resource</ref>(Resource<sp/>*resource)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_private_1a5efc0fe7f1f9205d5dee6cd1add06415" kindref="member">data_source_offer</ref>(Resource<sp/>*resource,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;mime_type)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_private_1a655a7de2b9c2bc19eec4aa57a395868a" kindref="member">data_source_destroy</ref>(Resource<sp/>*resource)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_private_1a8a5c7a2e9eed9469f4bd985e9b8d1d68" kindref="member">data_source_set_actions</ref>(Resource<sp/>*resource,<sp/>uint32_t<sp/>dnd_actions)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>offer(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;mimeType);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/wayland/datasource_p.h"/>
+  </compounddef>
+</doxygen>

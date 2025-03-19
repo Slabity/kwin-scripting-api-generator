@@ -1,0 +1,341 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="mock__drm_8h" kind="file" language="C++">
+    <compoundname>mock_drm.h</compoundname>
+    <includes local="no">xf86drm.h</includes>
+    <includes local="no">xf86drmMode.h</includes>
+    <includes local="no">QList</includes>
+    <includes local="no">QMap</includes>
+    <includes local="no">QRect</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="drm_test_8cpp" local="yes">kwin/autotests/drm/drmTest.cpp</includedby>
+    <includedby refid="mock__drm_8cpp" local="yes">kwin/autotests/drm/mock_drm.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/autotests/drm/mock_drm.h</label>
+        <link refid="mock__drm_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QList</label>
+      </node>
+      <node id="5">
+        <label>QMap</label>
+      </node>
+      <node id="6">
+        <label>QRect</label>
+      </node>
+      <node id="7">
+        <label>memory</label>
+      </node>
+      <node id="8">
+        <label>mutex</label>
+      </node>
+      <node id="9">
+        <label>vector</label>
+      </node>
+      <node id="2">
+        <label>xf86drm.h</label>
+      </node>
+      <node id="3">
+        <label>xf86drmMode.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/autotests/drm/drmTest.cpp</label>
+        <link refid="drm_test_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/autotests/drm/mock_drm.cpp</label>
+        <link refid="mock__drm_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/autotests/drm/mock_drm.h</label>
+        <link refid="mock__drm_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_mock_property" prot="public">MockProperty</innerclass>
+    <innerclass refid="class_mock_property_blob" prot="public">MockPropertyBlob</innerclass>
+    <innerclass refid="class_mock_object" prot="public">MockObject</innerclass>
+    <innerclass refid="class_mock_connector" prot="public">MockConnector</innerclass>
+    <innerclass refid="class_mock_encoder" prot="public">MockEncoder</innerclass>
+    <innerclass refid="class_mock_crtc" prot="public">MockCrtc</innerclass>
+    <innerclass refid="class_mock_plane" prot="public">MockPlane</innerclass>
+    <innerclass refid="class_mock_fb" prot="public">MockFb</innerclass>
+    <innerclass refid="struct_prop" prot="public">Prop</innerclass>
+    <innerclass refid="struct__drm_mode_atomic_req" prot="public">_drmModeAtomicReq</innerclass>
+    <innerclass refid="class_mock_gpu" prot="public">MockGpu</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="mock__drm_8h_1a999115459f7a1b8d0e2088aab86bdf92" prot="public" static="no">
+        <name>MOCKDRM_DEVICE_CAP_ATOMIC</name>
+        <initializer>0xFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/autotests/drm/mock_drm.h" line="148" column="9" bodyfile="kwin/autotests/drm/mock_drm.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="mock__drm_8h_1abb8069f242e006c559a71f47984115bd" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>PlaneType</name>
+        <enumvalue id="mock__drm_8h_1abb8069f242e006c559a71f47984115bda074de7e7c226d5c60f8af14c20725352" prot="public">
+          <name>Primary</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="mock__drm_8h_1abb8069f242e006c559a71f47984115bda6b551379c3c0b59326abdaf3b4395bd3" prot="public">
+          <name>Overlay</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="mock__drm_8h_1abb8069f242e006c559a71f47984115bda9abdae4fa5d93330363a88ed8a5e7946" prot="public">
+          <name>Cursor</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/autotests/drm/mock_drm.h" line="109" column="1" bodyfile="kwin/autotests/drm/mock_drm.h" bodystart="109" bodyend="113"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2022<sp/>Xaver<sp/>Hugl<sp/>&lt;xaver.hugl@gmail.com&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;xf86drm.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;xf86drmMode.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QMap&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QRect&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_mock_gpu" kindref="compound">MockGpu</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_mock_fb" kindref="compound">MockFb</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_mock_crtc" kindref="compound">MockCrtc</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_mock_encoder" kindref="compound">MockEncoder</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_mock_object" kindref="compound">MockObject</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_mock_plane" kindref="compound">MockPlane</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="class_mock_property" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_mock_property_1ace1a41f3c79cf3c44301b4e2e3d0cdf9" kindref="member">MockProperty</ref><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_property_1ace1a41f3c79cf3c44301b4e2e3d0cdf9" kindref="member">MockProperty</ref>(<ref refid="class_mock_object" kindref="compound">MockObject</ref><sp/>*<ref refid="class_mock_property_1ac9cdfc8b7c01735eab784c38c9018cc5" kindref="member">obj</ref>,<sp/>QString<sp/><ref refid="class_mock_property_1a3c4a0d16cadf7b60966c569a8b697646" kindref="member">name</ref>,<sp/>uint64_t<sp/>initialValue,<sp/>uint32_t<sp/><ref refid="class_mock_property_1a17f34352a1d4365c53897c25359482cb" kindref="member">flags</ref>,<sp/>QList&lt;QByteArray&gt;<sp/><ref refid="class_mock_property_1a1becafc767ba4679e23db9ecf07fcb22" kindref="member">enums</ref><sp/>=<sp/>{});</highlight></codeline>
+<codeline lineno="31" refid="class_mock_property_1aa0b938040895c704b8a332dd0c09fbcd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_property_1aa0b938040895c704b8a332dd0c09fbcd" kindref="member">~MockProperty</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="class_mock_property_1ac9cdfc8b7c01735eab784c38c9018cc5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_object" kindref="compound">MockObject</ref><sp/>*<ref refid="class_mock_property_1ac9cdfc8b7c01735eab784c38c9018cc5" kindref="member">obj</ref>;</highlight></codeline>
+<codeline lineno="34" refid="class_mock_property_1a1198e54aa32ec5f1b1267079bc2f7126" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="class_mock_property_1a1198e54aa32ec5f1b1267079bc2f7126" kindref="member">id</ref>;</highlight></codeline>
+<codeline lineno="35" refid="class_mock_property_1a17f34352a1d4365c53897c25359482cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="class_mock_property_1a17f34352a1d4365c53897c25359482cb" kindref="member">flags</ref>;</highlight></codeline>
+<codeline lineno="36" refid="class_mock_property_1a3c4a0d16cadf7b60966c569a8b697646" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_mock_property_1a3c4a0d16cadf7b60966c569a8b697646" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="37" refid="class_mock_property_1a1ceebe6ed0150fa707eb5a8bcda7e1c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="class_mock_property_1a1ceebe6ed0150fa707eb5a8bcda7e1c7" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="38" refid="class_mock_property_1a1becafc767ba4679e23db9ecf07fcb22" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;QByteArray&gt;<sp/><ref refid="class_mock_property_1a1becafc767ba4679e23db9ecf07fcb22" kindref="member">enums</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="class_mock_property_blob" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_mock_property_blob_1a4c38d8a8fe2f11254bc488b1ecdf0272" kindref="member">MockPropertyBlob</ref><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_property_blob_1a4c38d8a8fe2f11254bc488b1ecdf0272" kindref="member">MockPropertyBlob</ref>(<ref refid="class_mock_gpu" kindref="compound">MockGpu</ref><sp/>*<ref refid="class_mock_property_blob_1a571c855afe8c4503745b97e5d7c2a165" kindref="member">gpu</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="class_mock_property_blob_1a1759fcc6a40810454653393da409bd4c" kindref="member">data</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="class_mock_property_blob_1a74d846e5138528a3c1c363e9929a5b0e" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_property_blob_1a47ae7835de01ac899aa14d7987b61a7d" kindref="member">~MockPropertyBlob</ref>();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="class_mock_property_blob_1a571c855afe8c4503745b97e5d7c2a165" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_gpu" kindref="compound">MockGpu</ref><sp/>*<ref refid="class_mock_property_blob_1a571c855afe8c4503745b97e5d7c2a165" kindref="member">gpu</ref>;</highlight></codeline>
+<codeline lineno="47" refid="class_mock_property_blob_1abe06556cb2e708aa2c5d3f996323423a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="class_mock_property_blob_1abe06556cb2e708aa2c5d3f996323423a" kindref="member">id</ref>;</highlight></codeline>
+<codeline lineno="48" refid="class_mock_property_blob_1a1759fcc6a40810454653393da409bd4c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="class_mock_property_blob_1a1759fcc6a40810454653393da409bd4c" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="49" refid="class_mock_property_blob_1a74d846e5138528a3c1c363e9929a5b0e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="class_mock_property_blob_1a74d846e5138528a3c1c363e9929a5b0e" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="class_mock_object" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_mock_object_1aa99edcf828702ea4827416c5df93e448" kindref="member">MockObject</ref><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_object_1aa99edcf828702ea4827416c5df93e448" kindref="member">MockObject</ref>(<ref refid="class_mock_gpu" kindref="compound">MockGpu</ref><sp/>*<ref refid="class_mock_object_1aee2a37c6a86ae20ee579900b72e04bfe" kindref="member">gpu</ref>);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_mock_object_1aa32f10d16e17321d7e37fe2fe442e7d3" kindref="member">~MockObject</ref>();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="class_mock_object_1a76f1c2955f448959528ffc1c4872c36a" kindref="member">getProp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;propName)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_mock_object_1ac1fb4229dc515cc08cef807dce970962" kindref="member">setProp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;propName,<sp/>uint64_t<sp/>value);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="class_mock_object_1a9529304fa4cb728bfb7a57c1327ab6cc" kindref="member">getPropId</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;propName)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="class_mock_object_1a9578562398c7e2f643300da2bf8f745f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="class_mock_object_1a9578562398c7e2f643300da2bf8f745f" kindref="member">id</ref>;</highlight></codeline>
+<codeline lineno="63" refid="class_mock_object_1a90cdcc4aa90c655ff7f76fa82e39401e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;MockProperty&gt;<sp/><ref refid="class_mock_object_1a90cdcc4aa90c655ff7f76fa82e39401e" kindref="member">props</ref>;</highlight></codeline>
+<codeline lineno="64" refid="class_mock_object_1aee2a37c6a86ae20ee579900b72e04bfe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_gpu" kindref="compound">MockGpu</ref><sp/>*<ref refid="class_mock_object_1aee2a37c6a86ae20ee579900b72e04bfe" kindref="member">gpu</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="class_mock_connector" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_mock_connector_1a548e11eeecbb46956d284ab0399207a3" kindref="member">MockConnector</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_mock_object_1aa99edcf828702ea4827416c5df93e448" kindref="member">MockObject</ref><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_connector_1a548e11eeecbb46956d284ab0399207a3" kindref="member">MockConnector</ref>(<ref refid="class_mock_gpu" kindref="compound">MockGpu</ref><sp/>*<ref refid="class_mock_object_1aee2a37c6a86ae20ee579900b72e04bfe" kindref="member">gpu</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>nonDesktop<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70" refid="class_mock_connector_1ac5867b1c7836bf962b3093b22e7e03a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_connector_1ac5867b1c7836bf962b3093b22e7e03a8" kindref="member">MockConnector</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_mock_connector_1a548e11eeecbb46956d284ab0399207a3" kindref="member">MockConnector</ref><sp/>&amp;obj)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71" refid="class_mock_connector_1a316894bc89a9786699174a1b42272fd4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_connector_1a316894bc89a9786699174a1b42272fd4" kindref="member">~MockConnector</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_mock_connector_1a7ad921223c796e2a3576041d1efa379a" kindref="member">addMode</ref>(uint32_t<sp/>width,<sp/>uint32_t<sp/>height,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>refreshRate,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>preferred<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_mock_connector_1a38abe162bd98b91774d127537cc7fceb" kindref="member">setVrrCapable</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>cap);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="class_mock_connector_1adeac016077f6cc685f339bbb734d8aa0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>drmModeConnection<sp/><ref refid="class_mock_connector_1adeac016077f6cc685f339bbb734d8aa0" kindref="member">connection</ref>;</highlight></codeline>
+<codeline lineno="77" refid="class_mock_connector_1a4ebe6e0fb800b73874fa449fffda836b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="class_mock_connector_1a4ebe6e0fb800b73874fa449fffda836b" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="78" refid="class_mock_connector_1a0088945a0aef1f6184dcc51b3d590f4f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;MockEncoder&gt;<sp/><ref refid="class_mock_connector_1a0088945a0aef1f6184dcc51b3d590f4f" kindref="member">encoder</ref>;</highlight></codeline>
+<codeline lineno="79" refid="class_mock_connector_1a6ec0196bce507c391fd434a9250a8f2e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;drmModeModeInfo&gt;<sp/><ref refid="class_mock_connector_1a6ec0196bce507c391fd434a9250a8f2e" kindref="member">modes</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="class_mock_encoder" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_mock_encoder_1af8291b748dd54ec9c8765a99accd3cce" kindref="member">MockEncoder</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_mock_object_1aa99edcf828702ea4827416c5df93e448" kindref="member">MockObject</ref><sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_encoder_1af8291b748dd54ec9c8765a99accd3cce" kindref="member">MockEncoder</ref>(<ref refid="class_mock_gpu" kindref="compound">MockGpu</ref><sp/>*<ref refid="class_mock_object_1aee2a37c6a86ae20ee579900b72e04bfe" kindref="member">gpu</ref>,<sp/>uint32_t<sp/><ref refid="class_mock_encoder_1a505c376d85f3cedb48933ff5c8ccb430" kindref="member">possible_crtcs</ref>);</highlight></codeline>
+<codeline lineno="85" refid="class_mock_encoder_1a53ef69e3928a9fde8180579f245cc53b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_encoder_1a53ef69e3928a9fde8180579f245cc53b" kindref="member">MockEncoder</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_mock_encoder_1af8291b748dd54ec9c8765a99accd3cce" kindref="member">MockEncoder</ref><sp/>&amp;obj)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86" refid="class_mock_encoder_1aecfa4b7611475ea013821735087dfbd3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_encoder_1aecfa4b7611475ea013821735087dfbd3" kindref="member">~MockEncoder</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="class_mock_encoder_1a992e79efc5d3873bea2992404e49c5d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_crtc" kindref="compound">MockCrtc</ref><sp/>*<ref refid="class_mock_encoder_1a992e79efc5d3873bea2992404e49c5d8" kindref="member">crtc</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89" refid="class_mock_encoder_1a505c376d85f3cedb48933ff5c8ccb430" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="class_mock_encoder_1a505c376d85f3cedb48933ff5c8ccb430" kindref="member">possible_crtcs</ref>;</highlight></codeline>
+<codeline lineno="90" refid="class_mock_encoder_1afb57a33e2c572f0300809b23e92e9394" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="class_mock_encoder_1afb57a33e2c572f0300809b23e92e9394" kindref="member">possible_clones</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="class_mock_crtc" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_mock_crtc_1afb59c8108c1f8580be8129bbb2ed4b92" kindref="member">MockCrtc</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_mock_object_1aa99edcf828702ea4827416c5df93e448" kindref="member">MockObject</ref><sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_crtc_1afb59c8108c1f8580be8129bbb2ed4b92" kindref="member">MockCrtc</ref>(<ref refid="class_mock_gpu" kindref="compound">MockGpu</ref><sp/>*<ref refid="class_mock_object_1aee2a37c6a86ae20ee579900b72e04bfe" kindref="member">gpu</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;MockPlane&gt;<sp/>&amp;<ref refid="class_mock_crtc_1ac294fcb981ce69ca8ddd7244c04a906f" kindref="member">legacyPlane</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_mock_crtc_1ab7f2e3b0af513242174fb2c5d86a406d" kindref="member">pipeIndex</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_mock_crtc_1a3a838ef4659c6c43459b8fb7222b5bcd" kindref="member">gamma_size</ref><sp/>=<sp/>255);</highlight></codeline>
+<codeline lineno="96" refid="class_mock_crtc_1ae3880d7c970dd737081ce9f1d8b02bb4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_crtc_1ae3880d7c970dd737081ce9f1d8b02bb4" kindref="member">MockCrtc</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_mock_crtc_1afb59c8108c1f8580be8129bbb2ed4b92" kindref="member">MockCrtc</ref><sp/>&amp;obj)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97" refid="class_mock_crtc_1a967e90e173c5b015619e88d42bd3cacc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_crtc_1a967e90e173c5b015619e88d42bd3cacc" kindref="member">~MockCrtc</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="class_mock_crtc_1ab7f2e3b0af513242174fb2c5d86a406d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_mock_crtc_1ab7f2e3b0af513242174fb2c5d86a406d" kindref="member">pipeIndex</ref>;</highlight></codeline>
+<codeline lineno="100" refid="class_mock_crtc_1a3a838ef4659c6c43459b8fb7222b5bcd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_mock_crtc_1a3a838ef4659c6c43459b8fb7222b5bcd" kindref="member">gamma_size</ref>;</highlight></codeline>
+<codeline lineno="101" refid="class_mock_crtc_1a2d146c3210de41a1bd258be48c813f94" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>drmModeModeInfo<sp/><ref refid="class_mock_crtc_1a2d146c3210de41a1bd258be48c813f94" kindref="member">mode</ref>;</highlight></codeline>
+<codeline lineno="102" refid="class_mock_crtc_1a176a0c0182f40901a7ff3d91ca743286" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_mock_crtc_1a176a0c0182f40901a7ff3d91ca743286" kindref="member">modeValid</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103" refid="class_mock_crtc_1a7bbc9fece6fd147fc699c0d06ef2f6fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_fb" kindref="compound">MockFb</ref><sp/>*<ref refid="class_mock_crtc_1a7bbc9fece6fd147fc699c0d06ef2f6fe" kindref="member">currentFb</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104" refid="class_mock_crtc_1a5a6ec4151541e2ea0753fb81987328a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_fb" kindref="compound">MockFb</ref><sp/>*<ref refid="class_mock_crtc_1a5a6ec4151541e2ea0753fb81987328a9" kindref="member">nextFb</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105" refid="class_mock_crtc_1af34eff775ccfa6a49caf572c4c35e964" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QRect<sp/><ref refid="class_mock_crtc_1af34eff775ccfa6a49caf572c4c35e964" kindref="member">cursorRect</ref>;</highlight></codeline>
+<codeline lineno="106" refid="class_mock_crtc_1ac294fcb981ce69ca8ddd7244c04a906f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;MockPlane&gt;<sp/><ref refid="class_mock_crtc_1ac294fcb981ce69ca8ddd7244c04a906f" kindref="member">legacyPlane</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="mock__drm_8h_1abb8069f242e006c559a71f47984115bd" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="mock__drm_8h_1abb8069f242e006c559a71f47984115bd" kindref="member">PlaneType</ref><sp/>{</highlight></codeline>
+<codeline lineno="110" refid="mock__drm_8h_1abb8069f242e006c559a71f47984115bda074de7e7c226d5c60f8af14c20725352" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mock__drm_8h_1abb8069f242e006c559a71f47984115bda074de7e7c226d5c60f8af14c20725352" kindref="member">Primary</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="111" refid="mock__drm_8h_1abb8069f242e006c559a71f47984115bda6b551379c3c0b59326abdaf3b4395bd3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mock__drm_8h_1abb8069f242e006c559a71f47984115bda6b551379c3c0b59326abdaf3b4395bd3" kindref="member">Overlay</ref>,</highlight></codeline>
+<codeline lineno="112" refid="mock__drm_8h_1abb8069f242e006c559a71f47984115bda9abdae4fa5d93330363a88ed8a5e7946" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mock__drm_8h_1abb8069f242e006c559a71f47984115bda9abdae4fa5d93330363a88ed8a5e7946" kindref="member">Cursor</ref></highlight></codeline>
+<codeline lineno="113"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="class_mock_plane" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_mock_plane_1a7b8e24d9807e29f702104e4c93b8d0e2" kindref="member">MockPlane</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_mock_object_1aa99edcf828702ea4827416c5df93e448" kindref="member">MockObject</ref><sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_plane_1a7b8e24d9807e29f702104e4c93b8d0e2" kindref="member">MockPlane</ref>(<ref refid="class_mock_gpu" kindref="compound">MockGpu</ref><sp/>*<ref refid="class_mock_object_1aee2a37c6a86ae20ee579900b72e04bfe" kindref="member">gpu</ref>,<sp/><ref refid="mock__drm_8h_1abb8069f242e006c559a71f47984115bd" kindref="member">PlaneType</ref><sp/><ref refid="class_mock_plane_1ac470750c75e3ff2c32daea5ce1abee38" kindref="member">type</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>crtcIndex);</highlight></codeline>
+<codeline lineno="118" refid="class_mock_plane_1a7e945289bad9fffb5a166cde02ed002b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_plane_1a7e945289bad9fffb5a166cde02ed002b" kindref="member">MockPlane</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_mock_plane_1a7b8e24d9807e29f702104e4c93b8d0e2" kindref="member">MockPlane</ref><sp/>&amp;obj)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119" refid="class_mock_plane_1afe53fa699d68452b1183877dcdc92b25" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_plane_1afe53fa699d68452b1183877dcdc92b25" kindref="member">~MockPlane</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="class_mock_plane_1a20613563987381c3a7b9d6ae2b916300" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_fb" kindref="compound">MockFb</ref><sp/>*<ref refid="class_mock_plane_1a20613563987381c3a7b9d6ae2b916300" kindref="member">currentFb</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="122" refid="class_mock_plane_1adc3df27f080acb9ee63d6d1a67135292" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_fb" kindref="compound">MockFb</ref><sp/>*<ref refid="class_mock_plane_1adc3df27f080acb9ee63d6d1a67135292" kindref="member">nextFb</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="123" refid="class_mock_plane_1afafd52d4429e7131d0551146be8f9ecf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_mock_plane_1afafd52d4429e7131d0551146be8f9ecf" kindref="member">possibleCrtcs</ref>;</highlight></codeline>
+<codeline lineno="124" refid="class_mock_plane_1ac470750c75e3ff2c32daea5ce1abee38" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mock__drm_8h_1abb8069f242e006c559a71f47984115bd" kindref="member">PlaneType</ref><sp/><ref refid="class_mock_plane_1ac470750c75e3ff2c32daea5ce1abee38" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="class_mock_fb" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_mock_fb_1ace19351db6241ca09b6d3aa123a6171f" kindref="member">MockFb</ref><sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_fb_1ace19351db6241ca09b6d3aa123a6171f" kindref="member">MockFb</ref>(<ref refid="class_mock_gpu" kindref="compound">MockGpu</ref><sp/>*<ref refid="class_mock_fb_1a958a027e63c77eeb757cbef6e1be45ba" kindref="member">gpu</ref>,<sp/>uint32_t<sp/><ref refid="class_mock_fb_1ac9fe2ed0d77a9584927d92c813311618" kindref="member">width</ref>,<sp/>uint32_t<sp/><ref refid="class_mock_fb_1a76fc6b61fed0921cdf2f84266ec38d6c" kindref="member">height</ref>);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_fb_1a17ebc9db895922c08e0b140459d18e78" kindref="member">~MockFb</ref>();</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="class_mock_fb_1ad7f1aa5418e1999d6cd9cb76a08569a3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="class_mock_fb_1ad7f1aa5418e1999d6cd9cb76a08569a3" kindref="member">id</ref>;</highlight></codeline>
+<codeline lineno="133" refid="class_mock_fb_1a76fc6b61fed0921cdf2f84266ec38d6c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="class_mock_fb_1ac9fe2ed0d77a9584927d92c813311618" kindref="member">width</ref>,<sp/><ref refid="class_mock_fb_1a76fc6b61fed0921cdf2f84266ec38d6c" kindref="member">height</ref>;</highlight></codeline>
+<codeline lineno="134" refid="class_mock_fb_1a958a027e63c77eeb757cbef6e1be45ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_gpu" kindref="compound">MockGpu</ref><sp/>*<ref refid="class_mock_fb_1a958a027e63c77eeb757cbef6e1be45ba" kindref="member">gpu</ref>;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="struct_prop" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_prop" kindref="compound">Prop</ref><sp/>{</highlight></codeline>
+<codeline lineno="138" refid="struct_prop_1ae50b0f2c1685f769ebf0dc079bdc3794" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_prop_1ae50b0f2c1685f769ebf0dc079bdc3794" kindref="member">obj</ref>;</highlight></codeline>
+<codeline lineno="139" refid="struct_prop_1a2b35c7b7e4e785c442d9c1e512d3e0d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_prop_1a2b35c7b7e4e785c442d9c1e512d3e0d8" kindref="member">prop</ref>;</highlight></codeline>
+<codeline lineno="140" refid="struct_prop_1a79a485c4488ba7a77f28c7b746425be2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="struct_prop_1a79a485c4488ba7a77f28c7b746425be2" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="struct__drm_mode_atomic_req" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct__drm_mode_atomic_req" kindref="compound">_drmModeAtomicReq</ref><sp/>{</highlight></codeline>
+<codeline lineno="144" refid="struct__drm_mode_atomic_req_1af08d15fc5c323631698f1836762302ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct__drm_mode_atomic_req_1af08d15fc5c323631698f1836762302ff" kindref="member">legacyEmulation</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="145" refid="struct__drm_mode_atomic_req_1ab3ca24ae6b48d48fa418e74c1a1cb5c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;Prop&gt;<sp/><ref refid="struct__drm_mode_atomic_req_1ab3ca24ae6b48d48fa418e74c1a1cb5c7" kindref="member">props</ref>;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="mock__drm_8h_1a999115459f7a1b8d0e2088aab86bdf92" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MOCKDRM_DEVICE_CAP_ATOMIC<sp/>0xFF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="class_mock_gpu" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_mock_gpu_1ae354f1a9166a6dcaf4506723f9a1ada0" kindref="member">MockGpu</ref><sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_gpu_1ae354f1a9166a6dcaf4506723f9a1ada0" kindref="member">MockGpu</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_mock_gpu_1af5351fd0eb06b646c0ea2ec2602b4ab4" kindref="member">fd</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;<ref refid="class_mock_gpu_1ad0c1c380ad4c73d10055ed4b6a16b796" kindref="member">devNode</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numCrtcs,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>gammaSize<sp/>=<sp/>255);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_gpu_1ad49c2886c32ff785d72ae9c3565d338c" kindref="member">~MockGpu</ref>();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_connector" kindref="compound">MockConnector</ref><sp/>*<ref refid="class_mock_gpu_1aefee8ba24883f2b3ac70d30c5a07afc4" kindref="member">findConnector</ref>(uint32_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_crtc" kindref="compound">MockCrtc</ref><sp/>*<ref refid="class_mock_gpu_1a9b2c20aa21560e073aa27042690591b9" kindref="member">findCrtc</ref>(uint32_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_plane" kindref="compound">MockPlane</ref><sp/>*<ref refid="class_mock_gpu_1aa26af920e7adb460784136c0a1f528f9" kindref="member">findPlane</ref>(uint32_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mock_property_blob" kindref="compound">MockPropertyBlob</ref><sp/>*<ref refid="class_mock_gpu_1af43f2cb9895d07cfece378389be0397b" kindref="member">getBlob</ref>(uint32_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_mock_gpu_1ad294b2530950a96055ef2c659fb8a320" kindref="member">flipPage</ref>(uint32_t<sp/>crtcId);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162" refid="class_mock_gpu_1af5351fd0eb06b646c0ea2ec2602b4ab4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_mock_gpu_1af5351fd0eb06b646c0ea2ec2602b4ab4" kindref="member">fd</ref>;</highlight></codeline>
+<codeline lineno="163" refid="class_mock_gpu_1ad0c1c380ad4c73d10055ed4b6a16b796" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_mock_gpu_1ad0c1c380ad4c73d10055ed4b6a16b796" kindref="member">devNode</ref>;</highlight></codeline>
+<codeline lineno="164" refid="class_mock_gpu_1a5d50a657bb07e62cafa89dc91660ec0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QByteArray<sp/><ref refid="class_mock_gpu_1a5d50a657bb07e62cafa89dc91660ec0b" kindref="member">name</ref><sp/>=<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;mock&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="165" refid="class_mock_gpu_1a926b863f5f45fdc22a8474421274e043" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QMap&lt;uint32_t,<sp/>uint64_t&gt;<sp/><ref refid="class_mock_gpu_1a926b863f5f45fdc22a8474421274e043" kindref="member">clientCaps</ref>;</highlight></codeline>
+<codeline lineno="166" refid="class_mock_gpu_1a04f44a862d91b1be9f85430be09bda0d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QMap&lt;uint32_t,<sp/>uint64_t&gt;<sp/><ref refid="class_mock_gpu_1a04f44a862d91b1be9f85430be09bda0d" kindref="member">deviceCaps</ref>;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="class_mock_gpu_1a4c7378ffc35996666c5da7cc24bb2e73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="class_mock_gpu_1a4c7378ffc35996666c5da7cc24bb2e73" kindref="member">idCounter</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="169" refid="class_mock_gpu_1af228becb570bd6c7ba0aa74abe0fa246" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;MockObject<sp/>*&gt;<sp/><ref refid="class_mock_gpu_1af228becb570bd6c7ba0aa74abe0fa246" kindref="member">objects</ref>;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171" refid="class_mock_gpu_1ae385e7151cc0ba270fd92fd9b597c7fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;std::shared_ptr&lt;MockConnector&gt;&gt;<sp/><ref refid="class_mock_gpu_1ae385e7151cc0ba270fd92fd9b597c7fb" kindref="member">connectors</ref>;</highlight></codeline>
+<codeline lineno="172" refid="class_mock_gpu_1a4db44c183cfe6b86c2aba593ba8abac1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;drmModeConnectorPtr&gt;<sp/><ref refid="class_mock_gpu_1a4db44c183cfe6b86c2aba593ba8abac1" kindref="member">drmConnectors</ref>;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174" refid="class_mock_gpu_1a6ff8af8b7190595f236d6b70798f05c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;std::shared_ptr&lt;MockEncoder&gt;&gt;<sp/><ref refid="class_mock_gpu_1a6ff8af8b7190595f236d6b70798f05c3" kindref="member">encoders</ref>;</highlight></codeline>
+<codeline lineno="175" refid="class_mock_gpu_1af35965dad6c5e6b91ff77c5f1d3be3a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;drmModeEncoderPtr&gt;<sp/><ref refid="class_mock_gpu_1af35965dad6c5e6b91ff77c5f1d3be3a2" kindref="member">drmEncoders</ref>;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177" refid="class_mock_gpu_1a099a159db7e9d7c71ef51fa8160e113e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;std::shared_ptr&lt;MockCrtc&gt;&gt;<sp/><ref refid="class_mock_gpu_1a099a159db7e9d7c71ef51fa8160e113e" kindref="member">crtcs</ref>;</highlight></codeline>
+<codeline lineno="178" refid="class_mock_gpu_1adc76c685139cc925cb73de9f4edaa4f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;drmModeCrtcPtr&gt;<sp/><ref refid="class_mock_gpu_1adc76c685139cc925cb73de9f4edaa4f7" kindref="member">drmCrtcs</ref>;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180" refid="class_mock_gpu_1a82ee29b7bfcb3c9b214c0b06e9a06638" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;std::shared_ptr&lt;MockPlane&gt;&gt;<sp/><ref refid="class_mock_gpu_1a82ee29b7bfcb3c9b214c0b06e9a06638" kindref="member">planes</ref>;</highlight></codeline>
+<codeline lineno="181" refid="class_mock_gpu_1a46189b8fffdf443ba058cb50a37ff89e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;drmModePlanePtr&gt;<sp/><ref refid="class_mock_gpu_1a46189b8fffdf443ba058cb50a37ff89e" kindref="member">drmPlanes</ref>;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="class_mock_gpu_1a48fcd9ef84c479bc90d52e7046ed4b8d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;MockFb<sp/>*&gt;<sp/><ref refid="class_mock_gpu_1a48fcd9ef84c479bc90d52e7046ed4b8d" kindref="member">fbs</ref>;</highlight></codeline>
+<codeline lineno="184" refid="class_mock_gpu_1a5c3921b692cdb5b5b10022dc1d75fc4e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::unique_ptr&lt;MockPropertyBlob&gt;&gt;<sp/><ref refid="class_mock_gpu_1a5c3921b692cdb5b5b10022dc1d75fc4e" kindref="member">propertyBlobs</ref>;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186" refid="class_mock_gpu_1a116fb093cec6f86e69c83bd894f2d8f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;drmModeResPtr&gt;<sp/><ref refid="class_mock_gpu_1a116fb093cec6f86e69c83bd894f2d8f0" kindref="member">resPtrs</ref>;</highlight></codeline>
+<codeline lineno="187" refid="class_mock_gpu_1a63c82d673f4f569627a8d177a7662437" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;drmModePropertyPtr&gt;<sp/><ref refid="class_mock_gpu_1a63c82d673f4f569627a8d177a7662437" kindref="member">drmProps</ref>;</highlight></codeline>
+<codeline lineno="188" refid="class_mock_gpu_1a8d3a1ef4d55a1235ebbab526a26b99d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;drmModePropertyBlobPtr&gt;<sp/><ref refid="class_mock_gpu_1a8d3a1ef4d55a1235ebbab526a26b99d7" kindref="member">drmPropertyBlobs</ref>;</highlight></codeline>
+<codeline lineno="189" refid="class_mock_gpu_1a7c10720c29580871293ad95cc54b4bf2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;drmModeObjectPropertiesPtr&gt;<sp/><ref refid="class_mock_gpu_1a7c10720c29580871293ad95cc54b4bf2" kindref="member">drmObjectProperties</ref>;</highlight></codeline>
+<codeline lineno="190" refid="class_mock_gpu_1a94bba5871c7c9376e5c6819750f9bb57" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;drmModePlaneResPtr&gt;<sp/><ref refid="class_mock_gpu_1a94bba5871c7c9376e5c6819750f9bb57" kindref="member">drmPlaneRes</ref>;</highlight></codeline>
+<codeline lineno="191" refid="class_mock_gpu_1a2278cd179c300c691e8451ff75f1841c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::mutex<sp/><ref refid="class_mock_gpu_1a2278cd179c300c691e8451ff75f1841c" kindref="member">m_mutex</ref>;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/autotests/drm/mock_drm.h"/>
+  </compounddef>
+</doxygen>

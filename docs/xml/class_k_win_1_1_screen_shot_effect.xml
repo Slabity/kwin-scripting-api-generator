@@ -1,0 +1,623 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_screen_shot_effect" kind="class" language="C++" prot="public">
+    <compoundname>KWin::ScreenShotEffect</compoundname>
+    <basecompoundref refid="class_k_win_1_1_effect" prot="public" virt="non-virtual">KWin::Effect</basecompoundref>
+    <includes refid="screenshot_8h" local="no">screenshot.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_screen_shot_effect_1a33f0894e3f38758b40a55f337fd3cdc7" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="struct_k_win_1_1_screen_shot_window_data" kindref="compound">ScreenShotWindowData</ref> &gt;</type>
+        <definition>std::vector&lt;ScreenShotWindowData&gt; KWin::ScreenShotEffect::m_windowScreenShots</definition>
+        <argsstring></argsstring>
+        <name>m_windowScreenShots</name>
+        <qualifiedname>KWin::ScreenShotEffect::m_windowScreenShots</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="97" column="17" bodyfile="kwin/src/plugins/screenshot/screenshot.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_shot_effect_1a9f5c4203d38de6f00d13b39c6b489a02" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="struct_k_win_1_1_screen_shot_area_data" kindref="compound">ScreenShotAreaData</ref> &gt;</type>
+        <definition>std::vector&lt;ScreenShotAreaData&gt; KWin::ScreenShotEffect::m_areaScreenShots</definition>
+        <argsstring></argsstring>
+        <name>m_areaScreenShots</name>
+        <qualifiedname>KWin::ScreenShotEffect::m_areaScreenShots</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="98" column="17" bodyfile="kwin/src/plugins/screenshot/screenshot.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_shot_effect_1aea2cdc10c349e687c799ee02de1f60ba" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="struct_k_win_1_1_screen_shot_screen_data" kindref="compound">ScreenShotScreenData</ref> &gt;</type>
+        <definition>std::vector&lt;ScreenShotScreenData&gt; KWin::ScreenShotEffect::m_screenScreenShots</definition>
+        <argsstring></argsstring>
+        <name>m_screenScreenShots</name>
+        <qualifiedname>KWin::ScreenShotEffect::m_screenScreenShots</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="99" column="17" bodyfile="kwin/src/plugins/screenshot/screenshot.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_shot_effect_1a69bf9a387610a77e66e4eee0a4642cb6" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_screen_shot_d_bus_interface2" kindref="compound">ScreenShotDBusInterface2</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;ScreenShotDBusInterface2&gt; KWin::ScreenShotEffect::m_dbusInterface2</definition>
+        <argsstring></argsstring>
+        <name>m_dbusInterface2</name>
+        <qualifiedname>KWin::ScreenShotEffect::m_dbusInterface2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="101" column="21" bodyfile="kwin/src/plugins/screenshot/screenshot.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_shot_effect_1a4576b9e474d5f5b056cc49c8c6673c47" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+        <definition>Output* KWin::ScreenShotEffect::m_paintedScreen</definition>
+        <argsstring></argsstring>
+        <name>m_paintedScreen</name>
+        <qualifiedname>KWin::ScreenShotEffect::m_paintedScreen</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="102" column="12" bodyfile="kwin/src/plugins/screenshot/screenshot.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_screen_shot_effect_1a1fc81575d92ae34c37547e1a4e33bdc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::ScreenShotEffect::ScreenShotEffect</definition>
+        <argsstring>()</argsstring>
+        <name>ScreenShotEffect</name>
+        <qualifiedname>KWin::ScreenShotEffect::ScreenShotEffect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="51" column="5" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="97" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_shot_effect_1a164aa811a6a11488e85d33dc876d9b8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::ScreenShotEffect::~ScreenShotEffect</definition>
+        <argsstring>() override</argsstring>
+        <name>~ScreenShotEffect</name>
+        <qualifiedname>KWin::ScreenShotEffect::~ScreenShotEffect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="52" column="5" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="105" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_shot_effect_1ad8e1ddbf025ae44424e4148b2c6c9181" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QFuture&lt; QImage &gt;</type>
+        <definition>QFuture&lt; QImage &gt; KWin::ScreenShotEffect::scheduleScreenShot</definition>
+        <argsstring>(Output *screen, ScreenShotFlags flags={})</argsstring>
+        <name>scheduleScreenShot</name>
+        <qualifiedname>KWin::ScreenShotEffect::scheduleScreenShot</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+          <declname>screen</declname>
+        </param>
+        <param>
+          <type>ScreenShotFlags</type>
+          <declname>flags</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Schedules a screenshot of the given <emphasis>screen</emphasis>. The returned QFuture can be used to query the image data. If the screen is removed before the screenshot is taken, the future will be cancelled. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="59" column="13" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="112" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_shot_effect_1a00306cfc7870a6586fa2d34e71e2ed11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QFuture&lt; QImage &gt;</type>
+        <definition>QFuture&lt; QImage &gt; KWin::ScreenShotEffect::scheduleScreenShot</definition>
+        <argsstring>(const QRect &amp;area, ScreenShotFlags flags={})</argsstring>
+        <name>scheduleScreenShot</name>
+        <qualifiedname>KWin::ScreenShotEffect::scheduleScreenShot</qualifiedname>
+        <param>
+          <type>const QRect &amp;</type>
+          <declname>area</declname>
+        </param>
+        <param>
+          <type>ScreenShotFlags</type>
+          <declname>flags</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Schedules a screenshot of the given <emphasis>area</emphasis>. The returned QFuture can be used to query the image data. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="65" column="13" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="133" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_shot_effect_1a8232dcab469544fd2355b3c3aa4b5b92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QFuture&lt; QImage &gt;</type>
+        <definition>QFuture&lt; QImage &gt; KWin::ScreenShotEffect::scheduleScreenShot</definition>
+        <argsstring>(EffectWindow *window, ScreenShotFlags flags={})</argsstring>
+        <name>scheduleScreenShot</name>
+        <qualifiedname>KWin::ScreenShotEffect::scheduleScreenShot</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type>ScreenShotFlags</type>
+          <declname>flags</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Schedules a screenshot of the given <emphasis>window</emphasis>. The returned QFuture can be used to query the image data. If the window is removed before the screenshot is taken, the future will be cancelled. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="72" column="13" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="174" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_shot_effect_1a92167984135dbcdf7c1925956faa13a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenShotEffect::paintScreen</definition>
+        <argsstring>(const RenderTarget &amp;renderTarget, const RenderViewport &amp;viewport, int mask, const QRegion &amp;region, Output *screen) override</argsstring>
+        <name>paintScreen</name>
+        <qualifiedname>KWin::ScreenShotEffect::paintScreen</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga44ee94161446ce6fb2502376af6515a8">paintScreen</reimplements>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref> &amp;</type>
+          <declname>renderTarget</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref> &amp;</type>
+          <declname>viewport</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+          <declname>screen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>In this method you can: <itemizedlist>
+<listitem><para>paint something on top of the windows (by painting after calling effects-&gt;<ref refid="class_k_win_1_1_screen_shot_effect_1a92167984135dbcdf7c1925956faa13a7" kindref="member">paintScreen()</ref>) </para>
+</listitem>
+<listitem><para>paint multiple desktops and/or multiple copies of the same desktop by calling effects-&gt;<ref refid="class_k_win_1_1_screen_shot_effect_1a92167984135dbcdf7c1925956faa13a7" kindref="member">paintScreen()</ref> multiple times</para>
+</listitem>
+</itemizedlist>
+In OpenGL based compositing, the frameworks ensures that the context is current when this method is invoked. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="74" column="10" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="210" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_shot_effect_1a9d7011962911b7d98683f3eeaae359ca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::ScreenShotEffect::isActive</definition>
+        <argsstring>() const override</argsstring>
+        <name>isActive</name>
+        <qualifiedname>KWin::ScreenShotEffect::isActive</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga596b6c0ed146b97b293f5db5f27fc40f">isActive</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Overwrite this method to indicate whether your effect will be doing something in the next frame to be rendered. If the method returns <computeroutput>false</computeroutput> the effect will be excluded from the chained methods in the next rendered frame.</para>
+<para>This method is called always directly before the paint loop begins. So it is totally fine to e.g. react on a window event, issue a repaint to trigger an animation and change a flag to indicate that this method returns <computeroutput>true</computeroutput>.</para>
+<para>As the method is called each frame, you should not perform complex calculations. Best use just a boolean flag.</para>
+<para>The default implementation of this method returns <computeroutput>true</computeroutput>. <simplesect kind="since"><para>4.8 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="75" column="10" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="415" bodyend="419"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_shot_effect_1a125b9558a7e9257215a712a45e3a9852" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int KWin::ScreenShotEffect::requestedEffectChainPosition</definition>
+        <argsstring>() const override</argsstring>
+        <name>requestedEffectChainPosition</name>
+        <qualifiedname>KWin::ScreenShotEffect::requestedEffectChainPosition</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga120531588e58691a5a18028158d2947a">requestedEffectChainPosition</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reimplement this method to indicate where in the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> chain the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> should be placed.</para>
+<para>A low number indicates early chain position, thus before other Effects got called, a high number indicates a late position. The returned number should be in the interval [0, 100]. The default value is 0.</para>
+<para>In KWin4 this information was provided in the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref>&apos;s desktop file as property X-KDE-Ordering. In the case of Scripted Effects this property is still used.</para>
+<para><simplesect kind="since"><para>5.0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="76" column="9" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="421" bodyend="424"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_screen_shot_effect_1acc23fe8c83442ea3fef30b2eba73648a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::ScreenShotEffect::supported</definition>
+        <argsstring>()</argsstring>
+        <name>supported</name>
+        <qualifiedname>KWin::ScreenShotEffect::supported</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="78" column="17" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="92" bodyend="95"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_k_win_1_1_screen_shot_effect_1a797910489d84a4b3ea357e787dbece31" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenShotEffect::handleWindowClosed</definition>
+        <argsstring>(EffectWindow *window)</argsstring>
+        <name>handleWindowClosed</name>
+        <qualifiedname>KWin::ScreenShotEffect::handleWindowClosed</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="81" column="10" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="440" bodyend="445"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_screen_shot_effect_1ae7abc44770c6ed41a1f05b6e0397c57f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenShotEffect::handleScreenAdded</definition>
+        <argsstring>()</argsstring>
+        <name>handleScreenAdded</name>
+        <qualifiedname>KWin::ScreenShotEffect::handleScreenAdded</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="82" column="10" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="426" bodyend="429"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_screen_shot_effect_1aeb7f41ca34a01e1f799343e4628f4605" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenShotEffect::handleScreenRemoved</definition>
+        <argsstring>(Output *screen)</argsstring>
+        <name>handleScreenRemoved</name>
+        <qualifiedname>KWin::ScreenShotEffect::handleScreenRemoved</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+          <declname>screen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="83" column="10" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="431" bodyend="438"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_screen_shot_effect_1aed6f42ffea420b4e47e850999081ccb4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenShotEffect::takeScreenShot</definition>
+        <argsstring>(ScreenShotWindowData *screenshot)</argsstring>
+        <name>takeScreenShot</name>
+        <qualifiedname>KWin::ScreenShotEffect::takeScreenShot</qualifiedname>
+        <param>
+          <type><ref refid="struct_k_win_1_1_screen_shot_window_data" kindref="compound">ScreenShotWindowData</ref> *</type>
+          <declname>screenshot</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="86" column="10" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="233" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_shot_effect_1a6f7057c87adb605d8bce1f67bee8dbd5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::ScreenShotEffect::takeScreenShot</definition>
+        <argsstring>(const RenderTarget &amp;renderTarget, const RenderViewport &amp;viewport, ScreenShotAreaData *screenshot)</argsstring>
+        <name>takeScreenShot</name>
+        <qualifiedname>KWin::ScreenShotEffect::takeScreenShot</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref> &amp;</type>
+          <declname>renderTarget</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref> &amp;</type>
+          <declname>viewport</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_k_win_1_1_screen_shot_area_data" kindref="compound">ScreenShotAreaData</ref> *</type>
+          <declname>screenshot</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="87" column="10" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="298" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_shot_effect_1add864238314e03bbfcec718a20481d66" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::ScreenShotEffect::takeScreenShot</definition>
+        <argsstring>(const RenderTarget &amp;renderTarget, const RenderViewport &amp;viewport, ScreenShotScreenData *screenshot)</argsstring>
+        <name>takeScreenShot</name>
+        <qualifiedname>KWin::ScreenShotEffect::takeScreenShot</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref> &amp;</type>
+          <declname>renderTarget</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref> &amp;</type>
+          <declname>viewport</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_k_win_1_1_screen_shot_screen_data" kindref="compound">ScreenShotScreenData</ref> *</type>
+          <declname>screenshot</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="88" column="10" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="333" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_shot_effect_1a8280d03f483871966c965147dc2c89fd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenShotEffect::cancelWindowScreenShots</definition>
+        <argsstring>()</argsstring>
+        <name>cancelWindowScreenShots</name>
+        <qualifiedname>KWin::ScreenShotEffect::cancelWindowScreenShots</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="90" column="10" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="195" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_shot_effect_1aa860b1b1baa81308065d072f9d534064" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenShotEffect::cancelAreaScreenShots</definition>
+        <argsstring>()</argsstring>
+        <name>cancelAreaScreenShots</name>
+        <qualifiedname>KWin::ScreenShotEffect::cancelAreaScreenShots</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="91" column="10" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="200" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_shot_effect_1aa731e6805ed11a160a319603aaaf7151" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenShotEffect::cancelScreenScreenShots</definition>
+        <argsstring>()</argsstring>
+        <name>cancelScreenScreenShots</name>
+        <qualifiedname>KWin::ScreenShotEffect::cancelScreenScreenShots</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="92" column="10" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="205" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_shot_effect_1abdd6b9c0c733c46736d9564e6c32cb71" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenShotEffect::grabPointerImage</definition>
+        <argsstring>(QImage &amp;snapshot, int xOffset, int yOffset) const</argsstring>
+        <name>grabPointerImage</name>
+        <qualifiedname>KWin::ScreenShotEffect::grabPointerImage</qualifiedname>
+        <param>
+          <type>QImage &amp;</type>
+          <declname>snapshot</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>xOffset</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>yOffset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="94" column="10" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="399" bodyend="413"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_shot_effect_1ab217b598947572f3fcb15b8942e9e1aa" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QImage</type>
+        <definition>QImage KWin::ScreenShotEffect::blitScreenshot</definition>
+        <argsstring>(const RenderTarget &amp;renderTarget, const RenderViewport &amp;viewport, const QRect &amp;geometry, qreal devicePixelRatio=1.0) const</argsstring>
+        <name>blitScreenshot</name>
+        <qualifiedname>KWin::ScreenShotEffect::blitScreenshot</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref> &amp;</type>
+          <declname>renderTarget</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref> &amp;</type>
+          <declname>viewport</declname>
+        </param>
+        <param>
+          <type>const QRect &amp;</type>
+          <declname>geometry</declname>
+        </param>
+        <param>
+          <type>qreal</type>
+          <declname>devicePixelRatio</declname>
+          <defval>1.0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screenshot/screenshot.h" line="95" column="12" bodyfile="kwin/src/plugins/screenshot/screenshot.cpp" bodystart="357" bodyend="397"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="class_k_win_1_1_screen_shot_effect" kindref="compound">ScreenShotEffect</ref> provides a convenient way to capture the contents of a given window, screen or an area in the global coordinates.</para>
+<para>Use the <ref refid="class_q_future_watcher" kindref="compound">QFutureWatcher</ref> class to get notified when the requested screenshot is ready. Note that the screenshot QFuture object can get cancelled if the captured window or the screen is removed. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>KWin::Effect</label>
+        <link refid="class_k_win_1_1_effect"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::ScreenShotEffect</label>
+        <link refid="class_k_win_1_1_screen_shot_effect"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>KWin::Effect</label>
+        <link refid="class_k_win_1_1_effect"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::ScreenShotEffect</label>
+        <link refid="class_k_win_1_1_screen_shot_effect"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/plugins/screenshot/screenshot.h" line="46" column="1" bodyfile="kwin/src/plugins/screenshot/screenshot.h" bodystart="47" bodyend="103"/>
+    <listofallmembers>
+      <member refid="group__kwineffects_1gab9bcf52072fe74567496b0a894d1d873" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>animationTime</name></member>
+      <member refid="group__kwineffects_1ga3a167fe6d9c46376ed46db13caf2d135" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>animationTime</name></member>
+      <member refid="group__kwineffects_1ga0ba05f1463195d0f92ea1dd3396a5d16" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>animationTime</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1ab217b598947572f3fcb15b8942e9e1aa" prot="private" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>blitScreenshot</name></member>
+      <member refid="group__kwineffects_1ga7cf8035c970fcde177e3038d79015289" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>blocksDirectScanout</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea67d120ab5ce1dc424476e63c132af6c1" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>Blur</name></member>
+      <member refid="group__kwineffects_1gab8a94f591b743b59b7285911e641e7d5" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>borderActivated</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1aa860b1b1baa81308065d072f9d534064" prot="private" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>cancelAreaScreenShots</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1aa731e6805ed11a160a319603aaaf7151" prot="private" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>cancelScreenScreenShots</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1a8280d03f483871966c965147dc2c89fd" prot="private" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>cancelWindowScreenShots</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aead805f717a48c23959a1e9ecd7722d15d" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>Contrast</name></member>
+      <member refid="group__kwineffects_1ga4da344d8b8f2cb9eecd6e64a9b758740" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>cursorPos</name></member>
+      <member refid="group__kwineffects_1ga0c159e00c3a51ca733bea49cf8d52691" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>debug</name></member>
+      <member refid="group__kwineffects_1ga254b1a3e8bb8b9b671e9b000ca027b7c" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>drawWindow</name></member>
+      <member refid="group__kwineffects_1ga7bd8262f4cb2c5c3090c748eb388ad7e" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>Effect</name></member>
+      <member refid="group__kwineffects_1ga6337b2a9b5aadfbb6b696119144b56ae" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>Feature</name></member>
+      <member refid="group__kwineffects_1gab5e0581ae4b2dffe8014ff5cf6c21158" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>grabbedKeyboardEvent</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1abdd6b9c0c733c46736d9564e6c32cb71" prot="private" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>grabPointerImage</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1ae7abc44770c6ed41a1f05b6e0397c57f" prot="private" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>handleScreenAdded</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1aeb7f41ca34a01e1f799343e4628f4605" prot="private" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>handleScreenRemoved</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1a797910489d84a4b3ea357e787dbece31" prot="private" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>handleWindowClosed</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aeaecbb77ad241419970ece3d45296c4838" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>HighlightWindows</name></member>
+      <member refid="group__kwineffects_1ga7b0ecb57667179e95c188f0ee7416d00" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>interpolate</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1a9d7011962911b7d98683f3eeaae359ca" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>isActive</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1a9f5c4203d38de6f00d13b39c6b489a02" prot="private" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>m_areaScreenShots</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1a69bf9a387610a77e66e4eee0a4642cb6" prot="private" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>m_dbusInterface2</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1a4576b9e474d5f5b056cc49c8c6673c47" prot="private" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>m_paintedScreen</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1aea2cdc10c349e687c799ee02de1f60ba" prot="private" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>m_screenScreenShots</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1a33f0894e3f38758b40a55f337fd3cdc7" prot="private" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>m_windowScreenShots</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea170229312ed2ec0e446ee89ba7f6b6ca" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>Nothing</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dab0de2932c45bde6df3de10d00dbd6fcd" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>PAINT_SCREEN_BACKGROUND_FIRST</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da43acbfc913cae9eb3c363aeb0524f18f" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>PAINT_SCREEN_REGION</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da3e731594d83c3e92742bff7c420fb7f8" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>PAINT_SCREEN_TRANSFORMED</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da124dd798e5f793087e81da77e11a9b1e" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>PAINT_SCREEN_WITH_TRANSFORMED_WINDOWS</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dac606d3dcf2dd150234f71c4c39083c7d" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>PAINT_WINDOW_OPAQUE</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da684bb6c6c278b900b6d0c889e79233b8" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>PAINT_WINDOW_TRANSFORMED</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dac7237bf4bb4d6ea6d6fb1215db19b45e" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>PAINT_WINDOW_TRANSLUCENT</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1a92167984135dbcdf7c1925956faa13a7" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>paintScreen</name></member>
+      <member refid="group__kwineffects_1ga0f0292db2bf016a0843ef7cc06219378" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>paintWindow</name></member>
+      <member refid="group__kwineffects_1ga5fb1bc87ff54dcc2cfe87b070816ab00" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>perform</name></member>
+      <member refid="group__kwineffects_1ga10021cf9704c00d60beae284d53846e2" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>postPaintScreen</name></member>
+      <member refid="group__kwineffects_1ga9b7cf82c6f74331cffabb06c63ef914c" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>postPaintWindow</name></member>
+      <member refid="group__kwineffects_1ga2edc1b757e36bb6bcbbacde454dfc05c" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>prePaintScreen</name></member>
+      <member refid="group__kwineffects_1ga2832c7831c0f49f9f5cf0267ffc53672" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>prePaintWindow</name></member>
+      <member refid="group__kwineffects_1ga30fc2cbbdd90f95568a9e350f34bf2b7" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>provides</name></member>
+      <member refid="group__kwineffects_1ga737c6d80eb8f8b24fdc6398209c38e3d" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>reconfigure</name></member>
+      <member refid="group__kwineffects_1gga4aebd7d0f695e37678debaa118fa92dca19d3e23e53788c8d9cc9c18fbf75fc7d" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>ReconfigureAll</name></member>
+      <member refid="group__kwineffects_1ga4aebd7d0f695e37678debaa118fa92dc" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>ReconfigureFlag</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1a125b9558a7e9257215a712a45e3a9852" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>requestedEffectChainPosition</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1ad8e1ddbf025ae44424e4148b2c6c9181" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>scheduleScreenShot</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1a00306cfc7870a6586fa2d34e71e2ed11" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>scheduleScreenShot</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1a8232dcab469544fd2355b3c3aa4b5b92" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>scheduleScreenShot</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea592ea0de7a4d658a1ef9bbb48b18e15a" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>ScreenInversion</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1a1fc81575d92ae34c37547e1a4e33bdc3" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>ScreenShotEffect</name></member>
+      <member refid="group__kwineffects_1ga1efc42cd9be15e8200c6e55f6bf47cb8" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>setPositionTransformations</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1acc23fe8c83442ea3fef30b2eba73648a" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>supported</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea19036d413806c53978a3234e7eb197c4" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>SystemBell</name></member>
+      <member refid="group__kwineffects_1ga2d22a8f0b8a4d81615dff67dc1ef970f" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>tabletPadButtonEvent</name></member>
+      <member refid="group__kwineffects_1gaa084e5a45597f5775213715eb5506f63" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>tabletPadRingEvent</name></member>
+      <member refid="group__kwineffects_1ga4998fb0983bd97163935cad2c4dedd76" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>tabletPadStripEvent</name></member>
+      <member refid="group__kwineffects_1ga1d4ae01f5935ea887a12018d59191cbf" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>tabletToolAxis</name></member>
+      <member refid="group__kwineffects_1ga7a984d7d83dfa97962b8404301c6aba9" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>tabletToolButtonEvent</name></member>
+      <member refid="group__kwineffects_1ga4ed77506be381680bf664dbc8c20e036" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>tabletToolProximity</name></member>
+      <member refid="group__kwineffects_1gaf16e9ca42cceb738fb859d1a1a462548" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>tabletToolTip</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1aed6f42ffea420b4e47e850999081ccb4" prot="private" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>takeScreenShot</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1a6f7057c87adb605d8bce1f67bee8dbd5" prot="private" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>takeScreenShot</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1add864238314e03bbfcec718a20481d66" prot="private" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>takeScreenShot</name></member>
+      <member refid="group__kwineffects_1gaa31554949bc00085e6380b50be16138e" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>touchCancel</name></member>
+      <member refid="group__kwineffects_1ga315fd305e7570f41e7bce7db6812381f" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>touchDown</name></member>
+      <member refid="group__kwineffects_1ga54d00a9e05b5d4597db40c2f5b1d36de" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>touchMotion</name></member>
+      <member refid="group__kwineffects_1gaf3871967d6199eb7c87621bc75b925bb" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>touchUp</name></member>
+      <member refid="group__kwineffects_1ga7b142933c38cb9b4a433b768b266e7cb" prot="public" virt="virtual"><scope>KWin::ScreenShotEffect</scope><name>windowInputMouseEvent</name></member>
+      <member refid="group__kwineffects_1ga50174eb0169aebceb78ebd5aff71c481" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>~Effect</name></member>
+      <member refid="class_k_win_1_1_screen_shot_effect_1a164aa811a6a11488e85d33dc876d9b8c" prot="public" virt="non-virtual"><scope>KWin::ScreenShotEffect</scope><name>~ScreenShotEffect</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

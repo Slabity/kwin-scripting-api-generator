@@ -1,0 +1,641 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_g_l_vertex_buffer" kind="class" language="C++" prot="public">
+    <compoundname>KWin::GLVertexBuffer</compoundname>
+    <includes refid="glvertexbuffer_8h" local="no">glvertexbuffer.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_k_win_1_1_g_l_vertex_buffer_1aa8b304b72be4140ba69a72e2061699d3" prot="public" static="no" strong="no">
+        <type></type>
+        <name>UsageHint</name>
+        <qualifiedname>KWin::GLVertexBuffer::UsageHint</qualifiedname>
+        <enumvalue id="class_k_win_1_1_g_l_vertex_buffer_1aa8b304b72be4140ba69a72e2061699d3af08b2b530b3150ccbba92816705eb07c" prot="public">
+          <name>Dynamic</name>
+          <briefdescription>
+<para>frequent changes, but used several times for rendering </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_vertex_buffer_1aa8b304b72be4140ba69a72e2061699d3a8bdf6b4d70080826d3dd0112cd024d01" prot="public">
+          <name>Static</name>
+          <briefdescription>
+<para>No changes to data. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_vertex_buffer_1aa8b304b72be4140ba69a72e2061699d3adfa4ffbef0259d09af67200e193e7ea6" prot="public">
+          <name>Stream</name>
+          <briefdescription>
+<para>Data only used once for rendering, updated very frequently. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Enum to define how often the vertex data in the buffer object changes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="76" column="5" bodyfile="kwin/src/opengl/glvertexbuffer.h" bodystart="76" bodyend="80"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_g_l_vertex_buffer_1a468d8172e772fc08346fbe15b7db2e33" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>std::array</type>
+        <definition>std::array KWin::GLVertexBuffer::GLVertex2DLayout</definition>
+        <argsstring></argsstring>
+        <name>GLVertex2DLayout</name>
+        <qualifiedname>KWin::GLVertexBuffer::GLVertex2DLayout</qualifiedname>
+        <initializer>{
+        <ref refid="struct_k_win_1_1_g_l_vertex_attrib" kindref="compound">GLVertexAttrib</ref>{
+            .attributeIndex = <ref refid="namespace_k_win_1a4559cf19c26624e384566b9859843499a28ec5128ff65bc7e124bcea51873aa3a" kindref="member">VA_Position</ref>,
+            .componentCount = 2,
+            .<ref refid="namespace_k_win_1a3223e96fea9ab917c25be94e2434013a" kindref="member">type</ref> = GL_FLOAT,
+            .relativeOffset = offsetof(<ref refid="struct_k_win_1_1_g_l_vertex2_d" kindref="compound">GLVertex2D</ref>, position),
+        },
+        <ref refid="struct_k_win_1_1_g_l_vertex_attrib" kindref="compound">GLVertexAttrib</ref>{
+            .attributeIndex = <ref refid="namespace_k_win_1a4559cf19c26624e384566b9859843499acb8706a051627d593d64635f4f9487cd" kindref="member">VA_TexCoord</ref>,
+            .componentCount = 2,
+            .<ref refid="namespace_k_win_1a3223e96fea9ab917c25be94e2434013a" kindref="member">type</ref> = GL_FLOAT,
+            .relativeOffset = offsetof(<ref refid="struct_k_win_1_1_g_l_vertex2_d" kindref="compound">GLVertex2D</ref>, texcoord),
+        },
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="252" column="33" bodyfile="kwin/src/opengl/glvertexbuffer.h" bodystart="252" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_g_l_vertex_buffer_1a1106fafdf68eb6c854adc11fb3fe7041" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>std::array</type>
+        <definition>std::array KWin::GLVertexBuffer::GLVertex3DLayout</definition>
+        <argsstring></argsstring>
+        <name>GLVertex3DLayout</name>
+        <qualifiedname>KWin::GLVertexBuffer::GLVertex3DLayout</qualifiedname>
+        <initializer>{
+        <ref refid="struct_k_win_1_1_g_l_vertex_attrib" kindref="compound">GLVertexAttrib</ref>{
+            .attributeIndex = <ref refid="namespace_k_win_1a4559cf19c26624e384566b9859843499a28ec5128ff65bc7e124bcea51873aa3a" kindref="member">VA_Position</ref>,
+            .componentCount = 3,
+            .<ref refid="namespace_k_win_1a3223e96fea9ab917c25be94e2434013a" kindref="member">type</ref> = GL_FLOAT,
+            .relativeOffset = offsetof(<ref refid="struct_k_win_1_1_g_l_vertex3_d" kindref="compound">GLVertex3D</ref>, position),
+        },
+        <ref refid="struct_k_win_1_1_g_l_vertex_attrib" kindref="compound">GLVertexAttrib</ref>{
+            .attributeIndex = <ref refid="namespace_k_win_1a4559cf19c26624e384566b9859843499acb8706a051627d593d64635f4f9487cd" kindref="member">VA_TexCoord</ref>,
+            .componentCount = 2,
+            .<ref refid="namespace_k_win_1a3223e96fea9ab917c25be94e2434013a" kindref="member">type</ref> = GL_FLOAT,
+            .relativeOffset = offsetof(<ref refid="struct_k_win_1_1_g_l_vertex3_d" kindref="compound">GLVertex3D</ref>, texcoord),
+        },
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="266" column="33" bodyfile="kwin/src/opengl/glvertexbuffer.h" bodystart="266" bodyend="279"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_g_l_vertex_buffer_1aa73776a1f2af028a9b9c2b84e7a02319" prot="private" static="no" mutable="no">
+        <type>const std::unique_ptr&lt; <ref refid="class_k_win_1_1_g_l_vertex_buffer_private" kindref="compound">GLVertexBufferPrivate</ref> &gt;</type>
+        <definition>const std::unique_ptr&lt;GLVertexBufferPrivate&gt; KWin::GLVertexBuffer::d</definition>
+        <argsstring></argsstring>
+        <name>d</name>
+        <qualifiedname>KWin::GLVertexBuffer::d</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="284" column="27" bodyfile="kwin/src/opengl/glvertexbuffer.h" bodystart="284" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1a723e9f27a712b881f0bd048cba97e342" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::GLVertexBuffer::GLVertexBuffer</definition>
+        <argsstring>(UsageHint hint)</argsstring>
+        <name>GLVertexBuffer</name>
+        <qualifiedname>KWin::GLVertexBuffer::GLVertexBuffer</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_g_l_vertex_buffer_1aa8b304b72be4140ba69a72e2061699d3" kindref="member">UsageHint</ref></type>
+          <declname>hint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="82" column="14" bodyfile="kwin/src/opengl/glvertexbuffer.cpp" bodystart="364" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1af36620dd7745528f78413b808c0c64f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::GLVertexBuffer::~GLVertexBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>~GLVertexBuffer</name>
+        <qualifiedname>KWin::GLVertexBuffer::~GLVertexBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="83" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1a4550f562287163e1e64f76c32cb280c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLVertexBuffer::setAttribLayout</definition>
+        <argsstring>(std::span&lt; const GLVertexAttrib &gt; attribs, size_t stride)</argsstring>
+        <name>setAttribLayout</name>
+        <qualifiedname>KWin::GLVertexBuffer::setAttribLayout</qualifiedname>
+        <param>
+          <type>std::span&lt; const <ref refid="struct_k_win_1_1_g_l_vertex_attrib" kindref="compound">GLVertexAttrib</ref> &gt;</type>
+          <declname>attribs</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>stride</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Specifies how interleaved vertex attributes are laid out in the buffer object.</para>
+<para>Note that the attributes and the stride should be 32 bit aligned or a performance penalty may be incurred.</para>
+<para>For some hardware the optimal stride is a multiple of 32 bytes.</para>
+<para>Example: <verbatim>struct Vertex {
+    QVector3D position;
+    QVector2D texcoord;
+};
+
+const std::array attribs = {
+    GLVertexAttrib{ VA_Position, 3, GL_FLOAT, offsetof(Vertex, position) },
+    GLVertexAttrib{ VA_TexCoord, 2, GL_FLOAT, offsetof(Vertex, texcoord) },
+};
+
+Vertex vertices[6];
+vbo-&gt;setAttribLayout(std::span(attribs), sizeof(Vertex));
+vbo-&gt;setData(vertices, sizeof(vertices));
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="110" column="10" bodyfile="kwin/src/opengl/glvertexbuffer.cpp" bodystart="456" bodyend="467"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1a4ae8c8d69eb58f2c37347e0787166d89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLVertexBuffer::setData</definition>
+        <argsstring>(const void *data, size_t sizeInBytes)</argsstring>
+        <name>setData</name>
+        <qualifiedname>KWin::GLVertexBuffer::setData</qualifiedname>
+        <param>
+          <type>const void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>sizeInBytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Uploads data into the buffer object&apos;s data store. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="115" column="10" bodyfile="kwin/src/opengl/glvertexbuffer.cpp" bodystart="371" bodyend="379"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1af939add6737dda7815aceed301b17ba3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLVertexBuffer::setVertexCount</definition>
+        <argsstring>(int count)</argsstring>
+        <name>setVertexCount</name>
+        <qualifiedname>KWin::GLVertexBuffer::setVertexCount</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the number of vertices that will be drawn by the <ref refid="class_k_win_1_1_g_l_vertex_buffer_1a89f55da383c6fd166cca16c4d5e2b428" kindref="member">render()</ref> method. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="120" column="10" bodyfile="kwin/src/opengl/glvertexbuffer.cpp" bodystart="451" bodyend="454"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1ab720ea8aa5676f8dc8bfb3788e8ed1a0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::ranges::contiguous_range</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void KWin::GLVertexBuffer::setVertices</definition>
+        <argsstring>(const T &amp;range)</argsstring>
+        <name>setVertices</name>
+        <qualifiedname>KWin::GLVertexBuffer::setVertices</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>range</declname>
+        </param>
+    <requiresclause>std::is_same&lt;std::ranges::range_value_t&lt;T&gt;, GLVertex2D&gt;::value    </requiresclause>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="125" column="10" bodyfile="kwin/src/opengl/glvertexbuffer.h" bodystart="125" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1ab19b5f6bb4d803ceb48ac95fafc68fe0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::ranges::contiguous_range</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void KWin::GLVertexBuffer::setVertices</definition>
+        <argsstring>(const T &amp;range)</argsstring>
+        <name>setVertices</name>
+        <qualifiedname>KWin::GLVertexBuffer::setVertices</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>range</declname>
+        </param>
+    <requiresclause>std::is_same&lt;std::ranges::range_value_t&lt;T&gt;, GLVertex3D&gt;::value    </requiresclause>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="134" column="10" bodyfile="kwin/src/opengl/glvertexbuffer.h" bodystart="134" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1a84a2f26892e4d576da105d0993e89faf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::ranges::contiguous_range</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void KWin::GLVertexBuffer::setVertices</definition>
+        <argsstring>(const T &amp;range)</argsstring>
+        <name>setVertices</name>
+        <qualifiedname>KWin::GLVertexBuffer::setVertices</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>range</declname>
+        </param>
+    <requiresclause>std::is_same&lt;std::ranges::range_value_t&lt;T&gt;, QVector2D&gt;::value    </requiresclause>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="143" column="10" bodyfile="kwin/src/opengl/glvertexbuffer.h" bodystart="143" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1a943919aab590f879966a2737ac6aec47" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::optional&lt; std::span&lt; T &gt; &gt;</type>
+        <definition>std::optional&lt; std::span&lt; T &gt; &gt; KWin::GLVertexBuffer::map</definition>
+        <argsstring>(size_t count)</argsstring>
+        <name>map</name>
+        <qualifiedname>KWin::GLVertexBuffer::map</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maps an unused range of the data store into the client&apos;s address space.</para>
+<para>The data store will be reallocated if it is smaller than the given size.</para>
+<para>The buffer object is mapped for writing, not reading. Attempts to read from the mapped buffer range may result in system errors, including program termination. The data in the mapped region is undefined until it has been written to. If subsequent GL calls access unwritten memory, the results are undefined and system errors, including program termination, may occur.</para>
+<para>No GL calls that access the buffer object must be made while the buffer object is mapped. The returned pointer must not be passed as a parameter value to any GL function.</para>
+<para>It is assumed that the GL_ARRAY_BUFFER_BINDING will not be changed while the buffer object is mapped. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="176" column="19" bodyfile="kwin/src/opengl/glvertexbuffer.h" bodystart="176" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1a31338f49e5f7bcb61b8b733fd8cfb8f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLVertexBuffer::unmap</definition>
+        <argsstring>()</argsstring>
+        <name>unmap</name>
+        <qualifiedname>KWin::GLVertexBuffer::unmap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flushes the mapped buffer range and unmaps the buffer. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="188" column="10" bodyfile="kwin/src/opengl/glvertexbuffer.cpp" bodystart="408" bodyend="449"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1ac10ee171fa414f4af92501946f147ed6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLVertexBuffer::bindArrays</definition>
+        <argsstring>()</argsstring>
+        <name>bindArrays</name>
+        <qualifiedname>KWin::GLVertexBuffer::bindArrays</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Binds the vertex arrays to the context. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="193" column="10" bodyfile="kwin/src/opengl/glvertexbuffer.cpp" bodystart="481" bodyend="484"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1aef97e5890dc7aaedde08cbdc7c862a07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLVertexBuffer::unbindArrays</definition>
+        <argsstring>()</argsstring>
+        <name>unbindArrays</name>
+        <qualifiedname>KWin::GLVertexBuffer::unbindArrays</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Disables the vertex arrays. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="198" column="10" bodyfile="kwin/src/opengl/glvertexbuffer.cpp" bodystart="486" bodyend="489"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1a1bdaa52f784a0ba2cb195f524f9d1902" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLVertexBuffer::draw</definition>
+        <argsstring>(GLenum primitiveMode, int first, int count)</argsstring>
+        <name>draw</name>
+        <qualifiedname>KWin::GLVertexBuffer::draw</qualifiedname>
+        <param>
+          <type>GLenum</type>
+          <declname>primitiveMode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Draws count vertices beginning with first. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="203" column="10" bodyfile="kwin/src/opengl/glvertexbuffer.cpp" bodystart="491" bodyend="494"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1a18f3b62bfad4e4d25717dfe23e21390f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLVertexBuffer::draw</definition>
+        <argsstring>(const QRegion &amp;region, GLenum primitiveMode, int first, int count, bool hardwareClipping=false)</argsstring>
+        <name>draw</name>
+        <qualifiedname>KWin::GLVertexBuffer::draw</qualifiedname>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type>GLenum</type>
+          <declname>primitiveMode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>count</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>hardwareClipping</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Draws count vertices beginning with first. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="208" column="10" bodyfile="kwin/src/opengl/glvertexbuffer.cpp" bodystart="496" bodyend="527"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1a89f55da383c6fd166cca16c4d5e2b428" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLVertexBuffer::render</definition>
+        <argsstring>(GLenum primitiveMode)</argsstring>
+        <name>render</name>
+        <qualifiedname>KWin::GLVertexBuffer::render</qualifiedname>
+        <param>
+          <type>GLenum</type>
+          <declname>primitiveMode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Renders the vertex data in given <emphasis>primitiveMode</emphasis>. Please refer to OpenGL documentation of glDrawArrays or glDrawElements for allowed values for <emphasis>primitiveMode</emphasis>. Best is to use GL_TRIANGLES or similar to be future compatible. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="216" column="10" bodyfile="kwin/src/opengl/glvertexbuffer.cpp" bodystart="469" bodyend="472"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1ad27485be17f787bbfa4366403e8304b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLVertexBuffer::render</definition>
+        <argsstring>(const QRegion &amp;region, GLenum primitiveMode, bool hardwareClipping=false)</argsstring>
+        <name>render</name>
+        <qualifiedname>KWin::GLVertexBuffer::render</qualifiedname>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type>GLenum</type>
+          <declname>primitiveMode</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>hardwareClipping</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Same as above restricting painting to <emphasis>region</emphasis> if <emphasis>hardwareClipping</emphasis> is true. It&apos;s within the caller&apos;s responsibility to enable GL_SCISSOR_TEST. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="221" column="10" bodyfile="kwin/src/opengl/glvertexbuffer.cpp" bodystart="474" bodyend="479"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1a2e51e925e06dac9fc80941f0febda075" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLVertexBuffer::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <qualifiedname>KWin::GLVertexBuffer::reset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resets the instance to default values. Useful for shared buffers. <simplesect kind="since"><para>4.7 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="228" column="10" bodyfile="kwin/src/opengl/glvertexbuffer.cpp" bodystart="529" bodyend="532"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1a1d7734f12b910b04ed06b0e345b594c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLVertexBuffer::endOfFrame</definition>
+        <argsstring>()</argsstring>
+        <name>endOfFrame</name>
+        <qualifiedname>KWin::GLVertexBuffer::endOfFrame</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Notifies the vertex buffer that we are done painting the frame. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="235" column="10" bodyfile="kwin/src/opengl/glvertexbuffer.cpp" bodystart="534" bodyend="563"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1a7297748d72759c31e5026a10c89fb130" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLVertexBuffer::beginFrame</definition>
+        <argsstring>()</argsstring>
+        <name>beginFrame</name>
+        <qualifiedname>KWin::GLVertexBuffer::beginFrame</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Notifies the vertex buffer that we are about to paint a frame. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="242" column="10" bodyfile="kwin/src/opengl/glvertexbuffer.cpp" bodystart="565" bodyend="579"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1a526d9b966fdf28907e1ab7758088edca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLVertexBuffer::setPersistent</definition>
+        <argsstring>()</argsstring>
+        <name>setPersistent</name>
+        <qualifiedname>KWin::GLVertexBuffer::setPersistent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="244" column="10" bodyfile="kwin/src/opengl/glvertexbuffer.cpp" bodystart="586" bodyend="589"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1a4f61e01fc150ca4d947bbf78ba2a9ab8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_g_l_vertex_buffer" kindref="compound">GLVertexBuffer</ref> *</type>
+        <definition>GLVertexBuffer * KWin::GLVertexBuffer::streamingBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>streamingBuffer</name>
+        <qualifiedname>KWin::GLVertexBuffer::streamingBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A shared VBO for streaming data </para>
+</simplesect>
+<simplesect kind="since"><para>4.7 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="250" column="27" bodyfile="kwin/src/opengl/glvertexbuffer.cpp" bodystart="581" bodyend="584"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_g_l_vertex_buffer_1ae080745273a603df969fb4ef6e0552a5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GLvoid *</type>
+        <definition>GLvoid * KWin::GLVertexBuffer::map</definition>
+        <argsstring>(size_t size)</argsstring>
+        <name>map</name>
+        <qualifiedname>KWin::GLVertexBuffer::map</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glvertexbuffer.h" line="282" column="12" bodyfile="kwin/src/opengl/glvertexbuffer.cpp" bodystart="381" bodyend="406"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Vertex Buffer Object. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This is a short helper class to use vertex buffer objects (VBO). A VBO can be used to buffer vertex data and to store them on graphics memory.</para>
+<para><simplesect kind="author"><para>Martin Gräßlin <ulink url="mailto:mgraesslin@kde.org">mgraesslin@kde.org</ulink> </para>
+</simplesect>
+<simplesect kind="since"><para>4.6 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="kwin/src/opengl/glvertexbuffer.h" line="70" column="1" bodyfile="kwin/src/opengl/glvertexbuffer.h" bodystart="71" bodyend="285"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1a7297748d72759c31e5026a10c89fb130" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>beginFrame</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1ac10ee171fa414f4af92501946f147ed6" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>bindArrays</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1aa73776a1f2af028a9b9c2b84e7a02319" prot="private" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>d</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1a1bdaa52f784a0ba2cb195f524f9d1902" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>draw</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1a18f3b62bfad4e4d25717dfe23e21390f" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>draw</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1aa8b304b72be4140ba69a72e2061699d3af08b2b530b3150ccbba92816705eb07c" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>Dynamic</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1a1d7734f12b910b04ed06b0e345b594c5" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>endOfFrame</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1a468d8172e772fc08346fbe15b7db2e33" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>GLVertex2DLayout</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1a1106fafdf68eb6c854adc11fb3fe7041" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>GLVertex3DLayout</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1a723e9f27a712b881f0bd048cba97e342" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>GLVertexBuffer</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1a943919aab590f879966a2737ac6aec47" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>map</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1ae080745273a603df969fb4ef6e0552a5" prot="private" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>map</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1a89f55da383c6fd166cca16c4d5e2b428" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>render</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1ad27485be17f787bbfa4366403e8304b3" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>render</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1a2e51e925e06dac9fc80941f0febda075" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>reset</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1a4550f562287163e1e64f76c32cb280c8" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>setAttribLayout</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1a4ae8c8d69eb58f2c37347e0787166d89" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>setData</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1a526d9b966fdf28907e1ab7758088edca" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>setPersistent</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1af939add6737dda7815aceed301b17ba3" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>setVertexCount</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1ab720ea8aa5676f8dc8bfb3788e8ed1a0" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>setVertices</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1ab19b5f6bb4d803ceb48ac95fafc68fe0" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>setVertices</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1a84a2f26892e4d576da105d0993e89faf" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>setVertices</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1aa8b304b72be4140ba69a72e2061699d3a8bdf6b4d70080826d3dd0112cd024d01" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>Static</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1aa8b304b72be4140ba69a72e2061699d3adfa4ffbef0259d09af67200e193e7ea6" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>Stream</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1a4f61e01fc150ca4d947bbf78ba2a9ab8" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>streamingBuffer</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1aef97e5890dc7aaedde08cbdc7c862a07" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>unbindArrays</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1a31338f49e5f7bcb61b8b733fd8cfb8f0" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>unmap</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1aa8b304b72be4140ba69a72e2061699d3" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>UsageHint</name></member>
+      <member refid="class_k_win_1_1_g_l_vertex_buffer_1af36620dd7745528f78413b808c0c64f1" prot="public" virt="non-virtual"><scope>KWin::GLVertexBuffer</scope><name>~GLVertexBuffer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

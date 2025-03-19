@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="textinput__v1_8h" kind="file" language="C++">
+    <compoundname>textinput_v1.h</compoundname>
+    <includes local="yes">kwin_export.h</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">memory</includes>
+    <includes refid="textinput_8h" local="yes">textinput.h</includes>
+    <includedby refid="inputmethod_8cpp" local="yes">kwin/src/inputmethod.cpp</includedby>
+    <includedby refid="inputpanelv1window_8cpp" local="yes">kwin/src/inputpanelv1window.cpp</includedby>
+    <includedby refid="textinput__v1_8cpp" local="yes">kwin/src/wayland/textinput_v1.cpp</includedby>
+    <includedby refid="textinput__v1__p_8h" local="yes">kwin/src/wayland/textinput_v1_p.h</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>textinput.h</label>
+        <link refid="textinput_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/wayland/textinput_v1.h</label>
+        <link refid="textinput__v1_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>QMetaType</label>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+      <node id="7">
+        <label>QtGlobal</label>
+      </node>
+      <node id="2">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/inputmethod.cpp</label>
+        <link refid="inputmethod_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/inputpanelv1window.cpp</label>
+        <link refid="inputpanelv1window_8cpp"/>
+      </node>
+      <node id="6">
+        <label>kwin/src/wayland/seat.cpp</label>
+        <link refid="seat_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/wayland/textinput_v1.cpp</label>
+        <link refid="textinput__v1_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/wayland/textinput_v1.h</label>
+        <link refid="textinput__v1_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>kwin/src/wayland/textinput_v1_p.h</label>
+        <link refid="textinput__v1__p_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_text_input_manager_v1_interface" prot="public">KWin::TextInputManagerV1Interface</innerclass>
+    <innerclass refid="class_k_win_1_1_text_input_v1_interface" prot="public">KWin::TextInputV1Interface</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2022<sp/>Xuetian<sp/>Weng<sp/>&lt;wengxt@gmail.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>LGPL-2.1-only<sp/>OR<sp/>LGPL-3.0-only<sp/>OR<sp/>LicenseRef-KDE-Accepted-LGPL</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;kwin_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="textinput_8h" kindref="compound">textinput.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_resource;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_client_connection" kindref="compound">ClientConnection</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_seat_interface" kindref="compound">SeatInterface</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_text_input_v1_interface" kindref="compound">TextInputV1Interface</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_text_input_v1_interface_private" kindref="compound">TextInputV1InterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_text_input_manager_v1_interface_private" kindref="compound">TextInputManagerV1InterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="class_k_win_1_1_text_input_manager_v1_interface" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_text_input_manager_v1_interface_1aa9f674080c9ff1e5daff1c08411ecb15" kindref="member">TextInputManagerV1Interface</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_manager_v1_interface_1aa9f674080c9ff1e5daff1c08411ecb15" kindref="member">TextInputManagerV1Interface</ref>(<ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*display,<sp/>QObject<sp/>*parent<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39" refid="class_k_win_1_1_text_input_manager_v1_interface_1a61b43e30e2f1d3a28aa9493932c3512a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_text_input_manager_v1_interface_1a61b43e30e2f1d3a28aa9493932c3512a" kindref="member">~TextInputManagerV1Interface</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;TextInputManagerV1InterfacePrivate&gt;<sp/>d;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="class_k_win_1_1_text_input_v1_interface" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1afa748bfc85a58ba40a90789739ac0949" kindref="member">TextInputV1Interface</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1afa748bfc85a58ba40a90789739ac0949" kindref="member">TextInputV1Interface</ref>(<ref refid="class_k_win_1_1_text_input_v1_interface_1a8f81b716c1934613824f671c3d19f14b" kindref="member">SeatInterface</ref><sp/>*seat);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1afa748bfc85a58ba40a90789739ac0949" kindref="member">~TextInputV1Interface</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1a1083a4cddea0247e34f01b56c9a53edf" kindref="member">preferredLanguage</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>QRect<sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1afab064302912009fb3552c24d84f9f93" kindref="member">cursorRectangle</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1ab2addc3b8b9ec94f61414f824dd23c26" kindref="member">TextInputContentPurpose</ref><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1a101789330d30b53084281bbf7b9ace01" kindref="member">contentPurpose</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>TextInputContentHints<sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1af72a70b2e0b77456973bc5b6325a9013" kindref="member">contentHints</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1af7626755d5fa87373453577dd3959584" kindref="member">surroundingText</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>qint32<sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1aa5d916408865dda845556cb6162f9cad" kindref="member">surroundingTextCursorPosition</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>qint32<sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1a02d6c5abb20a28f8578c0fc84bd54501" kindref="member">surroundingTextSelectionAnchor</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>QPointer&lt;SurfaceInterface&gt;<sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1a2a7f60c00c28648ec6953db26a5aece2" kindref="member">surface</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1a194c96c53f3caebb2791763082e119ec" kindref="member">clientSupportsTextInput</ref>(<ref refid="class_k_win_1_1_client_connection" kindref="compound">ClientConnection</ref><sp/>*client)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1aa2eebf942eb3ed78b065f45ef9bd68b2" kindref="member">isEnabled</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1abc9cbc19e140ba697f5136407ee5fa9a" kindref="member">preEdit</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;text,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;commitText);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1ac37dfa6a6a8566ca01e127cf0981cad4" kindref="member">commitString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;text);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1abbb265e69378bcbbebe25038f43f21e1" kindref="member">setPreEditCursor</ref>(qint32<sp/>index);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1a927f51b3d669d8542c86bde3699812ed" kindref="member">preEditStyling</ref>(uint32_t<sp/>index,<sp/>uint32_t<sp/>length,<sp/>uint32_t<sp/>style);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1ad17fc4aadefd15df1666301931dbf37d" kindref="member">deleteSurroundingText</ref>(quint32<sp/>beforeLength,<sp/>quint32<sp/>afterLength);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1acefc414f3cc075c3efc0bf3c8723f2c0" kindref="member">setCursorPosition</ref>(qint32<sp/>index,<sp/>qint32<sp/>anchor);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1ac605405d83f036fef898b60fac177429" kindref="member">setTextDirection</ref>(Qt::LayoutDirection<sp/>direction);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1a41293fc15824ac2781f79e7289b6bfdd" kindref="member">keysymPressed</ref>(quint32<sp/>time,<sp/>quint32<sp/>keysym,<sp/>quint32<sp/>modifiers<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1a10492e024a80f80902c9d729ec8f4c98" kindref="member">keysymReleased</ref>(quint32<sp/>time,<sp/>quint32<sp/>keysym,<sp/>quint32<sp/>modifiers<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1a94fc1de979c36ed4a0ab2f3f0efab9c4" kindref="member">setInputPanelState</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>visible);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1aa33500eb03ce02bd98b078116fa4ac68" kindref="member">setLanguage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;languageTag);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1ac901decdd947af2123fd9e3231758d35" kindref="member">setModifiersMap</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray<sp/>&amp;modifiersMap);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="236" refid="class_k_win_1_1_text_input_v1_interface_1a0f0015b9a43b158e91ab96308fcd733d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1a0f0015b9a43b158e91ab96308fcd733d" kindref="member">requestShowInputPanel</ref>();</highlight></codeline>
+<codeline lineno="241" refid="class_k_win_1_1_text_input_v1_interface_1adfcea173edf4f527f9581ad8386ed8c9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1adfcea173edf4f527f9581ad8386ed8c9" kindref="member">requestHideInputPanel</ref>();</highlight></codeline>
+<codeline lineno="246" refid="class_k_win_1_1_text_input_v1_interface_1abe6b4e8ed9f5054128d867afbfd1ccaa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1abe6b4e8ed9f5054128d867afbfd1ccaa" kindref="member">preferredLanguageChanged</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;language);</highlight></codeline>
+<codeline lineno="250" refid="class_k_win_1_1_text_input_v1_interface_1a545f334a62f0c377d6423c115f6073d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1a545f334a62f0c377d6423c115f6073d6" kindref="member">cursorRectangleChanged</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRect<sp/>&amp;rect);</highlight></codeline>
+<codeline lineno="256" refid="class_k_win_1_1_text_input_v1_interface_1abf0c18833c413fa7f45435bc388a561e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1abf0c18833c413fa7f45435bc388a561e" kindref="member">contentTypeChanged</ref>();</highlight></codeline>
+<codeline lineno="264" refid="class_k_win_1_1_text_input_v1_interface_1a52a77ac7cb42c50e1c5431b078885efc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1a52a77ac7cb42c50e1c5431b078885efc" kindref="member">surroundingTextChanged</ref>();</highlight></codeline>
+<codeline lineno="270" refid="class_k_win_1_1_text_input_v1_interface_1a0b4d42e7f9aea647873ea66883cb0f44" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1a0b4d42e7f9aea647873ea66883cb0f44" kindref="member">enabledChanged</ref>();</highlight></codeline>
+<codeline lineno="274" refid="class_k_win_1_1_text_input_v1_interface_1a2613542f558cdeb6abda4ab8c36efac4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1a2613542f558cdeb6abda4ab8c36efac4" kindref="member">stateUpdated</ref>(quint32<sp/>serial);</highlight></codeline>
+<codeline lineno="278" refid="class_k_win_1_1_text_input_v1_interface_1af8e5b2af35eea6448e76b2dbe6b528ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1af8e5b2af35eea6448e76b2dbe6b528ee" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="282" refid="class_k_win_1_1_text_input_v1_interface_1ad09967a5936c461f52d6a5715e3eca65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_text_input_v1_interface_1ad09967a5936c461f52d6a5715e3eca65" kindref="member">invokeAction</ref>(quint32<sp/>button,<sp/>quint32<sp/>index);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="285" refid="class_k_win_1_1_text_input_v1_interface_1a5c269ce1a3c0a74f47eba7219b882cda" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_text_input_v1_interface_1a5c269ce1a3c0a74f47eba7219b882cda" kindref="member">TextInputManagerV1InterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="286" refid="class_k_win_1_1_text_input_v1_interface_1a8f81b716c1934613824f671c3d19f14b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_text_input_v1_interface_1a8f81b716c1934613824f671c3d19f14b" kindref="member">SeatInterface</ref>;</highlight></codeline>
+<codeline lineno="287" refid="class_k_win_1_1_text_input_v1_interface_1a16d024c3158e5383ab63231b9a4eff14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_text_input_v1_interface_1a16d024c3158e5383ab63231b9a4eff14" kindref="member">SeatInterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="288" refid="class_k_win_1_1_text_input_v1_interface_1a7e443a3432a7ca140701a7c581bdd8ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_text_input_v1_interface_1a7e443a3432a7ca140701a7c581bdd8ac" kindref="member">TextInputV1InterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;TextInputV1InterfacePrivate&gt;<sp/>d;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal">Q_DECLARE_METATYPE(<ref refid="class_k_win_1_1_text_input_v1_interface" kindref="compound">KWin::TextInputV1Interface</ref><sp/>*)</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/wayland/textinput_v1.h"/>
+  </compounddef>
+</doxygen>

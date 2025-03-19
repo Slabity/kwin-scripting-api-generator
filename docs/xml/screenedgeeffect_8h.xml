@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="screenedgeeffect_8h" kind="file" language="C++">
+    <compoundname>screenedgeeffect.h</compoundname>
+    <includes refid="effect_8h" local="yes">effect/effect.h</includes>
+    <includes local="no">KConfigWatcher</includes>
+    <includedby refid="plugins_2screenedge_2main_8cpp" local="yes">kwin/src/plugins/screenedge/main.cpp</includedby>
+    <includedby refid="screenedgeeffect_8cpp" local="yes">kwin/src/plugins/screenedge/screenedgeeffect.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>effect/effect.h</label>
+        <link refid="effect_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/plugins/screenedge/screenedgeeffect.h</label>
+        <link refid="screenedgeeffect_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>KConfigWatcher</label>
+      </node>
+      <node id="12">
+        <label>KPluginFactory</label>
+      </node>
+      <node id="13">
+        <label>KSharedConfig</label>
+      </node>
+      <node id="5">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="6">
+        <label>QImage</label>
+      </node>
+      <node id="7">
+        <label>QPoint</label>
+      </node>
+      <node id="11">
+        <label>QRegion</label>
+      </node>
+      <node id="8">
+        <label>QVariant</label>
+      </node>
+      <node id="9">
+        <label>QVector2D</label>
+      </node>
+      <node id="4">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="10">
+        <label>kwin_export.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/plugins/screenedge/main.cpp</label>
+        <link refid="plugins_2screenedge_2main_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/plugins/screenedge/screenedgeeffect.cpp</label>
+        <link refid="screenedgeeffect_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/plugins/screenedge/screenedgeeffect.h</label>
+        <link refid="screenedgeeffect_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_screen_edge_effect" prot="public">KWin::ScreenEdgeEffect</innerclass>
+    <innernamespace refid="namespace_k_svg">KSvg</innernamespace>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2013<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="effect_8h" kindref="compound">effect/effect.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KConfigWatcher&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QTimer;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_svg" kindref="compound">KSvg</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Svg;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_image_item" kindref="compound">ImageItem</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_k_win_1_1_screen_edge_effect" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_screen_edge_effect_1a300af31b45b9524e077273e8449347cf" kindref="member">ScreenEdgeEffect</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="group__kwineffects_1ga7bd8262f4cb2c5c3090c748eb388ad7e" kindref="member">Effect</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_screen_edge_effect_1a300af31b45b9524e077273e8449347cf" kindref="member">ScreenEdgeEffect</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_screen_edge_effect_1a57e73195106618c3654a77966006630f" kindref="member">~ScreenEdgeEffect</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_screen_edge_effect_1ae1b8ce50b370da649d2ed26949c92e94" kindref="member">isActive</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="class_k_win_1_1_screen_edge_effect_1a535ae85c943cc1e0d7414db3bc0c0e00" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_screen_edge_effect_1a535ae85c943cc1e0d7414db3bc0c0e00" kindref="member">requestedEffectChainPosition</ref>()</highlight><highlight class="keyword"><sp/>const<sp/>override</highlight></codeline>
+<codeline lineno="34"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>10;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>edgeApproaching(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5" kindref="member">ElectricBorder</ref><sp/>border,<sp/>qreal<sp/>factor,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRect<sp/>&amp;geometry);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>cleanup();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ensureGlowSvg();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>QImage<sp/>cornerGlowImage(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5" kindref="member">ElectricBorder</ref><sp/>border);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>QImage<sp/>edgeGlowImage(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5" kindref="member">ElectricBorder</ref><sp/>border,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QSize<sp/>&amp;size);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>QImage<sp/>glowImage(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5" kindref="member">ElectricBorder</ref><sp/>border,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QSize<sp/>&amp;size);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;ImageItem&gt;<sp/>createGlowItem(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5" kindref="member">ElectricBorder</ref><sp/>border,<sp/>qreal<sp/>factor,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRect<sp/>&amp;geometry);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>KConfigWatcher::Ptr<sp/>m_configWatcher;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>KSvg::Svg<sp/>*m_glow<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;ElectricBorder,<sp/>std::unique_ptr&lt;ImageItem&gt;&gt;<sp/>m_glowItems;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>QTimer<sp/>*m_cleanupTimer;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/plugins/screenedge/screenedgeeffect.h"/>
+  </compounddef>
+</doxygen>

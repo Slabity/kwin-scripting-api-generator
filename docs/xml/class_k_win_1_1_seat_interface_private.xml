@@ -1,0 +1,885 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_seat_interface_private" kind="class" language="C++" prot="public">
+    <compoundname>KWin::SeatInterfacePrivate</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QtWaylandServer::wl_seat</basecompoundref>
+    <includes refid="seat__p_8h" local="no">seat_p.h</includes>
+    <innerclass refid="struct_k_win_1_1_seat_interface_private_1_1_drag" prot="public">KWin::SeatInterfacePrivate::Drag</innerclass>
+    <innerclass refid="struct_k_win_1_1_seat_interface_private_1_1_keyboard" prot="public">KWin::SeatInterfacePrivate::Keyboard</innerclass>
+    <innerclass refid="struct_k_win_1_1_seat_interface_private_1_1_pointer" prot="public">KWin::SeatInterfacePrivate::Pointer</innerclass>
+    <innerclass refid="struct_k_win_1_1_seat_interface_private_1_1_touch" prot="public">KWin::SeatInterfacePrivate::Touch</innerclass>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1a700718a7b78a6fa55af8bc714524961a" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_seat_interface" kindref="compound">SeatInterface</ref> *</type>
+        <definition>SeatInterface* KWin::SeatInterfacePrivate::q</definition>
+        <argsstring></argsstring>
+        <name>q</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::q</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="50" column="19" bodyfile="kwin/src/wayland/seat_p.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1a1f5a1b7be22678e8c51065de253a2d3e" prot="public" static="no" mutable="no">
+        <type>QPointer&lt; <ref refid="class_k_win_1_1_display" kindref="compound">Display</ref> &gt;</type>
+        <definition>QPointer&lt;Display&gt; KWin::SeatInterfacePrivate::display</definition>
+        <argsstring></argsstring>
+        <name>display</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::display</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="51" column="14" bodyfile="kwin/src/wayland/seat_p.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1ab5e80c38b897b779feb9d71f10d7edb6" prot="public" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString KWin::SeatInterfacePrivate::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="52" column="13" bodyfile="kwin/src/wayland/seat_p.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1af0f10bba0f7cf8f2a0a513cb66224a14" prot="public" static="no" mutable="no">
+        <type>std::chrono::milliseconds</type>
+        <definition>std::chrono::milliseconds KWin::SeatInterfacePrivate::timestamp</definition>
+        <argsstring></argsstring>
+        <name>timestamp</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::timestamp</qualifiedname>
+        <initializer>= std::chrono::milliseconds::zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="53" column="31" bodyfile="kwin/src/wayland/seat_p.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1a13130cfc770cb7ff8b3be042631d0cb5" prot="public" static="no" mutable="no">
+        <type>quint32</type>
+        <definition>quint32 KWin::SeatInterfacePrivate::capabilities</definition>
+        <argsstring></argsstring>
+        <name>capabilities</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::capabilities</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="54" column="13" bodyfile="kwin/src/wayland/seat_p.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1af388312d50c31cb3e2a6fa993ae34c77" prot="public" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_keyboard_interface" kindref="compound">KeyboardInterface</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;KeyboardInterface&gt; KWin::SeatInterfacePrivate::keyboard</definition>
+        <argsstring></argsstring>
+        <name>keyboard</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::keyboard</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="55" column="21" bodyfile="kwin/src/wayland/seat_p.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1a90b5a9dd88faebacb91aec04a6a3f421" prot="public" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_pointer_interface" kindref="compound">PointerInterface</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;PointerInterface&gt; KWin::SeatInterfacePrivate::pointer</definition>
+        <argsstring></argsstring>
+        <name>pointer</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::pointer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="56" column="21" bodyfile="kwin/src/wayland/seat_p.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1ab845bbf38748717f90ee04553f61deee" prot="public" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_touch_interface" kindref="compound">TouchInterface</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;TouchInterface&gt; KWin::SeatInterfacePrivate::touch</definition>
+        <argsstring></argsstring>
+        <name>touch</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::touch</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="57" column="21" bodyfile="kwin/src/wayland/seat_p.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1ad553a0a06ca06b5c012fac896b2196f9" prot="public" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_data_device_interface" kindref="compound">DataDeviceInterface</ref> * &gt;</type>
+        <definition>QList&lt;DataDeviceInterface *&gt; KWin::SeatInterfacePrivate::dataDevices</definition>
+        <argsstring></argsstring>
+        <name>dataDevices</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::dataDevices</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="58" column="11" bodyfile="kwin/src/wayland/seat_p.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1abfda0d60651a2ad9cce8d6c61b874dc2" prot="public" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_primary_selection_device_v1_interface" kindref="compound">PrimarySelectionDeviceV1Interface</ref> * &gt;</type>
+        <definition>QList&lt;PrimarySelectionDeviceV1Interface *&gt; KWin::SeatInterfacePrivate::primarySelectionDevices</definition>
+        <argsstring></argsstring>
+        <name>primarySelectionDevices</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::primarySelectionDevices</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="59" column="11" bodyfile="kwin/src/wayland/seat_p.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1abf55e5d8dba7a3e0965c14566551dc00" prot="public" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_data_control_device_v1_interface" kindref="compound">DataControlDeviceV1Interface</ref> * &gt;</type>
+        <definition>QList&lt;DataControlDeviceV1Interface *&gt; KWin::SeatInterfacePrivate::dataControlDevices</definition>
+        <argsstring></argsstring>
+        <name>dataControlDevices</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::dataControlDevices</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="60" column="11" bodyfile="kwin/src/wayland/seat_p.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1aed556553e178ca2041ef1dc5f7f30dd0" prot="public" static="no" mutable="no">
+        <type>QPointer&lt; <ref refid="class_k_win_1_1_text_input_v1_interface" kindref="compound">TextInputV1Interface</ref> &gt;</type>
+        <definition>QPointer&lt;TextInputV1Interface&gt; KWin::SeatInterfacePrivate::textInputV1</definition>
+        <argsstring></argsstring>
+        <name>textInputV1</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::textInputV1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="62" column="14" bodyfile="kwin/src/wayland/seat_p.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1ae045b88abab75fe572ee2352c716f026" prot="public" static="no" mutable="no">
+        <type>QPointer&lt; <ref refid="class_k_win_1_1_text_input_v2_interface" kindref="compound">TextInputV2Interface</ref> &gt;</type>
+        <definition>QPointer&lt;TextInputV2Interface&gt; KWin::SeatInterfacePrivate::textInputV2</definition>
+        <argsstring></argsstring>
+        <name>textInputV2</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::textInputV2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="64" column="14" bodyfile="kwin/src/wayland/seat_p.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1ad0e43fd460aa7fc5f423a2f061115934" prot="public" static="no" mutable="no">
+        <type>QPointer&lt; <ref refid="class_k_win_1_1_text_input_v3_interface" kindref="compound">TextInputV3Interface</ref> &gt;</type>
+        <definition>QPointer&lt;TextInputV3Interface&gt; KWin::SeatInterfacePrivate::textInputV3</definition>
+        <argsstring></argsstring>
+        <name>textInputV3</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::textInputV3</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="65" column="14" bodyfile="kwin/src/wayland/seat_p.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1afb69845fa556a088af03fae6d0457f3b" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+        <definition>SurfaceInterface* KWin::SeatInterfacePrivate::focusedTextInputSurface</definition>
+        <argsstring></argsstring>
+        <name>focusedTextInputSurface</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::focusedTextInputSurface</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="67" column="22" bodyfile="kwin/src/wayland/seat_p.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1a123144eafae77cdd7460c32de7561b0a" prot="public" static="no" mutable="no">
+        <type>QMetaObject::Connection</type>
+        <definition>QMetaObject::Connection KWin::SeatInterfacePrivate::focusedSurfaceDestroyConnection</definition>
+        <argsstring></argsstring>
+        <name>focusedSurfaceDestroyConnection</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::focusedSurfaceDestroyConnection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="68" column="29" bodyfile="kwin/src/wayland/seat_p.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1aba0a013aca3a5f1c3d656ded3ab6d3ce" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_abstract_data_source" kindref="compound">AbstractDataSource</ref> *</type>
+        <definition>AbstractDataSource* KWin::SeatInterfacePrivate::currentSelection</definition>
+        <argsstring></argsstring>
+        <name>currentSelection</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::currentSelection</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="71" column="24" bodyfile="kwin/src/wayland/seat_p.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1aa5c63580a955ceda7c2aa2c51e9ea20e" prot="public" static="no" mutable="no">
+        <type>quint32</type>
+        <definition>quint32 KWin::SeatInterfacePrivate::currentSelectionSerial</definition>
+        <argsstring></argsstring>
+        <name>currentSelectionSerial</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::currentSelectionSerial</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="72" column="13" bodyfile="kwin/src/wayland/seat_p.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1aeb615024891a5b2ca226d6f0a0f0dc01" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_abstract_data_source" kindref="compound">AbstractDataSource</ref> *</type>
+        <definition>AbstractDataSource* KWin::SeatInterfacePrivate::currentPrimarySelection</definition>
+        <argsstring></argsstring>
+        <name>currentPrimarySelection</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::currentPrimarySelection</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="73" column="24" bodyfile="kwin/src/wayland/seat_p.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1a5ef5e86baef79d1401a0e64cd17a7a48" prot="public" static="no" mutable="no">
+        <type>quint32</type>
+        <definition>quint32 KWin::SeatInterfacePrivate::currentPrimarySelectionSerial</definition>
+        <argsstring></argsstring>
+        <name>currentPrimarySelectionSerial</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::currentPrimarySelectionSerial</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="74" column="13" bodyfile="kwin/src/wayland/seat_p.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1a66b6ab589cb85a7522e98ea342920aea" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_k_win_1_1_seat_interface_private_1_1_pointer" kindref="compound">Pointer</ref></type>
+        <definition>Pointer KWin::SeatInterfacePrivate::globalPointer</definition>
+        <argsstring></argsstring>
+        <name>globalPointer</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::globalPointer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="96" column="13" bodyfile="kwin/src/wayland/seat_p.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1aa5266fb7658d1fa5869b51573a24dcb1" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_k_win_1_1_seat_interface_private_1_1_keyboard" kindref="compound">Keyboard</ref></type>
+        <definition>Keyboard KWin::SeatInterfacePrivate::globalKeyboard</definition>
+        <argsstring></argsstring>
+        <name>globalKeyboard</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::globalKeyboard</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="113" column="14" bodyfile="kwin/src/wayland/seat_p.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1ac5753b9e86599bfcd7723dd3cdffcfef" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_k_win_1_1_seat_interface_private_1_1_touch" kindref="compound">Touch</ref></type>
+        <definition>Touch KWin::SeatInterfacePrivate::globalTouch</definition>
+        <argsstring></argsstring>
+        <name>globalTouch</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::globalTouch</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="139" column="11" bodyfile="kwin/src/wayland/seat_p.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_private_1a3677588300b3f271150a91a66745f3e9" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_k_win_1_1_seat_interface_private_1_1_drag" kindref="compound">Drag</ref></type>
+        <definition>Drag KWin::SeatInterfacePrivate::drag</definition>
+        <argsstring></argsstring>
+        <name>drag</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::drag</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="157" column="10" bodyfile="kwin/src/wayland/seat_p.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_private_1a5a91f5f417a6ee1b8bbe71a016d9ab4e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>KWIN_EXPORT <ref refid="class_k_win_1_1_seat_interface_private" kindref="compound">SeatInterfacePrivate</ref> *</type>
+        <definition>SeatInterfacePrivate * KWin::SeatInterfacePrivate::get</definition>
+        <argsstring>(SeatInterface *seat)</argsstring>
+        <name>get</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::get</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_seat_interface" kindref="compound">SeatInterface</ref> *</type>
+          <declname>seat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="38" column="45" bodyfile="kwin/src/wayland/seat.cpp" bodystart="57" bodyend="60"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_private_1a8a9f4e436caff11fde8d675d43d566d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::SeatInterfacePrivate::SeatInterfacePrivate</definition>
+        <argsstring>(SeatInterface *q, Display *display, const QString &amp;name)</argsstring>
+        <name>SeatInterfacePrivate</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::SeatInterfacePrivate</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_seat_interface" kindref="compound">SeatInterface</ref> *</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="39" column="5" bodyfile="kwin/src/wayland/seat.cpp" bodystart="62" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_private_1a993edefbd9562c5a1fc64c16d7403516" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterfacePrivate::sendCapabilities</definition>
+        <argsstring>()</argsstring>
+        <name>sendCapabilities</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::sendCapabilities</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="41" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="344" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_private_1a93135b6c033d74b3929bfd61c5288c28" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="class_k_win_1_1_data_device_interface" kindref="compound">DataDeviceInterface</ref> * &gt;</type>
+        <definition>QList&lt; DataDeviceInterface * &gt; KWin::SeatInterfacePrivate::dataDevicesForSurface</definition>
+        <argsstring>(SurfaceInterface *surface) const</argsstring>
+        <name>dataDevicesForSurface</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::dataDevicesForSurface</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>surface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="42" column="11" bodyfile="kwin/src/wayland/seat.cpp" bodystart="143" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_private_1a0aeee5c835ce985a61aaaec096b3fb4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterfacePrivate::registerPrimarySelectionDevice</definition>
+        <argsstring>(PrimarySelectionDeviceV1Interface *primarySelectionDevice)</argsstring>
+        <name>registerPrimarySelectionDevice</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::registerPrimarySelectionDevice</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_primary_selection_device_v1_interface" kindref="compound">PrimarySelectionDeviceV1Interface</ref> *</type>
+          <declname>primarySelectionDevice</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="43" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="245" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_private_1a8877801c1ad727e93fc3e2e12fab34c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterfacePrivate::registerDataDevice</definition>
+        <argsstring>(DataDeviceInterface *dataDevice)</argsstring>
+        <name>registerDataDevice</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::registerDataDevice</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_data_device_interface" kindref="compound">DataDeviceInterface</ref> *</type>
+          <declname>dataDevice</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="44" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="157" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_private_1a12cc982325286960450b4bd8d4dbd730" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterfacePrivate::registerDataControlDevice</definition>
+        <argsstring>(DataControlDeviceV1Interface *dataDevice)</argsstring>
+        <name>registerDataControlDevice</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::registerDataControlDevice</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_data_control_device_v1_interface" kindref="compound">DataControlDeviceV1Interface</ref> *</type>
+          <declname>dataDevice</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="45" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="204" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_private_1a067444b725ba6a484247030543c4688a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterfacePrivate::endDrag</definition>
+        <argsstring>()</argsstring>
+        <name>endDrag</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::endDrag</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="46" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="294" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_private_1a019d58f6df2ca754c8c723efbc6ae239" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterfacePrivate::cancelDrag</definition>
+        <argsstring>()</argsstring>
+        <name>cancelDrag</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::cancelDrag</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="47" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="270" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_private_1a1418c13a9f6a7fe45498b69783d8ba00" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::SeatInterfacePrivate::dragInhibitsPointer</definition>
+        <argsstring>(SurfaceInterface *surface) const</argsstring>
+        <name>dragInhibitsPointer</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::dragInhibitsPointer</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>surface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="48" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="285" bodyend="292"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_private_1a3730185dc6332abfd3a3d58026a25ab0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterfacePrivate::updatePointerButtonSerial</definition>
+        <argsstring>(quint32 button, quint32 serial)</argsstring>
+        <name>updatePointerButtonSerial</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::updatePointerButtonSerial</qualifiedname>
+        <param>
+          <type>quint32</type>
+          <declname>button</declname>
+        </param>
+        <param>
+          <type>quint32</type>
+          <declname>serial</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="97" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="123" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_private_1aaca507bf8744de71279c220e36bd75b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterfacePrivate::updatePointerButtonState</definition>
+        <argsstring>(quint32 button, Pointer::State state)</argsstring>
+        <name>updatePointerButtonState</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::updatePointerButtonState</qualifiedname>
+        <param>
+          <type>quint32</type>
+          <declname>button</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_k_win_1_1_seat_interface_private_1_1_pointer_1a52180649fa85960b91716292ccbdb964" kindref="member">Pointer::State</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="98" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="133" bodyend="141"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_private_1a426f7cfe2c625cdeda7d3a38399e3900" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterfacePrivate::seat_bind_resource</definition>
+        <argsstring>(Resource *resource) override</argsstring>
+        <name>seat_bind_resource</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::seat_bind_resource</qualifiedname>
+        <param>
+          <type>Resource *</type>
+          <declname>resource</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="160" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="76" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_private_1a9b610ac9934c0b5b7131cdd7fdfa2a2a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterfacePrivate::seat_get_pointer</definition>
+        <argsstring>(Resource *resource, uint32_t id) override</argsstring>
+        <name>seat_get_pointer</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::seat_get_pointer</qualifiedname>
+        <param>
+          <type>Resource *</type>
+          <declname>resource</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="161" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="84" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_private_1a216b85eb12a250e1d77f127beec0570e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterfacePrivate::seat_get_keyboard</definition>
+        <argsstring>(Resource *resource, uint32_t id) override</argsstring>
+        <name>seat_get_keyboard</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::seat_get_keyboard</qualifiedname>
+        <param>
+          <type>Resource *</type>
+          <declname>resource</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="162" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="90" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_private_1a29d325330954c7a6ad6f1eec484d75da" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterfacePrivate::seat_get_touch</definition>
+        <argsstring>(Resource *resource, uint32_t id) override</argsstring>
+        <name>seat_get_touch</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::seat_get_touch</qualifiedname>
+        <param>
+          <type>Resource *</type>
+          <declname>resource</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="163" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="96" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_private_1a06fb145063d14e1561a6a02a710b80ff" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterfacePrivate::seat_release</definition>
+        <argsstring>(Resource *resource) override</argsstring>
+        <name>seat_release</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::seat_release</qualifiedname>
+        <param>
+          <type>Resource *</type>
+          <declname>resource</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="164" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="102" bodyend="105"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_private_1a4e13f8ea5cd83c4d9cbc0b3152d3c2d0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterfacePrivate::updateSelection</definition>
+        <argsstring>(DataSourceInterface *dataSource, quint32 serial)</argsstring>
+        <name>updateSelection</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::updateSelection</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_data_source_interface" kindref="compound">DataSourceInterface</ref> *</type>
+          <declname>dataSource</declname>
+        </param>
+        <param>
+          <type>quint32</type>
+          <declname>serial</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="167" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="322" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_private_1ae7f349ea1114aad83846c662aa30b07b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterfacePrivate::updatePrimarySelection</definition>
+        <argsstring>(PrimarySelectionSourceV1Interface *dataSource, quint32)</argsstring>
+        <name>updatePrimarySelection</name>
+        <qualifiedname>KWin::SeatInterfacePrivate::updatePrimarySelection</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_primary_selection_source_v1_interface" kindref="compound">PrimarySelectionSourceV1Interface</ref> *</type>
+          <declname>dataSource</declname>
+        </param>
+        <param>
+          <type>quint32</type>
+          <defname>serial</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat_p.h" line="168" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="333" bodyend="342"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::SeatInterfacePrivate</label>
+        <link refid="class_k_win_1_1_seat_interface_private"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QtWaylandServer::wl_seat</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="6">
+        <label>KWin::AbstractDataSource</label>
+        <link refid="class_k_win_1_1_abstract_data_source"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>KWin::SeatInterface</label>
+        <link refid="class_k_win_1_1_seat_interface"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::SeatInterfacePrivate</label>
+        <link refid="class_k_win_1_1_seat_interface_private"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>q</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>focusedTextInputSurface</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>currentPrimarySelection</edgelabel>
+          <edgelabel>currentSelection</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>globalPointer</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>globalKeyboard</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>globalTouch</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>drag</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>KWin::SeatInterfacePrivate::Drag</label>
+        <link refid="struct_k_win_1_1_seat_interface_private_1_1_drag"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>source</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>KWin::SeatInterfacePrivate::Keyboard</label>
+        <link refid="struct_k_win_1_1_seat_interface_private_1_1_keyboard"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>focus</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>KWin::SeatInterfacePrivate::Keyboard::Focus</label>
+        <link refid="struct_k_win_1_1_seat_interface_private_1_1_keyboard_1_1_focus"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>surface</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>KWin::SeatInterfacePrivate::Pointer</label>
+        <link refid="struct_k_win_1_1_seat_interface_private_1_1_pointer"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>focus</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>KWin::SeatInterfacePrivate::Pointer::Focus</label>
+        <link refid="struct_k_win_1_1_seat_interface_private_1_1_pointer_1_1_focus"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>surface</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>KWin::SeatInterfacePrivate::Touch</label>
+        <link refid="struct_k_win_1_1_seat_interface_private_1_1_touch"/>
+      </node>
+      <node id="5">
+        <label>KWin::SurfaceInterface</label>
+        <link refid="class_k_win_1_1_surface_interface"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QObject</label>
+      </node>
+      <node id="2">
+        <label>QtWaylandServer::wl_seat</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/wayland/seat_p.h" line="34" column="1" bodyfile="kwin/src/wayland/seat_p.h" bodystart="35" bodyend="169"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_seat_interface_private_1a019d58f6df2ca754c8c723efbc6ae239" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>cancelDrag</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a13130cfc770cb7ff8b3be042631d0cb5" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>capabilities</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1aeb615024891a5b2ca226d6f0a0f0dc01" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>currentPrimarySelection</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a5ef5e86baef79d1401a0e64cd17a7a48" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>currentPrimarySelectionSerial</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1aba0a013aca3a5f1c3d656ded3ab6d3ce" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>currentSelection</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1aa5c63580a955ceda7c2aa2c51e9ea20e" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>currentSelectionSerial</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1abf55e5d8dba7a3e0965c14566551dc00" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>dataControlDevices</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1ad553a0a06ca06b5c012fac896b2196f9" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>dataDevices</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a93135b6c033d74b3929bfd61c5288c28" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>dataDevicesForSurface</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a1f5a1b7be22678e8c51065de253a2d3e" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>display</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a3677588300b3f271150a91a66745f3e9" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>drag</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a1418c13a9f6a7fe45498b69783d8ba00" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>dragInhibitsPointer</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a067444b725ba6a484247030543c4688a" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>endDrag</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a123144eafae77cdd7460c32de7561b0a" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>focusedSurfaceDestroyConnection</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1afb69845fa556a088af03fae6d0457f3b" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>focusedTextInputSurface</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a5a91f5f417a6ee1b8bbe71a016d9ab4e" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>get</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1aa5266fb7658d1fa5869b51573a24dcb1" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>globalKeyboard</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a66b6ab589cb85a7522e98ea342920aea" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>globalPointer</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1ac5753b9e86599bfcd7723dd3cdffcfef" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>globalTouch</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1af388312d50c31cb3e2a6fa993ae34c77" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>keyboard</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1ab5e80c38b897b779feb9d71f10d7edb6" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>name</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a90b5a9dd88faebacb91aec04a6a3f421" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>pointer</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1abfda0d60651a2ad9cce8d6c61b874dc2" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>primarySelectionDevices</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a700718a7b78a6fa55af8bc714524961a" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>q</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a12cc982325286960450b4bd8d4dbd730" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>registerDataControlDevice</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a8877801c1ad727e93fc3e2e12fab34c4" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>registerDataDevice</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a0aeee5c835ce985a61aaaec096b3fb4d" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>registerPrimarySelectionDevice</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a426f7cfe2c625cdeda7d3a38399e3900" prot="protected" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>seat_bind_resource</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a216b85eb12a250e1d77f127beec0570e" prot="protected" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>seat_get_keyboard</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a9b610ac9934c0b5b7131cdd7fdfa2a2a" prot="protected" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>seat_get_pointer</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a29d325330954c7a6ad6f1eec484d75da" prot="protected" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>seat_get_touch</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a06fb145063d14e1561a6a02a710b80ff" prot="protected" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>seat_release</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a8a9f4e436caff11fde8d675d43d566d5" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>SeatInterfacePrivate</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a993edefbd9562c5a1fc64c16d7403516" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>sendCapabilities</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1aed556553e178ca2041ef1dc5f7f30dd0" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>textInputV1</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1ae045b88abab75fe572ee2352c716f026" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>textInputV2</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1ad0e43fd460aa7fc5f423a2f061115934" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>textInputV3</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1af0f10bba0f7cf8f2a0a513cb66224a14" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>timestamp</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1ab845bbf38748717f90ee04553f61deee" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>touch</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a3730185dc6332abfd3a3d58026a25ab0" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>updatePointerButtonSerial</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1aaca507bf8744de71279c220e36bd75b9" prot="public" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>updatePointerButtonState</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1ae7f349ea1114aad83846c662aa30b07b" prot="private" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>updatePrimarySelection</name></member>
+      <member refid="class_k_win_1_1_seat_interface_private_1a4e13f8ea5cd83c4d9cbc0b3152d3c2d0" prot="private" virt="non-virtual"><scope>KWin::SeatInterfacePrivate</scope><name>updateSelection</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

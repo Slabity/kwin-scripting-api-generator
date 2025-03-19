@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="overvieweffectkcm_8cpp" kind="file" language="C++">
+    <compoundname>overvieweffectkcm.cpp</compoundname>
+    <includes refid="overvieweffectkcm_8h" local="yes">overvieweffectkcm.h</includes>
+    <includes local="yes">config-kwin.h</includes>
+    <includes local="yes">overviewconfig.h</includes>
+    <includes local="no">kwineffects_interface.h</includes>
+    <includes local="no">KActionCollection</includes>
+    <includes local="no">KGlobalAccel</includes>
+    <includes local="no">KLocalizedString</includes>
+    <includes local="no">KPluginFactory</includes>
+    <includes local="no">QAction</includes>
+    <includes local="yes">overvieweffectkcm.moc</includes>
+    <includes local="yes">moc_overvieweffectkcm.cpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/plugins/overview/kcm/overvieweffectkcm.cpp</label>
+        <link refid="overvieweffectkcm_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>overvieweffectkcm.h</label>
+        <link refid="overvieweffectkcm_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>KActionCollection</label>
+      </node>
+      <node id="3">
+        <label>KCModule</label>
+      </node>
+      <node id="9">
+        <label>KGlobalAccel</label>
+      </node>
+      <node id="10">
+        <label>KLocalizedString</label>
+      </node>
+      <node id="11">
+        <label>KPluginFactory</label>
+      </node>
+      <node id="12">
+        <label>QAction</label>
+      </node>
+      <node id="5">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="7">
+        <label>kwineffects_interface.h</label>
+      </node>
+      <node id="14">
+        <label>moc_overvieweffectkcm.cpp</label>
+      </node>
+      <node id="6">
+        <label>overviewconfig.h</label>
+      </node>
+      <node id="13">
+        <label>overvieweffectkcm.moc</label>
+      </node>
+      <node id="4">
+        <label>ui_overvieweffectkcm.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2021<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="overvieweffectkcm_8h" kindref="compound">overvieweffectkcm.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;config-kwin.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;overviewconfig.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;kwineffects_interface.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KActionCollection&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KGlobalAccel&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KLocalizedString&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KPluginFactory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QAction&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">K_PLUGIN_CLASS(<ref refid="class_k_win_1_1_overview_effect_config" kindref="compound">KWin::OverviewEffectConfig</ref>)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="class_k_win_1_1_overview_effect_config_1a301b9d968832ef9d553cd34f32c3905b" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_overview_effect_config_1a301b9d968832ef9d553cd34f32c3905b" kindref="member">OverviewEffectConfig::OverviewEffectConfig</ref>(QObject<sp/>*parent,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>KPluginMetaData<sp/>&amp;data)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>KCModule(parent,<sp/>data)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>ui.setupUi(widget());</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>OverviewConfig::instance(KWIN_CONFIG);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>addConfig(OverviewConfig::self(),<sp/>widget());</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>actionCollection<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>KActionCollection(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;kwin&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>actionCollection-&gt;setComponentDisplayName(i18n(</highlight><highlight class="stringliteral">&quot;KWin&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>actionCollection-&gt;setConfigGroup(QStringLiteral(</highlight><highlight class="stringliteral">&quot;Overview&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>actionCollection-&gt;setConfigGlobal(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>QAction<sp/>*cycleAction<sp/>=<sp/>actionCollection-&gt;addAction(QStringLiteral(</highlight><highlight class="stringliteral">&quot;Cycle<sp/>Overview&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>cycleAction-&gt;setText(i18nc(</highlight><highlight class="stringliteral">&quot;@action<sp/>Overview<sp/>and<sp/>Grid<sp/>View<sp/>are<sp/>the<sp/>name<sp/>of<sp/>KWin<sp/>effects&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Cycle<sp/>through<sp/>Overview<sp/>and<sp/>Grid<sp/>View&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>cycleAction-&gt;setProperty(</highlight><highlight class="stringliteral">&quot;isConfigurationAction&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>KGlobalAccel::self()-&gt;setDefaultShortcut(cycleAction,<sp/>{});</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>KGlobalAccel::self()-&gt;setShortcut(cycleAction,<sp/>{});</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>QAction<sp/>*reverseCycleAction<sp/>=<sp/>actionCollection-&gt;addAction(QStringLiteral(</highlight><highlight class="stringliteral">&quot;Cycle<sp/>Overview<sp/>Opposite&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>reverseCycleAction-&gt;setText(i18nc(</highlight><highlight class="stringliteral">&quot;@action<sp/>Grid<sp/>View<sp/>and<sp/>Overview<sp/>are<sp/>the<sp/>name<sp/>of<sp/>KWin<sp/>effects&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Cycle<sp/>through<sp/>Grid<sp/>View<sp/>and<sp/>Overview&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>reverseCycleAction-&gt;setProperty(</highlight><highlight class="stringliteral">&quot;isConfigurationAction&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>KGlobalAccel::self()-&gt;setDefaultShortcut(reverseCycleAction,<sp/>{});</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>KGlobalAccel::self()-&gt;setShortcut(reverseCycleAction,<sp/>{});</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QKeySequence<sp/>defaultOverviewShortcut<sp/>=<sp/>Qt::META<sp/>|<sp/>Qt::Key_W;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>QAction<sp/>*overviewAction<sp/>=<sp/>actionCollection-&gt;addAction(QStringLiteral(</highlight><highlight class="stringliteral">&quot;Overview&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>overviewAction-&gt;setText(i18nc(</highlight><highlight class="stringliteral">&quot;@action<sp/>Overview<sp/>is<sp/>the<sp/>name<sp/>of<sp/>a<sp/>KWin<sp/>effect&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Toggle<sp/>Overview&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>overviewAction-&gt;setProperty(</highlight><highlight class="stringliteral">&quot;isConfigurationAction&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>KGlobalAccel::self()-&gt;setDefaultShortcut(overviewAction,<sp/>{defaultOverviewShortcut});</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>KGlobalAccel::self()-&gt;setShortcut(overviewAction,<sp/>{defaultOverviewShortcut});</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QKeySequence<sp/>defaultGridShortcut<sp/>=<sp/>Qt::META<sp/>|<sp/>Qt::Key_G;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>QAction<sp/>*gridAction<sp/>=<sp/>actionCollection-&gt;addAction(QStringLiteral(</highlight><highlight class="stringliteral">&quot;Grid<sp/>View&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>gridAction-&gt;setText(i18nc(</highlight><highlight class="stringliteral">&quot;@action<sp/>Grid<sp/>View<sp/>is<sp/>the<sp/>name<sp/>of<sp/>a<sp/>KWin<sp/>effect&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Toggle<sp/>Grid<sp/>View&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>gridAction-&gt;setProperty(</highlight><highlight class="stringliteral">&quot;isConfigurationAction&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>KGlobalAccel::self()-&gt;setDefaultShortcut(gridAction,<sp/>{defaultGridShortcut});</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>KGlobalAccel::self()-&gt;setShortcut(gridAction,<sp/>{defaultGridShortcut});</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>ui.shortcutsEditor-&gt;addCollection(actionCollection);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui.shortcutsEditor,<sp/>&amp;KShortcutsEditor::keyChange,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KCModule::markAsChanged);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="class_k_win_1_1_overview_effect_config_1a66596bd2f74dc0afd983be379eff3e07" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_overview_effect_config_1a66596bd2f74dc0afd983be379eff3e07" kindref="member">OverviewEffectConfig::save</ref>()</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>KCModule::save();</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>ui.shortcutsEditor-&gt;save();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>OrgKdeKwinEffectsInterface<sp/>interface(QStringLiteral(</highlight><highlight class="stringliteral">&quot;org.kde.KWin&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;/Effects&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QDBusConnection::sessionBus());</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>interface.reconfigureEffect(QStringLiteral(</highlight><highlight class="stringliteral">&quot;overview&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="class_k_win_1_1_overview_effect_config_1a5f0f958f8ced32f6e8aca0b0d1191a56" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_overview_effect_config_1a5f0f958f8ced32f6e8aca0b0d1191a56" kindref="member">OverviewEffectConfig::defaults</ref>()</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>ui.shortcutsEditor-&gt;allDefault();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>KCModule::defaults();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;overvieweffectkcm.moc&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;moc_overvieweffectkcm.cpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/plugins/overview/kcm/overvieweffectkcm.cpp"/>
+  </compounddef>
+</doxygen>

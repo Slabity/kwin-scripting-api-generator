@@ -1,0 +1,1159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_screen_cast_stream" kind="class" language="C++" prot="public">
+    <compoundname>KWin::ScreenCastStream</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="screencaststream_8h" local="no">screencaststream.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_k_win_1_1_screen_cast_stream_1a1d58f5372b4ed2c7f28e6f3a95c61cc8" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Content</name>
+        <qualifiedname>KWin::ScreenCastStream::Content</qualifiedname>
+        <enumvalue id="class_k_win_1_1_screen_cast_stream_1a1d58f5372b4ed2c7f28e6f3a95c61cc8a6adf97f83acf6453d4a6a4b1070f3754" prot="public">
+          <name>None</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_screen_cast_stream_1a1d58f5372b4ed2c7f28e6f3a95c61cc8a34e2d1989a1dbf75cd631596133ee5ee" prot="public">
+          <name>Video</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_screen_cast_stream_1a1d58f5372b4ed2c7f28e6f3a95c61cc8a9abdae4fa5d93330363a88ed8a5e7946" prot="public">
+          <name>Cursor</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="51" column="5" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="51" bodyend="55"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a222278a5f8b5ee4ab5d555e6652870be" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_pipe_wire_core" kindref="compound">PipeWireCore</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;PipeWireCore&gt; KWin::ScreenCastStream::m_pwCore</definition>
+        <argsstring></argsstring>
+        <name>m_pwCore</name>
+        <qualifiedname>KWin::ScreenCastStream::m_pwCore</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="105" column="21" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1ad86f79f4ffed100e5a73e31cec458f50" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_screen_cast_source" kindref="compound">ScreenCastSource</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;ScreenCastSource&gt; KWin::ScreenCastStream::m_source</definition>
+        <argsstring></argsstring>
+        <name>m_source</name>
+        <qualifiedname>KWin::ScreenCastStream::m_source</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="106" column="21" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1af60e31314fbab9776a2898a95c0d4762" prot="private" static="no" mutable="no">
+        <type>struct pw_stream *</type>
+        <definition>struct pw_stream* KWin::ScreenCastStream::m_pwStream</definition>
+        <argsstring></argsstring>
+        <name>m_pwStream</name>
+        <qualifiedname>KWin::ScreenCastStream::m_pwStream</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="107" column="20" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a7ebec32856ff6a7d10fd3ff6838b01cd" prot="private" static="no" mutable="no">
+        <type>spa_hook</type>
+        <definition>spa_hook KWin::ScreenCastStream::m_streamListener</definition>
+        <argsstring></argsstring>
+        <name>m_streamListener</name>
+        <qualifiedname>KWin::ScreenCastStream::m_streamListener</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="108" column="14" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a3e9fb24ddddfbd3171370feae9f57c1f" prot="private" static="no" mutable="no">
+        <type>pw_stream_events</type>
+        <definition>pw_stream_events KWin::ScreenCastStream::m_pwStreamEvents</definition>
+        <argsstring></argsstring>
+        <name>m_pwStreamEvents</name>
+        <qualifiedname>KWin::ScreenCastStream::m_pwStreamEvents</qualifiedname>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="109" column="22" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="109" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a35d95d19e9212d4fa7491b6a915de4ed" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t KWin::ScreenCastStream::m_pwNodeId</definition>
+        <argsstring></argsstring>
+        <name>m_pwNodeId</name>
+        <qualifiedname>KWin::ScreenCastStream::m_pwNodeId</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="111" column="14" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1ac23954eca5f4d8c57b6ade2197156364" prot="private" static="no" mutable="no">
+        <type>QSize</type>
+        <definition>QSize KWin::ScreenCastStream::m_resolution</definition>
+        <argsstring></argsstring>
+        <name>m_resolution</name>
+        <qualifiedname>KWin::ScreenCastStream::m_resolution</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="113" column="11" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a05f4d1a05a28d473e6d1edf63a9fa26a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::ScreenCastStream::m_closed</definition>
+        <argsstring></argsstring>
+        <name>m_closed</name>
+        <qualifiedname>KWin::ScreenCastStream::m_closed</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="114" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a49a719fd5cca1f15a8b3e90ff6181cbc" prot="private" static="no" mutable="no">
+        <type>spa_video_info_raw</type>
+        <definition>spa_video_info_raw KWin::ScreenCastStream::m_videoFormat</definition>
+        <argsstring></argsstring>
+        <name>m_videoFormat</name>
+        <qualifiedname>KWin::ScreenCastStream::m_videoFormat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="116" column="24" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a4434acb7b2272f812e24b77b8376f556" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString KWin::ScreenCastStream::m_error</definition>
+        <argsstring></argsstring>
+        <name>m_error</name>
+        <qualifiedname>KWin::ScreenCastStream::m_error</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="117" column="13" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a2936652e015caf3f40f62f05eb599d6b" prot="private" static="no" mutable="no">
+        <type>QList&lt; uint64_t &gt;</type>
+        <definition>QList&lt;uint64_t&gt; KWin::ScreenCastStream::m_modifiers</definition>
+        <argsstring></argsstring>
+        <name>m_modifiers</name>
+        <qualifiedname>KWin::ScreenCastStream::m_modifiers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="118" column="11" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a770be7d42b769ec818dcccf085397fb6" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="struct_k_win_1_1_screen_cast_dma_buf_texture_params" kindref="compound">ScreenCastDmaBufTextureParams</ref> &gt;</type>
+        <definition>std::optional&lt;ScreenCastDmaBufTextureParams&gt; KWin::ScreenCastStream::m_dmabufParams</definition>
+        <argsstring></argsstring>
+        <name>m_dmabufParams</name>
+        <qualifiedname>KWin::ScreenCastStream::m_dmabufParams</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="119" column="19" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a39300894bf44f3ee6ce3d928a6036ce6" prot="private" static="no" mutable="no">
+        <type>struct <ref refid="class_k_win_1_1_screen_cast_stream" kindref="compound">KWin::ScreenCastStream</ref></type>
+        <definition>struct KWin::ScreenCastStream KWin::ScreenCastStream::m_cursor</definition>
+        <argsstring></argsstring>
+        <name>m_cursor</name>
+        <qualifiedname>KWin::ScreenCastStream::m_cursor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="131" column="14"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a64a0b21a9efadac99d91eb08e26f7119" prot="private" static="no" mutable="no">
+        <type>quint64</type>
+        <definition>quint64 KWin::ScreenCastStream::m_sequential</definition>
+        <argsstring></argsstring>
+        <name>m_sequential</name>
+        <qualifiedname>KWin::ScreenCastStream::m_sequential</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="133" column="13" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a2e783ee17f05e5e3c65160487f135910" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::ScreenCastStream::m_hasDmaBuf</definition>
+        <argsstring></argsstring>
+        <name>m_hasDmaBuf</name>
+        <qualifiedname>KWin::ScreenCastStream::m_hasDmaBuf</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="134" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1af171532b9d53a8cd1f64364e8ebb0397" prot="private" static="no" mutable="no">
+        <type>quint32</type>
+        <definition>quint32 KWin::ScreenCastStream::m_drmFormat</definition>
+        <argsstring></argsstring>
+        <name>m_drmFormat</name>
+        <qualifiedname>KWin::ScreenCastStream::m_drmFormat</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="135" column="13" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a5010713e61bb24ed305f45019eab5c82" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; std::chrono::steady_clock::time_point &gt;</type>
+        <definition>std::optional&lt;std::chrono::steady_clock::time_point&gt; KWin::ScreenCastStream::m_lastSent</definition>
+        <argsstring></argsstring>
+        <name>m_lastSent</name>
+        <qualifiedname>KWin::ScreenCastStream::m_lastSent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="137" column="19" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a3b17370d35b92052533ea9ca71ad53cf" prot="private" static="no" mutable="no">
+        <type>QRegion</type>
+        <definition>QRegion KWin::ScreenCastStream::m_pendingDamage</definition>
+        <argsstring></argsstring>
+        <name>m_pendingDamage</name>
+        <qualifiedname>KWin::ScreenCastStream::m_pendingDamage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="138" column="13" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1aa29a67d5e79ed677ecedf251c146debd" prot="private" static="no" mutable="no">
+        <type>QTimer</type>
+        <definition>QTimer KWin::ScreenCastStream::m_pendingFrame</definition>
+        <argsstring></argsstring>
+        <name>m_pendingFrame</name>
+        <qualifiedname>KWin::ScreenCastStream::m_pendingFrame</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="139" column="12" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a51ceb301f042f03e35535a1a9a4de956" prot="private" static="no" mutable="no">
+        <type>Contents</type>
+        <definition>Contents KWin::ScreenCastStream::m_pendingContents</definition>
+        <argsstring></argsstring>
+        <name>m_pendingContents</name>
+        <qualifiedname>KWin::ScreenCastStream::m_pendingContents</qualifiedname>
+        <initializer>= <ref refid="class_k_win_1_1_screen_cast_stream_1a1d58f5372b4ed2c7f28e6f3a95c61cc8a6adf97f83acf6453d4a6a4b1070f3754" kindref="member">Content::None</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="140" column="14" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a4b056d551bbbe7b4f8d2879435d5678b" prot="private" static="no" mutable="no">
+        <type>QList&lt; pw_buffer * &gt;</type>
+        <definition>QList&lt;pw_buffer *&gt; KWin::ScreenCastStream::m_dequeuedBuffers</definition>
+        <argsstring></argsstring>
+        <name>m_dequeuedBuffers</name>
+        <qualifiedname>KWin::ScreenCastStream::m_dequeuedBuffers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="141" column="11" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a381ef34a4e01b19afd8c202bdb7912d4" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_screencast_v1_interface_1adee0056f6cdc75b1f5b2860349f4146c" kindref="member">ScreencastV1Interface::CursorMode</ref></type>
+        <definition>ScreencastV1Interface::CursorMode KWin::ScreenCastStream::mode</definition>
+        <argsstring></argsstring>
+        <name>mode</name>
+        <qualifiedname>KWin::ScreenCastStream::mode</qualifiedname>
+        <initializer>= <ref refid="class_k_win_1_1_screencast_v1_interface_1adee0056f6cdc75b1f5b2860349f4146ca4a869d1e9e5539e38da59b9088e61689" kindref="member">ScreencastV1Interface::Hidden</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="123" column="43" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a91c03c637a099efd5b7a4a8e8ef5b817" prot="public" static="no" mutable="no">
+        <type>const QSize</type>
+        <definition>const QSize KWin::ScreenCastStream::bitmapSize</definition>
+        <argsstring></argsstring>
+        <name>bitmapSize</name>
+        <qualifiedname>KWin::ScreenCastStream::bitmapSize</qualifiedname>
+        <initializer>= QSize(256, 256)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="124" column="21" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a066e9f8772156f5c306c0e1a129cb375" prot="public" static="no" mutable="no">
+        <type>QRectF</type>
+        <definition>QRectF KWin::ScreenCastStream::lastRect</definition>
+        <argsstring></argsstring>
+        <name>lastRect</name>
+        <qualifiedname>KWin::ScreenCastStream::lastRect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="125" column="16" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1adde0c211d1ad30ab13cbaeb387e1d940" prot="public" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_g_l_texture" kindref="compound">GLTexture</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;GLTexture&gt; KWin::ScreenCastStream::texture</definition>
+        <argsstring></argsstring>
+        <name>texture</name>
+        <qualifiedname>KWin::ScreenCastStream::texture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="126" column="25" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a16bb4c51ef2ce79c2e19c49a4557223e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::ScreenCastStream::visible</definition>
+        <argsstring></argsstring>
+        <name>visible</name>
+        <qualifiedname>KWin::ScreenCastStream::visible</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="127" column="14" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a08d8f88cee5fc786561ee68049587e12" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::ScreenCastStream::invalid</definition>
+        <argsstring></argsstring>
+        <name>invalid</name>
+        <qualifiedname>KWin::ScreenCastStream::invalid</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="128" column="14" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1a95566d68d84598b16a869892abd2992a" prot="public" static="no" mutable="no">
+        <type>QMetaObject::Connection</type>
+        <definition>QMetaObject::Connection KWin::ScreenCastStream::changedConnection</definition>
+        <argsstring></argsstring>
+        <name>changedConnection</name>
+        <qualifiedname>KWin::ScreenCastStream::changedConnection</qualifiedname>
+        <initializer>= QMetaObject::Connection()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="129" column="33" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_screen_cast_stream_1aa30677c7bcc0ea066c442b5ce6408cad" prot="public" static="no" mutable="no">
+        <type>QMetaObject::Connection</type>
+        <definition>QMetaObject::Connection KWin::ScreenCastStream::positionChangedConnection</definition>
+        <argsstring></argsstring>
+        <name>positionChangedConnection</name>
+        <qualifiedname>KWin::ScreenCastStream::positionChangedConnection</qualifiedname>
+        <initializer>= QMetaObject::Connection()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="130" column="33" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1ab65d3aae3ee037e9c16ce714f598121e" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::ScreenCastStream::ScreenCastStream</definition>
+        <argsstring>(ScreenCastSource *source, std::shared_ptr&lt; PipeWireCore &gt; pwCore, QObject *parent)</argsstring>
+        <name>ScreenCastStream</name>
+        <qualifiedname>KWin::ScreenCastStream::ScreenCastStream</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_screen_cast_source" kindref="compound">ScreenCastSource</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_pipe_wire_core" kindref="compound">PipeWireCore</ref> &gt;</type>
+          <declname>pwCore</declname>
+        </param>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="48" column="14" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="320" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1a2160c16a4b39c3140881652c515e0620" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::ScreenCastStream::~ScreenCastStream</definition>
+        <argsstring>()</argsstring>
+        <name>~ScreenCastStream</name>
+        <qualifiedname>KWin::ScreenCastStream::~ScreenCastStream</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="49" column="5" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="357" bodyend="364"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1ad0c9593b3731cb6391251e8d8aba3b32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::ScreenCastStream::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <qualifiedname>KWin::ScreenCastStream::init</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="59" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="366" bodyend="388"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1ad9970a22184bece0f5f8173d6bdd5678" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint</type>
+        <definition>uint KWin::ScreenCastStream::framerate</definition>
+        <argsstring>()</argsstring>
+        <name>framerate</name>
+        <qualifiedname>KWin::ScreenCastStream::framerate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="60" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="390" bodyend="397"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1ad095c5acb4f1a90fef02bfe7f04d8a25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint</type>
+        <definition>uint KWin::ScreenCastStream::nodeId</definition>
+        <argsstring>()</argsstring>
+        <name>nodeId</name>
+        <qualifiedname>KWin::ScreenCastStream::nodeId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="61" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="399" bodyend="402"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1aad2d45d520e465abd2e4ec1b4fbcdbd5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString KWin::ScreenCastStream::error</definition>
+        <argsstring>() const</argsstring>
+        <name>error</name>
+        <qualifiedname>KWin::ScreenCastStream::error</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="62" column="13" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="62" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1ae0444823f5933870153de586f605f413" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenCastStream::close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <qualifiedname>KWin::ScreenCastStream::close</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="67" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="463" bodyend="480"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1aa8e659b25d07525a4231d397842168c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenCastStream::scheduleRecord</definition>
+        <argsstring>(const QRegion &amp;damage, Contents contents=Content::Video)</argsstring>
+        <name>scheduleRecord</name>
+        <qualifiedname>KWin::ScreenCastStream::scheduleRecord</qualifiedname>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>damage</declname>
+        </param>
+        <param>
+          <type>Contents</type>
+          <declname>contents</declname>
+          <defval><ref refid="class_k_win_1_1_screen_cast_stream_1a1d58f5372b4ed2c7f28e6f3a95c61cc8a34e2d1989a1dbf75cd631596133ee5ee" kindref="member">Content::Video</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="69" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="482" bodyend="520"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1a5d79dde5bce4e4ded682e21c041406b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenCastStream::setCursorMode</definition>
+        <argsstring>(ScreencastV1Interface::CursorMode mode)</argsstring>
+        <name>setCursorMode</name>
+        <qualifiedname>KWin::ScreenCastStream::setCursorMode</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_screencast_v1_interface_1adee0056f6cdc75b1f5b2860349f4146c" kindref="member">ScreencastV1Interface::CursorMode</ref></type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="71" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="915" bodyend="918"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_k_win_1_1_screen_cast_stream_1a7c2ae2e19319393b054a281e7198e8c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenCastStream::invalidateCursor</definition>
+        <argsstring>()</argsstring>
+        <name>invalidateCursor</name>
+        <qualifiedname>KWin::ScreenCastStream::invalidateCursor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="74" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="730" bodyend="733"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_screen_cast_stream_1ac41b7d1babaf910345d7b4d63aefcfc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenCastStream::ready</definition>
+        <argsstring>(quint32 nodeId)</argsstring>
+        <name>ready</name>
+        <qualifiedname>KWin::ScreenCastStream::ready</qualifiedname>
+        <param>
+          <type>quint32</type>
+          <declname>nodeId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="77" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_screen_cast_stream_1a000c11d670f0193f592be97e2989f06a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenCastStream::closed</definition>
+        <argsstring>()</argsstring>
+        <name>closed</name>
+        <qualifiedname>KWin::ScreenCastStream::closed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="78" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1ae7142bb0e89c22941cedbe1b3677806e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenCastStream::onStreamParamChanged</definition>
+        <argsstring>(uint32_t id, const struct spa_pod *format)</argsstring>
+        <name>onStreamParamChanged</name>
+        <qualifiedname>KWin::ScreenCastStream::onStreamParamChanged</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const struct spa_pod *</type>
+          <declname>format</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="81" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="222" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1ac9b338a8d9c9bdf396d6f79d60b083b8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenCastStream::onStreamStateChanged</definition>
+        <argsstring>(pw_stream_state old, pw_stream_state state, const char *error_message)</argsstring>
+        <name>onStreamStateChanged</name>
+        <qualifiedname>KWin::ScreenCastStream::onStreamStateChanged</qualifiedname>
+        <param>
+          <type>pw_stream_state</type>
+          <declname>old</declname>
+        </param>
+        <param>
+          <type>pw_stream_state</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>error_message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="82" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="115" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1a58fb8432055c1a72404b4192ac39b272" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenCastStream::onStreamAddBuffer</definition>
+        <argsstring>(pw_buffer *buffer)</argsstring>
+        <name>onStreamAddBuffer</name>
+        <qualifiedname>KWin::ScreenCastStream::onStreamAddBuffer</qualifiedname>
+        <param>
+          <type>pw_buffer *</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="83" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="280" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1a0175e0693b152a61e84403a1e44ad455" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenCastStream::onStreamRemoveBuffer</definition>
+        <argsstring>(pw_buffer *buffer)</argsstring>
+        <name>onStreamRemoveBuffer</name>
+        <qualifiedname>KWin::ScreenCastStream::onStreamRemoveBuffer</qualifiedname>
+        <param>
+          <type>pw_buffer *</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="84" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="310" bodyend="318"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1adcaa58884e7174f5ebe580d3461953eb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::ScreenCastStream::createStream</definition>
+        <argsstring>()</argsstring>
+        <name>createStream</name>
+        <qualifiedname>KWin::ScreenCastStream::createStream</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="86" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="404" bodyend="456"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1a54314bf6d96a743ac6e95381cd492892" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; const spa_pod * &gt;</type>
+        <definition>QList&lt; const spa_pod * &gt; KWin::ScreenCastStream::buildFormats</definition>
+        <argsstring>(bool fixate, char buffer[2048])</argsstring>
+        <name>buildFormats</name>
+        <qualifiedname>KWin::ScreenCastStream::buildFormats</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>fixate</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>buffer</declname>
+          <array>[2048]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="87" column="11" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="735" bodyend="756"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1ac43b705acc4f6f83564805b8da96b4ba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenCastStream::updateParams</definition>
+        <argsstring>()</argsstring>
+        <name>updateParams</name>
+        <qualifiedname>KWin::ScreenCastStream::updateParams</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="88" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1a36fd369682b2c3132a655d7b97c8376e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenCastStream::resize</definition>
+        <argsstring>(const QSize &amp;resolution)</argsstring>
+        <name>resize</name>
+        <qualifiedname>KWin::ScreenCastStream::resize</qualifiedname>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>resolution</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="89" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="672" bodyend="682"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1a1f594a60a0eb391164f4faadc22f3bad" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenCastStream::coreFailed</definition>
+        <argsstring>(const QString &amp;errorMessage)</argsstring>
+        <name>coreFailed</name>
+        <qualifiedname>KWin::ScreenCastStream::coreFailed</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>errorMessage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="90" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="457" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1a94e1fe121fe71ad1c352d5b3e7b08933" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenCastStream::addCursorMetadata</definition>
+        <argsstring>(spa_buffer *spaBuffer, Cursor *cursor)</argsstring>
+        <name>addCursorMetadata</name>
+        <qualifiedname>KWin::ScreenCastStream::addCursorMetadata</qualifiedname>
+        <param>
+          <type>spa_buffer *</type>
+          <declname>spaBuffer</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_cursor" kindref="compound">Cursor</ref> *</type>
+          <declname>cursor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="91" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="801" bodyend="860"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1ae29a40943f387b8f31e120621fc4f672" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QRegion</type>
+        <definition>QRegion KWin::ScreenCastStream::addCursorEmbedded</definition>
+        <argsstring>(ScreenCastBuffer *buffer, Cursor *cursor)</argsstring>
+        <name>addCursorEmbedded</name>
+        <qualifiedname>KWin::ScreenCastStream::addCursorEmbedded</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_screen_cast_buffer" kindref="compound">ScreenCastBuffer</ref> *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_cursor" kindref="compound">Cursor</ref> *</type>
+          <declname>cursor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="92" column="13" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="862" bodyend="913"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1a35eb7ceadd2846494dab9a13619b3816" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenCastStream::addHeader</definition>
+        <argsstring>(spa_buffer *spaBuffer)</argsstring>
+        <name>addHeader</name>
+        <qualifiedname>KWin::ScreenCastStream::addHeader</qualifiedname>
+        <param>
+          <type>spa_buffer *</type>
+          <declname>spaBuffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="93" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="684" bodyend="693"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1a339520da151400ed23745ad11bd2319c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenCastStream::corruptHeader</definition>
+        <argsstring>(spa_buffer *spaBuffer)</argsstring>
+        <name>corruptHeader</name>
+        <qualifiedname>KWin::ScreenCastStream::corruptHeader</qualifiedname>
+        <param>
+          <type>spa_buffer *</type>
+          <declname>spaBuffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="94" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="695" bodyend="701"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1ad29cbe115dc5eca26250941db307fd65" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenCastStream::addDamage</definition>
+        <argsstring>(spa_buffer *spaBuffer, const QRegion &amp;damagedRegion)</argsstring>
+        <name>addDamage</name>
+        <qualifiedname>KWin::ScreenCastStream::addDamage</qualifiedname>
+        <param>
+          <type>spa_buffer *</type>
+          <declname>spaBuffer</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>damagedRegion</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="95" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="703" bodyend="728"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1a0c136ac28a8b052a15d679e8938836c9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenCastStream::newStreamParams</definition>
+        <argsstring>()</argsstring>
+        <name>newStreamParams</name>
+        <qualifiedname>KWin::ScreenCastStream::newStreamParams</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="96" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="152" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1abdfb431f390c5014a6c91c55fb67d0ea" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>spa_pod *</type>
+        <definition>spa_pod * KWin::ScreenCastStream::buildFormat</definition>
+        <argsstring>(struct spa_pod_builder *b, enum spa_video_format format, struct spa_rectangle *resolution, struct spa_fraction *defaultFramerate, struct spa_fraction *minFramerate, struct spa_fraction *maxFramerate, const QList&lt; uint64_t &gt; &amp;modifiers, quint32 modifiersFlags)</argsstring>
+        <name>buildFormat</name>
+        <qualifiedname>KWin::ScreenCastStream::buildFormat</qualifiedname>
+        <param>
+          <type>struct spa_pod_builder *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>enum spa_video_format</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>struct spa_rectangle *</type>
+          <declname>resolution</declname>
+        </param>
+        <param>
+          <type>struct spa_fraction *</type>
+          <declname>defaultFramerate</declname>
+        </param>
+        <param>
+          <type>struct spa_fraction *</type>
+          <declname>minFramerate</declname>
+        </param>
+        <param>
+          <type>struct spa_fraction *</type>
+          <declname>maxFramerate</declname>
+        </param>
+        <param>
+          <type>const QList&lt; uint64_t &gt; &amp;</type>
+          <declname>modifiers</declname>
+        </param>
+        <param>
+          <type>quint32</type>
+          <declname>modifiersFlags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="97" column="13" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="758" bodyend="799"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1a71bafdac4862f684571c8d48ef083431" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pw_buffer *</type>
+        <definition>pw_buffer * KWin::ScreenCastStream::dequeueBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>dequeueBuffer</name>
+        <qualifiedname>KWin::ScreenCastStream::dequeueBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="100" column="15" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="522" bodyend="571"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1ab0248b892797662949336bf351311aeb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScreenCastStream::record</definition>
+        <argsstring>(const QRegion &amp;damage, Contents contents)</argsstring>
+        <name>record</name>
+        <qualifiedname>KWin::ScreenCastStream::record</qualifiedname>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>damage</declname>
+        </param>
+        <param>
+          <type>Contents</type>
+          <declname>contents</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="101" column="10" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="573" bodyend="670"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_screen_cast_stream_1a666c1c655581cc1b5b11a2824e44dfc8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="struct_k_win_1_1_screen_cast_dma_buf_texture_params" kindref="compound">ScreenCastDmaBufTextureParams</ref> &gt;</type>
+        <definition>std::optional&lt; ScreenCastDmaBufTextureParams &gt; KWin::ScreenCastStream::testCreateDmaBuf</definition>
+        <argsstring>(const QSize &amp;size, quint32 format, const QList&lt; uint64_t &gt; &amp;modifiers)</argsstring>
+        <name>testCreateDmaBuf</name>
+        <qualifiedname>KWin::ScreenCastStream::testCreateDmaBuf</qualifiedname>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>quint32</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>const QList&lt; uint64_t &gt; &amp;</type>
+          <declname>modifiers</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/screencast/screencaststream.h" line="103" column="19" bodyfile="kwin/src/plugins/screencast/screencaststream.cpp" bodystart="920" bodyend="951"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::ScreenCastStream</label>
+        <link refid="class_k_win_1_1_screen_cast_stream"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::ScreenCastStream</label>
+        <link refid="class_k_win_1_1_screen_cast_stream"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/plugins/screencast/screencaststream.h" line="44" column="1" bodyfile="kwin/src/plugins/screencast/screencaststream.h" bodystart="45" bodyend="142"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_screen_cast_stream_1ae29a40943f387b8f31e120621fc4f672" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>addCursorEmbedded</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a94e1fe121fe71ad1c352d5b3e7b08933" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>addCursorMetadata</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1ad29cbe115dc5eca26250941db307fd65" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>addDamage</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a35eb7ceadd2846494dab9a13619b3816" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>addHeader</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a91c03c637a099efd5b7a4a8e8ef5b817" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>bitmapSize</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1abdfb431f390c5014a6c91c55fb67d0ea" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>buildFormat</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a54314bf6d96a743ac6e95381cd492892" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>buildFormats</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a95566d68d84598b16a869892abd2992a" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>changedConnection</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1ae0444823f5933870153de586f605f413" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>close</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a000c11d670f0193f592be97e2989f06a" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>closed</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a1d58f5372b4ed2c7f28e6f3a95c61cc8" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>Content</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a1f594a60a0eb391164f4faadc22f3bad" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>coreFailed</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a339520da151400ed23745ad11bd2319c" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>corruptHeader</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1adcaa58884e7174f5ebe580d3461953eb" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>createStream</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a71bafdac4862f684571c8d48ef083431" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>dequeueBuffer</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1aad2d45d520e465abd2e4ec1b4fbcdbd5" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>error</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1ad9970a22184bece0f5f8173d6bdd5678" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>framerate</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1ad0c9593b3731cb6391251e8d8aba3b32" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>init</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a08d8f88cee5fc786561ee68049587e12" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>invalid</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a7c2ae2e19319393b054a281e7198e8c5" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>invalidateCursor</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a066e9f8772156f5c306c0e1a129cb375" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>lastRect</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a05f4d1a05a28d473e6d1edf63a9fa26a" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_closed</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a39300894bf44f3ee6ce3d928a6036ce6" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_cursor</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a4b056d551bbbe7b4f8d2879435d5678b" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_dequeuedBuffers</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a770be7d42b769ec818dcccf085397fb6" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_dmabufParams</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1af171532b9d53a8cd1f64364e8ebb0397" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_drmFormat</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a4434acb7b2272f812e24b77b8376f556" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_error</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a2e783ee17f05e5e3c65160487f135910" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_hasDmaBuf</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a5010713e61bb24ed305f45019eab5c82" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_lastSent</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a2936652e015caf3f40f62f05eb599d6b" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_modifiers</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a51ceb301f042f03e35535a1a9a4de956" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_pendingContents</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a3b17370d35b92052533ea9ca71ad53cf" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_pendingDamage</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1aa29a67d5e79ed677ecedf251c146debd" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_pendingFrame</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a222278a5f8b5ee4ab5d555e6652870be" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_pwCore</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a35d95d19e9212d4fa7491b6a915de4ed" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_pwNodeId</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1af60e31314fbab9776a2898a95c0d4762" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_pwStream</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a3e9fb24ddddfbd3171370feae9f57c1f" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_pwStreamEvents</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1ac23954eca5f4d8c57b6ade2197156364" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_resolution</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a64a0b21a9efadac99d91eb08e26f7119" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_sequential</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1ad86f79f4ffed100e5a73e31cec458f50" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_source</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a7ebec32856ff6a7d10fd3ff6838b01cd" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_streamListener</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a49a719fd5cca1f15a8b3e90ff6181cbc" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>m_videoFormat</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a381ef34a4e01b19afd8c202bdb7912d4" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>mode</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a0c136ac28a8b052a15d679e8938836c9" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>newStreamParams</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1ad095c5acb4f1a90fef02bfe7f04d8a25" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>nodeId</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a58fb8432055c1a72404b4192ac39b272" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>onStreamAddBuffer</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1ae7142bb0e89c22941cedbe1b3677806e" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>onStreamParamChanged</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a0175e0693b152a61e84403a1e44ad455" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>onStreamRemoveBuffer</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1ac9b338a8d9c9bdf396d6f79d60b083b8" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>onStreamStateChanged</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1aa30677c7bcc0ea066c442b5ce6408cad" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>positionChangedConnection</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1ac41b7d1babaf910345d7b4d63aefcfc6" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>ready</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1ab0248b892797662949336bf351311aeb" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>record</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a36fd369682b2c3132a655d7b97c8376e" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>resize</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1aa8e659b25d07525a4231d397842168c7" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>scheduleRecord</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1ab65d3aae3ee037e9c16ce714f598121e" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>ScreenCastStream</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a5d79dde5bce4e4ded682e21c041406b6" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>setCursorMode</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a666c1c655581cc1b5b11a2824e44dfc8" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>testCreateDmaBuf</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1adde0c211d1ad30ab13cbaeb387e1d940" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>texture</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1ac43b705acc4f6f83564805b8da96b4ba" prot="private" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>updateParams</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a16bb4c51ef2ce79c2e19c49a4557223e" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>visible</name></member>
+      <member refid="class_k_win_1_1_screen_cast_stream_1a2160c16a4b39c3140881652c515e0620" prot="public" virt="non-virtual"><scope>KWin::ScreenCastStream</scope><name>~ScreenCastStream</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="pointerconstraints__v1_8h" kind="file" language="C++">
+    <compoundname>pointerconstraints_v1.h</compoundname>
+    <includes local="yes">kwin_export.h</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">QRegion</includes>
+    <includes local="no">memory</includes>
+    <includedby refid="pointer__input_8cpp" local="yes">kwin/src/pointer_input.cpp</includedby>
+    <includedby refid="pointerconstraints__v1_8cpp" local="yes">kwin/src/wayland/pointerconstraints_v1.cpp</includedby>
+    <includedby refid="pointerconstraints__v1__p_8h" local="yes">kwin/src/wayland/pointerconstraints_v1_p.h</includedby>
+    <includedby refid="seat_8cpp" local="yes">kwin/src/wayland/seat.cpp</includedby>
+    <includedby refid="wayland__server_8cpp" local="yes">kwin/src/wayland_server.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/wayland/pointerconstraints_v1.h</label>
+        <link refid="pointerconstraints__v1_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+      <node id="4">
+        <label>QRegion</label>
+      </node>
+      <node id="2">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="5">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/pointer_input.cpp</label>
+        <link refid="pointer__input_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/wayland/pointerconstraints_v1.cpp</label>
+        <link refid="pointerconstraints__v1_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/wayland/pointerconstraints_v1.h</label>
+        <link refid="pointerconstraints__v1_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>kwin/src/wayland/pointerconstraints_v1_p.h</label>
+        <link refid="pointerconstraints__v1__p_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>kwin/src/wayland/seat.cpp</label>
+        <link refid="seat_8cpp"/>
+      </node>
+      <node id="5">
+        <label>kwin/src/wayland/surface.cpp</label>
+        <link refid="surface_8cpp"/>
+      </node>
+      <node id="7">
+        <label>kwin/src/wayland_server.cpp</label>
+        <link refid="wayland__server_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_pointer_constraints_v1_interface" prot="public">KWin::PointerConstraintsV1Interface</innerclass>
+    <innerclass refid="class_k_win_1_1_locked_pointer_v1_interface" prot="public">KWin::LockedPointerV1Interface</innerclass>
+    <innerclass refid="class_k_win_1_1_confined_pointer_v1_interface" prot="public">KWin::ConfinedPointerV1Interface</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2016<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2020<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>LGPL-2.1-only<sp/>OR<sp/>LGPL-3.0-only<sp/>OR<sp/>LicenseRef-KDE-Accepted-LGPL</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;kwin_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QRegion&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_resource;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_confined_pointer_v1_interface_private" kindref="compound">ConfinedPointerV1InterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_locked_pointer_v1_interface_private" kindref="compound">LockedPointerV1InterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_pointer_constraints_v1_interface_private" kindref="compound">PointerConstraintsV1InterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="class_k_win_1_1_pointer_constraints_v1_interface" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_pointer_constraints_v1_interface_1a402827a93d78a55695cc7d03fb19325f" kindref="member">PointerConstraintsV1Interface</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_pointer_constraints_v1_interface_1a402827a93d78a55695cc7d03fb19325f" kindref="member">PointerConstraintsV1Interface</ref>(<ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*display,<sp/>QObject<sp/>*parent<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_pointer_constraints_v1_interface_1a402827a93d78a55695cc7d03fb19325f" kindref="member">~PointerConstraintsV1Interface</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;PointerConstraintsV1InterfacePrivate&gt;<sp/>d;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="class_k_win_1_1_locked_pointer_v1_interface" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/>LockedPointerV1Interface<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>~LockedPointerV1Interface()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="class_k_win_1_1_locked_pointer_v1_interface_1a6898cb9ae5dae696ff59959f040f8193" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_locked_pointer_v1_interface_1a6898cb9ae5dae696ff59959f040f8193" kindref="member">LifeTime</ref><sp/>:<sp/>uint<sp/>{</highlight></codeline>
+<codeline lineno="68" refid="class_k_win_1_1_locked_pointer_v1_interface_1a6898cb9ae5dae696ff59959f040f8193ac7fc2ee61fad0e2bba6754efdee31481" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_locked_pointer_v1_interface_1a6898cb9ae5dae696ff59959f040f8193ac7fc2ee61fad0e2bba6754efdee31481" kindref="member">OneShot</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="69" refid="class_k_win_1_1_locked_pointer_v1_interface_1a6898cb9ae5dae696ff59959f040f8193a5fe7b9358c9cb1b9eaa8d5aec000def4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_locked_pointer_v1_interface_1a6898cb9ae5dae696ff59959f040f8193a5fe7b9358c9cb1b9eaa8d5aec000def4" kindref="member">Persistent</ref><sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>LifeTime<sp/>lifeTime()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>QRegion<sp/>region()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>QPointF<sp/>cursorPositionHint()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isLocked()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setLocked(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>locked);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="130" refid="class_k_win_1_1_locked_pointer_v1_interface_1ae9ccc731dabf384a8e340427e0ba4496" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_locked_pointer_v1_interface_1ae9ccc731dabf384a8e340427e0ba4496" kindref="member">aboutToBeDestroyed</ref>();</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="class_k_win_1_1_locked_pointer_v1_interface_1ae68079a23d4fece926fe10dbcae56f41" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_locked_pointer_v1_interface_1ae68079a23d4fece926fe10dbcae56f41" kindref="member">regionChanged</ref>();</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="class_k_win_1_1_locked_pointer_v1_interface_1a875294bc5d88bc481f8b26decdec08d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_locked_pointer_v1_interface_1a875294bc5d88bc481f8b26decdec08d5" kindref="member">cursorPositionHintChanged</ref>();</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151" refid="class_k_win_1_1_locked_pointer_v1_interface_1a29cd197400c6713f86da269db910eebc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_locked_pointer_v1_interface_1a29cd197400c6713f86da269db910eebc" kindref="member">lockedChanged</ref>();</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>LockedPointerV1Interface(<ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref><sp/>*surface,<sp/><ref refid="class_k_win_1_1_locked_pointer_v1_interface_1a6898cb9ae5dae696ff59959f040f8193" kindref="member">LifeTime</ref><sp/><ref refid="class_k_win_1_1_locked_pointer_v1_interface_1ae3ce8e22e8796b6c1423e82ab542769d" kindref="member">lifeTime</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegion<sp/>&amp;<ref refid="class_k_win_1_1_locked_pointer_v1_interface_1a8a7e02cdc7691a66337e52f4c1f548da" kindref="member">region</ref>,<sp/>::wl_resource<sp/>*resource);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;LockedPointerV1InterfacePrivate&gt;<sp/>d;</highlight></codeline>
+<codeline lineno="156" refid="class_k_win_1_1_locked_pointer_v1_interface_1ac5f9dcdfc038266b138a6caa040bdea1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_locked_pointer_v1_interface_1ac5f9dcdfc038266b138a6caa040bdea1" kindref="member">LockedPointerV1InterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="157" refid="class_k_win_1_1_locked_pointer_v1_interface_1a26d029fc2864b7c79919c27080946a77" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_locked_pointer_v1_interface_1a26d029fc2864b7c79919c27080946a77" kindref="member">PointerConstraintsV1InterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176" refid="class_k_win_1_1_confined_pointer_v1_interface" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/>ConfinedPointerV1Interface<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>~ConfinedPointerV1Interface()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="class_k_win_1_1_confined_pointer_v1_interface_1a23910b34807f67d27d7b09bedce41b3a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_confined_pointer_v1_interface_1a23910b34807f67d27d7b09bedce41b3a" kindref="member">LifeTime</ref><sp/>:<sp/>uint<sp/>{</highlight></codeline>
+<codeline lineno="184" refid="class_k_win_1_1_confined_pointer_v1_interface_1a23910b34807f67d27d7b09bedce41b3aac7fc2ee61fad0e2bba6754efdee31481" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_confined_pointer_v1_interface_1a23910b34807f67d27d7b09bedce41b3aac7fc2ee61fad0e2bba6754efdee31481" kindref="member">OneShot</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="185" refid="class_k_win_1_1_confined_pointer_v1_interface_1a23910b34807f67d27d7b09bedce41b3aa5fe7b9358c9cb1b9eaa8d5aec000def4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_confined_pointer_v1_interface_1a23910b34807f67d27d7b09bedce41b3aa5fe7b9358c9cb1b9eaa8d5aec000def4" kindref="member">Persistent</ref><sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>LifeTime<sp/>lifeTime()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>QRegion<sp/>region()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isConfined()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setConfined(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>confined);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="229" refid="class_k_win_1_1_confined_pointer_v1_interface_1a116878c8b9cc09ca4369be44c1f9b85e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_confined_pointer_v1_interface_1a116878c8b9cc09ca4369be44c1f9b85e" kindref="member">regionChanged</ref>();</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236" refid="class_k_win_1_1_confined_pointer_v1_interface_1ac1184dd32b6d396089635063fa656f06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_confined_pointer_v1_interface_1ac1184dd32b6d396089635063fa656f06" kindref="member">confinedChanged</ref>();</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>ConfinedPointerV1Interface(<ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref><sp/>*surface,<sp/><ref refid="class_k_win_1_1_confined_pointer_v1_interface_1a23910b34807f67d27d7b09bedce41b3a" kindref="member">LifeTime</ref><sp/><ref refid="class_k_win_1_1_confined_pointer_v1_interface_1ae2f933e168d6f2d925806dbcadfa9f89" kindref="member">lifeTime</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegion<sp/>&amp;<ref refid="class_k_win_1_1_confined_pointer_v1_interface_1ac5a75c762a72c20fa894855e15af9d20" kindref="member">region</ref>,<sp/>::wl_resource<sp/>*resource);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;ConfinedPointerV1InterfacePrivate&gt;<sp/>d;</highlight></codeline>
+<codeline lineno="241" refid="class_k_win_1_1_confined_pointer_v1_interface_1acd754e6888de019a483fb8aa82d4b394" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_confined_pointer_v1_interface_1acd754e6888de019a483fb8aa82d4b394" kindref="member">ConfinedPointerV1InterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="242" refid="class_k_win_1_1_confined_pointer_v1_interface_1a26d029fc2864b7c79919c27080946a77" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_confined_pointer_v1_interface_1a26d029fc2864b7c79919c27080946a77" kindref="member">PointerConstraintsV1InterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/wayland/pointerconstraints_v1.h"/>
+  </compounddef>
+</doxygen>

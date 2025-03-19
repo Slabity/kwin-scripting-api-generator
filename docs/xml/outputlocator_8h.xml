@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="outputlocator_8h" kind="file" language="C++">
+    <compoundname>outputlocator.h</compoundname>
+    <includes refid="effect_8h" local="yes">effect/effect.h</includes>
+    <includes local="no">QTimer</includes>
+    <includes local="no">unordered_map</includes>
+    <includedby refid="plugins_2outputlocator_2main_8cpp" local="yes">kwin/src/plugins/outputlocator/main.cpp</includedby>
+    <includedby refid="outputlocator_8cpp" local="yes">kwin/src/plugins/outputlocator/outputlocator.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>effect/effect.h</label>
+        <link refid="effect_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/plugins/outputlocator/outputlocator.h</label>
+        <link refid="outputlocator_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>KPluginFactory</label>
+      </node>
+      <node id="13">
+        <label>KSharedConfig</label>
+      </node>
+      <node id="5">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="6">
+        <label>QImage</label>
+      </node>
+      <node id="7">
+        <label>QPoint</label>
+      </node>
+      <node id="11">
+        <label>QRegion</label>
+      </node>
+      <node id="14">
+        <label>QTimer</label>
+      </node>
+      <node id="8">
+        <label>QVariant</label>
+      </node>
+      <node id="9">
+        <label>QVector2D</label>
+      </node>
+      <node id="4">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="10">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="15">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/plugins/outputlocator/main.cpp</label>
+        <link refid="plugins_2outputlocator_2main_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/plugins/outputlocator/outputlocator.cpp</label>
+        <link refid="outputlocator_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/plugins/outputlocator/outputlocator.h</label>
+        <link refid="outputlocator_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_output_locator_effect" prot="public">KWin::OutputLocatorEffect</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2022<sp/>David<sp/>Redondo<sp/>&lt;kde@david-redondo.de&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-only<sp/>OR<sp/>GPL-3.0-only<sp/>OR<sp/>LicenseRef-KDE-Accepted-GPL</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="effect_8h" kindref="compound">effect/effect.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QTimer&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_offscreen_quick_scene" kindref="compound">OffscreenQuickScene</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="class_k_win_1_1_output_locator_effect" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_output_locator_effect_1a9f8270770982f7fa91f613ccd0d886c0" kindref="member">OutputLocatorEffect</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect" kindref="compound">KWin::Effect</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_output_locator_effect_1a9f8270770982f7fa91f613ccd0d886c0" kindref="member">OutputLocatorEffect</ref>(QObject<sp/>*parent<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_output_locator_effect_1a00fe408fdb307406109871bc2b6b40c9" kindref="member">paintScreen</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref><sp/>&amp;renderTarget,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref><sp/>&amp;viewport,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegion<sp/>&amp;region,<sp/><ref refid="class_k_win_1_1_output" kindref="compound">KWin::Output</ref><sp/>*screen)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_output_locator_effect_1acc5ed5215819fe1d7c6d29e33f958fa6" kindref="member">isActive</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_output_locator_effect_1a3b12c63ba003f8616cc6baff4b523c1d" kindref="member">show</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_output_locator_effect_1a47a5fc07597430fcf546a689f27be5bf" kindref="member">hide</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>QUrl<sp/>m_qmlUrl;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>QTimer<sp/>m_showTimer;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;Output<sp/>*,<sp/>std::unique_ptr&lt;OffscreenQuickScene&gt;&gt;<sp/>m_scenesByScreens;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/plugins/outputlocator/outputlocator.h"/>
+  </compounddef>
+</doxygen>

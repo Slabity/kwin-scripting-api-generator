@@ -1,0 +1,394 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_xwl_1_1_dnd" kind="class" language="C++" prot="public">
+    <compoundname>KWin::Xwl::Dnd</compoundname>
+    <basecompoundref refid="class_k_win_1_1_xwl_1_1_selection" prot="public" virt="non-virtual">KWin::Xwl::Selection</basecompoundref>
+    <includes refid="dnd_8h" local="no">dnd.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="class_k_win_1_1_xwl_1_1_dnd_1ae4f7d1eac7932c7ede07f6a0f3681a68" prot="public" static="no">
+        <type><ref refid="class_k_win_1_1_data_device_manager_interface_1a8aae415a2e33ca11c48d18e128f627b4" kindref="member">DataDeviceManagerInterface::DnDAction</ref></type>
+        <definition>using KWin::Xwl::Dnd::DnDAction =  DataDeviceManagerInterface::DnDAction</definition>
+        <argsstring></argsstring>
+        <name>DnDAction</name>
+        <qualifiedname>KWin::Xwl::Dnd::DnDAction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/dnd.h" line="50" column="5" bodyfile="kwin/src/xwayland/dnd.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="class_k_win_1_1_xwl_1_1_dnd_1a27d75873933e8edd4fd787eb69aa5ac9" prot="public" static="no">
+        <type>DataDeviceManagerInterface::DnDActions</type>
+        <definition>using KWin::Xwl::Dnd::DnDActions =  DataDeviceManagerInterface::DnDActions</definition>
+        <argsstring></argsstring>
+        <name>DnDActions</name>
+        <qualifiedname>KWin::Xwl::Dnd::DnDActions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/dnd.h" line="51" column="5" bodyfile="kwin/src/xwayland/dnd.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_dnd_1a5815801293e9d2610baf4983a1a2ac38" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_xwl_1_1_drag" kindref="compound">Drag</ref> *</type>
+        <definition>Drag* KWin::Xwl::Dnd::m_currentDrag</definition>
+        <argsstring></argsstring>
+        <name>m_currentDrag</name>
+        <qualifiedname>KWin::Xwl::Dnd::m_currentDrag</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/dnd.h" line="62" column="10" bodyfile="kwin/src/xwayland/dnd.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_dnd_1aa2a5b8599d520fcb7b7ae169ca83bb1e" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_xwl_1_1_drag" kindref="compound">Drag</ref> * &gt;</type>
+        <definition>QList&lt;Drag *&gt; KWin::Xwl::Dnd::m_oldDrags</definition>
+        <argsstring></argsstring>
+        <name>m_oldDrags</name>
+        <qualifiedname>KWin::Xwl::Dnd::m_oldDrags</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/dnd.h" line="63" column="11" bodyfile="kwin/src/xwayland/dnd.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_dnd_1ad53841b8e3ed8a2a9c6819e16113cebc" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_xwl_1_1_xwl_drop_handler" kindref="compound">XwlDropHandler</ref> *</type>
+        <definition>XwlDropHandler* KWin::Xwl::Dnd::m_dropHandler</definition>
+        <argsstring></argsstring>
+        <name>m_dropHandler</name>
+        <qualifiedname>KWin::Xwl::Dnd::m_dropHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/dnd.h" line="65" column="20" bodyfile="kwin/src/xwayland/dnd.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_dnd_1a59205b14efdd54a17421ca47d800b553" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::Xwl::Dnd::Dnd</definition>
+        <argsstring>(xcb_atom_t atom, QObject *parent)</argsstring>
+        <name>Dnd</name>
+        <qualifiedname>KWin::Xwl::Dnd::Dnd</qualifiedname>
+        <param>
+          <type>xcb_atom_t</type>
+          <declname>atom</declname>
+        </param>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/dnd.h" line="38" column="14" bodyfile="kwin/src/xwayland/dnd.cpp" bodystart="48" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_dnd_1a7d8ec691f6ef5e67b9a9c0818ffaf129" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_xwl_1_1_xwl_drop_handler" kindref="compound">XwlDropHandler</ref> *</type>
+        <definition>XwlDropHandler * KWin::Xwl::Dnd::dropHandler</definition>
+        <argsstring>() const</argsstring>
+        <name>dropHandler</name>
+        <qualifiedname>KWin::Xwl::Dnd::dropHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/dnd.h" line="41" column="20" bodyfile="kwin/src/xwayland/dnd.cpp" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_dnd_1a7a5d016cb0b8a3dded20f7af213bcee3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::Dnd::doHandleXfixesNotify</definition>
+        <argsstring>(xcb_xfixes_selection_notify_event_t *event) override</argsstring>
+        <name>doHandleXfixesNotify</name>
+        <qualifiedname>KWin::Xwl::Dnd::doHandleXfixesNotify</qualifiedname>
+        <reimplements refid="class_k_win_1_1_xwl_1_1_selection_1a99e933294cd25cb4981f224dac59f348">doHandleXfixesNotify</reimplements>
+        <param>
+          <type>xcb_xfixes_selection_notify_event_t *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/dnd.h" line="43" column="10" bodyfile="kwin/src/xwayland/dnd.cpp" bodystart="80" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_dnd_1ac107e7b1adb17039d94bac94fcd1d108" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::Dnd::x11OfferLost</definition>
+        <argsstring>() override</argsstring>
+        <name>x11OfferLost</name>
+        <qualifiedname>KWin::Xwl::Dnd::x11OfferLost</qualifiedname>
+        <reimplements refid="class_k_win_1_1_xwl_1_1_selection_1a76378a1d498e34ae76501b00a5f33b01">x11OfferLost</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/dnd.h" line="44" column="10" bodyfile="kwin/src/xwayland/dnd.cpp" bodystart="115" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_dnd_1aef2061bc306cfac4e40b39425697c9db" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::Dnd::x11OffersChanged</definition>
+        <argsstring>(const QStringList &amp;added, const QStringList &amp;removed) override</argsstring>
+        <name>x11OffersChanged</name>
+        <qualifiedname>KWin::Xwl::Dnd::x11OffersChanged</qualifiedname>
+        <reimplements refid="class_k_win_1_1_xwl_1_1_selection_1a01a830aa1cc60d0e44923a346b7b2aeb">x11OffersChanged</reimplements>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>added</declname>
+        </param>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>removed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/dnd.h" line="45" column="10" bodyfile="kwin/src/xwayland/dnd.cpp" bodystart="119" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_dnd_1ac31c8923bbed0c08936a0020e57a023c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::Xwl::Dnd::handleClientMessage</definition>
+        <argsstring>(xcb_client_message_event_t *event) override</argsstring>
+        <name>handleClientMessage</name>
+        <qualifiedname>KWin::Xwl::Dnd::handleClientMessage</qualifiedname>
+        <reimplements refid="class_k_win_1_1_xwl_1_1_selection_1ac4a6073c92633c67490bfe20fbd0cbe8">handleClientMessage</reimplements>
+        <param>
+          <type>xcb_client_message_event_t *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/dnd.h" line="46" column="10" bodyfile="kwin/src/xwayland/dnd.cpp" bodystart="123" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_dnd_1abb21e9e368534e8c16675c0040db1277" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespace_k_win_1_1_xwl_1a4245fb9cb1310a1304868c4d99186352" kindref="member">DragEventReply</ref></type>
+        <definition>DragEventReply KWin::Xwl::Dnd::dragMoveFilter</definition>
+        <argsstring>(Window *target)</argsstring>
+        <name>dragMoveFilter</name>
+        <qualifiedname>KWin::Xwl::Dnd::dragMoveFilter</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/dnd.h" line="48" column="20" bodyfile="kwin/src/xwayland/dnd.cpp" bodystart="136" bodyend="140"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_dnd_1a2b16459ffb091cd2be7ea428c0889e71" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t KWin::Xwl::Dnd::version</definition>
+        <argsstring>()</argsstring>
+        <name>version</name>
+        <qualifiedname>KWin::Xwl::Dnd::version</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/dnd.h" line="40" column="21" bodyfile="kwin/src/xwayland/dnd.cpp" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_dnd_1a563549f5451cf894778a1e8ccba3955d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_data_device_manager_interface_1a8aae415a2e33ca11c48d18e128f627b4" kindref="member">DnDAction</ref></type>
+        <definition>DnDAction KWin::Xwl::Dnd::atomToClientAction</definition>
+        <argsstring>(xcb_atom_t atom)</argsstring>
+        <name>atomToClientAction</name>
+        <qualifiedname>KWin::Xwl::Dnd::atomToClientAction</qualifiedname>
+        <param>
+          <type>xcb_atom_t</type>
+          <declname>atom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/dnd.h" line="52" column="22" bodyfile="kwin/src/xwayland/dnd.cpp" bodystart="183" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_dnd_1ae7dd4f40191b910876ebcb51f2b3e9d6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>xcb_atom_t</type>
+        <definition>xcb_atom_t KWin::Xwl::Dnd::clientActionToAtom</definition>
+        <argsstring>(DnDAction action)</argsstring>
+        <name>clientActionToAtom</name>
+        <qualifiedname>KWin::Xwl::Dnd::clientActionToAtom</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_data_device_manager_interface_1a8aae415a2e33ca11c48d18e128f627b4" kindref="member">DnDAction</ref></type>
+          <declname>action</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/dnd.h" line="53" column="23" bodyfile="kwin/src/xwayland/dnd.cpp" bodystart="197" bodyend="209"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_dnd_1aaa4505b92cbdc06197d81e10d1e96dc0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::Dnd::startDrag</definition>
+        <argsstring>()</argsstring>
+        <name>startDrag</name>
+        <qualifiedname>KWin::Xwl::Dnd::startDrag</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/dnd.h" line="57" column="10" bodyfile="kwin/src/xwayland/dnd.cpp" bodystart="142" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_dnd_1ae13eb23b8418c7f237d1022133af948b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::Dnd::endDrag</definition>
+        <argsstring>()</argsstring>
+        <name>endDrag</name>
+        <qualifiedname>KWin::Xwl::Dnd::endDrag</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/dnd.h" line="58" column="10" bodyfile="kwin/src/xwayland/dnd.cpp" bodystart="164" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_dnd_1ac083f896dee354aefd330946a5aed727" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::Dnd::clearOldDrag</definition>
+        <argsstring>(Drag *drag)</argsstring>
+        <name>clearOldDrag</name>
+        <qualifiedname>KWin::Xwl::Dnd::clearOldDrag</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_xwl_1_1_drag" kindref="compound">Drag</ref> *</type>
+          <declname>drag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/dnd.h" line="59" column="10" bodyfile="kwin/src/xwayland/dnd.cpp" bodystart="174" bodyend="178"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Represents the drag and drop mechanism, on X side this is the XDND protocol. For more information on XDND see: <ulink url="https://johnlindal.wixsite.com/xdnd">https://johnlindal.wixsite.com/xdnd</ulink> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::Xwl::Dnd</label>
+        <link refid="class_k_win_1_1_xwl_1_1_dnd"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::Xwl::Selection</label>
+        <link refid="class_k_win_1_1_xwl_1_1_selection"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::Xwl::Dnd</label>
+        <link refid="class_k_win_1_1_xwl_1_1_dnd"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::Xwl::Selection</label>
+        <link refid="class_k_win_1_1_xwl_1_1_selection"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/xwayland/dnd.h" line="33" column="1" bodyfile="kwin/src/xwayland/dnd.h" bodystart="34" bodyend="68"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a01edf9743a56ba79256d3a1a530f71b9" prot="public" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>atom</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a19de90dcd3aa583c9fa69b32b2dedf90" prot="public" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>atomName</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_dnd_1a563549f5451cf894778a1e8ccba3955d" prot="public" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>atomToClientAction</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a12bced3f9091690e6d385331d8d4a091" prot="public" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>atomToMimeTypes</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_dnd_1ac083f896dee354aefd330946a5aed727" prot="private" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>clearOldDrag</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_dnd_1ae7dd4f40191b910876ebcb51f2b3e9d6" prot="public" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>clientActionToAtom</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a18a4263d05cb88f66ca8d1c8e564f230" prot="protected" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>createX11Source</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_dnd_1a59205b14efdd54a17421ca47d800b553" prot="public" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>Dnd</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_dnd_1ae4f7d1eac7932c7ede07f6a0f3681a68" prot="public" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>DnDAction</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_dnd_1a27d75873933e8edd4fd787eb69aa5ac9" prot="public" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>DnDActions</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_dnd_1a7a5d016cb0b8a3dded20f7af213bcee3" prot="public" virt="virtual"><scope>KWin::Xwl::Dnd</scope><name>doHandleXfixesNotify</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_dnd_1abb21e9e368534e8c16675c0040db1277" prot="public" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>dragMoveFilter</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_dnd_1a7d8ec691f6ef5e67b9a9c0818ffaf129" prot="public" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>dropHandler</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_dnd_1ae13eb23b8418c7f237d1022133af948b" prot="private" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>endDrag</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1af0952d07f6d06ea6c1a90e597c9c9fa3" prot="public" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>filterEvent</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_dnd_1ac31c8923bbed0c08936a0020e57a023c" prot="public" virt="virtual"><scope>KWin::Xwl::Dnd</scope><name>handleClientMessage</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a096d9685512190466df2ff4f1cb8c5e3" prot="public" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>handleXfixesNotify</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_dnd_1a5815801293e9d2610baf4983a1a2ac38" prot="private" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>m_currentDrag</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_dnd_1ad53841b8e3ed8a2a9c6819e16113cebc" prot="private" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>m_dropHandler</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_dnd_1aa2a5b8599d520fcb7b7ae169ca83bb1e" prot="private" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>m_oldDrags</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1ad299749a819963f40ab9e80513acd087" prot="public" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>mimeTypeToAtom</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a248dcb029af18f82121c56080f6094f6" prot="public" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>mimeTypeToAtomLiteral</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a0a0deb9dc51218e4cdbf3ffb12cf10cd" prot="public" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>overwriteRequestorWindow</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a3e78eaf98b2500c9fb09328eacdeae0a" prot="protected" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>ownSelection</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a517e9eb8bd4f7fb9fcc086dfa6f39066" prot="protected" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>registerXfixes</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a22e38120d171a7b7230a2c444bae53af" prot="protected" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>Selection</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a10a4ec34ab9d1af664197fad2ec9112e" prot="public" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>sendSelectionNotify</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a7f182dfaeac673eec9b4dfbfde3e5847" prot="protected" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>setWindow</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a3467a35637265e67b781c93e0ed055fc" prot="protected" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>setWlSource</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_dnd_1aaa4505b92cbdc06197d81e10d1e96dc0" prot="private" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>startDrag</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a1183ddef383c19eda73b6ee7246d42ef" prot="public" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>transferFinished</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_dnd_1a2b16459ffb091cd2be7ea428c0889e71" prot="public" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>version</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a591210219abdc9a78e8fafde081a4118" prot="public" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>window</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a905783316e81e71f39511b7be94d4e89" prot="protected" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>wlSource</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_dnd_1ac107e7b1adb17039d94bac94fcd1d108" prot="public" virt="virtual"><scope>KWin::Xwl::Dnd</scope><name>x11OfferLost</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_dnd_1aef2061bc306cfac4e40b39425697c9db" prot="public" virt="virtual"><scope>KWin::Xwl::Dnd</scope><name>x11OffersChanged</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1ac6278f45624709b30ba74415b6f8161b" prot="protected" virt="non-virtual"><scope>KWin::Xwl::Dnd</scope><name>x11Source</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

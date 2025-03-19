@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="tabletmodemanager_8h" kind="file" language="C++">
+    <compoundname>tabletmodemanager.h</compoundname>
+    <includes local="yes">config-kwin.h</includes>
+    <includes refid="globals_8h" local="yes">effect/globals.h</includes>
+    <includes local="no">KConfigWatcher</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">kwin_export.h</includes>
+    <includedby refid="main_8cpp" local="yes">kwin/src/main.cpp</includedby>
+    <includedby refid="main__wayland_8cpp" local="yes">kwin/src/main_wayland.cpp</includedby>
+    <includedby refid="tabletmodemanager_8cpp" local="yes">kwin/src/tabletmodemanager.cpp</includedby>
+    <includedby refid="workspace_8cpp" local="yes">kwin/src/workspace.cpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/tabletmodemanager.h</label>
+        <link refid="tabletmodemanager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>KConfigWatcher</label>
+      </node>
+      <node id="4">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="5">
+        <label>QImage</label>
+      </node>
+      <node id="11">
+        <label>QObject</label>
+      </node>
+      <node id="6">
+        <label>QPoint</label>
+      </node>
+      <node id="7">
+        <label>QVariant</label>
+      </node>
+      <node id="8">
+        <label>QVector2D</label>
+      </node>
+      <node id="2">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="9">
+        <label>kwin_export.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/main_wayland.cpp</label>
+        <link refid="main__wayland_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/tabletmodemanager.cpp</label>
+        <link refid="tabletmodemanager_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/tabletmodemanager.h</label>
+        <link refid="tabletmodemanager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>kwin/src/workspace.cpp</label>
+        <link refid="workspace_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_tablet_mode_manager" prot="public">KWin::TabletModeManager</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2018<sp/>Marco<sp/>Martin<sp/>&lt;mart@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-only<sp/>OR<sp/>GPL-3.0-only<sp/>OR<sp/>LicenseRef-KDE-Accepted-GPL</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;config-kwin.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="globals_8h" kindref="compound">effect/globals.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KConfigWatcher&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;kwin_export.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="class_k_win_1_1_tablet_mode_manager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1af130ab076a5ac06b54cab55a43ec8886" kindref="member">TabletModeManager</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_CLASSINFO(</highlight><highlight class="stringliteral">&quot;D-Bus<sp/>Interface&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;org.kde.KWin.TabletModeManager&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>assuming<sp/>such<sp/>a<sp/>switch<sp/>is<sp/>not<sp/>pluggable<sp/>for<sp/>now</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_k_win_1_1_tablet_mode_manager_1a1a1fbb7d47a32dd1c6b77c66f28a8a3a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a1a1fbb7d47a32dd1c6b77c66f28a8a3a" kindref="member">tabletModeAvailable</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a36e8b0062281e8b72a1cf3f8bca80ba0" kindref="member">isTabletModeAvailable</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a2e374a8d5535ca7b2e11731f70a0485b" kindref="member">tabletModeAvailableChanged</ref>)</highlight></codeline>
+<codeline lineno="26" refid="class_k_win_1_1_tablet_mode_manager_1a57bade60564c18f460cc284c50307343" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a57bade60564c18f460cc284c50307343" kindref="member">tabletMode</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a87c253c412215e9cd705cefdc78d7b4f" kindref="member">effectiveTabletMode</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1acdece3b8c2d63d02cbb5ccec5f745b17" kindref="member">tabletModeChanged</ref>)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="29" refid="class_k_win_1_1_tablet_mode_manager_1a1d35bb3b3927042f7cc872d846d4b9a1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>enum<sp/>class<sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a1d35bb3b3927042f7cc872d846d4b9a1" kindref="member">ConfiguredMode</ref><sp/>{</highlight></codeline>
+<codeline lineno="30" refid="class_k_win_1_1_tablet_mode_manager_1a1d35bb3b3927042f7cc872d846d4b9a1a06b9281e396db002010bde1de57262eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a1d35bb3b3927042f7cc872d846d4b9a1a06b9281e396db002010bde1de57262eb" kindref="member">Auto</ref>,</highlight></codeline>
+<codeline lineno="31" refid="class_k_win_1_1_tablet_mode_manager_1a1d35bb3b3927042f7cc872d846d4b9a1ad15305d7a4e34e02489c74a5ef542f36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a1d35bb3b3927042f7cc872d846d4b9a1ad15305d7a4e34e02489c74a5ef542f36" kindref="member">Off</ref>,</highlight></codeline>
+<codeline lineno="32" refid="class_k_win_1_1_tablet_mode_manager_1a1d35bb3b3927042f7cc872d846d4b9a1a521c36a31c2762741cf0f8890cbe05e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a1d35bb3b3927042f7cc872d846d4b9a1a521c36a31c2762741cf0f8890cbe05e3" kindref="member">On</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tablet_mode_manager" kindref="compound">TabletModeManager</ref>();</highlight></codeline>
+<codeline lineno="36" refid="class_k_win_1_1_tablet_mode_manager_1a332e60c4c142713bc9bc3c7b1ccfd9ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a332e60c4c142713bc9bc3c7b1ccfd9ec" kindref="member">~TabletModeManager</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a274e5e8b13005e0cfc2e10b614a9c916" kindref="member">setTabletModeAvailable</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>detecting);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a36e8b0062281e8b72a1cf3f8bca80ba0" kindref="member">isTabletModeAvailable</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a87c253c412215e9cd705cefdc78d7b4f" kindref="member">effectiveTabletMode</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1aeff91ab923fcc64c1f9ec04712f1e9c8" kindref="member">isTablet</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a15a3e29e4808fd081e7e7bd718a5b2ab" kindref="member">setIsTablet</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>tablet);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a1d35bb3b3927042f7cc872d846d4b9a1" kindref="member">ConfiguredMode</ref><sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a8575f1d1a6baaf9dead8f0f080659ce9" kindref="member">configuredMode</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="48" refid="class_k_win_1_1_tablet_mode_manager_1a2e374a8d5535ca7b2e11731f70a0485b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a2e374a8d5535ca7b2e11731f70a0485b" kindref="member">tabletModeAvailableChanged</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>available);</highlight></codeline>
+<codeline lineno="49" refid="class_k_win_1_1_tablet_mode_manager_1acdece3b8c2d63d02cbb5ccec5f745b17" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1acdece3b8c2d63d02cbb5ccec5f745b17" kindref="member">tabletModeChanged</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a57bade60564c18f460cc284c50307343" kindref="member">tabletMode</ref>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>hasTabletModeInputChanged(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>set);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>refreshSettings();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>KConfigWatcher::Ptr<sp/>m_settingsWatcher;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_isTabletMode<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_detecting<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a1d35bb3b3927042f7cc872d846d4b9a1" kindref="member">ConfiguredMode</ref><sp/>m_configuredMode<sp/>=<sp/><ref refid="class_k_win_1_1_tablet_mode_manager_1a1d35bb3b3927042f7cc872d846d4b9a1a06b9281e396db002010bde1de57262eb" kindref="member">ConfiguredMode::Auto</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/tabletmodemanager.h"/>
+  </compounddef>
+</doxygen>

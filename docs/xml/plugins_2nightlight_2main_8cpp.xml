@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="plugins_2nightlight_2main_8cpp" kind="file" language="C++">
+    <compoundname>main.cpp</compoundname>
+    <includes refid="nightlightmanager_8h" local="yes">nightlightmanager.h</includes>
+    <includes local="no">KPluginFactory</includes>
+    <includes local="yes">main.moc</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>constants.h</label>
+        <link refid="constants_8h"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/plugins/nightlight/main.cpp</label>
+        <link refid="plugins_2nightlight_2main_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nightlightmanager.h</label>
+        <link refid="nightlightmanager_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>KConfigWatcher</label>
+      </node>
+      <node id="9">
+        <label>KPluginFactory</label>
+      </node>
+      <node id="6">
+        <label>QDateTime</label>
+      </node>
+      <node id="7">
+        <label>QObject</label>
+      </node>
+      <node id="8">
+        <label>QPair</label>
+      </node>
+      <node id="10">
+        <label>main.moc</label>
+      </node>
+      <node id="4">
+        <label>plugin.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_night_light_manager_factory" prot="public">NightLightManagerFactory</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2020<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>LGPL-2.0-or-later</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="nightlightmanager_8h" kindref="compound">nightlightmanager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KPluginFactory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="class_night_light_manager_factory" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_night_light_manager_factory_1ab7e21c6108f437a6bce298c31cb57cff" kindref="member">NightLightManagerFactory</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plugin_factory_1a95486ad9dcf3d4eac9844df865df001e" kindref="member">PluginFactory</ref></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PLUGIN_METADATA(IID<sp/><ref refid="plugin_8h_1a088dca1bd22d4f3962b9c8244888f0a5" kindref="member">PluginFactory_iid</ref><sp/>FILE<sp/></highlight><highlight class="stringliteral">&quot;metadata.json&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_INTERFACES(<ref refid="class_k_win_1_1_plugin_factory" kindref="compound">KWin::PluginFactory</ref>)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20" refid="class_night_light_manager_factory_1ab7e21c6108f437a6bce298c31cb57cff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_night_light_manager_factory_1ab7e21c6108f437a6bce298c31cb57cff" kindref="member">NightLightManagerFactory</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;Plugin&gt;<sp/><ref refid="class_k_win_1_1_plugin_factory_1ac97a9aee4b5252c768a6d1ce48881e57" kindref="member">create</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_night_light_manager_factory_1a80ddeb7c7071d5f521eb93cdcdd7105c" refkind="member"><highlight class="normal">std::unique_ptr&lt;Plugin&gt;<sp/><ref refid="class_night_light_manager_factory_1a80ddeb7c7071d5f521eb93cdcdd7105c" kindref="member">NightLightManagerFactory::create</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="26"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::make_unique&lt;NightLightManager&gt;();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;main.moc&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/plugins/nightlight/main.cpp"/>
+  </compounddef>
+</doxygen>

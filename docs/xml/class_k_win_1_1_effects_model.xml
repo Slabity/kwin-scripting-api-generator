@@ -1,0 +1,837 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_effects_model" kind="class" language="C++" prot="public">
+    <compoundname>KWin::EffectsModel</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QAbstractItemModel</basecompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_animations_model" prot="public" virt="non-virtual">KWin::AnimationsModel</derivedcompoundref>
+    <includes refid="effectsmodel_8h" local="no">effectsmodel.h</includes>
+    <innerclass refid="struct_k_win_1_1_effects_model_1_1_effect_data" prot="protected">KWin::EffectsModel::EffectData</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9" prot="public" static="no" strong="no">
+        <type></type>
+        <name>AdditionalRoles</name>
+        <qualifiedname>KWin::EffectsModel::AdditionalRoles</qualifiedname>
+        <enumvalue id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a349c22494f2220e87cd976262e77117c" prot="public">
+          <name>NameRole</name>
+          <initializer>= Qt::UserRole + 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The user-friendly name of the effect. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a9f3f65049befedd1f415ca292106432b" prot="public">
+          <name>DescriptionRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The description of the effect. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9aafb2a49b5ba362390f2c022dd978b1cf" prot="public">
+          <name>AuthorNameRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The name of the effect&apos;s author. If there are several authors, they will be comma separated. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a6fb741a118e749f51b784f46b1c4aad9" prot="public">
+          <name>AuthorEmailRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The email of the effect&apos;s author. If there are several authors, the emails will be comma separated. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a1e4e1acf55d9e6ed6546fe09d4705a18" prot="public">
+          <name>LicenseRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The license of the effect. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a455d87343a919e33d9f4c9b58ddf3a24" prot="public">
+          <name>VersionRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The version of the effect. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a7d22d492595f8d48c9b4ba8f0afbeb2a" prot="public">
+          <name>CategoryRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The category of the effect. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a7d286ba1fe6149367bd29f9e7f5175e1" prot="public">
+          <name>ServiceNameRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The service name(plugin name) of the effect. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a9410bc7064ac4fd191721903720f6b54" prot="public">
+          <name>IconNameRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The icon name of the effect. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a67c44ff373964c1efae03f59491a8a76" prot="public">
+          <name>StatusRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Whether the effect is enabled or disabled. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9aa0aa8db4614d47f23a96bc75291b0699" prot="public">
+          <name>VideoRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Link to a video demonstration of the effect. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9ad2061068997e40881c2810e2428655ca" prot="public">
+          <name>WebsiteRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Link to the home page of the effect. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a4b240f81f32d4f760f3090165c571b8f" prot="public">
+          <name>SupportedRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Whether the effect is supported. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a5340e4391eae8c0e2d3fe1627de04664" prot="public">
+          <name>ExclusiveRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The exclusive group of the effect. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9adc13446553af138bc058f2b96c102233" prot="public">
+          <name>InternalRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Whether the effect is internal. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a263489c5361d9e9b90df01a67a0e0b95" prot="public">
+          <name>ConfigurableRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Whether the effect has a KCM. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a10082963f85b0ef037da3a1f5a993e52" prot="public">
+          <name>EnabledByDefaultRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Whether the effect is enabled by default. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a420e619c2af45b31ca857fd32ab03bc9" prot="public">
+          <name>ConfigModuleRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Id of the effect&apos;s config module, empty if the effect has no config. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a066c62bc66ff4710e573c40767b0e568" prot="public">
+          <name>EnabledByDefaultFunctionRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Whether the effect has a function to determine if the effect is enabled by default. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This enum type is used to specify data roles. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="33" column="5" bodyfile="kwin/src/kcms/common/effectsmodel.h" bodystart="33" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_effects_model_1ac687c90f93d707d51a0af03a46017ad1" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Status</name>
+        <qualifiedname>KWin::EffectsModel::Status</qualifiedname>
+        <enumvalue id="class_k_win_1_1_effects_model_1ac687c90f93d707d51a0af03a46017ad1ab9f5c797ebbf55adccdd8539a65a0241" prot="public">
+          <name>Disabled</name>
+          <initializer>= Qt::Unchecked</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The effect is disabled. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1ac687c90f93d707d51a0af03a46017ad1a9e3b8dd38432a58a19cd3892e40b3ef0" prot="public">
+          <name>EnabledUndeterminded</name>
+          <initializer>= Qt::PartiallyChecked</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>An enable function is used to determine whether the effect is enabled. For example, such function can be useful to disable the blur effect when running in a virtual machine. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1ac687c90f93d707d51a0af03a46017ad1a00d23a76e43b46dae9ec7aa9dcbebb32" prot="public">
+          <name>Enabled</name>
+          <initializer>= Qt::Checked</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The effect is enabled. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This enum type is used to specify the status of a given effect. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="117" column="5" bodyfile="kwin/src/kcms/common/effectsmodel.h" bodystart="117" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_effects_model_1ae3ded6ae2d9b9e376798de7ef9897f96" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>LoadOptions</name>
+        <qualifiedname>KWin::EffectsModel::LoadOptions</qualifiedname>
+        <enumvalue id="class_k_win_1_1_effects_model_1ae3ded6ae2d9b9e376798de7ef9897f96a6adf97f83acf6453d4a6a4b1070f3754" prot="public">
+          <name>None</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_effects_model_1ae3ded6ae2d9b9e376798de7ef9897f96ada99d82dac319f0852662481a0f85f5a" prot="public">
+          <name>KeepDirty</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Do not discard unsaved changes when reloading the model. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This enum type is used to specify load options. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="157" column="5" bodyfile="kwin/src/kcms/common/effectsmodel.h" bodystart="157" bodyend="163"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_effects_model_1af67a7339e6e37b11b224fb1b61492c43" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="struct_k_win_1_1_effects_model_1_1_effect_data" kindref="compound">EffectData</ref> &gt;</type>
+        <definition>QList&lt;EffectData&gt; KWin::EffectsModel::m_effects</definition>
+        <argsstring></argsstring>
+        <name>m_effects</name>
+        <qualifiedname>KWin::EffectsModel::m_effects</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="255" column="11" bodyfile="kwin/src/kcms/common/effectsmodel.h" bodystart="255" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_effects_model_1a916f53b8f7e1e29553c236c9f3a5f70d" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="struct_k_win_1_1_effects_model_1_1_effect_data" kindref="compound">EffectData</ref> &gt;</type>
+        <definition>QList&lt;EffectData&gt; KWin::EffectsModel::m_pendingEffects</definition>
+        <argsstring></argsstring>
+        <name>m_pendingEffects</name>
+        <qualifiedname>KWin::EffectsModel::m_pendingEffects</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="256" column="11" bodyfile="kwin/src/kcms/common/effectsmodel.h" bodystart="256" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_effects_model_1a83ff67d26a7bd4c87811bb0d9ce38ab0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KWin::EffectsModel::m_lastSerial</definition>
+        <argsstring></argsstring>
+        <name>m_lastSerial</name>
+        <qualifiedname>KWin::EffectsModel::m_lastSerial</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="257" column="9" bodyfile="kwin/src/kcms/common/effectsmodel.h" bodystart="257" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1a709c8d7694f68449fddbe731992e0082" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::EffectsModel::EffectsModel</definition>
+        <argsstring>(QObject *parent=nullptr)</argsstring>
+        <name>EffectsModel</name>
+        <qualifiedname>KWin::EffectsModel::EffectsModel</qualifiedname>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="134" column="14" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="69" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1a59028394fc83f63d0fb3a12333856797" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QHash&lt; int, QByteArray &gt;</type>
+        <definition>QHash&lt; int, QByteArray &gt; KWin::EffectsModel::roleNames</definition>
+        <argsstring>() const override</argsstring>
+        <name>roleNames</name>
+        <qualifiedname>KWin::EffectsModel::roleNames</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="137" column="11" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="74" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1a6b93ba38e8bb6237f200c6610f9397a1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QModelIndex</type>
+        <definition>QModelIndex KWin::EffectsModel::index</definition>
+        <argsstring>(int row, int column, const QModelIndex &amp;parent={}) const override</argsstring>
+        <name>index</name>
+        <qualifiedname>KWin::EffectsModel::index</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>row</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>parent</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="138" column="17" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="98" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1ae972760fe1bb15d0e3537f48c87fbb44" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QModelIndex</type>
+        <definition>QModelIndex KWin::EffectsModel::parent</definition>
+        <argsstring>(const QModelIndex &amp;child) const override</argsstring>
+        <name>parent</name>
+        <qualifiedname>KWin::EffectsModel::parent</qualifiedname>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>child</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="139" column="17" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="107" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1a187e7152118cc40c873f900d200db862" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int KWin::EffectsModel::rowCount</definition>
+        <argsstring>(const QModelIndex &amp;parent={}) const override</argsstring>
+        <name>rowCount</name>
+        <qualifiedname>KWin::EffectsModel::rowCount</qualifiedname>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>parent</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="140" column="9" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="117" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1a68a50b8a61a215716acd521b59dc362a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int KWin::EffectsModel::columnCount</definition>
+        <argsstring>(const QModelIndex &amp;parent={}) const override</argsstring>
+        <name>columnCount</name>
+        <qualifiedname>KWin::EffectsModel::columnCount</qualifiedname>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>parent</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="141" column="9" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="112" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1a53e781eab0902f17766b7d8b952f7f16" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QVariant</type>
+        <definition>QVariant KWin::EffectsModel::data</definition>
+        <argsstring>(const QModelIndex &amp;index, int role=Qt::DisplayRole) const override</argsstring>
+        <name>data</name>
+        <qualifiedname>KWin::EffectsModel::data</qualifiedname>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>role</declname>
+          <defval>Qt::DisplayRole</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="142" column="14" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="125" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1a796591b05670ea2208677eba5ede735d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::EffectsModel::setData</definition>
+        <argsstring>(const QModelIndex &amp;index, const QVariant &amp;value, int role=Qt::EditRole) override</argsstring>
+        <name>setData</name>
+        <qualifiedname>KWin::EffectsModel::setData</qualifiedname>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>const QVariant &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>role</declname>
+          <defval>Qt::EditRole</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="143" column="10" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="177" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1a2af51130e1d25e966f361d5600c8f780" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::EffectsModel::updateEffectStatus</definition>
+        <argsstring>(const QModelIndex &amp;rowIndex, Status effectState)</argsstring>
+        <name>updateEffectStatus</name>
+        <qualifiedname>KWin::EffectsModel::updateEffectStatus</qualifiedname>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>rowIndex</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_effects_model_1ac687c90f93d707d51a0af03a46017ad1" kindref="member">Status</ref></type>
+          <declname>effectState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Changes the status of a given effect.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rowIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An effect represented by the given index. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>effectState</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new state. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>In order to actually apply the change, you have to call <ref refid="class_k_win_1_1_effects_model_1aacf240b311ddb0952e6f7c47ed0b0005" kindref="member">save()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="152" column="10" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="483" bodyend="486"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1ad48ef4351d933ec9ca26286a06f969a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::EffectsModel::load</definition>
+        <argsstring>(LoadOptions options=LoadOptions::None)</argsstring>
+        <name>load</name>
+        <qualifiedname>KWin::EffectsModel::load</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effects_model_1ae3ded6ae2d9b9e376798de7ef9897f96" kindref="member">LoadOptions</ref></type>
+          <declname>options</declname>
+          <defval><ref refid="class_k_win_1_1_effects_model_1ae3ded6ae2d9b9e376798de7ef9897f96a6adf97f83acf6453d4a6a4b1070f3754" kindref="member">LoadOptions::None</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads effects.</para>
+<para>You have to call this method in order to populate the model. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="170" column="10" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="381" bodyend="481"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1aacf240b311ddb0952e6f7c47ed0b0005" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::EffectsModel::save</definition>
+        <argsstring>()</argsstring>
+        <name>save</name>
+        <qualifiedname>KWin::EffectsModel::save</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Saves status of each modified effect. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="175" column="10" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="488" bodyend="543"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1ab7f25f874bd027dbf737ecdc02dae7b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::EffectsModel::defaults</definition>
+        <argsstring>()</argsstring>
+        <name>defaults</name>
+        <qualifiedname>KWin::EffectsModel::defaults</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resets the status of each effect to the default state.</para>
+<para><simplesect kind="note"><para>In order to actually apply the change, you have to call <ref refid="class_k_win_1_1_effects_model_1aacf240b311ddb0952e6f7c47ed0b0005" kindref="member">save()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="182" column="10" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="545" bodyend="555"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1a87020f61a9a4a1816ca0dcfce25a9850" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::EffectsModel::isDefaults</definition>
+        <argsstring>() const</argsstring>
+        <name>isDefaults</name>
+        <qualifiedname>KWin::EffectsModel::isDefaults</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether the status of each effect is its default state. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="187" column="10" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="557" bodyend="568"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1acbb7389f5891c46c3bb27f476f943153" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::EffectsModel::needsSave</definition>
+        <argsstring>() const</argsstring>
+        <name>needsSave</name>
+        <qualifiedname>KWin::EffectsModel::needsSave</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether the model has unsaved changes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="192" column="10" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="570" bodyend="576"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1a528afc6e4c4c9770183d02ad949b9dd6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QModelIndex</type>
+        <definition>QModelIndex KWin::EffectsModel::findByPluginId</definition>
+        <argsstring>(const QString &amp;pluginId) const</argsstring>
+        <name>findByPluginId</name>
+        <qualifiedname>KWin::EffectsModel::findByPluginId</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>pluginId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Finds an effect with the given plugin id. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="197" column="17" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="578" bodyend="588"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1a56a41eea4f6d4c0b09fd34d9bbdded2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::EffectsModel::requestConfigure</definition>
+        <argsstring>(const QModelIndex &amp;index, QWindow *transientParent)</argsstring>
+        <name>requestConfigure</name>
+        <qualifiedname>KWin::EffectsModel::requestConfigure</qualifiedname>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>QWindow *</type>
+          <declname>transientParent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Shows a configuration dialog for a given effect.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An effect represented by the given index. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>transientParent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The transient parent of the configuration dialog. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="205" column="10" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="590" bodyend="605"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_effects_model_1a9f348e142dc9b3182f817803ea3dc086" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::EffectsModel::loaded</definition>
+        <argsstring>()</argsstring>
+        <name>loaded</name>
+        <qualifiedname>KWin::EffectsModel::loaded</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This signal is emitted when the model is loaded or reloaded.</para>
+<para><simplesect kind="see"><para><ref refid="class_k_win_1_1_effects_model_1ad48ef4351d933ec9ca26286a06f969a2" kindref="member">load</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="213" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1a6a626cd68f05424ca55e6ecffac8779b" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::EffectsModel::shouldStore</definition>
+        <argsstring>(const EffectData &amp;data) const</argsstring>
+        <name>shouldStore</name>
+        <qualifiedname>KWin::EffectsModel::shouldStore</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_animations_model_1a06886c9cf1067cea2794e4e2e6e31fd6">shouldStore</reimplementedby>
+        <param>
+          <type>const <ref refid="struct_k_win_1_1_effects_model_1_1_effect_data" kindref="compound">EffectData</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns whether the given effect should be stored in the model.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The effect. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if the effect should be stored, otherwise <computeroutput>false</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="248" column="18" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="607" bodyend="610"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1a4b9abdc4ea3bc281b17d70f781762b0d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::EffectsModel::loadBuiltInEffects</definition>
+        <argsstring>(const KConfigGroup &amp;kwinConfig)</argsstring>
+        <name>loadBuiltInEffects</name>
+        <qualifiedname>KWin::EffectsModel::loadBuiltInEffects</qualifiedname>
+        <param>
+          <type>const KConfigGroup &amp;</type>
+          <declname>kwinConfig</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="251" column="10" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="213" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1ad5b1048dd313be9e6b53a0ee2f669f1b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::EffectsModel::loadJavascriptEffects</definition>
+        <argsstring>(const KConfigGroup &amp;kwinConfig)</argsstring>
+        <name>loadJavascriptEffects</name>
+        <qualifiedname>KWin::EffectsModel::loadJavascriptEffects</qualifiedname>
+        <param>
+          <type>const KConfigGroup &amp;</type>
+          <declname>kwinConfig</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="252" column="10" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="272" bodyend="322"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_effects_model_1a69cc2b5511ae140a3f4100e75b101d4b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::EffectsModel::loadPluginEffects</definition>
+        <argsstring>(const KConfigGroup &amp;kwinConfig)</argsstring>
+        <name>loadPluginEffects</name>
+        <qualifiedname>KWin::EffectsModel::loadPluginEffects</qualifiedname>
+        <param>
+          <type>const KConfigGroup &amp;</type>
+          <declname>kwinConfig</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/kcms/common/effectsmodel.h" line="253" column="10" bodyfile="kwin/src/kcms/common/effectsmodel.cpp" bodystart="324" bodyend="379"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>KWin::AnimationsModel</label>
+        <link refid="class_k_win_1_1_animations_model"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::EffectsModel</label>
+        <link refid="class_k_win_1_1_effects_model"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QAbstractItemModel</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::EffectsModel</label>
+        <link refid="class_k_win_1_1_effects_model"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QAbstractItemModel</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/kcms/common/effectsmodel.h" line="25" column="1" bodyfile="kwin/src/kcms/common/effectsmodel.h" bodystart="26" bodyend="260"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>AdditionalRoles</name></member>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a6fb741a118e749f51b784f46b1c4aad9" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>AuthorEmailRole</name></member>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9aafb2a49b5ba362390f2c022dd978b1cf" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>AuthorNameRole</name></member>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a7d22d492595f8d48c9b4ba8f0afbeb2a" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>CategoryRole</name></member>
+      <member refid="class_k_win_1_1_effects_model_1a68a50b8a61a215716acd521b59dc362a" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>columnCount</name></member>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a420e619c2af45b31ca857fd32ab03bc9" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>ConfigModuleRole</name></member>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a263489c5361d9e9b90df01a67a0e0b95" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>ConfigurableRole</name></member>
+      <member refid="class_k_win_1_1_effects_model_1a53e781eab0902f17766b7d8b952f7f16" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>data</name></member>
+      <member refid="class_k_win_1_1_effects_model_1ab7f25f874bd027dbf737ecdc02dae7b1" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>defaults</name></member>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a9f3f65049befedd1f415ca292106432b" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>DescriptionRole</name></member>
+      <member refid="class_k_win_1_1_effects_model_1a709c8d7694f68449fddbe731992e0082" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>EffectsModel</name></member>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a066c62bc66ff4710e573c40767b0e568" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>EnabledByDefaultFunctionRole</name></member>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a10082963f85b0ef037da3a1f5a993e52" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>EnabledByDefaultRole</name></member>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a5340e4391eae8c0e2d3fe1627de04664" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>ExclusiveRole</name></member>
+      <member refid="class_k_win_1_1_effects_model_1a528afc6e4c4c9770183d02ad949b9dd6" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>findByPluginId</name></member>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a9410bc7064ac4fd191721903720f6b54" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>IconNameRole</name></member>
+      <member refid="class_k_win_1_1_effects_model_1a6b93ba38e8bb6237f200c6610f9397a1" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>index</name></member>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9adc13446553af138bc058f2b96c102233" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>InternalRole</name></member>
+      <member refid="class_k_win_1_1_effects_model_1a87020f61a9a4a1816ca0dcfce25a9850" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>isDefaults</name></member>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a1e4e1acf55d9e6ed6546fe09d4705a18" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>LicenseRole</name></member>
+      <member refid="class_k_win_1_1_effects_model_1ad48ef4351d933ec9ca26286a06f969a2" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>load</name></member>
+      <member refid="class_k_win_1_1_effects_model_1a4b9abdc4ea3bc281b17d70f781762b0d" prot="private" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>loadBuiltInEffects</name></member>
+      <member refid="class_k_win_1_1_effects_model_1a9f348e142dc9b3182f817803ea3dc086" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>loaded</name></member>
+      <member refid="class_k_win_1_1_effects_model_1ad5b1048dd313be9e6b53a0ee2f669f1b" prot="private" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>loadJavascriptEffects</name></member>
+      <member refid="class_k_win_1_1_effects_model_1ae3ded6ae2d9b9e376798de7ef9897f96" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>LoadOptions</name></member>
+      <member refid="class_k_win_1_1_effects_model_1a69cc2b5511ae140a3f4100e75b101d4b" prot="private" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>loadPluginEffects</name></member>
+      <member refid="class_k_win_1_1_effects_model_1af67a7339e6e37b11b224fb1b61492c43" prot="private" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>m_effects</name></member>
+      <member refid="class_k_win_1_1_effects_model_1a83ff67d26a7bd4c87811bb0d9ce38ab0" prot="private" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>m_lastSerial</name></member>
+      <member refid="class_k_win_1_1_effects_model_1a916f53b8f7e1e29553c236c9f3a5f70d" prot="private" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>m_pendingEffects</name></member>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a349c22494f2220e87cd976262e77117c" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>NameRole</name></member>
+      <member refid="class_k_win_1_1_effects_model_1acbb7389f5891c46c3bb27f476f943153" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>needsSave</name></member>
+      <member refid="class_k_win_1_1_effects_model_1ae972760fe1bb15d0e3537f48c87fbb44" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>parent</name></member>
+      <member refid="class_k_win_1_1_effects_model_1a56a41eea4f6d4c0b09fd34d9bbdded2a" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>requestConfigure</name></member>
+      <member refid="class_k_win_1_1_effects_model_1a59028394fc83f63d0fb3a12333856797" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>roleNames</name></member>
+      <member refid="class_k_win_1_1_effects_model_1a187e7152118cc40c873f900d200db862" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>rowCount</name></member>
+      <member refid="class_k_win_1_1_effects_model_1aacf240b311ddb0952e6f7c47ed0b0005" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>save</name></member>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a7d286ba1fe6149367bd29f9e7f5175e1" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>ServiceNameRole</name></member>
+      <member refid="class_k_win_1_1_effects_model_1a796591b05670ea2208677eba5ede735d" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>setData</name></member>
+      <member refid="class_k_win_1_1_effects_model_1a6a626cd68f05424ca55e6ecffac8779b" prot="protected" virt="virtual"><scope>KWin::EffectsModel</scope><name>shouldStore</name></member>
+      <member refid="class_k_win_1_1_effects_model_1ac687c90f93d707d51a0af03a46017ad1" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>Status</name></member>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a67c44ff373964c1efae03f59491a8a76" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>StatusRole</name></member>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a4b240f81f32d4f760f3090165c571b8f" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>SupportedRole</name></member>
+      <member refid="class_k_win_1_1_effects_model_1a2af51130e1d25e966f361d5600c8f780" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>updateEffectStatus</name></member>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9a455d87343a919e33d9f4c9b58ddf3a24" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>VersionRole</name></member>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9aa0aa8db4614d47f23a96bc75291b0699" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>VideoRole</name></member>
+      <member refid="class_k_win_1_1_effects_model_1afcd772d699a040e7ae6346f799ebb8c9ad2061068997e40881c2810e2428655ca" prot="public" virt="non-virtual"><scope>KWin::EffectsModel</scope><name>WebsiteRole</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

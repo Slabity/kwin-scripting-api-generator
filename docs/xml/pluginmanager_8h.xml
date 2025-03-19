@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="pluginmanager_8h" kind="file" language="C++">
+    <compoundname>pluginmanager.h</compoundname>
+    <includes refid="globals_8h" local="yes">effect/globals.h</includes>
+    <includes local="no">QHash</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">KPluginMetaData</includes>
+    <includedby refid="dbusinterface_8cpp" local="yes">kwin/src/dbusinterface.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">kwin/src/main.cpp</includedby>
+    <includedby refid="pluginmanager_8cpp" local="yes">kwin/src/pluginmanager.cpp</includedby>
+    <includedby refid="workspace_8cpp" local="yes">kwin/src/workspace.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/pluginmanager.h</label>
+        <link refid="pluginmanager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>KPluginMetaData</label>
+      </node>
+      <node id="4">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="10">
+        <label>QHash</label>
+      </node>
+      <node id="5">
+        <label>QImage</label>
+      </node>
+      <node id="11">
+        <label>QObject</label>
+      </node>
+      <node id="6">
+        <label>QPoint</label>
+      </node>
+      <node id="7">
+        <label>QVariant</label>
+      </node>
+      <node id="8">
+        <label>QVector2D</label>
+      </node>
+      <node id="3">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="9">
+        <label>kwin_export.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/dbusinterface.cpp</label>
+        <link refid="dbusinterface_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/pluginmanager.cpp</label>
+        <link refid="pluginmanager_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/pluginmanager.h</label>
+        <link refid="pluginmanager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>kwin/src/workspace.cpp</label>
+        <link refid="workspace_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_plugin_manager" prot="public">KWin::PluginManager</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2020<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="globals_8h" kindref="compound">effect/globals.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QHash&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KPluginMetaData&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_plugin" kindref="compound">Plugin</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="class_k_win_1_1_plugin_manager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_plugin_manager_1a83d216bf44cb095962a1f2feb56dc904" kindref="member">PluginManager</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_plugin_manager_1a83d216bf44cb095962a1f2feb56dc904" kindref="member">PluginManager</ref>();</highlight></codeline>
+<codeline lineno="30" refid="class_k_win_1_1_plugin_manager_1a67f8729f396e1a8f3189101cefea5656" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_plugin_manager_1a67f8729f396e1a8f3189101cefea5656" kindref="member">~PluginManager</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>QStringList<sp/><ref refid="class_k_win_1_1_plugin_manager_1a1f9c68928a2b00ef2eac1413337dfb04" kindref="member">loadedPlugins</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>QStringList<sp/><ref refid="class_k_win_1_1_plugin_manager_1a3857707ad6c509ce248f3e6dacd73e6d" kindref="member">availablePlugins</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plugin_manager_1a95e02eb521bfbc81e1302ed24bb7477a" kindref="member">loadPlugin</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;pluginId);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plugin_manager_1ab45a50a40fd509c7496f5224147c0b8e" kindref="member">unloadPlugin</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;pluginId);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plugin_manager_1a95e02eb521bfbc81e1302ed24bb7477a" kindref="member">loadPlugin</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>KPluginMetaData<sp/>&amp;metadata);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;QString,<sp/>std::unique_ptr&lt;Plugin&gt;&gt;<sp/>m_plugins;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/pluginmanager.h"/>
+  </compounddef>
+</doxygen>

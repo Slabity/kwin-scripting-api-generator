@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="wayland_2shadow_8h" kind="file" language="C++">
+    <compoundname>shadow.h</compoundname>
+    <includes local="yes">kwin_export.h</includes>
+    <includes local="no">QMarginsF</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">memory</includes>
+    <includedby refid="shadow_8cpp" local="yes">kwin/src/shadow.cpp</includedby>
+    <includedby refid="wayland_2shadow_8cpp" local="yes">kwin/src/wayland/shadow.cpp</includedby>
+    <includedby refid="surface_8cpp" local="yes">kwin/src/wayland/surface.cpp</includedby>
+    <includedby refid="wayland__server_8cpp" local="yes">kwin/src/wayland_server.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/wayland/shadow.h</label>
+        <link refid="wayland_2shadow_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QMarginsF</label>
+      </node>
+      <node id="4">
+        <label>QObject</label>
+      </node>
+      <node id="2">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="5">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/shadow.cpp</label>
+        <link refid="shadow_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/wayland/shadow.cpp</label>
+        <link refid="wayland_2shadow_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/wayland/shadow.h</label>
+        <link refid="wayland_2shadow_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>kwin/src/wayland/surface.cpp</label>
+        <link refid="surface_8cpp"/>
+      </node>
+      <node id="5">
+        <label>kwin/src/wayland_server.cpp</label>
+        <link refid="wayland__server_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_shadow_manager_interface" prot="public">KWin::ShadowManagerInterface</innerclass>
+    <innerclass refid="class_k_win_1_1_shadow_interface" prot="public">KWin::ShadowInterface</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2015<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>LGPL-2.1-only<sp/>OR<sp/>LGPL-3.0-only<sp/>OR<sp/>LicenseRef-KDE-Accepted-LGPL</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;kwin_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QMarginsF&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_resource;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_shadow_manager_interface_private" kindref="compound">ShadowManagerInterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_shadow_interface_private" kindref="compound">ShadowInterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="class_k_win_1_1_shadow_manager_interface" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_shadow_manager_interface_1a26439aac84be59640a9de3d7b9fe0ae7" kindref="member">ShadowManagerInterface</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_shadow_manager_interface_1a26439aac84be59640a9de3d7b9fe0ae7" kindref="member">ShadowManagerInterface</ref>(<ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*display,<sp/>QObject<sp/>*parent<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30" refid="class_k_win_1_1_shadow_manager_interface_1a64cbf5d00c85549e66834188d0e6b7db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_shadow_manager_interface_1a64cbf5d00c85549e66834188d0e6b7db" kindref="member">~ShadowManagerInterface</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;ShadowManagerInterfacePrivate&gt;<sp/>d;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="class_k_win_1_1_shadow_interface" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/>ShadowInterface<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40" refid="class_k_win_1_1_shadow_interface_1a7256c1b2988451c6d7fba542000b76d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_shadow_interface_1a7256c1b2988451c6d7fba542000b76d1" kindref="member">~ShadowInterface</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref><sp/>*<ref refid="class_k_win_1_1_shadow_interface_1a1445bb7ae63b1d7593468f5ae166068d" kindref="member">left</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref><sp/>*<ref refid="class_k_win_1_1_shadow_interface_1acb815427af5ca750feaa0dfbc650f97e" kindref="member">topLeft</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref><sp/>*<ref refid="class_k_win_1_1_shadow_interface_1a7896e9580f58a1d4dce66b11c3d8b419" kindref="member">top</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref><sp/>*<ref refid="class_k_win_1_1_shadow_interface_1a3ae9df3c049a81a42b5fcf21a6f3e1e8" kindref="member">topRight</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref><sp/>*<ref refid="class_k_win_1_1_shadow_interface_1ab1c822c4466d3ee25c581eba6f04c2cc" kindref="member">right</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref><sp/>*<ref refid="class_k_win_1_1_shadow_interface_1a71088c6b482aa445ba1561e5e15d40ae" kindref="member">bottomRight</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref><sp/>*<ref refid="class_k_win_1_1_shadow_interface_1adc8f69e7eb1ea332c4a0b191c51d3e0c" kindref="member">bottom</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref><sp/>*<ref refid="class_k_win_1_1_shadow_interface_1a1500f710f23334b30f30c3adc79f5c80" kindref="member">bottomLeft</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>QMarginsF<sp/><ref refid="class_k_win_1_1_shadow_interface_1a390bac5036a8d77ee32f1b3d0a654c2f" kindref="member">offset</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/>ShadowInterface(<ref refid="class_k_win_1_1_shadow_manager_interface" kindref="compound">ShadowManagerInterface</ref><sp/>*manager,<sp/>wl_resource<sp/>*resource);</highlight></codeline>
+<codeline lineno="55" refid="class_k_win_1_1_shadow_interface_1afdf9464f627d6ae7f558b88a5d1b476e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_shadow_interface_1afdf9464f627d6ae7f558b88a5d1b476e" kindref="member">ShadowManagerInterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;ShadowInterfacePrivate&gt;<sp/>d;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/wayland/shadow.h"/>
+  </compounddef>
+</doxygen>

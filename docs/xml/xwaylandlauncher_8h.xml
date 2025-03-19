@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="xwaylandlauncher_8h" kind="file" language="C++">
+    <compoundname>xwaylandlauncher.h</compoundname>
+    <includes refid="filedescriptor_8h" local="yes">utils/filedescriptor.h</includes>
+    <includes local="no">QList</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">QProcess</includes>
+    <includes local="no">QSocketNotifier</includes>
+    <includes local="no">QTemporaryFile</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">kwin_export.h</includes>
+    <includedby refid="xwayland_8cpp" local="yes">kwin/src/xwayland/xwayland.cpp</includedby>
+    <includedby refid="xwaylandlauncher_8cpp" local="yes">kwin/src/xwayland/xwaylandlauncher.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>utils/filedescriptor.h</label>
+        <link refid="filedescriptor_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/xwayland/xwaylandlauncher.h</label>
+        <link refid="xwaylandlauncher_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QList</label>
+      </node>
+      <node id="5">
+        <label>QObject</label>
+      </node>
+      <node id="6">
+        <label>QProcess</label>
+      </node>
+      <node id="7">
+        <label>QSocketNotifier</label>
+      </node>
+      <node id="8">
+        <label>QTemporaryFile</label>
+      </node>
+      <node id="3">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="9">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/xwayland/xwayland.cpp</label>
+        <link refid="xwayland_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/xwayland/xwaylandlauncher.cpp</label>
+        <link refid="xwaylandlauncher_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/xwayland/xwaylandlauncher.h</label>
+        <link refid="xwaylandlauncher_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_xwl_1_1_xwayland_launcher" prot="public">KWin::Xwl::XwaylandLauncher</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <innernamespace refid="namespace_k_win_1_1_xwl">KWin::Xwl</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2019<sp/>Roman<sp/>Gilg<sp/>&lt;subdiff@gmail.com&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2020<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="filedescriptor_8h" kindref="compound">utils/filedescriptor.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QProcess&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QSocketNotifier&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QTemporaryFile&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;kwin_export.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QTimer;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_xwayland_socket" kindref="compound">XwaylandSocket</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win_1_1_xwl" kindref="compound">Xwl</ref></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="class_k_win_1_1_xwl_1_1_xwayland_launcher" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a207eb3757bb8d738fddf79e150d2fb5c" kindref="member">XwaylandLauncher</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a207eb3757bb8d738fddf79e150d2fb5c" kindref="member">XwaylandLauncher</ref>(QObject<sp/>*parent);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a207eb3757bb8d738fddf79e150d2fb5c" kindref="member">~XwaylandLauncher</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1abb1714200895951b0d142be949b5aeef" kindref="member">setListenFDs</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;int&gt;<sp/>&amp;listenFds);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a83bd9cf1df81a6908f35bb3786912d42" kindref="member">setDisplayName</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;<ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1adf21280f73750b80523c8218b286ba03" kindref="member">displayName</ref>);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a80fa488ca8318b68ec9a0ea6c7b76d34" kindref="member">setXauthority</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;<ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1af3fd14b754d2317d39886001549446d9" kindref="member">xauthority</ref>);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a4b34fc3596d3e2c5436aabf756d5f26f" kindref="member">enable</ref>();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a5eb0ad83be7d11ee29c206bf12d49b8d" kindref="member">disable</ref>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a7f691dd2532d70d1790ef600bf0dd1f9" kindref="member">start</ref>();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a828f6fa79d8ff30fb93e82952d81a004" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1adf21280f73750b80523c8218b286ba03" kindref="member">displayName</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1af3fd14b754d2317d39886001549446d9" kindref="member">xauthority</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/><ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a5ccb19a57166613fb947444b1f19548c" kindref="member">takeXcbConnectionFd</ref>();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>QProcess<sp/>*<ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a50f9e69cd6459899847ca147d5234a72" kindref="member">process</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="78" refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a49158843f0a2a05f8fd473d820313152" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a49158843f0a2a05f8fd473d820313152" kindref="member">ready</ref>();</highlight></codeline>
+<codeline lineno="82" refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a8935da12c0ddfd9d5eb8d0cac4f2eece" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a8935da12c0ddfd9d5eb8d0cac4f2eece" kindref="member">started</ref>();</highlight></codeline>
+<codeline lineno="86" refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a8e111cbd38c51f068d81bad5660df32e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a8e111cbd38c51f068d81bad5660df32e" kindref="member">finished</ref>();</highlight></codeline>
+<codeline lineno="90" refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a23df02bc631286a6e18c6536eeb2e3d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a23df02bc631286a6e18c6536eeb2e3d1" kindref="member">errorOccurred</ref>();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>resetCrashCount();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handleXwaylandFinished(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>exitCode,<sp/>QProcess::ExitStatus<sp/>exitStatus);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handleXwaylandError(QProcess::ProcessError<sp/>error);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>QProcess<sp/>*m_xwaylandProcess<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;QSocketNotifier&gt;<sp/>m_readyNotifier;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>QTimer<sp/>*m_resetCrashCountTimer<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>this<sp/>is<sp/>only<sp/>used<sp/>when<sp/>kwin<sp/>is<sp/>run<sp/>without<sp/>kwin_wayland_wrapper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;XwaylandSocket&gt;<sp/>m_socket;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;int&gt;<sp/>m_listenFds;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>m_displayName;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>m_xAuthority;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_enabled<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_crashCount<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>m_readyFd;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>m_xcbConnectionFd;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/xwayland/xwaylandlauncher.h"/>
+  </compounddef>
+</doxygen>

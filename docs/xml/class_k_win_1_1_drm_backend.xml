@@ -1,0 +1,755 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_drm_backend" kind="class" language="C++" prot="public">
+    <compoundname>KWin::DrmBackend</compoundname>
+    <basecompoundref refid="class_k_win_1_1_output_backend" prot="public" virt="non-virtual">KWin::OutputBackend</basecompoundref>
+    <includes refid="drm__backend_8h" local="no">drm_backend.h</includes>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_k_win_1_1_drm_backend_1a72cc752423a4e77af52caaa1c039d3df" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class DrmGpu</definition>
+        <argsstring></argsstring>
+        <name>DrmGpu</name>
+        <qualifiedname>KWin::DrmBackend::DrmGpu</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="79" column="18" bodyfile="kwin/src/backends/drm/drm_backend.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_drm_backend_1ac805200c814f619afb15015cb67d1ab0" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_udev" kindref="compound">Udev</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Udev&gt; KWin::DrmBackend::m_udev</definition>
+        <argsstring></argsstring>
+        <name>m_udev</name>
+        <qualifiedname>KWin::DrmBackend::m_udev</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="85" column="21" bodyfile="kwin/src/backends/drm/drm_backend.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_backend_1ad2640e12532d36e8445dfb853f04a720" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_udev_monitor" kindref="compound">UdevMonitor</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;UdevMonitor&gt; KWin::DrmBackend::m_udevMonitor</definition>
+        <argsstring></argsstring>
+        <name>m_udevMonitor</name>
+        <qualifiedname>KWin::DrmBackend::m_udevMonitor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="86" column="21" bodyfile="kwin/src/backends/drm/drm_backend.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_backend_1aadb44dfbd75863d5f8f691a626d22872" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; QSocketNotifier &gt;</type>
+        <definition>std::unique_ptr&lt;QSocketNotifier&gt; KWin::DrmBackend::m_socketNotifier</definition>
+        <argsstring></argsstring>
+        <name>m_socketNotifier</name>
+        <qualifiedname>KWin::DrmBackend::m_socketNotifier</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="87" column="21" bodyfile="kwin/src/backends/drm/drm_backend.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_backend_1aa01d588957ac60bdc8671bfcd666743d" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_session" kindref="compound">Session</ref> *</type>
+        <definition>Session* KWin::DrmBackend::m_session</definition>
+        <argsstring></argsstring>
+        <name>m_session</name>
+        <qualifiedname>KWin::DrmBackend::m_session</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="88" column="13" bodyfile="kwin/src/backends/drm/drm_backend.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_backend_1adfc15e1ba5a7b5b421d2c0f1284627f1" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_drm_abstract_output" kindref="compound">DrmAbstractOutput</ref> * &gt;</type>
+        <definition>QList&lt;DrmAbstractOutput *&gt; KWin::DrmBackend::m_outputs</definition>
+        <argsstring></argsstring>
+        <name>m_outputs</name>
+        <qualifiedname>KWin::DrmBackend::m_outputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="89" column="11" bodyfile="kwin/src/backends/drm/drm_backend.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_backend_1aa0b9b3e98a1efe8c998d9cbeff4bf336" prot="private" static="no" mutable="no">
+        <type>QList&lt; QUuid &gt;</type>
+        <definition>QList&lt;QUuid&gt; KWin::DrmBackend::m_recentlyUnpluggedDpmsOffOutputs</definition>
+        <argsstring></argsstring>
+        <name>m_recentlyUnpluggedDpmsOffOutputs</name>
+        <qualifiedname>KWin::DrmBackend::m_recentlyUnpluggedDpmsOffOutputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="90" column="11" bodyfile="kwin/src/backends/drm/drm_backend.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_backend_1aed7b757dbd018d4762d3e421c34edda1" prot="private" static="no" mutable="no">
+        <type>const QStringList</type>
+        <definition>const QStringList KWin::DrmBackend::m_explicitGpus</definition>
+        <argsstring></argsstring>
+        <name>m_explicitGpus</name>
+        <qualifiedname>KWin::DrmBackend::m_explicitGpus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="92" column="23" bodyfile="kwin/src/backends/drm/drm_backend.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_backend_1aa4f8cb2f9f1bfbce3bedd367ef29c0ce" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::unique_ptr&lt; <ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::unique_ptr&lt;DrmGpu&gt; &gt; KWin::DrmBackend::m_gpus</definition>
+        <argsstring></argsstring>
+        <name>m_gpus</name>
+        <qualifiedname>KWin::DrmBackend::m_gpus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="93" column="17" bodyfile="kwin/src/backends/drm/drm_backend.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_backend_1ac85065f6d6a42ca08574054f01f5387b" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_drm_virtual_output" kindref="compound">DrmVirtualOutput</ref> * &gt;</type>
+        <definition>QList&lt;DrmVirtualOutput *&gt; KWin::DrmBackend::m_virtualOutputs</definition>
+        <argsstring></argsstring>
+        <name>m_virtualOutputs</name>
+        <qualifiedname>KWin::DrmBackend::m_virtualOutputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="94" column="11" bodyfile="kwin/src/backends/drm/drm_backend.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_backend_1ad919601f62eadcb14bd6d4a373e1d838" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_render_backend" kindref="compound">DrmRenderBackend</ref> *</type>
+        <definition>DrmRenderBackend* KWin::DrmBackend::m_renderBackend</definition>
+        <argsstring></argsstring>
+        <name>m_renderBackend</name>
+        <qualifiedname>KWin::DrmBackend::m_renderBackend</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="95" column="22" bodyfile="kwin/src/backends/drm/drm_backend.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1a34c1aa96b8cf43852c6080dec0d3f6b8" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::DrmBackend::DrmBackend</definition>
+        <argsstring>(Session *session, QObject *parent=nullptr)</argsstring>
+        <name>DrmBackend</name>
+        <qualifiedname>KWin::DrmBackend::DrmBackend</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_session" kindref="compound">Session</ref> *</type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="39" column="14" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="71" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1ac3aa9950f116c97cb64df95007a17500" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::DrmBackend::~DrmBackend</definition>
+        <argsstring>() override</argsstring>
+        <name>~DrmBackend</name>
+        <qualifiedname>KWin::DrmBackend::~DrmBackend</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="40" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1abaf2cf9c3587474e56fa4046f838240f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_input_backend" kindref="compound">InputBackend</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; InputBackend &gt; KWin::DrmBackend::createInputBackend</definition>
+        <argsstring>() override</argsstring>
+        <name>createInputBackend</name>
+        <qualifiedname>KWin::DrmBackend::createInputBackend</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1a4fbebf8e332a240bd6dd6fe1757caebf">createInputBackend</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="42" column="21" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="312" bodyend="315"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1aa25950fd74a7a13afac506a00dfc7fc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_q_painter_backend" kindref="compound">QPainterBackend</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; QPainterBackend &gt; KWin::DrmBackend::createQPainterBackend</definition>
+        <argsstring>() override</argsstring>
+        <name>createQPainterBackend</name>
+        <qualifiedname>KWin::DrmBackend::createQPainterBackend</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1a648ea286530873e660802d80ba47013b">createQPainterBackend</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="43" column="21" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="317" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1a1a8bf57a06593112af9f7a597735b1ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_open_g_l_backend" kindref="compound">OpenGLBackend</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; OpenGLBackend &gt; KWin::DrmBackend::createOpenGLBackend</definition>
+        <argsstring>() override</argsstring>
+        <name>createOpenGLBackend</name>
+        <qualifiedname>KWin::DrmBackend::createOpenGLBackend</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1ac98a70547423f4f0b7058356ea2a6a70">createOpenGLBackend</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="44" column="21" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="322" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1a6e0c0f697c5ba0eddfa60e75199692df" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_k_win_1_1_egl_display" kindref="compound">EglDisplay</ref> *</type>
+        <definition>EglDisplay * KWin::DrmBackend::sceneEglDisplayObject</definition>
+        <argsstring>() const override</argsstring>
+        <name>sceneEglDisplayObject</name>
+        <qualifiedname>KWin::DrmBackend::sceneEglDisplayObject</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1a5a3a23d6249e363c3c3358c7b9b4304f">sceneEglDisplayObject</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="45" column="16" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="473" bodyend="476"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1aef173edf54fa9e149603d35b4d1f8dcd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmBackend::initialize</definition>
+        <argsstring>() override</argsstring>
+        <name>initialize</name>
+        <qualifiedname>KWin::DrmBackend::initialize</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1a2cc7635583833c9858b0e33251fd4710">initialize</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="47" column="10" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="92" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1a003fd3529f0932672243d64f2a160268" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_k_win_1_1_outputs" kindref="compound">Outputs</ref></type>
+        <definition>Outputs KWin::DrmBackend::outputs</definition>
+        <argsstring>() const override</argsstring>
+        <name>outputs</name>
+        <qualifiedname>KWin::DrmBackend::outputs</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1a78aad78cefc0f83edfc0f3b96e2e5b19">outputs</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="49" column="13" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="87" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1a65b5509871eb6b3a7f788845aa661389" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_k_win_1_1_session" kindref="compound">Session</ref> *</type>
+        <definition>Session * KWin::DrmBackend::session</definition>
+        <argsstring>() const override</argsstring>
+        <name>session</name>
+        <qualifiedname>KWin::DrmBackend::session</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1a92867a26811e91d369c72b877595bdb6">session</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="50" column="13" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="82" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1a3757001a423847dec64d68d1aedd1fbc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QList&lt; <ref refid="namespace_k_win_1aa1e33474a7077a13169f350a5949a79a" kindref="member">CompositingType</ref> &gt;</type>
+        <definition>QList&lt; CompositingType &gt; KWin::DrmBackend::supportedCompositors</definition>
+        <argsstring>() const override</argsstring>
+        <name>supportedCompositors</name>
+        <qualifiedname>KWin::DrmBackend::supportedCompositors</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1aaf8ec2edaa0d9bf4cec1e67c7de49d9e">supportedCompositors</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The CompositingTypes supported by the Platform. The first item should be the most preferred one. <simplesect kind="since"><para>5.11 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="52" column="11" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="327" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1a6613494df72e3ac53463b7fc8a65b562" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QString</type>
+        <definition>QString KWin::DrmBackend::supportInformation</definition>
+        <argsstring>() const override</argsstring>
+        <name>supportInformation</name>
+        <qualifiedname>KWin::DrmBackend::supportInformation</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1ab144cfcc01aa623dd9e1139092619ec0">supportInformation</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A string of information to include in kwin debug output It should not be translated.</para>
+<para>The base implementation prints the name. <simplesect kind="since"><para>5.12 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="54" column="13" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="332" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1ab42a30f85bc11f624e1a0de7acf39ee9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+        <definition>Output * KWin::DrmBackend::createVirtualOutput</definition>
+        <argsstring>(const QString &amp;name, const QString &amp;description, const QSize &amp;size, double scale) override</argsstring>
+        <name>createVirtualOutput</name>
+        <qualifiedname>KWin::DrmBackend::createVirtualOutput</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>description</declname>
+        </param>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="55" column="12" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="345" bodyend="352"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1a664d369aa26122266a42321280c6aab8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::DrmBackend::removeVirtualOutput</definition>
+        <argsstring>(Output *output) override</argsstring>
+        <name>removeVirtualOutput</name>
+        <qualifiedname>KWin::DrmBackend::removeVirtualOutput</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1ab89950b51e886fc63c04e6d214aef07d">removeVirtualOutput</reimplements>
+        <param>
+          <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="56" column="10" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="354" bodyend="364"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1a748aceacdbbea18fbbd4492a51bd84b1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref> *</type>
+        <definition>DrmGpu * KWin::DrmBackend::primaryGpu</definition>
+        <argsstring>() const</argsstring>
+        <name>primaryGpu</name>
+        <qualifiedname>KWin::DrmBackend::primaryGpu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="58" column="12" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="366" bodyend="369"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1aa67f399e3f53163e0293dbfba3857ac7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref> *</type>
+        <definition>DrmGpu * KWin::DrmBackend::findGpu</definition>
+        <argsstring>(dev_t deviceId) const</argsstring>
+        <name>findGpu</name>
+        <qualifiedname>KWin::DrmBackend::findGpu</qualifiedname>
+        <param>
+          <type>dev_t</type>
+          <declname>deviceId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="59" column="12" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="371" bodyend="377"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1a08ffd16fbabe465a5c936b31a53f79cf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t KWin::DrmBackend::gpuCount</definition>
+        <argsstring>() const</argsstring>
+        <name>gpuCount</name>
+        <qualifiedname>KWin::DrmBackend::gpuCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="60" column="12" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="379" bodyend="382"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1a261ba92b49ac12b4aba733c96a5e9e4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmBackend::setRenderBackend</definition>
+        <argsstring>(DrmRenderBackend *backend)</argsstring>
+        <name>setRenderBackend</name>
+        <qualifiedname>KWin::DrmBackend::setRenderBackend</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_render_backend" kindref="compound">DrmRenderBackend</ref> *</type>
+          <declname>backend</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="62" column="10" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="438" bodyend="441"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1ad2203754077fed7a844bf46234c17e15" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_render_backend" kindref="compound">DrmRenderBackend</ref> *</type>
+        <definition>DrmRenderBackend * KWin::DrmBackend::renderBackend</definition>
+        <argsstring>() const</argsstring>
+        <name>renderBackend</name>
+        <qualifiedname>KWin::DrmBackend::renderBackend</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="63" column="22" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="443" bodyend="446"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1a87fa73597ab093759b82ac8d67508ca7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmBackend::createLayers</definition>
+        <argsstring>()</argsstring>
+        <name>createLayers</name>
+        <qualifiedname>KWin::DrmBackend::createLayers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="65" column="10" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="448" bodyend="456"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1a7e9d63058593bb089892bbafd6beda7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmBackend::releaseBuffers</definition>
+        <argsstring>()</argsstring>
+        <name>releaseBuffers</name>
+        <qualifiedname>KWin::DrmBackend::releaseBuffers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="66" column="10" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="458" bodyend="466"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1a648c05d231aa7bc25ac3c056c455ff22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmBackend::updateOutputs</definition>
+        <argsstring>()</argsstring>
+        <name>updateOutputs</name>
+        <qualifiedname>KWin::DrmBackend::updateOutputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="67" column="10" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="287" bodyend="310"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1ad3165ed7e8f2c6331cd766db4cdf2664" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; std::unique_ptr&lt; <ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref> &gt; &gt; &amp;</type>
+        <definition>const std::vector&lt; std::unique_ptr&lt; DrmGpu &gt; &gt; &amp; KWin::DrmBackend::gpus</definition>
+        <argsstring>() const</argsstring>
+        <name>gpus</name>
+        <qualifiedname>KWin::DrmBackend::gpus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="69" column="23" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="468" bodyend="471"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_drm_backend_1a3ce2019eec6924f91c8fd564b92a751e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmBackend::gpuAdded</definition>
+        <argsstring>(DrmGpu *gpu)</argsstring>
+        <name>gpuAdded</name>
+        <qualifiedname>KWin::DrmBackend::gpuAdded</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref> *</type>
+          <declname>gpu</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="72" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_drm_backend_1a299618f566c297291804eae350f4b901" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmBackend::gpuRemoved</definition>
+        <argsstring>(DrmGpu *gpu)</argsstring>
+        <name>gpuRemoved</name>
+        <qualifiedname>KWin::DrmBackend::gpuRemoved</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref> *</type>
+          <declname>gpu</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="73" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1a986b1640228023a8ce02786e1ab3a59d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespace_k_win_1a2d21f95f143c2ccab4d2a9448e14d6ec" kindref="member">OutputConfigurationError</ref></type>
+        <definition>OutputConfigurationError KWin::DrmBackend::applyOutputChanges</definition>
+        <argsstring>(const OutputConfiguration &amp;config) override</argsstring>
+        <name>applyOutputChanges</name>
+        <qualifiedname>KWin::DrmBackend::applyOutputChanges</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1a0727928eeef6a3bee1dd80c6fdaedee9">applyOutputChanges</reimplements>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_output_configuration" kindref="compound">OutputConfiguration</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Applies the output changes. Default implementation only sets values common between platforms </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="76" column="30" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="384" bodyend="436"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1ad6e1ea44b430f753c40b60411e681454" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmBackend::addOutput</definition>
+        <argsstring>(DrmAbstractOutput *output)</argsstring>
+        <name>addOutput</name>
+        <qualifiedname>KWin::DrmBackend::addOutput</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_abstract_output" kindref="compound">DrmAbstractOutput</ref> *</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="80" column="10" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="249" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1a127bee87540ed402e18b54eb66fa4ca2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmBackend::removeOutput</definition>
+        <argsstring>(DrmAbstractOutput *output)</argsstring>
+        <name>removeOutput</name>
+        <qualifiedname>KWin::DrmBackend::removeOutput</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_abstract_output" kindref="compound">DrmAbstractOutput</ref> *</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="81" column="10" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="273" bodyend="285"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1ae7703fe95584b18d1a71b89a7397e552" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmBackend::handleUdevEvent</definition>
+        <argsstring>()</argsstring>
+        <name>handleUdevEvent</name>
+        <qualifiedname>KWin::DrmBackend::handleUdevEvent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="82" column="10" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="168" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_backend_1ae18ee91d7b237605cb6902628ea86bdd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref> *</type>
+        <definition>DrmGpu * KWin::DrmBackend::addGpu</definition>
+        <argsstring>(const QString &amp;fileName)</argsstring>
+        <name>addGpu</name>
+        <qualifiedname>KWin::DrmBackend::addGpu</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>fileName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_backend.h" line="83" column="12" bodyfile="kwin/src/backends/drm/drm_backend.cpp" bodystart="220" bodyend="247"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::DrmBackend</label>
+        <link refid="class_k_win_1_1_drm_backend"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::OutputBackend</label>
+        <link refid="class_k_win_1_1_output_backend"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::DrmBackend</label>
+        <link refid="class_k_win_1_1_drm_backend"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::OutputBackend</label>
+        <link refid="class_k_win_1_1_output_backend"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/backends/drm/drm_backend.h" line="34" column="1" bodyfile="kwin/src/backends/drm/drm_backend.h" bodystart="35" bodyend="96"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_drm_backend_1ae18ee91d7b237605cb6902628ea86bdd" prot="private" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>addGpu</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1ad6e1ea44b430f753c40b60411e681454" prot="private" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>addOutput</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1a986b1640228023a8ce02786e1ab3a59d" prot="protected" virt="virtual"><scope>KWin::DrmBackend</scope><name>applyOutputChanges</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1abaf2cf9c3587474e56fa4046f838240f" prot="public" virt="virtual"><scope>KWin::DrmBackend</scope><name>createInputBackend</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1a87fa73597ab093759b82ac8d67508ca7" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>createLayers</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1a1a8bf57a06593112af9f7a597735b1ea" prot="public" virt="virtual"><scope>KWin::DrmBackend</scope><name>createOpenGLBackend</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1aa25950fd74a7a13afac506a00dfc7fc6" prot="public" virt="virtual"><scope>KWin::DrmBackend</scope><name>createQPainterBackend</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1ab42a30f85bc11f624e1a0de7acf39ee9" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>createVirtualOutput</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a2f8b74a51f8d8509ac3adfd8291b8a1f" prot="public" virt="virtual" ambiguityscope="KWin::OutputBackend::"><scope>KWin::DrmBackend</scope><name>createVirtualOutput</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1a34c1aa96b8cf43852c6080dec0d3f6b8" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>DrmBackend</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1a72cc752423a4e77af52caaa1c039d3df" prot="private" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>DrmGpu</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1aa67f399e3f53163e0293dbfba3857ac7" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>findGpu</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a116d54df69c60208e360179f42c17b16" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>findOutput</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1a3ce2019eec6924f91c8fd564b92a751e" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>gpuAdded</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1a08ffd16fbabe465a5c936b31a53f79cf" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>gpuCount</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1a299618f566c297291804eae350f4b901" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>gpuRemoved</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1ad3165ed7e8f2c6331cd766db4cdf2664" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>gpus</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1ae7703fe95584b18d1a71b89a7397e552" prot="private" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>handleUdevEvent</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1aef173edf54fa9e149603d35b4d1f8dcd" prot="public" virt="virtual"><scope>KWin::DrmBackend</scope><name>initialize</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1aed7b757dbd018d4762d3e421c34edda1" prot="private" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>m_explicitGpus</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a75fb78ae0c8c311aa92d4ef1d27685ea" prot="protected" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>m_globalShareContext</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1aa4f8cb2f9f1bfbce3bedd367ef29c0ce" prot="private" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>m_gpus</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1adfc15e1ba5a7b5b421d2c0f1284627f1" prot="private" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>m_outputs</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1aa0b9b3e98a1efe8c998d9cbeff4bf336" prot="private" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>m_recentlyUnpluggedDpmsOffOutputs</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1ad919601f62eadcb14bd6d4a373e1d838" prot="private" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>m_renderBackend</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1aa01d588957ac60bdc8671bfcd666743d" prot="private" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>m_session</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1aadb44dfbd75863d5f8f691a626d22872" prot="private" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>m_socketNotifier</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1ac805200c814f619afb15015cb67d1ab0" prot="private" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>m_udev</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1ad2640e12532d36e8445dfb853f04a720" prot="private" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>m_udevMonitor</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1ac85065f6d6a42ca08574054f01f5387b" prot="private" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>m_virtualOutputs</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a220e64d9c811434825b3c3bf1b28f947" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>outputAdded</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a3059152d8eda13eaedd7eecad43e2470" prot="protected" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>OutputBackend</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a8f804420de03806fd046f99e80ee8332" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>outputRemoved</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1a003fd3529f0932672243d64f2a160268" prot="public" virt="virtual"><scope>KWin::DrmBackend</scope><name>outputs</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a1e1afd1a11ca71d300b7229d03d54be9" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>outputsQueried</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1a748aceacdbbea18fbbd4492a51bd84b1" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>primaryGpu</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1a7e9d63058593bb089892bbafd6beda7f" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>releaseBuffers</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1a127bee87540ed402e18b54eb66fa4ca2" prot="private" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>removeOutput</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1a664d369aa26122266a42321280c6aab8" prot="public" virt="virtual"><scope>KWin::DrmBackend</scope><name>removeVirtualOutput</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1ad2203754077fed7a844bf46234c17e15" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>renderBackend</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1a6e0c0f697c5ba0eddfa60e75199692df" prot="public" virt="virtual"><scope>KWin::DrmBackend</scope><name>sceneEglDisplayObject</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a2edfea4626e01c8468bfaad1ad20ae62" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>sceneEglGlobalShareContext</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1a65b5509871eb6b3a7f788845aa661389" prot="public" virt="virtual"><scope>KWin::DrmBackend</scope><name>session</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1a261ba92b49ac12b4aba733c96a5e9e4e" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>setRenderBackend</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a420a62518578de2ed53ebfc7343f589d" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>setSceneEglGlobalShareContext</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1a3757001a423847dec64d68d1aedd1fbc" prot="public" virt="virtual"><scope>KWin::DrmBackend</scope><name>supportedCompositors</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1a6613494df72e3ac53463b7fc8a65b562" prot="public" virt="virtual"><scope>KWin::DrmBackend</scope><name>supportInformation</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1a648c05d231aa7bc25ac3c056c455ff22" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>updateOutputs</name></member>
+      <member refid="class_k_win_1_1_drm_backend_1ac3aa9950f116c97cb64df95007a17500" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>~DrmBackend</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a5959251a4cfffdafeb509b40c9a29a3d" prot="public" virt="non-virtual"><scope>KWin::DrmBackend</scope><name>~OutputBackend</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

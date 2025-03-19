@@ -1,0 +1,326 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="gestures_8h" kind="file" language="C++">
+    <compoundname>gestures.h</compoundname>
+    <includes refid="globals_8h" local="yes">effect/globals.h</includes>
+    <includes local="no">kwin_export.h</includes>
+    <includes local="no">QList</includes>
+    <includes local="no">QMap</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">QPointF</includes>
+    <includedby refid="gestures_8cpp" local="yes">kwin/src/gestures.cpp</includedby>
+    <includedby refid="globalshortcuts_8cpp" local="yes">kwin/src/globalshortcuts.cpp</includedby>
+    <includedby refid="input_8cpp" local="yes">kwin/src/input.cpp</includedby>
+    <includedby refid="screenedge_8cpp" local="yes">kwin/src/screenedge.cpp</includedby>
+    <includedby refid="gesturehandler_8cpp" local="yes">kwin/src/scripting/gesturehandler.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/gestures.h</label>
+        <link refid="gestures_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="5">
+        <label>QImage</label>
+      </node>
+      <node id="10">
+        <label>QList</label>
+      </node>
+      <node id="11">
+        <label>QMap</label>
+      </node>
+      <node id="12">
+        <label>QObject</label>
+      </node>
+      <node id="6">
+        <label>QPoint</label>
+      </node>
+      <node id="13">
+        <label>QPointF</label>
+      </node>
+      <node id="7">
+        <label>QVariant</label>
+      </node>
+      <node id="8">
+        <label>QVector2D</label>
+      </node>
+      <node id="3">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="9">
+        <label>kwin_export.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/gestures.cpp</label>
+        <link refid="gestures_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/gestures.h</label>
+        <link refid="gestures_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>kwin/src/globalshortcuts.cpp</label>
+        <link refid="globalshortcuts_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/input.cpp</label>
+        <link refid="input_8cpp"/>
+      </node>
+      <node id="5">
+        <label>kwin/src/screenedge.cpp</label>
+        <link refid="screenedge_8cpp"/>
+      </node>
+      <node id="6">
+        <label>kwin/src/scripting/gesturehandler.cpp</label>
+        <link refid="gesturehandler_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_gesture" prot="public">KWin::Gesture</innerclass>
+    <innerclass refid="class_k_win_1_1_swipe_gesture" prot="public">KWin::SwipeGesture</innerclass>
+    <innerclass refid="class_k_win_1_1_pinch_gesture" prot="public">KWin::PinchGesture</innerclass>
+    <innerclass refid="class_k_win_1_1_gesture_recognizer" prot="public">KWin::GestureRecognizer</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2017<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="globals_8h" kindref="compound">effect/globals.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;kwin_export.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QMap&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QPointF&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>Everytime<sp/>the<sp/>scale<sp/>of<sp/>the<sp/>gesture<sp/>changes<sp/>by<sp/>this<sp/>much,<sp/>the<sp/>callback<sp/>changes<sp/>by<sp/>1.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>This<sp/>is<sp/>the<sp/>amount<sp/>of<sp/>change<sp/>for<sp/>1<sp/>unit<sp/>of<sp/>change,<sp/>like<sp/>switch<sp/>by<sp/>1<sp/>desktop.</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>qreal<sp/>DEFAULT_UNIT_SCALE_DELTA<sp/>=<sp/>.2;<sp/></highlight><highlight class="comment">//<sp/>20%</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="class_k_win_1_1_gesture" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_gesture_1a8e44866da8cd62f2b5097e9c84544887" kindref="member">Gesture</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="31" refid="class_k_win_1_1_gesture_1a9a209432637e884ec4d1320bc3cf9f66" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_gesture_1a9a209432637e884ec4d1320bc3cf9f66" kindref="member">~Gesture</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_gesture_1a8e44866da8cd62f2b5097e9c84544887" kindref="member">Gesture</ref>(QObject<sp/>*parent);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="42" refid="class_k_win_1_1_gesture_1abe52712927a5dc0e61a57dfed65a494c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_gesture_1abe52712927a5dc0e61a57dfed65a494c" kindref="member">started</ref>();</highlight></codeline>
+<codeline lineno="46" refid="class_k_win_1_1_gesture_1acc2a90d209e0ac9b131e9a421dc110e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_gesture_1acc2a90d209e0ac9b131e9a421dc110e3" kindref="member">triggered</ref>();</highlight></codeline>
+<codeline lineno="50" refid="class_k_win_1_1_gesture_1a9c2e456f5fada41197cd0ae3918a35ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_gesture_1a9c2e456f5fada41197cd0ae3918a35ad" kindref="member">cancelled</ref>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="class_k_win_1_1_swipe_gesture" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_swipe_gesture_1a95b954429b67fcf3465389dc08bb085e" kindref="member">SwipeGesture</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_gesture_1a8e44866da8cd62f2b5097e9c84544887" kindref="member">Gesture</ref></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1a95b954429b67fcf3465389dc08bb085e" kindref="member">SwipeGesture</ref>(QObject<sp/>*parent<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58" refid="class_k_win_1_1_swipe_gesture_1a6aaca0433f22d7254c84ba2291cd567f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_swipe_gesture_1a6aaca0433f22d7254c84ba2291cd567f" kindref="member">~SwipeGesture</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1ae85ef68d8e7e8e8374b3d450d6fa44a1" kindref="member">minimumFingerCountIsRelevant</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1aa4582655a570eea6f04002a954ab1277" kindref="member">setMinimumFingerCount</ref>(uint<sp/>count);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>uint<sp/><ref refid="class_k_win_1_1_swipe_gesture_1a603127fe61e01e49987cf6d339751203" kindref="member">minimumFingerCount</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1a22f158cf56322541e491750ee6f952dc" kindref="member">maximumFingerCountIsRelevant</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1ac519e70422085a3f0104dbcb117f0161" kindref="member">setMaximumFingerCount</ref>(uint<sp/>count);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>uint<sp/><ref refid="class_k_win_1_1_swipe_gesture_1a7720ab93da717b4ce3c229eb52ee0b33" kindref="member">maximumFingerCount</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1ab2206ebabcc9101a43b58473495efd03" kindref="member">SwipeDirection</ref><sp/><ref refid="class_k_win_1_1_swipe_gesture_1a0fda85157c9ee55031d82510bb46df9e" kindref="member">direction</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1a09ec29a92b104228ff8dae1f6201a7a1" kindref="member">setDirection</ref>(<ref refid="namespace_k_win_1ab2206ebabcc9101a43b58473495efd03" kindref="member">SwipeDirection</ref><sp/><ref refid="class_k_win_1_1_swipe_gesture_1a0fda85157c9ee55031d82510bb46df9e" kindref="member">direction</ref>);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1a43a7049208b64d08bd90aaddd66697e2" kindref="member">setMinimumX</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1abf722c9faade6251a48058ecb4f3d86f" kindref="member">minimumX</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1aefd3324c2933ff206e02cf2dbcebb8da" kindref="member">minimumXIsRelevant</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1aaa5006ab13bd8f8207670a42a82e5169" kindref="member">setMinimumY</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1af1591b2c543f66ab2485c77142cfd92d" kindref="member">minimumY</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1acbb79f017e658d4089a00cbac6da526b" kindref="member">minimumYIsRelevant</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1a9c5dfc2d6aaf2bf98321977bb0517cdd" kindref="member">setMaximumX</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1afef92ea92ce063f6138837a118c46938" kindref="member">maximumX</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1a6e65bf8199f611c8df369d185e89fb83" kindref="member">maximumXIsRelevant</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1a0a99f4c568a58ac6b9a18c6af36a7d5a" kindref="member">setMaximumY</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1aa831ef494b8b293d8212699080e812a0" kindref="member">maximumY</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1a513df822e45b056326fde8e3fcf8a743" kindref="member">maximumYIsRelevant</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1adbe8d9f15f0c7ec1c771434fd113874d" kindref="member">setStartGeometry</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRect<sp/>&amp;geometry);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>QPointF<sp/><ref refid="class_k_win_1_1_swipe_gesture_1a62c1e5b0949cc25b0908f452d4213340" kindref="member">minimumDelta</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1aab736ee68f233d62dd293aa99f7e1110" kindref="member">setMinimumDelta</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>&amp;delta);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1a30ea6b02991477ee2d45bb2a29be7855" kindref="member">isMinimumDeltaRelevant</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>qreal<sp/><ref refid="class_k_win_1_1_swipe_gesture_1a17b3d210a22364f80d65f4742380838a" kindref="member">deltaToProgress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>&amp;delta)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1ab3f3d690006ce0feb76bc273c25385ec" kindref="member">minimumDeltaReached</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>&amp;delta)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="98" refid="class_k_win_1_1_swipe_gesture_1a5a6bfb66418846357933709cc33127ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1a5a6bfb66418846357933709cc33127ee" kindref="member">progress</ref>(qreal);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="class_k_win_1_1_swipe_gesture_1af1d9044f2cddcd065e039eb4aebe32b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_swipe_gesture_1af1d9044f2cddcd065e039eb4aebe32b0" kindref="member">deltaProgress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>&amp;delta);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_minimumFingerCountRelevant<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>uint<sp/>m_minimumFingerCount<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_maximumFingerCountRelevant<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>uint<sp/>m_maximumFingerCount<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1ab2206ebabcc9101a43b58473495efd03" kindref="member">SwipeDirection</ref><sp/>m_direction<sp/>=<sp/><ref refid="namespace_k_win_1ab2206ebabcc9101a43b58473495efd03a08a38277b0309070706f6652eeae9a53" kindref="member">SwipeDirection::Down</ref>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_minimumXRelevant<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_minimumX<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_minimumYRelevant<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_minimumY<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_maximumXRelevant<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_maximumX<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_maximumYRelevant<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_maximumY<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_minimumDeltaRelevant<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>QPointF<sp/>m_minimumDelta;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="class_k_win_1_1_pinch_gesture" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_pinch_gesture_1ab97a25319e82160fbb43eff8afc5fdde" kindref="member">PinchGesture</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_gesture_1a8e44866da8cd62f2b5097e9c84544887" kindref="member">Gesture</ref></highlight></codeline>
+<codeline lineno="124"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_pinch_gesture_1ab97a25319e82160fbb43eff8afc5fdde" kindref="member">PinchGesture</ref>(QObject<sp/>*parent<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="128" refid="class_k_win_1_1_pinch_gesture_1a39f1655cc4801a8cc53b0b383e8ef33c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_pinch_gesture_1a39f1655cc4801a8cc53b0b383e8ef33c" kindref="member">~PinchGesture</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_pinch_gesture_1aecf679203a5aad9a85c5d88131298ca9" kindref="member">minimumFingerCountIsRelevant</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_pinch_gesture_1ad904d3cfde080f188850126b0f9a9798" kindref="member">setMinimumFingerCount</ref>(uint<sp/>count);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>uint<sp/><ref refid="class_k_win_1_1_pinch_gesture_1aea1263b4d8b035552ac5a39d71b0a467" kindref="member">minimumFingerCount</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_pinch_gesture_1abeccd6728514e4a32b1f3fc4d138d949" kindref="member">maximumFingerCountIsRelevant</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_pinch_gesture_1a02b2908d110b48969bf605743927b040" kindref="member">setMaximumFingerCount</ref>(uint<sp/>count);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>uint<sp/><ref refid="class_k_win_1_1_pinch_gesture_1a0b78f79c6a3175f923b7248f5eea59df" kindref="member">maximumFingerCount</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a8852f83038eda36bc255d8f5f3baae05" kindref="member">PinchDirection</ref><sp/><ref refid="class_k_win_1_1_pinch_gesture_1ac07086ee31c73a4c80755e1d05d35b22" kindref="member">direction</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_pinch_gesture_1ae9cf6dfd85ef92d98b17e06cad916f2d" kindref="member">setDirection</ref>(<ref refid="namespace_k_win_1a8852f83038eda36bc255d8f5f3baae05" kindref="member">PinchDirection</ref><sp/><ref refid="class_k_win_1_1_pinch_gesture_1ac07086ee31c73a4c80755e1d05d35b22" kindref="member">direction</ref>);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>qreal<sp/><ref refid="class_k_win_1_1_pinch_gesture_1a8b441ba59626101d657aaebc7546d7f8" kindref="member">minimumScaleDelta</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_pinch_gesture_1aa91438c21fb01b9379957e46e656f831" kindref="member">setMinimumScaleDelta</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>qreal<sp/>&amp;scaleDelta);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_pinch_gesture_1a03344d2b0b0bd12c5252bd164436c7cd" kindref="member">isMinimumScaleDeltaRelevant</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>qreal<sp/><ref refid="class_k_win_1_1_pinch_gesture_1ad3a69d4a3409f770935323baaf52a7c1" kindref="member">scaleDeltaToProgress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>qreal<sp/>&amp;scaleDelta)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_pinch_gesture_1a446c8fb6cfa79d966e30a3c1249abe37" kindref="member">minimumScaleDeltaReached</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>qreal<sp/>&amp;scaleDelta)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="158" refid="class_k_win_1_1_pinch_gesture_1aab13f9a931e73c8d14bae2211dd72e99" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_pinch_gesture_1aab13f9a931e73c8d14bae2211dd72e99" kindref="member">progress</ref>(qreal);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_minimumFingerCountRelevant<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>uint<sp/>m_minimumFingerCount<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_maximumFingerCountRelevant<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>uint<sp/>m_maximumFingerCount<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a8852f83038eda36bc255d8f5f3baae05" kindref="member">PinchDirection</ref><sp/>m_direction<sp/>=<sp/><ref refid="namespace_k_win_1a8852f83038eda36bc255d8f5f3baae05a1c9861d5cf1799b46578652b62ce1d49" kindref="member">PinchDirection::Expanding</ref>;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_minimumScaleDeltaRelevant<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>qreal<sp/>m_minimumScaleDelta<sp/>=<sp/>DEFAULT_UNIT_SCALE_DELTA;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170" refid="class_k_win_1_1_gesture_recognizer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_gesture_recognizer_1a9171cea986ae3dedf728728ac0b33a3d" kindref="member">GestureRecognizer</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_gesture_recognizer_1a9171cea986ae3dedf728728ac0b33a3d" kindref="member">GestureRecognizer</ref>(QObject<sp/>*parent<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="175" refid="class_k_win_1_1_gesture_recognizer_1a8919f55d1c98aef7fe38ef19a5efc559" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_gesture_recognizer_1a8919f55d1c98aef7fe38ef19a5efc559" kindref="member">~GestureRecognizer</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_gesture_recognizer_1a8d777169188f8ee7935dc2c36154361b" kindref="member">registerSwipeGesture</ref>(<ref refid="class_k_win_1_1_swipe_gesture" kindref="compound">SwipeGesture</ref><sp/>*gesture);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_gesture_recognizer_1a7783ca68e31c2f7848b81a63ab595128" kindref="member">unregisterSwipeGesture</ref>(<ref refid="class_k_win_1_1_swipe_gesture" kindref="compound">SwipeGesture</ref><sp/>*gesture);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_gesture_recognizer_1abc49c6bc54a209fa0150c8693a3bc5d7" kindref="member">registerPinchGesture</ref>(<ref refid="class_k_win_1_1_pinch_gesture" kindref="compound">PinchGesture</ref><sp/>*gesture);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_gesture_recognizer_1add16741c555f410adc1986bed3f5131e" kindref="member">unregisterPinchGesture</ref>(<ref refid="class_k_win_1_1_pinch_gesture" kindref="compound">PinchGesture</ref><sp/>*gesture);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_gesture_recognizer_1ac7595bba0cf50802eed24ffb646ccfa0" kindref="member">startSwipeGesture</ref>(uint<sp/>fingerCount);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_gesture_recognizer_1ac7595bba0cf50802eed24ffb646ccfa0" kindref="member">startSwipeGesture</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>&amp;startPos);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_gesture_recognizer_1a39aacf2c7d3d096208aa6bd3012ae3ff" kindref="member">updateSwipeGesture</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>&amp;delta);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_gesture_recognizer_1ac06d90018011773dec8d56f9a8d4d4d4" kindref="member">cancelSwipeGesture</ref>();</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_gesture_recognizer_1a112d2f0856f5019301f9a2681e199b67" kindref="member">endSwipeGesture</ref>();</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_gesture_recognizer_1a03b981bc00b890a6a63e5c5560f3a81e" kindref="member">startPinchGesture</ref>(uint<sp/>fingerCount);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_gesture_recognizer_1ab109c012b4b1d55361d776f02457e130" kindref="member">updatePinchGesture</ref>(qreal<sp/>scale,<sp/>qreal<sp/>angleDelta,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>&amp;posDelta);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_gesture_recognizer_1a7e62df97dc8c4c9621149a3625cb7c4d" kindref="member">cancelPinchGesture</ref>();</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_gesture_recognizer_1ad16f090a1a4afe9bd44aca98e3d839dd" kindref="member">endPinchGesture</ref>();</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>cancelActiveGestures();</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>StartPositionBehavior<sp/>{</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Relevant,</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Irrelevant,</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>Axis<sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1aec4516626e95b6dc22c614c769a43590ac1b5fa03ecdb95d4a45dd1c40b02527f" kindref="member">Horizontal</ref>,</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1aec4516626e95b6dc22c614c769a43590a06ce2a25e5d12c166a36f654dbea6012" kindref="member">Vertical</ref>,</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a254cd5c17a7c926651623f471e6906f6ac4ecf42edf3ec35430405a17588ed7f8" kindref="member">None</ref>,</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>startSwipeGesture(uint<sp/>fingerCount,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>&amp;startPos,<sp/>StartPositionBehavior<sp/>startPosBehavior);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;SwipeGesture<sp/>*&gt;<sp/>m_swipeGestures;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;PinchGesture<sp/>*&gt;<sp/>m_pinchGestures;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;SwipeGesture<sp/>*&gt;<sp/>m_activeSwipeGestures;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;PinchGesture<sp/>*&gt;<sp/>m_activePinchGestures;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>QMap&lt;Gesture<sp/>*,<sp/>QMetaObject::Connection&gt;<sp/>m_destroyConnections;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>QPointF<sp/>m_currentDelta<sp/>=<sp/>QPointF(0,<sp/>0);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>qreal<sp/>m_currentScale<sp/>=<sp/>1;<sp/></highlight><highlight class="comment">//<sp/>For<sp/>Pinch<sp/>Gesture<sp/>recognition</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>uint<sp/>m_currentFingerCount<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>Axis<sp/>m_currentSwipeAxis<sp/>=<sp/>Axis::None;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/gestures.h"/>
+  </compounddef>
+</doxygen>

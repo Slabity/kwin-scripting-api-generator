@@ -1,0 +1,1878 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_scripted_effect" kind="class" language="C++" prot="public">
+    <compoundname>KWin::ScriptedEffect</compoundname>
+    <basecompoundref refid="class_k_win_1_1_animation_effect" prot="public" virt="non-virtual">KWin::AnimationEffect</basecompoundref>
+    <includes refid="scriptedeffect_8h" local="no">scriptedeffect.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_k_win_1_1_scripted_effect_1aa96f58378a6bc0272f687fb7e43dc14b" prot="public" static="no" strong="no">
+        <type></type>
+        <name>DataRole</name>
+        <qualifiedname>KWin::ScriptedEffect::DataRole</qualifiedname>
+        <enumvalue id="class_k_win_1_1_scripted_effect_1aa96f58378a6bc0272f687fb7e43dc14baed18cc74f6a354d3eaf530cf15008f7d" prot="public">
+          <name>WindowAddedGrabRole</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_scripted_effect_1aa96f58378a6bc0272f687fb7e43dc14ba25afebce28cb1290a8d36e83eb0747cc" prot="public">
+          <name>WindowClosedGrabRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_scripted_effect_1aa96f58378a6bc0272f687fb7e43dc14ba694cc82f362213861c81ad51a5a30c2e" prot="public">
+          <name>WindowMinimizedGrabRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_scripted_effect_1aa96f58378a6bc0272f687fb7e43dc14bad39e11218648d7e9264f084d6d0a8158" prot="public">
+          <name>WindowUnminimizedGrabRole</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_scripted_effect_1aa96f58378a6bc0272f687fb7e43dc14baac4ea26a1baeabbb47c62b476054bf2d" prot="public">
+          <name>WindowForceBlurRole</name>
+          <briefdescription>
+<para>For fullscreen effects to enforce blurring of windows,. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_scripted_effect_1aa96f58378a6bc0272f687fb7e43dc14ba67f4a446466d87ff9f88aa6bc3558a6f" prot="public">
+          <name>WindowForceBackgroundContrastRole</name>
+          <briefdescription>
+<para>For fullscreen effects to enforce the background contrast,. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="49" column="5" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="49" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_scripted_effect_1afb911d9087266805520dcba575d1f4c9" prot="public" static="no" strong="no">
+        <type></type>
+        <name>EasingCurve</name>
+        <qualifiedname>KWin::ScriptedEffect::EasingCurve</qualifiedname>
+        <enumvalue id="class_k_win_1_1_scripted_effect_1afb911d9087266805520dcba575d1f4c9a1b57043d5d540efbb03fd55239d18c5e" prot="public">
+          <name>GaussianCurve</name>
+          <initializer>= 128</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="59" column="5" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="59" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_scripted_effect_1a4acdc3956540f4c55d28312ae70879a8" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ShaderTrait</name>
+        <qualifiedname>KWin::ScriptedEffect::ShaderTrait</qualifiedname>
+        <enumvalue id="class_k_win_1_1_scripted_effect_1a4acdc3956540f4c55d28312ae70879a8a85736ea5bc8da56c443818dfff6ef91f" prot="public">
+          <name>MapTexture</name>
+          <initializer>= (1 &lt;&lt; 0)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_scripted_effect_1a4acdc3956540f4c55d28312ae70879a8a7974630d5c51a3472fbe51739f285185" prot="public">
+          <name>UniformColor</name>
+          <initializer>= (1 &lt;&lt; 1)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_scripted_effect_1a4acdc3956540f4c55d28312ae70879a8ac870e2fca2609e8077de9470fbb9ab43" prot="public">
+          <name>Modulate</name>
+          <initializer>= (1 &lt;&lt; 2)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_scripted_effect_1a4acdc3956540f4c55d28312ae70879a8a21b19a78d7fe5620d542c70f4e1ad07e" prot="public">
+          <name>AdjustSaturation</name>
+          <initializer>= (1 &lt;&lt; 3)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="63" column="5" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="63" bodyend="68"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="class_k_win_1_1_scripted_effect_1acbcacb67ef9ee09495b6c56ad37384f4" prot="private" static="no" strong="yes">
+        <type></type>
+        <name>AnimationType</name>
+        <qualifiedname>KWin::ScriptedEffect::AnimationType</qualifiedname>
+        <enumvalue id="class_k_win_1_1_scripted_effect_1acbcacb67ef9ee09495b6c56ad37384f4a059df89028c751bd463422f9c5bfbfd2" prot="private">
+          <name>Animate</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_scripted_effect_1acbcacb67ef9ee09495b6c56ad37384f4a5d5b78699e57104f2fa03bbdf7b9197b" prot="private">
+          <name>Set</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="202" column="5" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="202" bodyend="205"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="class_k_win_1_1_scripted_effect_1a0484f89d1c1e86aa1338a7f8dae40400" prot="public" static="no" readable="yes" writable="no" gettable="no" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>QString</type>
+        <definition>QString KWin::ScriptedEffect::pluginId</definition>
+        <argsstring></argsstring>
+        <name>pluginId</name>
+        <qualifiedname>KWin::ScriptedEffect::pluginId</qualifiedname>
+        <read>pluginId</read>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The plugin ID of the effect </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="41" column="5" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_k_win_1_1_scripted_effect_1a285f3be39f1d7400f8a86ca1b3f22f4b" prot="public" static="no" readable="yes" writable="no" gettable="no" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool KWin::ScriptedEffect::isActiveFullScreenEffect</definition>
+        <argsstring></argsstring>
+        <name>isActiveFullScreenEffect</name>
+        <qualifiedname>KWin::ScriptedEffect::isActiveFullScreenEffect</qualifiedname>
+        <read>isActiveFullScreenEffect</read>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>True if we are the active fullscreen effect </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="45" column="5" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_scripted_effect_1aca485bde124125c4fbb13e2b3010e08a" prot="private" static="no" mutable="no">
+        <type>QJSEngine *</type>
+        <definition>QJSEngine* KWin::ScriptedEffect::m_engine</definition>
+        <argsstring></argsstring>
+        <name>m_engine</name>
+        <qualifiedname>KWin::ScriptedEffect::m_engine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="211" column="15" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_scripted_effect_1ae10245a312729a33ae7842ec4bbe2a51" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString KWin::ScriptedEffect::m_effectName</definition>
+        <argsstring></argsstring>
+        <name>m_effectName</name>
+        <qualifiedname>KWin::ScriptedEffect::m_effectName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="212" column="13" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_scripted_effect_1ad493ccf6ad40854ee7e9173af59d45ae" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString KWin::ScriptedEffect::m_scriptFile</definition>
+        <argsstring></argsstring>
+        <name>m_scriptFile</name>
+        <qualifiedname>KWin::ScriptedEffect::m_scriptFile</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="213" column="13" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_scripted_effect_1a142a4e8943a15b8a064e0306e853540b" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString KWin::ScriptedEffect::m_exclusiveCategory</definition>
+        <argsstring></argsstring>
+        <name>m_exclusiveCategory</name>
+        <qualifiedname>KWin::ScriptedEffect::m_exclusiveCategory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="214" column="13" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_scripted_effect_1a6390ff17db89667eaf3ffcf6c2ed8cdd" prot="private" static="no" mutable="no">
+        <type>QHash&lt; int, QJSValueList &gt;</type>
+        <definition>QHash&lt;int, QJSValueList&gt; KWin::ScriptedEffect::m_screenEdgeCallbacks</definition>
+        <argsstring></argsstring>
+        <name>m_screenEdgeCallbacks</name>
+        <qualifiedname>KWin::ScriptedEffect::m_screenEdgeCallbacks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="215" column="11" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_scripted_effect_1a25c548a773c3b661c21cd76fe751bf44" prot="private" static="no" mutable="no">
+        <type>QHash&lt; int, QJSValueList &gt;</type>
+        <definition>QHash&lt;int, QJSValueList&gt; KWin::ScriptedEffect::m_realtimeScreenEdgeCallbacks</definition>
+        <argsstring></argsstring>
+        <name>m_realtimeScreenEdgeCallbacks</name>
+        <qualifiedname>KWin::ScriptedEffect::m_realtimeScreenEdgeCallbacks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="216" column="11" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_scripted_effect_1aae89012ccd0e8fab2cf1b5b4142a9e13" prot="private" static="no" mutable="no">
+        <type>KConfigLoader *</type>
+        <definition>KConfigLoader* KWin::ScriptedEffect::m_config</definition>
+        <argsstring></argsstring>
+        <name>m_config</name>
+        <qualifiedname>KWin::ScriptedEffect::m_config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="217" column="19" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_scripted_effect_1a642b5f00a0a2a5e146dde9719e75adf1" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KWin::ScriptedEffect::m_chainPosition</definition>
+        <argsstring></argsstring>
+        <name>m_chainPosition</name>
+        <qualifiedname>KWin::ScriptedEffect::m_chainPosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="218" column="9" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_scripted_effect_1a65478addfc47c6e2554bfd1a822ff187" prot="private" static="no" mutable="no">
+        <type>QHash&lt; int, QAction * &gt;</type>
+        <definition>QHash&lt;int, QAction *&gt; KWin::ScriptedEffect::m_touchScreenEdgeCallbacks</definition>
+        <argsstring></argsstring>
+        <name>m_touchScreenEdgeCallbacks</name>
+        <qualifiedname>KWin::ScriptedEffect::m_touchScreenEdgeCallbacks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="219" column="11" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_scripted_effect_1ab361ce723d7c1ef0e925ec0fcfda900a" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> *</type>
+        <definition>Effect* KWin::ScriptedEffect::m_activeFullScreenEffect</definition>
+        <argsstring></argsstring>
+        <name>m_activeFullScreenEffect</name>
+        <qualifiedname>KWin::ScriptedEffect::m_activeFullScreenEffect</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="220" column="12" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_scripted_effect_1ae6bd26281ac018c5d80bf3e7e2655492" prot="private" static="no" mutable="no">
+        <type>std::map&lt; uint, std::unique_ptr&lt; <ref refid="class_k_win_1_1_g_l_shader" kindref="compound">GLShader</ref> &gt; &gt;</type>
+        <definition>std::map&lt;uint, std::unique_ptr&lt;GLShader&gt; &gt; KWin::ScriptedEffect::m_shaders</definition>
+        <argsstring></argsstring>
+        <name>m_shaders</name>
+        <qualifiedname>KWin::ScriptedEffect::m_shaders</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="221" column="14" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_scripted_effect_1ae9728c4dae40b3e0dfe269201cc1398b" prot="private" static="no" mutable="no">
+        <type>uint</type>
+        <definition>uint KWin::ScriptedEffect::m_nextShaderId</definition>
+        <argsstring></argsstring>
+        <name>m_nextShaderId</name>
+        <qualifiedname>KWin::ScriptedEffect::m_nextShaderId</qualifiedname>
+        <initializer>{1u}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="222" column="10" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="222" bodyend="222"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1ab0db2cc128fffc252a9b5d7cf204166e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const QString &amp;</type>
+        <definition>const QString &amp; KWin::ScriptedEffect::scriptFile</definition>
+        <argsstring>() const</argsstring>
+        <name>scriptFile</name>
+        <qualifiedname>KWin::ScriptedEffect::scriptFile</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="70" column="19" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="70" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a94e3eae80a2fc9eb8b2eaad622b7d615" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::ScriptedEffect::reconfigure</definition>
+        <argsstring>(ReconfigureFlags flags) override</argsstring>
+        <name>reconfigure</name>
+        <qualifiedname>KWin::ScriptedEffect::reconfigure</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga737c6d80eb8f8b24fdc6398209c38e3d">reconfigure</reimplements>
+        <param>
+          <type>ReconfigureFlags</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when configuration changes (either the effect&apos;s or <ref refid="namespace_k_win" kindref="compound">KWin</ref>&apos;s global).</para>
+<para>In OpenGL based compositing, the frameworks ensures that the context is current when the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> is reconfigured. If this method is called from within the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> it is required to ensure that the context is current if the implementation does OpenGL calls. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="74" column="10" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="632" bodyend="639"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1aa1c85dfde7c960c579f5701ccfec7c4e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>int KWin::ScriptedEffect::requestedEffectChainPosition</definition>
+        <argsstring>() const override</argsstring>
+        <name>requestedEffectChainPosition</name>
+        <qualifiedname>KWin::ScriptedEffect::requestedEffectChainPosition</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga120531588e58691a5a18028158d2947a">requestedEffectChainPosition</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reimplement this method to indicate where in the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> chain the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> should be placed.</para>
+<para>A low number indicates early chain position, thus before other Effects got called, a high number indicates a late position. The returned number should be in the interval [0, 100]. The default value is 0.</para>
+<para>In KWin4 this information was provided in the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref>&apos;s desktop file as property X-KDE-Ordering. In the case of Scripted Effects this property is still used.</para>
+<para><simplesect kind="since"><para>5.0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="75" column="9" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="75" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a41e6aa752c9c00b5b2e69f75f3a58fca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString KWin::ScriptedEffect::activeConfig</definition>
+        <argsstring>() const</argsstring>
+        <name>activeConfig</name>
+        <qualifiedname>KWin::ScriptedEffect::activeConfig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="79" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a7901cbba588c3a236a0b009269628658" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScriptedEffect::setActiveConfig</definition>
+        <argsstring>(const QString &amp;name)</argsstring>
+        <name>setActiveConfig</name>
+        <qualifiedname>KWin::ScriptedEffect::setActiveConfig</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="80" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a1143ea2868b9c9be5eb8f0e2f2bd5e3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::ScriptedEffect::~ScriptedEffect</definition>
+        <argsstring>() override</argsstring>
+        <name>~ScriptedEffect</name>
+        <qualifiedname>KWin::ScriptedEffect::~ScriptedEffect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="84" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1ac758754b527c68af9cda8613f551a457" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE bool</type>
+        <definition>bool KWin::ScriptedEffect::isGrabbed</definition>
+        <argsstring>(KWin::EffectWindow *w, DataRole grabRole)</argsstring>
+        <name>isGrabbed</name>
+        <qualifiedname>KWin::ScriptedEffect::isGrabbed</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_scripted_effect_1aa96f58378a6bc0272f687fb7e43dc14b" kindref="member">DataRole</ref></type>
+          <declname>grabRole</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether another effect has grabbed the <computeroutput>w</computeroutput> with the given <computeroutput>grabRole</computeroutput>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The window to check </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>grabRole</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The grab role to check </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if another window has grabbed the effect, <computeroutput>false</computeroutput> otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="91" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="588" bodyend="596"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a73e3f6e5736eda00b418662565d3f79b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE bool</type>
+        <definition>bool KWin::ScriptedEffect::grab</definition>
+        <argsstring>(KWin::EffectWindow *w, DataRole grabRole, bool force=false)</argsstring>
+        <name>grab</name>
+        <qualifiedname>KWin::ScriptedEffect::grab</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_scripted_effect_1aa96f58378a6bc0272f687fb7e43dc14b" kindref="member">DataRole</ref></type>
+          <declname>grabRole</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>force</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Grabs the window with the specified role.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The window. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>grabRole</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The grab role. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>force</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>By default, if the window is already grabbed by another effect, then that window won&apos;t be grabbed by effect that called this method. If you would like to grab a window even if it&apos;s grabbed by another effect, then pass <computeroutput>true</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if the window was grabbed successfully, otherwise <computeroutput>false</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="104" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="598" bodyend="613"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a665bac66a5a0f0ac53aa7d520c2c9443" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE bool</type>
+        <definition>bool KWin::ScriptedEffect::ungrab</definition>
+        <argsstring>(KWin::EffectWindow *w, DataRole grabRole)</argsstring>
+        <name>ungrab</name>
+        <qualifiedname>KWin::ScriptedEffect::ungrab</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_scripted_effect_1aa96f58378a6bc0272f687fb7e43dc14b" kindref="member">DataRole</ref></type>
+          <declname>grabRole</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ungrabs the window with the specified role.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The window. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>grabRole</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The grab role. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if the window was ungrabbed successfully, otherwise <computeroutput>false</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="113" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="615" bodyend="630"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1ac893ac5540438046933d5cc278092c20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE QJSValue</type>
+        <definition>QJSValue KWin::ScriptedEffect::readConfig</definition>
+        <argsstring>(const QString &amp;key, const QJSValue &amp;defaultValue=QJSValue())</argsstring>
+        <name>readConfig</name>
+        <qualifiedname>KWin::ScriptedEffect::readConfig</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QJSValue()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads the value from the configuration data for the given key. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key to search for </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to return if the key is not found </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The config value if present </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="121" column="27" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="671" bodyend="677"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a55939f76add518a6fc5117437538d8e8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE int</type>
+        <definition>int KWin::ScriptedEffect::displayWidth</definition>
+        <argsstring>() const</argsstring>
+        <name>displayWidth</name>
+        <qualifiedname>KWin::ScriptedEffect::displayWidth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="123" column="22" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="679" bodyend="682"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a041bf74af50453e43f2445f3fec5d91c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE int</type>
+        <definition>int KWin::ScriptedEffect::displayHeight</definition>
+        <argsstring>() const</argsstring>
+        <name>displayHeight</name>
+        <qualifiedname>KWin::ScriptedEffect::displayHeight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="124" column="22" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="684" bodyend="687"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a526f45db4cd1d91c81846c6200576b8a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE int</type>
+        <definition>int KWin::ScriptedEffect::animationTime</definition>
+        <argsstring>(int defaultTime) const</argsstring>
+        <name>animationTime</name>
+        <qualifiedname>KWin::ScriptedEffect::animationTime</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>defaultTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="125" column="22" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="689" bodyend="692"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1ae0b75e9db28610d8d1b7cfea570034b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE void</type>
+        <definition>void KWin::ScriptedEffect::registerShortcut</definition>
+        <argsstring>(const QString &amp;objectName, const QString &amp;text, const QString &amp;keySequence, const QJSValue &amp;callback)</argsstring>
+        <name>registerShortcut</name>
+        <qualifiedname>KWin::ScriptedEffect::registerShortcut</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>objectName</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>keySequence</declname>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="127" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="641" bodyend="658"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a1fbe19df7959452547321c738017d35b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE bool</type>
+        <definition>bool KWin::ScriptedEffect::registerScreenEdge</definition>
+        <argsstring>(int edge, const QJSValue &amp;callback)</argsstring>
+        <name>registerScreenEdge</name>
+        <qualifiedname>KWin::ScriptedEffect::registerScreenEdge</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>edge</declname>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="129" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="694" bodyend="709"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a0f7d81b5f060b4f99c8693ab0af92348" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE bool</type>
+        <definition>bool KWin::ScriptedEffect::registerRealtimeScreenEdge</definition>
+        <argsstring>(int edge, const QJSValue &amp;callback)</argsstring>
+        <name>registerRealtimeScreenEdge</name>
+        <qualifiedname>KWin::ScriptedEffect::registerRealtimeScreenEdge</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>edge</declname>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="130" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="711" bodyend="746"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a1c29fbe9127872ae578c773d684bccaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE bool</type>
+        <definition>bool KWin::ScriptedEffect::unregisterScreenEdge</definition>
+        <argsstring>(int edge)</argsstring>
+        <name>unregisterScreenEdge</name>
+        <qualifiedname>KWin::ScriptedEffect::unregisterScreenEdge</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>edge</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="131" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="748" bodyend="758"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a6c49ecffcb7df67526ba06823a2f8116" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE bool</type>
+        <definition>bool KWin::ScriptedEffect::registerTouchScreenEdge</definition>
+        <argsstring>(int edge, const QJSValue &amp;callback)</argsstring>
+        <name>registerTouchScreenEdge</name>
+        <qualifiedname>KWin::ScriptedEffect::registerTouchScreenEdge</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>edge</declname>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="132" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="760" bodyend="776"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1abb35b9d668448dca9671da5e40f8ba03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE bool</type>
+        <definition>bool KWin::ScriptedEffect::unregisterTouchScreenEdge</definition>
+        <argsstring>(int edge)</argsstring>
+        <name>unregisterTouchScreenEdge</name>
+        <qualifiedname>KWin::ScriptedEffect::unregisterTouchScreenEdge</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>edge</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="133" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="778" bodyend="787"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a718103847041a63b5f9e7b83f2584b62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE quint64</type>
+        <definition>quint64 KWin::ScriptedEffect::animate</definition>
+        <argsstring>(KWin::EffectWindow *window, Attribute attribute, int ms, const QJSValue &amp;to, const QJSValue &amp;from=QJSValue(), uint metaData=0, int curve=QEasingCurve::Linear, int delay=0, bool fullScreen=false, bool keepAlive=true, uint shaderId=0)</argsstring>
+        <name>animate</name>
+        <qualifiedname>KWin::ScriptedEffect::animate</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_animation_effect_1ae82fac34cfd92461ef431fa8fa651895" kindref="member">Attribute</ref></type>
+          <declname>attribute</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ms</declname>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>to</declname>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>from</declname>
+          <defval>QJSValue()</defval>
+        </param>
+        <param>
+          <type>uint</type>
+          <declname>metaData</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>curve</declname>
+          <defval>QEasingCurve::Linear</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>delay</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fullScreen</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>keepAlive</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>uint</type>
+          <declname>shaderId</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="135" column="26" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="488" bodyend="500"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a750945b0c2b716ffe1e8cc4ff8ceee63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE QJSValue</type>
+        <definition>QJSValue KWin::ScriptedEffect::animate</definition>
+        <argsstring>(const QJSValue &amp;object)</argsstring>
+        <name>animate</name>
+        <qualifiedname>KWin::ScriptedEffect::animate</qualifiedname>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="139" column="27" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="502" bodyend="505"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1af0c40b66a3dd55ad6445699a81d08ab8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE quint64</type>
+        <definition>quint64 KWin::ScriptedEffect::set</definition>
+        <argsstring>(KWin::EffectWindow *window, Attribute attribute, int ms, const QJSValue &amp;to, const QJSValue &amp;from=QJSValue(), uint metaData=0, int curve=QEasingCurve::Linear, int delay=0, bool fullScreen=false, bool keepAlive=true, uint shaderId=0)</argsstring>
+        <name>set</name>
+        <qualifiedname>KWin::ScriptedEffect::set</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_animation_effect_1ae82fac34cfd92461ef431fa8fa651895" kindref="member">Attribute</ref></type>
+          <declname>attribute</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ms</declname>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>to</declname>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>from</declname>
+          <defval>QJSValue()</defval>
+        </param>
+        <param>
+          <type>uint</type>
+          <declname>metaData</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>curve</declname>
+          <defval>QEasingCurve::Linear</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>delay</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fullScreen</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>keepAlive</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>uint</type>
+          <declname>shaderId</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="141" column="26" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="507" bodyend="519"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a4d58071afc6a553b6d7307067564ebfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE QJSValue</type>
+        <definition>QJSValue KWin::ScriptedEffect::set</definition>
+        <argsstring>(const QJSValue &amp;object)</argsstring>
+        <name>set</name>
+        <qualifiedname>KWin::ScriptedEffect::set</qualifiedname>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="145" column="27" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="521" bodyend="524"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a43a81bbd38f7175c986eb75324e20211" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE bool</type>
+        <definition>bool KWin::ScriptedEffect::retarget</definition>
+        <argsstring>(quint64 animationId, const QJSValue &amp;newTarget, int newRemainingTime=-1)</argsstring>
+        <name>retarget</name>
+        <qualifiedname>KWin::ScriptedEffect::retarget</qualifiedname>
+        <param>
+          <type>quint64</type>
+          <declname>animationId</declname>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>newTarget</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>newRemainingTime</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="147" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="526" bodyend="529"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a095ec288e0af3b9c97f19f75a8baf5f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE bool</type>
+        <definition>bool KWin::ScriptedEffect::retarget</definition>
+        <argsstring>(const QList&lt; quint64 &gt; &amp;animationIds, const QJSValue &amp;newTarget, int newRemainingTime=-1)</argsstring>
+        <name>retarget</name>
+        <qualifiedname>KWin::ScriptedEffect::retarget</qualifiedname>
+        <param>
+          <type>const QList&lt; quint64 &gt; &amp;</type>
+          <declname>animationIds</declname>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>newTarget</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>newRemainingTime</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="149" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="531" bodyend="536"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1afc969f7dd63ab469aae18a092b27d2f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE bool</type>
+        <definition>bool KWin::ScriptedEffect::freezeInTime</definition>
+        <argsstring>(quint64 animationId, qint64 frozenTime)</argsstring>
+        <name>freezeInTime</name>
+        <qualifiedname>KWin::ScriptedEffect::freezeInTime</qualifiedname>
+        <param>
+          <type>quint64</type>
+          <declname>animationId</declname>
+        </param>
+        <param>
+          <type>qint64</type>
+          <declname>frozenTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="151" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="538" bodyend="541"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1ad0f7ba507a05b07894478766d3e86909" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE bool</type>
+        <definition>bool KWin::ScriptedEffect::freezeInTime</definition>
+        <argsstring>(const QList&lt; quint64 &gt; &amp;animationIds, qint64 frozenTime)</argsstring>
+        <name>freezeInTime</name>
+        <qualifiedname>KWin::ScriptedEffect::freezeInTime</qualifiedname>
+        <param>
+          <type>const QList&lt; quint64 &gt; &amp;</type>
+          <declname>animationIds</declname>
+        </param>
+        <param>
+          <type>qint64</type>
+          <declname>frozenTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="152" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="543" bodyend="548"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a9e66bbd52e2bea8e4d2fc3820c04f3ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE bool</type>
+        <definition>bool KWin::ScriptedEffect::redirect</definition>
+        <argsstring>(quint64 animationId, Direction direction, TerminationFlags terminationFlags=TerminateAtSource)</argsstring>
+        <name>redirect</name>
+        <qualifiedname>KWin::ScriptedEffect::redirect</qualifiedname>
+        <param>
+          <type>quint64</type>
+          <declname>animationId</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_animation_effect_1a010a03e246c674b58bedb4d006fa65fd" kindref="member">Direction</ref></type>
+          <declname>direction</declname>
+        </param>
+        <param>
+          <type>TerminationFlags</type>
+          <declname>terminationFlags</declname>
+          <defval><ref refid="class_k_win_1_1_animation_effect_1a9c6611cc8312646efd31f3eb9c3f3f69a850e4ef8f8749b3f53489ef7ba80f8be" kindref="member">TerminateAtSource</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="154" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="550" bodyend="553"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1af044cb51b37d2b35e8f241317c3700c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE bool</type>
+        <definition>bool KWin::ScriptedEffect::redirect</definition>
+        <argsstring>(const QList&lt; quint64 &gt; &amp;animationIds, Direction direction, TerminationFlags terminationFlags=TerminateAtSource)</argsstring>
+        <name>redirect</name>
+        <qualifiedname>KWin::ScriptedEffect::redirect</qualifiedname>
+        <param>
+          <type>const QList&lt; quint64 &gt; &amp;</type>
+          <declname>animationIds</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_animation_effect_1a010a03e246c674b58bedb4d006fa65fd" kindref="member">Direction</ref></type>
+          <declname>direction</declname>
+        </param>
+        <param>
+          <type>TerminationFlags</type>
+          <declname>terminationFlags</declname>
+          <defval><ref refid="class_k_win_1_1_animation_effect_1a9c6611cc8312646efd31f3eb9c3f3f69a850e4ef8f8749b3f53489ef7ba80f8be" kindref="member">TerminateAtSource</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="156" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="555" bodyend="560"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a495b3cf4de464209cc60c3b941b01139" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE bool</type>
+        <definition>bool KWin::ScriptedEffect::complete</definition>
+        <argsstring>(quint64 animationId)</argsstring>
+        <name>complete</name>
+        <qualifiedname>KWin::ScriptedEffect::complete</qualifiedname>
+        <param>
+          <type>quint64</type>
+          <declname>animationId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="159" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="562" bodyend="565"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a6f54aa4599f124b3db97ab778e8c15b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE bool</type>
+        <definition>bool KWin::ScriptedEffect::complete</definition>
+        <argsstring>(const QList&lt; quint64 &gt; &amp;animationIds)</argsstring>
+        <name>complete</name>
+        <qualifiedname>KWin::ScriptedEffect::complete</qualifiedname>
+        <param>
+          <type>const QList&lt; quint64 &gt; &amp;</type>
+          <declname>animationIds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="160" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="567" bodyend="572"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1aaad524cc76685b3e64c4f938da7c3895" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE bool</type>
+        <definition>bool KWin::ScriptedEffect::cancel</definition>
+        <argsstring>(quint64 animationId)</argsstring>
+        <name>cancel</name>
+        <qualifiedname>KWin::ScriptedEffect::cancel</qualifiedname>
+        <param>
+          <type>quint64</type>
+          <declname>animationId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="162" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="574" bodyend="577"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a93188d5d6d6d564109705627b1ffc691" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE bool</type>
+        <definition>bool KWin::ScriptedEffect::cancel</definition>
+        <argsstring>(const QList&lt; quint64 &gt; &amp;animationIds)</argsstring>
+        <name>cancel</name>
+        <qualifiedname>KWin::ScriptedEffect::cancel</qualifiedname>
+        <param>
+          <type>const QList&lt; quint64 &gt; &amp;</type>
+          <declname>animationIds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="163" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="579" bodyend="586"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a10451c07664be641cc0deb8dfcfa0e53" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE QList&lt; int &gt;</type>
+        <definition>QList&lt; int &gt; KWin::ScriptedEffect::touchEdgesForAction</definition>
+        <argsstring>(const QString &amp;action) const</argsstring>
+        <name>touchEdgesForAction</name>
+        <qualifiedname>KWin::ScriptedEffect::touchEdgesForAction</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>action</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="165" column="24" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="314" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a3e9a88a5a9fbcb5236a82185fc43640e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE uint</type>
+        <definition>uint KWin::ScriptedEffect::addFragmentShader</definition>
+        <argsstring>(ShaderTrait traits, const QString &amp;fragmentShaderFile={})</argsstring>
+        <name>addFragmentShader</name>
+        <qualifiedname>KWin::ScriptedEffect::addFragmentShader</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_scripted_effect_1a4acdc3956540f4c55d28312ae70879a8" kindref="member">ShaderTrait</ref></type>
+          <declname>traits</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>fragmentShaderFile</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="167" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="794" bodyend="820"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a5f838dc8c8ef2f1c3e87cb360cbb6b6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE void</type>
+        <definition>void KWin::ScriptedEffect::setUniform</definition>
+        <argsstring>(uint shaderId, const QString &amp;name, const QJSValue &amp;value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::ScriptedEffect::setUniform</qualifiedname>
+        <param>
+          <type>uint</type>
+          <declname>shaderId</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="169" column="23" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="830" bodyend="879"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1af6b0c85516aa9335a672efb314312213" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>QHash&lt; int, QJSValueList &gt; &amp;</type>
+        <definition>QHash&lt; int, QJSValueList &gt; &amp; KWin::ScriptedEffect::screenEdgeCallbacks</definition>
+        <argsstring>()</argsstring>
+        <name>screenEdgeCallbacks</name>
+        <qualifiedname>KWin::ScriptedEffect::screenEdgeCallbacks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="171" column="11" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="171" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a11a8ddebf66d7ee4e38d4748266f4ff8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>QHash&lt; int, QJSValueList &gt; &amp;</type>
+        <definition>QHash&lt; int, QJSValueList &gt; &amp; KWin::ScriptedEffect::realtimeScreenEdgeCallbacks</definition>
+        <argsstring>()</argsstring>
+        <name>realtimeScreenEdgeCallbacks</name>
+        <qualifiedname>KWin::ScriptedEffect::realtimeScreenEdgeCallbacks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="176" column="11" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="176" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a1dc017121a2f3bc0acff761f2f54fbd2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString KWin::ScriptedEffect::pluginId</definition>
+        <argsstring>() const</argsstring>
+        <name>pluginId</name>
+        <qualifiedname>KWin::ScriptedEffect::pluginId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="181" column="13" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="304" bodyend="307"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1aa4bc78136bc202d38fb92a68ed6a6516" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::ScriptedEffect::isActiveFullScreenEffect</definition>
+        <argsstring>() const</argsstring>
+        <name>isActiveFullScreenEffect</name>
+        <qualifiedname>KWin::ScriptedEffect::isActiveFullScreenEffect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="182" column="10" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="309" bodyend="312"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a9fd03bc5feb60b4bd22eb1d2fc19c799" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_scripted_effect" kindref="compound">ScriptedEffect</ref> *</type>
+        <definition>ScriptedEffect * KWin::ScriptedEffect::create</definition>
+        <argsstring>(const QString &amp;effectName, const QString &amp;pathToScript, int chainPosition, const QString &amp;exclusiveCategory)</argsstring>
+        <name>create</name>
+        <qualifiedname>KWin::ScriptedEffect::create</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>effectName</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>pathToScript</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>chainPosition</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>exclusiveCategory</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="81" column="27" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="173" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1ac8c4123c6188f4467a0d1c4a22bdd30f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_scripted_effect" kindref="compound">ScriptedEffect</ref> *</type>
+        <definition>ScriptedEffect * KWin::ScriptedEffect::create</definition>
+        <argsstring>(const KPluginMetaData &amp;effect)</argsstring>
+        <name>create</name>
+        <qualifiedname>KWin::ScriptedEffect::create</qualifiedname>
+        <param>
+          <type>const KPluginMetaData &amp;</type>
+          <declname>effect</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="82" column="27" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="158" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a09f6de284d3462e910ccfa699bf3e8db" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::ScriptedEffect::supported</definition>
+        <argsstring>()</argsstring>
+        <name>supported</name>
+        <qualifiedname>KWin::ScriptedEffect::supported</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="83" column="17" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="186" bodyend="189"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_k_win_1_1_scripted_effect_1ac58d1efb9325d6c32f33c6f2f50f00ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::ScriptedEffect::borderActivated</definition>
+        <argsstring>(ElectricBorder border) override</argsstring>
+        <name>borderActivated</name>
+        <qualifiedname>KWin::ScriptedEffect::borderActivated</qualifiedname>
+        <param>
+          <type><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5" kindref="member">ElectricBorder</ref></type>
+          <declname>border</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="185" column="10" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="660" bodyend="669"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_scripted_effect_1a41a60da566125e4e8395d5e05426589f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScriptedEffect::configChanged</definition>
+        <argsstring>()</argsstring>
+        <name>configChanged</name>
+        <qualifiedname>KWin::ScriptedEffect::configChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Signal emitted whenever the effect&apos;s config changed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="191" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_scripted_effect_1a4ef9cff7935bf5cb8d4ffcde878124e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScriptedEffect::animationEnded</definition>
+        <argsstring>(KWin::EffectWindow *w, quint64 animationId)</argsstring>
+        <name>animationEnded</name>
+        <qualifiedname>KWin::ScriptedEffect::animationEnded</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>quint64</type>
+          <declname>animationId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="192" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_scripted_effect_1a60b167be64e78d41d959b29a2425717d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ScriptedEffect::isActiveFullScreenEffectChanged</definition>
+        <argsstring>()</argsstring>
+        <name>isActiveFullScreenEffectChanged</name>
+        <qualifiedname>KWin::ScriptedEffect::isActiveFullScreenEffectChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="193" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1aa97d08987e54997fa9c454d9cddf5451" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::ScriptedEffect::ScriptedEffect</definition>
+        <argsstring>()</argsstring>
+        <name>ScriptedEffect</name>
+        <qualifiedname>KWin::ScriptedEffect::ScriptedEffect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="196" column="5" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="191" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a62c74c1892bca988f5cc253c278bd8b1" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QJSEngine *</type>
+        <definition>QJSEngine * KWin::ScriptedEffect::engine</definition>
+        <argsstring>() const</argsstring>
+        <name>engine</name>
+        <qualifiedname>KWin::ScriptedEffect::engine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="197" column="15" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="789" bodyend="792"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a25b0598332ded89e450c8926b29dee45" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::ScriptedEffect::init</definition>
+        <argsstring>(const QString &amp;effectName, const QString &amp;pathToScript)</argsstring>
+        <name>init</name>
+        <qualifiedname>KWin::ScriptedEffect::init</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>effectName</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>pathToScript</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="198" column="10" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="213" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1a3435a535510becd1357ab6d45b055791" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::ScriptedEffect::animationEnded</definition>
+        <argsstring>(KWin::EffectWindow *w, Attribute a, uint meta) override</argsstring>
+        <name>animationEnded</name>
+        <qualifiedname>KWin::ScriptedEffect::animationEnded</qualifiedname>
+        <reimplements refid="class_k_win_1_1_animation_effect_1a2621b78354e661cc248b395aa6a870fa">animationEnded</reimplements>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_animation_effect_1ae82fac34cfd92461ef431fa8fa651895" kindref="member">Attribute</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>uint</type>
+          <declname>meta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called whenever an animation ends.</para>
+<para>You can reimplement this method to keep a constant transformation for the window (i.e. keep it at some opacity or position) or to start another animation.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The animated window. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The animated attribute. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>meta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Originally supplied metadata to <ref refid="class_k_win_1_1_scripted_effect_1a718103847041a63b5f9e7b83f2584b62" kindref="member">animate()</ref> or <ref refid="class_k_win_1_1_scripted_effect_1af0c40b66a3dd55ad6445699a81d08ab8" kindref="member">set()</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>4.8 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="199" column="10" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="298" bodyend="302"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1af5219dc52aac3d39ae0db69efdce9adb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QJSValue</type>
+        <definition>QJSValue KWin::ScriptedEffect::animate_helper</definition>
+        <argsstring>(const QJSValue &amp;object, AnimationType animationType)</argsstring>
+        <name>animate_helper</name>
+        <qualifiedname>KWin::ScriptedEffect::animate_helper</qualifiedname>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>object</declname>
+        </param>
+        <param>
+          <type>AnimationType</type>
+          <declname>animationType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="207" column="14" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="332" bodyend="486"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripted_effect_1aea2654df7c44d708813481c3d39e8111" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_g_l_shader" kindref="compound">GLShader</ref> *</type>
+        <definition>GLShader * KWin::ScriptedEffect::findShader</definition>
+        <argsstring>(uint shaderId) const</argsstring>
+        <name>findShader</name>
+        <qualifiedname>KWin::ScriptedEffect::findShader</qualifiedname>
+        <param>
+          <type>uint</type>
+          <declname>shaderId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scriptedeffect.h" line="209" column="14" bodyfile="kwin/src/scripting/scriptedeffect.cpp" bodystart="822" bodyend="828"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>KWin::AnimationEffect</label>
+        <link refid="class_k_win_1_1_animation_effect"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>KWin::CrossFadeEffect</label>
+        <link refid="class_k_win_1_1_cross_fade_effect"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>KWin::Effect</label>
+        <link refid="class_k_win_1_1_effect"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::ScriptedEffect</label>
+        <link refid="class_k_win_1_1_scripted_effect"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>KWin::AnimationEffect</label>
+        <link refid="class_k_win_1_1_animation_effect"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>KWin::CrossFadeEffect</label>
+        <link refid="class_k_win_1_1_cross_fade_effect"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>KWin::Effect</label>
+        <link refid="class_k_win_1_1_effect"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::ScriptedEffect</label>
+        <link refid="class_k_win_1_1_scripted_effect"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/scripting/scriptedeffect.h" line="26" column="1" bodyfile="kwin/src/scripting/scriptedeffect.h" bodystart="27" bodyend="223"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_scripted_effect_1a41e6aa752c9c00b5b2e69f75f3a58fca" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>activeConfig</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a3e9a88a5a9fbcb5236a82185fc43640e" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>addFragmentShader</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ad40ec87323bcabe7a0f5fb868d477551" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Anchor</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ab44f8ffcb1249d665c49771754366a51" prot="protected" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>AniMap</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a718103847041a63b5f9e7b83f2584b62" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>animate</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a750945b0c2b716ffe1e8cc4ff8ceee63" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>animate</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1aab7f535260df8f6bb226f1590373dc4b" prot="protected" virt="non-virtual" ambiguityscope="KWin::AnimationEffect::"><scope>KWin::ScriptedEffect</scope><name>animate</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1af5219dc52aac3d39ae0db69efdce9adb" prot="private" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>animate_helper</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1abada8ad54366e90cc02a86c7006b5f82" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>AnimationEffect</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a4ef9cff7935bf5cb8d4ffcde878124e2" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>animationEnded</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a3435a535510becd1357ab6d45b055791" prot="protected" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>animationEnded</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a526f45db4cd1d91c81846c6200576b8a" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>animationTime</name></member>
+      <member refid="group__kwineffects_1gab9bcf52072fe74567496b0a894d1d873" prot="public" virt="non-virtual" ambiguityscope="KWin::AnimationEffect::"><scope>KWin::ScriptedEffect</scope><name>animationTime</name></member>
+      <member refid="group__kwineffects_1ga3a167fe6d9c46376ed46db13caf2d135" prot="public" virt="non-virtual" ambiguityscope="KWin::AnimationEffect::"><scope>KWin::ScriptedEffect</scope><name>animationTime</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1acbcacb67ef9ee09495b6c56ad37384f4" prot="private" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>AnimationType</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ae82fac34cfd92461ef431fa8fa651895" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Attribute</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a6a7b397dc18c582de01625168d197fc5a3049dbea054c421398df90b19831ef7a" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Axis</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a010a03e246c674b58bedb4d006fa65fdae88b023c45e724de59e05127674e0c9e" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Backward</name></member>
+      <member refid="class_k_win_1_1_cross_fade_effect_1a07422c4fb7d5c983a07ffffc677c5ec2" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>blocksDirectScanout</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea67d120ab5ce1dc424476e63c132af6c1" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Blur</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1ac58d1efb9325d6c32f33c6f2f50f00ea" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>borderActivated</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ad40ec87323bcabe7a0f5fb868d477551a0385c23ab058cc7a415e2d5a8c8ea5fa" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Bottom</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ae82fac34cfd92461ef431fa8fa651895af0d8dd4766d864f885d223490fa3e843" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Brightness</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1aaad524cc76685b3e64c4f938da7c3895" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>cancel</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a93188d5d6d6d564109705627b1ffc691" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>cancel</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ae82fac34cfd92461ef431fa8fa651895a0a1dcf1161d0d63b9cceea51b771022c" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Clip</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a734630d089906a4c694a426ec0aa35a9" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>clock</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a495b3cf4de464209cc60c3b941b01139" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>complete</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a6f54aa4599f124b3db97ab778e8c15b6" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>complete</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a41a60da566125e4e8395d5e05426589f" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>configChanged</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aead805f717a48c23959a1e9ecd7722d15d" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Contrast</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a9fd03bc5feb60b4bd22eb1d2fc19c799" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>create</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1ac8c4123c6188f4467a0d1c4a22bdd30f" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>create</name></member>
+      <member refid="class_k_win_1_1_cross_fade_effect_1ae701f741988327905e85e0cd0312de8d" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>CrossFadeEffect</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ae82fac34cfd92461ef431fa8fa651895abe18d52b08b44542c54a3dedd80446a6" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>CrossFadePrevious</name></member>
+      <member refid="group__kwineffects_1ga4da344d8b8f2cb9eecd6e64a9b758740" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>cursorPos</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1aa96f58378a6bc0272f687fb7e43dc14b" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>DataRole</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ad6d998c75de0348a1f99ed13cc0a4dba" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>debug</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a010a03e246c674b58bedb4d006fa65fd" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Direction</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a041bf74af50453e43f2445f3fec5d91c" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>displayHeight</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a55939f76add518a6fc5117437538d8e8" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>displayWidth</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a9c6611cc8312646efd31f3eb9c3f3f69a758333147a53791faf87eba7021f9e4a" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>DontTerminate</name></member>
+      <member refid="class_k_win_1_1_cross_fade_effect_1af425332f0e69817a60019b5a64a18746" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>drawWindow</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1afb911d9087266805520dcba575d1f4c9" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>EasingCurve</name></member>
+      <member refid="group__kwineffects_1ga7bd8262f4cb2c5c3090c748eb388ad7e" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Effect</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a62c74c1892bca988f5cc253c278bd8b1" prot="protected" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>engine</name></member>
+      <member refid="group__kwineffects_1ga6337b2a9b5aadfbb6b696119144b56ae" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Feature</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1aea2654df7c44d708813481c3d39e8111" prot="private" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>findShader</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a010a03e246c674b58bedb4d006fa65fda32e5555d3f443490616f78a97a0060c7" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Forward</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1afc969f7dd63ab469aae18a092b27d2f1" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>freezeInTime</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1ad0f7ba507a05b07894478766d3e86909" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>freezeInTime</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1afb911d9087266805520dcba575d1f4c9a1b57043d5d540efbb03fd55239d18c5e" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>GaussianCurve</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ae82fac34cfd92461ef431fa8fa651895a8b3561d41ad5a08eac2a33d499cead3f" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Generic</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a268fe59fcf9526311f6334882b0ec7a8" prot="protected" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>genericAnimation</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a73e3f6e5736eda00b418662565d3f79b" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>grab</name></member>
+      <member refid="group__kwineffects_1gab5e0581ae4b2dffe8014ff5cf6c21158" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>grabbedKeyboardEvent</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aeaecbb77ad241419970ece3d45296c4838" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>HighlightWindows</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ad40ec87323bcabe7a0f5fb868d477551a2a30ad52292faf409428986a70a77c10" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Horizontal</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a25b0598332ded89e450c8926b29dee45" prot="protected" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>init</name></member>
+      <member refid="group__kwineffects_1ga7b0ecb57667179e95c188f0ee7416d00" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>interpolate</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1aedee2e7f119b23b594b11389629cfd7f" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>isActive</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a285f3be39f1d7400f8a86ca1b3f22f4b" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>isActiveFullScreenEffect</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1aa4bc78136bc202d38fb92a68ed6a6516" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>isActiveFullScreenEffect</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a60b167be64e78d41d959b29a2425717d" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>isActiveFullScreenEffectChanged</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1ac758754b527c68af9cda8613f551a457" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>isGrabbed</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ad40ec87323bcabe7a0f5fb868d477551a160d2c804b35bace5baa66dfd2f66e23" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Left</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1ab361ce723d7c1ef0e925ec0fcfda900a" prot="private" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>m_activeFullScreenEffect</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a642b5f00a0a2a5e146dde9719e75adf1" prot="private" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>m_chainPosition</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1aae89012ccd0e8fab2cf1b5b4142a9e13" prot="private" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>m_config</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1ae10245a312729a33ae7842ec4bbe2a51" prot="private" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>m_effectName</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1aca485bde124125c4fbb13e2b3010e08a" prot="private" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>m_engine</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a142a4e8943a15b8a064e0306e853540b" prot="private" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>m_exclusiveCategory</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1ae9728c4dae40b3e0dfe269201cc1398b" prot="private" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>m_nextShaderId</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a25c548a773c3b661c21cd76fe751bf44" prot="private" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>m_realtimeScreenEdgeCallbacks</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a6390ff17db89667eaf3ffcf6c2ed8cdd" prot="private" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>m_screenEdgeCallbacks</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1ad493ccf6ad40854ee7e9173af59d45ae" prot="private" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>m_scriptFile</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1ae6bd26281ac018c5d80bf3e7e2655492" prot="private" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>m_shaders</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a65478addfc47c6e2554bfd1a822ff187" prot="private" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>m_touchScreenEdgeCallbacks</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a779e526b9a16d40fbb640f53927d52fa" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>metaData</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a6a7b397dc18c582de01625168d197fc5" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>MetaType</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ad40ec87323bcabe7a0f5fb868d477551a40c97ee0d8009fe1a77065c0a2dc8d8c" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Mouse</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ae82fac34cfd92461ef431fa8fa651895aba30e2f62820395107d4dab5e00652a3" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>NonFloatBase</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea170229312ed2ec0e446ee89ba7f6b6ca" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Nothing</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ae82fac34cfd92461ef431fa8fa651895a5e6275946ca4fe24e84549732ddc09c3" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Opacity</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dab0de2932c45bde6df3de10d00dbd6fcd" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>PAINT_SCREEN_BACKGROUND_FIRST</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da43acbfc913cae9eb3c363aeb0524f18f" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>PAINT_SCREEN_REGION</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da3e731594d83c3e92742bff7c420fb7f8" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>PAINT_SCREEN_TRANSFORMED</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da124dd798e5f793087e81da77e11a9b1e" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>PAINT_SCREEN_WITH_TRANSFORMED_WINDOWS</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dac606d3dcf2dd150234f71c4c39083c7d" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>PAINT_WINDOW_OPAQUE</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da684bb6c6c278b900b6d0c889e79233b8" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>PAINT_WINDOW_TRANSFORMED</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dac7237bf4bb4d6ea6d6fb1215db19b45e" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>PAINT_WINDOW_TRANSLUCENT</name></member>
+      <member refid="group__kwineffects_1ga44ee94161446ce6fb2502376af6515a8" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>paintScreen</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a86754f3f8727ccb0a0b4f8416c78e235" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>paintWindow</name></member>
+      <member refid="group__kwineffects_1ga5fb1bc87ff54dcc2cfe87b070816ab00" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>perform</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a0484f89d1c1e86aa1338a7f8dae40400" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>pluginId</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a1dc017121a2f3bc0acff761f2f54fbd2" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>pluginId</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ae82fac34cfd92461ef431fa8fa651895afdce20e450a71474e85b2f75f80a3a21" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Position</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a149ee7d8e665976d69fb6a3510daa9f6" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>postPaintScreen</name></member>
+      <member refid="group__kwineffects_1ga9b7cf82c6f74331cffabb06c63ef914c" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>postPaintWindow</name></member>
+      <member refid="group__kwineffects_1ga2edc1b757e36bb6bcbbacde454dfc05c" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>prePaintScreen</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a2f37667a2ccbd4e65c493d7633b029f3" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>prePaintWindow</name></member>
+      <member refid="group__kwineffects_1ga30fc2cbbdd90f95568a9e350f34bf2b7" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>provides</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ac73b6519cc131623633292e7997841af" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>qecGaussian</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1ac893ac5540438046933d5cc278092c20" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>readConfig</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a11a8ddebf66d7ee4e38d4748266f4ff8" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>realtimeScreenEdgeCallbacks</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a94e3eae80a2fc9eb8b2eaad622b7d615" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>reconfigure</name></member>
+      <member refid="group__kwineffects_1gga4aebd7d0f695e37678debaa118fa92dca19d3e23e53788c8d9cc9c18fbf75fc7d" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>ReconfigureAll</name></member>
+      <member refid="group__kwineffects_1ga4aebd7d0f695e37678debaa118fa92dc" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>ReconfigureFlag</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a9e66bbd52e2bea8e4d2fc3820c04f3ab" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>redirect</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1af044cb51b37d2b35e8f241317c3700c6" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>redirect</name></member>
+      <member refid="class_k_win_1_1_cross_fade_effect_1a9b11480b3e53305cb64217ce477555d3" prot="public" virt="non-virtual" ambiguityscope="KWin::CrossFadeEffect::"><scope>KWin::ScriptedEffect</scope><name>redirect</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a0f7d81b5f060b4f99c8693ab0af92348" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>registerRealtimeScreenEdge</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a1fbe19df7959452547321c738017d35b" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>registerScreenEdge</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1ae0b75e9db28610d8d1b7cfea570034b7" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>registerShortcut</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a6c49ecffcb7df67526ba06823a2f8116" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>registerTouchScreenEdge</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a6a7b397dc18c582de01625168d197fc5a576bb734f707295c07d6838c89f58607" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>RelativeSourceX</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a6a7b397dc18c582de01625168d197fc5a525af2fcf0d6b53ee897c2dade0d5ecf" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>RelativeSourceY</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a6a7b397dc18c582de01625168d197fc5a295dca0b686357f91450db4afd2f01f2" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>RelativeTargetX</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a6a7b397dc18c582de01625168d197fc5a303e9d59502b2520b5813ee533f3f72d" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>RelativeTargetY</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1aa1c85dfde7c960c579f5701ccfec7c4e" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>requestedEffectChainPosition</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a43a81bbd38f7175c986eb75324e20211" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>retarget</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a095ec288e0af3b9c97f19f75a8baf5f4" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>retarget</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a3ae98ef446f259a978740c9448a45fb8" prot="protected" virt="non-virtual" ambiguityscope="KWin::AnimationEffect::"><scope>KWin::ScriptedEffect</scope><name>retarget</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ad40ec87323bcabe7a0f5fb868d477551ade91b500003f9970d5625d0e0a300110" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Right</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ae82fac34cfd92461ef431fa8fa651895ac186a3c1bae928b38bea296d136a4bab" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Rotation</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ae82fac34cfd92461ef431fa8fa651895ad7b030ea591560d4e0aab15d47b7b2b4" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Saturation</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ae82fac34cfd92461ef431fa8fa651895a2de3a5439db74acb3d48c5a053f62c7b" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Scale</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1af6b0c85516aa9335a672efb314312213" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>screenEdgeCallbacks</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea592ea0de7a4d658a1ef9bbb48b18e15a" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>ScreenInversion</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1aa97d08987e54997fa9c454d9cddf5451" prot="protected" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>ScriptedEffect</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1ab0db2cc128fffc252a9b5d7cf204166e" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>scriptFile</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1af0c40b66a3dd55ad6445699a81d08ab8" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>set</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a4d58071afc6a553b6d7307067564ebfb" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>set</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a01c90afe88d6742968cdbe8ff911cdde" prot="protected" virt="non-virtual" ambiguityscope="KWin::AnimationEffect::"><scope>KWin::ScriptedEffect</scope><name>set</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a7901cbba588c3a236a0b009269628658" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>setActiveConfig</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a32d06cdede96d4fcc724f73293b7560b" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>setMetaData</name></member>
+      <member refid="group__kwineffects_1ga1efc42cd9be15e8200c6e55f6bf47cb8" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>setPositionTransformations</name></member>
+      <member refid="class_k_win_1_1_cross_fade_effect_1a76f2c8834b93c008b25aca2040473fb4" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>setShader</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a5f838dc8c8ef2f1c3e87cb360cbb6b6e" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ae82fac34cfd92461ef431fa8fa651895a8c40fbbd0f3bde194ef05457bbea38e2" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Shader</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a4acdc3956540f4c55d28312ae70879a8" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>ShaderTrait</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ae82fac34cfd92461ef431fa8fa651895a079dabf6f4315fa57ead06c5115edccf" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>ShaderUniform</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ae82fac34cfd92461ef431fa8fa651895a157e84f15dee02e265344aa50d75ca69" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Size</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a6a7b397dc18c582de01625168d197fc5af8919e2a0aa0a154b5544d0b5fc51fcb" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>SourceAnchor</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a2348a8c91ecd82ad000cc3ed58988d10" prot="protected" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>state</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a09f6de284d3462e910ccfa699bf3e8db" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>supported</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea19036d413806c53978a3234e7eb197c4" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>SystemBell</name></member>
+      <member refid="group__kwineffects_1ga2d22a8f0b8a4d81615dff67dc1ef970f" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>tabletPadButtonEvent</name></member>
+      <member refid="group__kwineffects_1gaa084e5a45597f5775213715eb5506f63" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>tabletPadRingEvent</name></member>
+      <member refid="group__kwineffects_1ga4998fb0983bd97163935cad2c4dedd76" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>tabletPadStripEvent</name></member>
+      <member refid="group__kwineffects_1ga1d4ae01f5935ea887a12018d59191cbf" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>tabletToolAxis</name></member>
+      <member refid="group__kwineffects_1ga7a984d7d83dfa97962b8404301c6aba9" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>tabletToolButtonEvent</name></member>
+      <member refid="group__kwineffects_1ga4ed77506be381680bf664dbc8c20e036" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>tabletToolProximity</name></member>
+      <member refid="group__kwineffects_1gaf16e9ca42cceb738fb859d1a1a462548" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>tabletToolTip</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a6a7b397dc18c582de01625168d197fc5a84d2cf15f3fc82689b425711128c5263" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>TargetAnchor</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a9c6611cc8312646efd31f3eb9c3f3f69a850e4ef8f8749b3f53489ef7ba80f8be" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>TerminateAtSource</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a9c6611cc8312646efd31f3eb9c3f3f69ae718635f43fba009820bdc040def880b" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>TerminateAtTarget</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1a9c6611cc8312646efd31f3eb9c3f3f69" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>TerminationFlag</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ad40ec87323bcabe7a0f5fb868d477551a85a17a1b2761f8cd209c95ea645531ff" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Top</name></member>
+      <member refid="group__kwineffects_1gaa31554949bc00085e6380b50be16138e" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>touchCancel</name></member>
+      <member refid="group__kwineffects_1ga315fd305e7570f41e7bce7db6812381f" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>touchDown</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a10451c07664be641cc0deb8dfcfa0e53" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>touchEdgesForAction</name></member>
+      <member refid="group__kwineffects_1ga54d00a9e05b5d4597db40c2f5b1d36de" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>touchMotion</name></member>
+      <member refid="group__kwineffects_1gaf3871967d6199eb7c87621bc75b925bb" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>touchUp</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ae82fac34cfd92461ef431fa8fa651895a812ea0c08ce09dd69f2ccaa0fad06482" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Translation</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a665bac66a5a0f0ac53aa7d520c2c9443" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>ungrab</name></member>
+      <member refid="class_k_win_1_1_cross_fade_effect_1a54887120fb87e713e90c0f3e6fe1ed02" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>unredirect</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a1c29fbe9127872ae578c773d684bccaf" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>unregisterScreenEdge</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1abb35b9d668448dca9671da5e40f8ba03" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>unregisterTouchScreenEdge</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ad40ec87323bcabe7a0f5fb868d477551ad2ca49df4be8d318e078cae5ac1667a7" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>Vertical</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1aa96f58378a6bc0272f687fb7e43dc14baed18cc74f6a354d3eaf530cf15008f7d" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>WindowAddedGrabRole</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1aa96f58378a6bc0272f687fb7e43dc14ba25afebce28cb1290a8d36e83eb0747cc" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>WindowClosedGrabRole</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1aa96f58378a6bc0272f687fb7e43dc14ba67f4a446466d87ff9f88aa6bc3558a6f" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>WindowForceBackgroundContrastRole</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1aa96f58378a6bc0272f687fb7e43dc14baac4ea26a1baeabbb47c62b476054bf2d" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>WindowForceBlurRole</name></member>
+      <member refid="group__kwineffects_1ga7b142933c38cb9b4a433b768b266e7cb" prot="public" virt="virtual"><scope>KWin::ScriptedEffect</scope><name>windowInputMouseEvent</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1aa96f58378a6bc0272f687fb7e43dc14ba694cc82f362213861c81ad51a5a30c2e" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>WindowMinimizedGrabRole</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1aa96f58378a6bc0272f687fb7e43dc14bad39e11218648d7e9264f084d6d0a8158" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>WindowUnminimizedGrabRole</name></member>
+      <member refid="class_k_win_1_1_animation_effect_1ad720a80777a9b23dd5020b57771febbb" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>~AnimationEffect</name></member>
+      <member refid="class_k_win_1_1_cross_fade_effect_1a5c1a9467b3f91d67b6485e4fd859f7eb" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>~CrossFadeEffect</name></member>
+      <member refid="group__kwineffects_1ga50174eb0169aebceb78ebd5aff71c481" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>~Effect</name></member>
+      <member refid="class_k_win_1_1_scripted_effect_1a1143ea2868b9c9be5eb8f0e2f2bd5e3c" prot="public" virt="non-virtual"><scope>KWin::ScriptedEffect</scope><name>~ScriptedEffect</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

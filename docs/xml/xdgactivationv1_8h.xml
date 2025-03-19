@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="xdgactivationv1_8h" kind="file" language="C++">
+    <compoundname>xdgactivationv1.h</compoundname>
+    <includes local="yes">kwin_export.h</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">QPointer</includes>
+    <includedby refid="killprompt_8cpp" local="yes">kwin/src/killprompt.cpp</includedby>
+    <includedby refid="windowsystem_8cpp" local="no">kwin/src/plugins/windowsystem/windowsystem.cpp</includedby>
+    <includedby refid="wayland__server_8cpp" local="yes">kwin/src/wayland_server.cpp</includedby>
+    <includedby refid="xdgactivationv1_8cpp" local="yes">kwin/src/xdgactivationv1.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/xdgactivationv1.h</label>
+        <link refid="xdgactivationv1_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+      <node id="4">
+        <label>QPointer</label>
+      </node>
+      <node id="2">
+        <label>kwin_export.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/killprompt.cpp</label>
+        <link refid="killprompt_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/plugins/windowsystem/windowsystem.cpp</label>
+        <link refid="windowsystem_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/wayland_server.cpp</label>
+        <link refid="wayland__server_8cpp"/>
+      </node>
+      <node id="5">
+        <label>kwin/src/xdgactivationv1.cpp</label>
+        <link refid="xdgactivationv1_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/xdgactivationv1.h</label>
+        <link refid="xdgactivationv1_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_xdg_activation_v1_integration" prot="public">KWin::XdgActivationV1Integration</innerclass>
+    <innerclass refid="struct_k_win_1_1_xdg_activation_v1_integration_1_1_activation_token" prot="private">KWin::XdgActivationV1Integration::ActivationToken</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2020<sp/>Aleix<sp/>Pol<sp/>Gonzalez<sp/>&lt;aleixpol@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;kwin_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QPointer&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_seat_interface" kindref="compound">SeatInterface</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_client_connection" kindref="compound">ClientConnection</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_xdg_activation_v1_interface" kindref="compound">XdgActivationV1Interface</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_plasma_window_activation_interface" kindref="compound">PlasmaWindowActivationInterface</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_k_win_1_1_xdg_activation_v1_integration" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_xdg_activation_v1_integration_1a39b4a396a8aac502f0aeefc15c042820" kindref="member">XdgActivationV1Integration</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xdg_activation_v1_integration_1a39b4a396a8aac502f0aeefc15c042820" kindref="member">XdgActivationV1Integration</ref>(<ref refid="class_k_win_1_1_xdg_activation_v1_interface" kindref="compound">XdgActivationV1Interface</ref><sp/>*activation,<sp/>QObject<sp/>*parent);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="class_k_win_1_1_xdg_activation_v1_integration_1abe02371005b8187612b941936127ba72" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_xdg_activation_v1_integration_1abe02371005b8187612b941936127ba72" kindref="member">requestPrivilegedToken</ref>(<ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref><sp/>*surface,<sp/>uint<sp/>serial,<sp/><ref refid="class_k_win_1_1_seat_interface" kindref="compound">SeatInterface</ref><sp/>*seat,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;appId)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>requestToken(</highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>surface,<sp/>serial,<sp/>seat,<sp/>appId);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>activateSurface(<ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref><sp/>*surface,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;token);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>requestToken(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isPrivileged,<sp/><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref><sp/>*surface,<sp/>uint<sp/>serial,<sp/><ref refid="class_k_win_1_1_seat_interface" kindref="compound">SeatInterface</ref><sp/>*seat,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;appId);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>clear();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">ActivationToken</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QString<sp/>token;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isPrivileged;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QPointer&lt;const<sp/>SurfaceInterface&gt;<sp/>surface;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint<sp/>serial;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_seat_interface" kindref="compound">SeatInterface</ref><sp/>*seat;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QString<sp/>applicationId;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>showNotify;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unique_ptr&lt;PlasmaWindowActivationInterface&gt;<sp/>activation;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;ActivationToken&gt;<sp/>m_currentActivationToken;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/xdgactivationv1.h"/>
+  </compounddef>
+</doxygen>

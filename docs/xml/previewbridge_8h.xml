@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="previewbridge_8h" kind="file" language="C++">
+    <compoundname>previewbridge.h</compoundname>
+    <includes local="no">KDecoration3/DecorationButton</includes>
+    <includes local="no">KDecoration3/Private/DecorationBridge</includes>
+    <includes local="no">QList</includes>
+    <includes local="no">QPointer</includes>
+    <includes local="no">QQmlEngine</includes>
+    <includedby refid="previewbridge_8cpp" local="yes">kwin/src/kcms/decoration/declarative-plugin/previewbridge.cpp</includedby>
+    <includedby refid="previewbutton_8cpp" local="yes">kwin/src/kcms/decoration/declarative-plugin/previewbutton.cpp</includedby>
+    <includedby refid="previewitem_8cpp" local="yes">kwin/src/kcms/decoration/declarative-plugin/previewitem.cpp</includedby>
+    <includedby refid="previewsettings_8cpp" local="yes">kwin/src/kcms/decoration/declarative-plugin/previewsettings.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/kcms/decoration/declarative-plugin/previewbridge.h</label>
+        <link refid="previewbridge_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KDecoration3/DecorationButton</label>
+      </node>
+      <node id="3">
+        <label>KDecoration3/Private/DecorationBridge</label>
+      </node>
+      <node id="4">
+        <label>QList</label>
+      </node>
+      <node id="5">
+        <label>QPointer</label>
+      </node>
+      <node id="6">
+        <label>QQmlEngine</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/kcms/decoration/declarative-plugin/previewbridge.cpp</label>
+        <link refid="previewbridge_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/kcms/decoration/declarative-plugin/previewbridge.h</label>
+        <link refid="previewbridge_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>kwin/src/kcms/decoration/declarative-plugin/previewbutton.cpp</label>
+        <link refid="previewbutton_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/kcms/decoration/declarative-plugin/previewitem.cpp</label>
+        <link refid="previewitem_8cpp"/>
+      </node>
+      <node id="5">
+        <label>kwin/src/kcms/decoration/declarative-plugin/previewsettings.cpp</label>
+        <link refid="previewsettings_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_decoration3_1_1_preview_1_1_preview_bridge" prot="public">KDecoration3::Preview::PreviewBridge</innerclass>
+    <innerclass refid="class_k_decoration3_1_1_preview_1_1_bridge_item" prot="public">KDecoration3::Preview::BridgeItem</innerclass>
+    <innernamespace refid="namespace_k_decoration3">KDecoration3</innernamespace>
+    <innernamespace refid="namespace_k_decoration3_1_1_preview">KDecoration3::Preview</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2014<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-only<sp/>OR<sp/>GPL-3.0-only<sp/>OR<sp/>LicenseRef-KDE-Accepted-GPL</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KDecoration3/DecorationButton&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KDecoration3/Private/DecorationBridge&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QPointer&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QQmlEngine&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QQuickItem;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KPluginFactory;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_decoration3" kindref="compound">KDecoration3</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_decoration3_1_1_preview" kindref="compound">Preview</ref></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_decoration3_1_1_preview_1_1_preview_client" kindref="compound">PreviewClient</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_decoration3_1_1_preview_1_1_preview_item" kindref="compound">PreviewItem</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings" kindref="compound">PreviewSettings</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="class_k_decoration3_1_1_preview_1_1_preview_bridge" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1adac0fd24875fb436ba77bd609e0bfb76" kindref="member">PreviewBridge</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>KDecoration3::DecorationBridge</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>QML_ANONYMOUS</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a471a9f1b9c73c9dea2775dd625584fdb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QString<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a471a9f1b9c73c9dea2775dd625584fdb" kindref="member">plugin</ref><sp/>READ<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a471a9f1b9c73c9dea2775dd625584fdb" kindref="member">plugin</ref><sp/>WRITE<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a9c65165b153fd6c18cdc5d6185210c49" kindref="member">setPlugin</ref><sp/>NOTIFY<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1adddd5c264dba963ef5cf0e724b269250" kindref="member">pluginChanged</ref>)</highlight></codeline>
+<codeline lineno="34" refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a7bf45e58b16aed2b8181c528a0a79a49" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QString<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a7bf45e58b16aed2b8181c528a0a79a49" kindref="member">theme</ref><sp/>READ<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a7bf45e58b16aed2b8181c528a0a79a49" kindref="member">theme</ref><sp/>WRITE<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a50994eeaf04cb1dd468626663df1ccd8" kindref="member">setTheme</ref><sp/>NOTIFY<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1ae52f499ddd072486fa0e5317b3890318" kindref="member">themeChanged</ref>)</highlight></codeline>
+<codeline lineno="35" refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1abbd22ec7f9c3d7c6cd27f1775388697f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QString<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1abbd22ec7f9c3d7c6cd27f1775388697f" kindref="member">kcmoduleName</ref><sp/>READ<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1abbd22ec7f9c3d7c6cd27f1775388697f" kindref="member">kcmoduleName</ref><sp/>WRITE<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1af807b413a606f19e66d993a896d68698" kindref="member">setKcmoduleName</ref><sp/>NOTIFY<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1aa3d262f930aa1a4aa5fae4bf95b94fd6" kindref="member">kcmoduleNameChanged</ref>)</highlight></codeline>
+<codeline lineno="36" refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1aab523cb972570dc2f051b7e72c3f307a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1aab523cb972570dc2f051b7e72c3f307a" kindref="member">valid</ref><sp/>READ<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a6f0196c8baf29ea12761b623b6f53390" kindref="member">isValid</ref><sp/>NOTIFY<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1ad659135020140bc3a30b136a8a856d6d" kindref="member">validChanged</ref>)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>explicit<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1adac0fd24875fb436ba77bd609e0bfb76" kindref="member">PreviewBridge</ref>(QObject<sp/>*parent<sp/>=<sp/></highlight><highlight class="keywordtype">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39" refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a3e10240bc40f3bf0f2a07c7628617bf9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1adac0fd24875fb436ba77bd609e0bfb76" kindref="member">PreviewBridge</ref>()<sp/>override;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;DecoratedWindowPrivate&gt;<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1ace2cb5717fe8e1ffb4f4e2456611a478" kindref="member">createClient</ref>(DecoratedWindow<sp/>*client,<sp/>Decoration<sp/>*decoration)<sp/>override;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;DecorationSettingsPrivate&gt;<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a831d6b52253e5c3b58afe28408446e7b" kindref="member">settings</ref>(DecorationSettings<sp/>*parent)<sp/>override;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a486e220649fb82013aef2e003d728da8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_client" kindref="compound">PreviewClient</ref><sp/>*<ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a486e220649fb82013aef2e003d728da8" kindref="member">lastCreatedClient</ref>()</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_lastCreatedClient;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47" refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1afa6caf27fc2fa61936849c8ab18b47ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings" kindref="compound">PreviewSettings</ref><sp/>*<ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1afa6caf27fc2fa61936849c8ab18b47ca" kindref="member">lastCreatedSettings</ref>()</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_lastCreatedSettings;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a3f1999331594a0fb16271cac75139a73" kindref="member">registerPreviewItem</ref>(<ref refid="class_k_decoration3_1_1_preview_1_1_preview_item" kindref="compound">PreviewItem</ref><sp/>*item);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a8dc387ee23f0276ef7233a28eebc1dbe" kindref="member">unregisterPreviewItem</ref>(<ref refid="class_k_decoration3_1_1_preview_1_1_preview_item" kindref="compound">PreviewItem</ref><sp/>*item);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a9c65165b153fd6c18cdc5d6185210c49" kindref="member">setPlugin</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;<ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a471a9f1b9c73c9dea2775dd625584fdb" kindref="member">plugin</ref>);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a471a9f1b9c73c9dea2775dd625584fdb" kindref="member">plugin</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1af807b413a606f19e66d993a896d68698" kindref="member">setKcmoduleName</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;name);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1abbd22ec7f9c3d7c6cd27f1775388697f" kindref="member">kcmoduleName</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a50994eeaf04cb1dd468626663df1ccd8" kindref="member">setTheme</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;<ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a7bf45e58b16aed2b8181c528a0a79a49" kindref="member">theme</ref>);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a7bf45e58b16aed2b8181c528a0a79a49" kindref="member">theme</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a6f0196c8baf29ea12761b623b6f53390" kindref="member">isValid</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>KDecoration3::Decoration<sp/>*<ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a7e40a82170f324be19721c84e4dc5570" kindref="member">createDecoration</ref>(QObject<sp/>*parent<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>KDecoration3::DecorationButton<sp/>*<ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1a77b1bb3d82d52b6168558b75fcb437d5" kindref="member">createButton</ref>(KDecoration3::Decoration<sp/>*decoration,<sp/>KDecoration3::DecorationButtonType<sp/>type,<sp/>QObject<sp/>*parent<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1ad7e5b5718df5c33bbd8e8bb59fb50f70" kindref="member">configure</ref>(QQuickItem<sp/>*ctx);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="70" refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1adddd5c264dba963ef5cf0e724b269250" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1adddd5c264dba963ef5cf0e724b269250" kindref="member">pluginChanged</ref>();</highlight></codeline>
+<codeline lineno="71" refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1ae52f499ddd072486fa0e5317b3890318" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1ae52f499ddd072486fa0e5317b3890318" kindref="member">themeChanged</ref>();</highlight></codeline>
+<codeline lineno="72" refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1ad659135020140bc3a30b136a8a856d6d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1ad659135020140bc3a30b136a8a856d6d" kindref="member">validChanged</ref>();</highlight></codeline>
+<codeline lineno="73" refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1aa3d262f930aa1a4aa5fae4bf95b94fd6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1aa3d262f930aa1a4aa5fae4bf95b94fd6" kindref="member">kcmoduleNameChanged</ref>();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>createFactory();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setValid(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge_1aab523cb972570dc2f051b7e72c3f307a" kindref="member">valid</ref>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_client" kindref="compound">PreviewClient</ref><sp/>*m_lastCreatedClient;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings" kindref="compound">PreviewSettings</ref><sp/>*m_lastCreatedSettings;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;PreviewItem<sp/>*&gt;<sp/>m_previewItems;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>m_plugin;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>m_theme;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>m_kcmoduleName;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>QPointer&lt;KPluginFactory&gt;<sp/>m_factory;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_valid;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="class_k_decoration3_1_1_preview_1_1_bridge_item" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a3499130435e2aa34a89d327985b0cc79" kindref="member">BridgeItem</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>QML_NAMED_ELEMENT(Bridge)</highlight></codeline>
+<codeline lineno="92" refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1aec88e8c9d7a55cbe87bfc75f0fd83bac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QString<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1aec88e8c9d7a55cbe87bfc75f0fd83bac" kindref="member">plugin</ref><sp/>READ<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1aec88e8c9d7a55cbe87bfc75f0fd83bac" kindref="member">plugin</ref><sp/>WRITE<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a32e52405e2b6ceb96c9142ffae34b973" kindref="member">setPlugin</ref><sp/>NOTIFY<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a7fdbbd1209248bdd235d7563b4536c28" kindref="member">pluginChanged</ref>)</highlight></codeline>
+<codeline lineno="93" refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a96c5dfacf00b3d8dacd9655816c4074e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QString<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a96c5dfacf00b3d8dacd9655816c4074e" kindref="member">theme</ref><sp/>READ<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a96c5dfacf00b3d8dacd9655816c4074e" kindref="member">theme</ref><sp/>WRITE<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a077594c7bb7928218624ef4db547a3a9" kindref="member">setTheme</ref><sp/>NOTIFY<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a6d6fb86e76b7ddd2220100aff3558b1e" kindref="member">themeChanged</ref>)</highlight></codeline>
+<codeline lineno="94" refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a518730b7cc60f60e3f0ebe26425016b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QString<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a518730b7cc60f60e3f0ebe26425016b1" kindref="member">kcmoduleName</ref><sp/>READ<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a518730b7cc60f60e3f0ebe26425016b1" kindref="member">kcmoduleName</ref><sp/>WRITE<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a4bff513a726b6a3033e1dff4d8912227" kindref="member">setKcmoduleName</ref><sp/>NOTIFY<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1aaba1e92359aec33f1403b9409cd18826" kindref="member">kcmoduleNameChanged</ref>)</highlight></codeline>
+<codeline lineno="95" refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a39e35c1f5ae2c0859d2d7e724fcf63e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a39e35c1f5ae2c0859d2d7e724fcf63e7" kindref="member">valid</ref><sp/>READ<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a47f78a72f8d97456cc74d3fcc1f1c2ce" kindref="member">isValid</ref><sp/>NOTIFY<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1ab01b9e179866ab82c84b454526c384fc" kindref="member">validChanged</ref>)</highlight></codeline>
+<codeline lineno="96" refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a9096da2d9a6f17a031922f73c362e7d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(<ref refid="namespace_k_decoration3" kindref="compound">KDecoration3</ref>::<ref refid="namespace_k_decoration3_1_1_preview" kindref="compound">Preview</ref>::<ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge" kindref="compound">PreviewBridge</ref><sp/>*<ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a9096da2d9a6f17a031922f73c362e7d8" kindref="member">bridge</ref><sp/>READ<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a9096da2d9a6f17a031922f73c362e7d8" kindref="member">bridge</ref><sp/>CONSTANT)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>explicit<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a3499130435e2aa34a89d327985b0cc79" kindref="member">BridgeItem</ref>(QObject<sp/>*parent<sp/>=<sp/></highlight><highlight class="keywordtype">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a3499130435e2aa34a89d327985b0cc79" kindref="member">BridgeItem</ref>()<sp/>override;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a32e52405e2b6ceb96c9142ffae34b973" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a32e52405e2b6ceb96c9142ffae34b973" kindref="member">setPlugin</ref>(const<sp/>QString<sp/>&amp;<ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1aec88e8c9d7a55cbe87bfc75f0fd83bac" kindref="member">plugin</ref>)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_bridge-&gt;setPlugin(<ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1aec88e8c9d7a55cbe87bfc75f0fd83bac" kindref="member">plugin</ref>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106" refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a732f4d9e06459eca65560a6027a49b16" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a732f4d9e06459eca65560a6027a49b16" kindref="member">plugin</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="107"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_bridge-&gt;plugin();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110" refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a077594c7bb7928218624ef4db547a3a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a077594c7bb7928218624ef4db547a3a9" kindref="member">setTheme</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;<ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a96c5dfacf00b3d8dacd9655816c4074e" kindref="member">theme</ref>)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_bridge-&gt;setTheme(<ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a96c5dfacf00b3d8dacd9655816c4074e" kindref="member">theme</ref>);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114" refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a110b06db0edcd274eeb624cc56ebdc7f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a110b06db0edcd274eeb624cc56ebdc7f" kindref="member">kcmoduleName</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="115"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_bridge-&gt;kcmoduleName();</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118" refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a4bff513a726b6a3033e1dff4d8912227" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a4bff513a726b6a3033e1dff4d8912227" kindref="member">setKcmoduleName</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;name)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_bridge-&gt;setKcmoduleName(name);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122" refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1ab44eb9d5ae6930ef0239141dde17b4dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1ab44eb9d5ae6930ef0239141dde17b4dc" kindref="member">theme</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="123"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_bridge-&gt;theme();</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126" refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a47f78a72f8d97456cc74d3fcc1f1c2ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a47f78a72f8d97456cc74d3fcc1f1c2ce" kindref="member">isValid</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="127"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_bridge-&gt;isValid();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1aca844b9d6496feecf767ac645435e2de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge" kindref="compound">PreviewBridge</ref><sp/>*<ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1aca844b9d6496feecf767ac645435e2de" kindref="member">bridge</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="132"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_bridge;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="137" refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a7fdbbd1209248bdd235d7563b4536c28" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a7fdbbd1209248bdd235d7563b4536c28" kindref="member">pluginChanged</ref>();</highlight></codeline>
+<codeline lineno="138" refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a6d6fb86e76b7ddd2220100aff3558b1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1a6d6fb86e76b7ddd2220100aff3558b1e" kindref="member">themeChanged</ref>();</highlight></codeline>
+<codeline lineno="139" refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1aaba1e92359aec33f1403b9409cd18826" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1aaba1e92359aec33f1403b9409cd18826" kindref="member">kcmoduleNameChanged</ref>();</highlight></codeline>
+<codeline lineno="140" refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1ab01b9e179866ab82c84b454526c384fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_bridge_item_1ab01b9e179866ab82c84b454526c384fc" kindref="member">validChanged</ref>();</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge" kindref="compound">PreviewBridge</ref><sp/>*m_bridge;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal">Q_DECLARE_METATYPE(<ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge" kindref="compound">KDecoration3::Preview::PreviewBridge</ref><sp/>*)</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/kcms/decoration/declarative-plugin/previewbridge.h"/>
+  </compounddef>
+</doxygen>

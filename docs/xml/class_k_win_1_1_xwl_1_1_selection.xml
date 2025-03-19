@@ -1,0 +1,814 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_xwl_1_1_selection" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>KWin::Xwl::Selection</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_xwl_1_1_clipboard" prot="public" virt="non-virtual">KWin::Xwl::Clipboard</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_xwl_1_1_dnd" prot="public" virt="non-virtual">KWin::Xwl::Dnd</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_xwl_1_1_primary" prot="public" virt="non-virtual">KWin::Xwl::Primary</derivedcompoundref>
+    <includes refid="selection_8h" local="no">selection.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_selection_1ad4c56868f2c905ec042cc25b3171783e" prot="private" static="no" mutable="no">
+        <type>xcb_atom_t</type>
+        <definition>xcb_atom_t KWin::Xwl::Selection::m_atom</definition>
+        <argsstring></argsstring>
+        <name>m_atom</name>
+        <qualifiedname>KWin::Xwl::Selection::m_atom</qualifiedname>
+        <initializer>= XCB_ATOM_NONE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="115" column="16" bodyfile="kwin/src/xwayland/selection.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_selection_1ade1b7f6d43372b70ce5dc58fc2b3efa1" prot="private" static="no" mutable="no">
+        <type>xcb_window_t</type>
+        <definition>xcb_window_t KWin::Xwl::Selection::m_window</definition>
+        <argsstring></argsstring>
+        <name>m_window</name>
+        <qualifiedname>KWin::Xwl::Selection::m_window</qualifiedname>
+        <initializer>= XCB_WINDOW_NONE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="116" column="18" bodyfile="kwin/src/xwayland/selection.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_selection_1a4c5a141bb498c0890de22f703263cad1" prot="private" static="no" mutable="no">
+        <type>xcb_window_t</type>
+        <definition>xcb_window_t KWin::Xwl::Selection::m_requestorWindow</definition>
+        <argsstring></argsstring>
+        <name>m_requestorWindow</name>
+        <qualifiedname>KWin::Xwl::Selection::m_requestorWindow</qualifiedname>
+        <initializer>= XCB_WINDOW_NONE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="117" column="18" bodyfile="kwin/src/xwayland/selection.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_selection_1aad7b5451c702f9e5867721e37ca2b5fe" prot="private" static="no" mutable="no">
+        <type>xcb_timestamp_t</type>
+        <definition>xcb_timestamp_t KWin::Xwl::Selection::m_timestamp</definition>
+        <argsstring></argsstring>
+        <name>m_timestamp</name>
+        <qualifiedname>KWin::Xwl::Selection::m_timestamp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="118" column="21" bodyfile="kwin/src/xwayland/selection.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_selection_1aa6aaa999541c731c37b9e727d274eac0" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_xwl_1_1_wl_source" kindref="compound">WlSource</ref> *</type>
+        <definition>WlSource* KWin::Xwl::Selection::m_waylandSource</definition>
+        <argsstring></argsstring>
+        <name>m_waylandSource</name>
+        <qualifiedname>KWin::Xwl::Selection::m_waylandSource</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="122" column="14" bodyfile="kwin/src/xwayland/selection.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_selection_1a220f6799e411d1aa4cb2b20076f37381" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_xwl_1_1_x11_source" kindref="compound">X11Source</ref> *</type>
+        <definition>X11Source* KWin::Xwl::Selection::m_xSource</definition>
+        <argsstring></argsstring>
+        <name>m_xSource</name>
+        <qualifiedname>KWin::Xwl::Selection::m_xSource</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="123" column="15" bodyfile="kwin/src/xwayland/selection.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_selection_1a04867b347c2d421f0e782d448dec5aec" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_xwl_1_1_transfer_wlto_x" kindref="compound">TransferWltoX</ref> * &gt;</type>
+        <definition>QList&lt;TransferWltoX *&gt; KWin::Xwl::Selection::m_wlToXTransfers</definition>
+        <argsstring></argsstring>
+        <name>m_wlToXTransfers</name>
+        <qualifiedname>KWin::Xwl::Selection::m_wlToXTransfers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="126" column="11" bodyfile="kwin/src/xwayland/selection.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_selection_1afa21109d55e717437f6976c56954f36a" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_xwl_1_1_transfer_xto_wl" kindref="compound">TransferXtoWl</ref> * &gt;</type>
+        <definition>QList&lt;TransferXtoWl *&gt; KWin::Xwl::Selection::m_xToWlTransfers</definition>
+        <argsstring></argsstring>
+        <name>m_xToWlTransfers</name>
+        <qualifiedname>KWin::Xwl::Selection::m_xToWlTransfers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="127" column="11" bodyfile="kwin/src/xwayland/selection.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_selection_1a2fe1efe1635fdc9b446131fb6e5bb0d9" prot="private" static="no" mutable="no">
+        <type>QTimer *</type>
+        <definition>QTimer* KWin::Xwl::Selection::m_timeoutTransfers</definition>
+        <argsstring></argsstring>
+        <name>m_timeoutTransfers</name>
+        <qualifiedname>KWin::Xwl::Selection::m_timeoutTransfers</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="128" column="12" bodyfile="kwin/src/xwayland/selection.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_selection_1a150918c5129b288ac87dd222adefa0d6" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::Xwl::Selection::m_disownPending</definition>
+        <argsstring></argsstring>
+        <name>m_disownPending</name>
+        <qualifiedname>KWin::Xwl::Selection::m_disownPending</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="130" column="10" bodyfile="kwin/src/xwayland/selection.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1ad299749a819963f40ab9e80513acd087" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>xcb_atom_t</type>
+        <definition>xcb_atom_t KWin::Xwl::Selection::mimeTypeToAtom</definition>
+        <argsstring>(const QString &amp;mimeType)</argsstring>
+        <name>mimeTypeToAtom</name>
+        <qualifiedname>KWin::Xwl::Selection::mimeTypeToAtom</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>mimeType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="49" column="23" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="29" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a248dcb029af18f82121c56080f6094f6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>xcb_atom_t</type>
+        <definition>xcb_atom_t KWin::Xwl::Selection::mimeTypeToAtomLiteral</definition>
+        <argsstring>(const QString &amp;mimeType)</argsstring>
+        <name>mimeTypeToAtomLiteral</name>
+        <qualifiedname>KWin::Xwl::Selection::mimeTypeToAtomLiteral</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>mimeType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="50" column="23" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a12bced3f9091690e6d385331d8d4a091" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QStringList</type>
+        <definition>QStringList KWin::Xwl::Selection::atomToMimeTypes</definition>
+        <argsstring>(xcb_atom_t atom)</argsstring>
+        <name>atomToMimeTypes</name>
+        <qualifiedname>KWin::Xwl::Selection::atomToMimeTypes</qualifiedname>
+        <param>
+          <type>xcb_atom_t</type>
+          <declname>atom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="51" column="24" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="63" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a19de90dcd3aa583c9fa69b32b2dedf90" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString KWin::Xwl::Selection::atomName</definition>
+        <argsstring>(xcb_atom_t atom)</argsstring>
+        <name>atomName</name>
+        <qualifiedname>KWin::Xwl::Selection::atomName</qualifiedname>
+        <param>
+          <type>xcb_atom_t</type>
+          <declname>atom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="52" column="20" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="48" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a10a4ec34ab9d1af664197fad2ec9112e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::Selection::sendSelectionNotify</definition>
+        <argsstring>(xcb_selection_request_event_t *event, bool success)</argsstring>
+        <name>sendSelectionNotify</name>
+        <qualifiedname>KWin::Xwl::Selection::sendSelectionNotify</qualifiedname>
+        <param>
+          <type>xcb_selection_request_event_t *</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>success</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="53" column="17" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="136" bodyend="157"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a096d9685512190466df2ff4f1cb8c5e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::Xwl::Selection::handleXfixesNotify</definition>
+        <argsstring>(xcb_xfixes_selection_notify_event_t *event)</argsstring>
+        <name>handleXfixesNotify</name>
+        <qualifiedname>KWin::Xwl::Selection::handleXfixesNotify</qualifiedname>
+        <param>
+          <type>xcb_xfixes_selection_notify_event_t *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="56" column="10" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="90" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1af0952d07f6d06ea6c1a90e597c9c9fa3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::Xwl::Selection::filterEvent</definition>
+        <argsstring>(xcb_generic_event_t *event)</argsstring>
+        <name>filterEvent</name>
+        <qualifiedname>KWin::Xwl::Selection::filterEvent</qualifiedname>
+        <param>
+          <type>xcb_generic_event_t *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="57" column="10" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="117" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a01edf9743a56ba79256d3a1a530f71b9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>xcb_atom_t</type>
+        <definition>xcb_atom_t KWin::Xwl::Selection::atom</definition>
+        <argsstring>() const</argsstring>
+        <name>atom</name>
+        <qualifiedname>KWin::Xwl::Selection::atom</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="59" column="16" bodyfile="kwin/src/xwayland/selection.h" bodystart="59" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a591210219abdc9a78e8fafde081a4118" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>xcb_window_t</type>
+        <definition>xcb_window_t KWin::Xwl::Selection::window</definition>
+        <argsstring>() const</argsstring>
+        <name>window</name>
+        <qualifiedname>KWin::Xwl::Selection::window</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="63" column="18" bodyfile="kwin/src/xwayland/selection.h" bodystart="63" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a0a0deb9dc51218e4cdbf3ffb12cf10cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::Selection::overwriteRequestorWindow</definition>
+        <argsstring>(xcb_window_t window)</argsstring>
+        <name>overwriteRequestorWindow</name>
+        <qualifiedname>KWin::Xwl::Selection::overwriteRequestorWindow</qualifiedname>
+        <param>
+          <type>xcb_window_t</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="67" column="10" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="216" bodyend="225"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_xwl_1_1_selection_1a1183ddef383c19eda73b6ee7246d42ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::Selection::transferFinished</definition>
+        <argsstring>(xcb_timestamp_t eventTime)</argsstring>
+        <name>transferFinished</name>
+        <qualifiedname>KWin::Xwl::Selection::transferFinished</qualifiedname>
+        <param>
+          <type>xcb_timestamp_t</type>
+          <declname>eventTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="70" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a22e38120d171a7b7230a2c444bae53af" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::Xwl::Selection::Selection</definition>
+        <argsstring>(xcb_atom_t atom, QObject *parent)</argsstring>
+        <name>Selection</name>
+        <qualifiedname>KWin::Xwl::Selection::Selection</qualifiedname>
+        <param>
+          <type>xcb_atom_t</type>
+          <declname>atom</declname>
+        </param>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="73" column="5" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="80" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a517e9eb8bd4f7fb9fcc086dfa6f39066" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::Selection::registerXfixes</definition>
+        <argsstring>()</argsstring>
+        <name>registerXfixes</name>
+        <qualifiedname>KWin::Xwl::Selection::registerXfixes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="74" column="10" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="159" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a99e933294cd25cb4981f224dac59f348" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void KWin::Xwl::Selection::doHandleXfixesNotify</definition>
+        <argsstring>(xcb_xfixes_selection_notify_event_t *event)=0</argsstring>
+        <name>doHandleXfixesNotify</name>
+        <qualifiedname>KWin::Xwl::Selection::doHandleXfixesNotify</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_clipboard_1acf73ba4cf3cd4598df4058b7d7cbb00f">doHandleXfixesNotify</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_dnd_1a7a5d016cb0b8a3dded20f7af213bcee3">doHandleXfixesNotify</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_primary_1a17d203d6e35d1b171ed009df16294e9a">doHandleXfixesNotify</reimplementedby>
+        <param>
+          <type>xcb_xfixes_selection_notify_event_t *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="76" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a76378a1d498e34ae76501b00a5f33b01" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void KWin::Xwl::Selection::x11OfferLost</definition>
+        <argsstring>()=0</argsstring>
+        <name>x11OfferLost</name>
+        <qualifiedname>KWin::Xwl::Selection::x11OfferLost</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_clipboard_1aaf56dcfa6c361a8e4937da632cc41292">x11OfferLost</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_dnd_1ac107e7b1adb17039d94bac94fcd1d108">x11OfferLost</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_primary_1acbe439bf2e7e60271fefc8d8bebbe6f4">x11OfferLost</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="77" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a01a830aa1cc60d0e44923a346b7b2aeb" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void KWin::Xwl::Selection::x11OffersChanged</definition>
+        <argsstring>(const QStringList &amp;added, const QStringList &amp;removed)=0</argsstring>
+        <name>x11OffersChanged</name>
+        <qualifiedname>KWin::Xwl::Selection::x11OffersChanged</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_clipboard_1ae39ad5595124d005a43a80b6cb8a3c80">x11OffersChanged</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_dnd_1aef2061bc306cfac4e40b39425697c9db">x11OffersChanged</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_primary_1a28e414986dae7cc7fdcfdd3ec298471a">x11OffersChanged</reimplementedby>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>added</declname>
+        </param>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>removed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="78" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1ac4a6073c92633c67490bfe20fbd0cbe8" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool KWin::Xwl::Selection::handleClientMessage</definition>
+        <argsstring>(xcb_client_message_event_t *event)</argsstring>
+        <name>handleClientMessage</name>
+        <qualifiedname>KWin::Xwl::Selection::handleClientMessage</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_dnd_1ac31c8923bbed0c08936a0020e57a023c">handleClientMessage</reimplementedby>
+        <param>
+          <type>xcb_client_message_event_t *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="80" column="18" bodyfile="kwin/src/xwayland/selection.h" bodystart="80" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a3467a35637265e67b781c93e0ed055fc" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::Selection::setWlSource</definition>
+        <argsstring>(WlSource *source)</argsstring>
+        <name>setWlSource</name>
+        <qualifiedname>KWin::Xwl::Selection::setWlSource</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_xwl_1_1_wl_source" kindref="compound">WlSource</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="85" column="10" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="170" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a905783316e81e71f39511b7be94d4e89" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_xwl_1_1_wl_source" kindref="compound">WlSource</ref> *</type>
+        <definition>WlSource * KWin::Xwl::Selection::wlSource</definition>
+        <argsstring>() const</argsstring>
+        <name>wlSource</name>
+        <qualifiedname>KWin::Xwl::Selection::wlSource</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="86" column="14" bodyfile="kwin/src/xwayland/selection.h" bodystart="86" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a18a4263d05cb88f66ca8d1c8e564f230" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::Selection::createX11Source</definition>
+        <argsstring>(xcb_xfixes_selection_notify_event_t *event)</argsstring>
+        <name>createX11Source</name>
+        <qualifiedname>KWin::Xwl::Selection::createX11Source</qualifiedname>
+        <param>
+          <type>xcb_xfixes_selection_notify_event_t *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="90" column="10" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="184" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1ac6278f45624709b30ba74415b6f8161b" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_xwl_1_1_x11_source" kindref="compound">X11Source</ref> *</type>
+        <definition>X11Source * KWin::Xwl::Selection::x11Source</definition>
+        <argsstring>() const</argsstring>
+        <name>x11Source</name>
+        <qualifiedname>KWin::Xwl::Selection::x11Source</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="91" column="15" bodyfile="kwin/src/xwayland/selection.h" bodystart="91" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a3e78eaf98b2500c9fb09328eacdeae0a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::Selection::ownSelection</definition>
+        <argsstring>(bool own)</argsstring>
+        <name>ownSelection</name>
+        <qualifiedname>KWin::Xwl::Selection::ownSelection</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>own</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="96" column="10" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="198" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a7f182dfaeac673eec9b4dfbfde3e5847" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::Selection::setWindow</definition>
+        <argsstring>(xcb_window_t window)</argsstring>
+        <name>setWindow</name>
+        <qualifiedname>KWin::Xwl::Selection::setWindow</qualifiedname>
+        <param>
+          <type>xcb_window_t</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="97" column="10" bodyfile="kwin/src/xwayland/selection.h" bodystart="97" bodyend="100"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a6eedba791eb24a925519a104b2ae1c2b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::Xwl::Selection::handleSelectionRequest</definition>
+        <argsstring>(xcb_selection_request_event_t *event)</argsstring>
+        <name>handleSelectionRequest</name>
+        <qualifiedname>KWin::Xwl::Selection::handleSelectionRequest</qualifiedname>
+        <param>
+          <type>xcb_selection_request_event_t *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="103" column="10" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="227" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1ab821cb982471dc6d6ecf734b27a5b264" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::Xwl::Selection::handleSelectionNotify</definition>
+        <argsstring>(xcb_selection_notify_event_t *event)</argsstring>
+        <name>handleSelectionNotify</name>
+        <qualifiedname>KWin::Xwl::Selection::handleSelectionNotify</qualifiedname>
+        <param>
+          <type>xcb_selection_notify_event_t *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="104" column="10" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="252" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1aa9c61df0b51d25c19539bc10bd241b26" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::Xwl::Selection::handlePropertyNotify</definition>
+        <argsstring>(xcb_property_notify_event_t *event)</argsstring>
+        <name>handlePropertyNotify</name>
+        <qualifiedname>KWin::Xwl::Selection::handlePropertyNotify</qualifiedname>
+        <param>
+          <type>xcb_property_notify_event_t *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="105" column="10" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="265" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1ac1db811849b07762e4411647475742ae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::Selection::startTransferToWayland</definition>
+        <argsstring>(xcb_atom_t target, qint32 fd)</argsstring>
+        <name>startTransferToWayland</name>
+        <qualifiedname>KWin::Xwl::Selection::startTransferToWayland</qualifiedname>
+        <param>
+          <type>xcb_atom_t</type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>qint32</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="107" column="10" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="280" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a5b2e2ffc12982ebe41298f110bab24d5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::Selection::startTransferToX</definition>
+        <argsstring>(xcb_selection_request_event_t *event, qint32 fd)</argsstring>
+        <name>startTransferToX</name>
+        <qualifiedname>KWin::Xwl::Selection::startTransferToX</qualifiedname>
+        <param>
+          <type>xcb_selection_request_event_t *</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>qint32</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="108" column="10" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="295" bodyend="324"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a4a7cc22466a733a176e35c98d03c17a5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::Selection::timeoutTransfers</definition>
+        <argsstring>()</argsstring>
+        <name>timeoutTransfers</name>
+        <qualifiedname>KWin::Xwl::Selection::timeoutTransfers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="111" column="10" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="344" bodyend="352"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a73a936d2b840282dc8a9136f2964adc0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::Selection::startTimeoutTransfersTimer</definition>
+        <argsstring>()</argsstring>
+        <name>startTimeoutTransfersTimer</name>
+        <qualifiedname>KWin::Xwl::Selection::startTimeoutTransfersTimer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="112" column="10" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="326" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_selection_1a32779216f41ab0a021ae9135b55dd0a6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::Selection::endTimeoutTransfersTimer</definition>
+        <argsstring>()</argsstring>
+        <name>endTimeoutTransfersTimer</name>
+        <qualifiedname>KWin::Xwl::Selection::endTimeoutTransfersTimer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/selection.h" line="113" column="10" bodyfile="kwin/src/xwayland/selection.cpp" bodystart="336" bodyend="342"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Base class representing generic X selections and their respective <ref refid="namespace_k_win_1_1_wayland" kindref="compound">Wayland</ref> counter-parts.</para>
+<para>The class needs to be subclassed and adjusted according to the selection, but provides common fucntionality to be expected of all selections.</para>
+<para>A selection should exist through the whole runtime of an <ref refid="class_k_win_1_1_xwl_1_1_xwayland" kindref="compound">Xwayland</ref> session.</para>
+<para>Independently of each other the class holds the currently active source instance and active transfers relative to the represented selection. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>KWin::Xwl::Clipboard</label>
+        <link refid="class_k_win_1_1_xwl_1_1_clipboard"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>KWin::Xwl::Dnd</label>
+        <link refid="class_k_win_1_1_xwl_1_1_dnd"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>KWin::Xwl::Primary</label>
+        <link refid="class_k_win_1_1_xwl_1_1_primary"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::Xwl::Selection</label>
+        <link refid="class_k_win_1_1_xwl_1_1_selection"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::Xwl::Selection</label>
+        <link refid="class_k_win_1_1_xwl_1_1_selection"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/xwayland/selection.h" line="44" column="1" bodyfile="kwin/src/xwayland/selection.h" bodystart="45" bodyend="133"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a01edf9743a56ba79256d3a1a530f71b9" prot="public" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>atom</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a19de90dcd3aa583c9fa69b32b2dedf90" prot="public" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>atomName</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a12bced3f9091690e6d385331d8d4a091" prot="public" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>atomToMimeTypes</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a18a4263d05cb88f66ca8d1c8e564f230" prot="protected" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>createX11Source</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a99e933294cd25cb4981f224dac59f348" prot="protected" virt="pure-virtual"><scope>KWin::Xwl::Selection</scope><name>doHandleXfixesNotify</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a32779216f41ab0a021ae9135b55dd0a6" prot="private" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>endTimeoutTransfersTimer</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1af0952d07f6d06ea6c1a90e597c9c9fa3" prot="public" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>filterEvent</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1ac4a6073c92633c67490bfe20fbd0cbe8" prot="protected" virt="virtual"><scope>KWin::Xwl::Selection</scope><name>handleClientMessage</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1aa9c61df0b51d25c19539bc10bd241b26" prot="private" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>handlePropertyNotify</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1ab821cb982471dc6d6ecf734b27a5b264" prot="private" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>handleSelectionNotify</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a6eedba791eb24a925519a104b2ae1c2b" prot="private" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>handleSelectionRequest</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a096d9685512190466df2ff4f1cb8c5e3" prot="public" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>handleXfixesNotify</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1ad4c56868f2c905ec042cc25b3171783e" prot="private" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>m_atom</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a150918c5129b288ac87dd222adefa0d6" prot="private" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>m_disownPending</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a4c5a141bb498c0890de22f703263cad1" prot="private" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>m_requestorWindow</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a2fe1efe1635fdc9b446131fb6e5bb0d9" prot="private" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>m_timeoutTransfers</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1aad7b5451c702f9e5867721e37ca2b5fe" prot="private" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>m_timestamp</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1aa6aaa999541c731c37b9e727d274eac0" prot="private" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>m_waylandSource</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1ade1b7f6d43372b70ce5dc58fc2b3efa1" prot="private" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>m_window</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a04867b347c2d421f0e782d448dec5aec" prot="private" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>m_wlToXTransfers</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a220f6799e411d1aa4cb2b20076f37381" prot="private" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>m_xSource</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1afa21109d55e717437f6976c56954f36a" prot="private" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>m_xToWlTransfers</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1ad299749a819963f40ab9e80513acd087" prot="public" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>mimeTypeToAtom</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a248dcb029af18f82121c56080f6094f6" prot="public" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>mimeTypeToAtomLiteral</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a0a0deb9dc51218e4cdbf3ffb12cf10cd" prot="public" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>overwriteRequestorWindow</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a3e78eaf98b2500c9fb09328eacdeae0a" prot="protected" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>ownSelection</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a517e9eb8bd4f7fb9fcc086dfa6f39066" prot="protected" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>registerXfixes</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a22e38120d171a7b7230a2c444bae53af" prot="protected" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>Selection</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a10a4ec34ab9d1af664197fad2ec9112e" prot="public" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>sendSelectionNotify</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a7f182dfaeac673eec9b4dfbfde3e5847" prot="protected" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>setWindow</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a3467a35637265e67b781c93e0ed055fc" prot="protected" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>setWlSource</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a73a936d2b840282dc8a9136f2964adc0" prot="private" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>startTimeoutTransfersTimer</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1ac1db811849b07762e4411647475742ae" prot="private" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>startTransferToWayland</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a5b2e2ffc12982ebe41298f110bab24d5" prot="private" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>startTransferToX</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a4a7cc22466a733a176e35c98d03c17a5" prot="private" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>timeoutTransfers</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a1183ddef383c19eda73b6ee7246d42ef" prot="public" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>transferFinished</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a591210219abdc9a78e8fafde081a4118" prot="public" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>window</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a905783316e81e71f39511b7be94d4e89" prot="protected" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>wlSource</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a76378a1d498e34ae76501b00a5f33b01" prot="protected" virt="pure-virtual"><scope>KWin::Xwl::Selection</scope><name>x11OfferLost</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1a01a830aa1cc60d0e44923a346b7b2aeb" prot="protected" virt="pure-virtual"><scope>KWin::Xwl::Selection</scope><name>x11OffersChanged</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_selection_1ac6278f45624709b30ba74415b6f8161b" prot="protected" virt="non-virtual"><scope>KWin::Xwl::Selection</scope><name>x11Source</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,549 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_xwl_1_1_xwayland_launcher" kind="class" language="C++" prot="public">
+    <compoundname>KWin::Xwl::XwaylandLauncher</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="xwaylandlauncher_8h" local="no">xwaylandlauncher.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1af888673bc6a29bc4d2e4917e2526c049" prot="private" static="no" mutable="no">
+        <type>QProcess *</type>
+        <definition>QProcess* KWin::Xwl::XwaylandLauncher::m_xwaylandProcess</definition>
+        <argsstring></argsstring>
+        <name>m_xwaylandProcess</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::m_xwaylandProcess</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="98" column="14" bodyfile="kwin/src/xwayland/xwaylandlauncher.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a819b4c46b61185808bc1eb295c04182a" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; QSocketNotifier &gt;</type>
+        <definition>std::unique_ptr&lt;QSocketNotifier&gt; KWin::Xwl::XwaylandLauncher::m_readyNotifier</definition>
+        <argsstring></argsstring>
+        <name>m_readyNotifier</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::m_readyNotifier</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="99" column="21" bodyfile="kwin/src/xwayland/xwaylandlauncher.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a38ae21f2aba46bf5bfba0bb1c8964a7e" prot="private" static="no" mutable="no">
+        <type>QTimer *</type>
+        <definition>QTimer* KWin::Xwl::XwaylandLauncher::m_resetCrashCountTimer</definition>
+        <argsstring></argsstring>
+        <name>m_resetCrashCountTimer</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::m_resetCrashCountTimer</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="100" column="12" bodyfile="kwin/src/xwayland/xwaylandlauncher.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a81a0c0e1f54027eb9917d63da4b2db47" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_xwayland_socket" kindref="compound">XwaylandSocket</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;XwaylandSocket&gt; KWin::Xwl::XwaylandLauncher::m_socket</definition>
+        <argsstring></argsstring>
+        <name>m_socket</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::m_socket</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="102" column="21" bodyfile="kwin/src/xwayland/xwaylandlauncher.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1acca647574585d685b5a292404f3ac8c9" prot="private" static="no" mutable="no">
+        <type>QList&lt; int &gt;</type>
+        <definition>QList&lt;int&gt; KWin::Xwl::XwaylandLauncher::m_listenFds</definition>
+        <argsstring></argsstring>
+        <name>m_listenFds</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::m_listenFds</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="103" column="11" bodyfile="kwin/src/xwayland/xwaylandlauncher.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a39e7791aaac47c8313a4efaa939d6633" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString KWin::Xwl::XwaylandLauncher::m_displayName</definition>
+        <argsstring></argsstring>
+        <name>m_displayName</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::m_displayName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="104" column="13" bodyfile="kwin/src/xwayland/xwaylandlauncher.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a4ac3d1f8b9ad17232d6c679b1117262a" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString KWin::Xwl::XwaylandLauncher::m_xAuthority</definition>
+        <argsstring></argsstring>
+        <name>m_xAuthority</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::m_xAuthority</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="105" column="13" bodyfile="kwin/src/xwayland/xwaylandlauncher.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a430b5a3ab8e5b7470fe6e02ec7e428e9" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::Xwl::XwaylandLauncher::m_enabled</definition>
+        <argsstring></argsstring>
+        <name>m_enabled</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::m_enabled</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="107" column="10" bodyfile="kwin/src/xwayland/xwaylandlauncher.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a1b337bf972ad85c2fcfbc70e85697c7e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KWin::Xwl::XwaylandLauncher::m_crashCount</definition>
+        <argsstring></argsstring>
+        <name>m_crashCount</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::m_crashCount</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="108" column="9" bodyfile="kwin/src/xwayland/xwaylandlauncher.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a8b7387ea9faf16c758475fbbfbe3286a" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref></type>
+        <definition>FileDescriptor KWin::Xwl::XwaylandLauncher::m_readyFd</definition>
+        <argsstring></argsstring>
+        <name>m_readyFd</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::m_readyFd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="109" column="20" bodyfile="kwin/src/xwayland/xwaylandlauncher.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a2f667327ef157a4e7a89fc358119ded5" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref></type>
+        <definition>FileDescriptor KWin::Xwl::XwaylandLauncher::m_xcbConnectionFd</definition>
+        <argsstring></argsstring>
+        <name>m_xcbConnectionFd</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::m_xcbConnectionFd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="110" column="20" bodyfile="kwin/src/xwayland/xwaylandlauncher.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a207eb3757bb8d738fddf79e150d2fb5c" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::Xwl::XwaylandLauncher::XwaylandLauncher</definition>
+        <argsstring>(QObject *parent)</argsstring>
+        <name>XwaylandLauncher</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::XwaylandLauncher</qualifiedname>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="37" column="14" bodyfile="kwin/src/xwayland/xwaylandlauncher.cpp" bodystart="48" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a9e72ef5a18c59244a9c6071554cb2ac6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::Xwl::XwaylandLauncher::~XwaylandLauncher</definition>
+        <argsstring>()</argsstring>
+        <name>~XwaylandLauncher</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::~XwaylandLauncher</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="38" column="5" bodyfile="kwin/src/xwayland/xwaylandlauncher.cpp" bodystart="56" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1abb1714200895951b0d142be949b5aeef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::XwaylandLauncher::setListenFDs</definition>
+        <argsstring>(const QList&lt; int &gt; &amp;listenFds)</argsstring>
+        <name>setListenFDs</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::setListenFDs</qualifiedname>
+        <param>
+          <type>const QList&lt; int &gt; &amp;</type>
+          <declname>listenFds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set file descriptors that xwayland should use for listening This is to be used in conjuction with kwin_wayland_wrapper which creates a socket externally That external process is responsible for setting up the DISPLAY env with a valid value. Ownership of the file descriptor is not transferrred. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="46" column="10" bodyfile="kwin/src/xwayland/xwaylandlauncher.cpp" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a83bd9cf1df81a6908f35bb3786912d42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::XwaylandLauncher::setDisplayName</definition>
+        <argsstring>(const QString &amp;displayName)</argsstring>
+        <name>setDisplayName</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::setDisplayName</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>displayName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the display name used by XWayland (i.e &apos;:0&apos;) This is to be used in conjuction with kwin_wayland_wrapper to provide the name of the socket created externally </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="53" column="10" bodyfile="kwin/src/xwayland/xwaylandlauncher.cpp" bodystart="65" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a80fa488ca8318b68ec9a0ea6c7b76d34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::XwaylandLauncher::setXauthority</definition>
+        <argsstring>(const QString &amp;xauthority)</argsstring>
+        <name>setXauthority</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::setXauthority</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>xauthority</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the xauthority file to be used by XWayland This is to be used in conjuction with kwin_wayland_wrapper </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="59" column="10" bodyfile="kwin/src/xwayland/xwaylandlauncher.cpp" bodystart="70" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a4b34fc3596d3e2c5436aabf756d5f26f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::XwaylandLauncher::enable</definition>
+        <argsstring>()</argsstring>
+        <name>enable</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::enable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="61" column="10" bodyfile="kwin/src/xwayland/xwaylandlauncher.cpp" bodystart="75" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a5eb0ad83be7d11ee29c206bf12d49b8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::XwaylandLauncher::disable</definition>
+        <argsstring>()</argsstring>
+        <name>disable</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::disable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="62" column="10" bodyfile="kwin/src/xwayland/xwaylandlauncher.cpp" bodystart="109" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a7f691dd2532d70d1790ef600bf0dd1f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::Xwl::XwaylandLauncher::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="63" column="10" bodyfile="kwin/src/xwayland/xwaylandlauncher.cpp" bodystart="115" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a828f6fa79d8ff30fb93e82952d81a004" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::XwaylandLauncher::stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::stop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="64" column="10" bodyfile="kwin/src/xwayland/xwaylandlauncher.cpp" bodystart="240" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1adf21280f73750b80523c8218b286ba03" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString KWin::Xwl::XwaylandLauncher::displayName</definition>
+        <argsstring>() const</argsstring>
+        <name>displayName</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::displayName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="66" column="13" bodyfile="kwin/src/xwayland/xwaylandlauncher.cpp" bodystart="220" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1af3fd14b754d2317d39886001549446d9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString KWin::Xwl::XwaylandLauncher::xauthority</definition>
+        <argsstring>() const</argsstring>
+        <name>xauthority</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::xauthority</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="67" column="13" bodyfile="kwin/src/xwayland/xwaylandlauncher.cpp" bodystart="225" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a5ccb19a57166613fb947444b1f19548c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref></type>
+        <definition>FileDescriptor KWin::Xwl::XwaylandLauncher::takeXcbConnectionFd</definition>
+        <argsstring>()</argsstring>
+        <name>takeXcbConnectionFd</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::takeXcbConnectionFd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="68" column="20" bodyfile="kwin/src/xwayland/xwaylandlauncher.cpp" bodystart="230" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a50f9e69cd6459899847ca147d5234a72" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QProcess *</type>
+        <definition>QProcess * KWin::Xwl::XwaylandLauncher::process</definition>
+        <argsstring>() const</argsstring>
+        <name>process</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::process</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="73" column="14" bodyfile="kwin/src/xwayland/xwaylandlauncher.cpp" bodystart="235" bodyend="238"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a49158843f0a2a05f8fd473d820313152" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::XwaylandLauncher::ready</definition>
+        <argsstring>()</argsstring>
+        <name>ready</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::ready</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This signal is emitted when the <ref refid="class_k_win_1_1_xwl_1_1_xwayland" kindref="compound">Xwayland</ref> server is ready to accept connections. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="78" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a8935da12c0ddfd9d5eb8d0cac4f2eece" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::XwaylandLauncher::started</definition>
+        <argsstring>()</argsstring>
+        <name>started</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::started</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This signal is emitted when the <ref refid="class_k_win_1_1_xwl_1_1_xwayland" kindref="compound">Xwayland</ref> server is started. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="82" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a8e111cbd38c51f068d81bad5660df32e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::XwaylandLauncher::finished</definition>
+        <argsstring>()</argsstring>
+        <name>finished</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::finished</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This signal is emitted when the <ref refid="class_k_win_1_1_xwl_1_1_xwayland" kindref="compound">Xwayland</ref> server quits or crashes </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="86" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a23df02bc631286a6e18c6536eeb2e3d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::XwaylandLauncher::errorOccurred</definition>
+        <argsstring>()</argsstring>
+        <name>errorOccurred</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::errorOccurred</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This signal is emitted when an error occurs with the <ref refid="class_k_win_1_1_xwl_1_1_xwayland" kindref="compound">Xwayland</ref> server. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="90" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1aa36a5bcffda2971ce7f3bb2b68096a93" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::XwaylandLauncher::resetCrashCount</definition>
+        <argsstring>()</argsstring>
+        <name>resetCrashCount</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::resetCrashCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="93" column="10" bodyfile="kwin/src/xwayland/xwaylandlauncher.cpp" bodystart="292" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a613cccf24a46c6bda7e8ade7b44420c5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::XwaylandLauncher::handleXwaylandFinished</definition>
+        <argsstring>(int exitCode, QProcess::ExitStatus exitStatus)</argsstring>
+        <name>handleXwaylandFinished</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::handleXwaylandFinished</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>exitCode</declname>
+        </param>
+        <param>
+          <type>QProcess::ExitStatus</type>
+          <declname>exitStatus</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="94" column="10" bodyfile="kwin/src/xwayland/xwaylandlauncher.cpp" bodystart="265" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_xwl_1_1_xwayland_launcher_1ac4bb2e63c51dbe1f4233dc63c97a5836" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Xwl::XwaylandLauncher::handleXwaylandError</definition>
+        <argsstring>(QProcess::ProcessError error)</argsstring>
+        <name>handleXwaylandError</name>
+        <qualifiedname>KWin::Xwl::XwaylandLauncher::handleXwaylandError</qualifiedname>
+        <param>
+          <type>QProcess::ProcessError</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/xwayland/xwaylandlauncher.h" line="95" column="10" bodyfile="kwin/src/xwayland/xwaylandlauncher.cpp" bodystart="298" bodyend="319"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::Xwl::XwaylandLauncher</label>
+        <link refid="class_k_win_1_1_xwl_1_1_xwayland_launcher"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::Xwl::XwaylandLauncher</label>
+        <link refid="class_k_win_1_1_xwl_1_1_xwayland_launcher"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/xwayland/xwaylandlauncher.h" line="33" column="1" bodyfile="kwin/src/xwayland/xwaylandlauncher.h" bodystart="34" bodyend="111"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a5eb0ad83be7d11ee29c206bf12d49b8d" prot="public" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>disable</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1adf21280f73750b80523c8218b286ba03" prot="public" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>displayName</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a4b34fc3596d3e2c5436aabf756d5f26f" prot="public" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>enable</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a23df02bc631286a6e18c6536eeb2e3d1" prot="public" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>errorOccurred</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a8e111cbd38c51f068d81bad5660df32e" prot="public" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>finished</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1ac4bb2e63c51dbe1f4233dc63c97a5836" prot="private" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>handleXwaylandError</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a613cccf24a46c6bda7e8ade7b44420c5" prot="private" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>handleXwaylandFinished</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a1b337bf972ad85c2fcfbc70e85697c7e" prot="private" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>m_crashCount</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a39e7791aaac47c8313a4efaa939d6633" prot="private" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>m_displayName</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a430b5a3ab8e5b7470fe6e02ec7e428e9" prot="private" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>m_enabled</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1acca647574585d685b5a292404f3ac8c9" prot="private" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>m_listenFds</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a8b7387ea9faf16c758475fbbfbe3286a" prot="private" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>m_readyFd</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a819b4c46b61185808bc1eb295c04182a" prot="private" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>m_readyNotifier</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a38ae21f2aba46bf5bfba0bb1c8964a7e" prot="private" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>m_resetCrashCountTimer</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a81a0c0e1f54027eb9917d63da4b2db47" prot="private" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>m_socket</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a4ac3d1f8b9ad17232d6c679b1117262a" prot="private" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>m_xAuthority</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a2f667327ef157a4e7a89fc358119ded5" prot="private" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>m_xcbConnectionFd</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1af888673bc6a29bc4d2e4917e2526c049" prot="private" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>m_xwaylandProcess</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a50f9e69cd6459899847ca147d5234a72" prot="public" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>process</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a49158843f0a2a05f8fd473d820313152" prot="public" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>ready</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1aa36a5bcffda2971ce7f3bb2b68096a93" prot="private" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>resetCrashCount</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a83bd9cf1df81a6908f35bb3786912d42" prot="public" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>setDisplayName</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1abb1714200895951b0d142be949b5aeef" prot="public" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>setListenFDs</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a80fa488ca8318b68ec9a0ea6c7b76d34" prot="public" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>setXauthority</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a7f691dd2532d70d1790ef600bf0dd1f9" prot="public" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>start</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a8935da12c0ddfd9d5eb8d0cac4f2eece" prot="public" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>started</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a828f6fa79d8ff30fb93e82952d81a004" prot="public" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>stop</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a5ccb19a57166613fb947444b1f19548c" prot="public" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>takeXcbConnectionFd</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1af3fd14b754d2317d39886001549446d9" prot="public" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>xauthority</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a207eb3757bb8d738fddf79e150d2fb5c" prot="public" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>XwaylandLauncher</name></member>
+      <member refid="class_k_win_1_1_xwl_1_1_xwayland_launcher_1a9e72ef5a18c59244a9c6071554cb2ac6" prot="public" virt="non-virtual"><scope>KWin::Xwl::XwaylandLauncher</scope><name>~XwaylandLauncher</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

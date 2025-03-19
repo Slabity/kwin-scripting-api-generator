@@ -1,0 +1,714 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_abstract_egl_backend" kind="class" language="C++" prot="public">
+    <compoundname>KWin::AbstractEglBackend</compoundname>
+    <basecompoundref refid="class_k_win_1_1_open_g_l_backend" prot="public" virt="non-virtual">KWin::OpenGLBackend</basecompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_egl_gbm_backend" prot="public" virt="non-virtual">KWin::EglGbmBackend</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_virtual_egl_backend" prot="public" virt="non-virtual">KWin::VirtualEglBackend</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_wayland_1_1_wayland_egl_backend" prot="public" virt="non-virtual">KWin::Wayland::WaylandEglBackend</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_x11_windowed_egl_backend" prot="public" virt="non-virtual">KWin::X11WindowedEglBackend</derivedcompoundref>
+    <includes refid="abstract__egl__backend_8h" local="no">abstract_egl_backend.h</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_abstract_egl_backend_1a382bbd29bb9867a9846ba59f80bd06e3" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_egl_display" kindref="compound">EglDisplay</ref> *</type>
+        <definition>EglDisplay* KWin::AbstractEglBackend::m_display</definition>
+        <argsstring></argsstring>
+        <name>m_display</name>
+        <qualifiedname>KWin::AbstractEglBackend::m_display</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="69" column="16" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_abstract_egl_backend_1ac1472c2afce5cb0457849ba6763536ac" prot="protected" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_egl_context" kindref="compound">EglContext</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;EglContext&gt; KWin::AbstractEglBackend::m_context</definition>
+        <argsstring></argsstring>
+        <name>m_context</name>
+        <qualifiedname>KWin::AbstractEglBackend::m_context</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="70" column="21" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_abstract_egl_backend_1aeace9e159ed198e36d5f2148468da7e6" prot="protected" static="no" mutable="no">
+        <type>QList&lt; QByteArray &gt;</type>
+        <definition>QList&lt;QByteArray&gt; KWin::AbstractEglBackend::m_clientExtensions</definition>
+        <argsstring></argsstring>
+        <name>m_clientExtensions</name>
+        <qualifiedname>KWin::AbstractEglBackend::m_clientExtensions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="71" column="11" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_abstract_egl_backend_1a8b0084c301aa27eea7c5885215abf136" prot="protected" static="no" mutable="no">
+        <type>QList&lt; <ref refid="struct_k_win_1_1_linux_dma_buf_v1_feedback_1_1_tranche" kindref="compound">LinuxDmaBufV1Feedback::Tranche</ref> &gt;</type>
+        <definition>QList&lt;LinuxDmaBufV1Feedback::Tranche&gt; KWin::AbstractEglBackend::m_tranches</definition>
+        <argsstring></argsstring>
+        <name>m_tranches</name>
+        <qualifiedname>KWin::AbstractEglBackend::m_tranches</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="72" column="11" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_abstract_egl_backend_1a6260efbdc7a6e25bcac9d7e2911b09b6" prot="protected" static="no" mutable="no">
+        <type>QHash&lt; std::pair&lt; <ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref> *, int &gt;, <ref refid="eglimagetexture_8h_1ac56f71530c81ade3ddaab91f45696909" kindref="member">EGLImageKHR</ref> &gt;</type>
+        <definition>QHash&lt;std::pair&lt;GraphicsBuffer *, int&gt;, EGLImageKHR&gt; KWin::AbstractEglBackend::m_importedBuffers</definition>
+        <argsstring></argsstring>
+        <name>m_importedBuffers</name>
+        <qualifiedname>KWin::AbstractEglBackend::m_importedBuffers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="73" column="11" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1ad3dd9e8f7b7182d864414443d1d71b07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::AbstractEglBackend::~AbstractEglBackend</definition>
+        <argsstring>() override</argsstring>
+        <name>~AbstractEglBackend</name>
+        <qualifiedname>KWin::AbstractEglBackend::~AbstractEglBackend</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="31" column="5" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="44" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a139917a79035d3f5d755332773642fc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::AbstractEglBackend::makeCurrent</definition>
+        <argsstring>() override</argsstring>
+        <name>makeCurrent</name>
+        <qualifiedname>KWin::AbstractEglBackend::makeCurrent</qualifiedname>
+        <reimplements refid="class_k_win_1_1_open_g_l_backend_1ab01c91581e915d58c69e66be864405f4">makeCurrent</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="32" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="219" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a818e5dd07cae51bbab8232b0a106cfa8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::AbstractEglBackend::doneCurrent</definition>
+        <argsstring>() override</argsstring>
+        <name>doneCurrent</name>
+        <qualifiedname>KWin::AbstractEglBackend::doneCurrent</qualifiedname>
+        <reimplements refid="class_k_win_1_1_open_g_l_backend_1a6970050d37582d69b9ebccb564695bbb">doneCurrent</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="33" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="228" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a011c5666393a672e5748f2e8514bc06c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>EGLConfig</type>
+        <definition>EGLConfig KWin::AbstractEglBackend::config</definition>
+        <argsstring>() const</argsstring>
+        <name>config</name>
+        <qualifiedname>KWin::AbstractEglBackend::config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="35" column="15" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="339" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a2183747e21f79419844e2fd9eb4ec40e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_k_win_1_1_egl_display" kindref="compound">EglDisplay</ref> *</type>
+        <definition>EglDisplay * KWin::AbstractEglBackend::eglDisplayObject</definition>
+        <argsstring>() const override</argsstring>
+        <name>eglDisplayObject</name>
+        <qualifiedname>KWin::AbstractEglBackend::eglDisplayObject</qualifiedname>
+        <reimplements refid="class_k_win_1_1_open_g_l_backend_1ae7965460fb4cc68029be11334a0eea0c">eglDisplayObject</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="36" column="16" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="344" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1abd1a853f77f0374ea89a68fded26c61b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_k_win_1_1_egl_context" kindref="compound">EglContext</ref> *</type>
+        <definition>EglContext * KWin::AbstractEglBackend::openglContext</definition>
+        <argsstring>() const override</argsstring>
+        <name>openglContext</name>
+        <qualifiedname>KWin::AbstractEglBackend::openglContext</qualifiedname>
+        <reimplements refid="class_k_win_1_1_open_g_l_backend_1a1224cf38a9d5445a6a1871dd058d03a3">openglContext</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="37" column="16" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="349" bodyend="352"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a66b92437df50c1b7d72ac05dca695a50" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_egl_context" kindref="compound">EglContext</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; EglContext &gt; KWin::AbstractEglBackend::openglContextRef</definition>
+        <argsstring>() const</argsstring>
+        <name>openglContextRef</name>
+        <qualifiedname>KWin::AbstractEglBackend::openglContextRef</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="38" column="21" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="354" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1ae899fcb2071701328a9d2d346bea4793" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::AbstractEglBackend::testImportBuffer</definition>
+        <argsstring>(GraphicsBuffer *buffer) override</argsstring>
+        <name>testImportBuffer</name>
+        <qualifiedname>KWin::AbstractEglBackend::testImportBuffer</qualifiedname>
+        <reimplements refid="class_k_win_1_1_render_backend_1a19fb9a934538fe684e8fe9725f253904">testImportBuffer</reimplements>
+        <param>
+          <type><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref> *</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="40" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="311" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1aaa797548c180d8321f431322e00e063f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QHash&lt; uint32_t, QList&lt; uint64_t &gt; &gt;</type>
+        <definition>QHash&lt; uint32_t, QList&lt; uint64_t &gt; &gt; KWin::AbstractEglBackend::supportedFormats</definition>
+        <argsstring>() const override</argsstring>
+        <name>supportedFormats</name>
+        <qualifiedname>KWin::AbstractEglBackend::supportedFormats</qualifiedname>
+        <reimplements refid="class_k_win_1_1_render_backend_1aca3c178c2ab62c1b5f1074200b066c53">supportedFormats</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="41" column="11" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="334" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a202dca8a83ea2bdf4aa54092f92d774e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="struct_k_win_1_1_linux_dma_buf_v1_feedback_1_1_tranche" kindref="compound">LinuxDmaBufV1Feedback::Tranche</ref> &gt;</type>
+        <definition>QList&lt; LinuxDmaBufV1Feedback::Tranche &gt; KWin::AbstractEglBackend::tranches</definition>
+        <argsstring>() const</argsstring>
+        <name>tranches</name>
+        <qualifiedname>KWin::AbstractEglBackend::tranches</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="43" column="11" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="247" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a95b2517e369cec56c2bc14f76b469b6d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_g_l_texture" kindref="compound">GLTexture</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; GLTexture &gt; KWin::AbstractEglBackend::importDmaBufAsTexture</definition>
+        <argsstring>(const DmaBufAttributes &amp;attributes) const</argsstring>
+        <name>importDmaBufAsTexture</name>
+        <qualifiedname>KWin::AbstractEglBackend::importDmaBufAsTexture</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_k_win_1_1_dma_buf_attributes" kindref="compound">DmaBufAttributes</ref> &amp;</type>
+          <declname>attributes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="45" column="21" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="306" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a8a98a67a9958204ebad9d5b828464709" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="eglimagetexture_8h_1ac56f71530c81ade3ddaab91f45696909" kindref="member">EGLImageKHR</ref></type>
+        <definition>EGLImageKHR KWin::AbstractEglBackend::importDmaBufAsImage</definition>
+        <argsstring>(const DmaBufAttributes &amp;attributes) const</argsstring>
+        <name>importDmaBufAsImage</name>
+        <qualifiedname>KWin::AbstractEglBackend::importDmaBufAsImage</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_k_win_1_1_dma_buf_attributes" kindref="compound">DmaBufAttributes</ref> &amp;</type>
+          <declname>attributes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="46" column="17" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="296" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a68d4d41343c2667b258beedc1496f162" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="eglimagetexture_8h_1ac56f71530c81ade3ddaab91f45696909" kindref="member">EGLImageKHR</ref></type>
+        <definition>EGLImageKHR KWin::AbstractEglBackend::importDmaBufAsImage</definition>
+        <argsstring>(const DmaBufAttributes &amp;attributes, int plane, int format, const QSize &amp;size) const</argsstring>
+        <name>importDmaBufAsImage</name>
+        <qualifiedname>KWin::AbstractEglBackend::importDmaBufAsImage</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_k_win_1_1_dma_buf_attributes" kindref="compound">DmaBufAttributes</ref> &amp;</type>
+          <declname>attributes</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>plane</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="47" column="17" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="301" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a4be72c18b1366c52a16905253820799f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="eglimagetexture_8h_1ac56f71530c81ade3ddaab91f45696909" kindref="member">EGLImageKHR</ref></type>
+        <definition>EGLImageKHR KWin::AbstractEglBackend::importBufferAsImage</definition>
+        <argsstring>(GraphicsBuffer *buffer)</argsstring>
+        <name>importBufferAsImage</name>
+        <qualifiedname>KWin::AbstractEglBackend::importBufferAsImage</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref> *</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="48" column="17" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="274" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a6a3de2bd412e6b415e958104174e5b50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="eglimagetexture_8h_1ac56f71530c81ade3ddaab91f45696909" kindref="member">EGLImageKHR</ref></type>
+        <definition>EGLImageKHR KWin::AbstractEglBackend::importBufferAsImage</definition>
+        <argsstring>(GraphicsBuffer *buffer, int plane, int format, const QSize &amp;size)</argsstring>
+        <name>importBufferAsImage</name>
+        <qualifiedname>KWin::AbstractEglBackend::importBufferAsImage</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref> *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>plane</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="49" column="17" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="252" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a1e9e39ced4836a1d2cffe7f3aba2cc81" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_surface_texture" kindref="compound">SurfaceTexture</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; SurfaceTexture &gt; KWin::AbstractEglBackend::createSurfaceTextureWayland</definition>
+        <argsstring>(SurfacePixmap *pixmap) override</argsstring>
+        <name>createSurfaceTextureWayland</name>
+        <qualifiedname>KWin::AbstractEglBackend::createSurfaceTextureWayland</qualifiedname>
+        <reimplements refid="class_k_win_1_1_render_backend_1ae04af70cc6faab27ad41086935c2601c">createSurfaceTextureWayland</reimplements>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_pixmap" kindref="compound">SurfacePixmap</ref> *</type>
+          <declname>pixmap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="51" column="21" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="359" bodyend="362"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a0c5c133460c0f595b4501319bdc9cea9" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::AbstractEglBackend::AbstractEglBackend</definition>
+        <argsstring>()</argsstring>
+        <name>AbstractEglBackend</name>
+        <qualifiedname>KWin::AbstractEglBackend::AbstractEglBackend</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="54" column="5" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="39" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a9a2734bb6daddb796b4675f20c90c6ad" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::AbstractEglBackend::cleanup</definition>
+        <argsstring>()</argsstring>
+        <name>cleanup</name>
+        <qualifiedname>KWin::AbstractEglBackend::cleanup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="55" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="76" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a0858fbe5842791a18b1d2203263e7596" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::AbstractEglBackend::cleanupSurfaces</definition>
+        <argsstring>()</argsstring>
+        <name>cleanupSurfaces</name>
+        <qualifiedname>KWin::AbstractEglBackend::cleanupSurfaces</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_wayland_1_1_wayland_egl_backend_1a258e4026a07ac1b87b7c48dc4e658690">cleanupSurfaces</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="56" column="18" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="86" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a354d6a5a43660c0fff3b5f15b5ceb4a4" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::AbstractEglBackend::setEglDisplay</definition>
+        <argsstring>(EglDisplay *display)</argsstring>
+        <name>setEglDisplay</name>
+        <qualifiedname>KWin::AbstractEglBackend::setEglDisplay</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_egl_display" kindref="compound">EglDisplay</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="57" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="90" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a01975a2b1049b42a21a0cc25f7dbcaee" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::AbstractEglBackend::initClientExtensions</definition>
+        <argsstring>()</argsstring>
+        <name>initClientExtensions</name>
+        <qualifiedname>KWin::AbstractEglBackend::initClientExtensions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="58" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="200" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1adb84cfda99d103cd0b8f424d5a8eefd5" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::AbstractEglBackend::initWayland</definition>
+        <argsstring>()</argsstring>
+        <name>initWayland</name>
+        <qualifiedname>KWin::AbstractEglBackend::initWayland</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="59" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="98" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a1410486b6a1eb589dc2609b587e33116" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::AbstractEglBackend::hasClientExtension</definition>
+        <argsstring>(const QByteArray &amp;ext) const</argsstring>
+        <name>hasClientExtension</name>
+        <qualifiedname>KWin::AbstractEglBackend::hasClientExtension</qualifiedname>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>ext</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="60" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="214" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a76eb19498e7245f22efd7a3e3f538f5e" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::AbstractEglBackend::isOpenGLES</definition>
+        <argsstring>() const</argsstring>
+        <name>isOpenGLES</name>
+        <qualifiedname>KWin::AbstractEglBackend::isOpenGLES</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="61" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="233" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1ac0da7fcdabd3d0a81845f22428324f1c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::AbstractEglBackend::createContext</definition>
+        <argsstring>(EGLConfig config)</argsstring>
+        <name>createContext</name>
+        <qualifiedname>KWin::AbstractEglBackend::createContext</qualifiedname>
+        <param>
+          <type>EGLConfig</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="62" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="238" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a9e46c68477be19c347b1ccc843dff6ea" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::AbstractEglBackend::ensureGlobalShareContext</definition>
+        <argsstring>(EGLConfig config)</argsstring>
+        <name>ensureGlobalShareContext</name>
+        <qualifiedname>KWin::AbstractEglBackend::ensureGlobalShareContext</qualifiedname>
+        <param>
+          <type>EGLConfig</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="64" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="48" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1ae00b1c4dce13d28425a44539dec8eacd" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::AbstractEglBackend::destroyGlobalShareContext</definition>
+        <argsstring>()</argsstring>
+        <name>destroyGlobalShareContext</name>
+        <qualifiedname>KWin::AbstractEglBackend::destroyGlobalShareContext</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="65" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="61" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1a2756e7a5d7409456bd3c57f684cb3a34" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>::EGLContext</type>
+        <definition>::EGLContext KWin::AbstractEglBackend::createContextInternal</definition>
+        <argsstring>(::EGLContext sharedContext)</argsstring>
+        <name>createContextInternal</name>
+        <qualifiedname>KWin::AbstractEglBackend::createContextInternal</qualifiedname>
+        <param>
+          <type>::EGLContext</type>
+          <declname>sharedContext</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="66" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_egl_backend_1aa4c55efbc706b97974ee8a7726dde133" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::AbstractEglBackend::teardown</definition>
+        <argsstring>()</argsstring>
+        <name>teardown</name>
+        <qualifiedname>KWin::AbstractEglBackend::teardown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="67" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp" bodystart="71" bodyend="74"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::AbstractEglBackend</label>
+        <link refid="class_k_win_1_1_abstract_egl_backend"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>KWin::EglGbmBackend</label>
+        <link refid="class_k_win_1_1_egl_gbm_backend"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::OpenGLBackend</label>
+        <link refid="class_k_win_1_1_open_g_l_backend"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>KWin::RenderBackend</label>
+        <link refid="class_k_win_1_1_render_backend"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>KWin::VirtualEglBackend</label>
+        <link refid="class_k_win_1_1_virtual_egl_backend"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>KWin::Wayland::WaylandEglBackend</label>
+        <link refid="class_k_win_1_1_wayland_1_1_wayland_egl_backend"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>KWin::X11WindowedEglBackend</label>
+        <link refid="class_k_win_1_1_x11_windowed_egl_backend"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::AbstractEglBackend</label>
+        <link refid="class_k_win_1_1_abstract_egl_backend"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_display</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>KWin::EglDisplay</label>
+        <link refid="class_k_win_1_1_egl_display"/>
+      </node>
+      <node id="2">
+        <label>KWin::OpenGLBackend</label>
+        <link refid="class_k_win_1_1_open_g_l_backend"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>KWin::RenderBackend</label>
+        <link refid="class_k_win_1_1_render_backend"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" line="27" column="1" bodyfile="kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.h" bodystart="28" bodyend="74"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a0c5c133460c0f595b4501319bdc9cea9" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>AbstractEglBackend</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a237ff28011d49332970f9dc347f8608a" prot="public" virt="virtual"><scope>KWin::AbstractEglBackend</scope><name>checkGraphicsReset</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a9a2734bb6daddb796b4675f20c90c6ad" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>cleanup</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a0858fbe5842791a18b1d2203263e7596" prot="protected" virt="virtual"><scope>KWin::AbstractEglBackend</scope><name>cleanupSurfaces</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a068a4aa41e2476b9d25fdbd32e7f8e4a" prot="public" virt="virtual"><scope>KWin::AbstractEglBackend</scope><name>compositingType</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a011c5666393a672e5748f2e8514bc06c" prot="public" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>config</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a9899fa006dcf2fcd960dd4f236af080f" prot="public" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>copyPixels</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1ac0da7fcdabd3d0a81845f22428324f1c" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>createContext</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a2756e7a5d7409456bd3c57f684cb3a34" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>createContextInternal</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a1e9e39ced4836a1d2cffe7f3aba2cc81" prot="public" virt="virtual"><scope>KWin::AbstractEglBackend</scope><name>createSurfaceTextureWayland</name></member>
+      <member refid="class_k_win_1_1_render_backend_1abe178a184592ff07e972f4971de5f964" prot="public" virt="virtual"><scope>KWin::AbstractEglBackend</scope><name>cursorLayer</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1ae00b1c4dce13d28425a44539dec8eacd" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>destroyGlobalShareContext</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a818e5dd07cae51bbab8232b0a106cfa8" prot="public" virt="virtual"><scope>KWin::AbstractEglBackend</scope><name>doneCurrent</name></member>
+      <member refid="class_k_win_1_1_render_backend_1a9135e39ee4f8aed8dcfd2771fe0a7773" prot="public" virt="virtual"><scope>KWin::AbstractEglBackend</scope><name>drmDevice</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a2183747e21f79419844e2fd9eb4ec40e" prot="public" virt="virtual"><scope>KWin::AbstractEglBackend</scope><name>eglDisplayObject</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a9e46c68477be19c347b1ccc843dff6ea" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>ensureGlobalShareContext</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a6d81c83b244e8f05405e6df277934a66" prot="public" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>extensions</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a1410486b6a1eb589dc2609b587e33116" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>hasClientExtension</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1ac4cb45de1fc2bf18e0af9f3efb64ce02" prot="public" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>hasExtension</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a4be72c18b1366c52a16905253820799f" prot="public" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>importBufferAsImage</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a6a3de2bd412e6b415e958104174e5b50" prot="public" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>importBufferAsImage</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a8a98a67a9958204ebad9d5b828464709" prot="public" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>importDmaBufAsImage</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a68d4d41343c2667b258beedc1496f162" prot="public" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>importDmaBufAsImage</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a95b2517e369cec56c2bc14f76b469b6d" prot="public" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>importDmaBufAsTexture</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1aa2bb44d4bb6e8fcb630552cc5d06b036" prot="public" virt="pure-virtual"><scope>KWin::AbstractEglBackend</scope><name>init</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a01975a2b1049b42a21a0cc25f7dbcaee" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>initClientExtensions</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1adb84cfda99d103cd0b8f424d5a8eefd5" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>initWayland</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a1528840fc1ef6bfe43a68b8db496e060" prot="public" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>isFailed</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a76eb19498e7245f22efd7a3e3f538f5e" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>isOpenGLES</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1aeace9e159ed198e36d5f2148468da7e6" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>m_clientExtensions</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1ac1472c2afce5cb0457849ba6763536ac" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>m_context</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a382bbd29bb9867a9846ba59f80bd06e3" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>m_display</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a6260efbdc7a6e25bcac9d7e2911b09b6" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>m_importedBuffers</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a8b0084c301aa27eea7c5885215abf136" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>m_tranches</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a139917a79035d3f5d755332773642fc7" prot="public" virt="virtual"><scope>KWin::AbstractEglBackend</scope><name>makeCurrent</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1acd3db9f68fc0bdd2b778b8d8905a7d32" prot="public" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>OpenGLBackend</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1abd1a853f77f0374ea89a68fded26c61b" prot="public" virt="virtual"><scope>KWin::AbstractEglBackend</scope><name>openglContext</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a66b92437df50c1b7d72ac05dca695a50" prot="public" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>openglContextRef</name></member>
+      <member refid="class_k_win_1_1_render_backend_1ad9736308199d71cdd97755a111f5abbe" prot="public" virt="pure-virtual"><scope>KWin::AbstractEglBackend</scope><name>present</name></member>
+      <member refid="class_k_win_1_1_render_backend_1a0862ffb5aba97ee2d82e6488e4d1471d" prot="public" virt="pure-virtual"><scope>KWin::AbstractEglBackend</scope><name>primaryLayer</name></member>
+      <member refid="class_k_win_1_1_render_backend_1a64651d2ee05d39d5e1df7391036198d8" prot="public" virt="virtual"><scope>KWin::AbstractEglBackend</scope><name>repairPresentation</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a354d6a5a43660c0fff3b5f15b5ceb4a4" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>setEglDisplay</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1aaffb8a9ea4bc06515bece7d7563dab21" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>setExtensions</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a680916d9d3de7bcf5c1c3ad6338fde5b" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>setFailed</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a11bcb8552fa007ee192a0c036afa9051" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>setSupportsBufferAge</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a15bebb46135c0337136ef9aee262f6f6" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>setSupportsNativeFence</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1aaa797548c180d8321f431322e00e063f" prot="public" virt="virtual"><scope>KWin::AbstractEglBackend</scope><name>supportedFormats</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1adb44469a10be59741ca090c0e4141ac9" prot="public" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>supportsBufferAge</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1aa6da121c522e644b768f2522cb3c1578" prot="public" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>supportsNativeFence</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1aa4c55efbc706b97974ee8a7726dde133" prot="protected" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>teardown</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1ae899fcb2071701328a9d2d346bea4793" prot="public" virt="virtual"><scope>KWin::AbstractEglBackend</scope><name>testImportBuffer</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a65640228a4a3f4907c64dadb7d077f83" prot="public" virt="virtual"><scope>KWin::AbstractEglBackend</scope><name>textureForOutput</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1a202dca8a83ea2bdf4aa54092f92d774e" prot="public" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>tranches</name></member>
+      <member refid="class_k_win_1_1_abstract_egl_backend_1ad3dd9e8f7b7182d864414443d1d71b07" prot="public" virt="non-virtual"><scope>KWin::AbstractEglBackend</scope><name>~AbstractEglBackend</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a0e1f2fd9fc0b1321b11a611b1cab37bd" prot="public" virt="virtual"><scope>KWin::AbstractEglBackend</scope><name>~OpenGLBackend</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

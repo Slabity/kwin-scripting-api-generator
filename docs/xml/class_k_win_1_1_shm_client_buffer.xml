@@ -1,0 +1,345 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_shm_client_buffer" kind="class" language="C++" prot="public">
+    <compoundname>KWin::ShmClientBuffer</compoundname>
+    <basecompoundref refid="class_k_win_1_1_graphics_buffer" prot="public" virt="non-virtual">KWin::GraphicsBuffer</basecompoundref>
+    <includes refid="shmclientbuffer__p_8h" local="no">shmclientbuffer_p.h</includes>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_shm_client_buffer_1a5cc0dff2eba20aae00e2de146719e73d" prot="private" static="yes" mutable="no">
+        <type>const struct wl_buffer_interface</type>
+        <definition>const struct wl_buffer_interface KWin::ShmClientBuffer::implementation</definition>
+        <argsstring></argsstring>
+        <name>implementation</name>
+        <qualifiedname>KWin::ShmClientBuffer::implementation</qualifiedname>
+        <initializer>= {
+    .destroy = buffer_destroy,
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/shmclientbuffer_p.h" line="79" column="43" bodyfile="kwin/src/wayland/shmclientbuffer_p.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_shm_client_buffer_1ac5f0cd535a357796aede74ad4cc19145" prot="private" static="no" mutable="no">
+        <type>wl_resource *</type>
+        <definition>wl_resource* KWin::ShmClientBuffer::m_resource</definition>
+        <argsstring></argsstring>
+        <name>m_resource</name>
+        <qualifiedname>KWin::ShmClientBuffer::m_resource</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/shmclientbuffer_p.h" line="81" column="17" bodyfile="kwin/src/wayland/shmclientbuffer_p.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_shm_client_buffer_1a05a0e59f9d6340c8c6224f38ae20b555" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_shm_pool" kindref="compound">ShmPool</ref> *</type>
+        <definition>ShmPool* KWin::ShmClientBuffer::m_shmPool</definition>
+        <argsstring></argsstring>
+        <name>m_shmPool</name>
+        <qualifiedname>KWin::ShmClientBuffer::m_shmPool</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/shmclientbuffer_p.h" line="82" column="13" bodyfile="kwin/src/wayland/shmclientbuffer_p.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_shm_client_buffer_1ac1e6f2dbe4a92130a8e019802508e4aa" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_k_win_1_1_shm_attributes" kindref="compound">ShmAttributes</ref></type>
+        <definition>ShmAttributes KWin::ShmClientBuffer::m_shmAttributes</definition>
+        <argsstring></argsstring>
+        <name>m_shmAttributes</name>
+        <qualifiedname>KWin::ShmClientBuffer::m_shmAttributes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/shmclientbuffer_p.h" line="83" column="19" bodyfile="kwin/src/wayland/shmclientbuffer_p.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_shm_client_buffer_1a781049347d6beca5225250588efe704e" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="struct_k_win_1_1_shm_access" kindref="compound">ShmAccess</ref> &gt;</type>
+        <definition>std::optional&lt;ShmAccess&gt; KWin::ShmClientBuffer::m_shmAccess</definition>
+        <argsstring></argsstring>
+        <name>m_shmAccess</name>
+        <qualifiedname>KWin::ShmClientBuffer::m_shmAccess</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/shmclientbuffer_p.h" line="84" column="19" bodyfile="kwin/src/wayland/shmclientbuffer_p.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_shm_client_buffer_1a34ff0f689e3a4afcd444bab8e86cfb44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::ShmClientBuffer::ShmClientBuffer</definition>
+        <argsstring>(ShmPool *pool, ShmAttributes attributes, wl_client *client, uint32_t id)</argsstring>
+        <name>ShmClientBuffer</name>
+        <qualifiedname>KWin::ShmClientBuffer::ShmClientBuffer</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_shm_pool" kindref="compound">ShmPool</ref> *</type>
+          <declname>pool</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_k_win_1_1_shm_attributes" kindref="compound">ShmAttributes</ref></type>
+          <declname>attributes</declname>
+        </param>
+        <param>
+          <type>wl_client *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/shmclientbuffer_p.h" line="64" column="5" bodyfile="kwin/src/wayland/shmclientbuffer.cpp" bodystart="172" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_shm_client_buffer_1a66893f96746d56743e550ed9d35f786a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::ShmClientBuffer::~ShmClientBuffer</definition>
+        <argsstring>() override</argsstring>
+        <name>~ShmClientBuffer</name>
+        <qualifiedname>KWin::ShmClientBuffer::~ShmClientBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/shmclientbuffer_p.h" line="65" column="5" bodyfile="kwin/src/wayland/shmclientbuffer.cpp" bodystart="186" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_shm_client_buffer_1a706d0cad9e7266765d494751804f541c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="struct_k_win_1_1_graphics_buffer_1_1_map" kindref="compound">Map</ref></type>
+        <definition>GraphicsBuffer::Map KWin::ShmClientBuffer::map</definition>
+        <argsstring>(MapFlags flags) override</argsstring>
+        <name>map</name>
+        <qualifiedname>KWin::ShmClientBuffer::map</qualifiedname>
+        <reimplements refid="class_k_win_1_1_graphics_buffer_1a00aa1056d617ca382f59b6598f9f9bf4">map</reimplements>
+        <param>
+          <type>MapFlags</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/shmclientbuffer_p.h" line="67" column="9" bodyfile="kwin/src/wayland/shmclientbuffer.cpp" bodystart="246" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_shm_client_buffer_1a8b26c2bc0ce83be21dbe4efadf9844f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::ShmClientBuffer::unmap</definition>
+        <argsstring>() override</argsstring>
+        <name>unmap</name>
+        <qualifiedname>KWin::ShmClientBuffer::unmap</qualifiedname>
+        <reimplements refid="class_k_win_1_1_graphics_buffer_1a94197a697c14fbdc32a5a763c641b87b">unmap</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/shmclientbuffer_p.h" line="68" column="10" bodyfile="kwin/src/wayland/shmclientbuffer.cpp" bodystart="276" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_shm_client_buffer_1ad558f66ba21118d75bdacc476ef62f40" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QSize</type>
+        <definition>QSize KWin::ShmClientBuffer::size</definition>
+        <argsstring>() const override</argsstring>
+        <name>size</name>
+        <qualifiedname>KWin::ShmClientBuffer::size</qualifiedname>
+        <reimplements refid="class_k_win_1_1_graphics_buffer_1aead3f70f1ac9792f8ee014f326097fb5">size</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/shmclientbuffer_p.h" line="70" column="11" bodyfile="kwin/src/wayland/shmclientbuffer.cpp" bodystart="191" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_shm_client_buffer_1ac5508bf87f99094b6c3abb4d1b1adeeb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::ShmClientBuffer::hasAlphaChannel</definition>
+        <argsstring>() const override</argsstring>
+        <name>hasAlphaChannel</name>
+        <qualifiedname>KWin::ShmClientBuffer::hasAlphaChannel</qualifiedname>
+        <reimplements refid="class_k_win_1_1_graphics_buffer_1a1640dbf550ef6e420d82c18f2c8697a0">hasAlphaChannel</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/shmclientbuffer_p.h" line="71" column="10" bodyfile="kwin/src/wayland/shmclientbuffer.cpp" bodystart="196" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_shm_client_buffer_1adbf3435ac6039d8afc308d0cad46c9d9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const <ref refid="struct_k_win_1_1_shm_attributes" kindref="compound">ShmAttributes</ref> *</type>
+        <definition>const ShmAttributes * KWin::ShmClientBuffer::shmAttributes</definition>
+        <argsstring>() const override</argsstring>
+        <name>shmAttributes</name>
+        <qualifiedname>KWin::ShmClientBuffer::shmAttributes</qualifiedname>
+        <reimplements refid="class_k_win_1_1_graphics_buffer_1ac2be51e8fa6ea0bcf1c9368b3605aa57">shmAttributes</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/shmclientbuffer_p.h" line="72" column="25" bodyfile="kwin/src/wayland/shmclientbuffer.cpp" bodystart="201" bodyend="204"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_shm_client_buffer_1a9989acfda9c64db3e152b34a261caa28" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_shm_client_buffer" kindref="compound">ShmClientBuffer</ref> *</type>
+        <definition>ShmClientBuffer * KWin::ShmClientBuffer::get</definition>
+        <argsstring>(wl_resource *resource)</argsstring>
+        <name>get</name>
+        <qualifiedname>KWin::ShmClientBuffer::get</qualifiedname>
+        <param>
+          <type>wl_resource *</type>
+          <declname>resource</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/shmclientbuffer_p.h" line="74" column="28" bodyfile="kwin/src/wayland/shmclientbuffer.cpp" bodystart="206" bodyend="212"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_shm_client_buffer_1a2dc14e49865bac8b32610f520cd58eda" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ShmClientBuffer::buffer_destroy_resource</definition>
+        <argsstring>(wl_resource *resource)</argsstring>
+        <name>buffer_destroy_resource</name>
+        <qualifiedname>KWin::ShmClientBuffer::buffer_destroy_resource</qualifiedname>
+        <param>
+          <type>wl_resource *</type>
+          <declname>resource</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/shmclientbuffer_p.h" line="77" column="17" bodyfile="kwin/src/wayland/shmclientbuffer.cpp" bodystart="155" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_shm_client_buffer_1a2659b36aceb89465447da5463c991a33" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ShmClientBuffer::buffer_destroy</definition>
+        <argsstring>(wl_client *client, wl_resource *resource)</argsstring>
+        <name>buffer_destroy</name>
+        <qualifiedname>KWin::ShmClientBuffer::buffer_destroy</qualifiedname>
+        <param>
+          <type>wl_client *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>wl_resource *</type>
+          <declname>resource</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/shmclientbuffer_p.h" line="78" column="17" bodyfile="kwin/src/wayland/shmclientbuffer.cpp" bodystart="163" bodyend="166"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>KWin::GraphicsBuffer</label>
+        <link refid="class_k_win_1_1_graphics_buffer"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::ShmClientBuffer</label>
+        <link refid="class_k_win_1_1_shm_client_buffer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>KWin::GraphicsBuffer</label>
+        <link refid="class_k_win_1_1_graphics_buffer"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::ShmClientBuffer</label>
+        <link refid="class_k_win_1_1_shm_client_buffer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/wayland/shmclientbuffer_p.h" line="59" column="1" bodyfile="kwin/src/wayland/shmclientbuffer_p.h" bodystart="60" bodyend="85"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_graphics_buffer_1adfb110d5e5cc2eb89b39b55531de68cc" prot="public" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>addReleasePoint</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1a7233a35f2682c6564fe7dcab11704d19" prot="public" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>alphaChannelFromDrmFormat</name></member>
+      <member refid="class_k_win_1_1_shm_client_buffer_1a2659b36aceb89465447da5463c991a33" prot="private" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>buffer_destroy</name></member>
+      <member refid="class_k_win_1_1_shm_client_buffer_1a2dc14e49865bac8b32610f520cd58eda" prot="private" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>buffer_destroy_resource</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1a975e80a802fa0d119921c13d4f06e576" prot="public" virt="virtual"><scope>KWin::ShmClientBuffer</scope><name>dmabufAttributes</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1a7d0b964ea8c12167b315075b4de6cdfa" prot="public" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>drop</name></member>
+      <member refid="class_k_win_1_1_shm_client_buffer_1a9989acfda9c64db3e152b34a261caa28" prot="public" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>get</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1af0d40610e9115f323dcfa0a2d1f67697" prot="public" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>GraphicsBuffer</name></member>
+      <member refid="class_k_win_1_1_shm_client_buffer_1ac5508bf87f99094b6c3abb4d1b1adeeb" prot="public" virt="virtual"><scope>KWin::ShmClientBuffer</scope><name>hasAlphaChannel</name></member>
+      <member refid="class_k_win_1_1_shm_client_buffer_1a5cc0dff2eba20aae00e2de146719e73d" prot="private" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>implementation</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1abc5c2b498a66a48573f33f154dde6097" prot="public" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>isDropped</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1afdb02f1ae060f64b7618130a055b0f42" prot="public" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>isReferenced</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1ad40715c555717f55f389ec1f36d30038" prot="protected" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>m_dropped</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1a2928609ea80626025fc8e728aaa18057" prot="protected" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>m_refCount</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1a6f476e2a040b103e783e71e6e51b71de" prot="protected" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>m_releasePoints</name></member>
+      <member refid="class_k_win_1_1_shm_client_buffer_1ac5f0cd535a357796aede74ad4cc19145" prot="private" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>m_resource</name></member>
+      <member refid="class_k_win_1_1_shm_client_buffer_1a781049347d6beca5225250588efe704e" prot="private" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>m_shmAccess</name></member>
+      <member refid="class_k_win_1_1_shm_client_buffer_1ac1e6f2dbe4a92130a8e019802508e4aa" prot="private" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>m_shmAttributes</name></member>
+      <member refid="class_k_win_1_1_shm_client_buffer_1a05a0e59f9d6340c8c6224f38ae20b555" prot="private" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>m_shmPool</name></member>
+      <member refid="class_k_win_1_1_shm_client_buffer_1a706d0cad9e7266765d494751804f541c" prot="public" virt="virtual"><scope>KWin::ShmClientBuffer</scope><name>map</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1ab01475abfaf9300dfe2ba846db7e4ae4" prot="public" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>MapFlag</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1ab01475abfaf9300dfe2ba846db7e4ae4a97a8598815489519310048c0f60c2059" prot="public" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>Read</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1abe09a46569d14b3f163f6cc416f4184b" prot="public" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>ref</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1af3c47088ddbdb12a67df0417be2f7347" prot="public" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>released</name></member>
+      <member refid="class_k_win_1_1_shm_client_buffer_1adbf3435ac6039d8afc308d0cad46c9d9" prot="public" virt="virtual"><scope>KWin::ShmClientBuffer</scope><name>shmAttributes</name></member>
+      <member refid="class_k_win_1_1_shm_client_buffer_1a34ff0f689e3a4afcd444bab8e86cfb44" prot="public" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>ShmClientBuffer</name></member>
+      <member refid="class_k_win_1_1_shm_client_buffer_1ad558f66ba21118d75bdacc476ef62f40" prot="public" virt="virtual"><scope>KWin::ShmClientBuffer</scope><name>size</name></member>
+      <member refid="class_k_win_1_1_shm_client_buffer_1a8b26c2bc0ce83be21dbe4efadf9844f2" prot="public" virt="virtual"><scope>KWin::ShmClientBuffer</scope><name>unmap</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1ab17e36ea633d5e9b8849b86695c119a6" prot="public" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>unref</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1ab01475abfaf9300dfe2ba846db7e4ae4aa0c38edda47690199b4462b188a830db" prot="public" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>Write</name></member>
+      <member refid="class_k_win_1_1_shm_client_buffer_1a66893f96746d56743e550ed9d35f786a" prot="public" virt="non-virtual"><scope>KWin::ShmClientBuffer</scope><name>~ShmClientBuffer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

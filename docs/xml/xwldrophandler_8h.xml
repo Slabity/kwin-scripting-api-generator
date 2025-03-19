@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="xwldrophandler_8h" kind="file" language="C++">
+    <compoundname>xwldrophandler.h</compoundname>
+    <includes refid="datadevice_8h" local="yes">wayland/datadevice.h</includes>
+    <includes local="no">xcb/xcb.h</includes>
+    <includedby refid="dnd_8cpp" local="yes">kwin/src/xwayland/dnd.cpp</includedby>
+    <includedby refid="drag__wl_8cpp" local="yes">kwin/src/xwayland/drag_wl.cpp</includedby>
+    <includedby refid="xwayland_8cpp" local="yes">kwin/src/xwayland/xwayland.cpp</includedby>
+    <includedby refid="xwldrophandler_8cpp" local="yes">kwin/src/xwayland/xwldrophandler.cpp</includedby>
+    <incdepgraph>
+      <node id="6">
+        <label>abstract_drop_handler.h</label>
+        <link refid="abstract__drop__handler_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wayland/datadevice.h</label>
+        <link refid="datadevice_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/xwayland/xwldrophandler.h</label>
+        <link refid="xwldrophandler_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QObject</label>
+      </node>
+      <node id="3">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="5">
+        <label>memory</label>
+      </node>
+      <node id="7">
+        <label>xcb/xcb.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/xwayland/dnd.cpp</label>
+        <link refid="dnd_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/xwayland/drag_wl.cpp</label>
+        <link refid="drag__wl_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/xwayland/xwayland.cpp</label>
+        <link refid="xwayland_8cpp"/>
+      </node>
+      <node id="5">
+        <label>kwin/src/xwayland/xwldrophandler.cpp</label>
+        <link refid="xwldrophandler_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/xwayland/xwldrophandler.h</label>
+        <link refid="xwldrophandler_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_xwl_1_1_xwl_drop_handler" prot="public">KWin::Xwl::XwlDropHandler</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <innernamespace refid="namespace_k_win_1_1_xwl">KWin::Xwl</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2021<sp/>David<sp/>Edmundson<sp/>&lt;davidedmundson@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2021<sp/>David<sp/>Redondo<sp/>&lt;kde@david-redondo.de&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="datadevice_8h" kindref="compound">wayland/datadevice.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;xcb/xcb.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win_1_1_xwl" kindref="compound">Xwl</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_xwl_1_1_xvisit" kindref="compound">Xvisit</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_xwl_1_1_dnd" kindref="compound">Dnd</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_k_win_1_1_xwl_1_1_xwl_drop_handler" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_xwl_1_1_xwl_drop_handler_1a0c300cfe7db1e216a5d1d18537711c1c" kindref="member">XwlDropHandler</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_abstract_drop_handler_1a35562fbd6297e223669c9ac1903ea30a" kindref="member">AbstractDropHandler</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xwl_1_1_xwl_drop_handler_1a0c300cfe7db1e216a5d1d18537711c1c" kindref="member">XwlDropHandler</ref>(<ref refid="class_k_win_1_1_xwl_1_1_dnd" kindref="compound">Dnd</ref><sp/>*dnd);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_xwl_drop_handler_1a5296f6462963e459d2b2cfdbcf27a136" kindref="member">updateDragTarget</ref>(<ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref><sp/>*surface,<sp/>quint32<sp/>serial)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_xwl_drop_handler_1a894fcfa6a73f65c8e6d13aa2189a7182" kindref="member">handleClientMessage</ref>(xcb_client_message_event_t<sp/>*event);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>drop()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xwl_1_1_dnd" kindref="compound">Dnd</ref><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>m_dnd;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;Xvisit<sp/>*&gt;<sp/>m_visits;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xwl_1_1_xvisit" kindref="compound">Xvisit</ref><sp/>*m_currentVisit<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/xwayland/xwldrophandler.h"/>
+  </compounddef>
+</doxygen>

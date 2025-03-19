@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="colorlut3d_8cpp" kind="file" language="C++">
+    <compoundname>colorlut3d.cpp</compoundname>
+    <includes refid="colorlut3d_8h" local="yes">colorlut3d.h</includes>
+    <includes refid="colortransformation_8h" local="yes">colortransformation.h</includes>
+    <includes local="no">QVector3D</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/core/colorlut3d.cpp</label>
+        <link refid="colorlut3d_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>colorlut3d.h</label>
+        <link refid="colorlut3d_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>colortransformation.h</label>
+        <link refid="colortransformation_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QVector</label>
+      </node>
+      <node id="10">
+        <label>QVector3D</label>
+      </node>
+      <node id="5">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+      <node id="7">
+        <label>stdint.h</label>
+      </node>
+      <node id="8">
+        <label>tuple</label>
+      </node>
+      <node id="9">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2023<sp/>Xaver<sp/>Hugl<sp/>&lt;xaver.hugl@gmail.com&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="colorlut3d_8h" kindref="compound">colorlut3d.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="colortransformation_8h" kindref="compound">colortransformation.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QVector3D&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="class_k_win_1_1_color_l_u_t3_d_1a0a91d1216b789bf2e05ac4fbaeb4dc21" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_color_l_u_t3_d_1a0a91d1216b789bf2e05ac4fbaeb4dc21" kindref="member">ColorLUT3D::ColorLUT3D</ref>(std::unique_ptr&lt;ColorTransformation&gt;<sp/>&amp;&amp;transformation,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_color_l_u_t3_d_1a91d6b4a9bb1481b299cb8b70cd399668" kindref="member">xSize</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_color_l_u_t3_d_1afb3b32f5994acfd4e9cdb70f0860fa68" kindref="member">ySize</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_color_l_u_t3_d_1a91cef9c7614ebb6db714247914442bb3" kindref="member">zSize</ref>)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>m_transformation(std::move(transformation))</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_xSize(<ref refid="class_k_win_1_1_color_l_u_t3_d_1a91d6b4a9bb1481b299cb8b70cd399668" kindref="member">xSize</ref>)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_ySize(<ref refid="class_k_win_1_1_color_l_u_t3_d_1afb3b32f5994acfd4e9cdb70f0860fa68" kindref="member">ySize</ref>)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_zSize(<ref refid="class_k_win_1_1_color_l_u_t3_d_1a91cef9c7614ebb6db714247914442bb3" kindref="member">zSize</ref>)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_k_win_1_1_color_l_u_t3_d_1a91d6b4a9bb1481b299cb8b70cd399668" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_color_l_u_t3_d_1a91d6b4a9bb1481b299cb8b70cd399668" kindref="member">ColorLUT3D::xSize</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="26"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_xSize;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="class_k_win_1_1_color_l_u_t3_d_1afb3b32f5994acfd4e9cdb70f0860fa68" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_color_l_u_t3_d_1afb3b32f5994acfd4e9cdb70f0860fa68" kindref="member">ColorLUT3D::ySize</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="31"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_ySize;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="class_k_win_1_1_color_l_u_t3_d_1a91cef9c7614ebb6db714247914442bb3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_color_l_u_t3_d_1a91cef9c7614ebb6db714247914442bb3" kindref="member">ColorLUT3D::zSize</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="36"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_zSize;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="class_k_win_1_1_color_l_u_t3_d_1a9175d560ae47fc6d18a5515ad5f33c2f" refkind="member"><highlight class="normal">QVector3D<sp/><ref refid="class_k_win_1_1_color_l_u_t3_d_1a9175d560ae47fc6d18a5515ad5f33c2f" kindref="member">ColorLUT3D::sample</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QVector3D<sp/>&amp;rgb)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_transformation-&gt;transform(rgb);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="class_k_win_1_1_color_l_u_t3_d_1a1c353712de8baa70d44d09793b2fe153" refkind="member"><highlight class="normal">QVector3D<sp/><ref refid="class_k_win_1_1_color_l_u_t3_d_1a9175d560ae47fc6d18a5515ad5f33c2f" kindref="member">ColorLUT3D::sample</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>z)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_transformation-&gt;transform(QVector3D(x<sp/>/<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(m_xSize<sp/>-<sp/>1),<sp/>y<sp/>/<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(m_ySize<sp/>-<sp/>1),<sp/>z<sp/>/<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(m_zSize<sp/>-<sp/>1)));</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/core/colorlut3d.cpp"/>
+  </compounddef>
+</doxygen>

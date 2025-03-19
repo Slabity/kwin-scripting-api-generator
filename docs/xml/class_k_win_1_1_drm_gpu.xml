@@ -1,0 +1,1389 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_drm_gpu" kind="class" language="C++" prot="public">
+    <compoundname>KWin::DrmGpu</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="drm__gpu_8h" local="no">drm_gpu.h</includes>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a9b50ba063da087c6efe45caad82f25d8" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>std::chrono::milliseconds</type>
+        <definition>std::chrono::milliseconds KWin::DrmGpu::s_pageflipTimeout</definition>
+        <argsstring></argsstring>
+        <name>s_pageflipTimeout</name>
+        <qualifiedname>KWin::DrmGpu::s_pageflipTimeout</qualifiedname>
+        <initializer>= std::chrono::seconds(1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This should always be longer than any real pageflip can take, even with PSR and modesets </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="72" column="48" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1af73a82a665fd5a5daca8e3c991e7c520" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int KWin::DrmGpu::m_fd</definition>
+        <argsstring></argsstring>
+        <name>m_fd</name>
+        <qualifiedname>KWin::DrmGpu::m_fd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="144" column="15" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a61d24f4a577f75af3b226fc06cb90772" prot="private" static="no" mutable="no">
+        <type>const std::unique_ptr&lt; <ref refid="class_k_win_1_1_drm_device" kindref="compound">DrmDevice</ref> &gt;</type>
+        <definition>const std::unique_ptr&lt;DrmDevice&gt; KWin::DrmGpu::m_drmDevice</definition>
+        <argsstring></argsstring>
+        <name>m_drmDevice</name>
+        <qualifiedname>KWin::DrmGpu::m_drmDevice</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="145" column="27" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a3bebfbd5db5afb3d12d91e1c7afe2e42" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::m_atomicModeSetting</definition>
+        <argsstring></argsstring>
+        <name>m_atomicModeSetting</name>
+        <qualifiedname>KWin::DrmGpu::m_atomicModeSetting</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="146" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a2babe91a1ac39f2af70e6d1b11cca7dc" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::m_addFB2ModifiersSupported</definition>
+        <argsstring></argsstring>
+        <name>m_addFB2ModifiersSupported</name>
+        <qualifiedname>KWin::DrmGpu::m_addFB2ModifiersSupported</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="147" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a84ca3a05449c0c41cab3955bdbaceac5" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::m_isNVidia</definition>
+        <argsstring></argsstring>
+        <name>m_isNVidia</name>
+        <qualifiedname>KWin::DrmGpu::m_isNVidia</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="148" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1afb4f49303e159290500447e083661a68" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::m_isI915</definition>
+        <argsstring></argsstring>
+        <name>m_isI915</name>
+        <qualifiedname>KWin::DrmGpu::m_isI915</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="149" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1afc3eb8c2dabf1135ed99ae8d5266c705" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::m_isAmdgpu</definition>
+        <argsstring></argsstring>
+        <name>m_isAmdgpu</name>
+        <qualifiedname>KWin::DrmGpu::m_isAmdgpu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="150" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1aec0173ad02e9d3f14eecdbfd285b374b" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::m_isVmwgfx</definition>
+        <argsstring></argsstring>
+        <name>m_isVmwgfx</name>
+        <qualifiedname>KWin::DrmGpu::m_isVmwgfx</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="151" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1ac13c5ebc5b4e777d75efbd48ca363d60" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::m_isVirtualMachine</definition>
+        <argsstring></argsstring>
+        <name>m_isVirtualMachine</name>
+        <qualifiedname>KWin::DrmGpu::m_isVirtualMachine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="152" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a7ffbb488fd41647beeb00f225bcdf643" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString KWin::DrmGpu::m_driverName</definition>
+        <argsstring></argsstring>
+        <name>m_driverName</name>
+        <qualifiedname>KWin::DrmGpu::m_driverName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="153" column="13" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1ac1c82e072bfed2c1de8c19d45f366e06" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::m_supportsCursorPlaneHotspot</definition>
+        <argsstring></argsstring>
+        <name>m_supportsCursorPlaneHotspot</name>
+        <qualifiedname>KWin::DrmGpu::m_supportsCursorPlaneHotspot</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="154" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a95c0695e80f39f92d8f8808ec1055244" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::m_asyncPageflipSupported</definition>
+        <argsstring></argsstring>
+        <name>m_asyncPageflipSupported</name>
+        <qualifiedname>KWin::DrmGpu::m_asyncPageflipSupported</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="155" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a0c5c3872f1b552cd4fd2c182e2a2743f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::m_isRemoved</definition>
+        <argsstring></argsstring>
+        <name>m_isRemoved</name>
+        <qualifiedname>KWin::DrmGpu::m_isRemoved</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="156" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a693992679171e403f11e4c0fe35459af" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::m_isActive</definition>
+        <argsstring></argsstring>
+        <name>m_isActive</name>
+        <qualifiedname>KWin::DrmGpu::m_isActive</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="157" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a8d8178443a2d2780a0b70c5906e4ac52" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::m_forceModeset</definition>
+        <argsstring></argsstring>
+        <name>m_forceModeset</name>
+        <qualifiedname>KWin::DrmGpu::m_forceModeset</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="158" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a66d802e25787047b6a8917a404ed2b43" prot="private" static="no" mutable="no">
+        <type>clockid_t</type>
+        <definition>clockid_t KWin::DrmGpu::m_presentationClock</definition>
+        <argsstring></argsstring>
+        <name>m_presentationClock</name>
+        <qualifiedname>KWin::DrmGpu::m_presentationClock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="159" column="15" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a29f5151a44027c30426db3e23e00a31e" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_egl_display" kindref="compound">EglDisplay</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;EglDisplay&gt; KWin::DrmGpu::m_eglDisplay</definition>
+        <argsstring></argsstring>
+        <name>m_eglDisplay</name>
+        <qualifiedname>KWin::DrmGpu::m_eglDisplay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="160" column="21" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a46adafa0c38e3a1eb865d8290f4dade6" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_backend" kindref="compound">DrmBackend</ref> *const</type>
+        <definition>DrmBackend* const KWin::DrmGpu::m_platform</definition>
+        <argsstring></argsstring>
+        <name>m_platform</name>
+        <qualifiedname>KWin::DrmGpu::m_platform</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="161" column="22" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a9d55a27102c0d073cd3ff7de6a870fbf" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="class_k_win_1_1_version" kindref="compound">Version</ref> &gt;</type>
+        <definition>std::optional&lt;Version&gt; KWin::DrmGpu::m_nvidiaDriverVersion</definition>
+        <argsstring></argsstring>
+        <name>m_nvidiaDriverVersion</name>
+        <qualifiedname>KWin::DrmGpu::m_nvidiaDriverVersion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="162" column="19" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a0d8132c97eab9169a0bff9a77f4854a9" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::unique_ptr&lt; <ref refid="class_k_win_1_1_drm_plane" kindref="compound">DrmPlane</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::unique_ptr&lt;DrmPlane&gt; &gt; KWin::DrmGpu::m_planes</definition>
+        <argsstring></argsstring>
+        <name>m_planes</name>
+        <qualifiedname>KWin::DrmGpu::m_planes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="164" column="17" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a11f7b59f38e8088b5380aa1216bb72d5" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::unique_ptr&lt; <ref refid="class_k_win_1_1_drm_crtc" kindref="compound">DrmCrtc</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::unique_ptr&lt;DrmCrtc&gt; &gt; KWin::DrmGpu::m_crtcs</definition>
+        <argsstring></argsstring>
+        <name>m_crtcs</name>
+        <qualifiedname>KWin::DrmGpu::m_crtcs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="165" column="17" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a53c9a95650dcd06143e6ea0af524d4fd" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_connector" kindref="compound">DrmConnector</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;DrmConnector&gt; &gt; KWin::DrmGpu::m_connectors</definition>
+        <argsstring></argsstring>
+        <name>m_connectors</name>
+        <qualifiedname>KWin::DrmGpu::m_connectors</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="166" column="17" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a58608ed76cce410d93484b3c2880bfeb" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; <ref refid="class_k_win_1_1_drm_connector" kindref="compound">DrmConnector</ref> *, std::unique_ptr&lt; <ref refid="class_k_win_1_1_drm_pipeline" kindref="compound">DrmPipeline</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;DrmConnector *, std::unique_ptr&lt;DrmPipeline&gt; &gt; KWin::DrmGpu::m_pipelineMap</definition>
+        <argsstring></argsstring>
+        <name>m_pipelineMap</name>
+        <qualifiedname>KWin::DrmGpu::m_pipelineMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="167" column="24" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a5702191e4f1f1fbba7b0ddf0af278f4a" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_drm_object" kindref="compound">DrmObject</ref> * &gt;</type>
+        <definition>QList&lt;DrmObject *&gt; KWin::DrmGpu::m_allObjects</definition>
+        <argsstring></argsstring>
+        <name>m_allObjects</name>
+        <qualifiedname>KWin::DrmGpu::m_allObjects</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="168" column="11" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a7b07b9a05284ae23238afaac7097c85c" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_drm_pipeline" kindref="compound">DrmPipeline</ref> * &gt;</type>
+        <definition>QList&lt;DrmPipeline *&gt; KWin::DrmGpu::m_pipelines</definition>
+        <argsstring></argsstring>
+        <name>m_pipelines</name>
+        <qualifiedname>KWin::DrmGpu::m_pipelines</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="169" column="11" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a40d24dcc88f0f5c8b3ecd39c7246e1f2" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_drm_output" kindref="compound">DrmOutput</ref> * &gt;</type>
+        <definition>QList&lt;DrmOutput *&gt; KWin::DrmGpu::m_drmOutputs</definition>
+        <argsstring></argsstring>
+        <name>m_drmOutputs</name>
+        <qualifiedname>KWin::DrmGpu::m_drmOutputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="171" column="11" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1acf8efa47b7eb08c50f57998f30d078fe" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; QSocketNotifier &gt;</type>
+        <definition>std::unique_ptr&lt;QSocketNotifier&gt; KWin::DrmGpu::m_socketNotifier</definition>
+        <argsstring></argsstring>
+        <name>m_socketNotifier</name>
+        <qualifiedname>KWin::DrmGpu::m_socketNotifier</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="173" column="21" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1ae295318183220c7b6d26d452b651bcae" prot="private" static="no" mutable="no">
+        <type>QSize</type>
+        <definition>QSize KWin::DrmGpu::m_cursorSize</definition>
+        <argsstring></argsstring>
+        <name>m_cursorSize</name>
+        <qualifiedname>KWin::DrmGpu::m_cursorSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="174" column="11" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1aaa9e4495f0e91c21853ed55ae2469a69" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; <ref refid="class_k_win_1_1_drm_pipeline" kindref="compound">DrmPipeline</ref> *, std::shared_ptr&lt; <ref refid="class_k_win_1_1_output_frame" kindref="compound">OutputFrame</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;DrmPipeline *, std::shared_ptr&lt;OutputFrame&gt; &gt; KWin::DrmGpu::m_pendingModesetFrames</definition>
+        <argsstring></argsstring>
+        <name>m_pendingModesetFrames</name>
+        <qualifiedname>KWin::DrmGpu::m_pendingModesetFrames</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="175" column="24" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a1c2732ac97c8a4eaa22a0ba32df5ab49" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::m_inModeset</definition>
+        <argsstring></argsstring>
+        <name>m_inModeset</name>
+        <qualifiedname>KWin::DrmGpu::m_inModeset</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="176" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1a276e2d8f902261ac675d53f245a16980" prot="private" static="no" mutable="no">
+        <type>QHash&lt; <ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref> *, std::weak_ptr&lt; <ref refid="class_k_win_1_1_drm_framebuffer_data" kindref="compound">DrmFramebufferData</ref> &gt; &gt;</type>
+        <definition>QHash&lt;GraphicsBuffer *, std::weak_ptr&lt;DrmFramebufferData&gt; &gt; KWin::DrmGpu::m_fbCache</definition>
+        <argsstring></argsstring>
+        <name>m_fbCache</name>
+        <qualifiedname>KWin::DrmGpu::m_fbCache</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="177" column="11" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_gpu_1afe362ba16df68e3b56297c64acd2e354" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::unique_ptr&lt; <ref refid="class_k_win_1_1_drm_commit" kindref="compound">DrmCommit</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::unique_ptr&lt;DrmCommit&gt; &gt; KWin::DrmGpu::m_defunctCommits</definition>
+        <argsstring></argsstring>
+        <name>m_defunctCommits</name>
+        <qualifiedname>KWin::DrmGpu::m_defunctCommits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="178" column="17" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a626f13f572ae73d1ff93a9da554dd3be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::DrmGpu::DrmGpu</definition>
+        <argsstring>(DrmBackend *backend, int fd, std::unique_ptr&lt; DrmDevice &gt; &amp;&amp;device)</argsstring>
+        <name>DrmGpu</name>
+        <qualifiedname>KWin::DrmGpu::DrmGpu</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_backend" kindref="compound">DrmBackend</ref> *</type>
+          <declname>backend</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_drm_device" kindref="compound">DrmDevice</ref> &gt; &amp;&amp;</type>
+          <declname>device</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="74" column="5" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="51" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1ae5e5b054d84dad28f1a58daa80d656ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::DrmGpu::~DrmGpu</definition>
+        <argsstring>()</argsstring>
+        <name>~DrmGpu</name>
+        <qualifiedname>KWin::DrmGpu::~DrmGpu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="75" column="5" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="109" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a5c2cc73ffda21dac504ea64a439c80bf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int KWin::DrmGpu::fd</definition>
+        <argsstring>() const</argsstring>
+        <name>fd</name>
+        <qualifiedname>KWin::DrmGpu::fd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="77" column="9" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="629" bodyend="632"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1ac463b4891d7f937b19aa38f1e8158253" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_device" kindref="compound">DrmDevice</ref> *</type>
+        <definition>DrmDevice * KWin::DrmGpu::drmDevice</definition>
+        <argsstring>() const</argsstring>
+        <name>drmDevice</name>
+        <qualifiedname>KWin::DrmGpu::drmDevice</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="78" column="15" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="634" bodyend="637"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a38e8b5a60cd8609f30f35dcb95b2ba8c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::isRemoved</definition>
+        <argsstring>() const</argsstring>
+        <name>isRemoved</name>
+        <qualifiedname>KWin::DrmGpu::isRemoved</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="80" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="694" bodyend="697"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a50b56e85f9ae9bea172e98b62eaabc2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmGpu::setRemoved</definition>
+        <argsstring>()</argsstring>
+        <name>setRemoved</name>
+        <qualifiedname>KWin::DrmGpu::setRemoved</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="81" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="699" bodyend="702"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a0f22b25c25030d7a6b81827e6f58ba8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmGpu::setActive</definition>
+        <argsstring>(bool active)</argsstring>
+        <name>setActive</name>
+        <qualifiedname>KWin::DrmGpu::setActive</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>active</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="82" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="704" bodyend="725"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a4a405d65507be0f9e8684ddbd29d3459" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::isActive</definition>
+        <argsstring>() const</argsstring>
+        <name>isActive</name>
+        <qualifiedname>KWin::DrmGpu::isActive</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="83" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="727" bodyend="730"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1aea4d87dd3a467349eafea6ea06af45e8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::atomicModeSetting</definition>
+        <argsstring>() const</argsstring>
+        <name>atomicModeSetting</name>
+        <qualifiedname>KWin::DrmGpu::atomicModeSetting</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="85" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="639" bodyend="642"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a3bdb0bb54ef7282746c43b68cc06dc0e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::addFB2ModifiersSupported</definition>
+        <argsstring>() const</argsstring>
+        <name>addFB2ModifiersSupported</name>
+        <qualifiedname>KWin::DrmGpu::addFB2ModifiersSupported</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="86" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="654" bodyend="657"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a08cca5895abe4ed37130c9e95d9f3640" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::asyncPageflipSupported</definition>
+        <argsstring>() const</argsstring>
+        <name>asyncPageflipSupported</name>
+        <qualifiedname>KWin::DrmGpu::asyncPageflipSupported</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="87" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="659" bodyend="662"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1acc77a4f2c12b1f0bc2779833313c3af3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::isI915</definition>
+        <argsstring>() const</argsstring>
+        <name>isI915</name>
+        <qualifiedname>KWin::DrmGpu::isI915</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="88" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="664" bodyend="667"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a3319742bba5e67183b5e8da27c2a8f0e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::isNVidia</definition>
+        <argsstring>() const</argsstring>
+        <name>isNVidia</name>
+        <qualifiedname>KWin::DrmGpu::isNVidia</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="89" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="669" bodyend="672"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1acaa37b26bfe93a2556f4bab1f88aa447" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::isAmdgpu</definition>
+        <argsstring>() const</argsstring>
+        <name>isAmdgpu</name>
+        <qualifiedname>KWin::DrmGpu::isAmdgpu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="90" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="674" bodyend="677"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a6602f307bb6c0fe1775a3e79016ea6d8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::isVmwgfx</definition>
+        <argsstring>() const</argsstring>
+        <name>isVmwgfx</name>
+        <qualifiedname>KWin::DrmGpu::isVmwgfx</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="91" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="679" bodyend="682"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1ae61d8cfcc74114db7814e8c4baf77978" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::isVirtualMachine</definition>
+        <argsstring>() const</argsstring>
+        <name>isVirtualMachine</name>
+        <qualifiedname>KWin::DrmGpu::isVirtualMachine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="92" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="684" bodyend="687"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1ad19b0c3f0c2be8867c708a9cd77c9c0c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="class_k_win_1_1_version" kindref="compound">Version</ref> &gt;</type>
+        <definition>std::optional&lt; Version &gt; KWin::DrmGpu::nvidiaDriverVersion</definition>
+        <argsstring>() const</argsstring>
+        <name>nvidiaDriverVersion</name>
+        <qualifiedname>KWin::DrmGpu::nvidiaDriverVersion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="93" column="19" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="689" bodyend="692"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a6453ef70b1b563784066735e99e0d0e9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString KWin::DrmGpu::driverName</definition>
+        <argsstring>() const</argsstring>
+        <name>driverName</name>
+        <qualifiedname>KWin::DrmGpu::driverName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="94" column="13" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="924" bodyend="927"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a25b07a36208de914b6a34a5f4ada7791" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_egl_display" kindref="compound">EglDisplay</ref> *</type>
+        <definition>EglDisplay * KWin::DrmGpu::eglDisplay</definition>
+        <argsstring>() const</argsstring>
+        <name>eglDisplay</name>
+        <qualifiedname>KWin::DrmGpu::eglDisplay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="95" column="16" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="644" bodyend="647"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a6829c5268cf72d3083dd9cf9044693d3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_backend" kindref="compound">DrmBackend</ref> *</type>
+        <definition>DrmBackend * KWin::DrmGpu::platform</definition>
+        <argsstring>() const</argsstring>
+        <name>platform</name>
+        <qualifiedname>KWin::DrmGpu::platform</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="96" column="16" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="571" bodyend="574"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a4a2986abf214c9132b696a3e5959f63f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>clockid_t</type>
+        <definition>clockid_t KWin::DrmGpu::presentationClock</definition>
+        <argsstring>() const</argsstring>
+        <name>presentationClock</name>
+        <qualifiedname>KWin::DrmGpu::presentationClock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the clock from which presentation timestamps are sourced. The returned value can be either CLOCK_MONOTONIC or CLOCK_REALTIME. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="101" column="15" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="137" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a7d1826fb6863bee6abdf7450e3ed340f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QSize</type>
+        <definition>QSize KWin::DrmGpu::cursorSize</definition>
+        <argsstring>() const</argsstring>
+        <name>cursorSize</name>
+        <qualifiedname>KWin::DrmGpu::cursorSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="102" column="11" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="803" bodyend="806"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a11fe8b8a18f040120f6969588be3cc96" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="class_k_win_1_1_drm_output" kindref="compound">DrmOutput</ref> * &gt;</type>
+        <definition>QList&lt; DrmOutput * &gt; KWin::DrmGpu::drmOutputs</definition>
+        <argsstring>() const</argsstring>
+        <name>drmOutputs</name>
+        <qualifiedname>KWin::DrmGpu::drmOutputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="104" column="11" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="624" bodyend="627"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a401b31055350250a52ba7129ead1eb3e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const QList&lt; <ref refid="class_k_win_1_1_drm_pipeline" kindref="compound">DrmPipeline</ref> * &gt;</type>
+        <definition>const QList&lt; DrmPipeline * &gt; KWin::DrmGpu::pipelines</definition>
+        <argsstring>() const</argsstring>
+        <name>pipelines</name>
+        <qualifiedname>KWin::DrmGpu::pipelines</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="105" column="17" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="576" bodyend="579"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a2044382ead5fd70aa2e3f1d4fa37e03d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmGpu::setEglDisplay</definition>
+        <argsstring>(std::unique_ptr&lt; EglDisplay &gt; &amp;&amp;display)</argsstring>
+        <name>setEglDisplay</name>
+        <qualifiedname>KWin::DrmGpu::setEglDisplay</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_egl_display" kindref="compound">EglDisplay</ref> &gt; &amp;&amp;</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="107" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="649" bodyend="652"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1ae6108588f7a82ceb89cf80efae8c9985" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::updateOutputs</definition>
+        <argsstring>()</argsstring>
+        <name>updateOutputs</name>
+        <qualifiedname>KWin::DrmGpu::updateOutputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="109" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="243" bodyend="336"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a855f6d9cbe0f147c3383e151cf1ac5ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmGpu::removeOutputs</definition>
+        <argsstring>()</argsstring>
+        <name>removeOutputs</name>
+        <qualifiedname>KWin::DrmGpu::removeOutputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="110" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="338" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1aa4bfcc52fb1f71d47afc3fd757b73d4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">DrmPipeline::Error</ref></type>
+        <definition>DrmPipeline::Error KWin::DrmGpu::testPendingConfiguration</definition>
+        <argsstring>()</argsstring>
+        <name>testPendingConfiguration</name>
+        <qualifiedname>KWin::DrmGpu::testPendingConfiguration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="112" column="24" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="410" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a549d8bca1700e3facdb39ea80610e481" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::needsModeset</definition>
+        <argsstring>() const</argsstring>
+        <name>needsModeset</name>
+        <qualifiedname>KWin::DrmGpu::needsModeset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="113" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="732" bodyend="739"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a42b2a3d4b9bfc4071f3ecb0b039a8313" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmGpu::maybeModeset</definition>
+        <argsstring>(DrmPipeline *pipeline, const std::shared_ptr&lt; OutputFrame &gt; &amp;frame)</argsstring>
+        <name>maybeModeset</name>
+        <qualifiedname>KWin::DrmGpu::maybeModeset</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_pipeline" kindref="compound">DrmPipeline</ref> *</type>
+          <declname>pipeline</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_k_win_1_1_output_frame" kindref="compound">OutputFrame</ref> &gt; &amp;</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="114" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="741" bodyend="787"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a72aa675690c27ad99b7183ac1a880987" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_framebuffer" kindref="compound">DrmFramebuffer</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; DrmFramebuffer &gt; KWin::DrmGpu::importBuffer</definition>
+        <argsstring>(GraphicsBuffer *buffer, FileDescriptor &amp;&amp;explicitFence)</argsstring>
+        <name>importBuffer</name>
+        <qualifiedname>KWin::DrmGpu::importBuffer</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref> *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref> &amp;&amp;</type>
+          <declname>explicitFence</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="116" column="21" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="834" bodyend="917"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a2b832e8e9abc02589afcbeb6d0c20376" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmGpu::forgetBuffer</definition>
+        <argsstring>(GraphicsBuffer *buf)</argsstring>
+        <name>forgetBuffer</name>
+        <qualifiedname>KWin::DrmGpu::forgetBuffer</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref> *</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="117" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="919" bodyend="922"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a17fa7d523dcbfa87b478b5c5cf595d95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmGpu::releaseBuffers</definition>
+        <argsstring>()</argsstring>
+        <name>releaseBuffers</name>
+        <qualifiedname>KWin::DrmGpu::releaseBuffers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="118" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="808" bodyend="824"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a625bd136dfabe35861f0b42f1c146302" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmGpu::recreateSurfaces</definition>
+        <argsstring>()</argsstring>
+        <name>recreateSurfaces</name>
+        <qualifiedname>KWin::DrmGpu::recreateSurfaces</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="119" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="826" bodyend="832"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a383c3bb42a6d5403b6740ee291a2b25c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref></type>
+        <definition>FileDescriptor KWin::DrmGpu::createNonMasterFd</definition>
+        <argsstring>() const</argsstring>
+        <name>createNonMasterFd</name>
+        <qualifiedname>KWin::DrmGpu::createNonMasterFd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="121" column="20" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="120" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a0b99165bba0fafae138071b1a295c927" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_drm_lease" kindref="compound">DrmLease</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; DrmLease &gt; KWin::DrmGpu::leaseOutputs</definition>
+        <argsstring>(const QList&lt; DrmOutput * &gt; &amp;outputs)</argsstring>
+        <name>leaseOutputs</name>
+        <qualifiedname>KWin::DrmGpu::leaseOutputs</qualifiedname>
+        <param>
+          <type>const QList&lt; <ref refid="class_k_win_1_1_drm_output" kindref="compound">DrmOutput</ref> * &gt; &amp;</type>
+          <declname>outputs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="122" column="21" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="581" bodyend="622"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1aaebd71205f1a44b594cdd60f7fdd275d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmGpu::isIdle</definition>
+        <argsstring>() const</argsstring>
+        <name>isIdle</name>
+        <qualifiedname>KWin::DrmGpu::isIdle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="123" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="490" bodyend="495"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a5a771aa70949296f7099597f7b3c6474" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmGpu::dispatchEvents</definition>
+        <argsstring>()</argsstring>
+        <name>dispatchEvents</name>
+        <qualifiedname>KWin::DrmGpu::dispatchEvents</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="124" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="545" bodyend="551"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a3e06ddb9dc50576c218021c64e5c6434" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmGpu::addDefunctCommit</definition>
+        <argsstring>(std::unique_ptr&lt; DrmCommit &gt; &amp;&amp;commit)</argsstring>
+        <name>addDefunctCommit</name>
+        <qualifiedname>KWin::DrmGpu::addDefunctCommit</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_drm_commit" kindref="compound">DrmCommit</ref> &gt; &amp;&amp;</type>
+          <declname>commit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="126" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="553" bodyend="556"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_drm_gpu_1a732f62333c4f6da8bf3ab09e9e176ace" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmGpu::activeChanged</definition>
+        <argsstring>(bool active)</argsstring>
+        <name>activeChanged</name>
+        <qualifiedname>KWin::DrmGpu::activeChanged</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>active</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="129" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_drm_gpu_1a31615aac1894ba0da50e4bc9c98c7e58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmGpu::outputAdded</definition>
+        <argsstring>(DrmAbstractOutput *output)</argsstring>
+        <name>outputAdded</name>
+        <qualifiedname>KWin::DrmGpu::outputAdded</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_abstract_output" kindref="compound">DrmAbstractOutput</ref> *</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="130" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_drm_gpu_1a1f2f3039115395e75b65e53bc4f5bd86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmGpu::outputRemoved</definition>
+        <argsstring>(DrmAbstractOutput *output)</argsstring>
+        <name>outputRemoved</name>
+        <qualifiedname>KWin::DrmGpu::outputRemoved</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_abstract_output" kindref="compound">DrmAbstractOutput</ref> *</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="131" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1ac1fd28e4f098f74cea508354a32be365" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_output" kindref="compound">DrmOutput</ref> *</type>
+        <definition>DrmOutput * KWin::DrmGpu::findOutput</definition>
+        <argsstring>(quint32 connector)</argsstring>
+        <name>findOutput</name>
+        <qualifiedname>KWin::DrmGpu::findOutput</qualifiedname>
+        <param>
+          <type>quint32</type>
+          <declname>connector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="134" column="15" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="479" bodyend="488"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a244e9a48c44191b8eaa57af04ac1e821" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmGpu::removeOutput</definition>
+        <argsstring>(DrmOutput *output)</argsstring>
+        <name>removeOutput</name>
+        <qualifiedname>KWin::DrmGpu::removeOutput</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_output" kindref="compound">DrmOutput</ref> *</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="135" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="558" bodyend="569"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a3bf90ec0244d5118aaaf484d46ee0f63" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmGpu::initDrmResources</definition>
+        <argsstring>()</argsstring>
+        <name>initDrmResources</name>
+        <qualifiedname>KWin::DrmGpu::initDrmResources</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="136" column="10" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="142" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a0fc9dbe97cd98fd38b69be157f113743" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">DrmPipeline::Error</ref></type>
+        <definition>DrmPipeline::Error KWin::DrmGpu::checkCrtcAssignment</definition>
+        <argsstring>(QList&lt; DrmConnector * &gt; connectors, const QList&lt; DrmCrtc * &gt; &amp;crtcs)</argsstring>
+        <name>checkCrtcAssignment</name>
+        <qualifiedname>KWin::DrmGpu::checkCrtcAssignment</qualifiedname>
+        <param>
+          <type>QList&lt; <ref refid="class_k_win_1_1_drm_connector" kindref="compound">DrmConnector</ref> * &gt;</type>
+          <declname>connectors</declname>
+        </param>
+        <param>
+          <type>const QList&lt; <ref refid="class_k_win_1_1_drm_crtc" kindref="compound">DrmCrtc</ref> * &gt; &amp;</type>
+          <declname>crtcs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="138" column="24" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="346" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1a1ddda656a00253fb497639653e3db8ba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">DrmPipeline::Error</ref></type>
+        <definition>DrmPipeline::Error KWin::DrmGpu::testPipelines</definition>
+        <argsstring>()</argsstring>
+        <name>testPipelines</name>
+        <qualifiedname>KWin::DrmGpu::testPipelines</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="139" column="24" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="454" bodyend="477"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1af12019dcf3c170c2bb4d741a079ade3c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="class_k_win_1_1_drm_object" kindref="compound">DrmObject</ref> * &gt;</type>
+        <definition>QList&lt; DrmObject * &gt; KWin::DrmGpu::unusedObjects</definition>
+        <argsstring>() const</argsstring>
+        <name>unusedObjects</name>
+        <qualifiedname>KWin::DrmGpu::unusedObjects</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="140" column="11" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="789" bodyend="801"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_drm_gpu_1addc9de3a9f1260a35cdb672bbbd6d88e" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmGpu::pageFlipHandler</definition>
+        <argsstring>(int fd, unsigned int sequence, unsigned int sec, unsigned int usec, unsigned int crtc_id, void *user_data)</argsstring>
+        <name>pageFlipHandler</name>
+        <qualifiedname>KWin::DrmGpu::pageFlipHandler</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>sequence</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>sec</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>usec</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>crtc_id</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_gpu.h" line="142" column="17" bodyfile="kwin/src/backends/drm/drm_gpu.cpp" bodystart="519" bodyend="543"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::DrmGpu</label>
+        <link refid="class_k_win_1_1_drm_gpu"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::DrmGpu</label>
+        <link refid="class_k_win_1_1_drm_gpu"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/backends/drm/drm_gpu.h" line="65" column="1" bodyfile="kwin/src/backends/drm/drm_gpu.h" bodystart="66" bodyend="179"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_drm_gpu_1a732f62333c4f6da8bf3ab09e9e176ace" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>activeChanged</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a3e06ddb9dc50576c218021c64e5c6434" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>addDefunctCommit</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a3bdb0bb54ef7282746c43b68cc06dc0e" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>addFB2ModifiersSupported</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a08cca5895abe4ed37130c9e95d9f3640" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>asyncPageflipSupported</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1aea4d87dd3a467349eafea6ea06af45e8" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>atomicModeSetting</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a0fc9dbe97cd98fd38b69be157f113743" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>checkCrtcAssignment</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a383c3bb42a6d5403b6740ee291a2b25c" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>createNonMasterFd</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a7d1826fb6863bee6abdf7450e3ed340f" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>cursorSize</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a5a771aa70949296f7099597f7b3c6474" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>dispatchEvents</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a6453ef70b1b563784066735e99e0d0e9" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>driverName</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1ac463b4891d7f937b19aa38f1e8158253" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>drmDevice</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a626f13f572ae73d1ff93a9da554dd3be" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>DrmGpu</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a11fe8b8a18f040120f6969588be3cc96" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>drmOutputs</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a25b07a36208de914b6a34a5f4ada7791" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>eglDisplay</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a5c2cc73ffda21dac504ea64a439c80bf" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>fd</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1ac1fd28e4f098f74cea508354a32be365" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>findOutput</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a2b832e8e9abc02589afcbeb6d0c20376" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>forgetBuffer</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a72aa675690c27ad99b7183ac1a880987" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>importBuffer</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a3bf90ec0244d5118aaaf484d46ee0f63" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>initDrmResources</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a4a405d65507be0f9e8684ddbd29d3459" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>isActive</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1acaa37b26bfe93a2556f4bab1f88aa447" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>isAmdgpu</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1acc77a4f2c12b1f0bc2779833313c3af3" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>isI915</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1aaebd71205f1a44b594cdd60f7fdd275d" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>isIdle</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a3319742bba5e67183b5e8da27c2a8f0e" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>isNVidia</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a38e8b5a60cd8609f30f35dcb95b2ba8c" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>isRemoved</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1ae61d8cfcc74114db7814e8c4baf77978" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>isVirtualMachine</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a6602f307bb6c0fe1775a3e79016ea6d8" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>isVmwgfx</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a0b99165bba0fafae138071b1a295c927" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>leaseOutputs</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a2babe91a1ac39f2af70e6d1b11cca7dc" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_addFB2ModifiersSupported</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a5702191e4f1f1fbba7b0ddf0af278f4a" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_allObjects</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a95c0695e80f39f92d8f8808ec1055244" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_asyncPageflipSupported</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a3bebfbd5db5afb3d12d91e1c7afe2e42" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_atomicModeSetting</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a53c9a95650dcd06143e6ea0af524d4fd" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_connectors</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a11f7b59f38e8088b5380aa1216bb72d5" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_crtcs</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1ae295318183220c7b6d26d452b651bcae" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_cursorSize</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1afe362ba16df68e3b56297c64acd2e354" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_defunctCommits</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a7ffbb488fd41647beeb00f225bcdf643" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_driverName</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a61d24f4a577f75af3b226fc06cb90772" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_drmDevice</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a40d24dcc88f0f5c8b3ecd39c7246e1f2" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_drmOutputs</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a29f5151a44027c30426db3e23e00a31e" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_eglDisplay</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a276e2d8f902261ac675d53f245a16980" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_fbCache</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1af73a82a665fd5a5daca8e3c991e7c520" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_fd</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a8d8178443a2d2780a0b70c5906e4ac52" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_forceModeset</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a1c2732ac97c8a4eaa22a0ba32df5ab49" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_inModeset</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a693992679171e403f11e4c0fe35459af" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_isActive</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1afc3eb8c2dabf1135ed99ae8d5266c705" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_isAmdgpu</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1afb4f49303e159290500447e083661a68" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_isI915</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a84ca3a05449c0c41cab3955bdbaceac5" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_isNVidia</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a0c5c3872f1b552cd4fd2c182e2a2743f" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_isRemoved</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1ac13c5ebc5b4e777d75efbd48ca363d60" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_isVirtualMachine</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1aec0173ad02e9d3f14eecdbfd285b374b" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_isVmwgfx</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a9d55a27102c0d073cd3ff7de6a870fbf" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_nvidiaDriverVersion</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1aaa9e4495f0e91c21853ed55ae2469a69" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_pendingModesetFrames</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a58608ed76cce410d93484b3c2880bfeb" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_pipelineMap</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a7b07b9a05284ae23238afaac7097c85c" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_pipelines</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a0d8132c97eab9169a0bff9a77f4854a9" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_planes</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a46adafa0c38e3a1eb865d8290f4dade6" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_platform</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a66d802e25787047b6a8917a404ed2b43" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_presentationClock</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1acf8efa47b7eb08c50f57998f30d078fe" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_socketNotifier</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1ac1c82e072bfed2c1de8c19d45f366e06" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>m_supportsCursorPlaneHotspot</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a42b2a3d4b9bfc4071f3ecb0b039a8313" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>maybeModeset</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a549d8bca1700e3facdb39ea80610e481" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>needsModeset</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1ad19b0c3f0c2be8867c708a9cd77c9c0c" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>nvidiaDriverVersion</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a31615aac1894ba0da50e4bc9c98c7e58" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>outputAdded</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a1f2f3039115395e75b65e53bc4f5bd86" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>outputRemoved</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1addc9de3a9f1260a35cdb672bbbd6d88e" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>pageFlipHandler</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a401b31055350250a52ba7129ead1eb3e" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>pipelines</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a6829c5268cf72d3083dd9cf9044693d3" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>platform</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a4a2986abf214c9132b696a3e5959f63f" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>presentationClock</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a625bd136dfabe35861f0b42f1c146302" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>recreateSurfaces</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a17fa7d523dcbfa87b478b5c5cf595d95" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>releaseBuffers</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a244e9a48c44191b8eaa57af04ac1e821" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>removeOutput</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a855f6d9cbe0f147c3383e151cf1ac5ca" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>removeOutputs</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a9b50ba063da087c6efe45caad82f25d8" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>s_pageflipTimeout</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a0f22b25c25030d7a6b81827e6f58ba8c" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>setActive</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a2044382ead5fd70aa2e3f1d4fa37e03d" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>setEglDisplay</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a50b56e85f9ae9bea172e98b62eaabc2a" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>setRemoved</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1aa4bfcc52fb1f71d47afc3fd757b73d4d" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>testPendingConfiguration</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1a1ddda656a00253fb497639653e3db8ba" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>testPipelines</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1af12019dcf3c170c2bb4d741a079ade3c" prot="private" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>unusedObjects</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1ae6108588f7a82ceb89cf80efae8c9985" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>updateOutputs</name></member>
+      <member refid="class_k_win_1_1_drm_gpu_1ae5e5b054d84dad28f1a58daa80d656ed" prot="public" virt="non-virtual"><scope>KWin::DrmGpu</scope><name>~DrmGpu</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

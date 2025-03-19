@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="eglhelpers_8cpp" kind="file" language="C++">
+    <compoundname>eglhelpers.cpp</compoundname>
+    <includes refid="eglhelpers_8h" local="yes">eglhelpers.h</includes>
+    <includes refid="egldisplay_8h" local="yes">opengl/egldisplay.h</includes>
+    <includes local="no">logging.h</includes>
+    <includes local="no">QOpenGLContext</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>opengl/egldisplay.h</label>
+        <link refid="egldisplay_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/plugins/qpa/eglhelpers.cpp</label>
+        <link refid="eglhelpers_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>eglhelpers.h</label>
+        <link refid="eglhelpers_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>QByteArray</label>
+      </node>
+      <node id="8">
+        <label>QHash</label>
+      </node>
+      <node id="9">
+        <label>QList</label>
+      </node>
+      <node id="13">
+        <label>QOpenGLContext</label>
+      </node>
+      <node id="10">
+        <label>QSize</label>
+      </node>
+      <node id="4">
+        <label>QSurfaceFormat</label>
+      </node>
+      <node id="3">
+        <label>epoxy/egl.h</label>
+      </node>
+      <node id="6">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="12">
+        <label>logging.h</label>
+      </node>
+      <node id="11">
+        <label>sys/types.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <innernamespace refid="namespace_k_win_1_1_q_p_a">KWin::QPA</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2015<sp/>Martin<sp/>Flöser<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2019<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="eglhelpers_8h" kindref="compound">eglhelpers.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="egldisplay_8h" kindref="compound">opengl/egldisplay.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;logging.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QOpenGLContext&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win_1_1_q_p_a" kindref="compound">QPA</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="namespace_k_win_1_1_q_p_a_1afbf9480bb7ba1cbe1a9e7f2a6f5241b2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1_1_q_p_a_1afbf9480bb7ba1cbe1a9e7f2a6f5241b2" kindref="member">isOpenGLES</ref>()</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(qstrcmp(qgetenv(</highlight><highlight class="stringliteral">&quot;KWIN_COMPOSE&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="stringliteral">&quot;O2ES&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QOpenGLContext::openGLModuleType()<sp/>==<sp/>QOpenGLContext::LibGLES;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="namespace_k_win_1_1_q_p_a_1af0fce9cfc2389b1ae2e1696e7c4535ef" refkind="member"><highlight class="normal">EGLConfig<sp/><ref refid="namespace_k_win_1_1_q_p_a_1af0fce9cfc2389b1ae2e1696e7c4535ef" kindref="member">configFromFormat</ref>(<ref refid="class_k_win_1_1_egl_display" kindref="compound">EglDisplay</ref><sp/>*display,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QSurfaceFormat<sp/>&amp;surfaceFormat,<sp/>EGLint<sp/>surfaceType)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>std::max<sp/>as<sp/>these<sp/>values<sp/>are<sp/>initialized<sp/>to<sp/>-1<sp/>by<sp/>default.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EGLint<sp/>redSize<sp/>=<sp/>std::max(surfaceFormat.redBufferSize(),<sp/>0);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EGLint<sp/>greenSize<sp/>=<sp/>std::max(surfaceFormat.greenBufferSize(),<sp/>0);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EGLint<sp/>blueSize<sp/>=<sp/>std::max(surfaceFormat.blueBufferSize(),<sp/>0);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EGLint<sp/>alphaSize<sp/>=<sp/>std::max(surfaceFormat.alphaBufferSize(),<sp/>0);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EGLint<sp/>depthSize<sp/>=<sp/>std::max(surfaceFormat.depthBufferSize(),<sp/>0);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EGLint<sp/>stencilSize<sp/>=<sp/>std::max(surfaceFormat.stencilBufferSize(),<sp/>0);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EGLint<sp/>renderableType<sp/>=<sp/><ref refid="namespace_k_win_1_1_q_p_a_1afbf9480bb7ba1cbe1a9e7f2a6f5241b2" kindref="member">isOpenGLES</ref>()<sp/>?<sp/>EGL_OPENGL_ES2_BIT<sp/>:<sp/>EGL_OPENGL_BIT;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Not<sp/>setting<sp/>samples<sp/>as<sp/>QtQuick<sp/>doesn&apos;t<sp/>need<sp/>it.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;EGLint&gt;<sp/>attributes{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EGL_SURFACE_TYPE,<sp/>surfaceType,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EGL_RED_SIZE,<sp/>redSize,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EGL_GREEN_SIZE,<sp/>greenSize,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EGL_BLUE_SIZE,<sp/>blueSize,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EGL_ALPHA_SIZE,<sp/>alphaSize,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EGL_DEPTH_SIZE,<sp/>depthSize,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EGL_STENCIL_SIZE,<sp/>stencilSize,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EGL_RENDERABLE_TYPE,<sp/>renderableType,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EGL_NONE};</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>EGLint<sp/>configCount;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!eglChooseConfig(display-&gt;<ref refid="class_k_win_1_1_egl_display_1ac973be65040c0fd4bf08c77d65d2b96d" kindref="member">handle</ref>(),<sp/>attributes.data(),<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/>0,<sp/>&amp;configCount))<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qCWarning(KWIN_QPA,<sp/></highlight><highlight class="stringliteral">&quot;eglChooseConfig<sp/>failed:<sp/>%x&quot;</highlight><highlight class="normal">,<sp/>eglGetError());</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EGL_NO_CONFIG_KHR;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(configCount<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qCWarning(KWIN_QPA,<sp/></highlight><highlight class="stringliteral">&quot;eglChooseConfig<sp/>did<sp/>not<sp/>return<sp/>any<sp/>configs&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EGL_NO_CONFIG_KHR;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;EGLConfig&gt;<sp/>configs(configCount);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!eglChooseConfig(display-&gt;<ref refid="class_k_win_1_1_egl_display_1ac973be65040c0fd4bf08c77d65d2b96d" kindref="member">handle</ref>(),<sp/>attributes.data(),<sp/>configs.data(),<sp/>configCount,<sp/>&amp;configCount))<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qCWarning(KWIN_QPA,<sp/></highlight><highlight class="stringliteral">&quot;eglChooseConfig<sp/>failed:<sp/>%x&quot;</highlight><highlight class="normal">,<sp/>eglGetError());</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EGL_NO_CONFIG_KHR;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(configCount<sp/>!=<sp/>configs.size())<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qCWarning(KWIN_QPA,<sp/></highlight><highlight class="stringliteral">&quot;eglChooseConfig<sp/>did<sp/>not<sp/>return<sp/>requested<sp/>configs&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>EGL_NO_CONFIG_KHR;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EGLConfig<sp/>&amp;config<sp/>:<sp/>std::as_const(configs))<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EGLint<sp/>redConfig,<sp/>greenConfig,<sp/>blueConfig,<sp/>alphaConfig;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eglGetConfigAttrib(display-&gt;<ref refid="class_k_win_1_1_egl_display_1ac973be65040c0fd4bf08c77d65d2b96d" kindref="member">handle</ref>(),<sp/>config,<sp/>EGL_RED_SIZE,<sp/>&amp;redConfig);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eglGetConfigAttrib(display-&gt;<ref refid="class_k_win_1_1_egl_display_1ac973be65040c0fd4bf08c77d65d2b96d" kindref="member">handle</ref>(),<sp/>config,<sp/>EGL_GREEN_SIZE,<sp/>&amp;greenConfig);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eglGetConfigAttrib(display-&gt;<ref refid="class_k_win_1_1_egl_display_1ac973be65040c0fd4bf08c77d65d2b96d" kindref="member">handle</ref>(),<sp/>config,<sp/>EGL_BLUE_SIZE,<sp/>&amp;blueConfig);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eglGetConfigAttrib(display-&gt;<ref refid="class_k_win_1_1_egl_display_1ac973be65040c0fd4bf08c77d65d2b96d" kindref="member">handle</ref>(),<sp/>config,<sp/>EGL_ALPHA_SIZE,<sp/>&amp;alphaConfig);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((redSize<sp/>==<sp/>0<sp/>||<sp/>redSize<sp/>==<sp/>redConfig)<sp/>&amp;&amp;<sp/>(greenSize<sp/>==<sp/>0<sp/>||<sp/>greenSize<sp/>==<sp/>greenConfig)<sp/>&amp;&amp;<sp/>(blueSize<sp/>==<sp/>0<sp/>||<sp/>blueSize<sp/>==<sp/>blueConfig)<sp/>&amp;&amp;<sp/>(alphaSize<sp/>==<sp/>0<sp/>||<sp/>alphaSize<sp/>==<sp/>alphaConfig))<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>config;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>first<sp/>config<sp/>as<sp/>a<sp/>fallback.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>configs[0];</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="namespace_k_win_1_1_q_p_a_1adbac63a3868ccae0f1a753312af6dc53" refkind="member"><highlight class="normal">QSurfaceFormat<sp/><ref refid="namespace_k_win_1_1_q_p_a_1adbac63a3868ccae0f1a753312af6dc53" kindref="member">formatFromConfig</ref>(<ref refid="class_k_win_1_1_egl_display" kindref="compound">EglDisplay</ref><sp/>*display,<sp/>EGLConfig<sp/>config)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>redSize<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blueSize<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>greenSize<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>alphaSize<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stencilSize<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depthSize<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sampleCount<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>eglGetConfigAttrib(display-&gt;<ref refid="class_k_win_1_1_egl_display_1ac973be65040c0fd4bf08c77d65d2b96d" kindref="member">handle</ref>(),<sp/>config,<sp/>EGL_RED_SIZE,<sp/>&amp;redSize);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>eglGetConfigAttrib(display-&gt;<ref refid="class_k_win_1_1_egl_display_1ac973be65040c0fd4bf08c77d65d2b96d" kindref="member">handle</ref>(),<sp/>config,<sp/>EGL_GREEN_SIZE,<sp/>&amp;greenSize);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>eglGetConfigAttrib(display-&gt;<ref refid="class_k_win_1_1_egl_display_1ac973be65040c0fd4bf08c77d65d2b96d" kindref="member">handle</ref>(),<sp/>config,<sp/>EGL_BLUE_SIZE,<sp/>&amp;blueSize);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>eglGetConfigAttrib(display-&gt;<ref refid="class_k_win_1_1_egl_display_1ac973be65040c0fd4bf08c77d65d2b96d" kindref="member">handle</ref>(),<sp/>config,<sp/>EGL_ALPHA_SIZE,<sp/>&amp;alphaSize);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>eglGetConfigAttrib(display-&gt;<ref refid="class_k_win_1_1_egl_display_1ac973be65040c0fd4bf08c77d65d2b96d" kindref="member">handle</ref>(),<sp/>config,<sp/>EGL_STENCIL_SIZE,<sp/>&amp;stencilSize);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>eglGetConfigAttrib(display-&gt;<ref refid="class_k_win_1_1_egl_display_1ac973be65040c0fd4bf08c77d65d2b96d" kindref="member">handle</ref>(),<sp/>config,<sp/>EGL_DEPTH_SIZE,<sp/>&amp;depthSize);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>eglGetConfigAttrib(display-&gt;<ref refid="class_k_win_1_1_egl_display_1ac973be65040c0fd4bf08c77d65d2b96d" kindref="member">handle</ref>(),<sp/>config,<sp/>EGL_SAMPLES,<sp/>&amp;sampleCount);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>QSurfaceFormat<sp/><ref refid="namespace_k_win_1a6ef3f38157c98f3fe83ae3ec855ee903" kindref="member">format</ref>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a6ef3f38157c98f3fe83ae3ec855ee903" kindref="member">format</ref>.setRedBufferSize(redSize);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a6ef3f38157c98f3fe83ae3ec855ee903" kindref="member">format</ref>.setGreenBufferSize(greenSize);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a6ef3f38157c98f3fe83ae3ec855ee903" kindref="member">format</ref>.setBlueBufferSize(blueSize);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a6ef3f38157c98f3fe83ae3ec855ee903" kindref="member">format</ref>.setAlphaBufferSize(alphaSize);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a6ef3f38157c98f3fe83ae3ec855ee903" kindref="member">format</ref>.setStencilBufferSize(stencilSize);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a6ef3f38157c98f3fe83ae3ec855ee903" kindref="member">format</ref>.setDepthBufferSize(depthSize);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a6ef3f38157c98f3fe83ae3ec855ee903" kindref="member">format</ref>.setSamples(sampleCount);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a6ef3f38157c98f3fe83ae3ec855ee903" kindref="member">format</ref>.setRenderableType(<ref refid="namespace_k_win_1_1_q_p_a_1afbf9480bb7ba1cbe1a9e7f2a6f5241b2" kindref="member">isOpenGLES</ref>()<sp/>?<sp/>QSurfaceFormat::OpenGLES<sp/>:<sp/>QSurfaceFormat::OpenGL);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a6ef3f38157c98f3fe83ae3ec855ee903" kindref="member">format</ref>.setStereo(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a6ef3f38157c98f3fe83ae3ec855ee903" kindref="member">format</ref>;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>QPA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/plugins/qpa/eglhelpers.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,769 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_egl_gbm_layer_surface" kind="class" language="C++" prot="public">
+    <compoundname>KWin::EglGbmLayerSurface</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="drm__egl__layer__surface_8h" local="no">drm_egl_layer_surface.h</includes>
+    <innerclass refid="struct_k_win_1_1_egl_gbm_layer_surface_1_1_surface" prot="private">KWin::EglGbmLayerSurface::Surface</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_k_win_1_1_egl_gbm_layer_surface_1ab17635882d2915f6aa7fdcdca0c639c2" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>BufferTarget</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::BufferTarget</qualifiedname>
+        <enumvalue id="class_k_win_1_1_egl_gbm_layer_surface_1ab17635882d2915f6aa7fdcdca0c639c2a960b44c579bc2f6818d2daaf9e4c16f0" prot="public">
+          <name>Normal</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_egl_gbm_layer_surface_1ab17635882d2915f6aa7fdcdca0c639c2a32a843da6ea40ab3b17a3421ccdf671b" prot="public">
+          <name>Linear</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_egl_gbm_layer_surface_1ab17635882d2915f6aa7fdcdca0c639c2aee3baea5004e82ea07484fe8aa0f5507" prot="public">
+          <name>Dumb</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="47" column="5" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.h" bodystart="47" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_egl_gbm_layer_surface_1a37b5b81ab1dc7375fa786fee10448f94" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>FormatOption</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::FormatOption</qualifiedname>
+        <enumvalue id="class_k_win_1_1_egl_gbm_layer_surface_1a37b5b81ab1dc7375fa786fee10448f94a7b96b22436d220ca5aa482f2ec88bbb6" prot="public">
+          <name>PreferAlpha</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_egl_gbm_layer_surface_1a37b5b81ab1dc7375fa786fee10448f94a661129824965c92fb9b8a29a1a3e4950" prot="public">
+          <name>RequireAlpha</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="52" column="5" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.h" bodystart="52" bodyend="55"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="class_k_win_1_1_egl_gbm_layer_surface_1abc59f5e147cff031990dc423e2972c30" prot="private" static="no" strong="yes">
+        <type></type>
+        <name>MultiGpuImportMode</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::MultiGpuImportMode</qualifiedname>
+        <enumvalue id="class_k_win_1_1_egl_gbm_layer_surface_1abc59f5e147cff031990dc423e2972c30a6adf97f83acf6453d4a6a4b1070f3754" prot="private">
+          <name>None</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_egl_gbm_layer_surface_1abc59f5e147cff031990dc423e2972c30a1b18eceb0dfd1ab3579eb77387640091" prot="private">
+          <name>Dmabuf</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_egl_gbm_layer_surface_1abc59f5e147cff031990dc423e2972c30aeb97b7a6fddd949a996ad590fcaea47f" prot="private">
+          <name>LinearDmabuf</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_egl_gbm_layer_surface_1abc59f5e147cff031990dc423e2972c30a0f01b2ff8fb12f49de6d026ef8bcc859" prot="private">
+          <name>Egl</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_egl_gbm_layer_surface_1abc59f5e147cff031990dc423e2972c30af765013f8bd21e63396148b4a3880bcb" prot="private">
+          <name>DumbBuffer</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="72" column="5" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.h" bodystart="72" bodyend="78"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_egl_gbm_layer_surface_1abed0d979eb914071d03520b58a873d50" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; Surface &gt;</type>
+        <definition>std::unique_ptr&lt;Surface&gt; KWin::EglGbmLayerSurface::m_surface</definition>
+        <argsstring></argsstring>
+        <name>m_surface</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::m_surface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="123" column="21" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_egl_gbm_layer_surface_1aeb88d9d2ba849bc11b6c1e067c4f3b6f" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; Surface &gt;</type>
+        <definition>std::unique_ptr&lt;Surface&gt; KWin::EglGbmLayerSurface::m_oldSurface</definition>
+        <argsstring></argsstring>
+        <name>m_oldSurface</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::m_oldSurface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="124" column="21" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_egl_gbm_layer_surface_1a25bafe8ea3da91f89cc82356a60c3a11" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref> *const</type>
+        <definition>DrmGpu* const KWin::EglGbmLayerSurface::m_gpu</definition>
+        <argsstring></argsstring>
+        <name>m_gpu</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::m_gpu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="126" column="18" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_egl_gbm_layer_surface_1acfa3cf038be4637b48250f45b30c870e" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_egl_gbm_backend" kindref="compound">EglGbmBackend</ref> *const</type>
+        <definition>EglGbmBackend* const KWin::EglGbmLayerSurface::m_eglBackend</definition>
+        <argsstring></argsstring>
+        <name>m_eglBackend</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::m_eglBackend</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="127" column="25" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_egl_gbm_layer_surface_1a442c2d3fb1adb7bd447b5fa1691f9fcd" prot="private" static="no" mutable="no">
+        <type>const <ref refid="class_k_win_1_1_egl_gbm_layer_surface_1ab17635882d2915f6aa7fdcdca0c639c2" kindref="member">BufferTarget</ref></type>
+        <definition>const BufferTarget KWin::EglGbmLayerSurface::m_requestedBufferTarget</definition>
+        <argsstring></argsstring>
+        <name>m_requestedBufferTarget</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::m_requestedBufferTarget</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="128" column="24" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_egl_gbm_layer_surface_1a29182794a925c865874a7efe9860af86" prot="private" static="no" mutable="no">
+        <type>const <ref refid="class_k_win_1_1_egl_gbm_layer_surface_1a37b5b81ab1dc7375fa786fee10448f94" kindref="member">FormatOption</ref></type>
+        <definition>const FormatOption KWin::EglGbmLayerSurface::m_formatOption</definition>
+        <argsstring></argsstring>
+        <name>m_formatOption</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::m_formatOption</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="129" column="24" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1a5c81bddb000a904983e38cecb1a4c8ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::EglGbmLayerSurface::EglGbmLayerSurface</definition>
+        <argsstring>(DrmGpu *gpu, EglGbmBackend *eglBackend, BufferTarget target=BufferTarget::Normal, FormatOption formatOption=FormatOption::PreferAlpha)</argsstring>
+        <name>EglGbmLayerSurface</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::EglGbmLayerSurface</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref> *</type>
+          <declname>gpu</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_egl_gbm_backend" kindref="compound">EglGbmBackend</ref> *</type>
+          <declname>eglBackend</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_egl_gbm_layer_surface_1ab17635882d2915f6aa7fdcdca0c639c2" kindref="member">BufferTarget</ref></type>
+          <declname>target</declname>
+          <defval><ref refid="class_k_win_1_1_egl_gbm_layer_surface_1ab17635882d2915f6aa7fdcdca0c639c2a960b44c579bc2f6818d2daaf9e4c16f0" kindref="member">BufferTarget::Normal</ref></defval>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_egl_gbm_layer_surface_1a37b5b81ab1dc7375fa786fee10448f94" kindref="member">FormatOption</ref></type>
+          <declname>formatOption</declname>
+          <defval><ref refid="class_k_win_1_1_egl_gbm_layer_surface_1a37b5b81ab1dc7375fa786fee10448f94a7b96b22436d220ca5aa482f2ec88bbb6" kindref="member">FormatOption::PreferAlpha</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="56" column="5" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.cpp" bodystart="48" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1a63a8b9a3135016a2cc9a9c0dd16a2729" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::EglGbmLayerSurface::~EglGbmLayerSurface</definition>
+        <argsstring>()</argsstring>
+        <name>~EglGbmLayerSurface</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::~EglGbmLayerSurface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="57" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1a69c736678348de031f20dc516e8cde18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="struct_k_win_1_1_output_layer_begin_frame_info" kindref="compound">OutputLayerBeginFrameInfo</ref> &gt;</type>
+        <definition>std::optional&lt; OutputLayerBeginFrameInfo &gt; KWin::EglGbmLayerSurface::startRendering</definition>
+        <argsstring>(const QSize &amp;bufferSize, OutputTransform transformation, const QHash&lt; uint32_t, QList&lt; uint64_t &gt; &gt; &amp;formats, const ColorDescription &amp;blendingColor, const ColorDescription &amp;scanoutColor, const std::shared_ptr&lt; IccProfile &gt; &amp;iccProfile, double scale, Output::ColorPowerTradeoff tradeoff, bool useShadowBuffer)</argsstring>
+        <name>startRendering</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::startRendering</qualifiedname>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>bufferSize</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_output_transform" kindref="compound">OutputTransform</ref></type>
+          <declname>transformation</declname>
+        </param>
+        <param>
+          <type>const QHash&lt; uint32_t, QList&lt; uint64_t &gt; &gt; &amp;</type>
+          <declname>formats</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_color_description" kindref="compound">ColorDescription</ref> &amp;</type>
+          <declname>blendingColor</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_color_description" kindref="compound">ColorDescription</ref> &amp;</type>
+          <declname>scanoutColor</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_k_win_1_1_icc_profile" kindref="compound">IccProfile</ref> &gt; &amp;</type>
+          <declname>iccProfile</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_output_1a63a50e5f54e2c42409e8e275f673f198" kindref="member">Output::ColorPowerTradeoff</ref></type>
+          <declname>tradeoff</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useShadowBuffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="59" column="19" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.cpp" bodystart="113" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1ac8165f59dfb47113d29185bf8f80b59a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::EglGbmLayerSurface::endRendering</definition>
+        <argsstring>(const QRegion &amp;damagedRegion, OutputFrame *frame)</argsstring>
+        <name>endRendering</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::endRendering</qualifiedname>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>damagedRegion</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_output_frame" kindref="compound">OutputFrame</ref> *</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="60" column="10" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.cpp" bodystart="251" bodyend="312"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1a0555979b4030f88fc83a2ef6f1c38ae0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_g_l_texture" kindref="compound">GLTexture</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; GLTexture &gt; KWin::EglGbmLayerSurface::texture</definition>
+        <argsstring>() const</argsstring>
+        <name>texture</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::texture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="62" column="21" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.cpp" bodystart="333" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1ab577f37f293d4009569b967bb489b11f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::EglGbmLayerSurface::destroyResources</definition>
+        <argsstring>()</argsstring>
+        <name>destroyResources</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::destroyResources</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="63" column="10" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.cpp" bodystart="71" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1a2ae23f4a1e03a9360026733c6a12f0c8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_egl_gbm_backend" kindref="compound">EglGbmBackend</ref> *</type>
+        <definition>EglGbmBackend * KWin::EglGbmLayerSurface::eglBackend</definition>
+        <argsstring>() const</argsstring>
+        <name>eglBackend</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::eglBackend</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="64" column="19" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.cpp" bodystart="314" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1a09c9c5d0a0e09087a1cc0c0470388d04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_framebuffer" kindref="compound">DrmFramebuffer</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; DrmFramebuffer &gt; KWin::EglGbmLayerSurface::renderTestBuffer</definition>
+        <argsstring>(const QSize &amp;bufferSize, const QHash&lt; uint32_t, QList&lt; uint64_t &gt; &gt; &amp;formats, Output::ColorPowerTradeoff tradeoff)</argsstring>
+        <name>renderTestBuffer</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::renderTestBuffer</qualifiedname>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>bufferSize</declname>
+        </param>
+        <param>
+          <type>const QHash&lt; uint32_t, QList&lt; uint64_t &gt; &gt; &amp;</type>
+          <declname>formats</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_output_1a63a50e5f54e2c42409e8e275f673f198" kindref="member">Output::ColorPowerTradeoff</ref></type>
+          <declname>tradeoff</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="65" column="21" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.cpp" bodystart="342" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1a692a8ddb1aab358c55c800da5c485aa9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::EglGbmLayerSurface::forgetDamage</definition>
+        <argsstring>()</argsstring>
+        <name>forgetDamage</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::forgetDamage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="66" column="10" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.cpp" bodystart="357" bodyend="364"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1acad52411a996038c6bfe2b22c657004b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_framebuffer" kindref="compound">DrmFramebuffer</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; DrmFramebuffer &gt; KWin::EglGbmLayerSurface::currentBuffer</definition>
+        <argsstring>() const</argsstring>
+        <name>currentBuffer</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::currentBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="68" column="21" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.cpp" bodystart="319" bodyend="322"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1a692f754130a2bbe356dd16cddde7e164" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="class_k_win_1_1_color_description" kindref="compound">ColorDescription</ref> &amp;</type>
+        <definition>const ColorDescription &amp; KWin::EglGbmLayerSurface::colorDescription</definition>
+        <argsstring>() const</argsstring>
+        <name>colorDescription</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::colorDescription</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="69" column="28" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.cpp" bodystart="324" bodyend="331"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1a43adcc5d485523bd9ab09e36b95a923d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::EglGbmLayerSurface::checkSurface</definition>
+        <argsstring>(const QSize &amp;size, const QHash&lt; uint32_t, QList&lt; uint64_t &gt; &gt; &amp;formats, Output::ColorPowerTradeoff tradeoff)</argsstring>
+        <name>checkSurface</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::checkSurface</qualifiedname>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>const QHash&lt; uint32_t, QList&lt; uint64_t &gt; &gt; &amp;</type>
+          <declname>formats</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_output_1a63a50e5f54e2c42409e8e275f673f198" kindref="member">Output::ColorPowerTradeoff</ref></type>
+          <declname>tradeoff</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="112" column="10" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.cpp" bodystart="366" bodyend="394"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1a5c98667eb6bcbecbecd555a8288dee9a" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::EglGbmLayerSurface::doesSurfaceFit</definition>
+        <argsstring>(Surface *surface, const QSize &amp;size, const QHash&lt; uint32_t, QList&lt; uint64_t &gt; &gt; &amp;formats, Output::ColorPowerTradeoff tradeoff) const</argsstring>
+        <name>doesSurfaceFit</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::doesSurfaceFit</qualifiedname>
+        <param>
+          <type>Surface *</type>
+          <declname>surface</declname>
+        </param>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>const QHash&lt; uint32_t, QList&lt; uint64_t &gt; &gt; &amp;</type>
+          <declname>formats</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_output_1a63a50e5f54e2c42409e8e275f673f198" kindref="member">Output::ColorPowerTradeoff</ref></type>
+          <declname>tradeoff</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="113" column="10" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.cpp" bodystart="396" bodyend="423"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1aa64b094c8cc13543685230e49d7099ee" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; Surface &gt;</type>
+        <definition>std::unique_ptr&lt; EglGbmLayerSurface::Surface &gt; KWin::EglGbmLayerSurface::createSurface</definition>
+        <argsstring>(const QSize &amp;size, const QHash&lt; uint32_t, QList&lt; uint64_t &gt; &gt; &amp;formats, Output::ColorPowerTradeoff tradeoff) const</argsstring>
+        <name>createSurface</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::createSurface</qualifiedname>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>const QHash&lt; uint32_t, QList&lt; uint64_t &gt; &gt; &amp;</type>
+          <declname>formats</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_output_1a63a50e5f54e2c42409e8e275f673f198" kindref="member">Output::ColorPowerTradeoff</ref></type>
+          <declname>tradeoff</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="114" column="21" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.cpp" bodystart="425" bodyend="486"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1aa9e823ec47c439ab85b82774ce4a9510" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; Surface &gt;</type>
+        <definition>std::unique_ptr&lt; EglGbmLayerSurface::Surface &gt; KWin::EglGbmLayerSurface::createSurface</definition>
+        <argsstring>(const QSize &amp;size, uint32_t format, const QList&lt; uint64_t &gt; &amp;modifiers, MultiGpuImportMode importMode, BufferTarget bufferTarget, Output::ColorPowerTradeoff tradeoff) const</argsstring>
+        <name>createSurface</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::createSurface</qualifiedname>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>const QList&lt; uint64_t &gt; &amp;</type>
+          <declname>modifiers</declname>
+        </param>
+        <param>
+          <type>MultiGpuImportMode</type>
+          <declname>importMode</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_egl_gbm_layer_surface_1ab17635882d2915f6aa7fdcdca0c639c2" kindref="member">BufferTarget</ref></type>
+          <declname>bufferTarget</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_output_1a63a50e5f54e2c42409e8e275f673f198" kindref="member">Output::ColorPowerTradeoff</ref></type>
+          <declname>tradeoff</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="115" column="21" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.cpp" bodystart="498" bodyend="545"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1a5e2b660b2812ecb7f441a5d940701ad8" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_egl_swapchain" kindref="compound">EglSwapchain</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; EglSwapchain &gt; KWin::EglGbmLayerSurface::createGbmSwapchain</definition>
+        <argsstring>(DrmGpu *gpu, EglContext *context, const QSize &amp;size, uint32_t format, const QList&lt; uint64_t &gt; &amp;modifiers, MultiGpuImportMode importMode, BufferTarget bufferTarget) const</argsstring>
+        <name>createGbmSwapchain</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::createGbmSwapchain</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref> *</type>
+          <declname>gpu</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_egl_context" kindref="compound">EglContext</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>const QList&lt; uint64_t &gt; &amp;</type>
+          <declname>modifiers</declname>
+        </param>
+        <param>
+          <type>MultiGpuImportMode</type>
+          <declname>importMode</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_egl_gbm_layer_surface_1ab17635882d2915f6aa7fdcdca0c639c2" kindref="member">BufferTarget</ref></type>
+          <declname>bufferTarget</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="116" column="21" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.cpp" bodystart="547" bodyend="576"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1ad9ebdf0527aae417c1ab1196ee6d4bf6" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_framebuffer" kindref="compound">DrmFramebuffer</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; DrmFramebuffer &gt; KWin::EglGbmLayerSurface::doRenderTestBuffer</definition>
+        <argsstring>(Surface *surface) const</argsstring>
+        <name>doRenderTestBuffer</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::doRenderTestBuffer</qualifiedname>
+        <param>
+          <type>Surface *</type>
+          <declname>surface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="118" column="21" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.cpp" bodystart="578" bodyend="591"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1adc8d31c056e19e5aa966a50a60981a67" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_framebuffer" kindref="compound">DrmFramebuffer</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; DrmFramebuffer &gt; KWin::EglGbmLayerSurface::importBuffer</definition>
+        <argsstring>(Surface *surface, EglSwapchainSlot *source, FileDescriptor &amp;&amp;readFence, OutputFrame *frame, const QRegion &amp;damagedRegion) const</argsstring>
+        <name>importBuffer</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::importBuffer</qualifiedname>
+        <param>
+          <type>Surface *</type>
+          <declname>surface</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_egl_swapchain_slot" kindref="compound">EglSwapchainSlot</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref> &amp;&amp;</type>
+          <declname>readFence</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_output_frame" kindref="compound">OutputFrame</ref> *</type>
+          <declname>frame</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>damagedRegion</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="119" column="21" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.cpp" bodystart="593" bodyend="606"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1ae9a7ac66aef45d689a9eebb3cc18ac56" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_framebuffer" kindref="compound">DrmFramebuffer</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; DrmFramebuffer &gt; KWin::EglGbmLayerSurface::importWithEgl</definition>
+        <argsstring>(Surface *surface, GraphicsBuffer *sourceBuffer, FileDescriptor &amp;&amp;readFence, OutputFrame *frame, const QRegion &amp;damagedRegion) const</argsstring>
+        <name>importWithEgl</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::importWithEgl</qualifiedname>
+        <param>
+          <type>Surface *</type>
+          <declname>surface</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref> *</type>
+          <declname>sourceBuffer</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref> &amp;&amp;</type>
+          <declname>readFence</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_output_frame" kindref="compound">OutputFrame</ref> *</type>
+          <declname>frame</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>damagedRegion</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="120" column="21" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.cpp" bodystart="608" bodyend="690"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_egl_gbm_layer_surface_1a78c04cc2e6cf27dcfcbda1370425cb41" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_framebuffer" kindref="compound">DrmFramebuffer</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; DrmFramebuffer &gt; KWin::EglGbmLayerSurface::importWithCpu</definition>
+        <argsstring>(Surface *surface, EglSwapchainSlot *source, OutputFrame *frame) const</argsstring>
+        <name>importWithCpu</name>
+        <qualifiedname>KWin::EglGbmLayerSurface::importWithCpu</qualifiedname>
+        <param>
+          <type>Surface *</type>
+          <declname>surface</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_egl_swapchain_slot" kindref="compound">EglSwapchainSlot</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_output_frame" kindref="compound">OutputFrame</ref> *</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="121" column="21" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.cpp" bodystart="692" bodyend="733"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::EglGbmLayerSurface</label>
+        <link refid="class_k_win_1_1_egl_gbm_layer_surface"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::EglGbmLayerSurface</label>
+        <link refid="class_k_win_1_1_egl_gbm_layer_surface"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/backends/drm/drm_egl_layer_surface.h" line="43" column="1" bodyfile="kwin/src/backends/drm/drm_egl_layer_surface.h" bodystart="44" bodyend="130"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1ab17635882d2915f6aa7fdcdca0c639c2" prot="public" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>BufferTarget</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1a43adcc5d485523bd9ab09e36b95a923d" prot="private" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>checkSurface</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1a692f754130a2bbe356dd16cddde7e164" prot="public" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>colorDescription</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1a5e2b660b2812ecb7f441a5d940701ad8" prot="private" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>createGbmSwapchain</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1aa64b094c8cc13543685230e49d7099ee" prot="private" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>createSurface</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1aa9e823ec47c439ab85b82774ce4a9510" prot="private" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>createSurface</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1acad52411a996038c6bfe2b22c657004b" prot="public" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>currentBuffer</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1ab577f37f293d4009569b967bb489b11f" prot="public" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>destroyResources</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1a5c98667eb6bcbecbecd555a8288dee9a" prot="private" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>doesSurfaceFit</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1ad9ebdf0527aae417c1ab1196ee6d4bf6" prot="private" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>doRenderTestBuffer</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1a2ae23f4a1e03a9360026733c6a12f0c8" prot="public" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>eglBackend</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1a5c81bddb000a904983e38cecb1a4c8ca" prot="public" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>EglGbmLayerSurface</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1ac8165f59dfb47113d29185bf8f80b59a" prot="public" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>endRendering</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1a692a8ddb1aab358c55c800da5c485aa9" prot="public" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>forgetDamage</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1a37b5b81ab1dc7375fa786fee10448f94" prot="public" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>FormatOption</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1adc8d31c056e19e5aa966a50a60981a67" prot="private" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>importBuffer</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1a78c04cc2e6cf27dcfcbda1370425cb41" prot="private" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>importWithCpu</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1ae9a7ac66aef45d689a9eebb3cc18ac56" prot="private" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>importWithEgl</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1acfa3cf038be4637b48250f45b30c870e" prot="private" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>m_eglBackend</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1a29182794a925c865874a7efe9860af86" prot="private" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>m_formatOption</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1a25bafe8ea3da91f89cc82356a60c3a11" prot="private" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>m_gpu</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1aeb88d9d2ba849bc11b6c1e067c4f3b6f" prot="private" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>m_oldSurface</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1a442c2d3fb1adb7bd447b5fa1691f9fcd" prot="private" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>m_requestedBufferTarget</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1abed0d979eb914071d03520b58a873d50" prot="private" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>m_surface</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1abc59f5e147cff031990dc423e2972c30" prot="private" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>MultiGpuImportMode</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1a09c9c5d0a0e09087a1cc0c0470388d04" prot="public" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>renderTestBuffer</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1a69c736678348de031f20dc516e8cde18" prot="public" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>startRendering</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1a0555979b4030f88fc83a2ef6f1c38ae0" prot="public" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>texture</name></member>
+      <member refid="class_k_win_1_1_egl_gbm_layer_surface_1a63a8b9a3135016a2cc9a9c0dd16a2729" prot="public" virt="non-virtual"><scope>KWin::EglGbmLayerSurface</scope><name>~EglGbmLayerSurface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,481 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="kwintabboxconfigform_8cpp" kind="file" language="C++">
+    <compoundname>kwintabboxconfigform.cpp</compoundname>
+    <includes refid="kwintabboxconfigform_8h" local="yes">kwintabboxconfigform.h</includes>
+    <includes local="yes">kwintabboxsettings.h</includes>
+    <includes refid="shortcutsettings_8h" local="yes">shortcutsettings.h</includes>
+    <includes local="yes">ui_main.h</includes>
+    <includes local="yes">moc_kwintabboxconfigform.cpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/kcms/tabbox/kwintabboxconfigform.cpp</label>
+        <link refid="kwintabboxconfigform_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>kwintabboxconfigform.h</label>
+        <link refid="kwintabboxconfigform_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>shortcutsettings.h</label>
+        <link refid="shortcutsettings_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>tabbox/tabboxconfig.h</label>
+        <link refid="tabboxconfig_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>KConfigSkeleton</label>
+      </node>
+      <node id="9">
+        <label>QKeySequence</label>
+      </node>
+      <node id="3">
+        <label>QStandardItemModel</label>
+      </node>
+      <node id="6">
+        <label>QString</label>
+      </node>
+      <node id="4">
+        <label>QWidget</label>
+      </node>
+      <node id="7">
+        <label>kwintabboxsettings.h</label>
+      </node>
+      <node id="12">
+        <label>moc_kwintabboxconfigform.cpp</label>
+      </node>
+      <node id="11">
+        <label>ui_main.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2009<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2020<sp/>Cyril<sp/>Rossi<sp/>&lt;cyril.rossi@enioka.com&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2023<sp/>Ismael<sp/>Asensio<sp/>&lt;isma.af@gmail.com&gt;</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="kwintabboxconfigform_8h" kindref="compound">kwintabboxconfigform.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;kwintabboxsettings.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="shortcutsettings_8h" kindref="compound">shortcutsettings.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ui_main.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win_1_1_tab_box" kindref="compound">TabBox</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="class_k_win_1_1_k_win_tab_box_config_form_1ae1795d676ea928459dcd27796e55a343" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_k_win_tab_box_config_form_1ae1795d676ea928459dcd27796e55a343" kindref="member">KWinTabBoxConfigForm::KWinTabBoxConfigForm</ref>(<ref refid="class_k_win_1_1_k_win_tab_box_config_form_1ab8a9f283bd6ce8c9ab08658853b3d5f5" kindref="member">TabboxType</ref><sp/><ref refid="namespace_k_win_1a3223e96fea9ab917c25be94e2434013a" kindref="member">type</ref>,<sp/>TabBoxSettings<sp/>*<ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a9dc598baca516232b71fc4f5061d98b0" kindref="member">config</ref>,<sp/><ref refid="class_k_win_1_1_tab_box_1_1_shortcut_settings" kindref="compound">ShortcutSettings</ref><sp/>*shortcutsConfig,<sp/>QWidget<sp/>*parent)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QWidget(parent)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_config(<ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a9dc598baca516232b71fc4f5061d98b0" kindref="member">config</ref>)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_shortcuts(shortcutsConfig)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>ui(new<sp/><ref refid="namespace_ui" kindref="compound">Ui</ref>::<ref refid="class_k_win_1_1_k_win_tab_box_config_form_1ae1795d676ea928459dcd27796e55a343" kindref="member">KWinTabBoxConfigForm</ref>)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;setupUi(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(QApplication::screens().count()<sp/>&lt;<sp/>2)<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ui-&gt;filterScreens-&gt;hide();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ui-&gt;screenFilter-&gt;hide();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a53bd48b78e41e68339c8e1c8db6b7b12" kindref="member">KWinTabBoxConfigForm::configChanged</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::updateDefaultIndicators);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui-&gt;effectConfigButton,<sp/>&amp;QPushButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_k_win_1_1_k_win_tab_box_config_form_1ab2baa747d454400ffae8681bc284dd05" kindref="member">KWinTabBoxConfigForm::effectConfigButtonClicked</ref>);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui-&gt;kcfg_ShowTabBox,<sp/>&amp;QAbstractButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::tabBoxToggled);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui-&gt;filterScreens,<sp/>&amp;QAbstractButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::onFilterScreen);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui-&gt;currentScreen,<sp/>&amp;QAbstractButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::onFilterScreen);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui-&gt;otherScreens,<sp/>&amp;QAbstractButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::onFilterScreen);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui-&gt;filterDesktops,<sp/>&amp;QAbstractButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::onFilterDesktop);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui-&gt;currentDesktop,<sp/>&amp;QAbstractButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::onFilterDesktop);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui-&gt;otherDesktops,<sp/>&amp;QAbstractButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::onFilterDesktop);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui-&gt;filterActivities,<sp/>&amp;QAbstractButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::onFilterActivites);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui-&gt;currentActivity,<sp/>&amp;QAbstractButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::onFilterActivites);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui-&gt;otherActivities,<sp/>&amp;QAbstractButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::onFilterActivites);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui-&gt;filterMinimization,<sp/>&amp;QAbstractButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::onFilterMinimization);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui-&gt;visibleWindows,<sp/>&amp;QAbstractButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::onFilterMinimization);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui-&gt;hiddenWindows,<sp/>&amp;QAbstractButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::onFilterMinimization);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui-&gt;oneAppWindow,<sp/>&amp;QAbstractButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::onApplicationMode);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui-&gt;orderMinimized,<sp/>&amp;QAbstractButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::onOrderMinimizedMode);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui-&gt;showDesktop,<sp/>&amp;QAbstractButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::onShowDesktopMode);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui-&gt;switchingModeCombo,<sp/>&amp;QComboBox::activated,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::onSwitchingMode);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(ui-&gt;effectCombo,<sp/>&amp;QComboBox::activated,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::onEffectCombo);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>initShortcutWidget<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">](KKeySequenceWidget<sp/>*widget,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name)<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widget-&gt;setCheckActionCollections({m_shortcuts-&gt;actionCollection()});</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widget-&gt;setProperty(</highlight><highlight class="stringliteral">&quot;shortcutAction&quot;</highlight><highlight class="normal">,<sp/>name);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>connect(widget,<sp/>&amp;KKeySequenceWidget::keySequenceChanged,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinTabBoxConfigForm::onShortcutChanged);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_k_win_1_1_k_win_tab_box_config_form_1ab8a9f283bd6ce8c9ab08658853b3d5f5aa02c83a7dbd96295beaefb72c2bee2de" kindref="member">TabboxType::Main</ref><sp/>==<sp/><ref refid="namespace_k_win_1a3223e96fea9ab917c25be94e2434013a" kindref="member">type</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initShortcutWidget(ui-&gt;scAll,<sp/></highlight><highlight class="stringliteral">&quot;Walk<sp/>Through<sp/>Windows&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initShortcutWidget(ui-&gt;scAllReverse,<sp/></highlight><highlight class="stringliteral">&quot;Walk<sp/>Through<sp/>Windows<sp/>(Reverse)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initShortcutWidget(ui-&gt;scCurrent,<sp/></highlight><highlight class="stringliteral">&quot;Walk<sp/>Through<sp/>Windows<sp/>of<sp/>Current<sp/>Application&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initShortcutWidget(ui-&gt;scCurrentReverse,<sp/></highlight><highlight class="stringliteral">&quot;Walk<sp/>Through<sp/>Windows<sp/>of<sp/>Current<sp/>Application<sp/>(Reverse)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_k_win_1_1_k_win_tab_box_config_form_1ab8a9f283bd6ce8c9ab08658853b3d5f5aa84d05159672cf1971a2923f3579bbe6" kindref="member">TabboxType::Alternative</ref><sp/>==<sp/><ref refid="namespace_k_win_1a3223e96fea9ab917c25be94e2434013a" kindref="member">type</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initShortcutWidget(ui-&gt;scAll,<sp/></highlight><highlight class="stringliteral">&quot;Walk<sp/>Through<sp/>Windows<sp/>Alternative&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initShortcutWidget(ui-&gt;scAllReverse,<sp/></highlight><highlight class="stringliteral">&quot;Walk<sp/>Through<sp/>Windows<sp/>Alternative<sp/>(Reverse)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initShortcutWidget(ui-&gt;scCurrent,<sp/></highlight><highlight class="stringliteral">&quot;Walk<sp/>Through<sp/>Windows<sp/>of<sp/>Current<sp/>Application<sp/>Alternative&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initShortcutWidget(ui-&gt;scCurrentReverse,<sp/></highlight><highlight class="stringliteral">&quot;Walk<sp/>Through<sp/>Windows<sp/>of<sp/>Current<sp/>Application<sp/>Alternative<sp/>(Reverse)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a1d37c1f10f8a32bf506e1a9787e5eeaf" kindref="member">updateUiFromConfig</ref>();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="class_k_win_1_1_k_win_tab_box_config_form_1a6a9e3c801cd8bd2573964ac9f980357e" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a6a9e3c801cd8bd2573964ac9f980357e" kindref="member">KWinTabBoxConfigForm::~KWinTabBoxConfigForm</ref>()</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>ui;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="class_k_win_1_1_k_win_tab_box_config_form_1a9dc598baca516232b71fc4f5061d98b0" refkind="member"><highlight class="normal">TabBoxSettings<sp/>*<ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a9dc598baca516232b71fc4f5061d98b0" kindref="member">KWinTabBoxConfigForm::config</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="91"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_config;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="class_k_win_1_1_k_win_tab_box_config_form_1a9b0bc7c2ed6a552e386cb227e1f746b8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a9b0bc7c2ed6a552e386cb227e1f746b8" kindref="member">KWinTabBoxConfigForm::highlightWindows</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="96"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ui-&gt;kcfg_HighlightWindows-&gt;isChecked();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::showTabBox()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="101"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ui-&gt;kcfg_ShowTabBox-&gt;isChecked();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::filterScreen()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="106"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ui-&gt;filterScreens-&gt;isChecked())<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ui-&gt;currentScreen-&gt;isChecked()<sp/>?<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1ac78441ecad3c5eee44e47f0bf1d14cb7a5486aa81baa9fc0623bb2b8a0744bb4b" kindref="member">TabBoxConfig::OnlyCurrentScreenClients</ref><sp/>:<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1ac78441ecad3c5eee44e47f0bf1d14cb7a7955a81e3689700d9359bbcdbd682d95" kindref="member">TabBoxConfig::ExcludeCurrentScreenClients</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1ac78441ecad3c5eee44e47f0bf1d14cb7a9f625fcae3d5fd7ecda3bc4b81d51193" kindref="member">TabBoxConfig::IgnoreMultiScreen</ref>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::filterDesktop()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="115"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ui-&gt;filterDesktops-&gt;isChecked())<sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ui-&gt;currentDesktop-&gt;isChecked()<sp/>?<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a7fd63893079ca8ebc55c8d809b5eaecaa09c9af829df05cd5486252e6688f5d59" kindref="member">TabBoxConfig::OnlyCurrentDesktopClients</ref><sp/>:<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a7fd63893079ca8ebc55c8d809b5eaecaae218e908febe18241ef4a0edbebbe885" kindref="member">TabBoxConfig::ExcludeCurrentDesktopClients</ref>;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a7fd63893079ca8ebc55c8d809b5eaecaa0382d15a3fda625bde9601d212feef3c" kindref="member">TabBoxConfig::AllDesktopsClients</ref>;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::filterActivities()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="124"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ui-&gt;filterActivities-&gt;isChecked())<sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ui-&gt;currentActivity-&gt;isChecked()<sp/>?<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a16f043ac7461cc567bd1477d5f220381aee4f79d4b51ba9f80c0b8928ab9f732b" kindref="member">TabBoxConfig::OnlyCurrentActivityClients</ref><sp/>:<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a16f043ac7461cc567bd1477d5f220381afa082b17ca4993008a60028764b95876" kindref="member">TabBoxConfig::ExcludeCurrentActivityClients</ref>;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a16f043ac7461cc567bd1477d5f220381a243d49c5d5f94501a1c545e916c67cac" kindref="member">TabBoxConfig::AllActivitiesClients</ref>;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::filterMinimization()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="133"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ui-&gt;filterMinimization-&gt;isChecked())<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ui-&gt;visibleWindows-&gt;isChecked()<sp/>?<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a389715c45c2923cface74f0f102ac5aaac6a78d5962f09c138a1e54a9d6bc95a5" kindref="member">TabBoxConfig::ExcludeMinimizedClients</ref><sp/>:<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a389715c45c2923cface74f0f102ac5aaa3c5d848f71b956610edd5cbcc4838530" kindref="member">TabBoxConfig::OnlyMinimizedClients</ref>;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a389715c45c2923cface74f0f102ac5aaa8dd72c6a86d993fbf8fc3be8255685b0" kindref="member">TabBoxConfig::IgnoreMinimizedStatus</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::applicationMode()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="142"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ui-&gt;oneAppWindow-&gt;isChecked()<sp/>?<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a46e9fb8b7892307c9edae626464c0cd6a19897ff98c135cbf18372a66d1c21473" kindref="member">TabBoxConfig::OneWindowPerApplication</ref><sp/>:<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a46e9fb8b7892307c9edae626464c0cd6adbe57874245b08be57ffd214a225af85" kindref="member">TabBoxConfig::AllWindowsAllApplications</ref>;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::orderMinimizedMode()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="147"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ui-&gt;orderMinimized-&gt;isChecked()<sp/>?<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a86146aece60ef883296609a11e9c53c0a160429773f68e5c865f68befadcc9b50" kindref="member">TabBoxConfig::GroupByMinimized</ref><sp/>:<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a86146aece60ef883296609a11e9c53c0abf2f1ea59db05decde0cfc98d6eeb680" kindref="member">TabBoxConfig::NoGroupByMinimized</ref>;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::showDesktopMode()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="152"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ui-&gt;showDesktop-&gt;isChecked()<sp/>?<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1aba9c504446a3ee34f72fcea9e4bc8e71a44fe37d31b7bd6b76ab3d5388874ef90" kindref="member">TabBoxConfig::ShowDesktopClient</ref><sp/>:<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1aba9c504446a3ee34f72fcea9e4bc8e71ad1e18349057bf3c8705cbefc76596ecc" kindref="member">TabBoxConfig::DoNotShowDesktopClient</ref>;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::switchingMode()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="157"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ui-&gt;switchingModeCombo-&gt;currentIndex();</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal">QString<sp/>KWinTabBoxConfigForm::layoutName()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="162"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ui-&gt;effectCombo-&gt;currentData().toString();</highlight></codeline>
+<codeline lineno="164"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::setFilterScreen(<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1ac78441ecad3c5eee44e47f0bf1d14cb7" kindref="member">TabBox::TabBoxConfig::ClientMultiScreenMode</ref><sp/>mode)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;filterScreens-&gt;setChecked(mode<sp/>!=<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1ac78441ecad3c5eee44e47f0bf1d14cb7a9f625fcae3d5fd7ecda3bc4b81d51193" kindref="member">TabBoxConfig::IgnoreMultiScreen</ref>);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;currentScreen-&gt;setChecked(mode<sp/>==<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1ac78441ecad3c5eee44e47f0bf1d14cb7a5486aa81baa9fc0623bb2b8a0744bb4b" kindref="member">TabBoxConfig::OnlyCurrentScreenClients</ref>);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;otherScreens-&gt;setChecked(mode<sp/>==<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1ac78441ecad3c5eee44e47f0bf1d14cb7a7955a81e3689700d9359bbcdbd682d95" kindref="member">TabBoxConfig::ExcludeCurrentScreenClients</ref>);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::setFilterDesktop(<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a7fd63893079ca8ebc55c8d809b5eaeca" kindref="member">TabBox::TabBoxConfig::ClientDesktopMode</ref><sp/>mode)</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;filterDesktops-&gt;setChecked(mode<sp/>!=<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a7fd63893079ca8ebc55c8d809b5eaecaa0382d15a3fda625bde9601d212feef3c" kindref="member">TabBoxConfig::AllDesktopsClients</ref>);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;currentDesktop-&gt;setChecked(mode<sp/>==<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a7fd63893079ca8ebc55c8d809b5eaecaa09c9af829df05cd5486252e6688f5d59" kindref="member">TabBoxConfig::OnlyCurrentDesktopClients</ref>);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;otherDesktops-&gt;setChecked(mode<sp/>==<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a7fd63893079ca8ebc55c8d809b5eaecaae218e908febe18241ef4a0edbebbe885" kindref="member">TabBoxConfig::ExcludeCurrentDesktopClients</ref>);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::setFilterActivities(<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a16f043ac7461cc567bd1477d5f220381" kindref="member">TabBox::TabBoxConfig::ClientActivitiesMode</ref><sp/>mode)</highlight></codeline>
+<codeline lineno="181"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;filterActivities-&gt;setChecked(mode<sp/>!=<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a16f043ac7461cc567bd1477d5f220381a243d49c5d5f94501a1c545e916c67cac" kindref="member">TabBoxConfig::AllActivitiesClients</ref>);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;currentActivity-&gt;setChecked(mode<sp/>==<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a16f043ac7461cc567bd1477d5f220381aee4f79d4b51ba9f80c0b8928ab9f732b" kindref="member">TabBoxConfig::OnlyCurrentActivityClients</ref>);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;otherActivities-&gt;setChecked(mode<sp/>==<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a16f043ac7461cc567bd1477d5f220381afa082b17ca4993008a60028764b95876" kindref="member">TabBoxConfig::ExcludeCurrentActivityClients</ref>);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::setFilterMinimization(<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a389715c45c2923cface74f0f102ac5aa" kindref="member">TabBox::TabBoxConfig::ClientMinimizedMode</ref><sp/>mode)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;filterMinimization-&gt;setChecked(mode<sp/>!=<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a389715c45c2923cface74f0f102ac5aaa8dd72c6a86d993fbf8fc3be8255685b0" kindref="member">TabBoxConfig::IgnoreMinimizedStatus</ref>);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;visibleWindows-&gt;setChecked(mode<sp/>==<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a389715c45c2923cface74f0f102ac5aaac6a78d5962f09c138a1e54a9d6bc95a5" kindref="member">TabBoxConfig::ExcludeMinimizedClients</ref>);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;hiddenWindows-&gt;setChecked(mode<sp/>==<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a389715c45c2923cface74f0f102ac5aaa3c5d848f71b956610edd5cbcc4838530" kindref="member">TabBoxConfig::OnlyMinimizedClients</ref>);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::setApplicationMode(<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a46e9fb8b7892307c9edae626464c0cd6" kindref="member">TabBox::TabBoxConfig::ClientApplicationsMode</ref><sp/>mode)</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;oneAppWindow-&gt;setChecked(mode<sp/>==<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a46e9fb8b7892307c9edae626464c0cd6a19897ff98c135cbf18372a66d1c21473" kindref="member">TabBoxConfig::OneWindowPerApplication</ref>);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::setOrderMinimizedMode(<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a86146aece60ef883296609a11e9c53c0" kindref="member">TabBox::TabBoxConfig::OrderMinimizedMode</ref><sp/>mode)</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;orderMinimized-&gt;setChecked(mode<sp/>==<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a86146aece60ef883296609a11e9c53c0a160429773f68e5c865f68befadcc9b50" kindref="member">TabBoxConfig::GroupByMinimized</ref>);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::setShowDesktopMode(<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1aba9c504446a3ee34f72fcea9e4bc8e71" kindref="member">TabBox::TabBoxConfig::ShowDesktopMode</ref><sp/>mode)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;showDesktop-&gt;setChecked(mode<sp/>==<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1aba9c504446a3ee34f72fcea9e4bc8e71a44fe37d31b7bd6b76ab3d5388874ef90" kindref="member">TabBoxConfig::ShowDesktopClient</ref>);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::setSwitchingModeChanged(<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a8ef8f55aba1cbb523585e20bef524628" kindref="member">TabBox::TabBoxConfig::ClientSwitchingMode</ref><sp/>mode)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;switchingModeCombo-&gt;setCurrentIndex(mode);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::setLayoutName(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;layoutName)</highlight></codeline>
+<codeline lineno="215"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>ui-&gt;effectCombo-&gt;findData(layoutName);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index<sp/>&gt;=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ui-&gt;effectCombo-&gt;setCurrentIndex(index);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222" refid="class_k_win_1_1_k_win_tab_box_config_form_1a6b396bce6433b45a7be3ce1ec67d3ee3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a6b396bce6433b45a7be3ce1ec67d3ee3" kindref="member">KWinTabBoxConfigForm::setEffectComboModel</ref>(QStandardItemModel<sp/>*model)</highlight></codeline>
+<codeline lineno="223"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>don&apos;t<sp/>want<sp/>to<sp/>lose<sp/>the<sp/>config<sp/>layout<sp/>when<sp/>resetting<sp/>the<sp/>combo<sp/>model</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>layout<sp/>=<sp/>m_config-&gt;layoutName();</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;effectCombo-&gt;setModel(model);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>setLayoutName(layout);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230" refid="class_k_win_1_1_k_win_tab_box_config_form_1a62c65aa47148f0777fde01a5d1f7e4b7" refkind="member"><highlight class="normal">QVariant<sp/><ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a62c65aa47148f0777fde01a5d1f7e4b7" kindref="member">KWinTabBoxConfigForm::effectComboCurrentData</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>role)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="231"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ui-&gt;effectCombo-&gt;currentData(role);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::tabBoxToggled(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>on)</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Highlight<sp/>Windows<sp/>options<sp/>is<sp/>availabled<sp/>if<sp/>no<sp/>TabBox<sp/>effect<sp/>is<sp/>selected</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>or<sp/>if<sp/>Tabbox<sp/>is<sp/>not<sp/>builtin<sp/>effet.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>on<sp/>=<sp/>!on<sp/>||<sp/>ui-&gt;effectCombo-&gt;currentData(<ref refid="class_k_win_1_1_k_win_tab_box_config_form_1ab3788daba676421d4f4caa4fa2baf677a98edf7eb1681b0b27bf225c882378367" kindref="member">AddonEffect</ref>).toBool();</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;kcfg_HighlightWindows-&gt;setEnabled(on<sp/>&amp;&amp;<sp/>m_isHighlightWindowsEnabled);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::onFilterScreen()</highlight></codeline>
+<codeline lineno="244"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>m_config-&gt;setMultiScreenMode(filterScreen());</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a53bd48b78e41e68339c8e1c8db6b7b12" kindref="member">configChanged</ref>();</highlight></codeline>
+<codeline lineno="247"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::onFilterDesktop()</highlight></codeline>
+<codeline lineno="250"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>m_config-&gt;setDesktopMode(filterDesktop());</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a53bd48b78e41e68339c8e1c8db6b7b12" kindref="member">configChanged</ref>();</highlight></codeline>
+<codeline lineno="253"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::onFilterActivites()</highlight></codeline>
+<codeline lineno="256"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>m_config-&gt;setActivitiesMode(filterActivities());</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a53bd48b78e41e68339c8e1c8db6b7b12" kindref="member">configChanged</ref>();</highlight></codeline>
+<codeline lineno="259"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::onFilterMinimization()</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>m_config-&gt;setMinimizedMode(filterMinimization());</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a53bd48b78e41e68339c8e1c8db6b7b12" kindref="member">configChanged</ref>();</highlight></codeline>
+<codeline lineno="265"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWin::KWinTabBoxConfigForm::onApplicationMode()</highlight></codeline>
+<codeline lineno="268"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/>m_config-&gt;setApplicationsMode(applicationMode());</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/>configChanged();</highlight></codeline>
+<codeline lineno="271"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::onOrderMinimizedMode()</highlight></codeline>
+<codeline lineno="274"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>m_config-&gt;setOrderMinimizedMode(orderMinimizedMode());</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a53bd48b78e41e68339c8e1c8db6b7b12" kindref="member">configChanged</ref>();</highlight></codeline>
+<codeline lineno="277"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::onShowDesktopMode()</highlight></codeline>
+<codeline lineno="280"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>m_config-&gt;setShowDesktopMode(showDesktopMode());</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a53bd48b78e41e68339c8e1c8db6b7b12" kindref="member">configChanged</ref>();</highlight></codeline>
+<codeline lineno="283"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::onSwitchingMode()</highlight></codeline>
+<codeline lineno="286"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/>m_config-&gt;setSwitchingMode(switchingMode());</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a53bd48b78e41e68339c8e1c8db6b7b12" kindref="member">configChanged</ref>();</highlight></codeline>
+<codeline lineno="289"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::onEffectCombo()</highlight></codeline>
+<codeline lineno="292"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isAddonEffect<sp/>=<sp/>ui-&gt;effectCombo-&gt;currentData(<ref refid="class_k_win_1_1_k_win_tab_box_config_form_1ab3788daba676421d4f4caa4fa2baf677a98edf7eb1681b0b27bf225c882378367" kindref="member">AddonEffect</ref>).toBool();</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;effectConfigButton-&gt;setIcon(QIcon::fromTheme(isAddonEffect<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;view-preview&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;configure&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ui-&gt;kcfg_ShowTabBox-&gt;isChecked())<sp/>{</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;kcfg_HighlightWindows-&gt;setEnabled(isAddonEffect<sp/>&amp;&amp;<sp/>m_isHighlightWindowsEnabled);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/>m_config-&gt;setLayoutName(layoutName());</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a53bd48b78e41e68339c8e1c8db6b7b12" kindref="member">configChanged</ref>();</highlight></codeline>
+<codeline lineno="302"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::onShortcutChanged(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QKeySequence<sp/>&amp;seq)</highlight></codeline>
+<codeline lineno="305"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>actionName<sp/>=<sp/>sender()-&gt;property(</highlight><highlight class="stringliteral">&quot;shortcutAction&quot;</highlight><highlight class="normal">).toString();</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/>m_shortcuts-&gt;setShortcut(actionName,<sp/>seq);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a53bd48b78e41e68339c8e1c8db6b7b12" kindref="member">configChanged</ref>();</highlight></codeline>
+<codeline lineno="310"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312" refid="class_k_win_1_1_k_win_tab_box_config_form_1a1d37c1f10f8a32bf506e1a9787e5eeaf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a1d37c1f10f8a32bf506e1a9787e5eeaf" kindref="member">KWinTabBoxConfigForm::updateUiFromConfig</ref>()</highlight></codeline>
+<codeline lineno="313"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/>setFilterScreen(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1ac78441ecad3c5eee44e47f0bf1d14cb7" kindref="member">TabBoxConfig::ClientMultiScreenMode</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m_config-&gt;multiScreenMode()));</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/>setFilterDesktop(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a7fd63893079ca8ebc55c8d809b5eaeca" kindref="member">TabBoxConfig::ClientDesktopMode</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m_config-&gt;desktopMode()));</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/>setFilterActivities(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a16f043ac7461cc567bd1477d5f220381" kindref="member">TabBoxConfig::ClientActivitiesMode</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m_config-&gt;activitiesMode()));</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/>setFilterMinimization(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a389715c45c2923cface74f0f102ac5aa" kindref="member">TabBoxConfig::ClientMinimizedMode</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m_config-&gt;minimizedMode()));</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/>setApplicationMode(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a46e9fb8b7892307c9edae626464c0cd6" kindref="member">TabBoxConfig::ClientApplicationsMode</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m_config-&gt;applicationsMode()));</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/>setOrderMinimizedMode(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a86146aece60ef883296609a11e9c53c0" kindref="member">TabBoxConfig::OrderMinimizedMode</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m_config-&gt;orderMinimizedMode()));</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/>setShowDesktopMode(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1aba9c504446a3ee34f72fcea9e4bc8e71" kindref="member">TabBoxConfig::ShowDesktopMode</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m_config-&gt;showDesktopMode()));</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/>setSwitchingModeChanged(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config_1a8ef8f55aba1cbb523585e20bef524628" kindref="member">TabBoxConfig::ClientSwitchingMode</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m_config-&gt;switchingMode()));</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/>setLayoutName(m_config-&gt;layoutName());</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;widget<sp/>:<sp/>{ui-&gt;scAll,<sp/>ui-&gt;scAllReverse,<sp/>ui-&gt;scCurrent,<sp/>ui-&gt;scCurrentReverse})<sp/>{</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>actionName<sp/>=<sp/>widget-&gt;property(</highlight><highlight class="stringliteral">&quot;shortcutAction&quot;</highlight><highlight class="normal">).toString();</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widget-&gt;setKeySequence(m_shortcuts-&gt;shortcut(actionName));</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/>updateDefaultIndicators();</highlight></codeline>
+<codeline lineno="330"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::setEnabledUi()</highlight></codeline>
+<codeline lineno="333"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/>m_isHighlightWindowsEnabled<sp/>=<sp/>!m_config-&gt;isHighlightWindowsImmutable();</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;kcfg_HighlightWindows-&gt;setEnabled(!m_config-&gt;isHighlightWindowsImmutable());</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;filterScreens-&gt;setEnabled(!m_config-&gt;isMultiScreenModeImmutable());</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;currentScreen-&gt;setEnabled(!m_config-&gt;isMultiScreenModeImmutable());</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;otherScreens-&gt;setEnabled(!m_config-&gt;isMultiScreenModeImmutable());</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;filterDesktops-&gt;setEnabled(!m_config-&gt;isDesktopModeImmutable());</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;currentDesktop-&gt;setEnabled(!m_config-&gt;isDesktopModeImmutable());</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;otherDesktops-&gt;setEnabled(!m_config-&gt;isDesktopModeImmutable());</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;filterActivities-&gt;setEnabled(!m_config-&gt;isActivitiesModeImmutable());</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;currentActivity-&gt;setEnabled(!m_config-&gt;isActivitiesModeImmutable());</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;otherActivities-&gt;setEnabled(!m_config-&gt;isActivitiesModeImmutable());</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;filterMinimization-&gt;setEnabled(!m_config-&gt;isMinimizedModeImmutable());</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;visibleWindows-&gt;setEnabled(!m_config-&gt;isMinimizedModeImmutable());</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;hiddenWindows-&gt;setEnabled(!m_config-&gt;isMinimizedModeImmutable());</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;oneAppWindow-&gt;setEnabled(!m_config-&gt;isApplicationsModeImmutable());</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;orderMinimized-&gt;setEnabled(!m_config-&gt;isOrderMinimizedModeImmutable());</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;showDesktop-&gt;setEnabled(!m_config-&gt;isShowDesktopModeImmutable());</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;switchingModeCombo-&gt;setEnabled(!m_config-&gt;isSwitchingModeImmutable());</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;effectCombo-&gt;setEnabled(!m_config-&gt;isLayoutNameImmutable());</highlight></codeline>
+<codeline lineno="358"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360" refid="class_k_win_1_1_k_win_tab_box_config_form_1a410c85570b514800b16855aa72dad860" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_tab_box_config_form_1a410c85570b514800b16855aa72dad860" kindref="member">KWinTabBoxConfigForm::setDefaultIndicatorVisible</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>show)</highlight></codeline>
+<codeline lineno="361"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/>m_showDefaultIndicator<sp/>=<sp/>show;</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/>updateDefaultIndicators();</highlight></codeline>
+<codeline lineno="364"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::updateDefaultIndicators()</highlight></codeline>
+<codeline lineno="367"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/>applyDefaultIndicator({ui-&gt;filterScreens,<sp/>ui-&gt;currentScreen,<sp/>ui-&gt;otherScreens},</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_config-&gt;multiScreenMode()<sp/>==<sp/>m_config-&gt;defaultMultiScreenModeValue());</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/>applyDefaultIndicator({ui-&gt;filterDesktops,<sp/>ui-&gt;currentDesktop,<sp/>ui-&gt;otherDesktops},</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_config-&gt;desktopMode()<sp/>==<sp/>m_config-&gt;defaultDesktopModeValue());</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/>applyDefaultIndicator({ui-&gt;filterActivities,<sp/>ui-&gt;currentActivity,<sp/>ui-&gt;otherActivities},</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_config-&gt;activitiesMode()<sp/>==<sp/>m_config-&gt;defaultActivitiesModeValue());</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/>applyDefaultIndicator({ui-&gt;filterMinimization,<sp/>ui-&gt;visibleWindows,<sp/>ui-&gt;hiddenWindows},</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_config-&gt;minimizedMode()<sp/>==<sp/>m_config-&gt;defaultMinimizedModeValue());</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/>applyDefaultIndicator({ui-&gt;oneAppWindow},<sp/>m_config-&gt;applicationsMode()<sp/>==<sp/>m_config-&gt;defaultApplicationsModeValue());</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/>applyDefaultIndicator({ui-&gt;orderMinimized},<sp/>m_config-&gt;orderMinimizedMode()<sp/>==<sp/>m_config-&gt;defaultOrderMinimizedModeValue());</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/>applyDefaultIndicator({ui-&gt;showDesktop},<sp/>m_config-&gt;showDesktopMode()<sp/>==<sp/>m_config-&gt;defaultShowDesktopModeValue());</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/>applyDefaultIndicator({ui-&gt;switchingModeCombo},<sp/>m_config-&gt;switchingMode()<sp/>==<sp/>m_config-&gt;defaultSwitchingModeValue());</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/>applyDefaultIndicator({ui-&gt;effectCombo},<sp/>m_config-&gt;layoutName()<sp/>==<sp/>m_config-&gt;defaultLayoutNameValue());</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;widget<sp/>:<sp/>{ui-&gt;scAll,<sp/>ui-&gt;scAllReverse,<sp/>ui-&gt;scCurrent,<sp/>ui-&gt;scCurrentReverse})<sp/>{</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>actionName<sp/>=<sp/>widget-&gt;property(</highlight><highlight class="stringliteral">&quot;shortcutAction&quot;</highlight><highlight class="normal">).toString();</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>applyDefaultIndicator({widget},<sp/>m_shortcuts-&gt;isDefault(actionName));</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="386"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KWinTabBoxConfigForm::applyDefaultIndicator(QList&lt;QWidget<sp/>*&gt;<sp/>widgets,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isDefault)</highlight></codeline>
+<codeline lineno="389"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>widget<sp/>:<sp/>widgets)<sp/>{</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widget-&gt;setProperty(</highlight><highlight class="stringliteral">&quot;_kde_highlight_neutral&quot;</highlight><highlight class="normal">,<sp/>m_showDefaultIndicator<sp/>&amp;&amp;<sp/>!isDefault);</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widget-&gt;update();</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="394"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"></highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;moc_kwintabboxconfigform.cpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/kcms/tabbox/kwintabboxconfigform.cpp"/>
+  </compounddef>
+</doxygen>

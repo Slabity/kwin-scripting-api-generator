@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="graphicsbuffer_8cpp" kind="file" language="C++">
+    <compoundname>graphicsbuffer.cpp</compoundname>
+    <includes refid="graphicsbuffer_8h" local="yes">core/graphicsbuffer.h</includes>
+    <includes refid="drm__format__helper_8h" local="yes">utils/drm_format_helper.h</includes>
+    <includes local="no">QCoreApplication</includes>
+    <includes local="no">drm_fourcc.h</includes>
+    <includes local="yes">moc_graphicsbuffer.cpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/core/graphicsbuffer.cpp</label>
+        <link refid="graphicsbuffer_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>core/graphicsbuffer.h</label>
+        <link refid="graphicsbuffer_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>utils/drm_format_helper.h</label>
+        <link refid="drm__format__helper_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>utils/filedescriptor.h</label>
+        <link refid="filedescriptor_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="9">
+        <label>QHash</label>
+      </node>
+      <node id="10">
+        <label>QList</label>
+      </node>
+      <node id="5">
+        <label>QObject</label>
+      </node>
+      <node id="6">
+        <label>QSize</label>
+      </node>
+      <node id="11">
+        <label>QString</label>
+      </node>
+      <node id="17">
+        <label>drm_fourcc.h</label>
+      </node>
+      <node id="12">
+        <label>epoxy/gl.h</label>
+      </node>
+      <node id="3">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="13">
+        <label>libdrm/drm_fourcc.h</label>
+      </node>
+      <node id="18">
+        <label>moc_graphicsbuffer.cpp</label>
+      </node>
+      <node id="14">
+        <label>optional</label>
+      </node>
+      <node id="15">
+        <label>stdint.h</label>
+      </node>
+      <node id="7">
+        <label>utility</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2023<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="graphicsbuffer_8h" kindref="compound">core/graphicsbuffer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="drm__format__helper_8h" kindref="compound">utils/drm_format_helper.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QCoreApplication&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;drm_fourcc.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="class_k_win_1_1_graphics_buffer_1af0d40610e9115f323dcfa0a2d1f67697" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_graphics_buffer_1af0d40610e9115f323dcfa0a2d1f67697" kindref="member">GraphicsBuffer::GraphicsBuffer</ref>(QObject<sp/>*parent)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QObject(parent)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="class_k_win_1_1_graphics_buffer_1afdb02f1ae060f64b7618130a055b0f42" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_graphics_buffer_1afdb02f1ae060f64b7618130a055b0f42" kindref="member">GraphicsBuffer::isReferenced</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="23"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_graphics_buffer_1a2928609ea80626025fc8e728aaa18057" kindref="member">m_refCount</ref><sp/>&gt;<sp/>0;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="class_k_win_1_1_graphics_buffer_1abc5c2b498a66a48573f33f154dde6097" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_graphics_buffer_1abc5c2b498a66a48573f33f154dde6097" kindref="member">GraphicsBuffer::isDropped</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="28"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_graphics_buffer_1ad40715c555717f55f389ec1f36d30038" kindref="member">m_dropped</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="class_k_win_1_1_graphics_buffer_1abe09a46569d14b3f163f6cc416f4184b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_graphics_buffer_1abe09a46569d14b3f163f6cc416f4184b" kindref="member">GraphicsBuffer::ref</ref>()</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_ASSERT(QCoreApplication::instance()-&gt;thread()<sp/>==<sp/>thread());</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>++<ref refid="class_k_win_1_1_graphics_buffer_1a2928609ea80626025fc8e728aaa18057" kindref="member">m_refCount</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="class_k_win_1_1_graphics_buffer_1ab17e36ea633d5e9b8849b86695c119a6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_graphics_buffer_1ab17e36ea633d5e9b8849b86695c119a6" kindref="member">GraphicsBuffer::unref</ref>()</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_ASSERT(QCoreApplication::instance()-&gt;thread()<sp/>==<sp/>thread());</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_ASSERT(<ref refid="class_k_win_1_1_graphics_buffer_1a2928609ea80626025fc8e728aaa18057" kindref="member">m_refCount</ref><sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>--<ref refid="class_k_win_1_1_graphics_buffer_1a2928609ea80626025fc8e728aaa18057" kindref="member">m_refCount</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="class_k_win_1_1_graphics_buffer_1a2928609ea80626025fc8e728aaa18057" kindref="member">m_refCount</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_k_win_1_1_graphics_buffer_1ad40715c555717f55f389ec1f36d30038" kindref="member">m_dropped</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_graphics_buffer_1a6f476e2a040b103e783e71e6e51b71de" kindref="member">m_releasePoints</ref>.clear();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_graphics_buffer_1af3c47088ddbdb12a67df0417be2f7347" kindref="member">released</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="class_k_win_1_1_graphics_buffer_1a7d0b964ea8c12167b315075b4de6cdfa" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_graphics_buffer_1a7d0b964ea8c12167b315075b4de6cdfa" kindref="member">GraphicsBuffer::drop</ref>()</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_graphics_buffer_1ad40715c555717f55f389ec1f36d30038" kindref="member">m_dropped</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="class_k_win_1_1_graphics_buffer_1a2928609ea80626025fc8e728aaa18057" kindref="member">m_refCount</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="class_k_win_1_1_graphics_buffer_1a00aa1056d617ca382f59b6598f9f9bf4" refkind="member"><highlight class="normal"><ref refid="struct_k_win_1_1_graphics_buffer_1_1_map" kindref="compound">GraphicsBuffer::Map</ref><sp/><ref refid="class_k_win_1_1_graphics_buffer_1a00aa1056d617ca382f59b6598f9f9bf4" kindref="member">GraphicsBuffer::map</ref>(MapFlags<sp/>flags)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{};</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="class_k_win_1_1_graphics_buffer_1a94197a697c14fbdc32a5a763c641b87b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_graphics_buffer_1a94197a697c14fbdc32a5a763c641b87b" kindref="member">GraphicsBuffer::unmap</ref>()</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="class_k_win_1_1_graphics_buffer_1a975e80a802fa0d119921c13d4f06e576" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_dma_buf_attributes" kindref="compound">DmaBufAttributes</ref><sp/>*<ref refid="class_k_win_1_1_graphics_buffer_1a975e80a802fa0d119921c13d4f06e576" kindref="member">GraphicsBuffer::dmabufAttributes</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="72"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="class_k_win_1_1_graphics_buffer_1ac2be51e8fa6ea0bcf1c9368b3605aa57" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_shm_attributes" kindref="compound">ShmAttributes</ref><sp/>*<ref refid="class_k_win_1_1_graphics_buffer_1ac2be51e8fa6ea0bcf1c9368b3605aa57" kindref="member">GraphicsBuffer::shmAttributes</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="77"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="class_k_win_1_1_graphics_buffer_1adfb110d5e5cc2eb89b39b55531de68cc" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_graphics_buffer_1adfb110d5e5cc2eb89b39b55531de68cc" kindref="member">GraphicsBuffer::addReleasePoint</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;SyncReleasePoint&gt;<sp/>&amp;releasePoint)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_graphics_buffer_1a6f476e2a040b103e783e71e6e51b71de" kindref="member">m_releasePoints</ref>.push_back(releasePoint);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="class_k_win_1_1_graphics_buffer_1a7233a35f2682c6564fe7dcab11704d19" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_graphics_buffer_1a7233a35f2682c6564fe7dcab11704d19" kindref="member">GraphicsBuffer::alphaChannelFromDrmFormat</ref>(uint32_t<sp/><ref refid="namespace_k_win_1a6ef3f38157c98f3fe83ae3ec855ee903" kindref="member">format</ref>)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>info<sp/>=<sp/><ref refid="struct_k_win_1_1_format_info_1ac87e6ab7ac1b0edeba780ccbf6dc7111" kindref="member">FormatInfo::get</ref>(<ref refid="namespace_k_win_1a6ef3f38157c98f3fe83ae3ec855ee903" kindref="member">format</ref>);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>info<sp/>&amp;&amp;<sp/>info-&gt;alphaBits<sp/>&gt;<sp/>0;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;moc_graphicsbuffer.cpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/core/graphicsbuffer.cpp"/>
+  </compounddef>
+</doxygen>

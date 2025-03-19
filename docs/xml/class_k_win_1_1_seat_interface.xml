@@ -1,0 +1,2421 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_seat_interface" kind="class" language="C++" prot="public">
+    <compoundname>KWin::SeatInterface</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="seat_8h" local="no">seat.h</includes>
+    <sectiondef kind="user-defined">
+      <header>Drag&apos;n&apos;Drop related methods</header>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a57ac6a4f80381496d09b6241e0fa1b2f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::SeatInterface::isDrag</definition>
+        <argsstring>() const</argsstring>
+        <name>isDrag</name>
+        <qualifiedname>KWin::SeatInterface::isDrag</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>whether there is currently a drag&apos;n&apos;drop going on. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a87ba2e3f967fbce884cdd9ca19d70780" kindref="member">isDragPointer</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a94fb7a3110dad0ae2b0b0f5c0026ca50" kindref="member">isDragTouch</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a74ad66a32e97bd7aefab3e4ce40a715f" kindref="member">dragStarted</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1abaf30fbfe4e667e4aebb79fd16be4bd5" kindref="member">dragEnded</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="131" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1148" bodyend="1151"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a87ba2e3f967fbce884cdd9ca19d70780" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::SeatInterface::isDragPointer</definition>
+        <argsstring>() const</argsstring>
+        <name>isDragPointer</name>
+        <qualifiedname>KWin::SeatInterface::isDragPointer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>whether the drag&apos;n&apos;drop is operated through the pointer device </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a57ac6a4f80381496d09b6241e0fa1b2f" kindref="member">isDrag</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a94fb7a3110dad0ae2b0b0f5c0026ca50" kindref="member">isDragTouch</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="137" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1153" bodyend="1156"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a94fb7a3110dad0ae2b0b0f5c0026ca50" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::SeatInterface::isDragTouch</definition>
+        <argsstring>() const</argsstring>
+        <name>isDragTouch</name>
+        <qualifiedname>KWin::SeatInterface::isDragTouch</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>whether the drag&apos;n&apos;drop is operated through the touch device </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a57ac6a4f80381496d09b6241e0fa1b2f" kindref="member">isDrag</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a87ba2e3f967fbce884cdd9ca19d70780" kindref="member">isDragPointer</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="143" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1158" bodyend="1161"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1ad0eb3b07546c008f98436ce7b8ef06ef" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QMatrix4x4</type>
+        <definition>QMatrix4x4 KWin::SeatInterface::dragSurfaceTransformation</definition>
+        <argsstring>() const</argsstring>
+        <name>dragSurfaceTransformation</name>
+        <qualifiedname>KWin::SeatInterface::dragSurfaceTransformation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The transformation applied to go from global to local coordinates for drag motion events. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1ad0eb3b07546c008f98436ce7b8ef06ef" kindref="member">dragSurfaceTransformation</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="148" column="16" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1174" bodyend="1177"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a3da5ce00a5ffd81f77dc6b9363ced81d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+        <definition>SurfaceInterface * KWin::SeatInterface::dragSurface</definition>
+        <argsstring>() const</argsstring>
+        <name>dragSurface</name>
+        <qualifiedname>KWin::SeatInterface::dragSurface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The currently focused Surface for drag motion events. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1ad0eb3b07546c008f98436ce7b8ef06ef" kindref="member">dragSurfaceTransformation</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a60356dd135469a5dac20452a9f0a005a" kindref="member">dragSurfaceChanged</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="154" column="22" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1179" bodyend="1182"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1af10546626ca0b56147b3ca2af66288a8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_abstract_data_source" kindref="compound">AbstractDataSource</ref> *</type>
+        <definition>AbstractDataSource * KWin::SeatInterface::dragSource</definition>
+        <argsstring>() const</argsstring>
+        <name>dragSource</name>
+        <qualifiedname>KWin::SeatInterface::dragSource</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The <ref refid="class_k_win_1_1_data_device_interface" kindref="compound">DataDeviceInterface</ref> which started the drag and drop operation. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a57ac6a4f80381496d09b6241e0fa1b2f" kindref="member">isDrag</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="159" column="24" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1184" bodyend="1187"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a49ecec73ceab04d444085408680c5821" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_xdg_toplevel_drag_v1_interface" kindref="compound">XdgToplevelDragV1Interface</ref> *</type>
+        <definition>XdgToplevelDragV1Interface * KWin::SeatInterface::xdgTopleveldrag</definition>
+        <argsstring>() const</argsstring>
+        <name>xdgTopleveldrag</name>
+        <qualifiedname>KWin::SeatInterface::xdgTopleveldrag</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the toplevel drag if the current drag is a toplevel drag </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="163" column="32" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1189" bodyend="1195"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a3bce382cbc9cb803a4e6bde0f90367db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::setDragTarget</definition>
+        <argsstring>(AbstractDropHandler *dropTarget, SurfaceInterface *surface, const QPointF &amp;globalPosition, const QMatrix4x4 &amp;inputTransformation)</argsstring>
+        <name>setDragTarget</name>
+        <qualifiedname>KWin::SeatInterface::setDragTarget</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_abstract_drop_handler" kindref="compound">AbstractDropHandler</ref> *</type>
+          <declname>dropTarget</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>surface</declname>
+        </param>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>globalPosition</declname>
+        </param>
+        <param>
+          <type>const QMatrix4x4 &amp;</type>
+          <declname>inputTransformation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the current drag target to <computeroutput>surface</computeroutput>.</para>
+<para>Sends a drag leave event to the current target and an enter event to <computeroutput>surface</computeroutput>. The enter position is derived from <computeroutput>globalPosition</computeroutput> and transformed by <computeroutput>inputTransformation</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="171" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="480" bodyend="520"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a163a9a032f623020880383989a39f585" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::setDragTarget</definition>
+        <argsstring>(AbstractDropHandler *dropTarget, SurfaceInterface *surface, const QMatrix4x4 &amp;inputTransformation=QMatrix4x4())</argsstring>
+        <name>setDragTarget</name>
+        <qualifiedname>KWin::SeatInterface::setDragTarget</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_abstract_drop_handler" kindref="compound">AbstractDropHandler</ref> *</type>
+          <declname>dropTarget</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>surface</declname>
+        </param>
+        <param>
+          <type>const QMatrix4x4 &amp;</type>
+          <declname>inputTransformation</declname>
+          <defval>QMatrix4x4()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the current drag target to <computeroutput>surface</computeroutput>.</para>
+<para>Sends a drag leave event to the current target and an enter event to <computeroutput>surface</computeroutput>. The enter position is derived from current global position and transformed by <computeroutput>inputTransformation</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="178" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="522" bodyend="530"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Pointer related methods</header>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a544c9a6129a4afa11a3a98163357f739" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::notifyPointerMotion</definition>
+        <argsstring>(const QPointF &amp;pos)</argsstring>
+        <name>notifyPointerMotion</name>
+        <qualifiedname>KWin::SeatInterface::notifyPointerMotion</qualifiedname>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Updates the global pointer <computeroutput>pos</computeroutput>.</para>
+<para>Sends a pointer motion event to the focused pointer surface. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="197" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="435" bodyend="468"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a31733a64eb06520e8f793c6b80674566" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QPointF</type>
+        <definition>QPointF KWin::SeatInterface::pointerPos</definition>
+        <argsstring>() const</argsstring>
+        <name>pointerPos</name>
+        <qualifiedname>KWin::SeatInterface::pointerPos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the global pointer position </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="201" column="13" bodyfile="kwin/src/wayland/seat.cpp" bodystart="430" bodyend="433"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a7fd0cb17dde8e7a484f71c2fb2f75a48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::notifyPointerEnter</definition>
+        <argsstring>(SurfaceInterface *surface, const QPointF &amp;position, const QPointF &amp;surfacePosition=QPointF())</argsstring>
+        <name>notifyPointerEnter</name>
+        <qualifiedname>KWin::SeatInterface::notifyPointerEnter</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>surface</declname>
+        </param>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>surfacePosition</declname>
+          <defval>QPointF()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the focused pointer <computeroutput>surface</computeroutput>. All pointer events will be sent to the <computeroutput>surface</computeroutput> till a new focused pointer surface gets installed. When the focus pointer surface changes a leave event is sent to the previous focused surface.</para>
+<para>To unset the focused pointer surface pass <computeroutput>nullptr</computeroutput> as <computeroutput>surface</computeroutput>.</para>
+<para>Pointer motion events are adjusted to the local position based on the <computeroutput>surfacePosition</computeroutput>. If the surface changes it&apos;s position in the global coordinate system use setFocusedPointerSurfacePosition to update. The surface position is used to create the base transformation matrix to go from global to surface local coordinates. The default generated matrix is a translation with negative <computeroutput>surfacePosition</computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>surface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The surface which should become the new focused pointer surface. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>surfacePosition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position of the surface in the global coordinate system</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>setPointerPos </para>
+</simplesect>
+<simplesect kind="see"><para>focucedPointerSurface </para>
+</simplesect>
+<simplesect kind="see"><para>focusedPointer </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a12c1f9e56a0f043239bbe55019481977" kindref="member">setFocusedPointerSurfacePosition</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a7425f1b551a9ed28bc2d60775ee54e42" kindref="member">focusedPointerSurfacePosition</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a84670f4ddd03ff66967a80713bdd28d0" kindref="member">setFocusedPointerSurfaceTransformation</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1addcc25a323fd28a4ffcb30f3922831ac" kindref="member">focusedPointerSurfaceTransformation</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="228" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="537" bodyend="545"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a47e0286e6a1e5591230505f72ec5e96a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::notifyPointerEnter</definition>
+        <argsstring>(SurfaceInterface *surface, const QPointF &amp;position, const QMatrix4x4 &amp;transformation)</argsstring>
+        <name>notifyPointerEnter</name>
+        <qualifiedname>KWin::SeatInterface::notifyPointerEnter</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>surface</declname>
+        </param>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>const QMatrix4x4 &amp;</type>
+          <declname>transformation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the focused pointer <computeroutput>surface</computeroutput>. All pointer events will be sent to the <computeroutput>surface</computeroutput> till a new focused pointer surface gets installed. When the focus pointer surface changes a leave event is sent to the previous focused surface.</para>
+<para>To unset the focused pointer surface pass <computeroutput>nullptr</computeroutput> as <computeroutput>surface</computeroutput>.</para>
+<para>Pointer motion events are adjusted to the local position based on the <computeroutput>transformation</computeroutput>. If the surface changes it&apos;s position in the global coordinate system use setFocusedPointerSurfaceTransformation to update.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>surface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The surface which should become the new focused pointer surface. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>transformation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The transformation to transform global into local coordinates</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>setPointerPos </para>
+</simplesect>
+<simplesect kind="see"><para>focucedPointerSurface </para>
+</simplesect>
+<simplesect kind="see"><para>focusedPointer </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a12c1f9e56a0f043239bbe55019481977" kindref="member">setFocusedPointerSurfacePosition</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a7425f1b551a9ed28bc2d60775ee54e42" kindref="member">focusedPointerSurfacePosition</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a84670f4ddd03ff66967a80713bdd28d0" kindref="member">setFocusedPointerSurfaceTransformation</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1addcc25a323fd28a4ffcb30f3922831ac" kindref="member">focusedPointerSurfaceTransformation</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="252" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="547" bodyend="578"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a879f67e2ec9d35057979d181f2c24133" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::notifyPointerLeave</definition>
+        <argsstring>()</argsstring>
+        <name>notifyPointerLeave</name>
+        <qualifiedname>KWin::SeatInterface::notifyPointerLeave</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="253" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="580" bodyend="596"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a68b2e53bcc63c7ff056242f218f94714" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+        <definition>SurfaceInterface * KWin::SeatInterface::focusedPointerSurface</definition>
+        <argsstring>() const</argsstring>
+        <name>focusedPointerSurface</name>
+        <qualifiedname>KWin::SeatInterface::focusedPointerSurface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The currently focused pointer surface, that is the surface receiving pointer events. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a7fd0cb17dde8e7a484f71c2fb2f75a48" kindref="member">notifyPointerEnter</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a879f67e2ec9d35057979d181f2c24133" kindref="member">notifyPointerLeave</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="259" column="22" bodyfile="kwin/src/wayland/seat.cpp" bodystart="532" bodyend="535"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a72ca4164963a902ef1456daecc5cfd64" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_pointer_interface" kindref="compound">PointerInterface</ref> *</type>
+        <definition>PointerInterface * KWin::SeatInterface::pointer</definition>
+        <argsstring>() const</argsstring>
+        <name>pointer</name>
+        <qualifiedname>KWin::SeatInterface::pointer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="260" column="22" bodyfile="kwin/src/wayland/seat.cpp" bodystart="624" bodyend="627"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a12c1f9e56a0f043239bbe55019481977" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::setFocusedPointerSurfacePosition</definition>
+        <argsstring>(const QPointF &amp;surfacePosition)</argsstring>
+        <name>setFocusedPointerSurfacePosition</name>
+        <qualifiedname>KWin::SeatInterface::setFocusedPointerSurfacePosition</qualifiedname>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>surfacePosition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Updates the global position of the currently focused pointer surface.</para>
+<para>Updating the focused surface position also generates a new transformation matrix. The default generated matrix is a translation with negative <computeroutput>surfacePosition</computeroutput>. If a different transformation is required a dedicated call to <ref refid="class_k_win_1_1_seat_interface_1a84670f4ddd03ff66967a80713bdd28d0" kindref="member">is required.  surfacePosition The new global position of the focused pointer surface  focusedPointerSurface  focusedPointerSurfaceTransformation  setFocusedPointerSurfaceTransformation </ref></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="274" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="598" bodyend="605"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a7425f1b551a9ed28bc2d60775ee54e42" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QPointF</type>
+        <definition>QPointF KWin::SeatInterface::focusedPointerSurfacePosition</definition>
+        <argsstring>() const</argsstring>
+        <name>focusedPointerSurfacePosition</name>
+        <qualifiedname>KWin::SeatInterface::focusedPointerSurfacePosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The position of the focused pointer surface in global coordinates. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a12c1f9e56a0f043239bbe55019481977" kindref="member">setFocusedPointerSurfacePosition</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1addcc25a323fd28a4ffcb30f3922831ac" kindref="member">focusedPointerSurfaceTransformation</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="280" column="13" bodyfile="kwin/src/wayland/seat.cpp" bodystart="607" bodyend="610"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a84670f4ddd03ff66967a80713bdd28d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::setFocusedPointerSurfaceTransformation</definition>
+        <argsstring>(const QMatrix4x4 &amp;transformation)</argsstring>
+        <name>setFocusedPointerSurfaceTransformation</name>
+        <qualifiedname>KWin::SeatInterface::setFocusedPointerSurfaceTransformation</qualifiedname>
+        <param>
+          <type>const QMatrix4x4 &amp;</type>
+          <declname>transformation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the <computeroutput>transformation</computeroutput> for going from global to local coordinates.</para>
+<para>The default transformation gets generated from the surface position and reset whenever the surface position changes.</para>
+<para><simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1addcc25a323fd28a4ffcb30f3922831ac" kindref="member">focusedPointerSurfaceTransformation</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a7425f1b551a9ed28bc2d60775ee54e42" kindref="member">focusedPointerSurfacePosition</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a12c1f9e56a0f043239bbe55019481977" kindref="member">setFocusedPointerSurfacePosition</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="291" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="612" bodyend="617"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1addcc25a323fd28a4ffcb30f3922831ac" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QMatrix4x4</type>
+        <definition>QMatrix4x4 KWin::SeatInterface::focusedPointerSurfaceTransformation</definition>
+        <argsstring>() const</argsstring>
+        <name>focusedPointerSurfaceTransformation</name>
+        <qualifiedname>KWin::SeatInterface::focusedPointerSurfaceTransformation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The transformation applied to pointer position to go from global to local coordinates. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a84670f4ddd03ff66967a80713bdd28d0" kindref="member">setFocusedPointerSurfaceTransformation</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="296" column="16" bodyfile="kwin/src/wayland/seat.cpp" bodystart="619" bodyend="622"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1ae38adc683ab54c95f9fa10ef26028b73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::notifyPointerButton</definition>
+        <argsstring>(quint32 button, PointerButtonState state)</argsstring>
+        <name>notifyPointerButton</name>
+        <qualifiedname>KWin::SeatInterface::notifyPointerButton</qualifiedname>
+        <param>
+          <type>quint32</type>
+          <declname>button</declname>
+        </param>
+        <param>
+          <type><ref refid="namespace_k_win_1af04c7f9798b123fe6f74415788dd38d3" kindref="member">PointerButtonState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Marks the specified <emphasis>button</emphasis> as pressed or released based on <emphasis>state</emphasis>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="300" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="688" bodyend="722"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1ab9902db728c89f507255f78209872ee1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::notifyPointerButton</definition>
+        <argsstring>(Qt::MouseButton button, PointerButtonState state)</argsstring>
+        <name>notifyPointerButton</name>
+        <qualifiedname>KWin::SeatInterface::notifyPointerButton</qualifiedname>
+        <param>
+          <type>Qt::MouseButton</type>
+          <declname>button</declname>
+        </param>
+        <param>
+          <type><ref refid="namespace_k_win_1af04c7f9798b123fe6f74415788dd38d3" kindref="member">PointerButtonState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="304" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="679" bodyend="686"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1ab9c928f670fb2f9e9ca77dce6d496464" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::notifyPointerFrame</definition>
+        <argsstring>()</argsstring>
+        <name>notifyPointerFrame</name>
+        <qualifiedname>KWin::SeatInterface::notifyPointerFrame</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="305" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="724" bodyend="734"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a897a0c30fdef792d6e446c7e730c5147" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::SeatInterface::isPointerButtonPressed</definition>
+        <argsstring>(quint32 button) const</argsstring>
+        <name>isPointerButtonPressed</name>
+        <qualifiedname>KWin::SeatInterface::isPointerButtonPressed</qualifiedname>
+        <param>
+          <type>quint32</type>
+          <declname>button</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>whether the <computeroutput>button</computeroutput> is pressed </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="309" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="658" bodyend="665"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1ac73c70cb929c2c651d70818038c4ec34" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::SeatInterface::isPointerButtonPressed</definition>
+        <argsstring>(Qt::MouseButton button) const</argsstring>
+        <name>isPointerButtonPressed</name>
+        <qualifiedname>KWin::SeatInterface::isPointerButtonPressed</qualifiedname>
+        <param>
+          <type>Qt::MouseButton</type>
+          <declname>button</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>whether the <computeroutput>button</computeroutput> is pressed </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="313" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="653" bodyend="656"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a11c1dac5dc3496d47a71359341b6ccc0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>quint32</type>
+        <definition>quint32 KWin::SeatInterface::pointerButtonSerial</definition>
+        <argsstring>(quint32 button) const</argsstring>
+        <name>pointerButtonSerial</name>
+        <qualifiedname>KWin::SeatInterface::pointerButtonSerial</qualifiedname>
+        <param>
+          <type>quint32</type>
+          <declname>button</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the last serial for <computeroutput>button</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="317" column="13" bodyfile="kwin/src/wayland/seat.cpp" bodystart="741" bodyend="748"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a22b1f71119bc0f5a1474b874e18265e3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>quint32</type>
+        <definition>quint32 KWin::SeatInterface::pointerButtonSerial</definition>
+        <argsstring>(Qt::MouseButton button) const</argsstring>
+        <name>pointerButtonSerial</name>
+        <qualifiedname>KWin::SeatInterface::pointerButtonSerial</qualifiedname>
+        <param>
+          <type>Qt::MouseButton</type>
+          <declname>button</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the last serial for <computeroutput>button</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="321" column="13" bodyfile="kwin/src/wayland/seat.cpp" bodystart="736" bodyend="739"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1af7eb3d46872924785a59afcc91b92e56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::notifyPointerAxis</definition>
+        <argsstring>(Qt::Orientation orientation, qreal delta, qint32 deltaV120, PointerAxisSource source, bool inverted=false)</argsstring>
+        <name>notifyPointerAxis</name>
+        <qualifiedname>KWin::SeatInterface::notifyPointerAxis</qualifiedname>
+        <param>
+          <type>Qt::Orientation</type>
+          <declname>orientation</declname>
+        </param>
+        <param>
+          <type>qreal</type>
+          <declname>delta</declname>
+        </param>
+        <param>
+          <type>qint32</type>
+          <declname>deltaV120</declname>
+        </param>
+        <param>
+          <type><ref refid="namespace_k_win_1a143704533be3f7be8a43b2b962600248" kindref="member">PointerAxisSource</ref></type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>inverted</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sends axis events to the currently focused pointer surface.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>orientation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scroll axis. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of a vector along the specified axis <computeroutput>orientation</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>deltaV120</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The high-resolution scrolling axis value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Describes how the axis event was physically generated. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="330" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="667" bodyend="677"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a87cffed36e84d1fc9acdf77e2bda6296" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::SeatInterface::hasImplicitPointerGrab</definition>
+        <argsstring>(quint32 serial) const</argsstring>
+        <name>hasImplicitPointerGrab</name>
+        <qualifiedname>KWin::SeatInterface::hasImplicitPointerGrab</qualifiedname>
+        <param>
+          <type>quint32</type>
+          <declname>serial</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if there is a pressed button with the given <computeroutput>serial</computeroutput> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="334" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1163" bodyend="1172"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1acb3e4606e15000508f8beff4213d9a2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::relativePointerMotion</definition>
+        <argsstring>(const QPointF &amp;delta, const QPointF &amp;deltaNonAccelerated, std::chrono::microseconds timestamp)</argsstring>
+        <name>relativePointerMotion</name>
+        <qualifiedname>KWin::SeatInterface::relativePointerMotion</qualifiedname>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>delta</declname>
+        </param>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>deltaNonAccelerated</declname>
+        </param>
+        <param>
+          <type>std::chrono::microseconds</type>
+          <declname>timestamp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A relative motion is in the same dimension as regular motion events, except they do not represent an absolute position. For example, moving a pointer from (x, y) to (x&apos;, y&apos;) would have the equivalent relative motion (x&apos; - x, y&apos; - y). If a pointer motion caused the absolute pointer position to be clipped by for example the edge of the monitor, the relative motion is unaffected by the clipping and will represent the unclipped motion.</para>
+<para>This method also contains non-accelerated motion deltas (<computeroutput>deltaNonAccelerated</computeroutput>). The non-accelerated delta is, when applicable, the regular pointer motion delta as it was before having applied motion acceleration and other transformations such as normalization.</para>
+<para>Note that the non-accelerated delta does not represent &apos;raw&apos; events as they were read from some device. Pointer motion acceleration is device- and configuration-specific and non-accelerated deltas and accelerated deltas may have the same value on some devices.</para>
+<para>Relative motions are not coupled to wl_pointer.motion events (see <computeroutput><ref refid="" kindref="compound">setPointerPos</ref></computeroutput>, and can be sent in combination with such events, but also independently. There may also be scenarios where wl_pointer.motion is sent, but there is no relative motion. The order of an absolute and relative motion event originating from the same physical motion is not guaranteed.</para>
+<para>Sending relative pointer events only makes sense if the RelativePointerManagerInterface is created on the <ref refid="class_k_win_1_1_display" kindref="compound">Display</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_k_win_1_1_motion" kindref="compound">Motion</ref> vector </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>deltaNonAccelerated</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>non-accelerated motion vector </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>microseconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>timestamp with microseconds granularity </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>setPointerPos </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="369" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="750" bodyend="760"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1abc5441eb8d25916b777dbefb94396bb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::startPointerSwipeGesture</definition>
+        <argsstring>(quint32 fingerCount)</argsstring>
+        <name>startPointerSwipeGesture</name>
+        <qualifiedname>KWin::SeatInterface::startPointerSwipeGesture</qualifiedname>
+        <param>
+          <type>quint32</type>
+          <declname>fingerCount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Starts a multi-finger swipe gesture for the currently focused pointer surface.</para>
+<para>Such gestures are normally reported through dedicated input devices such as touchpads.</para>
+<para>The gesture is usually initiated by multiple fingers moving in the same direction but once initiated the direction may change. The precise conditions of when such a gesture is detected are implementation-dependent.</para>
+<para>Only one gesture (either swipe or pinch or hold) can be active at a given time.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fingerCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of fingers involved in this multi-finger touchpad gesture</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>PointerGesturesInterface </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a68b2e53bcc63c7ff056242f218f94714" kindref="member">focusedPointerSurface</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a2cdb42e323facd65caa6ac3d55c7d221" kindref="member">updatePointerSwipeGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a9557b251d288cb3fa05eeb39e8b07475" kindref="member">endPointerSwipeGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a5d05a7e5f51b6489ae5d10e89b3cee85" kindref="member">cancelPointerSwipeGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a93b8a12b9902cab1c77370ed527f7bf6" kindref="member">startPointerPinchGesture</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="392" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="762" bodyend="772"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a2cdb42e323facd65caa6ac3d55c7d221" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::updatePointerSwipeGesture</definition>
+        <argsstring>(const QPointF &amp;delta)</argsstring>
+        <name>updatePointerSwipeGesture</name>
+        <qualifiedname>KWin::SeatInterface::updatePointerSwipeGesture</qualifiedname>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The position of the logical center of the currently active multi-finger swipe gesture changes.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>coordinates are relative coordinates of the logical center of the gesture compared to the previous event. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1abc5441eb8d25916b777dbefb94396bb9" kindref="member">startPointerSwipeGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a9557b251d288cb3fa05eeb39e8b07475" kindref="member">endPointerSwipeGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a5d05a7e5f51b6489ae5d10e89b3cee85" kindref="member">cancelPointerSwipeGesture</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="402" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="774" bodyend="784"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a9557b251d288cb3fa05eeb39e8b07475" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::endPointerSwipeGesture</definition>
+        <argsstring>()</argsstring>
+        <name>endPointerSwipeGesture</name>
+        <qualifiedname>KWin::SeatInterface::endPointerSwipeGesture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The multi-finger swipe gesture ended. This may happen when one or more fingers are lifted. <simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1abc5441eb8d25916b777dbefb94396bb9" kindref="member">startPointerSwipeGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a2cdb42e323facd65caa6ac3d55c7d221" kindref="member">updatePointerSwipeGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a5d05a7e5f51b6489ae5d10e89b3cee85" kindref="member">cancelPointerSwipeGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para>5.29 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="411" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="786" bodyend="796"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a5d05a7e5f51b6489ae5d10e89b3cee85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::cancelPointerSwipeGesture</definition>
+        <argsstring>()</argsstring>
+        <name>cancelPointerSwipeGesture</name>
+        <qualifiedname>KWin::SeatInterface::cancelPointerSwipeGesture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The multi-finger swipe gestures ended and got cancelled by the <ref refid="namespace_k_win_1_1_wayland" kindref="compound">Wayland</ref> compositor. <simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1abc5441eb8d25916b777dbefb94396bb9" kindref="member">startPointerSwipeGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a2cdb42e323facd65caa6ac3d55c7d221" kindref="member">updatePointerSwipeGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a9557b251d288cb3fa05eeb39e8b07475" kindref="member">endPointerSwipeGesture</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="419" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="798" bodyend="808"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a93b8a12b9902cab1c77370ed527f7bf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::startPointerPinchGesture</definition>
+        <argsstring>(quint32 fingerCount)</argsstring>
+        <name>startPointerPinchGesture</name>
+        <qualifiedname>KWin::SeatInterface::startPointerPinchGesture</qualifiedname>
+        <param>
+          <type>quint32</type>
+          <declname>fingerCount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Starts a multi-finch pinch gesture for the currently focused pointer surface.</para>
+<para>Such gestures are normally reported through dedicated input devices such as touchpads.</para>
+<para>The gesture is usually initiated by multiple fingers moving towards each other or away from each other, or by two or more fingers rotating around a logical center of gravity. The precise conditions of when such a gesture is detected are implementation-dependent.</para>
+<para>Only one gesture (either swipe or pinch or hold) can be active at a given time.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fingerCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of fingers involved in this multi-touch touchpad gesture</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>PointerGesturesInterface </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a68b2e53bcc63c7ff056242f218f94714" kindref="member">focusedPointerSurface</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a6eebac419af90fb3d4f58402acc81e8e" kindref="member">updatePointerPinchGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a353643056f4a561940787f7d4cbec90b" kindref="member">endPointerPinchGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1aed0c3a233ea62a5d4de7ea45310f781f" kindref="member">cancelPointerPinchGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1abc5441eb8d25916b777dbefb94396bb9" kindref="member">startPointerSwipeGesture</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="442" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="810" bodyend="820"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a6eebac419af90fb3d4f58402acc81e8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::updatePointerPinchGesture</definition>
+        <argsstring>(const QPointF &amp;delta, qreal scale, qreal rotation)</argsstring>
+        <name>updatePointerPinchGesture</name>
+        <qualifiedname>KWin::SeatInterface::updatePointerPinchGesture</qualifiedname>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>delta</declname>
+        </param>
+        <param>
+          <type>qreal</type>
+          <declname>scale</declname>
+        </param>
+        <param>
+          <type>qreal</type>
+          <declname>rotation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The position of the logical center, the rotation or the relative scale of this multi-finger pinch gesture changes.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>coordinates are relative coordinates of the logical center of the gesture compared to the previous event. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>scale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an absolute scale compared to the gesture start </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rotation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>relative angle in degrees clockwise compared to the previous start of update </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a93b8a12b9902cab1c77370ed527f7bf6" kindref="member">startPointerPinchGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a353643056f4a561940787f7d4cbec90b" kindref="member">endPointerPinchGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1aed0c3a233ea62a5d4de7ea45310f781f" kindref="member">cancelPointerPinchGesture</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="455" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="822" bodyend="832"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a353643056f4a561940787f7d4cbec90b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::endPointerPinchGesture</definition>
+        <argsstring>()</argsstring>
+        <name>endPointerPinchGesture</name>
+        <qualifiedname>KWin::SeatInterface::endPointerPinchGesture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a93b8a12b9902cab1c77370ed527f7bf6" kindref="member">startPointerPinchGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a6eebac419af90fb3d4f58402acc81e8e" kindref="member">updatePointerPinchGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1aed0c3a233ea62a5d4de7ea45310f781f" kindref="member">cancelPointerPinchGesture</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="463" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="834" bodyend="844"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1aed0c3a233ea62a5d4de7ea45310f781f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::cancelPointerPinchGesture</definition>
+        <argsstring>()</argsstring>
+        <name>cancelPointerPinchGesture</name>
+        <qualifiedname>KWin::SeatInterface::cancelPointerPinchGesture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a93b8a12b9902cab1c77370ed527f7bf6" kindref="member">startPointerPinchGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a6eebac419af90fb3d4f58402acc81e8e" kindref="member">updatePointerPinchGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a353643056f4a561940787f7d4cbec90b" kindref="member">endPointerPinchGesture</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="471" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="846" bodyend="856"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a6488ad9d6f36a36eb7895661f7ccac67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::startPointerHoldGesture</definition>
+        <argsstring>(quint32 fingerCount)</argsstring>
+        <name>startPointerHoldGesture</name>
+        <qualifiedname>KWin::SeatInterface::startPointerHoldGesture</qualifiedname>
+        <param>
+          <type>quint32</type>
+          <declname>fingerCount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Starts a multi-finger hold gesture for the currently focused pointer surface.</para>
+<para>Such gestures are normally reported through dedicated input devices such as touchpads.</para>
+<para>The gesture is usually initiated by multiple fingers being held down on the touchpad. The precise conditions of when such a gesture is detected are implementation-dependent.</para>
+<para>Only one gesture (either swipe or pinch or hold) can be active at a given time.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fingerCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of fingers involved in this multi-finger touchpad gesture</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>PointerGesturesInterface </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a68b2e53bcc63c7ff056242f218f94714" kindref="member">focusedPointerSurface</ref> </para>
+</simplesect>
+<simplesect kind="see"><para>endPointerHoldeGesture </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a24c10aa7d6da4d16eb16cf3f942537a6" kindref="member">cancelPointerHoldGesture</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="491" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="858" bodyend="868"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a0f0333599b0eb8d7f35b94daad7001c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::endPointerHoldGesture</definition>
+        <argsstring>()</argsstring>
+        <name>endPointerHoldGesture</name>
+        <qualifiedname>KWin::SeatInterface::endPointerHoldGesture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The multi-finger hold gesture ended. This may happen when one or more fingers are lifted. <simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a6488ad9d6f36a36eb7895661f7ccac67" kindref="member">startPointerHoldGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a24c10aa7d6da4d16eb16cf3f942537a6" kindref="member">cancelPointerHoldGesture</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="498" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="870" bodyend="880"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a24c10aa7d6da4d16eb16cf3f942537a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::cancelPointerHoldGesture</definition>
+        <argsstring>()</argsstring>
+        <name>cancelPointerHoldGesture</name>
+        <qualifiedname>KWin::SeatInterface::cancelPointerHoldGesture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The multi-finger swipe gestures ended and got cancelled by the <ref refid="namespace_k_win_1_1_wayland" kindref="compound">Wayland</ref> compositor. <simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a6488ad9d6f36a36eb7895661f7ccac67" kindref="member">startPointerHoldGesture</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a0f0333599b0eb8d7f35b94daad7001c0" kindref="member">endPointerHoldGesture</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="505" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="882" bodyend="892"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>touch related methods</header>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1ab1942adfa9a04d1cb7e9c3785c0aca06" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_touch_interface" kindref="compound">TouchInterface</ref> *</type>
+        <definition>TouchInterface * KWin::SeatInterface::touch</definition>
+        <argsstring>() const</argsstring>
+        <name>touch</name>
+        <qualifiedname>KWin::SeatInterface::touch</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="529" column="20" bodyfile="kwin/src/wayland/seat.cpp" bodystart="995" bodyend="998"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a3a8873143808a5cfc4e395332ddfca6d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::SeatInterface::isSurfaceTouched</definition>
+        <argsstring>(SurfaceInterface *surface) const</argsstring>
+        <name>isSurfaceTouched</name>
+        <qualifiedname>KWin::SeatInterface::isSurfaceTouched</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>surface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="530" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="985" bodyend="988"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1aaf2158db5fcf66eb8a54665e9d1cb64f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_touch_point" kindref="compound">TouchPoint</ref> *</type>
+        <definition>TouchPoint * KWin::SeatInterface::notifyTouchDown</definition>
+        <argsstring>(SurfaceInterface *surface, const QPointF &amp;surfacePosition, qint32 id, const QPointF &amp;globalPosition)</argsstring>
+        <name>notifyTouchDown</name>
+        <qualifiedname>KWin::SeatInterface::notifyTouchDown</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>surface</declname>
+        </param>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>surfacePosition</declname>
+        </param>
+        <param>
+          <type>qint32</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>globalPosition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="531" column="16" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1035" bodyend="1066"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1ac5af1bde24cbb5c8322abad11a118a0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::notifyTouchUp</definition>
+        <argsstring>(qint32 id)</argsstring>
+        <name>notifyTouchUp</name>
+        <qualifiedname>KWin::SeatInterface::notifyTouchUp</qualifiedname>
+        <param>
+          <type>qint32</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="532" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1099" bodyend="1131"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a673ce0b1f88bc6c3dda285723a23bfb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::notifyTouchMotion</definition>
+        <argsstring>(qint32 id, const QPointF &amp;globalPosition)</argsstring>
+        <name>notifyTouchMotion</name>
+        <qualifiedname>KWin::SeatInterface::notifyTouchMotion</qualifiedname>
+        <param>
+          <type>qint32</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>globalPosition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="533" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1068" bodyend="1097"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a871c144ad25becc98e8f9aba1b09e216" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::notifyTouchFrame</definition>
+        <argsstring>()</argsstring>
+        <name>notifyTouchFrame</name>
+        <qualifiedname>KWin::SeatInterface::notifyTouchFrame</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="534" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1133" bodyend="1139"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a3fe38982f099a9a9887e58278d7f8eea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::notifyTouchCancel</definition>
+        <argsstring>()</argsstring>
+        <name>notifyTouchCancel</name>
+        <qualifiedname>KWin::SeatInterface::notifyTouchCancel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="535" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="968" bodyend="983"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a4a875c28ac138d19768d2f13f57f7336" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::SeatInterface::isTouchSequence</definition>
+        <argsstring>() const</argsstring>
+        <name>isTouchSequence</name>
+        <qualifiedname>KWin::SeatInterface::isTouchSequence</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="536" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="990" bodyend="993"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a2b62c3201bdaec061f50957d8aa9d1ee" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QPointF</type>
+        <definition>QPointF KWin::SeatInterface::firstTouchPointPosition</definition>
+        <argsstring>(SurfaceInterface *surface) const</argsstring>
+        <name>firstTouchPointPosition</name>
+        <qualifiedname>KWin::SeatInterface::firstTouchPointPosition</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>surface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="537" column="13" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1000" bodyend="1008"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a8817f59e87fed5eb3509862c63da2e39" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_touch_point" kindref="compound">TouchPoint</ref> *</type>
+        <definition>TouchPoint * KWin::SeatInterface::touchPointByImplicitGrabSerial</definition>
+        <argsstring>(quint32 serial) const</argsstring>
+        <name>touchPointByImplicitGrabSerial</name>
+        <qualifiedname>KWin::SeatInterface::touchPointByImplicitGrabSerial</qualifiedname>
+        <param>
+          <type>quint32</type>
+          <declname>serial</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="538" column="16" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1010" bodyend="1018"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a5027b6dcaec3c046da667afd0be0e920" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::SeatInterface::hasImplicitTouchGrab</definition>
+        <argsstring>(quint32 serial) const</argsstring>
+        <name>hasImplicitTouchGrab</name>
+        <qualifiedname>KWin::SeatInterface::hasImplicitTouchGrab</qualifiedname>
+        <param>
+          <type>quint32</type>
+          <declname>serial</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if there is a touch sequence going on associated with a touch down of the given <computeroutput>serial</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="543" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1141" bodyend="1146"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Text input related methods.</header>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a7f66fb5fb1cf10789ea3d2d0f6938b99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::setFocusedTextInputSurface</definition>
+        <argsstring>(SurfaceInterface *surface)</argsstring>
+        <name>setFocusedTextInputSurface</name>
+        <qualifiedname>KWin::SeatInterface::setFocusedTextInputSurface</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>surface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Passes text input focus to <computeroutput>surface</computeroutput>.</para>
+<para>If the <ref refid="class_k_win_1_1_seat_interface" kindref="compound">SeatInterface</ref> has the keyboard capability this method will be invoked automatically when setting the focused keyboard surface.</para>
+<para>In case there is a <ref refid="class_k_win_1_1_text_input_v2_interface" kindref="compound">TextInputV2Interface</ref> for the <computeroutput>surface</computeroutput>, the enter event will be triggered on the <ref refid="class_k_win_1_1_text_input_v2_interface" kindref="compound">TextInputV2Interface</ref> for <computeroutput>surface</computeroutput>. The focusedTextInput will be set to that <ref refid="class_k_win_1_1_text_input_v2_interface" kindref="compound">TextInputV2Interface</ref>. If there is no <ref refid="class_k_win_1_1_text_input_v2_interface" kindref="compound">TextInputV2Interface</ref> for that <computeroutput>surface</computeroutput>, it might get updated later on. In both cases the signal focusedTextInputChanged will be emitted.</para>
+<para><simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a03d13be3f0d21aa73d1560d695e2526b" kindref="member">focusedTextInputSurface</ref> </para>
+</simplesect>
+<simplesect kind="see"><para>focusedTextInput </para>
+</simplesect>
+<simplesect kind="see"><para>focusedTextInputChanged </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a35bf1169670b7acafb2256cbf4ba957f" kindref="member">setFocusedKeyboardSurface</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="567" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1197" bodyend="1223"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a03d13be3f0d21aa73d1560d695e2526b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+        <definition>SurfaceInterface * KWin::SeatInterface::focusedTextInputSurface</definition>
+        <argsstring>() const</argsstring>
+        <name>focusedTextInputSurface</name>
+        <qualifiedname>KWin::SeatInterface::focusedTextInputSurface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The <ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> which is currently focused for text input. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a7f66fb5fb1cf10789ea3d2d0f6938b99" kindref="member">setFocusedTextInputSurface</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="572" column="22" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1225" bodyend="1228"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a31b0ca85c10f480fa3142315e04253bd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_text_input_v1_interface" kindref="compound">TextInputV1Interface</ref> *</type>
+        <definition>TextInputV1Interface * KWin::SeatInterface::textInputV1</definition>
+        <argsstring>() const</argsstring>
+        <name>textInputV1</name>
+        <qualifiedname>KWin::SeatInterface::textInputV1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="574" column="26" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1230" bodyend="1233"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a821a8b87f9848b0b2c9d10a96c651ad6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_text_input_v2_interface" kindref="compound">TextInputV2Interface</ref> *</type>
+        <definition>TextInputV2Interface * KWin::SeatInterface::textInputV2</definition>
+        <argsstring>() const</argsstring>
+        <name>textInputV2</name>
+        <qualifiedname>KWin::SeatInterface::textInputV2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The currently focused text input, may be <computeroutput>null</computeroutput> even if there is a focused text input surface set.</para>
+<para>The focused text input might not be enabled for the <computeroutput><ref refid="class_k_win_1_1_seat_interface_1a03d13be3f0d21aa73d1560d695e2526b" kindref="member">focusedTextInputSurface</ref></computeroutput>. It is recommended to check the enabled state before interacting with the <ref refid="class_k_win_1_1_text_input_v2_interface" kindref="compound">TextInputV2Interface</ref>.</para>
+<para><simplesect kind="see"><para>focusedTextInputChanged </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a03d13be3f0d21aa73d1560d695e2526b" kindref="member">focusedTextInputSurface</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="587" column="26" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1235" bodyend="1238"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1aedd2e32ac2f42dce970a79d7fe73809a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_text_input_v3_interface" kindref="compound">TextInputV3Interface</ref> *</type>
+        <definition>TextInputV3Interface * KWin::SeatInterface::textInputV3</definition>
+        <argsstring>() const</argsstring>
+        <name>textInputV3</name>
+        <qualifiedname>KWin::SeatInterface::textInputV3</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="589" column="26" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1240" bodyend="1243"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_seat_interface_1ad5ec556f041483914ec6e4cc0605d82e" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_seat_interface_private" kindref="compound">SeatInterfacePrivate</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;SeatInterfacePrivate&gt; KWin::SeatInterface::d</definition>
+        <argsstring></argsstring>
+        <name>d</name>
+        <qualifiedname>KWin::SeatInterface::d</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="679" column="21" bodyfile="kwin/src/wayland/seat.h" bodystart="679" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_k_win_1_1_seat_interface_1a16d024c3158e5383ab63231b9a4eff14" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class SeatInterfacePrivate</definition>
+        <argsstring></argsstring>
+        <name>SeatInterfacePrivate</name>
+        <qualifiedname>KWin::SeatInterface::SeatInterfacePrivate</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_seat_interface_private" kindref="compound">SeatInterfacePrivate</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="680" column="18" bodyfile="kwin/src/wayland/seat.h" bodystart="680" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_k_win_1_1_seat_interface_1aa5cc5bb2ce40bb2dd4a4e62fcefb0c59" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class TouchPoint</definition>
+        <argsstring></argsstring>
+        <name>TouchPoint</name>
+        <qualifiedname>KWin::SeatInterface::TouchPoint</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_touch_point" kindref="compound">TouchPoint</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="681" column="18" bodyfile="kwin/src/wayland/seat.h" bodystart="681" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1aae366b865500c74a65f9088057a1393c" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::SeatInterface::SeatInterface</definition>
+        <argsstring>(Display *display, const QString &amp;name, QObject *parent=nullptr)</argsstring>
+        <name>SeatInterface</name>
+        <qualifiedname>KWin::SeatInterface::SeatInterface</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref> *</type>
+          <declname>display</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="104" column="14" bodyfile="kwin/src/wayland/seat.cpp" bodystart="107" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a12f4d419c8021143360beba1669020d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>KWin::SeatInterface::~SeatInterface</definition>
+        <argsstring>()</argsstring>
+        <name>~SeatInterface</name>
+        <qualifiedname>KWin::SeatInterface::~SeatInterface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="105" column="13" bodyfile="kwin/src/wayland/seat.cpp" bodystart="115" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a25feb6a01195ac1c32ee4a01239229f6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref> *</type>
+        <definition>Display * KWin::SeatInterface::display</definition>
+        <argsstring>() const</argsstring>
+        <name>display</name>
+        <qualifiedname>KWin::SeatInterface::display</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="107" column="13" bodyfile="kwin/src/wayland/seat.cpp" bodystart="417" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1ae732f0941c193cb5d7a3818f266da779" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString KWin::SeatInterface::name</definition>
+        <argsstring>() const</argsstring>
+        <name>name</name>
+        <qualifiedname>KWin::SeatInterface::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="108" column="13" bodyfile="kwin/src/wayland/seat.cpp" bodystart="397" bodyend="400"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a1ab5cb0e60f09868cac2d9f2927f4f4c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::SeatInterface::hasPointer</definition>
+        <argsstring>() const</argsstring>
+        <name>hasPointer</name>
+        <qualifiedname>KWin::SeatInterface::hasPointer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="109" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="402" bodyend="405"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a3522bf3c6d75491eee8b53510ea81fc7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::SeatInterface::hasKeyboard</definition>
+        <argsstring>() const</argsstring>
+        <name>hasKeyboard</name>
+        <qualifiedname>KWin::SeatInterface::hasKeyboard</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="110" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="407" bodyend="410"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a477df87a0a1f4ca521ed404c484f5509" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::SeatInterface::hasTouch</definition>
+        <argsstring>() const</argsstring>
+        <name>hasTouch</name>
+        <qualifiedname>KWin::SeatInterface::hasTouch</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="111" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="412" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a6514d6351ddd81651f7bbfeb3be84a2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::setHasPointer</definition>
+        <argsstring>(bool has)</argsstring>
+        <name>setHasPointer</name>
+        <qualifiedname>KWin::SeatInterface::setHasPointer</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>has</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="113" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="367" bodyend="380"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a37bb18135b053978deaf9d7ec995c5f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::setHasKeyboard</definition>
+        <argsstring>(bool has)</argsstring>
+        <name>setHasKeyboard</name>
+        <qualifiedname>KWin::SeatInterface::setHasKeyboard</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>has</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="114" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="352" bodyend="365"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a1242dec262af8c709b27a393c3a0b39e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::setHasTouch</definition>
+        <argsstring>(bool has)</argsstring>
+        <name>setHasTouch</name>
+        <qualifiedname>KWin::SeatInterface::setHasTouch</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>has</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="115" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="382" bodyend="395"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a387dc48ce43458b7e40f693ae5b9b007" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::setTimestamp</definition>
+        <argsstring>(std::chrono::microseconds time)</argsstring>
+        <name>setTimestamp</name>
+        <qualifiedname>KWin::SeatInterface::setTimestamp</qualifiedname>
+        <param>
+          <type>std::chrono::microseconds</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="117" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="475" bodyend="478"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a9408b149c73fbd8d4062ab804f9eb924" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::chrono::milliseconds</type>
+        <definition>std::chrono::milliseconds KWin::SeatInterface::timestamp</definition>
+        <argsstring>() const</argsstring>
+        <name>timestamp</name>
+        <qualifiedname>KWin::SeatInterface::timestamp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="118" column="31" bodyfile="kwin/src/wayland/seat.cpp" bodystart="470" bodyend="473"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1aa02d7f31bfa5dae6d94f1cf0e312974d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_abstract_drop_handler" kindref="compound">AbstractDropHandler</ref> *</type>
+        <definition>AbstractDropHandler * KWin::SeatInterface::dropHandlerForSurface</definition>
+        <argsstring>(SurfaceInterface *surface) const</argsstring>
+        <name>dropHandlerForSurface</name>
+        <qualifiedname>KWin::SeatInterface::dropHandlerForSurface</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>surface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="181" column="25" bodyfile="kwin/src/wayland/seat.cpp" bodystart="187" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1ad467b51b24c938bb3c7b391d65ea64e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::cancelDrag</definition>
+        <argsstring>()</argsstring>
+        <name>cancelDrag</name>
+        <qualifiedname>KWin::SeatInterface::cancelDrag</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>If there is a current drag in progress, force it to cancel </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="186" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="196" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a35bf1169670b7acafb2256cbf4ba957f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::setFocusedKeyboardSurface</definition>
+        <argsstring>(SurfaceInterface *surface, const QList&lt; quint32 &gt; &amp;keys={})</argsstring>
+        <name>setFocusedKeyboardSurface</name>
+        <qualifiedname>KWin::SeatInterface::setFocusedKeyboardSurface</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>surface</declname>
+        </param>
+        <param>
+          <type>const QList&lt; quint32 &gt; &amp;</type>
+          <declname>keys</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Passes keyboard focus to <computeroutput>surface</computeroutput>.</para>
+<para>If the <ref refid="class_k_win_1_1_seat_interface" kindref="compound">SeatInterface</ref> has the keyboard capability, also the focused text input surface will be set to <computeroutput>surface</computeroutput>.</para>
+<para><simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a6e95e0564a331a376b45ebdb6621b876" kindref="member">focusedKeyboardSurface</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a3522bf3c6d75491eee8b53510ea81fc7" kindref="member">hasKeyboard</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a7f66fb5fb1cf10789ea3d2d0f6938b99" kindref="member">setFocusedTextInputSurface</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="518" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="899" bodyend="945"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a6e95e0564a331a376b45ebdb6621b876" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+        <definition>SurfaceInterface * KWin::SeatInterface::focusedKeyboardSurface</definition>
+        <argsstring>() const</argsstring>
+        <name>focusedKeyboardSurface</name>
+        <qualifiedname>KWin::SeatInterface::focusedKeyboardSurface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="519" column="22" bodyfile="kwin/src/wayland/seat.cpp" bodystart="894" bodyend="897"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1aaceacef11dc2154613e624c6b8bfabf5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_keyboard_interface" kindref="compound">KeyboardInterface</ref> *</type>
+        <definition>KeyboardInterface * KWin::SeatInterface::keyboard</definition>
+        <argsstring>() const</argsstring>
+        <name>keyboard</name>
+        <qualifiedname>KWin::SeatInterface::keyboard</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="520" column="23" bodyfile="kwin/src/wayland/seat.cpp" bodystart="947" bodyend="950"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a530582606da7f53d1b232f979128687e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::notifyKeyboardKey</definition>
+        <argsstring>(quint32 keyCode, KeyboardKeyState state)</argsstring>
+        <name>notifyKeyboardKey</name>
+        <qualifiedname>KWin::SeatInterface::notifyKeyboardKey</qualifiedname>
+        <param>
+          <type>quint32</type>
+          <declname>keyCode</declname>
+        </param>
+        <param>
+          <type><ref refid="namespace_k_win_1a01355afe201da93e2da84b64923a02f1" kindref="member">KeyboardKeyState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="521" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="952" bodyend="958"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1aae6544023eb6bafe3b6219a7cd13b5c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::notifyKeyboardModifiers</definition>
+        <argsstring>(quint32 depressed, quint32 latched, quint32 locked, quint32 group)</argsstring>
+        <name>notifyKeyboardModifiers</name>
+        <qualifiedname>KWin::SeatInterface::notifyKeyboardModifiers</qualifiedname>
+        <param>
+          <type>quint32</type>
+          <declname>depressed</declname>
+        </param>
+        <param>
+          <type>quint32</type>
+          <declname>latched</declname>
+        </param>
+        <param>
+          <type>quint32</type>
+          <declname>locked</declname>
+        </param>
+        <param>
+          <type>quint32</type>
+          <declname>group</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="522" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="960" bodyend="966"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1acefdc0836fba9b4af5f1c72a10c0c65f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_abstract_data_source" kindref="compound">AbstractDataSource</ref> *</type>
+        <definition>AbstractDataSource * KWin::SeatInterface::selection</definition>
+        <argsstring>() const</argsstring>
+        <name>selection</name>
+        <qualifiedname>KWin::SeatInterface::selection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The <ref refid="class_k_win_1_1_data_device_interface" kindref="compound">DataDeviceInterface</ref> holding the current clipboard selection. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a9a891404b480c4b3aacf6be99e53025c" kindref="member">selectionChanged</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a9f6de55aae663edcef362cf5f6c3fb3b" kindref="member">setSelection</ref> This may be null </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="598" column="24" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1244" bodyend="1247"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a9f6de55aae663edcef362cf5f6c3fb3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::setSelection</definition>
+        <argsstring>(AbstractDataSource *selection, quint32 serial)</argsstring>
+        <name>setSelection</name>
+        <qualifiedname>KWin::SeatInterface::setSelection</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_abstract_data_source" kindref="compound">AbstractDataSource</ref> *</type>
+          <declname>selection</declname>
+        </param>
+        <param>
+          <type>quint32</type>
+          <declname>serial</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method allows to manually set the <computeroutput>dataDevice</computeroutput> for the current clipboard selection. The clipboard selection is handled automatically in <ref refid="class_k_win_1_1_seat_interface" kindref="compound">SeatInterface</ref>. If a <ref refid="class_k_win_1_1_data_device_interface" kindref="compound">DataDeviceInterface</ref> belonging to the current focused <ref refid="class_k_win_1_1_keyboard_interface" kindref="compound">KeyboardInterface</ref> sets a selection, the current clipboard selection will be updated automatically. With this method it&apos;s possible to override the automatic clipboard update for e.g. the case of a clipboard manager.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dataDevice</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Sets the current clipboard selection. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1acefdc0836fba9b4af5f1c72a10c0c65f" kindref="member">selection</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a9a891404b480c4b3aacf6be99e53025c" kindref="member">selectionChanged</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="612" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1249" bodyend="1279"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1ae021f848fa46b6db4b1bf58ed569d4ae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_abstract_data_source" kindref="compound">AbstractDataSource</ref> *</type>
+        <definition>AbstractDataSource * KWin::SeatInterface::primarySelection</definition>
+        <argsstring>() const</argsstring>
+        <name>primarySelection</name>
+        <qualifiedname>KWin::SeatInterface::primarySelection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="614" column="24" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1281" bodyend="1284"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a7a242cc390e1ff165ddfdf73f800f8dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::setPrimarySelection</definition>
+        <argsstring>(AbstractDataSource *selection, quint32 serial)</argsstring>
+        <name>setPrimarySelection</name>
+        <qualifiedname>KWin::SeatInterface::setPrimarySelection</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_abstract_data_source" kindref="compound">AbstractDataSource</ref> *</type>
+          <declname>selection</declname>
+        </param>
+        <param>
+          <type>quint32</type>
+          <declname>serial</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="615" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1286" bodyend="1314"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1ac915137afd26577d34c17ef33295d46e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::startDrag</definition>
+        <argsstring>(AbstractDataSource *source, SurfaceInterface *sourceSurface, int dragSerial=-1, DragAndDropIcon *dragIcon=nullptr)</argsstring>
+        <name>startDrag</name>
+        <qualifiedname>KWin::SeatInterface::startDrag</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_abstract_data_source" kindref="compound">AbstractDataSource</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>sourceSurface</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dragSerial</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_drag_and_drop_icon" kindref="compound">DragAndDropIcon</ref> *</type>
+          <declname>dragIcon</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="617" column="10" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1316" bodyend="1358"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1aec01f08f1798e183ed8f066c9cabd49c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drag_and_drop_icon" kindref="compound">DragAndDropIcon</ref> *</type>
+        <definition>DragAndDropIcon * KWin::SeatInterface::dragIcon</definition>
+        <argsstring>() const</argsstring>
+        <name>dragIcon</name>
+        <qualifiedname>KWin::SeatInterface::dragIcon</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the additional icon attached to the cursor during a drag-and-drop operation. This function returns <computeroutput>null</computeroutput> if no drag-and-drop is active or no icon has been attached. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="623" column="21" bodyfile="kwin/src/wayland/seat.cpp" bodystart="1360" bodyend="1363"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_seat_interface_1a775d59c207e73b1d92b8aa92c83a35ab" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_seat_interface" kindref="compound">SeatInterface</ref> *</type>
+        <definition>SeatInterface * KWin::SeatInterface::get</definition>
+        <argsstring>(wl_resource *native)</argsstring>
+        <name>get</name>
+        <qualifiedname>KWin::SeatInterface::get</qualifiedname>
+        <param>
+          <type>wl_resource *</type>
+          <declname>native</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="625" column="26" bodyfile="kwin/src/wayland/seat.cpp" bodystart="422" bodyend="428"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_seat_interface_1adfa024bafa0b9311a9b0b317885e4d90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::hasPointerChanged</definition>
+        <argsstring>(bool)</argsstring>
+        <name>hasPointerChanged</name>
+        <qualifiedname>KWin::SeatInterface::hasPointerChanged</qualifiedname>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="628" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_seat_interface_1a8d17cc4048875a20d8966953465eb747" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::hasKeyboardChanged</definition>
+        <argsstring>(bool)</argsstring>
+        <name>hasKeyboardChanged</name>
+        <qualifiedname>KWin::SeatInterface::hasKeyboardChanged</qualifiedname>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="629" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_seat_interface_1a83659a3d7032226c45b36f537e82e8ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::hasTouchChanged</definition>
+        <argsstring>(bool)</argsstring>
+        <name>hasTouchChanged</name>
+        <qualifiedname>KWin::SeatInterface::hasTouchChanged</qualifiedname>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="630" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_seat_interface_1aa45ec0696603ab055b470dffa00ab43d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::pointerPosChanged</definition>
+        <argsstring>(const QPointF &amp;pos)</argsstring>
+        <name>pointerPosChanged</name>
+        <qualifiedname>KWin::SeatInterface::pointerPosChanged</qualifiedname>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="631" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_seat_interface_1a560e24d032be268d9d9049a3eb276af6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::touchMoved</definition>
+        <argsstring>(qint32 id, quint32 serial, const QPointF &amp;globalPosition)</argsstring>
+        <name>touchMoved</name>
+        <qualifiedname>KWin::SeatInterface::touchMoved</qualifiedname>
+        <param>
+          <type>qint32</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>quint32</type>
+          <declname>serial</declname>
+        </param>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>globalPosition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="632" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_seat_interface_1a9a891404b480c4b3aacf6be99e53025c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::selectionChanged</definition>
+        <argsstring>(KWin::AbstractDataSource *)</argsstring>
+        <name>selectionChanged</name>
+        <qualifiedname>KWin::SeatInterface::selectionChanged</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_abstract_data_source" kindref="compound">KWin::AbstractDataSource</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Emitted whenever the selection changes <simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1acefdc0836fba9b4af5f1c72a10c0c65f" kindref="member">selection</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a9f6de55aae663edcef362cf5f6c3fb3b" kindref="member">setSelection</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="639" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_seat_interface_1a9af1f5bd613d52ade5559b87cb06dbc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::primarySelectionChanged</definition>
+        <argsstring>(KWin::AbstractDataSource *)</argsstring>
+        <name>primarySelectionChanged</name>
+        <qualifiedname>KWin::SeatInterface::primarySelectionChanged</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_abstract_data_source" kindref="compound">KWin::AbstractDataSource</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Emitted whenever the primary selection changes <simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1ae021f848fa46b6db4b1bf58ed569d4ae" kindref="member">primarySelection</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="645" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_seat_interface_1a74ad66a32e97bd7aefab3e4ce40a715f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::dragStarted</definition>
+        <argsstring>()</argsstring>
+        <name>dragStarted</name>
+        <qualifiedname>KWin::SeatInterface::dragStarted</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Emitted when a drag&apos;n&apos;drop operation is started <simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1abaf30fbfe4e667e4aebb79fd16be4bd5" kindref="member">dragEnded</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="651" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_seat_interface_1abaf30fbfe4e667e4aebb79fd16be4bd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::dragEnded</definition>
+        <argsstring>()</argsstring>
+        <name>dragEnded</name>
+        <qualifiedname>KWin::SeatInterface::dragEnded</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Emitted when a drag&apos;n&apos;drop operation ended, either by dropping or canceling. <simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a74ad66a32e97bd7aefab3e4ce40a715f" kindref="member">dragStarted</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="656" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_seat_interface_1a60356dd135469a5dac20452a9f0a005a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::dragSurfaceChanged</definition>
+        <argsstring>()</argsstring>
+        <name>dragSurfaceChanged</name>
+        <qualifiedname>KWin::SeatInterface::dragSurfaceChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Emitted whenever the drag surface for motion events changed. <simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a3da5ce00a5ffd81f77dc6b9363ced81d" kindref="member">dragSurface</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="661" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_seat_interface_1a4f60862a0a9d198f652ae58656110c00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::dragDropped</definition>
+        <argsstring>()</argsstring>
+        <name>dragDropped</name>
+        <qualifiedname>KWin::SeatInterface::dragDropped</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Emitted when a drop ocurrs in a drag&apos;n&apos;drop operation. This is emitted before dragEnded </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="666" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_seat_interface_1a62e6d46ceb192c026bb50238e11b3aab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::focusedTextInputSurfaceChanged</definition>
+        <argsstring>()</argsstring>
+        <name>focusedTextInputSurfaceChanged</name>
+        <qualifiedname>KWin::SeatInterface::focusedTextInputSurfaceChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Emitted whenever the focused text input changed. <simplesect kind="see"><para>focusedTextInput </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="671" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_seat_interface_1a3ae02428a3f35d94ef5e3aea24085533" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SeatInterface::focusedKeyboardSurfaceAboutToChange</definition>
+        <argsstring>(SurfaceInterface *nextSurface)</argsstring>
+        <name>focusedKeyboardSurfaceAboutToChange</name>
+        <qualifiedname>KWin::SeatInterface::focusedKeyboardSurfaceAboutToChange</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>nextSurface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Emitted whenever the focused keyboard is about to change. <simplesect kind="see"><para><ref refid="class_k_win_1_1_seat_interface_1a6e95e0564a331a376b45ebdb6621b876" kindref="member">focusedKeyboardSurface</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/seat.h" line="676" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents a Seat on the <ref refid="namespace_k_win_1_1_wayland" kindref="compound">Wayland</ref> <ref refid="class_k_win_1_1_display" kindref="compound">Display</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A Seat is a set of input devices (e.g. Keyboard, Pointer and Touch) the client can connect to. The server needs to announce which input devices are supported and passes dedicated input focus to a <ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref>. Only the focused surface receives input events.</para>
+<para>The <ref refid="class_k_win_1_1_seat_interface" kindref="compound">SeatInterface</ref> internally handles enter and release events when setting a focused surface. Also it handles input translation from global to the local coordination, removing the need from the user of the API to track the focused surfaces and can just interact with this class.</para>
+<para>To create a <ref refid="class_k_win_1_1_seat_interface" kindref="compound">SeatInterface</ref> use <ref refid="" kindref="compound">Display::createSeat</ref>. Then one can set up what is supported. Last but not least create needs to be called.</para>
+<para><programlisting><codeline><highlight class="normal"><ref refid="class_k_win_1_1_seat_interface_1aae366b865500c74a65f9088057a1393c" kindref="member">SeatInterface</ref><sp/>*seat<sp/>=<sp/><ref refid="class_k_win_1_1_seat_interface_1a25feb6a01195ac1c32ee4a01239229f6" kindref="member">display</ref>-&gt;createSeat();</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>set<sp/>up</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">seat-&gt;setName(QStringLiteral(</highlight><highlight class="stringliteral">&quot;seat0&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal">seat-&gt;setHasPointer(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">seat-&gt;setHasKeyboard(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">seat-&gt;setHasTouch(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>now<sp/>fully<sp/>create</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">seat-&gt;create();</highlight></codeline>
+</programlisting></para>
+<para>To forward input events one needs to set the focused surface, update time stamp and then forward the actual events:</para>
+<para><programlisting><codeline><highlight class="comment">//<sp/>example<sp/>for<sp/>pointer</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">seat-&gt;setTimestamp(100);</highlight></codeline>
+<codeline><highlight class="normal">seat-&gt;notifyPointerEnter(surface,<sp/>QPointF(350,<sp/>210),<sp/>QPointF(100,<sp/>200));<sp/></highlight><highlight class="comment">//<sp/>surface<sp/>at<sp/>it&apos;s<sp/>global<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">seat-&gt;notifyPointerFrame();</highlight></codeline>
+<codeline><highlight class="normal">seat-&gt;setTimestamp(110);</highlight></codeline>
+<codeline><highlight class="normal">seat-&gt;notifyPointerButton(Qt::LeftButton,<sp/><ref refid="namespace_k_win_1af04c7f9798b123fe6f74415788dd38d3ad78a68f6a85421ae121c2cb5b73a1040" kindref="member">PointerButtonState::Pressed</ref>);</highlight></codeline>
+<codeline><highlight class="normal">seat-&gt;notifyPointerFrame();</highlight></codeline>
+<codeline><highlight class="normal">seat-&gt;setTimestamp(120);</highlight></codeline>
+<codeline><highlight class="normal">seat-&gt;notifyPointerButton(Qt::LeftButton,<sp/><ref refid="namespace_k_win_1af04c7f9798b123fe6f74415788dd38d3aea1e34304a5d8ffa7c9b0ed8ede4ef1a" kindref="member">PointerButtonState::Released</ref>);</highlight></codeline>
+<codeline><highlight class="normal">seat-&gt;notifyPointerFrame();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="see"><para><ref refid="class_k_win_1_1_keyboard_interface" kindref="compound">KeyboardInterface</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_pointer_interface" kindref="compound">PointerInterface</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_touch_interface" kindref="compound">TouchInterface</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::SeatInterface</label>
+        <link refid="class_k_win_1_1_seat_interface"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::SeatInterface</label>
+        <link refid="class_k_win_1_1_seat_interface"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/wayland/seat.h" line="100" column="1" bodyfile="kwin/src/wayland/seat.h" bodystart="101" bodyend="682"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_seat_interface_1ad467b51b24c938bb3c7b391d65ea64e1" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>cancelDrag</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a24c10aa7d6da4d16eb16cf3f942537a6" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>cancelPointerHoldGesture</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1aed0c3a233ea62a5d4de7ea45310f781f" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>cancelPointerPinchGesture</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a5d05a7e5f51b6489ae5d10e89b3cee85" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>cancelPointerSwipeGesture</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1ad5ec556f041483914ec6e4cc0605d82e" prot="private" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>d</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a25feb6a01195ac1c32ee4a01239229f6" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>display</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a4f60862a0a9d198f652ae58656110c00" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>dragDropped</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1abaf30fbfe4e667e4aebb79fd16be4bd5" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>dragEnded</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1aec01f08f1798e183ed8f066c9cabd49c" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>dragIcon</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1af10546626ca0b56147b3ca2af66288a8" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>dragSource</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a74ad66a32e97bd7aefab3e4ce40a715f" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>dragStarted</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a3da5ce00a5ffd81f77dc6b9363ced81d" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>dragSurface</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a60356dd135469a5dac20452a9f0a005a" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>dragSurfaceChanged</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1ad0eb3b07546c008f98436ce7b8ef06ef" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>dragSurfaceTransformation</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1aa02d7f31bfa5dae6d94f1cf0e312974d" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>dropHandlerForSurface</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a0f0333599b0eb8d7f35b94daad7001c0" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>endPointerHoldGesture</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a353643056f4a561940787f7d4cbec90b" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>endPointerPinchGesture</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a9557b251d288cb3fa05eeb39e8b07475" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>endPointerSwipeGesture</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a2b62c3201bdaec061f50957d8aa9d1ee" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>firstTouchPointPosition</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a6e95e0564a331a376b45ebdb6621b876" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>focusedKeyboardSurface</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a3ae02428a3f35d94ef5e3aea24085533" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>focusedKeyboardSurfaceAboutToChange</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a68b2e53bcc63c7ff056242f218f94714" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>focusedPointerSurface</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a7425f1b551a9ed28bc2d60775ee54e42" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>focusedPointerSurfacePosition</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1addcc25a323fd28a4ffcb30f3922831ac" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>focusedPointerSurfaceTransformation</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a03d13be3f0d21aa73d1560d695e2526b" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>focusedTextInputSurface</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a62e6d46ceb192c026bb50238e11b3aab" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>focusedTextInputSurfaceChanged</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a775d59c207e73b1d92b8aa92c83a35ab" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>get</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a87cffed36e84d1fc9acdf77e2bda6296" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>hasImplicitPointerGrab</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a5027b6dcaec3c046da667afd0be0e920" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>hasImplicitTouchGrab</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a3522bf3c6d75491eee8b53510ea81fc7" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>hasKeyboard</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a8d17cc4048875a20d8966953465eb747" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>hasKeyboardChanged</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a1ab5cb0e60f09868cac2d9f2927f4f4c" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>hasPointer</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1adfa024bafa0b9311a9b0b317885e4d90" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>hasPointerChanged</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a477df87a0a1f4ca521ed404c484f5509" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>hasTouch</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a83659a3d7032226c45b36f537e82e8ab" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>hasTouchChanged</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a57ac6a4f80381496d09b6241e0fa1b2f" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>isDrag</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a87ba2e3f967fbce884cdd9ca19d70780" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>isDragPointer</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a94fb7a3110dad0ae2b0b0f5c0026ca50" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>isDragTouch</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a897a0c30fdef792d6e446c7e730c5147" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>isPointerButtonPressed</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1ac73c70cb929c2c651d70818038c4ec34" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>isPointerButtonPressed</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a3a8873143808a5cfc4e395332ddfca6d" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>isSurfaceTouched</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a4a875c28ac138d19768d2f13f57f7336" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>isTouchSequence</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1aaceacef11dc2154613e624c6b8bfabf5" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>keyboard</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1ae732f0941c193cb5d7a3818f266da779" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>name</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a530582606da7f53d1b232f979128687e" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>notifyKeyboardKey</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1aae6544023eb6bafe3b6219a7cd13b5c9" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>notifyKeyboardModifiers</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1af7eb3d46872924785a59afcc91b92e56" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>notifyPointerAxis</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1ae38adc683ab54c95f9fa10ef26028b73" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>notifyPointerButton</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1ab9902db728c89f507255f78209872ee1" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>notifyPointerButton</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a7fd0cb17dde8e7a484f71c2fb2f75a48" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>notifyPointerEnter</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a47e0286e6a1e5591230505f72ec5e96a" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>notifyPointerEnter</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1ab9c928f670fb2f9e9ca77dce6d496464" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>notifyPointerFrame</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a879f67e2ec9d35057979d181f2c24133" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>notifyPointerLeave</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a544c9a6129a4afa11a3a98163357f739" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>notifyPointerMotion</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a3fe38982f099a9a9887e58278d7f8eea" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>notifyTouchCancel</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1aaf2158db5fcf66eb8a54665e9d1cb64f" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>notifyTouchDown</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a871c144ad25becc98e8f9aba1b09e216" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>notifyTouchFrame</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a673ce0b1f88bc6c3dda285723a23bfb7" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>notifyTouchMotion</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1ac5af1bde24cbb5c8322abad11a118a0f" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>notifyTouchUp</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a72ca4164963a902ef1456daecc5cfd64" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>pointer</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a11c1dac5dc3496d47a71359341b6ccc0" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>pointerButtonSerial</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a22b1f71119bc0f5a1474b874e18265e3" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>pointerButtonSerial</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a31733a64eb06520e8f793c6b80674566" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>pointerPos</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1aa45ec0696603ab055b470dffa00ab43d" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>pointerPosChanged</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1ae021f848fa46b6db4b1bf58ed569d4ae" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>primarySelection</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a9af1f5bd613d52ade5559b87cb06dbc7" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>primarySelectionChanged</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1acb3e4606e15000508f8beff4213d9a2a" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>relativePointerMotion</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1aae366b865500c74a65f9088057a1393c" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>SeatInterface</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a16d024c3158e5383ab63231b9a4eff14" prot="private" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>SeatInterfacePrivate</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1acefdc0836fba9b4af5f1c72a10c0c65f" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>selection</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a9a891404b480c4b3aacf6be99e53025c" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>selectionChanged</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a3bce382cbc9cb803a4e6bde0f90367db" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>setDragTarget</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a163a9a032f623020880383989a39f585" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>setDragTarget</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a35bf1169670b7acafb2256cbf4ba957f" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>setFocusedKeyboardSurface</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a12c1f9e56a0f043239bbe55019481977" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>setFocusedPointerSurfacePosition</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a84670f4ddd03ff66967a80713bdd28d0" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>setFocusedPointerSurfaceTransformation</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a7f66fb5fb1cf10789ea3d2d0f6938b99" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>setFocusedTextInputSurface</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a37bb18135b053978deaf9d7ec995c5f3" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>setHasKeyboard</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a6514d6351ddd81651f7bbfeb3be84a2d" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>setHasPointer</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a1242dec262af8c709b27a393c3a0b39e" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>setHasTouch</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a7a242cc390e1ff165ddfdf73f800f8dd" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>setPrimarySelection</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a9f6de55aae663edcef362cf5f6c3fb3b" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>setSelection</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a387dc48ce43458b7e40f693ae5b9b007" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>setTimestamp</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1ac915137afd26577d34c17ef33295d46e" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>startDrag</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a6488ad9d6f36a36eb7895661f7ccac67" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>startPointerHoldGesture</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a93b8a12b9902cab1c77370ed527f7bf6" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>startPointerPinchGesture</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1abc5441eb8d25916b777dbefb94396bb9" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>startPointerSwipeGesture</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a31b0ca85c10f480fa3142315e04253bd" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>textInputV1</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a821a8b87f9848b0b2c9d10a96c651ad6" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>textInputV2</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1aedd2e32ac2f42dce970a79d7fe73809a" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>textInputV3</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a9408b149c73fbd8d4062ab804f9eb924" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>timestamp</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1ab1942adfa9a04d1cb7e9c3785c0aca06" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>touch</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a560e24d032be268d9d9049a3eb276af6" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>touchMoved</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1aa5cc5bb2ce40bb2dd4a4e62fcefb0c59" prot="private" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>TouchPoint</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a8817f59e87fed5eb3509862c63da2e39" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>touchPointByImplicitGrabSerial</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a6eebac419af90fb3d4f58402acc81e8e" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>updatePointerPinchGesture</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a2cdb42e323facd65caa6ac3d55c7d221" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>updatePointerSwipeGesture</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a49ecec73ceab04d444085408680c5821" prot="public" virt="non-virtual"><scope>KWin::SeatInterface</scope><name>xdgTopleveldrag</name></member>
+      <member refid="class_k_win_1_1_seat_interface_1a12f4d419c8021143360beba1669020d2" prot="public" virt="virtual"><scope>KWin::SeatInterface</scope><name>~SeatInterface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

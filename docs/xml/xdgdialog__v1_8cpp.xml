@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="xdgdialog__v1_8cpp" kind="file" language="C++">
+    <compoundname>xdgdialog_v1.cpp</compoundname>
+    <includes refid="xdgdialog__v1_8h" local="yes">xdgdialog_v1.h</includes>
+    <includes refid="display_8h" local="yes">display.h</includes>
+    <includes refid="xdgshell_8h" local="yes">xdgshell.h</includes>
+    <includes local="yes">qwayland-server-xdg-dialog-v1.h</includes>
+    <includes local="no">QHash</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>display.h</label>
+        <link refid="display_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/wayland/xdgdialog_v1.cpp</label>
+        <link refid="xdgdialog__v1_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>xdgdialog_v1.h</label>
+        <link refid="xdgdialog__v1_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>xdgshell.h</label>
+        <link refid="xdgshell_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>QHash</label>
+      </node>
+      <node id="7">
+        <label>QList</label>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+      <node id="9">
+        <label>QSharedDataPointer</label>
+      </node>
+      <node id="10">
+        <label>chrono</label>
+      </node>
+      <node id="6">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+      <node id="11">
+        <label>qwayland-server-xdg-dialog-v1.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private" prot="public">KWin::XdgDialogWmV1InterfacePrivate</innerclass>
+    <innerclass refid="class_k_win_1_1_xdg_dialog_v1_interface_private" prot="public">KWin::XdgDialogV1InterfacePrivate</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2024<sp/>David<sp/>Redondo<sp/>&lt;kde@david-redondo.de&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>LGPL-2.1-only<sp/>OR<sp/>LGPL-3.0-only<sp/>OR<sp/>LicenseRef-KDE-Accepted-LGPL</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="xdgdialog__v1_8h" kindref="compound">xdgdialog_v1.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="display_8h" kindref="compound">display.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="xdgshell_8h" kindref="compound">xdgshell.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;qwayland-server-xdg-dialog-v1.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QHash&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="namespace_k_win_1ad85acfe1f9d7ee3655274bf2fc62d9a3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1ad85acfe1f9d7ee3655274bf2fc62d9a3" kindref="member">version</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1adddda8810a85573cc9dc8dd429eaacb9" kindref="member">XdgDialogWmV1InterfacePrivate</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QtWaylandServer::xdg_wm_dialog_v1</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1adddda8810a85573cc9dc8dd429eaacb9" kindref="member">XdgDialogWmV1InterfacePrivate</ref>(<ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*display,<sp/><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface" kindref="compound">XdgDialogWmV1Interface</ref><sp/>*<ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1aefcbf2de10717579c06f0f7683bc9591" kindref="member">q</ref>);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1aefcbf2de10717579c06f0f7683bc9591" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface" kindref="compound">XdgDialogWmV1Interface</ref><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1aefcbf2de10717579c06f0f7683bc9591" kindref="member">q</ref>;</highlight></codeline>
+<codeline lineno="27" refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1ae189f46e4d9166976f2dc5283b496964" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QHash&lt;XdgToplevelInterface<sp/>*,<sp/>XdgDialogV1Interface<sp/>*&gt;<sp/><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1ae189f46e4d9166976f2dc5283b496964" kindref="member">m_dialogs</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1a9b39db49c0441e04d4afad2461ed3709" kindref="member">xdg_wm_dialog_v1_get_xdg_dialog</ref>(Resource<sp/>*resource,<sp/>uint32_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>wl_resource<sp/>*toplevel)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1ab7a5b76a1a1f1015a6d9822d91bdeb20" kindref="member">xdg_wm_dialog_v1_destroy</ref>(Resource<sp/>*resource)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="class_k_win_1_1_xdg_dialog_v1_interface_private" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a5d8bf0faf57630efa1610c900a36665d" kindref="member">XdgDialogV1InterfacePrivate</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QtWaylandServer::xdg_dialog_v1</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a5d8bf0faf57630efa1610c900a36665d" kindref="member">XdgDialogV1InterfacePrivate</ref>(wl_resource<sp/>*resource,<sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface" kindref="compound">XdgDialogV1Interface</ref><sp/>*<ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a213155aacf30be2ede9b7a66c09497ed" kindref="member">q</ref>);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a213155aacf30be2ede9b7a66c09497ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface" kindref="compound">XdgDialogV1Interface</ref><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a213155aacf30be2ede9b7a66c09497ed" kindref="member">q</ref>;</highlight></codeline>
+<codeline lineno="40" refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1af35408fb8bc1c70d8862fb7fbf855514" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xdg_toplevel_interface" kindref="compound">XdgToplevelInterface</ref><sp/>*<ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1af35408fb8bc1c70d8862fb7fbf855514" kindref="member">m_toplevel</ref>;</highlight></codeline>
+<codeline lineno="41" refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1aa60e69c9b11c6ed5c9f7cd0f1377405c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1aa60e69c9b11c6ed5c9f7cd0f1377405c" kindref="member">modal</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a9cbc9a9b2cbdb68e3bec647adf0fbe68" kindref="member">xdg_dialog_v1_destroy</ref>(Resource<sp/>*resource)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a3f1ab55219e391a90bb09dd782bcdd26" kindref="member">xdg_dialog_v1_destroy_resource</ref>(Resource<sp/>*resource)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1ac14921016ee220225e2a2254d391435a" kindref="member">xdg_dialog_v1_set_modal</ref>(Resource<sp/>*resource)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a114a4e23ed769cc521022606b01ddd40" kindref="member">xdg_dialog_v1_unset_modal</ref>(Resource<sp/>*resource)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1adddda8810a85573cc9dc8dd429eaacb9" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1adddda8810a85573cc9dc8dd429eaacb9" kindref="member">XdgDialogWmV1InterfacePrivate::XdgDialogWmV1InterfacePrivate</ref>(<ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*display,<sp/><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface" kindref="compound">XdgDialogWmV1Interface</ref><sp/>*<ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1aefcbf2de10717579c06f0f7683bc9591" kindref="member">q</ref>)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>xdg_wm_dialog_v1(*display,<sp/><ref refid="namespace_k_win_1ad85acfe1f9d7ee3655274bf2fc62d9a3" kindref="member">version</ref>)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1aefcbf2de10717579c06f0f7683bc9591" kindref="member">q</ref>(<ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1aefcbf2de10717579c06f0f7683bc9591" kindref="member">q</ref>)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1ab7a5b76a1a1f1015a6d9822d91bdeb20" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1ab7a5b76a1a1f1015a6d9822d91bdeb20" kindref="member">XdgDialogWmV1InterfacePrivate::xdg_wm_dialog_v1_destroy</ref>(Resource<sp/>*resource)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_resource_destroy(resource-&gt;handle);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1a9b39db49c0441e04d4afad2461ed3709" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1a9b39db49c0441e04d4afad2461ed3709" kindref="member">XdgDialogWmV1InterfacePrivate::xdg_wm_dialog_v1_get_xdg_dialog</ref>(Resource<sp/>*resource,<sp/>uint32_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>wl_resource<sp/>*toplevel_resource)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>toplevel<sp/>=<sp/><ref refid="class_k_win_1_1_xdg_toplevel_interface_1a5f22d76844d8f00493d3a6958a2d865a" kindref="member">XdgToplevelInterface::get</ref>(toplevel_resource);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!toplevel)<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wl_resource_post_error(resource-&gt;handle,<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;Invalid<sp/>surface&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1ae189f46e4d9166976f2dc5283b496964" kindref="member">m_dialogs</ref>.value(toplevel))<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wl_resource_post_error(resource-&gt;handle,<sp/>error::error_already_used,<sp/></highlight><highlight class="stringliteral">&quot;xdg_toplevel<sp/>already<sp/>already<sp/>used<sp/>to<sp/>a<sp/>xdg_dialog_v1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>dialogResource<sp/>=<sp/>wl_resource_create(resource-&gt;client(),<sp/>&amp;xdg_dialog_v1_interface,<sp/>resource-&gt;version(),<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>dialog<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface" kindref="compound">XdgDialogV1Interface</ref>(dialogResource,<sp/>toplevel);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1ae189f46e4d9166976f2dc5283b496964" kindref="member">m_dialogs</ref>.insert(toplevel,<sp/>dialog);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>removeDialog<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>toplevel,<sp/>dialog]<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1ae189f46e4d9166976f2dc5283b496964" kindref="member">m_dialogs</ref>.removeIf([toplevel,<sp/>dialog](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::pair&lt;XdgToplevelInterface<sp/>*,<sp/>XdgDialogV1Interface<sp/>*&gt;<sp/>&amp;entry)<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>entry.first<sp/>==<sp/>toplevel<sp/>&amp;&amp;<sp/>entry.second<sp/>==<sp/>dialog;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>QObject::connect(dialog,<sp/>&amp;XdgDialogV1Interface::destroyed,<sp/><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1aefcbf2de10717579c06f0f7683bc9591" kindref="member">q</ref>,<sp/>removeDialog);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>QObject::connect(toplevel,<sp/>&amp;XdgDialogV1Interface::destroyed,<sp/><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1aefcbf2de10717579c06f0f7683bc9591" kindref="member">q</ref>,<sp/>removeDialog);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private_1aefcbf2de10717579c06f0f7683bc9591" kindref="member">q</ref>-&gt;dialogCreated(dialog);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_1acc1eb7718d829d8127443558cbedb00e" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_1acc1eb7718d829d8127443558cbedb00e" kindref="member">XdgDialogWmV1Interface::XdgDialogWmV1Interface</ref>(<ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*display,<sp/>QObject<sp/>*parent)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>d(std::make_unique&lt;<ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_private" kindref="compound">XdgDialogWmV1InterfacePrivate</ref>&gt;(display,<sp/>this))</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_1a5681bf75dc2bdb0075c6de2f6f9ff28d" kindref="member">XdgDialogWmV1Interface::~XdgDialogWmV1Interface</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_1a2f14ba3412cfa7bb93f682b09de65ded" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_xdg_dialog_v1_interface" kindref="compound">XdgDialogV1Interface</ref><sp/>*<ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface_1a2f14ba3412cfa7bb93f682b09de65ded" kindref="member">XdgDialogWmV1Interface::dialogForToplevel</ref>(<ref refid="class_k_win_1_1_xdg_toplevel_interface" kindref="compound">XdgToplevelInterface</ref><sp/>*toplevel)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="95"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;m_dialogs.value(toplevel);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a5d8bf0faf57630efa1610c900a36665d" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a5d8bf0faf57630efa1610c900a36665d" kindref="member">XdgDialogV1InterfacePrivate::XdgDialogV1InterfacePrivate</ref>(wl_resource<sp/>*wl_resource,<sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface" kindref="compound">XdgDialogV1Interface</ref><sp/>*<ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a213155aacf30be2ede9b7a66c09497ed" kindref="member">q</ref>)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>xdg_dialog_v1(wl_resource)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a213155aacf30be2ede9b7a66c09497ed" kindref="member">q</ref>(<ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a213155aacf30be2ede9b7a66c09497ed" kindref="member">q</ref>)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a3f1ab55219e391a90bb09dd782bcdd26" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a3f1ab55219e391a90bb09dd782bcdd26" kindref="member">XdgDialogV1InterfacePrivate::xdg_dialog_v1_destroy_resource</ref>(Resource<sp/>*resource)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a213155aacf30be2ede9b7a66c09497ed" kindref="member">q</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a9cbc9a9b2cbdb68e3bec647adf0fbe68" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a9cbc9a9b2cbdb68e3bec647adf0fbe68" kindref="member">XdgDialogV1InterfacePrivate::xdg_dialog_v1_destroy</ref>(Resource<sp/>*resource)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_resource_destroy(resource-&gt;handle);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1ac14921016ee220225e2a2254d391435a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1ac14921016ee220225e2a2254d391435a" kindref="member">XdgDialogV1InterfacePrivate::xdg_dialog_v1_set_modal</ref>(Resource<sp/>*resource)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1aa60e69c9b11c6ed5c9f7cd0f1377405c" kindref="member">modal</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1aa60e69c9b11c6ed5c9f7cd0f1377405c" kindref="member">modal</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a213155aacf30be2ede9b7a66c09497ed" kindref="member">q</ref>-&gt;modalChanged(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a114a4e23ed769cc521022606b01ddd40" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a114a4e23ed769cc521022606b01ddd40" kindref="member">XdgDialogV1InterfacePrivate::xdg_dialog_v1_unset_modal</ref>(Resource<sp/>*resource)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1aa60e69c9b11c6ed5c9f7cd0f1377405c" kindref="member">modal</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1aa60e69c9b11c6ed5c9f7cd0f1377405c" kindref="member">modal</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private_1a213155aacf30be2ede9b7a66c09497ed" kindref="member">q</ref>-&gt;modalChanged(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal">XdgDialogV1Interface::XdgDialogV1Interface(wl_resource<sp/>*resource,<sp/><ref refid="class_k_win_1_1_xdg_toplevel_interface" kindref="compound">XdgToplevelInterface</ref><sp/>*toplevel)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>d(std::make_unique&lt;<ref refid="class_k_win_1_1_xdg_dialog_v1_interface_private" kindref="compound">XdgDialogV1InterfacePrivate</ref>&gt;(resource,<sp/>this))</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;m_toplevel<sp/>=<sp/>toplevel;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="class_k_win_1_1_xdg_dialog_v1_interface_1a7fe18a9f5208be669cc4799a0c5f0b53" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_1a7fe18a9f5208be669cc4799a0c5f0b53" kindref="member">XdgDialogV1Interface::~XdgDialogV1Interface</ref>()</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="class_k_win_1_1_xdg_dialog_v1_interface_1a73d8fd558b82339a06cb073f2655954e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xdg_dialog_v1_interface_1a73d8fd558b82339a06cb073f2655954e" kindref="member">XdgDialogV1Interface::isModal</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="144"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;modal;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="class_k_win_1_1_xdg_dialog_v1_interface_1af68c6ec997cce73751f2b88dcc5428e3" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_xdg_toplevel_interface" kindref="compound">XdgToplevelInterface</ref><sp/>*<ref refid="class_k_win_1_1_xdg_dialog_v1_interface_1af68c6ec997cce73751f2b88dcc5428e3" kindref="member">XdgDialogV1Interface::toplevel</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="149"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;m_toplevel;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/wayland/xdgdialog_v1.cpp"/>
+  </compounddef>
+</doxygen>

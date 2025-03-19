@@ -1,0 +1,550 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_tile_manager" kind="class" language="C++" prot="public">
+    <compoundname>KWin::TileManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="tilemanager_8h" local="no">tilemanager.h</includes>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="class_k_win_1_1_tile_manager_1a4cba21a6a5cff32153f8121d86a9f4ad" prot="public" static="no" readable="yes" writable="no" gettable="no" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type><ref refid="class_k_win_1_1_tile" kindref="compound">KWin::Tile</ref> *</type>
+        <definition>KWin::Tile * KWin::TileManager::rootTile</definition>
+        <argsstring></argsstring>
+        <name>rootTile</name>
+        <qualifiedname>KWin::TileManager::rootTile</qualifiedname>
+        <read>rootTile</read>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="40" column="5" bodyfile="kwin/src/tiles/tilemanager.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_k_win_1_1_tile_manager_1a7a4cd11f969760ad9d298b1e46e4f403" prot="public" static="no" readable="yes" writable="no" gettable="no" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type><ref refid="class_k_win_1_1_tile_model" kindref="compound">TileModel</ref> *</type>
+        <definition>TileModel * KWin::TileManager::model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <qualifiedname>KWin::TileManager::model</qualifiedname>
+        <read>model</read>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="41" column="5" bodyfile="kwin/src/tiles/tilemanager.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_tile_manager_1ab8a3a4a6062f6b79d7746c90a652697c" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+        <definition>Output* KWin::TileManager::m_output</definition>
+        <argsstring></argsstring>
+        <name>m_output</name>
+        <qualifiedname>KWin::TileManager::m_output</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="76" column="12" bodyfile="kwin/src/tiles/tilemanager.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_tile_manager_1a30cfeeaf49d84abdcf8b45454e187c28" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; QTimer &gt;</type>
+        <definition>std::unique_ptr&lt;QTimer&gt; KWin::TileManager::m_saveTimer</definition>
+        <argsstring></argsstring>
+        <name>m_saveTimer</name>
+        <qualifiedname>KWin::TileManager::m_saveTimer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="77" column="21" bodyfile="kwin/src/tiles/tilemanager.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_tile_manager_1a168ef1761d8ef91d8e82619810b85736" prot="private" static="no" mutable="no">
+        <type>QHash&lt; <ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref> *, <ref refid="class_k_win_1_1_root_tile" kindref="compound">RootTile</ref> * &gt;</type>
+        <definition>QHash&lt;VirtualDesktop *, RootTile *&gt; KWin::TileManager::m_rootTiles</definition>
+        <argsstring></argsstring>
+        <name>m_rootTiles</name>
+        <qualifiedname>KWin::TileManager::m_rootTiles</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="79" column="11" bodyfile="kwin/src/tiles/tilemanager.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_tile_manager_1a260d6111451d5d41be6d1bb5349c4a60" prot="private" static="no" mutable="no">
+        <type>QHash&lt; <ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref> *, <ref refid="class_k_win_1_1_quick_root_tile" kindref="compound">QuickRootTile</ref> * &gt;</type>
+        <definition>QHash&lt;VirtualDesktop *, QuickRootTile *&gt; KWin::TileManager::m_quickRootTiles</definition>
+        <argsstring></argsstring>
+        <name>m_quickRootTiles</name>
+        <qualifiedname>KWin::TileManager::m_quickRootTiles</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="80" column="11" bodyfile="kwin/src/tiles/tilemanager.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_tile_manager_1a13264dc87303fc959b2f274c8ed96b0c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::TileManager::m_tearingDown</definition>
+        <argsstring></argsstring>
+        <name>m_tearingDown</name>
+        <qualifiedname>KWin::TileManager::m_tearingDown</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="82" column="10" bodyfile="kwin/src/tiles/tilemanager.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_k_win_1_1_tile_manager_1a31b5fe8e112d2e575de6f137fee5b287" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class CustomTile</definition>
+        <argsstring></argsstring>
+        <name>CustomTile</name>
+        <qualifiedname>KWin::TileManager::CustomTile</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_custom_tile" kindref="compound">CustomTile</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="83" column="18" bodyfile="kwin/src/tiles/tilemanager.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_tile_manager_1a11ed1b14a1f9fadd661f27271161d472" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::TileManager::TileManager</definition>
+        <argsstring>(Output *parent=nullptr)</argsstring>
+        <name>TileManager</name>
+        <qualifiedname>KWin::TileManager::TileManager</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="44" column="14" bodyfile="kwin/src/tiles/tilemanager.cpp" bodystart="57" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_tile_manager_1a6fdca34725d2be71a4e7e1a3804477ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::TileManager::~TileManager</definition>
+        <argsstring>() override</argsstring>
+        <name>~TileManager</name>
+        <qualifiedname>KWin::TileManager::~TileManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="45" column="5" bodyfile="kwin/src/tiles/tilemanager.cpp" bodystart="95" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_tile_manager_1a7fcb737b7590d87b9472270f7f7a7e2c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::TileManager::tearingDown</definition>
+        <argsstring>() const</argsstring>
+        <name>tearingDown</name>
+        <qualifiedname>KWin::TileManager::tearingDown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="47" column="10" bodyfile="kwin/src/tiles/tilemanager.cpp" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_tile_manager_1a2b54b1c44a86172192baff8725666423" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+        <definition>Output * KWin::TileManager::output</definition>
+        <argsstring>() const</argsstring>
+        <name>output</name>
+        <qualifiedname>KWin::TileManager::output</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="49" column="12" bodyfile="kwin/src/tiles/tilemanager.cpp" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_tile_manager_1a5a66f78086a3d53d7045de307726c2e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_INVOKABLE <ref refid="class_k_win_1_1_tile" kindref="compound">KWin::Tile</ref> *</type>
+        <definition>Tile * KWin::TileManager::bestTileForPosition</definition>
+        <argsstring>(qreal x, qreal y)</argsstring>
+        <name>bestTileForPosition</name>
+        <qualifiedname>KWin::TileManager::bestTileForPosition</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>qreal</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="51" column="28" bodyfile="kwin/src/tiles/tilemanager.cpp" bodystart="110" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_tile_manager_1ab006595050a1c19b23afb1562e1df5fa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_root_tile" kindref="compound">RootTile</ref> *</type>
+        <definition>RootTile * KWin::TileManager::rootTile</definition>
+        <argsstring>(VirtualDesktop *desktop) const</argsstring>
+        <name>rootTile</name>
+        <qualifiedname>KWin::TileManager::rootTile</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref> *</type>
+          <declname>desktop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="52" column="14" bodyfile="kwin/src/tiles/tilemanager.cpp" bodystart="115" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_tile_manager_1a4fae6eb057a7b00a4611806038e71833" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_root_tile" kindref="compound">RootTile</ref> *</type>
+        <definition>RootTile * KWin::TileManager::rootTile</definition>
+        <argsstring>() const</argsstring>
+        <name>rootTile</name>
+        <qualifiedname>KWin::TileManager::rootTile</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="53" column="14" bodyfile="kwin/src/tiles/tilemanager.cpp" bodystart="120" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_tile_manager_1a5927c581101a3e02e21b5c39b039347e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_quick_root_tile" kindref="compound">QuickRootTile</ref> *</type>
+        <definition>QuickRootTile * KWin::TileManager::quickRootTile</definition>
+        <argsstring>(VirtualDesktop *desktop) const</argsstring>
+        <name>quickRootTile</name>
+        <qualifiedname>KWin::TileManager::quickRootTile</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref> *</type>
+          <declname>desktop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="54" column="19" bodyfile="kwin/src/tiles/tilemanager.cpp" bodystart="130" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_tile_manager_1a2b083a364ed4e3d805198d50bb50bda3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_quick_root_tile" kindref="compound">QuickRootTile</ref> *</type>
+        <definition>QuickRootTile * KWin::TileManager::quickRootTile</definition>
+        <argsstring>() const</argsstring>
+        <name>quickRootTile</name>
+        <qualifiedname>KWin::TileManager::quickRootTile</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="55" column="19" bodyfile="kwin/src/tiles/tilemanager.cpp" bodystart="125" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_tile_manager_1a61a8899b7c2276ed9075243833365a25" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_tile" kindref="compound">KWin::Tile</ref> *</type>
+        <definition>Tile * KWin::TileManager::quickTile</definition>
+        <argsstring>(QuickTileMode mode) const</argsstring>
+        <name>quickTile</name>
+        <qualifiedname>KWin::TileManager::quickTile</qualifiedname>
+        <param>
+          <type>QuickTileMode</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="56" column="16" bodyfile="kwin/src/tiles/tilemanager.cpp" bodystart="135" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_tile_manager_1a9f32bd20b5d505e4075d8fb7bd0c455e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_tile_model" kindref="compound">TileModel</ref> *</type>
+        <definition>TileModel * KWin::TileManager::model</definition>
+        <argsstring>() const</argsstring>
+        <name>model</name>
+        <qualifiedname>KWin::TileManager::model</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="58" column="15" bodyfile="kwin/src/tiles/tilemanager.cpp" bodystart="140" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_tile_manager_1abf7adfdf219d954246d1329a4acf590d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_tile" kindref="compound">Tile</ref> *</type>
+        <definition>Tile * KWin::TileManager::tileForWindow</definition>
+        <argsstring>(Window *window, VirtualDesktop *desktop)</argsstring>
+        <name>tileForWindow</name>
+        <qualifiedname>KWin::TileManager::tileForWindow</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref> *</type>
+          <declname>desktop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="60" column="10" bodyfile="kwin/src/tiles/tilemanager.cpp" bodystart="145" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_tile_manager_1a99d47471c1e08318bb22fad77eb3d588" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::TileManager::forgetWindow</definition>
+        <argsstring>(Window *window, VirtualDesktop *desktop)</argsstring>
+        <name>forgetWindow</name>
+        <qualifiedname>KWin::TileManager::forgetWindow</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref> *</type>
+          <declname>desktop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="61" column="10" bodyfile="kwin/src/tiles/tilemanager.cpp" bodystart="160" bodyend="181"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_tile_manager_1a7a06a97a4ca12fc22b2bc24477173df3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::TileManager::tileRemoved</definition>
+        <argsstring>(KWin::Tile *tile)</argsstring>
+        <name>tileRemoved</name>
+        <qualifiedname>KWin::TileManager::tileRemoved</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_tile" kindref="compound">KWin::Tile</ref> *</type>
+          <declname>tile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="64" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_tile_manager_1a38371b504b611246c5577e5d5e5d859f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::TileManager::rootTileChanged</definition>
+        <argsstring>(CustomTile *rootTile)</argsstring>
+        <name>rootTileChanged</name>
+        <qualifiedname>KWin::TileManager::rootTileChanged</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_custom_tile" kindref="compound">CustomTile</ref> *</type>
+          <declname>rootTile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="65" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_tile_manager_1a26af689581e0892360f4e201386c91ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::TileManager::modelChanged</definition>
+        <argsstring>(TileModel *model)</argsstring>
+        <name>modelChanged</name>
+        <qualifiedname>KWin::TileManager::modelChanged</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_tile_model" kindref="compound">TileModel</ref> *</type>
+          <declname>model</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="66" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_tile_manager_1a36d54cd068729b7f44de1a0cdec46055" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::TileManager::readSettings</definition>
+        <argsstring>(RootTile *rootTile)</argsstring>
+        <name>readSettings</name>
+        <qualifiedname>KWin::TileManager::readSettings</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_root_tile" kindref="compound">RootTile</ref> *</type>
+          <declname>rootTile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="69" column="10" bodyfile="kwin/src/tiles/tilemanager.cpp" bodystart="274" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_tile_manager_1ad6cf616b34bc845ae5952ca5e8e68d08" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::TileManager::saveSettings</definition>
+        <argsstring>()</argsstring>
+        <name>saveSettings</name>
+        <qualifiedname>KWin::TileManager::saveSettings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="70" column="10" bodyfile="kwin/src/tiles/tilemanager.cpp" bodystart="370" bodyend="385"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_tile_manager_1af25e26121b932998d7e935d2398d4cc9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QJsonObject</type>
+        <definition>QJsonObject KWin::TileManager::tileToJSon</definition>
+        <argsstring>(CustomTile *parentTile)</argsstring>
+        <name>tileToJSon</name>
+        <qualifiedname>KWin::TileManager::tileToJSon</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_custom_tile" kindref="compound">CustomTile</ref> *</type>
+          <declname>parentTile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="71" column="17" bodyfile="kwin/src/tiles/tilemanager.cpp" bodystart="322" bodyend="368"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_tile_manager_1afdfa454f03b83b3c561ad7d200e2d81f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_custom_tile" kindref="compound">CustomTile</ref> *</type>
+        <definition>CustomTile * KWin::TileManager::parseTilingJSon</definition>
+        <argsstring>(const QJsonValue &amp;val, const QRectF &amp;availableArea, CustomTile *parentTile)</argsstring>
+        <name>parseTilingJSon</name>
+        <qualifiedname>KWin::TileManager::parseTilingJSon</qualifiedname>
+        <param>
+          <type>const QJsonValue &amp;</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>const QRectF &amp;</type>
+          <declname>availableArea</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_custom_tile" kindref="compound">CustomTile</ref> *</type>
+          <declname>parentTile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/tiles/tilemanager.h" line="72" column="16" bodyfile="kwin/src/tiles/tilemanager.cpp" bodystart="194" bodyend="272"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Custom tiling zones management per output. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::TileManager</label>
+        <link refid="class_k_win_1_1_tile_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::TileManager</label>
+        <link refid="class_k_win_1_1_tile_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/tiles/tilemanager.h" line="37" column="1" bodyfile="kwin/src/tiles/tilemanager.h" bodystart="38" bodyend="84"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_tile_manager_1a5a66f78086a3d53d7045de307726c2e7" prot="public" virt="non-virtual"><scope>KWin::TileManager</scope><name>bestTileForPosition</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a31b5fe8e112d2e575de6f137fee5b287" prot="private" virt="non-virtual"><scope>KWin::TileManager</scope><name>CustomTile</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a99d47471c1e08318bb22fad77eb3d588" prot="public" virt="non-virtual"><scope>KWin::TileManager</scope><name>forgetWindow</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1ab8a3a4a6062f6b79d7746c90a652697c" prot="private" virt="non-virtual"><scope>KWin::TileManager</scope><name>m_output</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a260d6111451d5d41be6d1bb5349c4a60" prot="private" virt="non-virtual"><scope>KWin::TileManager</scope><name>m_quickRootTiles</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a168ef1761d8ef91d8e82619810b85736" prot="private" virt="non-virtual"><scope>KWin::TileManager</scope><name>m_rootTiles</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a30cfeeaf49d84abdcf8b45454e187c28" prot="private" virt="non-virtual"><scope>KWin::TileManager</scope><name>m_saveTimer</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a13264dc87303fc959b2f274c8ed96b0c" prot="private" virt="non-virtual"><scope>KWin::TileManager</scope><name>m_tearingDown</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a7a4cd11f969760ad9d298b1e46e4f403" prot="public" virt="non-virtual"><scope>KWin::TileManager</scope><name>model</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a9f32bd20b5d505e4075d8fb7bd0c455e" prot="public" virt="non-virtual"><scope>KWin::TileManager</scope><name>model</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a26af689581e0892360f4e201386c91ec" prot="public" virt="non-virtual"><scope>KWin::TileManager</scope><name>modelChanged</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a2b54b1c44a86172192baff8725666423" prot="public" virt="non-virtual"><scope>KWin::TileManager</scope><name>output</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1afdfa454f03b83b3c561ad7d200e2d81f" prot="private" virt="non-virtual"><scope>KWin::TileManager</scope><name>parseTilingJSon</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a5927c581101a3e02e21b5c39b039347e" prot="public" virt="non-virtual"><scope>KWin::TileManager</scope><name>quickRootTile</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a2b083a364ed4e3d805198d50bb50bda3" prot="public" virt="non-virtual"><scope>KWin::TileManager</scope><name>quickRootTile</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a61a8899b7c2276ed9075243833365a25" prot="public" virt="non-virtual"><scope>KWin::TileManager</scope><name>quickTile</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a36d54cd068729b7f44de1a0cdec46055" prot="private" virt="non-virtual"><scope>KWin::TileManager</scope><name>readSettings</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a4cba21a6a5cff32153f8121d86a9f4ad" prot="public" virt="non-virtual"><scope>KWin::TileManager</scope><name>rootTile</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1ab006595050a1c19b23afb1562e1df5fa" prot="public" virt="non-virtual"><scope>KWin::TileManager</scope><name>rootTile</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a4fae6eb057a7b00a4611806038e71833" prot="public" virt="non-virtual"><scope>KWin::TileManager</scope><name>rootTile</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a38371b504b611246c5577e5d5e5d859f" prot="public" virt="non-virtual"><scope>KWin::TileManager</scope><name>rootTileChanged</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1ad6cf616b34bc845ae5952ca5e8e68d08" prot="private" virt="non-virtual"><scope>KWin::TileManager</scope><name>saveSettings</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a7fcb737b7590d87b9472270f7f7a7e2c" prot="public" virt="non-virtual"><scope>KWin::TileManager</scope><name>tearingDown</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1abf7adfdf219d954246d1329a4acf590d" prot="public" virt="non-virtual"><scope>KWin::TileManager</scope><name>tileForWindow</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a11ed1b14a1f9fadd661f27271161d472" prot="public" virt="non-virtual"><scope>KWin::TileManager</scope><name>TileManager</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a7a06a97a4ca12fc22b2bc24477173df3" prot="public" virt="non-virtual"><scope>KWin::TileManager</scope><name>tileRemoved</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1af25e26121b932998d7e935d2398d4cc9" prot="private" virt="non-virtual"><scope>KWin::TileManager</scope><name>tileToJSon</name></member>
+      <member refid="class_k_win_1_1_tile_manager_1a6fdca34725d2be71a4e7e1a3804477ee" prot="public" virt="non-virtual"><scope>KWin::TileManager</scope><name>~TileManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,943 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_drm_plane" kind="class" language="C++" prot="public">
+    <compoundname>KWin::DrmPlane</compoundname>
+    <basecompoundref refid="class_k_win_1_1_drm_object" prot="public" virt="non-virtual">KWin::DrmObject</basecompoundref>
+    <includes refid="drm__plane_8h" local="no">drm_plane.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_k_win_1_1_drm_plane_1a3cf72c069e4b10ac10646deba960d050" prot="public" static="no" strong="yes">
+        <type>uint64_t</type>
+        <name>TypeIndex</name>
+        <qualifiedname>KWin::DrmPlane::TypeIndex</qualifiedname>
+        <enumvalue id="class_k_win_1_1_drm_plane_1a3cf72c069e4b10ac10646deba960d050a6b551379c3c0b59326abdaf3b4395bd3" prot="public">
+          <name>Overlay</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_plane_1a3cf72c069e4b10ac10646deba960d050a074de7e7c226d5c60f8af14c20725352" prot="public">
+          <name>Primary</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_plane_1a3cf72c069e4b10ac10646deba960d050a9abdae4fa5d93330363a88ed8a5e7946" prot="public">
+          <name>Cursor</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="51" column="5" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="51" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eb" prot="public" static="no" strong="yes">
+        <type>uint32_t</type>
+        <name>Transformation</name>
+        <qualifiedname>KWin::DrmPlane::Transformation</qualifiedname>
+        <enumvalue id="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eba291b44223b90e70be1fade1eff8a55e0" prot="public">
+          <name>Rotate0</name>
+          <initializer>= 1 &lt;&lt; 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eba1d20b3969ea74725dd1a5b7669d60a98" prot="public">
+          <name>Rotate90</name>
+          <initializer>= 1 &lt;&lt; 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eba371980c5d153a94cf022d6b4daa4d34c" prot="public">
+          <name>Rotate180</name>
+          <initializer>= 1 &lt;&lt; 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eba59c609399b2fb3956ecac7df34a76c2f" prot="public">
+          <name>Rotate270</name>
+          <initializer>= 1 &lt;&lt; 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eba4aae163cb6ba788e6a5fd4d3d024ef04" prot="public">
+          <name>ReflectX</name>
+          <initializer>= 1 &lt;&lt; 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eba8ca1ef5a4e5696c848001ce3a9a03f27" prot="public">
+          <name>ReflectY</name>
+          <initializer>= 1 &lt;&lt; 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="56" column="5" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="56" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_drm_plane_1aa26f851a800509e77e6e6ca3782b6e5d" prot="public" static="no" strong="yes">
+        <type>uint64_t</type>
+        <name>PixelBlendMode</name>
+        <qualifiedname>KWin::DrmPlane::PixelBlendMode</qualifiedname>
+        <enumvalue id="class_k_win_1_1_drm_plane_1aa26f851a800509e77e6e6ca3782b6e5da6adf97f83acf6453d4a6a4b1070f3754" prot="public">
+          <name>None</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_plane_1aa26f851a800509e77e6e6ca3782b6e5da35f7a4d0017cc8c4ea4c3691caf1fdfa" prot="public">
+          <name>PreMultiplied</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_plane_1aa26f851a800509e77e6e6ca3782b6e5da9841bdc50c4226cb6ec5db76494249e6" prot="public">
+          <name>Coverage</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="67" column="5" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="67" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_drm_plane_1ad41412681a907af29b03f8e5283d2993" prot="public" static="no" strong="yes">
+        <type>uint64_t</type>
+        <name>ColorEncoding</name>
+        <qualifiedname>KWin::DrmPlane::ColorEncoding</qualifiedname>
+        <enumvalue id="class_k_win_1_1_drm_plane_1ad41412681a907af29b03f8e5283d2993a69507938bc7cc512ba7cf7691bb1cde3" prot="public">
+          <name>BT601_YCbCr</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_plane_1ad41412681a907af29b03f8e5283d2993a370f68ace3c5eea9edbf387f79cb07db" prot="public">
+          <name>BT709_YCbCr</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_plane_1ad41412681a907af29b03f8e5283d2993a929ed0b9366627444b67236e2866306f" prot="public">
+          <name>BT2020_YCbCr</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="72" column="5" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="72" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_drm_plane_1a3d7395abfc1c3c0926fd222b95bd4696" prot="public" static="no" strong="yes">
+        <type>uint64_t</type>
+        <name>ColorRange</name>
+        <qualifiedname>KWin::DrmPlane::ColorRange</qualifiedname>
+        <enumvalue id="class_k_win_1_1_drm_plane_1a3d7395abfc1c3c0926fd222b95bd4696ab88ca76d49f5b763f5d8351aee3473ec" prot="public">
+          <name>Limited_YCbCr</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_plane_1a3d7395abfc1c3c0926fd222b95bd4696a390724b556e46ee8f514407af3fb3a08" prot="public">
+          <name>Full_YCbCr</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="77" column="5" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="77" bodyend="80"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1a008eab562bd7f060b9adb51151ff8ca5" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_enum_property" kindref="compound">DrmEnumProperty</ref>&lt; <ref refid="class_k_win_1_1_drm_plane_1a3cf72c069e4b10ac10646deba960d050" kindref="member">TypeIndex</ref> &gt;</type>
+        <definition>DrmEnumProperty&lt;TypeIndex&gt; KWin::DrmPlane::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>KWin::DrmPlane::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="82" column="21" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1a9a32df6f23c511438a5593eadca1d32e" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_property" kindref="compound">DrmProperty</ref></type>
+        <definition>DrmProperty KWin::DrmPlane::srcX</definition>
+        <argsstring></argsstring>
+        <name>srcX</name>
+        <qualifiedname>KWin::DrmPlane::srcX</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="83" column="17" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1a4220fdac4f6e34dedf2b2a0a28c11eb5" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_property" kindref="compound">DrmProperty</ref></type>
+        <definition>DrmProperty KWin::DrmPlane::srcY</definition>
+        <argsstring></argsstring>
+        <name>srcY</name>
+        <qualifiedname>KWin::DrmPlane::srcY</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="84" column="17" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1a6708a231c00d77f6f01a75d03141de0a" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_property" kindref="compound">DrmProperty</ref></type>
+        <definition>DrmProperty KWin::DrmPlane::srcW</definition>
+        <argsstring></argsstring>
+        <name>srcW</name>
+        <qualifiedname>KWin::DrmPlane::srcW</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="85" column="17" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1a905e83160a393d0b3d3f20514dec603c" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_property" kindref="compound">DrmProperty</ref></type>
+        <definition>DrmProperty KWin::DrmPlane::srcH</definition>
+        <argsstring></argsstring>
+        <name>srcH</name>
+        <qualifiedname>KWin::DrmPlane::srcH</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="86" column="17" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1a49b53c8f1ecbdefabd45b23538ee6bb5" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_property" kindref="compound">DrmProperty</ref></type>
+        <definition>DrmProperty KWin::DrmPlane::crtcX</definition>
+        <argsstring></argsstring>
+        <name>crtcX</name>
+        <qualifiedname>KWin::DrmPlane::crtcX</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="87" column="17" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1af4eca2e519745ff4588ffbed9f15df2c" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_property" kindref="compound">DrmProperty</ref></type>
+        <definition>DrmProperty KWin::DrmPlane::crtcY</definition>
+        <argsstring></argsstring>
+        <name>crtcY</name>
+        <qualifiedname>KWin::DrmPlane::crtcY</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="88" column="17" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1a5a4a3b5cf83476b21b03dd8318a19ab2" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_property" kindref="compound">DrmProperty</ref></type>
+        <definition>DrmProperty KWin::DrmPlane::crtcW</definition>
+        <argsstring></argsstring>
+        <name>crtcW</name>
+        <qualifiedname>KWin::DrmPlane::crtcW</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="89" column="17" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1aecf5d68ffc03554eab5df2f995d75a70" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_property" kindref="compound">DrmProperty</ref></type>
+        <definition>DrmProperty KWin::DrmPlane::crtcH</definition>
+        <argsstring></argsstring>
+        <name>crtcH</name>
+        <qualifiedname>KWin::DrmPlane::crtcH</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="90" column="17" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1a7af89f91521a45f2db46cf9d826bdf5c" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_property" kindref="compound">DrmProperty</ref></type>
+        <definition>DrmProperty KWin::DrmPlane::fbId</definition>
+        <argsstring></argsstring>
+        <name>fbId</name>
+        <qualifiedname>KWin::DrmPlane::fbId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="91" column="17" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1ace0f0f2fbd7b6467efc3051d82af3221" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_property" kindref="compound">DrmProperty</ref></type>
+        <definition>DrmProperty KWin::DrmPlane::crtcId</definition>
+        <argsstring></argsstring>
+        <name>crtcId</name>
+        <qualifiedname>KWin::DrmPlane::crtcId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="92" column="17" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1a1e2e912dee18c6e9f08e335548dcf923" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_enum_property" kindref="compound">DrmEnumProperty</ref>&lt; Transformations &gt;</type>
+        <definition>DrmEnumProperty&lt;Transformations&gt; KWin::DrmPlane::rotation</definition>
+        <argsstring></argsstring>
+        <name>rotation</name>
+        <qualifiedname>KWin::DrmPlane::rotation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="93" column="21" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1a3f47e0aaa037a01c15cce83023cc4990" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_property" kindref="compound">DrmProperty</ref></type>
+        <definition>DrmProperty KWin::DrmPlane::inFormats</definition>
+        <argsstring></argsstring>
+        <name>inFormats</name>
+        <qualifiedname>KWin::DrmPlane::inFormats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="94" column="17" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1a57aedbc0a0bf9e91513533879ec083c0" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_property" kindref="compound">DrmProperty</ref></type>
+        <definition>DrmProperty KWin::DrmPlane::alpha</definition>
+        <argsstring></argsstring>
+        <name>alpha</name>
+        <qualifiedname>KWin::DrmPlane::alpha</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="95" column="17" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1a8f82574d6ae7100515cb015bb56c6174" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_enum_property" kindref="compound">DrmEnumProperty</ref>&lt; <ref refid="class_k_win_1_1_drm_plane_1aa26f851a800509e77e6e6ca3782b6e5d" kindref="member">PixelBlendMode</ref> &gt;</type>
+        <definition>DrmEnumProperty&lt;PixelBlendMode&gt; KWin::DrmPlane::pixelBlendMode</definition>
+        <argsstring></argsstring>
+        <name>pixelBlendMode</name>
+        <qualifiedname>KWin::DrmPlane::pixelBlendMode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="96" column="21" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1ab6b29a13448a965fa0c785f1e790d08f" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_enum_property" kindref="compound">DrmEnumProperty</ref>&lt; <ref refid="class_k_win_1_1_drm_plane_1ad41412681a907af29b03f8e5283d2993" kindref="member">ColorEncoding</ref> &gt;</type>
+        <definition>DrmEnumProperty&lt;ColorEncoding&gt; KWin::DrmPlane::colorEncoding</definition>
+        <argsstring></argsstring>
+        <name>colorEncoding</name>
+        <qualifiedname>KWin::DrmPlane::colorEncoding</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="97" column="21" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1a6c3bbf88e6beca0609f71ec013e9861e" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_enum_property" kindref="compound">DrmEnumProperty</ref>&lt; <ref refid="class_k_win_1_1_drm_plane_1a3d7395abfc1c3c0926fd222b95bd4696" kindref="member">ColorRange</ref> &gt;</type>
+        <definition>DrmEnumProperty&lt;ColorRange&gt; KWin::DrmPlane::colorRange</definition>
+        <argsstring></argsstring>
+        <name>colorRange</name>
+        <qualifiedname>KWin::DrmPlane::colorRange</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="98" column="21" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1a1266608c1ad7fee89c893b6938989c3a" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_property" kindref="compound">DrmProperty</ref></type>
+        <definition>DrmProperty KWin::DrmPlane::vmHotspotX</definition>
+        <argsstring></argsstring>
+        <name>vmHotspotX</name>
+        <qualifiedname>KWin::DrmPlane::vmHotspotX</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="99" column="17" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1ac6edd59092eefc8247cb829501ac5954" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_property" kindref="compound">DrmProperty</ref></type>
+        <definition>DrmProperty KWin::DrmPlane::vmHotspotY</definition>
+        <argsstring></argsstring>
+        <name>vmHotspotY</name>
+        <qualifiedname>KWin::DrmPlane::vmHotspotY</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="100" column="17" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1a2ed5ecf233ee36a11d945d88cec68434" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_property" kindref="compound">DrmProperty</ref></type>
+        <definition>DrmProperty KWin::DrmPlane::inFenceFd</definition>
+        <argsstring></argsstring>
+        <name>inFenceFd</name>
+        <qualifiedname>KWin::DrmPlane::inFenceFd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="101" column="17" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1a27d5be8daa175cf3ed541082937da31a" prot="public" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_property" kindref="compound">DrmProperty</ref></type>
+        <definition>DrmProperty KWin::DrmPlane::sizeHints</definition>
+        <argsstring></argsstring>
+        <name>sizeHints</name>
+        <qualifiedname>KWin::DrmPlane::sizeHints</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="102" column="17" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1a0f3d0eec4582de118c08870ea8d6a28a" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_framebuffer" kindref="compound">DrmFramebuffer</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;DrmFramebuffer&gt; KWin::DrmPlane::m_current</definition>
+        <argsstring></argsstring>
+        <name>m_current</name>
+        <qualifiedname>KWin::DrmPlane::m_current</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="105" column="21" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1ab7459cf19ca38f665a845843a5674d2e" prot="private" static="no" mutable="no">
+        <type>QList&lt; std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_framebuffer_data" kindref="compound">DrmFramebufferData</ref> &gt; &gt;</type>
+        <definition>QList&lt;std::shared_ptr&lt;DrmFramebufferData&gt; &gt; KWin::DrmPlane::m_lastBuffers</definition>
+        <argsstring></argsstring>
+        <name>m_lastBuffers</name>
+        <qualifiedname>KWin::DrmPlane::m_lastBuffers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="106" column="11" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1a2b43db0cf8edfbf667a0b8ceceba39ae" prot="private" static="no" mutable="no">
+        <type>QHash&lt; uint32_t, QList&lt; uint64_t &gt; &gt;</type>
+        <definition>QHash&lt;uint32_t, QList&lt;uint64_t&gt; &gt; KWin::DrmPlane::m_supportedFormats</definition>
+        <argsstring></argsstring>
+        <name>m_supportedFormats</name>
+        <qualifiedname>KWin::DrmPlane::m_supportedFormats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="108" column="11" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1a73e539f029f07d041418efcad8a188f5" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t KWin::DrmPlane::m_possibleCrtcs</definition>
+        <argsstring></argsstring>
+        <name>m_possibleCrtcs</name>
+        <qualifiedname>KWin::DrmPlane::m_possibleCrtcs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="109" column="14" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_plane_1abd89d631fcb825f1fa96d4407dc1d245" prot="private" static="no" mutable="no">
+        <type>QList&lt; QSize &gt;</type>
+        <definition>QList&lt;QSize&gt; KWin::DrmPlane::m_sizeHints</definition>
+        <argsstring></argsstring>
+        <name>m_sizeHints</name>
+        <qualifiedname>KWin::DrmPlane::m_sizeHints</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="110" column="11" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_drm_plane_1adc7602990a293fa18243afef346c8d07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::DrmPlane::DrmPlane</definition>
+        <argsstring>(DrmGpu *gpu, uint32_t planeId)</argsstring>
+        <name>DrmPlane</name>
+        <qualifiedname>KWin::DrmPlane::DrmPlane</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref> *</type>
+          <declname>gpu</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>planeId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="32" column="5" bodyfile="kwin/src/backends/drm/drm_plane.cpp" bodystart="27" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_plane_1a6635546fac4fd82c31d6c345b24c7378" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmPlane::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <qualifiedname>KWin::DrmPlane::init</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="34" column="10" bodyfile="kwin/src/backends/drm/drm_plane.cpp" bodystart="75" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_plane_1aa8a1ed3e2714bed2be35dc0250882071" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmPlane::updateProperties</definition>
+        <argsstring>() override</argsstring>
+        <name>updateProperties</name>
+        <qualifiedname>KWin::DrmPlane::updateProperties</qualifiedname>
+        <reimplements refid="class_k_win_1_1_drm_object_1a2d63d8a1def84213ef0d08dc565ea00a">updateProperties</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="36" column="10" bodyfile="kwin/src/backends/drm/drm_plane.cpp" bodystart="80" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_plane_1a43be44b926edb7a2e6b9fd83de4885d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPlane::disable</definition>
+        <argsstring>(DrmAtomicCommit *commit) override</argsstring>
+        <name>disable</name>
+        <qualifiedname>KWin::DrmPlane::disable</qualifiedname>
+        <reimplements refid="class_k_win_1_1_drm_object_1a9dc7d3d6bcd8bc802d795b5853290d95">disable</reimplements>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_atomic_commit" kindref="compound">DrmAtomicCommit</ref> *</type>
+          <declname>commit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the properties in such a way that this resource won&apos;t be used anymore </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="37" column="10" bodyfile="kwin/src/backends/drm/drm_plane.cpp" bodystart="196" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_plane_1af30b89f399587d62b659fa6e8a4fa002" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmPlane::isCrtcSupported</definition>
+        <argsstring>(int pipeIndex) const</argsstring>
+        <name>isCrtcSupported</name>
+        <qualifiedname>KWin::DrmPlane::isCrtcSupported</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>pipeIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="39" column="10" bodyfile="kwin/src/backends/drm/drm_plane.cpp" bodystart="168" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_plane_1a16923884fd73ab481d114da2914f769e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QHash&lt; uint32_t, QList&lt; uint64_t &gt; &gt;</type>
+        <definition>QHash&lt; uint32_t, QList&lt; uint64_t &gt; &gt; KWin::DrmPlane::formats</definition>
+        <argsstring>() const</argsstring>
+        <name>formats</name>
+        <qualifiedname>KWin::DrmPlane::formats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="40" column="11" bodyfile="kwin/src/backends/drm/drm_plane.cpp" bodystart="173" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_plane_1a3e48adfa3a7fa0e5198c06817514365b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmPlane::supportsTransformation</definition>
+        <argsstring>(OutputTransform transform) const</argsstring>
+        <name>supportsTransformation</name>
+        <qualifiedname>KWin::DrmPlane::supportsTransformation</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_output_transform" kindref="compound">OutputTransform</ref></type>
+          <declname>transform</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="41" column="10" bodyfile="kwin/src/backends/drm/drm_plane.cpp" bodystart="233" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_plane_1aa81e6b2f4988d609d48085184820166b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_framebuffer" kindref="compound">DrmFramebuffer</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; DrmFramebuffer &gt; KWin::DrmPlane::currentBuffer</definition>
+        <argsstring>() const</argsstring>
+        <name>currentBuffer</name>
+        <qualifiedname>KWin::DrmPlane::currentBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="43" column="21" bodyfile="kwin/src/backends/drm/drm_plane.cpp" bodystart="178" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_plane_1a39fbfcade76c6eb9b7cef72e1b0d1195" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPlane::setCurrentBuffer</definition>
+        <argsstring>(const std::shared_ptr&lt; DrmFramebuffer &gt; &amp;b)</argsstring>
+        <name>setCurrentBuffer</name>
+        <qualifiedname>KWin::DrmPlane::setCurrentBuffer</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_framebuffer" kindref="compound">DrmFramebuffer</ref> &gt; &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="44" column="10" bodyfile="kwin/src/backends/drm/drm_plane.cpp" bodystart="183" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_plane_1aef21c860a1c1e281a7f52ce9528d615e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPlane::releaseCurrentBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>releaseCurrentBuffer</name>
+        <qualifiedname>KWin::DrmPlane::releaseCurrentBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="45" column="10" bodyfile="kwin/src/backends/drm/drm_plane.cpp" bodystart="202" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_plane_1a8e85f7c85f2a80f061baf802480a9526" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPlane::set</definition>
+        <argsstring>(DrmAtomicCommit *commit, const QRect &amp;src, const QRect &amp;dst)</argsstring>
+        <name>set</name>
+        <qualifiedname>KWin::DrmPlane::set</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_atomic_commit" kindref="compound">DrmAtomicCommit</ref> *</type>
+          <declname>commit</declname>
+        </param>
+        <param>
+          <type>const QRect &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>const QRect &amp;</type>
+          <declname>dst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="47" column="10" bodyfile="kwin/src/backends/drm/drm_plane.cpp" bodystart="155" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_plane_1a9cf8fd2eb153589d5b162e1afaf4f915" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; QSize &gt;</type>
+        <definition>QList&lt; QSize &gt; KWin::DrmPlane::recommendedSizes</definition>
+        <argsstring>() const</argsstring>
+        <name>recommendedSizes</name>
+        <qualifiedname>KWin::DrmPlane::recommendedSizes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="49" column="11" bodyfile="kwin/src/backends/drm/drm_plane.cpp" bodystart="238" bodyend="241"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_drm_plane_1a7a55a0ad950e614879c867277fb1389e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Transformations</type>
+        <definition>DrmPlane::Transformations KWin::DrmPlane::outputTransformToPlaneTransform</definition>
+        <argsstring>(OutputTransform transform)</argsstring>
+        <name>outputTransformToPlaneTransform</name>
+        <qualifiedname>KWin::DrmPlane::outputTransformToPlaneTransform</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_output_transform" kindref="compound">OutputTransform</ref></type>
+          <declname>transform</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_plane.h" line="66" column="28" bodyfile="kwin/src/backends/drm/drm_plane.cpp" bodystart="209" bodyend="231"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>KWin::DrmObject</label>
+        <link refid="class_k_win_1_1_drm_object"/>
+      </node>
+      <node id="1">
+        <label>KWin::DrmPlane</label>
+        <link refid="class_k_win_1_1_drm_plane"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="7">
+        <label>KWin::DrmEnumProperty&lt; ColorEncoding &gt;</label>
+        <link refid="class_k_win_1_1_drm_enum_property"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>KWin::DrmEnumProperty&lt; ColorRange &gt;</label>
+        <link refid="class_k_win_1_1_drm_enum_property"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>KWin::DrmEnumProperty&lt; PixelBlendMode &gt;</label>
+        <link refid="class_k_win_1_1_drm_enum_property"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>KWin::DrmEnumProperty&lt; Transformations &gt;</label>
+        <link refid="class_k_win_1_1_drm_enum_property"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>KWin::DrmEnumProperty&lt; TypeIndex &gt;</label>
+        <link refid="class_k_win_1_1_drm_enum_property"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::DrmObject</label>
+        <link refid="class_k_win_1_1_drm_object"/>
+      </node>
+      <node id="1">
+        <label>KWin::DrmPlane</label>
+        <link refid="class_k_win_1_1_drm_plane"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>alpha</edgelabel>
+          <edgelabel>crtcH</edgelabel>
+          <edgelabel>crtcId</edgelabel>
+          <edgelabel>crtcW</edgelabel>
+          <edgelabel>crtcX</edgelabel>
+          <edgelabel>crtcY</edgelabel>
+          <edgelabel>fbId</edgelabel>
+          <edgelabel>inFenceFd</edgelabel>
+          <edgelabel>inFormats</edgelabel>
+          <edgelabel>sizeHints</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>rotation</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>pixelBlendMode</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>colorEncoding</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>colorRange</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>KWin::DrmProperty</label>
+        <link refid="class_k_win_1_1_drm_property"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_obj</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/backends/drm/drm_plane.h" line="28" column="1" bodyfile="kwin/src/backends/drm/drm_plane.h" bodystart="29" bodyend="111"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_drm_plane_1a57aedbc0a0bf9e91513533879ec083c0" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>alpha</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1ad41412681a907af29b03f8e5283d2993" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>ColorEncoding</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1ab6b29a13448a965fa0c785f1e790d08f" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>colorEncoding</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a3d7395abfc1c3c0926fd222b95bd4696" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>ColorRange</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a6c3bbf88e6beca0609f71ec013e9861e" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>colorRange</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1aecf5d68ffc03554eab5df2f995d75a70" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>crtcH</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1ace0f0f2fbd7b6467efc3051d82af3221" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>crtcId</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a5a4a3b5cf83476b21b03dd8318a19ab2" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>crtcW</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a49b53c8f1ecbdefabd45b23538ee6bb5" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>crtcX</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1af4eca2e519745ff4588ffbed9f15df2c" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>crtcY</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1aa81e6b2f4988d609d48085184820166b" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>currentBuffer</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a43be44b926edb7a2e6b9fd83de4885d4" prot="public" virt="virtual"><scope>KWin::DrmPlane</scope><name>disable</name></member>
+      <member refid="class_k_win_1_1_drm_object_1a70a401c444ac69c534744e9b11f93b66" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>DrmObject</name></member>
+      <member refid="class_k_win_1_1_drm_object_1ab0d824f144560c8148c1fccb8ee3b9d3" prot="protected" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>DrmObject</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1adc7602990a293fa18243afef346c8d07" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>DrmPlane</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a7af89f91521a45f2db46cf9d826bdf5c" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>fbId</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a16923884fd73ab481d114da2914f769e" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>formats</name></member>
+      <member refid="class_k_win_1_1_drm_object_1a8093fc529b574d5dd01bbfd5e39530a8" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>gpu</name></member>
+      <member refid="class_k_win_1_1_drm_object_1a2474d06d22464f17cd51d440232cd249" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>id</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a2ed5ecf233ee36a11d945d88cec68434" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>inFenceFd</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a3f47e0aaa037a01c15cce83023cc4990" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>inFormats</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a6635546fac4fd82c31d6c345b24c7378" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>init</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1af30b89f399587d62b659fa6e8a4fa002" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>isCrtcSupported</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a0f3d0eec4582de118c08870ea8d6a28a" prot="private" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>m_current</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1ab7459cf19ca38f665a845843a5674d2e" prot="private" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>m_lastBuffers</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a73e539f029f07d041418efcad8a188f5" prot="private" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>m_possibleCrtcs</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1abd89d631fcb825f1fa96d4407dc1d245" prot="private" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>m_sizeHints</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a2b43db0cf8edfbf667a0b8ceceba39ae" prot="private" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>m_supportedFormats</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a7a55a0ad950e614879c867277fb1389e" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>outputTransformToPlaneTransform</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1aa26f851a800509e77e6e6ca3782b6e5d" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>PixelBlendMode</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a8f82574d6ae7100515cb015bb56c6174" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>pixelBlendMode</name></member>
+      <member refid="class_k_win_1_1_drm_object_1a0a7f7c63ff4ed6c9a7e790048ddcb22c" prot="protected" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>queryProperties</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a9cf8fd2eb153589d5b162e1afaf4f915" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>recommendedSizes</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1aef21c860a1c1e281a7f52ce9528d615e" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>releaseCurrentBuffer</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a1e2e912dee18c6e9f08e335548dcf923" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>rotation</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a8e85f7c85f2a80f061baf802480a9526" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>set</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a39fbfcade76c6eb9b7cef72e1b0d1195" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>setCurrentBuffer</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a27d5be8daa175cf3ed541082937da31a" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>sizeHints</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a905e83160a393d0b3d3f20514dec603c" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>srcH</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a6708a231c00d77f6f01a75d03141de0a" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>srcW</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a9a32df6f23c511438a5593eadca1d32e" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>srcX</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a4220fdac4f6e34dedf2b2a0a28c11eb5" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>srcY</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a3e48adfa3a7fa0e5198c06817514365b" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>supportsTransformation</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eb" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>Transformation</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a008eab562bd7f060b9adb51151ff8ca5" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>type</name></member>
+      <member refid="class_k_win_1_1_drm_object_1afd534686cca7652c42982dd47585986d" prot="public" virt="non-virtual" ambiguityscope="KWin::DrmObject::"><scope>KWin::DrmPlane</scope><name>type</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a3cf72c069e4b10ac10646deba960d050" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>TypeIndex</name></member>
+      <member refid="class_k_win_1_1_drm_object_1a31f7cf34a6cc49dc709245e41a22fa8b" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>typeName</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1aa8a1ed3e2714bed2be35dc0250882071" prot="public" virt="virtual"><scope>KWin::DrmPlane</scope><name>updateProperties</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1a1266608c1ad7fee89c893b6938989c3a" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>vmHotspotX</name></member>
+      <member refid="class_k_win_1_1_drm_plane_1ac6edd59092eefc8247cb829501ac5954" prot="public" virt="non-virtual"><scope>KWin::DrmPlane</scope><name>vmHotspotY</name></member>
+      <member refid="class_k_win_1_1_drm_object_1a532c2f0797b27f68612d6bf145ac26d5" prot="public" virt="virtual"><scope>KWin::DrmPlane</scope><name>~DrmObject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

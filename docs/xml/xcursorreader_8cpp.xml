@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="xcursorreader_8cpp" kind="file" language="C++">
+    <compoundname>xcursorreader.cpp</compoundname>
+    <includes refid="xcursorreader_8h" local="yes">utils/xcursorreader.h</includes>
+    <includes refid="xcursor_8h" local="yes">3rdparty/xcursor.h</includes>
+    <includes local="no">QFile</includes>
+    <incdepgraph>
+      <node id="9">
+        <label>3rdparty/xcursor.h</label>
+        <link refid="xcursor_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>utils/cursortheme.h</label>
+        <link refid="cursortheme_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/utils/xcursorreader.cpp</label>
+        <link refid="xcursorreader_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>utils/xcursorreader.h</label>
+        <link refid="xcursorreader_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>QFile</label>
+      </node>
+      <node id="5">
+        <label>QImage</label>
+      </node>
+      <node id="6">
+        <label>QList</label>
+      </node>
+      <node id="7">
+        <label>QSharedDataPointer</label>
+      </node>
+      <node id="8">
+        <label>chrono</label>
+      </node>
+      <node id="4">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="10">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2024<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="xcursorreader_8h" kindref="compound">utils/xcursorreader.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="xcursor_8h" kindref="compound">3rdparty/xcursor.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QFile&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="class_k_win_1_1_x_cursor_reader_1a5657d071b57a4bb287b3598fc6aa5a1c" refkind="member"><highlight class="normal">QList&lt;CursorSprite&gt;<sp/><ref refid="class_k_win_1_1_x_cursor_reader_1a5657d071b57a4bb287b3598fc6aa5a1c" kindref="member">XCursorReader::load</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;filePath,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desiredSize,<sp/>qreal<sp/>devicePixelRatio)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>QFile<sp/>file(filePath);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!file.open(QFile::ReadOnly))<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{};</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="xcursor_8h_1a89db389de4abf1ffef6c413902b277a1" kindref="member">XcursorFile</ref><sp/>reader<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.closure<sp/>=<sp/>&amp;file,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.read<sp/>=<sp/>[](<ref refid="xcursor_8h_1a89db389de4abf1ffef6c413902b277a1" kindref="member">XcursorFile</ref><sp/>*file,<sp/>uint8_t<sp/>*buffer,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len)<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QFile<sp/>*device<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">QFile<sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(file-&gt;<ref refid="struct___xcursor_file_1a88e2aa0c5eb1ba53ade7f8c95fdea5c6" kindref="member">closure</ref>);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>device-&gt;read(</highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(buffer),<sp/>len);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.skip<sp/>=<sp/>[](<ref refid="xcursor_8h_1a89db389de4abf1ffef6c413902b277a1" kindref="member">XcursorFile</ref><sp/>*file,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>offset)<sp/>-&gt;<sp/><ref refid="xcursor_8h_1a84b161060aea3ae6fa7446137e0d3851" kindref="member">XcursorBool</ref><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QFile<sp/>*device<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">QFile<sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(file-&gt;<ref refid="struct___xcursor_file_1a88e2aa0c5eb1ba53ade7f8c95fdea5c6" kindref="member">closure</ref>);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>device-&gt;skip(offset)<sp/>!=<sp/>-1;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.seek<sp/>=<sp/>[](<ref refid="xcursor_8h_1a89db389de4abf1ffef6c413902b277a1" kindref="member">XcursorFile</ref><sp/>*file,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>offset)<sp/>-&gt;<sp/><ref refid="xcursor_8h_1a84b161060aea3ae6fa7446137e0d3851" kindref="member">XcursorBool</ref><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QFile<sp/>*device<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">QFile<sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(file-&gt;<ref refid="struct___xcursor_file_1a88e2aa0c5eb1ba53ade7f8c95fdea5c6" kindref="member">closure</ref>);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>device-&gt;seek(offset);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="xcursor_8h_1a2162da19c6e8b3b8dd879f9941f946cf" kindref="member">XcursorImages</ref><sp/>*images<sp/>=<sp/><ref refid="xcursor_8c_1a40b3bfd11b92f729e65d2a54e5c32cc4" kindref="member">XcursorXcFileLoadImages</ref>(&amp;reader,<sp/>desiredSize<sp/>*<sp/>devicePixelRatio);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!images)<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;CursorSprite&gt;<sp/>sprites;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>images-&gt;<ref refid="struct___xcursor_images_1a9fa3bd45f1c372ad22fef4726c6ff058" kindref="member">nimage</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="xcursor_8h_1ac2e3fc2e0425419ec105cea264621146" kindref="member">XcursorImage</ref><sp/>*nativeCursorImage<sp/>=<sp/>images-&gt;<ref refid="struct___xcursor_images_1af88ae1e4cc756a473a498d754f6ca7e6" kindref="member">images</ref>[i];</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>qreal<sp/>scale<sp/>=<sp/>std::max(qreal(1),<sp/>qreal(nativeCursorImage-&gt;<ref refid="struct___xcursor_image_1a99546e831091c42aa9c1c2676e76ca4f" kindref="member">size</ref>)<sp/>/<sp/>desiredSize);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>hotspot(nativeCursorImage-&gt;<ref refid="struct___xcursor_image_1a40265c8dce6474ab9d6af9f21641133a" kindref="member">xhot</ref>,<sp/>nativeCursorImage-&gt;<ref refid="struct___xcursor_image_1a334f2d2c4a27431f208431a8c5101e16" kindref="member">yhot</ref>);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::chrono::milliseconds<sp/>delay(nativeCursorImage-&gt;<ref refid="struct___xcursor_image_1a16e53fbfbaa3be03893e001c0e83a9f8" kindref="member">delay</ref>);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QImage<sp/>data(nativeCursorImage-&gt;<ref refid="struct___xcursor_image_1a1a44c0fd6371221ebe8a8f152d3aec42" kindref="member">width</ref>,<sp/>nativeCursorImage-&gt;<ref refid="struct___xcursor_image_1ac5b594aafc96a1dc2530d64c9209d99e" kindref="member">height</ref>,<sp/>QImage::Format_ARGB32_Premultiplied);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data.setDevicePixelRatio(scale);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(data.bits(),<sp/>nativeCursorImage-&gt;<ref refid="struct___xcursor_image_1a4f251d589e66aec18b9ead6acdda8418" kindref="member">pixels</ref>,<sp/>data.sizeInBytes());</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprites.append(<ref refid="class_k_win_1_1_cursor_sprite" kindref="compound">CursorSprite</ref>(data,<sp/>hotspot<sp/>/<sp/>scale,<sp/>delay));</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="xcursor_8c_1a36cdaf411af67285d8ecc9c4fb1ad10f" kindref="member">XcursorImagesDestroy</ref>(images);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sprites;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/utils/xcursorreader.cpp"/>
+  </compounddef>
+</doxygen>

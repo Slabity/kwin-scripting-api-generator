@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="wayland__display_8h" kind="file" language="C++">
+    <compoundname>wayland_display.h</compoundname>
+    <includes local="no">QHash</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">memory</includes>
+    <includedby refid="wayland__backend_8cpp" local="yes">kwin/src/backends/wayland/wayland_backend.cpp</includedby>
+    <includedby refid="wayland__display_8cpp" local="yes">kwin/src/backends/wayland/wayland_display.cpp</includedby>
+    <includedby refid="wayland__egl__backend_8cpp" local="yes">kwin/src/backends/wayland/wayland_egl_backend.cpp</includedby>
+    <includedby refid="wayland__output_8cpp" local="yes">kwin/src/backends/wayland/wayland_output.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/backends/wayland/wayland_display.h</label>
+        <link refid="wayland__display_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QHash</label>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/backends/wayland/wayland_backend.cpp</label>
+        <link refid="wayland__backend_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/backends/wayland/wayland_display.cpp</label>
+        <link refid="wayland__display_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/backends/wayland/wayland_display.h</label>
+        <link refid="wayland__display_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>kwin/src/backends/wayland/wayland_egl_backend.cpp</label>
+        <link refid="wayland__egl__backend_8cpp"/>
+      </node>
+      <node id="5">
+        <label>kwin/src/backends/wayland/wayland_output.cpp</label>
+        <link refid="wayland__output_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_wayland_1_1_wayland_linux_dmabuf_v1" prot="public">KWin::Wayland::WaylandLinuxDmabufV1</innerclass>
+    <innerclass refid="class_k_win_1_1_wayland_1_1_wayland_display" prot="public">KWin::Wayland::WaylandDisplay</innerclass>
+    <innernamespace refid="namespace_k_wayland">KWayland</innernamespace>
+    <innernamespace refid="namespace_k_wayland_1_1_client">KWayland::Client</innernamespace>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <innernamespace refid="namespace_k_win_1_1_wayland">KWin::Wayland</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2022<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QHash&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_display;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_registry;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_shm;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">zwp_linux_dmabuf_v1;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wp_presentation;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wp_tearing_control_manager_v1;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_wayland" kindref="compound">KWayland</ref></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_wayland_1_1_client" kindref="compound">Client</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Compositor;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">PointerConstraints;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">PointerGestures;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">RelativePointerManager;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Seat;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">XdgDecorationManager;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">XdgShell;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win_1_1_wayland" kindref="compound">Wayland</ref></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_wayland_1_1_wayland_event_thread" kindref="compound">WaylandEventThread</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_wayland_1_1_wayland_linux_dmabuf_feedback_v1" kindref="compound">WaylandLinuxDmabufFeedbackV1</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_wayland_1_1_color_manager" kindref="compound">ColorManager</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="class_k_win_1_1_wayland_1_1_wayland_linux_dmabuf_v1" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_wayland_1_1_wayland_linux_dmabuf_v1_1a3e5fe116baa1cf5dbcf74650e27b6b22" kindref="member">WaylandLinuxDmabufV1</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_wayland_1_1_wayland_linux_dmabuf_v1_1a3e5fe116baa1cf5dbcf74650e27b6b22" kindref="member">WaylandLinuxDmabufV1</ref>(wl_registry<sp/>*registry,<sp/>uint32_t<sp/>name,<sp/>uint32_t<sp/><ref refid="namespace_k_win_1ad85acfe1f9d7ee3655274bf2fc62d9a3" kindref="member">version</ref>);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_wayland_1_1_wayland_linux_dmabuf_v1_1adab985052a662c12ab3c37d2be920d2e" kindref="member">~WaylandLinuxDmabufV1</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>zwp_linux_dmabuf_v1<sp/>*<ref refid="class_k_win_1_1_wayland_1_1_wayland_linux_dmabuf_v1_1aa121b76b25d2c94042a70e0c85845c8b" kindref="member">handle</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>QByteArray<sp/><ref refid="class_k_win_1_1_wayland_1_1_wayland_linux_dmabuf_v1_1a9a91b2fd3a24a8958d6bc6c1042c9ffc" kindref="member">mainDevice</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>QHash&lt;uint32_t,<sp/>QList&lt;uint64_t&gt;&gt;<sp/><ref refid="class_k_win_1_1_wayland_1_1_wayland_linux_dmabuf_v1_1a702d419dc821b11b215021341ae69a38" kindref="member">formats</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a6ef3f38157c98f3fe83ae3ec855ee903" kindref="member">format</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>zwp_linux_dmabuf_v1<sp/>*zwp_linux_dmabuf_v1,<sp/>uint32_t<sp/>format);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>modifier(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>zwp_linux_dmabuf_v1<sp/>*zwp_linux_dmabuf_v1,<sp/>uint32_t<sp/>format,<sp/>uint32_t<sp/>modifier_hi,<sp/>uint32_t<sp/>modifier_lo);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>zwp_linux_dmabuf_v1<sp/>*m_dmabuf;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;WaylandLinuxDmabufFeedbackV1&gt;<sp/>m_defaultFeedback;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="class_k_win_1_1_wayland_1_1_wayland_display" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_wayland_1_1_wayland_display_1a11e9106402d0fbcd67f9c8d0719d2536" kindref="member">WaylandDisplay</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_wayland_1_1_wayland_display_1a11e9106402d0fbcd67f9c8d0719d2536" kindref="member">WaylandDisplay</ref>();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_wayland_1_1_wayland_display_1aa539ca32529631811cbf34affe44a4cc" kindref="member">~WaylandDisplay</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_wayland_1_1_wayland_display_1a74d7d0a9e5e0682835140aa749d682c6" kindref="member">initialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;socketName);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_display<sp/>*<ref refid="class_k_win_1_1_wayland_1_1_wayland_display_1a1a4358ab81e8fed73f661135afcc6420" kindref="member">nativeDisplay</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>KWayland::Client::Compositor<sp/>*<ref refid="class_k_win_1_1_wayland_1_1_wayland_display_1ab15043c365b9bab42e64f5756fa935ca" kindref="member">compositor</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>KWayland::Client::PointerConstraints<sp/>*<ref refid="class_k_win_1_1_wayland_1_1_wayland_display_1a1d12b3b810d632d60534b23a45530a50" kindref="member">pointerConstraints</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>KWayland::Client::PointerGestures<sp/>*<ref refid="class_k_win_1_1_wayland_1_1_wayland_display_1aba4c32905c18eb3d17f9a06363321b9a" kindref="member">pointerGestures</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>KWayland::Client::RelativePointerManager<sp/>*<ref refid="class_k_win_1_1_wayland_1_1_wayland_display_1a6f660b083f7119838d3acebc68a87146" kindref="member">relativePointerManager</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>KWayland::Client::Seat<sp/>*<ref refid="class_k_win_1_1_wayland_1_1_wayland_display_1add0bae570e89003f857c4fe8c16190fb" kindref="member">seat</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>KWayland::Client::XdgDecorationManager<sp/>*<ref refid="class_k_win_1_1_wayland_1_1_wayland_display_1a7eb95f268d4e7e553a6b1b57f2ad0cdb" kindref="member">xdgDecorationManager</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_shm<sp/>*<ref refid="class_k_win_1_1_wayland_1_1_wayland_display_1a44ceab97b270c7fbd854f6f9dcb0f36a" kindref="member">shm</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>KWayland::Client::XdgShell<sp/>*<ref refid="class_k_win_1_1_wayland_1_1_wayland_display_1ae8f00a8c957062545fbbb6e85f9ea938" kindref="member">xdgShell</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_wayland_1_1_wayland_linux_dmabuf_v1" kindref="compound">WaylandLinuxDmabufV1</ref><sp/>*<ref refid="class_k_win_1_1_wayland_1_1_wayland_display_1a79ae91243b6e6386721c9d379df47b0a" kindref="member">linuxDmabuf</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>wp_presentation<sp/>*<ref refid="class_k_win_1_1_wayland_1_1_wayland_display_1aeb9d15d3211577633de4122a4746dc50" kindref="member">presentationTime</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>wp_tearing_control_manager_v1<sp/>*<ref refid="class_k_win_1_1_wayland_1_1_wayland_display_1aa3ef74c4091d9d75f2b5e870fe104e01" kindref="member">tearingControl</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_wayland_1_1_color_manager" kindref="compound">ColorManager</ref><sp/>*<ref refid="class_k_win_1_1_wayland_1_1_wayland_display_1a4899b6c6e017a084769330fd2b784092" kindref="member">colorManager</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_wayland_1_1_wayland_display_1aec7eea5e3a3290c324e91ab24dff35c8" kindref="member">flush</ref>();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>registry_global(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data,<sp/>wl_registry<sp/>*registry,<sp/>uint32_t<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*interface,<sp/>uint32_t<sp/><ref refid="namespace_k_win_1ad85acfe1f9d7ee3655274bf2fc62d9a3" kindref="member">version</ref>);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>registry_global_remove(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data,<sp/>wl_registry<sp/>*registry,<sp/>uint32_t<sp/>name);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_display<sp/>*m_display<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_registry<sp/>*m_registry<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_shm<sp/>*m_shm<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>wp_presentation<sp/>*m_presentationTime<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>wp_tearing_control_manager_v1<sp/>*m_tearingControl<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;ColorManager&gt;<sp/>m_colorManager;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;WaylandEventThread&gt;<sp/>m_eventThread;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;WaylandLinuxDmabufV1&gt;<sp/>m_linuxDmabuf;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;KWayland::Client::Compositor&gt;<sp/>m_compositor;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;KWayland::Client::PointerConstraints&gt;<sp/>m_pointerConstraints;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;KWayland::Client::PointerGestures&gt;<sp/>m_pointerGestures;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;KWayland::Client::RelativePointerManager&gt;<sp/>m_relativePointerManager;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;KWayland::Client::Seat&gt;<sp/>m_seat;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;KWayland::Client::XdgDecorationManager&gt;<sp/>m_xdgDecorationManager;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;KWayland::Client::XdgShell&gt;<sp/>m_xdgShell;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/backends/wayland/wayland_display.h"/>
+  </compounddef>
+</doxygen>

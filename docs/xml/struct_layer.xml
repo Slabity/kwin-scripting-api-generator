@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="struct_layer" kind="struct" language="C++" prot="public">
+    <compoundname>Layer</compoundname>
+    <includes refid="expolayout_8h" local="no">expolayout.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_layer_1acc650d70d89dfcaea8accddb057a6bc4" prot="public" static="no" mutable="no">
+        <type>qreal</type>
+        <definition>qreal Layer::maxWidth</definition>
+        <argsstring></argsstring>
+        <name>maxWidth</name>
+        <qualifiedname>Layer::maxWidth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/private/expolayout.h" line="293" column="11" bodyfile="kwin/src/plugins/private/expolayout.h" bodystart="293" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_layer_1acf38d8d1464bcaf2c54bce4b06becde6" prot="public" static="no" mutable="no">
+        <type>qreal</type>
+        <definition>qreal Layer::maxHeight</definition>
+        <argsstring></argsstring>
+        <name>maxHeight</name>
+        <qualifiedname>Layer::maxHeight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/private/expolayout.h" line="294" column="11" bodyfile="kwin/src/plugins/private/expolayout.h" bodystart="294" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_layer_1af0686fbf6f3dc5916b09711905963327" prot="public" static="no" mutable="no">
+        <type>qreal</type>
+        <definition>qreal Layer::remainingWidth</definition>
+        <argsstring></argsstring>
+        <name>remainingWidth</name>
+        <qualifiedname>Layer::remainingWidth</qualifiedname>
+        <briefdescription>
+<para>The remaining width available to new windows in this layer. <ref refid="struct_layer_1aa607dc7afd0a0fb590781a3a39613ad9" kindref="member">width()</ref> + <ref refid="struct_layer_1af0686fbf6f3dc5916b09711905963327" kindref="member">remainingWidth()</ref> == maxWidth. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/private/expolayout.h" line="299" column="11" bodyfile="kwin/src/plugins/private/expolayout.h" bodystart="299" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_layer_1adf310bd130dc36f31672d33beca8596b" prot="public" static="no" mutable="no">
+        <type>QList&lt; size_t &gt;</type>
+        <definition>QList&lt;size_t&gt; Layer::ids</definition>
+        <argsstring></argsstring>
+        <name>ids</name>
+        <qualifiedname>Layer::ids</qualifiedname>
+        <briefdescription>
+<para>The indices of windows in this layer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/private/expolayout.h" line="304" column="11" bodyfile="kwin/src/plugins/private/expolayout.h" bodystart="304" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_layer_1ad58afa8d9c07813533b6f1bce5f89a3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Layer::Layer</definition>
+        <argsstring>(qreal maxWidth, const QList&lt; QRectF &gt; &amp;windowSizes, const QList&lt; size_t &gt; &amp;windowIds, size_t startPos, size_t endPos)</argsstring>
+        <name>Layer</name>
+        <qualifiedname>Layer::Layer</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>maxWidth</declname>
+        </param>
+        <param>
+          <type>const QList&lt; QRectF &gt; &amp;</type>
+          <declname>windowSizes</declname>
+        </param>
+        <param>
+          <type>const QList&lt; size_t &gt; &amp;</type>
+          <declname>windowIds</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>startPos</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>endPos</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a new layer with the given maximum width and populates it with the given windows. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>maxWidth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum width of the layer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>windowSizes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The sizes of all the windows. Must be sorted in ascending order by height. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>windowIds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ids of the windows. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>startPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>windowIds[startPos] is the first window in this layer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>endPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>windowIds[endPos-1] is the last window in this layer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/private/expolayout.h" line="317" column="5" bodyfile="kwin/src/plugins/private/expolayout.cpp" bodystart="429" bodyend="438"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_layer_1aa607dc7afd0a0fb590781a3a39613ad9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal Layer::width</definition>
+        <argsstring>() const</argsstring>
+        <name>width</name>
+        <qualifiedname>Layer::width</qualifiedname>
+        <briefdescription>
+<para>The total width of all the windows in this layer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/private/expolayout.h" line="323" column="11" bodyfile="kwin/src/plugins/private/expolayout.cpp" bodystart="440" bodyend="443"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Each <ref refid="struct_layer" kindref="compound">Layer</ref> is a horizontal strip of windows with a maximum width and height. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="kwin/src/plugins/private/expolayout.h" line="291" column="1" bodyfile="kwin/src/plugins/private/expolayout.h" bodystart="292" bodyend="324"/>
+    <listofallmembers>
+      <member refid="struct_layer_1adf310bd130dc36f31672d33beca8596b" prot="public" virt="non-virtual"><scope>Layer</scope><name>ids</name></member>
+      <member refid="struct_layer_1ad58afa8d9c07813533b6f1bce5f89a3f" prot="public" virt="non-virtual"><scope>Layer</scope><name>Layer</name></member>
+      <member refid="struct_layer_1acf38d8d1464bcaf2c54bce4b06becde6" prot="public" virt="non-virtual"><scope>Layer</scope><name>maxHeight</name></member>
+      <member refid="struct_layer_1acc650d70d89dfcaea8accddb057a6bc4" prot="public" virt="non-virtual"><scope>Layer</scope><name>maxWidth</name></member>
+      <member refid="struct_layer_1af0686fbf6f3dc5916b09711905963327" prot="public" virt="non-virtual"><scope>Layer</scope><name>remainingWidth</name></member>
+      <member refid="struct_layer_1aa607dc7afd0a0fb590781a3a39613ad9" prot="public" virt="non-virtual"><scope>Layer</scope><name>width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

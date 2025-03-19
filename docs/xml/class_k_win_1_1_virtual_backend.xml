@@ -1,0 +1,362 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_virtual_backend" kind="class" language="C++" prot="public">
+    <compoundname>KWin::VirtualBackend</compoundname>
+    <basecompoundref refid="class_k_win_1_1_output_backend" prot="public" virt="non-virtual">KWin::OutputBackend</basecompoundref>
+    <includes refid="virtual__backend_8h" local="no">virtual_backend.h</includes>
+    <innerclass refid="struct_k_win_1_1_virtual_backend_1_1_output_info" prot="public">KWin::VirtualBackend::OutputInfo</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_virtual_backend_1a98516d35f64eae7bf45b32a64d82c2e5" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_virtual_output" kindref="compound">VirtualOutput</ref> * &gt;</type>
+        <definition>QList&lt;VirtualOutput *&gt; KWin::VirtualBackend::m_outputs</definition>
+        <argsstring></argsstring>
+        <name>m_outputs</name>
+        <qualifiedname>KWin::VirtualBackend::m_outputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/virtual/virtual_backend.h" line="67" column="11" bodyfile="kwin/src/backends/virtual/virtual_backend.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_virtual_backend_1a54eb83beb711e9d123440ba6147846a6" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_drm_device" kindref="compound">DrmDevice</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;DrmDevice&gt; KWin::VirtualBackend::m_drmDevice</definition>
+        <argsstring></argsstring>
+        <name>m_drmDevice</name>
+        <qualifiedname>KWin::VirtualBackend::m_drmDevice</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/virtual/virtual_backend.h" line="68" column="21" bodyfile="kwin/src/backends/virtual/virtual_backend.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_virtual_backend_1a9e6bacbe0e97ad7ef54a021518bc38ad" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_egl_display" kindref="compound">EglDisplay</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;EglDisplay&gt; KWin::VirtualBackend::m_display</definition>
+        <argsstring></argsstring>
+        <name>m_display</name>
+        <qualifiedname>KWin::VirtualBackend::m_display</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/virtual/virtual_backend.h" line="69" column="21" bodyfile="kwin/src/backends/virtual/virtual_backend.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_virtual_backend_1a8449eb46a614403231e52c7810e98f21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::VirtualBackend::VirtualBackend</definition>
+        <argsstring>(QObject *parent=nullptr)</argsstring>
+        <name>VirtualBackend</name>
+        <qualifiedname>KWin::VirtualBackend::VirtualBackend</qualifiedname>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/virtual/virtual_backend.h" line="28" column="5" bodyfile="kwin/src/backends/virtual/virtual_backend.cpp" bodystart="58" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_virtual_backend_1afed78b7c4cf9a2bc6f2a56ceeb7f8b1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::VirtualBackend::~VirtualBackend</definition>
+        <argsstring>() override</argsstring>
+        <name>~VirtualBackend</name>
+        <qualifiedname>KWin::VirtualBackend::~VirtualBackend</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/virtual/virtual_backend.h" line="29" column="5" bodyfile="kwin/src/backends/virtual/virtual_backend.cpp" bodystart="64" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_virtual_backend_1a58fda48fe0c3baeb212272167d184d3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::VirtualBackend::initialize</definition>
+        <argsstring>() override</argsstring>
+        <name>initialize</name>
+        <qualifiedname>KWin::VirtualBackend::initialize</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1a2cc7635583833c9858b0e33251fd4710">initialize</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/virtual/virtual_backend.h" line="31" column="10" bodyfile="kwin/src/backends/virtual/virtual_backend.cpp" bodystart="68" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_virtual_backend_1a08e897c0897c325597ca22014cc2a599" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_q_painter_backend" kindref="compound">QPainterBackend</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; QPainterBackend &gt; KWin::VirtualBackend::createQPainterBackend</definition>
+        <argsstring>() override</argsstring>
+        <name>createQPainterBackend</name>
+        <qualifiedname>KWin::VirtualBackend::createQPainterBackend</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1a648ea286530873e660802d80ba47013b">createQPainterBackend</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/virtual/virtual_backend.h" line="33" column="21" bodyfile="kwin/src/backends/virtual/virtual_backend.cpp" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_virtual_backend_1af388b8bb66786d57b01ef0ecf0397a79" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_open_g_l_backend" kindref="compound">OpenGLBackend</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; OpenGLBackend &gt; KWin::VirtualBackend::createOpenGLBackend</definition>
+        <argsstring>() override</argsstring>
+        <name>createOpenGLBackend</name>
+        <qualifiedname>KWin::VirtualBackend::createOpenGLBackend</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1ac98a70547423f4f0b7058356ea2a6a70">createOpenGLBackend</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/virtual/virtual_backend.h" line="34" column="21" bodyfile="kwin/src/backends/virtual/virtual_backend.cpp" bodystart="93" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_virtual_backend_1a2ac410edd7af624f375bdfccdc6202d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+        <definition>Output * KWin::VirtualBackend::addOutput</definition>
+        <argsstring>(const OutputInfo &amp;info)</argsstring>
+        <name>addOutput</name>
+        <qualifiedname>KWin::VirtualBackend::addOutput</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_k_win_1_1_virtual_backend_1_1_output_info" kindref="compound">OutputInfo</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/virtual/virtual_backend.h" line="49" column="12" bodyfile="kwin/src/backends/virtual/virtual_backend.cpp" bodystart="113" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_virtual_backend_1afb5f89970c4a19482e75b9d3f82885b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::VirtualBackend::setVirtualOutputs</definition>
+        <argsstring>(const QList&lt; OutputInfo &gt; &amp;infos)</argsstring>
+        <name>setVirtualOutputs</name>
+        <qualifiedname>KWin::VirtualBackend::setVirtualOutputs</qualifiedname>
+        <param>
+          <type>const QList&lt; <ref refid="struct_k_win_1_1_virtual_backend_1_1_output_info" kindref="compound">OutputInfo</ref> &gt; &amp;</type>
+          <declname>infos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/virtual/virtual_backend.h" line="50" column="10" bodyfile="kwin/src/backends/virtual/virtual_backend.cpp" bodystart="120" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_virtual_backend_1afcffd5189c002157756c5d7e6f932421" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_k_win_1_1_outputs" kindref="compound">Outputs</ref></type>
+        <definition>Outputs KWin::VirtualBackend::outputs</definition>
+        <argsstring>() const override</argsstring>
+        <name>outputs</name>
+        <qualifiedname>KWin::VirtualBackend::outputs</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1a78aad78cefc0f83edfc0f3b96e2e5b19">outputs</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/virtual/virtual_backend.h" line="52" column="13" bodyfile="kwin/src/backends/virtual/virtual_backend.cpp" bodystart="98" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_virtual_backend_1a482e8e39d83c434b3cc09b026ee7f94e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QList&lt; <ref refid="namespace_k_win_1aa1e33474a7077a13169f350a5949a79a" kindref="member">CompositingType</ref> &gt;</type>
+        <definition>QList&lt; CompositingType &gt; KWin::VirtualBackend::supportedCompositors</definition>
+        <argsstring>() const override</argsstring>
+        <name>supportedCompositors</name>
+        <qualifiedname>KWin::VirtualBackend::supportedCompositors</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1aaf8ec2edaa0d9bf4cec1e67c7de49d9e">supportedCompositors</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The CompositingTypes supported by the Platform. The first item should be the most preferred one. <simplesect kind="since"><para>5.11 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/virtual/virtual_backend.h" line="54" column="11" bodyfile="kwin/src/backends/virtual/virtual_backend.cpp" bodystart="73" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_virtual_backend_1afaa0033e32aa4b49857f6054c3dcd0fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::VirtualBackend::setEglDisplay</definition>
+        <argsstring>(std::unique_ptr&lt; EglDisplay &gt; &amp;&amp;display)</argsstring>
+        <name>setEglDisplay</name>
+        <qualifiedname>KWin::VirtualBackend::setEglDisplay</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_egl_display" kindref="compound">EglDisplay</ref> &gt; &amp;&amp;</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/virtual/virtual_backend.h" line="56" column="10" bodyfile="kwin/src/backends/virtual/virtual_backend.cpp" bodystart="138" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_virtual_backend_1ad4344d68f8677e5aadfb82061fd5634e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_k_win_1_1_egl_display" kindref="compound">EglDisplay</ref> *</type>
+        <definition>EglDisplay * KWin::VirtualBackend::sceneEglDisplayObject</definition>
+        <argsstring>() const override</argsstring>
+        <name>sceneEglDisplayObject</name>
+        <qualifiedname>KWin::VirtualBackend::sceneEglDisplayObject</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1a5a3a23d6249e363c3c3358c7b9b4304f">sceneEglDisplayObject</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/virtual/virtual_backend.h" line="57" column="16" bodyfile="kwin/src/backends/virtual/virtual_backend.cpp" bodystart="143" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_virtual_backend_1abf36bf9b6556196913725f16f7b98d98" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_device" kindref="compound">DrmDevice</ref> *</type>
+        <definition>DrmDevice * KWin::VirtualBackend::drmDevice</definition>
+        <argsstring>() const</argsstring>
+        <name>drmDevice</name>
+        <qualifiedname>KWin::VirtualBackend::drmDevice</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/virtual/virtual_backend.h" line="59" column="15" bodyfile="kwin/src/backends/virtual/virtual_backend.cpp" bodystart="83" bodyend="86"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_virtual_backend_1a963e1dfe99bf973e370f481edb799569" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::VirtualBackend::virtualOutputsSet</definition>
+        <argsstring>(bool countChanged)</argsstring>
+        <name>virtualOutputsSet</name>
+        <qualifiedname>KWin::VirtualBackend::virtualOutputsSet</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>countChanged</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/virtual/virtual_backend.h" line="62" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_virtual_backend_1a04ff3972ce8c3232a029a9316ab55607" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_virtual_output" kindref="compound">VirtualOutput</ref> *</type>
+        <definition>VirtualOutput * KWin::VirtualBackend::createOutput</definition>
+        <argsstring>(const OutputInfo &amp;info)</argsstring>
+        <name>createOutput</name>
+        <qualifiedname>KWin::VirtualBackend::createOutput</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_k_win_1_1_virtual_backend_1_1_output_info" kindref="compound">OutputInfo</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/virtual/virtual_backend.h" line="65" column="19" bodyfile="kwin/src/backends/virtual/virtual_backend.cpp" bodystart="103" bodyend="111"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>KWin::OutputBackend</label>
+        <link refid="class_k_win_1_1_output_backend"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::VirtualBackend</label>
+        <link refid="class_k_win_1_1_virtual_backend"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>KWin::OutputBackend</label>
+        <link refid="class_k_win_1_1_output_backend"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::VirtualBackend</label>
+        <link refid="class_k_win_1_1_virtual_backend"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/backends/virtual/virtual_backend.h" line="23" column="1" bodyfile="kwin/src/backends/virtual/virtual_backend.h" bodystart="24" bodyend="70"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_virtual_backend_1a2ac410edd7af624f375bdfccdc6202d6" prot="public" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>addOutput</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a0727928eeef6a3bee1dd80c6fdaedee9" prot="public" virt="virtual"><scope>KWin::VirtualBackend</scope><name>applyOutputChanges</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a4fbebf8e332a240bd6dd6fe1757caebf" prot="public" virt="virtual"><scope>KWin::VirtualBackend</scope><name>createInputBackend</name></member>
+      <member refid="class_k_win_1_1_virtual_backend_1af388b8bb66786d57b01ef0ecf0397a79" prot="public" virt="virtual"><scope>KWin::VirtualBackend</scope><name>createOpenGLBackend</name></member>
+      <member refid="class_k_win_1_1_virtual_backend_1a04ff3972ce8c3232a029a9316ab55607" prot="private" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>createOutput</name></member>
+      <member refid="class_k_win_1_1_virtual_backend_1a08e897c0897c325597ca22014cc2a599" prot="public" virt="virtual"><scope>KWin::VirtualBackend</scope><name>createQPainterBackend</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a2f8b74a51f8d8509ac3adfd8291b8a1f" prot="public" virt="virtual"><scope>KWin::VirtualBackend</scope><name>createVirtualOutput</name></member>
+      <member refid="class_k_win_1_1_virtual_backend_1abf36bf9b6556196913725f16f7b98d98" prot="public" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>drmDevice</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a116d54df69c60208e360179f42c17b16" prot="public" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>findOutput</name></member>
+      <member refid="class_k_win_1_1_virtual_backend_1a58fda48fe0c3baeb212272167d184d3c" prot="public" virt="virtual"><scope>KWin::VirtualBackend</scope><name>initialize</name></member>
+      <member refid="class_k_win_1_1_virtual_backend_1a9e6bacbe0e97ad7ef54a021518bc38ad" prot="private" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>m_display</name></member>
+      <member refid="class_k_win_1_1_virtual_backend_1a54eb83beb711e9d123440ba6147846a6" prot="private" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>m_drmDevice</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a75fb78ae0c8c311aa92d4ef1d27685ea" prot="protected" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>m_globalShareContext</name></member>
+      <member refid="class_k_win_1_1_virtual_backend_1a98516d35f64eae7bf45b32a64d82c2e5" prot="private" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>m_outputs</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a220e64d9c811434825b3c3bf1b28f947" prot="public" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>outputAdded</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a3059152d8eda13eaedd7eecad43e2470" prot="protected" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>OutputBackend</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a8f804420de03806fd046f99e80ee8332" prot="public" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>outputRemoved</name></member>
+      <member refid="class_k_win_1_1_virtual_backend_1afcffd5189c002157756c5d7e6f932421" prot="public" virt="virtual"><scope>KWin::VirtualBackend</scope><name>outputs</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a1e1afd1a11ca71d300b7229d03d54be9" prot="public" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>outputsQueried</name></member>
+      <member refid="class_k_win_1_1_output_backend_1ab89950b51e886fc63c04e6d214aef07d" prot="public" virt="virtual"><scope>KWin::VirtualBackend</scope><name>removeVirtualOutput</name></member>
+      <member refid="class_k_win_1_1_virtual_backend_1ad4344d68f8677e5aadfb82061fd5634e" prot="public" virt="virtual"><scope>KWin::VirtualBackend</scope><name>sceneEglDisplayObject</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a2edfea4626e01c8468bfaad1ad20ae62" prot="public" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>sceneEglGlobalShareContext</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a92867a26811e91d369c72b877595bdb6" prot="public" virt="virtual"><scope>KWin::VirtualBackend</scope><name>session</name></member>
+      <member refid="class_k_win_1_1_virtual_backend_1afaa0033e32aa4b49857f6054c3dcd0fd" prot="public" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>setEglDisplay</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a420a62518578de2ed53ebfc7343f589d" prot="public" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>setSceneEglGlobalShareContext</name></member>
+      <member refid="class_k_win_1_1_virtual_backend_1afb5f89970c4a19482e75b9d3f82885b0" prot="public" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>setVirtualOutputs</name></member>
+      <member refid="class_k_win_1_1_virtual_backend_1a482e8e39d83c434b3cc09b026ee7f94e" prot="public" virt="virtual"><scope>KWin::VirtualBackend</scope><name>supportedCompositors</name></member>
+      <member refid="class_k_win_1_1_output_backend_1ab144cfcc01aa623dd9e1139092619ec0" prot="public" virt="virtual"><scope>KWin::VirtualBackend</scope><name>supportInformation</name></member>
+      <member refid="class_k_win_1_1_virtual_backend_1a8449eb46a614403231e52c7810e98f21" prot="public" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>VirtualBackend</name></member>
+      <member refid="class_k_win_1_1_virtual_backend_1a963e1dfe99bf973e370f481edb799569" prot="public" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>virtualOutputsSet</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a5959251a4cfffdafeb509b40c9a29a3d" prot="public" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>~OutputBackend</name></member>
+      <member refid="class_k_win_1_1_virtual_backend_1afed78b7c4cf9a2bc6f2a56ceeb7f8b1b" prot="public" virt="non-virtual"><scope>KWin::VirtualBackend</scope><name>~VirtualBackend</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

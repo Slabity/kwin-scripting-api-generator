@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="monitor_8h" kind="file" language="C++">
+    <compoundname>monitor.h</compoundname>
+    <includes refid="screenpreviewwidget_8h" local="yes">screenpreviewwidget.h</includes>
+    <includes local="no">QActionGroup</includes>
+    <includes local="no">QGraphicsItem</includes>
+    <includes local="no">QList</includes>
+    <includes local="no">array</includes>
+    <includes local="no">memory</includes>
+    <includedby refid="kwinscreenedge_8cpp" local="yes">kwin/src/kcms/screenedges/kwinscreenedge.cpp</includedby>
+    <includedby refid="monitor_8cpp" local="yes">kwin/src/kcms/screenedges/monitor.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/kcms/screenedges/monitor.h</label>
+        <link refid="monitor_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>screenpreviewwidget.h</label>
+        <link refid="screenpreviewwidget_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QActionGroup</label>
+      </node>
+      <node id="5">
+        <label>QGraphicsItem</label>
+      </node>
+      <node id="6">
+        <label>QList</label>
+      </node>
+      <node id="3">
+        <label>QWidget</label>
+      </node>
+      <node id="7">
+        <label>array</label>
+      </node>
+      <node id="8">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/kcms/screenedges/kwinscreenedge.cpp</label>
+        <link refid="kwinscreenedge_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/kcms/screenedges/monitor.cpp</label>
+        <link refid="monitor_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/kcms/screenedges/monitor.h</label>
+        <link refid="monitor_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_monitor" prot="public">KWin::Monitor</innerclass>
+    <innerclass refid="class_k_win_1_1_monitor_1_1_corner" prot="public">KWin::Monitor::Corner</innerclass>
+    <innernamespace refid="namespace_k_svg">KSvg</innernamespace>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2008<sp/>Lubos<sp/>Lunak<sp/>&lt;l.lunak@suse.cz&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2009<sp/>Lucas<sp/>Murray<sp/>&lt;lmurray@undefinedfire.com&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="screenpreviewwidget_8h" kindref="compound">screenpreviewwidget.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QActionGroup&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QGraphicsItem&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;array&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QAction;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QGraphicsView;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QGraphicsScene;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QMenu;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="namespace_k_svg" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_svg" kindref="compound">KSvg</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">FrameSvg;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="class_k_win_1_1_monitor" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_monitor_1ac9af67bda71ea1b05cdf8d82404bad72" kindref="member">Monitor</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_screen_preview_widget_1a932b7ebd1a29c5d9b49c6b8103771015" kindref="member">ScreenPreviewWidget</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ac9af67bda71ea1b05cdf8d82404bad72" kindref="member">Monitor</ref>(QWidget<sp/>*parent);</highlight></codeline>
+<codeline lineno="39" refid="class_k_win_1_1_monitor_1a5bb819c01197416aebb2ad12e90ed26c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_monitor_1a5bb819c01197416aebb2ad12e90ed26c" kindref="member">~Monitor</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1a7608cb115363ff4546005912cadb7624" kindref="member">setEdgeEnabled</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>edge,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1a7c9c3d4cb4f32f0d17eadbf71ca01425" kindref="member">setEdgeHidden</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>edge,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>set);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1a1964eb834b7920a6cc3eb282c3fe04b3" kindref="member">edgeHidden</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>edge)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1a29403bfc05be10809ead07bf8d6cce3f" kindref="member">clear</ref>();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1a2a07d29732fe48a3edd9400cf2e46183" kindref="member">addEdgeItem</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>edge,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;item);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1a8905a216c1745d2dad65036448a6c12c" kindref="member">setEdgeItemEnabled</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>edge,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1a284af15c082a844c400bc749cce96d00" kindref="member">edgeItemEnabled</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>edge,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1a21be638a4766fabab92be33956fa136c" kindref="member">selectEdgeItem</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>edge,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1a201eb2ec99dc6a9006c7a4bc93eda53d" kindref="member">selectedEdgeItem</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>edge)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521" kindref="member">Edges</ref><sp/>{</highlight></codeline>
+<codeline lineno="52" refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521a1a29dfd7fa2dd67b53899599271e0120" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521a1a29dfd7fa2dd67b53899599271e0120" kindref="member">Left</ref>,</highlight></codeline>
+<codeline lineno="53" refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521a3ee4c4df304f9d932725ff667c6fa90b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521a3ee4c4df304f9d932725ff667c6fa90b" kindref="member">Right</ref>,</highlight></codeline>
+<codeline lineno="54" refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521ac313afd2b3c3e393d9b0096ff341bb76" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521ac313afd2b3c3e393d9b0096ff341bb76" kindref="member">Top</ref>,</highlight></codeline>
+<codeline lineno="55" refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521aa9a8d4834ef6de19218bba9a2c770578" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521aa9a8d4834ef6de19218bba9a2c770578" kindref="member">Bottom</ref>,</highlight></codeline>
+<codeline lineno="56" refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521ad0c7415499aee1de9c63e207d16eec5f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521ad0c7415499aee1de9c63e207d16eec5f" kindref="member">TopLeft</ref>,</highlight></codeline>
+<codeline lineno="57" refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521a7f66522a0039dcfe44b0451d45182629" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521a7f66522a0039dcfe44b0451d45182629" kindref="member">TopRight</ref>,</highlight></codeline>
+<codeline lineno="58" refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521afbf47a7f87e65ec7d94d0f95983e7bb5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521afbf47a7f87e65ec7d94d0f95983e7bb5" kindref="member">BottomLeft</ref>,</highlight></codeline>
+<codeline lineno="59" refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521affcf7605c95bbf1c12665359b1b847bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521affcf7605c95bbf1c12665359b1b847bc" kindref="member">BottomRight</ref>,</highlight></codeline>
+<codeline lineno="60" refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521a7b31dd95475509c7da55e8b8c397db7e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521a7b31dd95475509c7da55e8b8c397db7e" kindref="member">None</ref></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="63" refid="class_k_win_1_1_monitor_1a83e541351f09f19652233c8016e2dbef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1a83e541351f09f19652233c8016e2dbef" kindref="member">changed</ref>();</highlight></codeline>
+<codeline lineno="64" refid="class_k_win_1_1_monitor_1aaf2d5cdc7bffbbb3d9cd50ff05668376" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1aaf2d5cdc7bffbbb3d9cd50ff05668376" kindref="member">edgeSelectionChanged</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>edge,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1a78bedf54f59a32511f07546f2ab99204" kindref="member">resizeEvent</ref>(QResizeEvent<sp/>*e)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1a7609ffe6fdfc3cb38e1d7c369bf00885" kindref="member">event</ref>(QEvent<sp/>*<ref refid="class_k_win_1_1_monitor_1a7609ffe6fdfc3cb38e1d7c369bf00885" kindref="member">event</ref>)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_monitor_1_1_corner" kindref="compound">Corner</ref>;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>popup(<ref refid="class_k_win_1_1_monitor_1_1_corner" kindref="compound">Corner</ref><sp/>*c,<sp/>QPoint<sp/>pos);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>flip(<ref refid="class_k_win_1_1_monitor_1_1_corner" kindref="compound">Corner</ref><sp/>*c,<sp/>QPoint<sp/>pos);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>checkSize();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;QGraphicsScene&gt;<sp/>m_scene;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;QGraphicsView&gt;<sp/>m_view;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;std::unique_ptr&lt;Corner&gt;,<sp/>8&gt;<sp/>m_items;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;bool,<sp/>8&gt;<sp/>m_hidden;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;std::unique_ptr&lt;QMenu&gt;,<sp/>8&gt;<sp/>m_popups;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;QList&lt;QAction<sp/>*&gt;,<sp/>8&gt;<sp/>m_popupActions;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;std::unique_ptr&lt;QActionGroup&gt;,<sp/>8&gt;<sp/>m_actionGroups;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="class_k_win_1_1_monitor_1_1_corner" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_monitor_1_1_corner" kindref="compound">Monitor::Corner</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QGraphicsRectItem</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_monitor_1_1_corner_1a5d0f244681ba4a75c6560f150851923a" kindref="member">Corner</ref>(<ref refid="class_k_win_1_1_monitor_1ac9af67bda71ea1b05cdf8d82404bad72" kindref="member">Monitor</ref><sp/>*m);</highlight></codeline>
+<codeline lineno="88" refid="class_k_win_1_1_monitor_1_1_corner_1a4a4348bbe493c240c17fba668dbc7265" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_monitor_1_1_corner_1a4a4348bbe493c240c17fba668dbc7265" kindref="member">~Corner</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1_1_corner_1aa42faccf5f0e01ef859ff2c05b19a20f" kindref="member">setActive</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1_1_corner_1a05863577446a827785d4e4abcacc4731" kindref="member">active</ref>);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1_1_corner_1a05863577446a827785d4e4abcacc4731" kindref="member">active</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1_1_corner_1a2a566367a9dc7a2d942e51bf32077686" kindref="member">contextMenuEvent</ref>(QGraphicsSceneContextMenuEvent<sp/>*e)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1_1_corner_1a261a598a00199e65e183b26212187d2f" kindref="member">mousePressEvent</ref>(QGraphicsSceneMouseEvent<sp/>*e)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1_1_corner_1a8e5cb3988435b48c3472142ed92119e2" kindref="member">hoverEnterEvent</ref>(QGraphicsSceneHoverEvent<sp/>*e)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1_1_corner_1aeddbc4e3103348c5751ba7f1e0f8b7a3" kindref="member">hoverLeaveEvent</ref>(QGraphicsSceneHoverEvent<sp/>*e)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1_1_corner_1a30f375ecab9b54a8bdea6db9eff2ad18" kindref="member">paint</ref>(QPainter<sp/>*painter,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStyleOptionGraphicsItem<sp/>*option,<sp/>QWidget<sp/>*widget<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_monitor_1ac9af67bda71ea1b05cdf8d82404bad72" kindref="member">Monitor</ref><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>m_monitor;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;KSvg::FrameSvg&gt;<sp/>m_button;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_active<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_hover<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/kcms/screenedges/monitor.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="display__p_8h" kind="file" language="C++">
+    <compoundname>display_p.h</compoundname>
+    <includes local="no">wayland-server-core.h</includes>
+    <includes refid="filedescriptor_8h" local="yes">utils/filedescriptor.h</includes>
+    <includes local="no">QList</includes>
+    <includes local="no">QSocketNotifier</includes>
+    <includes local="no">QString</includes>
+    <includedby refid="display_8cpp" local="yes">kwin/src/wayland/display.cpp</includedby>
+    <includedby refid="wayland_2output_8cpp" local="yes">kwin/src/wayland/output.cpp</includedby>
+    <includedby refid="outputdevice__v2_8cpp" local="yes">kwin/src/wayland/outputdevice_v2.cpp</includedby>
+    <includedby refid="seat_8cpp" local="yes">kwin/src/wayland/seat.cpp</includedby>
+    <includedby refid="securitycontext__v1_8cpp" local="yes">kwin/src/wayland/securitycontext_v1.cpp</includedby>
+    <includedby refid="textinput__v1_8cpp" local="yes">kwin/src/wayland/textinput_v1.cpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>utils/filedescriptor.h</label>
+        <link refid="filedescriptor_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/wayland/display_p.h</label>
+        <link refid="display__p_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QList</label>
+      </node>
+      <node id="6">
+        <label>QSocketNotifier</label>
+      </node>
+      <node id="7">
+        <label>QString</label>
+      </node>
+      <node id="4">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="2">
+        <label>wayland-server-core.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/wayland/display.cpp</label>
+        <link refid="display_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/wayland/display_p.h</label>
+        <link refid="display__p_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>kwin/src/wayland/output.cpp</label>
+        <link refid="wayland_2output_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/wayland/outputdevice_v2.cpp</label>
+        <link refid="outputdevice__v2_8cpp"/>
+      </node>
+      <node id="5">
+        <label>kwin/src/wayland/seat.cpp</label>
+        <link refid="seat_8cpp"/>
+      </node>
+      <node id="6">
+        <label>kwin/src/wayland/securitycontext_v1.cpp</label>
+        <link refid="securitycontext__v1_8cpp"/>
+      </node>
+      <node id="7">
+        <label>kwin/src/wayland/textinput_v1.cpp</label>
+        <link refid="textinput__v1_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_display_private" prot="public">KWin::DisplayPrivate</innerclass>
+    <innerclass refid="class_k_win_1_1_security_context" prot="public">KWin::SecurityContext</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2014<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2018<sp/>David<sp/>Edmundson<sp/>&lt;davidedmundson@kde.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>LGPL-2.1-only<sp/>OR<sp/>LGPL-3.0-only<sp/>OR<sp/>LicenseRef-KDE-Accepted-LGPL</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;wayland-server-core.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="filedescriptor_8h" kindref="compound">utils/filedescriptor.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QSocketNotifier&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QString&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_resource;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_client_connection" kindref="compound">ClientConnection</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_output_interface" kindref="compound">OutputInterface</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_output_device_v2_interface" kindref="compound">OutputDeviceV2Interface</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_seat_interface" kindref="compound">SeatInterface</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="class_k_win_1_1_display_private" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_display_private_1aaeed7af19c0fca83206df68328a1038b" kindref="member">DisplayPrivate</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_display_private_1aaeed7af19c0fca83206df68328a1038b" kindref="member">DisplayPrivate</ref><sp/>*<ref refid="class_k_win_1_1_display_private_1a12dd52b580af2e25ed13786f801825c3" kindref="member">get</ref>(<ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*<ref refid="class_k_win_1_1_display_private_1af17916f8df3db70a547c5347ff1a65e6" kindref="member">display</ref>);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_display_private_1aaeed7af19c0fca83206df68328a1038b" kindref="member">DisplayPrivate</ref>(<ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*<ref refid="class_k_win_1_1_display_private_1a7fa07d113e47c9db5a833ee4421b8760" kindref="member">q</ref>);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_display_private_1abd8ba180b2af97a783d3fdbbd50420c2" kindref="member">registerSocketName</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;socketName);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="class_k_win_1_1_display_private_1a7fa07d113e47c9db5a833ee4421b8760" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*<ref refid="class_k_win_1_1_display_private_1a7fa07d113e47c9db5a833ee4421b8760" kindref="member">q</ref>;</highlight></codeline>
+<codeline lineno="36" refid="class_k_win_1_1_display_private_1ab6da1658850d9af1f3f69bfb6bbb1826" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QSocketNotifier<sp/>*<ref refid="class_k_win_1_1_display_private_1ab6da1658850d9af1f3f69bfb6bbb1826" kindref="member">socketNotifier</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37" refid="class_k_win_1_1_display_private_1af17916f8df3db70a547c5347ff1a65e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_display<sp/>*<ref refid="class_k_win_1_1_display_private_1af17916f8df3db70a547c5347ff1a65e6" kindref="member">display</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38" refid="class_k_win_1_1_display_private_1a73d983e3d72bdcdde14ead0c20581935" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_event_loop<sp/>*<ref refid="class_k_win_1_1_display_private_1a73d983e3d72bdcdde14ead0c20581935" kindref="member">loop</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39" refid="class_k_win_1_1_display_private_1af8b9385789227796bcee7a848d4177a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_display_private_1af8b9385789227796bcee7a848d4177a4" kindref="member">running</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40" refid="class_k_win_1_1_display_private_1a74aadb2b67d067b71243f0a66e6070e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;OutputInterface<sp/>*&gt;<sp/><ref refid="class_k_win_1_1_display_private_1a74aadb2b67d067b71243f0a66e6070e6" kindref="member">outputs</ref>;</highlight></codeline>
+<codeline lineno="41" refid="class_k_win_1_1_display_private_1a6d3c7e07bcd6fe09a926cc95de6c09c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;OutputDeviceV2Interface<sp/>*&gt;<sp/><ref refid="class_k_win_1_1_display_private_1a6d3c7e07bcd6fe09a926cc95de6c09c3" kindref="member">outputdevicesV2</ref>;</highlight></codeline>
+<codeline lineno="42" refid="class_k_win_1_1_display_private_1a0d61fb6280a8f45dec24ec5561160182" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;SeatInterface<sp/>*&gt;<sp/><ref refid="class_k_win_1_1_display_private_1a0d61fb6280a8f45dec24ec5561160182" kindref="member">seats</ref>;</highlight></codeline>
+<codeline lineno="43" refid="class_k_win_1_1_display_private_1a5c9703705b4d2cb3d254456e945390d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;ClientConnection<sp/>*&gt;<sp/><ref refid="class_k_win_1_1_display_private_1a5c9703705b4d2cb3d254456e945390d8" kindref="member">clients</ref>;</highlight></codeline>
+<codeline lineno="44" refid="class_k_win_1_1_display_private_1a0fea2e72cd88c8f1d5ad030695acf401" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QStringList<sp/><ref refid="class_k_win_1_1_display_private_1a0fea2e72cd88c8f1d5ad030695acf401" kindref="member">socketNames</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="class_k_win_1_1_security_context" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_security_context_1aa720a88ce77a97ecb29cdefd505eece6" kindref="member">SecurityContext</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_security_context_1aa720a88ce77a97ecb29cdefd505eece6" kindref="member">SecurityContext</ref>(<ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*display,<sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>&amp;&amp;listenFd,<sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>&amp;&amp;closeFd,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;appId);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_security_context_1a58b173fed62cb0b4e8ccefe82588ed95" kindref="member">~SecurityContext</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onCloseFdActivated();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onListenFdActivated(QSocketDescriptor<sp/>descriptor);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*m_display;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>m_listenFd;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>m_closeFd;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>m_appId;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/wayland/display_p.h"/>
+  </compounddef>
+</doxygen>

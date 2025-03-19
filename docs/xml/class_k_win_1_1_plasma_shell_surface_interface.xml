@@ -1,0 +1,660 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_plasma_shell_surface_interface" kind="class" language="C++" prot="public">
+    <compoundname>KWin::PlasmaShellSurfaceInterface</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="plasmashell_8h" local="no">plasmashell.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Role</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::Role</qualifiedname>
+        <enumvalue id="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804a960b44c579bc2f6818d2daaf9e4c16f0" prot="public">
+          <name>Normal</name>
+          <briefdescription>
+<para>A normal surface. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804a2310408a63388fe57e3a4177168a8798" prot="public">
+          <name>Desktop</name>
+          <briefdescription>
+<para>The surface represents a desktop, normally stacked below all other surfaces. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804ab8da6df14bf06283cbf588df6998722e" prot="public">
+          <name>Panel</name>
+          <briefdescription>
+<para>The surface represents a panel (dock), normally stacked above normal surfaces. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804ad1163214ae0eb81427f7baf7e5cc7280" prot="public">
+          <name>OnScreenDisplay</name>
+          <briefdescription>
+<para>The surface represents an on screen display, like a volume changed notification. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804a96d008db67fc0b5551a926842bbb6a71" prot="public">
+          <name>Notification</name>
+          <briefdescription>
+<para>The surface represents a notification. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804af2740703e3fef3d0f513acb7ab1d7a36" prot="public">
+          <name>ToolTip</name>
+          <briefdescription>
+<para>The surface represents a tooltip. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804a83e0e7b9ab8e5f1ffe568072e16cf1d8" prot="public">
+          <name>CriticalNotification</name>
+          <briefdescription>
+<para>The surface represents a critical notification, like battery is running out. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804af61d3dfc51cf3fdd6d1d08bd6ccfad5c" prot="public">
+          <name>AppletPopup</name>
+          <briefdescription>
+<para>The surface represents an applet popup window. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Describes possible roles this <ref refid="class_k_win_1_1_plasma_shell_surface_interface" kindref="compound">PlasmaShellSurfaceInterface</ref> can have. The role can be used by the server to e.g. change the stacking order accordingly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="87" column="5" bodyfile="kwin/src/wayland/plasmashell.h" bodystart="87" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>PanelBehavior</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::PanelBehavior</qualifiedname>
+        <enumvalue id="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665acd1810dcd59004d43111b80b7bad31cb" prot="public">
+          <name>AlwaysVisible</name>
+          <briefdescription>
+<para>The panel should be always visible. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665a6060ccae5af5a564eac006bcc8968cb9" prot="public">
+          <name>AutoHide</name>
+          <briefdescription>
+<para>The panel auto hides at a screen edge and returns on mouse press against edge. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665aa39b2b50b34f1abbecfa2b6b09f98f6e" prot="public">
+          <name>WindowsCanCover</name>
+          <briefdescription>
+<para>Windows are allowed to go above the panel, it raises on mouse press against screen edge. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665a3ce61f3b43bfdffd64bfe5df98a70d47" prot="public">
+          <name>WindowsGoBelow</name>
+          <briefdescription>
+<para><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> are allowed to go below the panel. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Describes how a <ref refid="class_k_win_1_1_plasma_shell_surface_interface" kindref="compound">PlasmaShellSurfaceInterface</ref> with role <computeroutput><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804ab8da6df14bf06283cbf588df6998722e" kindref="member">Role::Panel</ref></computeroutput> should behave.</para>
+<para>Deprecated </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="106" column="5" bodyfile="kwin/src/wayland/plasmashell.h" bodystart="106" bodyend="111"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_k_win_1_1_plasma_shell_surface_interface_1ae322e5d5510ab6e1daf91d22480d9ad8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class PlasmaShellInterfacePrivate</definition>
+        <argsstring></argsstring>
+        <name>PlasmaShellInterfacePrivate</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::PlasmaShellInterfacePrivate</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_plasma_shell_interface_private" kindref="compound">PlasmaShellInterfacePrivate</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="230" column="18" bodyfile="kwin/src/wayland/plasmashell.h" bodystart="230" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_plasma_shell_surface_interface_1a5d5eaedea7bdb8a9058d8f0b91a3580d" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_plasma_shell_surface_interface_private" kindref="compound">PlasmaShellSurfaceInterfacePrivate</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;PlasmaShellSurfaceInterfacePrivate&gt; KWin::PlasmaShellSurfaceInterface::d</definition>
+        <argsstring></argsstring>
+        <name>d</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::d</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="232" column="21" bodyfile="kwin/src/wayland/plasmashell.h" bodystart="232" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_plasma_shell_surface_interface_1a2c277daa88a781e091506cd144ae84c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>KWin::PlasmaShellSurfaceInterface::~PlasmaShellSurfaceInterface</definition>
+        <argsstring>()</argsstring>
+        <name>~PlasmaShellSurfaceInterface</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::~PlasmaShellSurfaceInterface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="63" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_plasma_shell_surface_interface_1a349d58daed2690dbf1558f117155d0d3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+        <definition>SurfaceInterface * KWin::PlasmaShellSurfaceInterface::surface</definition>
+        <argsstring>() const</argsstring>
+        <name>surface</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::surface</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the <ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> this <ref refid="class_k_win_1_1_plasma_shell_surface_interface" kindref="compound">PlasmaShellSurfaceInterface</ref> got created for </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="68" column="22" bodyfile="kwin/src/wayland/plasmashell.cpp" bodystart="135" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_plasma_shell_surface_interface_1a5e2b853241241d3fb01ab16a3ba72142" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QPoint</type>
+        <definition>QPoint KWin::PlasmaShellSurfaceInterface::position</definition>
+        <argsstring>() const</argsstring>
+        <name>position</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the requested position in global coordinates. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="72" column="12" bodyfile="kwin/src/wayland/plasmashell.cpp" bodystart="271" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_plasma_shell_surface_interface_1a95bbc19c7e6d2fb164fd75af0c496d4c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::PlasmaShellSurfaceInterface::isPositionSet</definition>
+        <argsstring>() const</argsstring>
+        <name>isPositionSet</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::isPositionSet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Whether a global position has been requested. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="76" column="10" bodyfile="kwin/src/wayland/plasmashell.cpp" bodystart="281" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_plasma_shell_surface_interface_1a558ff206fee10a6c51c22acf5d6320c3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::PlasmaShellSurfaceInterface::wantsOpenUnderCursor</definition>
+        <argsstring>() const</argsstring>
+        <name>wantsOpenUnderCursor</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::wantsOpenUnderCursor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Whether the surface has requested to be opened under the cursor. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="81" column="10" bodyfile="kwin/src/wayland/plasmashell.cpp" bodystart="286" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_plasma_shell_surface_interface_1aae753572bfa7c154174272d8d92b59d4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804" kindref="member">Role</ref></type>
+        <definition>PlasmaShellSurfaceInterface::Role KWin::PlasmaShellSurfaceInterface::role</definition>
+        <argsstring>() const</argsstring>
+        <name>role</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::role</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The requested role, default value is <computeroutput><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804a960b44c579bc2f6818d2daaf9e4c16f0" kindref="member">Role::Normal</ref></computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="100" column="10" bodyfile="kwin/src/wayland/plasmashell.cpp" bodystart="276" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_plasma_shell_surface_interface_1a2ceaae08eeba4671c08469ca59116f6e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665" kindref="member">PanelBehavior</ref></type>
+        <definition>PlasmaShellSurfaceInterface::PanelBehavior KWin::PlasmaShellSurfaceInterface::panelBehavior</definition>
+        <argsstring>() const</argsstring>
+        <name>panelBehavior</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::panelBehavior</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The <ref refid="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665" kindref="member">PanelBehavior</ref> for a <ref refid="class_k_win_1_1_plasma_shell_surface_interface" kindref="compound">PlasmaShellSurfaceInterface</ref> with role <computeroutput><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804ab8da6df14bf06283cbf588df6998722e" kindref="member">Role::Panel</ref></computeroutput> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1aae753572bfa7c154174272d8d92b59d4" kindref="member">role</ref></para>
+</simplesect>
+Deprecated. This is now ignored </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="118" column="19" bodyfile="kwin/src/wayland/plasmashell.cpp" bodystart="291" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_plasma_shell_surface_interface_1aec424f628e481eae1d3bec1976a90969" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::PlasmaShellSurfaceInterface::skipTaskbar</definition>
+        <argsstring>() const</argsstring>
+        <name>skipTaskbar</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::skipTaskbar</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if this window doesn&apos;t want to be listed in the taskbar </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="124" column="10" bodyfile="kwin/src/wayland/plasmashell.cpp" bodystart="296" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_plasma_shell_surface_interface_1a6be83dd67df3060174062d77eb9bc847" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::PlasmaShellSurfaceInterface::skipSwitcher</definition>
+        <argsstring>() const</argsstring>
+        <name>skipSwitcher</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::skipSwitcher</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if this window doesn&apos;t want to be listed in a window switcher </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="130" column="10" bodyfile="kwin/src/wayland/plasmashell.cpp" bodystart="301" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_plasma_shell_surface_interface_1adaaf80c9dfc80df9f93e4f1c2e7487c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PlasmaShellSurfaceInterface::hideAutoHidingPanel</definition>
+        <argsstring>()</argsstring>
+        <name>hideAutoHidingPanel</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::hideAutoHidingPanel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Informs the <ref refid="class_k_win_1_1_plasma_shell_surface_interface" kindref="compound">PlasmaShellSurfaceInterface</ref> that the auto-hiding panel got hidden. Once it is shown again the method <computeroutput><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ac6b60db50d9686b400c083277d76bc66" kindref="member">showAutoHidingPanel</ref></computeroutput> should be used.</para>
+<para><simplesect kind="see"><para><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ac6b60db50d9686b400c083277d76bc66" kindref="member">showAutoHidingPanel</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ae9306e1df196f201da68646ccc7313d3" kindref="member">panelAutoHideHideRequested</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1abd68846373d26264b94840e89f8c2b9d" kindref="member">panelAutoHideShowRequested</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="140" column="10" bodyfile="kwin/src/wayland/plasmashell.cpp" bodystart="306" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_plasma_shell_surface_interface_1ac6b60db50d9686b400c083277d76bc66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PlasmaShellSurfaceInterface::showAutoHidingPanel</definition>
+        <argsstring>()</argsstring>
+        <name>showAutoHidingPanel</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::showAutoHidingPanel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Informs the <ref refid="class_k_win_1_1_plasma_shell_surface_interface" kindref="compound">PlasmaShellSurfaceInterface</ref> that the auto-hiding panel got shown again.</para>
+<para><simplesect kind="see"><para><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1adaaf80c9dfc80df9f93e4f1c2e7487c0" kindref="member">hideAutoHidingPanel</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ae9306e1df196f201da68646ccc7313d3" kindref="member">panelAutoHideHideRequested</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1abd68846373d26264b94840e89f8c2b9d" kindref="member">panelAutoHideShowRequested</ref> </para>
+</simplesect>
+<simplesect kind="see"><para>5.28 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="150" column="10" bodyfile="kwin/src/wayland/plasmashell.cpp" bodystart="311" bodyend="314"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_plasma_shell_surface_interface_1a40d1aca7e17104263cc78b02cb68a890" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::PlasmaShellSurfaceInterface::panelTakesFocus</definition>
+        <argsstring>() const</argsstring>
+        <name>panelTakesFocus</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::panelTakesFocus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether a <ref refid="class_k_win_1_1_plasma_shell_surface_interface" kindref="compound">PlasmaShellSurfaceInterface</ref> wants to have focus.</para>
+<para>By default some PlasmaShell roles do not get focus, but the <ref refid="class_k_win_1_1_plasma_shell_surface_interface" kindref="compound">PlasmaShellSurfaceInterface</ref> can request that it wants to have focus. The compositor can use this information to pass focus to the surface. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="160" column="10" bodyfile="kwin/src/wayland/plasmashell.cpp" bodystart="316" bodyend="319"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_plasma_shell_surface_interface_1a880f28f968eaf4d6aade001ba58d11a5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_plasma_shell_surface_interface" kindref="compound">PlasmaShellSurfaceInterface</ref> *</type>
+        <definition>PlasmaShellSurfaceInterface * KWin::PlasmaShellSurfaceInterface::get</definition>
+        <argsstring>(wl_resource *native)</argsstring>
+        <name>get</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::get</qualifiedname>
+        <param>
+          <type>wl_resource *</type>
+          <declname>native</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The <ref refid="class_k_win_1_1_plasma_shell_surface_interface" kindref="compound">PlasmaShellSurfaceInterface</ref> for the <computeroutput>native</computeroutput> resource. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="165" column="40" bodyfile="kwin/src/wayland/plasmashell.cpp" bodystart="321" bodyend="327"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_plasma_shell_surface_interface_1a265d71e4e5951ebfc2da4b702750117b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_plasma_shell_surface_interface" kindref="compound">PlasmaShellSurfaceInterface</ref> *</type>
+        <definition>PlasmaShellSurfaceInterface * KWin::PlasmaShellSurfaceInterface::get</definition>
+        <argsstring>(SurfaceInterface *surface)</argsstring>
+        <name>get</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::get</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>surface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="166" column="40" bodyfile="kwin/src/wayland/plasmashell.cpp" bodystart="329" bodyend="337"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_plasma_shell_surface_interface_1ad25faa32e347e0a74a71ec848e31c9f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PlasmaShellSurfaceInterface::positionChanged</definition>
+        <argsstring>()</argsstring>
+        <name>positionChanged</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::positionChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A change of global position has been requested. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="172" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_plasma_shell_surface_interface_1a864cb6ded01f98bb613a3600c7ced48d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PlasmaShellSurfaceInterface::openUnderCursorRequested</definition>
+        <argsstring>()</argsstring>
+        <name>openUnderCursorRequested</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::openUnderCursorRequested</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The surface has requested to be initially shown under the cursor. Can only occur before any buffer has been attached. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="178" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_plasma_shell_surface_interface_1a05c2dda7fbfe4cc7b70e8ac7d17e36b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PlasmaShellSurfaceInterface::roleChanged</definition>
+        <argsstring>()</argsstring>
+        <name>roleChanged</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::roleChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A change of the role has been requested. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="182" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_plasma_shell_surface_interface_1a67c220ff32125564df10442fe4844e4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PlasmaShellSurfaceInterface::panelBehaviorChanged</definition>
+        <argsstring>()</argsstring>
+        <name>panelBehaviorChanged</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::panelBehaviorChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A change of the panel behavior has been requested. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="186" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_plasma_shell_surface_interface_1a201592ca0e89797957c0e2894db79091" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PlasmaShellSurfaceInterface::skipTaskbarChanged</definition>
+        <argsstring>()</argsstring>
+        <name>skipTaskbarChanged</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::skipTaskbarChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A change in the skip taskbar property has been requested </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="190" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_plasma_shell_surface_interface_1a81148cef7a2cc4f137070fe2305b00a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PlasmaShellSurfaceInterface::skipSwitcherChanged</definition>
+        <argsstring>()</argsstring>
+        <name>skipSwitcherChanged</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::skipSwitcherChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A change in the skip switcher property has been requested </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="194" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_plasma_shell_surface_interface_1ae9306e1df196f201da68646ccc7313d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PlasmaShellSurfaceInterface::panelAutoHideHideRequested</definition>
+        <argsstring>()</argsstring>
+        <name>panelAutoHideHideRequested</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::panelAutoHideHideRequested</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A surface with <ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804" kindref="member">Role</ref> Panel and <ref refid="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665" kindref="member">PanelBehavior</ref> AutoHide requested to be hidden.</para>
+<para>The compositor should inform the <ref refid="class_k_win_1_1_plasma_shell_surface_interface" kindref="compound">PlasmaShellSurfaceInterface</ref> about the actual change. Once the surface is hidden it should invoke <computeroutput><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1adaaf80c9dfc80df9f93e4f1c2e7487c0" kindref="member">hideAutoHidingPanel</ref></computeroutput>. If the compositor cannot hide the surface (e.g. because it doesn&apos;t border a screen edge) it should inform the surface through invoking <computeroutput><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ac6b60db50d9686b400c083277d76bc66" kindref="member">showAutoHidingPanel</ref></computeroutput>. This method should also be invoked whenever the surface gets shown again due to triggering the screen edge.</para>
+<para><simplesect kind="see"><para><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1adaaf80c9dfc80df9f93e4f1c2e7487c0" kindref="member">hideAutoHidingPanel</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ac6b60db50d9686b400c083277d76bc66" kindref="member">showAutoHidingPanel</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1abd68846373d26264b94840e89f8c2b9d" kindref="member">panelAutoHideShowRequested</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="209" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_plasma_shell_surface_interface_1abd68846373d26264b94840e89f8c2b9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PlasmaShellSurfaceInterface::panelAutoHideShowRequested</definition>
+        <argsstring>()</argsstring>
+        <name>panelAutoHideShowRequested</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::panelAutoHideShowRequested</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A surface with <ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804" kindref="member">Role</ref> Panel and <ref refid="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665" kindref="member">PanelBehavior</ref> AutoHide requested to be shown.</para>
+<para>The compositor should inform the <ref refid="class_k_win_1_1_plasma_shell_surface_interface" kindref="compound">PlasmaShellSurfaceInterface</ref> about the actual change. Once the surface is shown it should invoke <computeroutput><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ac6b60db50d9686b400c083277d76bc66" kindref="member">showAutoHidingPanel</ref></computeroutput>.</para>
+<para><simplesect kind="see"><para><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1adaaf80c9dfc80df9f93e4f1c2e7487c0" kindref="member">hideAutoHidingPanel</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ac6b60db50d9686b400c083277d76bc66" kindref="member">showAutoHidingPanel</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ae9306e1df196f201da68646ccc7313d3" kindref="member">panelAutoHideHideRequested</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="221" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_plasma_shell_surface_interface_1aa55050d75db2dcd44f79bdb8d045f84d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PlasmaShellSurfaceInterface::panelTakesFocusChanged</definition>
+        <argsstring>()</argsstring>
+        <name>panelTakesFocusChanged</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::panelTakesFocusChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="227" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_plasma_shell_surface_interface_1a4773a1884a098f455d949a49b096f137" prot="private" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::PlasmaShellSurfaceInterface::PlasmaShellSurfaceInterface</definition>
+        <argsstring>(SurfaceInterface *surface, wl_resource *resource)</argsstring>
+        <name>PlasmaShellSurfaceInterface</name>
+        <qualifiedname>KWin::PlasmaShellSurfaceInterface::PlasmaShellSurfaceInterface</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>surface</declname>
+        </param>
+        <param>
+          <type>wl_resource *</type>
+          <declname>resource</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/plasmashell.h" line="231" column="14" bodyfile="kwin/src/wayland/plasmashell.cpp" bodystart="128" bodyend="131"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Resource for the org_kde_plasma_shell_surface interface. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="class_k_win_1_1_plasma_shell_surface_interface" kindref="compound">PlasmaShellSurfaceInterface</ref> gets created by <ref refid="class_k_win_1_1_plasma_shell_interface" kindref="compound">PlasmaShellInterface</ref>. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::PlasmaShellSurfaceInterface</label>
+        <link refid="class_k_win_1_1_plasma_shell_surface_interface"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::PlasmaShellSurfaceInterface</label>
+        <link refid="class_k_win_1_1_plasma_shell_surface_interface"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/wayland/plasmashell.h" line="59" column="1" bodyfile="kwin/src/wayland/plasmashell.h" bodystart="60" bodyend="233"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1a5d5eaedea7bdb8a9058d8f0b91a3580d" prot="private" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>d</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1a880f28f968eaf4d6aade001ba58d11a5" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>get</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1a265d71e4e5951ebfc2da4b702750117b" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>get</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1adaaf80c9dfc80df9f93e4f1c2e7487c0" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>hideAutoHidingPanel</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1a95bbc19c7e6d2fb164fd75af0c496d4c" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>isPositionSet</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1a864cb6ded01f98bb613a3600c7ced48d" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>openUnderCursorRequested</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1ae9306e1df196f201da68646ccc7313d3" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>panelAutoHideHideRequested</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1abd68846373d26264b94840e89f8c2b9d" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>panelAutoHideShowRequested</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>PanelBehavior</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1a2ceaae08eeba4671c08469ca59116f6e" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>panelBehavior</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1a67c220ff32125564df10442fe4844e4c" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>panelBehaviorChanged</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1a40d1aca7e17104263cc78b02cb68a890" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>panelTakesFocus</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1aa55050d75db2dcd44f79bdb8d045f84d" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>panelTakesFocusChanged</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1ae322e5d5510ab6e1daf91d22480d9ad8" prot="private" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>PlasmaShellInterfacePrivate</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1a4773a1884a098f455d949a49b096f137" prot="private" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>PlasmaShellSurfaceInterface</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1a5e2b853241241d3fb01ab16a3ba72142" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>position</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1ad25faa32e347e0a74a71ec848e31c9f2" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>positionChanged</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>Role</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1aae753572bfa7c154174272d8d92b59d4" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>role</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1a05c2dda7fbfe4cc7b70e8ac7d17e36b6" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>roleChanged</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1ac6b60db50d9686b400c083277d76bc66" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>showAutoHidingPanel</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1a6be83dd67df3060174062d77eb9bc847" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>skipSwitcher</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1a81148cef7a2cc4f137070fe2305b00a2" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>skipSwitcherChanged</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1aec424f628e481eae1d3bec1976a90969" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>skipTaskbar</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1a201592ca0e89797957c0e2894db79091" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>skipTaskbarChanged</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1a349d58daed2690dbf1558f117155d0d3" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>surface</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1a558ff206fee10a6c51c22acf5d6320c3" prot="public" virt="non-virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>wantsOpenUnderCursor</name></member>
+      <member refid="class_k_win_1_1_plasma_shell_surface_interface_1a2c277daa88a781e091506cd144ae84c3" prot="public" virt="virtual"><scope>KWin::PlasmaShellSurfaceInterface</scope><name>~PlasmaShellSurfaceInterface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

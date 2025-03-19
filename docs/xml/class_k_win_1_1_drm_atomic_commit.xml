@@ -1,0 +1,695 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_drm_atomic_commit" kind="class" language="C++" prot="public">
+    <compoundname>KWin::DrmAtomicCommit</compoundname>
+    <basecompoundref refid="class_k_win_1_1_drm_commit" prot="public" virt="non-virtual">KWin::DrmCommit</basecompoundref>
+    <includes refid="drm__commit_8h" local="no">drm_commit.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_drm_atomic_commit_1af047771cb46ce17d3eb3707bf54da14d" prot="private" static="no" mutable="no">
+        <type>const QList&lt; <ref refid="class_k_win_1_1_drm_pipeline" kindref="compound">DrmPipeline</ref> * &gt;</type>
+        <definition>const QList&lt;DrmPipeline *&gt; KWin::DrmAtomicCommit::m_pipelines</definition>
+        <argsstring></argsstring>
+        <name>m_pipelines</name>
+        <qualifiedname>KWin::DrmAtomicCommit::m_pipelines</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="95" column="17" bodyfile="kwin/src/backends/drm/drm_commit.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_atomic_commit_1a92eb6f66826c8ca47309ad61c0fb59fa" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; std::chrono::steady_clock::time_point &gt;</type>
+        <definition>std::optional&lt;std::chrono::steady_clock::time_point&gt; KWin::DrmAtomicCommit::m_targetPageflipTime</definition>
+        <argsstring></argsstring>
+        <name>m_targetPageflipTime</name>
+        <qualifiedname>KWin::DrmAtomicCommit::m_targetPageflipTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="96" column="19" bodyfile="kwin/src/backends/drm/drm_commit.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_atomic_commit_1a4bdd250f745e3d81a789ea5bf20e29ef" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; std::chrono::nanoseconds &gt;</type>
+        <definition>std::optional&lt;std::chrono::nanoseconds&gt; KWin::DrmAtomicCommit::m_allowedVrrDelay</definition>
+        <argsstring></argsstring>
+        <name>m_allowedVrrDelay</name>
+        <qualifiedname>KWin::DrmAtomicCommit::m_allowedVrrDelay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="97" column="19" bodyfile="kwin/src/backends/drm/drm_commit.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_atomic_commit_1addf80f47a3cc1d704b4e8acee14b2a7a" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; const <ref refid="class_k_win_1_1_drm_property" kindref="compound">DrmProperty</ref> *, std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_blob" kindref="compound">DrmBlob</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;const DrmProperty *, std::shared_ptr&lt;DrmBlob&gt; &gt; KWin::DrmAtomicCommit::m_blobs</definition>
+        <argsstring></argsstring>
+        <name>m_blobs</name>
+        <qualifiedname>KWin::DrmAtomicCommit::m_blobs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="98" column="24" bodyfile="kwin/src/backends/drm/drm_commit.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_atomic_commit_1a32a0aa07601cedf7378a000c9a20e565" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; <ref refid="class_k_win_1_1_drm_plane" kindref="compound">DrmPlane</ref> *, std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_framebuffer" kindref="compound">DrmFramebuffer</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;DrmPlane *, std::shared_ptr&lt;DrmFramebuffer&gt; &gt; KWin::DrmAtomicCommit::m_buffers</definition>
+        <argsstring></argsstring>
+        <name>m_buffers</name>
+        <qualifiedname>KWin::DrmAtomicCommit::m_buffers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="99" column="24" bodyfile="kwin/src/backends/drm/drm_commit.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_atomic_commit_1ac9954a9df3248ebc17602ab0a2249d3a" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; <ref refid="class_k_win_1_1_drm_plane" kindref="compound">DrmPlane</ref> *, std::shared_ptr&lt; <ref refid="class_k_win_1_1_output_frame" kindref="compound">OutputFrame</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;DrmPlane *, std::shared_ptr&lt;OutputFrame&gt; &gt; KWin::DrmAtomicCommit::m_frames</definition>
+        <argsstring></argsstring>
+        <name>m_frames</name>
+        <qualifiedname>KWin::DrmAtomicCommit::m_frames</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="100" column="24" bodyfile="kwin/src/backends/drm/drm_commit.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_atomic_commit_1af5b07757eca254a33a1615a6160a62a6" prot="private" static="no" mutable="no">
+        <type>std::unordered_set&lt; <ref refid="class_k_win_1_1_drm_plane" kindref="compound">DrmPlane</ref> * &gt;</type>
+        <definition>std::unordered_set&lt;DrmPlane *&gt; KWin::DrmAtomicCommit::m_planes</definition>
+        <argsstring></argsstring>
+        <name>m_planes</name>
+        <qualifiedname>KWin::DrmAtomicCommit::m_planes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="101" column="24" bodyfile="kwin/src/backends/drm/drm_commit.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_atomic_commit_1afb5626d66c819ea2ffd431cbfee8a13d" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; bool &gt;</type>
+        <definition>std::optional&lt;bool&gt; KWin::DrmAtomicCommit::m_vrr</definition>
+        <argsstring></argsstring>
+        <name>m_vrr</name>
+        <qualifiedname>KWin::DrmAtomicCommit::m_vrr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="102" column="19" bodyfile="kwin/src/backends/drm/drm_commit.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_atomic_commit_1a75808ece0a1cbeb2e4f965643cd4fdae" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; uint32_t, std::unordered_map&lt; uint32_t, uint64_t &gt; &gt;</type>
+        <definition>std::unordered_map&lt;uint32_t , std::unordered_map&lt;uint32_t , uint64_t &gt; &gt; KWin::DrmAtomicCommit::m_properties</definition>
+        <argsstring></argsstring>
+        <name>m_properties</name>
+        <qualifiedname>KWin::DrmAtomicCommit::m_properties</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="103" column="24" bodyfile="kwin/src/backends/drm/drm_commit.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_atomic_commit_1af29a2781307c83044ba8fbc867fdf109" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::DrmAtomicCommit::m_modeset</definition>
+        <argsstring></argsstring>
+        <name>m_modeset</name>
+        <qualifiedname>KWin::DrmAtomicCommit::m_modeset</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="104" column="10" bodyfile="kwin/src/backends/drm/drm_commit.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_atomic_commit_1a0a18203da60bf64abacdb035f067af01" prot="private" static="no" mutable="no">
+        <type><ref refid="namespace_k_win_1a5bac5dc1ad9b6deedfa5c46c4e432767" kindref="member">PresentationMode</ref></type>
+        <definition>PresentationMode KWin::DrmAtomicCommit::m_mode</definition>
+        <argsstring></argsstring>
+        <name>m_mode</name>
+        <qualifiedname>KWin::DrmAtomicCommit::m_mode</qualifiedname>
+        <initializer>= <ref refid="namespace_k_win_1a5bac5dc1ad9b6deedfa5c46c4e432767a98b06ef30caa386be0f897d0e5c5a135" kindref="member">PresentationMode::VSync</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="105" column="22" bodyfile="kwin/src/backends/drm/drm_commit.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a6df6e260a9915f3cc3e62b37659189db" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::DrmAtomicCommit::DrmAtomicCommit</definition>
+        <argsstring>(DrmGpu *gpu)</argsstring>
+        <name>DrmAtomicCommit</name>
+        <qualifiedname>KWin::DrmAtomicCommit::DrmAtomicCommit</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref> *</type>
+          <declname>gpu</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="56" column="14" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="47" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a77ffe077389d8b805897e7f4708b2f1a" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::DrmAtomicCommit::DrmAtomicCommit</definition>
+        <argsstring>(const QList&lt; DrmPipeline * &gt; &amp;pipelines)</argsstring>
+        <name>DrmAtomicCommit</name>
+        <qualifiedname>KWin::DrmAtomicCommit::DrmAtomicCommit</qualifiedname>
+        <param>
+          <type>const QList&lt; <ref refid="class_k_win_1_1_drm_pipeline" kindref="compound">DrmPipeline</ref> * &gt; &amp;</type>
+          <declname>pipelines</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="57" column="14" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="52" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a650ba3e167695f8f716ca350ef832152" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::DrmAtomicCommit::DrmAtomicCommit</definition>
+        <argsstring>(const DrmAtomicCommit &amp;copy)=default</argsstring>
+        <name>DrmAtomicCommit</name>
+        <qualifiedname>KWin::DrmAtomicCommit::DrmAtomicCommit</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_drm_atomic_commit" kindref="compound">DrmAtomicCommit</ref> &amp;</type>
+          <declname>copy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="58" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a315e293fdf6386f1b730a2532544d7f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmAtomicCommit::addProperty</definition>
+        <argsstring>(const DrmProperty &amp;prop, uint64_t value)</argsstring>
+        <name>addProperty</name>
+        <qualifiedname>KWin::DrmAtomicCommit::addProperty</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_drm_property" kindref="compound">DrmProperty</ref> &amp;</type>
+          <declname>prop</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="60" column="10" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="58" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a0c767d8994e5d6444693e998bb8c7d5f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void KWin::DrmAtomicCommit::addEnum</definition>
+        <argsstring>(const DrmEnumProperty&lt; T &gt; &amp;prop, T enumValue)</argsstring>
+        <name>addEnum</name>
+        <qualifiedname>KWin::DrmAtomicCommit::addEnum</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_drm_enum_property" kindref="compound">DrmEnumProperty</ref>&lt; T &gt; &amp;</type>
+          <declname>prop</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>enumValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="62" column="10" bodyfile="kwin/src/backends/drm/drm_commit.h" bodystart="62" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a8c53789ea8201b737d2d3ae0524e748b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmAtomicCommit::addBlob</definition>
+        <argsstring>(const DrmProperty &amp;prop, const std::shared_ptr&lt; DrmBlob &gt; &amp;blob)</argsstring>
+        <name>addBlob</name>
+        <qualifiedname>KWin::DrmAtomicCommit::addBlob</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_drm_property" kindref="compound">DrmProperty</ref> &amp;</type>
+          <declname>prop</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_blob" kindref="compound">DrmBlob</ref> &gt; &amp;</type>
+          <declname>blob</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="66" column="10" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="68" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1ac46995b92e4d282261978f97afcbd672" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmAtomicCommit::addBuffer</definition>
+        <argsstring>(DrmPlane *plane, const std::shared_ptr&lt; DrmFramebuffer &gt; &amp;buffer, const std::shared_ptr&lt; OutputFrame &gt; &amp;frame)</argsstring>
+        <name>addBuffer</name>
+        <qualifiedname>KWin::DrmAtomicCommit::addBuffer</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_plane" kindref="compound">DrmPlane</ref> *</type>
+          <declname>plane</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_framebuffer" kindref="compound">DrmFramebuffer</ref> &gt; &amp;</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_k_win_1_1_output_frame" kindref="compound">OutputFrame</ref> &gt; &amp;</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="67" column="10" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="74" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a6fae8ba5694793cd4cc77d1ac5832596" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmAtomicCommit::setVrr</definition>
+        <argsstring>(DrmCrtc *crtc, bool vrr)</argsstring>
+        <name>setVrr</name>
+        <qualifiedname>KWin::DrmAtomicCommit::setVrr</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_crtc" kindref="compound">DrmCrtc</ref> *</type>
+          <declname>crtc</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>vrr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="68" column="10" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="93" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a2421eb46425396c2c94cb719a2ca36b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmAtomicCommit::setPresentationMode</definition>
+        <argsstring>(PresentationMode mode)</argsstring>
+        <name>setPresentationMode</name>
+        <qualifiedname>KWin::DrmAtomicCommit::setPresentationMode</qualifiedname>
+        <param>
+          <type><ref refid="namespace_k_win_1a5bac5dc1ad9b6deedfa5c46c4e432767" kindref="member">PresentationMode</ref></type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="69" column="10" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="99" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a1cb2b09e3c2a7448709bad854b7f89d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmAtomicCommit::test</definition>
+        <argsstring>()</argsstring>
+        <name>test</name>
+        <qualifiedname>KWin::DrmAtomicCommit::test</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="71" column="10" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="104" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a2bddbefe3e34e57bb62c876b0db9be83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmAtomicCommit::testAllowModeset</definition>
+        <argsstring>()</argsstring>
+        <name>testAllowModeset</name>
+        <qualifiedname>KWin::DrmAtomicCommit::testAllowModeset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="72" column="10" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="113" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a671bcfd3029dad165481ec283f6cee88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmAtomicCommit::commit</definition>
+        <argsstring>()</argsstring>
+        <name>commit</name>
+        <qualifiedname>KWin::DrmAtomicCommit::commit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="73" column="10" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="118" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a0bd961b8879466f07290c298b8ae5fab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmAtomicCommit::commitModeset</definition>
+        <argsstring>()</argsstring>
+        <name>commitModeset</name>
+        <qualifiedname>KWin::DrmAtomicCommit::commitModeset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="74" column="10" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="127" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a97397e69b3e6418ddf87a587caaf41bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::DrmAtomicCommit::pageFlipped</definition>
+        <argsstring>(std::chrono::nanoseconds timestamp) override</argsstring>
+        <name>pageFlipped</name>
+        <qualifiedname>KWin::DrmAtomicCommit::pageFlipped</qualifiedname>
+        <reimplements refid="class_k_win_1_1_drm_commit_1aeb86f0c56eef345e7ade669591d637a4">pageFlipped</reimplements>
+        <param>
+          <type>std::chrono::nanoseconds</type>
+          <declname>timestamp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="76" column="10" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="168" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a7870632397e570b758cb68b05e2433c7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmAtomicCommit::areBuffersReadable</definition>
+        <argsstring>() const</argsstring>
+        <name>areBuffersReadable</name>
+        <qualifiedname>KWin::DrmAtomicCommit::areBuffersReadable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="78" column="10" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="188" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a9af8a25c29de6858a484563dccdb9d97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmAtomicCommit::setDeadline</definition>
+        <argsstring>(std::chrono::steady_clock::time_point deadline)</argsstring>
+        <name>setDeadline</name>
+        <qualifiedname>KWin::DrmAtomicCommit::setDeadline</qualifiedname>
+        <param>
+          <type>std::chrono::steady_clock::time_point</type>
+          <declname>deadline</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="79" column="10" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="196" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1abb147cf847eee9aec5131b1102148eb2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; bool &gt;</type>
+        <definition>std::optional&lt; bool &gt; KWin::DrmAtomicCommit::isVrr</definition>
+        <argsstring>() const</argsstring>
+        <name>isVrr</name>
+        <qualifiedname>KWin::DrmAtomicCommit::isVrr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="80" column="19" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="205" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a295edfa84a37e0ab58d0ae26cbd85ee5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::unordered_set&lt; <ref refid="class_k_win_1_1_drm_plane" kindref="compound">DrmPlane</ref> * &gt; &amp;</type>
+        <definition>const std::unordered_set&lt; DrmPlane * &gt; &amp; KWin::DrmAtomicCommit::modifiedPlanes</definition>
+        <argsstring>() const</argsstring>
+        <name>modifiedPlanes</name>
+        <qualifiedname>KWin::DrmAtomicCommit::modifiedPlanes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="81" column="30" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="210" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a3e4293578ac95f2d6600a65116404f3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmAtomicCommit::merge</definition>
+        <argsstring>(DrmAtomicCommit *onTop)</argsstring>
+        <name>merge</name>
+        <qualifiedname>KWin::DrmAtomicCommit::merge</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_atomic_commit" kindref="compound">DrmAtomicCommit</ref> *</type>
+          <declname>onTop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="83" column="10" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="215" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a34f882d24fee4bd2f4467cded471278e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmAtomicCommit::setAllowedVrrDelay</definition>
+        <argsstring>(std::optional&lt; std::chrono::nanoseconds &gt; allowedDelay)</argsstring>
+        <name>setAllowedVrrDelay</name>
+        <qualifiedname>KWin::DrmAtomicCommit::setAllowedVrrDelay</qualifiedname>
+        <param>
+          <type>std::optional&lt; std::chrono::nanoseconds &gt;</type>
+          <declname>allowedDelay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="85" column="10" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="246" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1ab4514c0bc136b535093f5ecefa4f4e12" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; std::chrono::nanoseconds &gt;</type>
+        <definition>std::optional&lt; std::chrono::nanoseconds &gt; KWin::DrmAtomicCommit::allowedVrrDelay</definition>
+        <argsstring>() const</argsstring>
+        <name>allowedVrrDelay</name>
+        <qualifiedname>KWin::DrmAtomicCommit::allowedVrrDelay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="86" column="19" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="251" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1aa3305c2037d47c9c222e2e5677df6f61" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; std::chrono::steady_clock::time_point &gt;</type>
+        <definition>std::optional&lt; std::chrono::steady_clock::time_point &gt; KWin::DrmAtomicCommit::targetPageflipTime</definition>
+        <argsstring>() const</argsstring>
+        <name>targetPageflipTime</name>
+        <qualifiedname>KWin::DrmAtomicCommit::targetPageflipTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="88" column="19" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="256" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a9b79795d5d228d9fa02ab040bd445596" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmAtomicCommit::isReadyFor</definition>
+        <argsstring>(std::chrono::steady_clock::time_point pageflipTarget) const</argsstring>
+        <name>isReadyFor</name>
+        <qualifiedname>KWin::DrmAtomicCommit::isReadyFor</qualifiedname>
+        <param>
+          <type>std::chrono::steady_clock::time_point</type>
+          <declname>pageflipTarget</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="89" column="10" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="261" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1a30919173e3b6b60892cfb7dbf7e040ae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmAtomicCommit::isTearing</definition>
+        <argsstring>() const</argsstring>
+        <name>isTearing</name>
+        <qualifiedname>KWin::DrmAtomicCommit::isTearing</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="90" column="10" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="267" bodyend="270"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_drm_atomic_commit_1abf7acdc65a9c9f87b874714587b6088f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmAtomicCommit::doCommit</definition>
+        <argsstring>(uint32_t flags)</argsstring>
+        <name>doCommit</name>
+        <qualifiedname>KWin::DrmAtomicCommit::doCommit</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="93" column="10" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="133" bodyend="166"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::DrmAtomicCommit</label>
+        <link refid="class_k_win_1_1_drm_atomic_commit"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::DrmCommit</label>
+        <link refid="class_k_win_1_1_drm_commit"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::DrmAtomicCommit</label>
+        <link refid="class_k_win_1_1_drm_atomic_commit"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::DrmCommit</label>
+        <link refid="class_k_win_1_1_drm_commit"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_gpu</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>KWin::DrmGpu</label>
+        <link refid="class_k_win_1_1_drm_gpu"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/backends/drm/drm_commit.h" line="53" column="1" bodyfile="kwin/src/backends/drm/drm_commit.h" bodystart="54" bodyend="106"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a8c53789ea8201b737d2d3ae0524e748b" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>addBlob</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1ac46995b92e4d282261978f97afcbd672" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>addBuffer</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a0c767d8994e5d6444693e998bb8c7d5f" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>addEnum</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a315e293fdf6386f1b730a2532544d7f3" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>addProperty</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1ab4514c0bc136b535093f5ecefa4f4e12" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>allowedVrrDelay</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a7870632397e570b758cb68b05e2433c7" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>areBuffersReadable</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a671bcfd3029dad165481ec283f6cee88" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>commit</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a0bd961b8879466f07290c298b8ae5fab" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>commitModeset</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1abf7acdc65a9c9f87b874714587b6088f" prot="private" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>doCommit</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a6df6e260a9915f3cc3e62b37659189db" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>DrmAtomicCommit</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a77ffe077389d8b805897e7f4708b2f1a" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>DrmAtomicCommit</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a650ba3e167695f8f716ca350ef832152" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>DrmAtomicCommit</name></member>
+      <member refid="class_k_win_1_1_drm_commit_1af8e7719bbb7f0dc2a5ee577a6416857b" prot="protected" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>DrmCommit</name></member>
+      <member refid="class_k_win_1_1_drm_commit_1af8a218c85630a9fd793248fea96d568b" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>gpu</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a9b79795d5d228d9fa02ab040bd445596" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>isReadyFor</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a30919173e3b6b60892cfb7dbf7e040ae" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>isTearing</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1abb147cf847eee9aec5131b1102148eb2" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>isVrr</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a4bdd250f745e3d81a789ea5bf20e29ef" prot="private" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>m_allowedVrrDelay</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1addf80f47a3cc1d704b4e8acee14b2a7a" prot="private" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>m_blobs</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a32a0aa07601cedf7378a000c9a20e565" prot="private" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>m_buffers</name></member>
+      <member refid="class_k_win_1_1_drm_commit_1a525e2a227233ff07fe626188e76d4f01" prot="protected" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>m_defunct</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1ac9954a9df3248ebc17602ab0a2249d3a" prot="private" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>m_frames</name></member>
+      <member refid="class_k_win_1_1_drm_commit_1a60efe7a7a9ba3f563ff10f3b0494637f" prot="protected" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>m_gpu</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a0a18203da60bf64abacdb035f067af01" prot="private" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>m_mode</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1af29a2781307c83044ba8fbc867fdf109" prot="private" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>m_modeset</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1af047771cb46ce17d3eb3707bf54da14d" prot="private" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>m_pipelines</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1af5b07757eca254a33a1615a6160a62a6" prot="private" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>m_planes</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a75808ece0a1cbeb2e4f965643cd4fdae" prot="private" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>m_properties</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a92eb6f66826c8ca47309ad61c0fb59fa" prot="private" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>m_targetPageflipTime</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1afb5626d66c819ea2ffd431cbfee8a13d" prot="private" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>m_vrr</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a3e4293578ac95f2d6600a65116404f3e" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>merge</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a295edfa84a37e0ab58d0ae26cbd85ee5" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>modifiedPlanes</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a97397e69b3e6418ddf87a587caaf41bc" prot="public" virt="virtual"><scope>KWin::DrmAtomicCommit</scope><name>pageFlipped</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a34f882d24fee4bd2f4467cded471278e" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>setAllowedVrrDelay</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a9af8a25c29de6858a484563dccdb9d97" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>setDeadline</name></member>
+      <member refid="class_k_win_1_1_drm_commit_1a7585238c00e7c147fcbe1a5ef74d6d0a" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>setDefunct</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a2421eb46425396c2c94cb719a2ca36b4" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>setPresentationMode</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a6fae8ba5694793cd4cc77d1ac5832596" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>setVrr</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1aa3305c2037d47c9c222e2e5677df6f61" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>targetPageflipTime</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a1cb2b09e3c2a7448709bad854b7f89d9" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>test</name></member>
+      <member refid="class_k_win_1_1_drm_atomic_commit_1a2bddbefe3e34e57bb62c876b0db9be83" prot="public" virt="non-virtual"><scope>KWin::DrmAtomicCommit</scope><name>testAllowModeset</name></member>
+      <member refid="class_k_win_1_1_drm_commit_1a11debcbdb0965d730ed80519160d0773" prot="public" virt="virtual"><scope>KWin::DrmAtomicCommit</scope><name>~DrmCommit</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

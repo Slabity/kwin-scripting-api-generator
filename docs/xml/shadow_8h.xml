@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="shadow_8h" kind="file" language="C++">
+    <compoundname>shadow.h</compoundname>
+    <includes local="yes">kwin_export.h</includes>
+    <includes local="no">QImage</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">QRectF</includes>
+    <includes local="no">xcb/xcb.h</includes>
+    <includedby refid="shadow_8cpp" local="yes">kwin/src/shadow.cpp</includedby>
+    <includedby refid="window_8cpp" local="yes">kwin/src/window.cpp</includedby>
+    <includedby refid="x11window_8cpp" local="yes">kwin/src/x11window.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/shadow.h</label>
+        <link refid="shadow_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QImage</label>
+      </node>
+      <node id="4">
+        <label>QObject</label>
+      </node>
+      <node id="5">
+        <label>QRectF</label>
+      </node>
+      <node id="2">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="6">
+        <label>xcb/xcb.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/shadow.cpp</label>
+        <link refid="shadow_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/shadow.h</label>
+        <link refid="shadow_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>kwin/src/window.cpp</label>
+        <link refid="window_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/x11window.cpp</label>
+        <link refid="x11window_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_shadow" prot="public">KWin::Shadow</innerclass>
+    <innernamespace refid="namespace_k_decoration3">KDecoration3</innernamespace>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2011<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2020<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;kwin_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QImage&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QRectF&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;xcb/xcb.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_decoration3" kindref="compound">KDecoration3</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win_1_1_input_filter_order_1a756edc4ece066f390b6c187c3cd970b1ab8983009ed80be967cfccaa8bbefd1a7" kindref="member">Decoration</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">DecorationShadow;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_shadow_interface" kindref="compound">ShadowInterface</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="class_k_win_1_1_shadow" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_shadow_1a6935ff159b11b02dcaca21e2af1f57c8" kindref="member">Shadow</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_shadow_1a6935ff159b11b02dcaca21e2af1f57c8" kindref="member">Shadow</ref>(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*<ref refid="class_k_win_1_1_shadow_1a7657474db8dc5deb99e392eb82aceca0" kindref="member">window</ref>);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_shadow_1a6935ff159b11b02dcaca21e2af1f57c8" kindref="member">~Shadow</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_shadow_1a9f6b306253c6eca31127137899ec831d" kindref="member">updateShadow</ref>();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;Shadow&gt;<sp/><ref refid="class_k_win_1_1_shadow_1a3ed5d25255ef7024a47cdf936ce55d54" kindref="member">createShadow</ref>(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*<ref refid="class_k_win_1_1_shadow_1a7657474db8dc5deb99e392eb82aceca0" kindref="member">window</ref>);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*<ref refid="class_k_win_1_1_shadow_1a7657474db8dc5deb99e392eb82aceca0" kindref="member">window</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="class_k_win_1_1_shadow_1a172a36c5f51d4f11331b854f28585eee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_shadow_1a172a36c5f51d4f11331b854f28585eee" kindref="member">hasDecorationShadow</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="80"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_decorationShadow<sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>QImage<sp/>decorationShadowImage()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="class_k_win_1_1_shadow_1a51f41f1562946ef2c13407a6b98b843e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::weak_ptr&lt;KDecoration3::DecorationShadow&gt;<sp/><ref refid="class_k_win_1_1_shadow_1a51f41f1562946ef2c13407a6b98b843e" kindref="member">decorationShadow</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="86"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_decorationShadow;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831" kindref="member">ShadowElements</ref><sp/>{</highlight></codeline>
+<codeline lineno="91" refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831adf6d4cf94e94501f18efe800939cd5f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831adf6d4cf94e94501f18efe800939cd5f5" kindref="member">ShadowElementTop</ref>,</highlight></codeline>
+<codeline lineno="92" refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831a3ccfa5250e10706982ba8d23c960ce57" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831a3ccfa5250e10706982ba8d23c960ce57" kindref="member">ShadowElementTopRight</ref>,</highlight></codeline>
+<codeline lineno="93" refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831a9042c7ebc60e2d179a7adb5214098d14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831a9042c7ebc60e2d179a7adb5214098d14" kindref="member">ShadowElementRight</ref>,</highlight></codeline>
+<codeline lineno="94" refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831a671716b1a7650293de1a7cc23c89d03d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831a671716b1a7650293de1a7cc23c89d03d" kindref="member">ShadowElementBottomRight</ref>,</highlight></codeline>
+<codeline lineno="95" refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831aeb4bdea8506dbc2aa86a2212e81ff0db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831aeb4bdea8506dbc2aa86a2212e81ff0db" kindref="member">ShadowElementBottom</ref>,</highlight></codeline>
+<codeline lineno="96" refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831a63e6898faf6db63e22671774e01a105b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831a63e6898faf6db63e22671774e01a105b" kindref="member">ShadowElementBottomLeft</ref>,</highlight></codeline>
+<codeline lineno="97" refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831a1a5fe1c0bbccc5c840ba7fb03e2e5f92" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831a1a5fe1c0bbccc5c840ba7fb03e2e5f92" kindref="member">ShadowElementLeft</ref>,</highlight></codeline>
+<codeline lineno="98" refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831a8f679b453d9c274d86c8bff56aaf8eeb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831a8f679b453d9c274d86c8bff56aaf8eeb" kindref="member">ShadowElementTopLeft</ref>,</highlight></codeline>
+<codeline lineno="99" refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831af7a922d98f7a9ff410c9fec5ad108bab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831af7a922d98f7a9ff410c9fec5ad108bab" kindref="member">ShadowElementsCount</ref></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>QSizeF<sp/>elementSize(ShadowElements<sp/>element)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="class_k_win_1_1_shadow_1a054064163d85fecb250fca585b534e69" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QRectF<sp/><ref refid="class_k_win_1_1_shadow_1a054064163d85fecb250fca585b534e69" kindref="member">rect</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="104"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QRectF(QPoint(0,<sp/>0),<sp/>m_cachedSize);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107" refid="class_k_win_1_1_shadow_1ac1e01c6794723cee09a2d3da7af2807c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QMarginsF<sp/><ref refid="class_k_win_1_1_shadow_1ac1e01c6794723cee09a2d3da7af2807c" kindref="member">offset</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="108"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_offset;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="111" refid="class_k_win_1_1_shadow_1a75d8af8e4ecf95bbdbaa2ff5a47ab5c1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QImage<sp/>&amp;<ref refid="class_k_win_1_1_shadow_1a75d8af8e4ecf95bbdbaa2ff5a47ab5c1" kindref="member">shadowElement</ref>(<ref refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831" kindref="member">ShadowElements</ref><sp/>element)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="112"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_shadowElements[element];</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="117" refid="class_k_win_1_1_shadow_1abf462b1f35a3343ebada81185e2ae1c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_shadow_1abf462b1f35a3343ebada81185e2ae1c7" kindref="member">offsetChanged</ref>();</highlight></codeline>
+<codeline lineno="118" refid="class_k_win_1_1_shadow_1a9f74ec796bb63752ed36fed1b551f2da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_shadow_1a9f74ec796bb63752ed36fed1b551f2da" kindref="member">rectChanged</ref>();</highlight></codeline>
+<codeline lineno="119" refid="class_k_win_1_1_shadow_1a288716f59c12053e2b802890b579e105" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_shadow_1a288716f59c12053e2b802890b579e105" kindref="member">textureChanged</ref>();</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_shadow_1a93c63c20f749f9d9719d6041f8ad32fa" kindref="member">geometryChanged</ref>();</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;Shadow&gt;<sp/>createShadowFromX11(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*<ref refid="class_k_win_1_1_shadow_1a7657474db8dc5deb99e392eb82aceca0" kindref="member">window</ref>);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;Shadow&gt;<sp/>createShadowFromDecoration(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*<ref refid="class_k_win_1_1_shadow_1a7657474db8dc5deb99e392eb82aceca0" kindref="member">window</ref>);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;Shadow&gt;<sp/>createShadowFromWayland(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*<ref refid="class_k_win_1_1_shadow_1a7657474db8dc5deb99e392eb82aceca0" kindref="member">window</ref>);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;Shadow&gt;<sp/>createShadowFromInternalWindow(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*<ref refid="class_k_win_1_1_shadow_1a7657474db8dc5deb99e392eb82aceca0" kindref="member">window</ref>);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>QList&lt;uint32_t&gt;<sp/>readX11ShadowProperty(xcb_window_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>init(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;uint32_t&gt;<sp/>&amp;data);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>init(KDecoration3::Decoration<sp/>*decoration);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>init(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointer&lt;ShadowInterface&gt;<sp/>&amp;shadow);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>init(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QWindow<sp/>*<ref refid="class_k_win_1_1_shadow_1a7657474db8dc5deb99e392eb82aceca0" kindref="member">window</ref>);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*m_window;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>shadow<sp/>elements</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>QImage<sp/>m_shadowElements[<ref refid="class_k_win_1_1_shadow_1a6a192b9550b29d4afc4fc35bafb34831af7a922d98f7a9ff410c9fec5ad108bab" kindref="member">ShadowElementsCount</ref>];</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>shadow<sp/>offsets</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>QMarginsF<sp/>m_offset;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>caches</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>QSizeF<sp/>m_cachedSize;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Decoration<sp/>based<sp/>shadows</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;KDecoration3::DecorationShadow&gt;<sp/>m_decorationShadow;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/shadow.h"/>
+  </compounddef>
+</doxygen>

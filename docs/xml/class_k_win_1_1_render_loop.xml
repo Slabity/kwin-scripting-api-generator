@@ -1,0 +1,415 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_render_loop" kind="class" language="C++" prot="public">
+    <compoundname>KWin::RenderLoop</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="renderloop_8h" local="no">renderloop.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_render_loop_1aeeb14f716dfa67e1f234088efeac8a34" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_render_loop_private" kindref="compound">RenderLoopPrivate</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;RenderLoopPrivate&gt; KWin::RenderLoop::d</definition>
+        <argsstring></argsstring>
+        <name>d</name>
+        <qualifiedname>KWin::RenderLoop::d</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="121" column="21" bodyfile="kwin/src/core/renderloop.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_k_win_1_1_render_loop_1a36a3e27bf90642afde8915054616af3c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class RenderLoopPrivate</definition>
+        <argsstring></argsstring>
+        <name>RenderLoopPrivate</name>
+        <qualifiedname>KWin::RenderLoop::RenderLoopPrivate</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_render_loop_private" kindref="compound">RenderLoopPrivate</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="122" column="18" bodyfile="kwin/src/core/renderloop.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_render_loop_1aca48dcab491277b7fcaaef346d3b94c3" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::RenderLoop::RenderLoop</definition>
+        <argsstring>(Output *output)</argsstring>
+        <name>RenderLoop</name>
+        <qualifiedname>KWin::RenderLoop::RenderLoop</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="36" column="14" bodyfile="kwin/src/core/renderloop.cpp" bodystart="194" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_render_loop_1a5d345af9265ca65109fbc5c3f0000f93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::RenderLoop::~RenderLoop</definition>
+        <argsstring>() override</argsstring>
+        <name>~RenderLoop</name>
+        <qualifiedname>KWin::RenderLoop::~RenderLoop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="37" column="5" bodyfile="kwin/src/core/renderloop.cpp" bodystart="199" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_render_loop_1ae6b3008f29e5ee9b0971c36fae9f3719" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::RenderLoop::inhibit</definition>
+        <argsstring>()</argsstring>
+        <name>inhibit</name>
+        <qualifiedname>KWin::RenderLoop::inhibit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pauses the render loop. While the render loop is inhibited, <ref refid="class_k_win_1_1_render_loop_1a6a1fb042e767625e8596efb70408b15a" kindref="member">scheduleRepaint()</ref> requests are queued.</para>
+<para>Once the render loop is uninhibited, the pending schedule requests are going to be re-applied. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="46" column="10" bodyfile="kwin/src/core/renderloop.cpp" bodystart="203" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_render_loop_1a3e66a57f79bbafd89fcbf4e127308222" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::RenderLoop::uninhibit</definition>
+        <argsstring>()</argsstring>
+        <name>uninhibit</name>
+        <qualifiedname>KWin::RenderLoop::uninhibit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Uninhibits the render loop. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="51" column="10" bodyfile="kwin/src/core/renderloop.cpp" bodystart="212" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_render_loop_1a38275bc527efdb56632fc03e059fa280" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::RenderLoop::prepareNewFrame</definition>
+        <argsstring>()</argsstring>
+        <name>prepareNewFrame</name>
+        <qualifiedname>KWin::RenderLoop::prepareNewFrame</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function must be called before the <ref refid="class_k_win_1_1_compositor" kindref="compound">Compositor</ref> sumbits the next frame. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="57" column="10" bodyfile="kwin/src/core/renderloop.cpp" bodystart="222" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_render_loop_1a052da12b6c4baef672ea7fbf3a3d7f6c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int KWin::RenderLoop::refreshRate</definition>
+        <argsstring>() const</argsstring>
+        <name>refreshRate</name>
+        <qualifiedname>KWin::RenderLoop::refreshRate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the refresh rate at which the output is being updated, in millihertz. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="62" column="9" bodyfile="kwin/src/core/renderloop.cpp" bodystart="227" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_render_loop_1ac43e8cd7cc2ab723d8b88e7b3fe7e4e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::RenderLoop::setRefreshRate</definition>
+        <argsstring>(int refreshRate)</argsstring>
+        <name>setRefreshRate</name>
+        <qualifiedname>KWin::RenderLoop::setRefreshRate</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>refreshRate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the refresh rate of this <ref refid="class_k_win_1_1_render_loop" kindref="compound">RenderLoop</ref> to <emphasis>refreshRate</emphasis>, in millihertz. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="67" column="10" bodyfile="kwin/src/core/renderloop.cpp" bodystart="232" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_render_loop_1ac9b4d465e1ab4cf2f29a55e49b07d2de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::RenderLoop::setPresentationSafetyMargin</definition>
+        <argsstring>(std::chrono::nanoseconds safetyMargin)</argsstring>
+        <name>setPresentationSafetyMargin</name>
+        <qualifiedname>KWin::RenderLoop::setPresentationSafetyMargin</qualifiedname>
+        <param>
+          <type>std::chrono::nanoseconds</type>
+          <declname>safetyMargin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="69" column="10" bodyfile="kwin/src/core/renderloop.cpp" bodystart="241" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_render_loop_1a6a1fb042e767625e8596efb70408b15a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::RenderLoop::scheduleRepaint</definition>
+        <argsstring>(Item *item=nullptr, RenderLayer *layer=nullptr, OutputLayer *outputLayer=nullptr)</argsstring>
+        <name>scheduleRepaint</name>
+        <qualifiedname>KWin::RenderLoop::scheduleRepaint</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> *</type>
+          <declname>item</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_render_layer" kindref="compound">RenderLayer</ref> *</type>
+          <declname>layer</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_output_layer" kindref="compound">OutputLayer</ref> *</type>
+          <declname>outputLayer</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Schedules a compositing cycle at the next available moment. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="74" column="10" bodyfile="kwin/src/core/renderloop.cpp" bodystart="246" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_render_loop_1aad36ff9f661f69fc0065581f63b6448f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::chrono::nanoseconds</type>
+        <definition>std::chrono::nanoseconds KWin::RenderLoop::lastPresentationTimestamp</definition>
+        <argsstring>() const</argsstring>
+        <name>lastPresentationTimestamp</name>
+        <qualifiedname>KWin::RenderLoop::lastPresentationTimestamp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the timestamp of the last frame that has been presented on the screen. The returned timestamp is sourced from the monotonic clock. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="80" column="30" bodyfile="kwin/src/core/renderloop.cpp" bodystart="275" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_render_loop_1ab7210116a0b5c9ef4fa433cfbb668eb3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::chrono::nanoseconds</type>
+        <definition>std::chrono::nanoseconds KWin::RenderLoop::nextPresentationTimestamp</definition>
+        <argsstring>() const</argsstring>
+        <name>nextPresentationTimestamp</name>
+        <qualifiedname>KWin::RenderLoop::nextPresentationTimestamp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>If a repaint has been scheduled, this function returns the expected time when the next frame will be presented on the screen. The returned timestamp is sourced from the monotonic clock. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="87" column="30" bodyfile="kwin/src/core/renderloop.cpp" bodystart="280" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_render_loop_1a4190d7deb1ba46f6993f1668e482b92c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::RenderLoop::setPresentationMode</definition>
+        <argsstring>(PresentationMode mode)</argsstring>
+        <name>setPresentationMode</name>
+        <qualifiedname>KWin::RenderLoop::setPresentationMode</qualifiedname>
+        <param>
+          <type><ref refid="namespace_k_win_1a5bac5dc1ad9b6deedfa5c46c4e432767" kindref="member">PresentationMode</ref></type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="89" column="10" bodyfile="kwin/src/core/renderloop.cpp" bodystart="285" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_render_loop_1a8163fe6276185cfef8108c31ceafe7a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::RenderLoop::setMaxPendingFrameCount</definition>
+        <argsstring>(uint32_t maxCount)</argsstring>
+        <name>setMaxPendingFrameCount</name>
+        <qualifiedname>KWin::RenderLoop::setMaxPendingFrameCount</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>maxCount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="91" column="10" bodyfile="kwin/src/core/renderloop.cpp" bodystart="293" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_render_loop_1abd989b58114305e719a0550e7fe352e1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::chrono::nanoseconds</type>
+        <definition>std::chrono::nanoseconds KWin::RenderLoop::predictedRenderTime</definition>
+        <argsstring>() const</argsstring>
+        <name>predictedRenderTime</name>
+        <qualifiedname>KWin::RenderLoop::predictedRenderTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the expected time how long it is going to take to render the next frame. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="96" column="30" bodyfile="kwin/src/core/renderloop.cpp" bodystart="298" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_render_loop_1a51030577fe784d126428f018def13ead" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::RenderLoop::activeWindowControlsVrrRefreshRate</definition>
+        <argsstring>() const</argsstring>
+        <name>activeWindowControlsVrrRefreshRate</name>
+        <qualifiedname>KWin::RenderLoop::activeWindowControlsVrrRefreshRate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="100" column="10" bodyfile="kwin/src/core/renderloop.cpp" bodystart="266" bodyend="273"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_render_loop_1a82b71bfeb7ae7d21c12584553b07aca4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::RenderLoop::refreshRateChanged</definition>
+        <argsstring>()</argsstring>
+        <name>refreshRateChanged</name>
+        <qualifiedname>KWin::RenderLoop::refreshRateChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This signal is emitted when the refresh rate of this <ref refid="class_k_win_1_1_render_loop" kindref="compound">RenderLoop</ref> has changed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="106" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_render_loop_1a458787fe400b208721c1d29686ef3872" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::RenderLoop::framePresented</definition>
+        <argsstring>(RenderLoop *loop, std::chrono::nanoseconds timestamp, PresentationMode mode)</argsstring>
+        <name>framePresented</name>
+        <qualifiedname>KWin::RenderLoop::framePresented</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_render_loop" kindref="compound">RenderLoop</ref> *</type>
+          <declname>loop</declname>
+        </param>
+        <param>
+          <type>std::chrono::nanoseconds</type>
+          <declname>timestamp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespace_k_win_1a5bac5dc1ad9b6deedfa5c46c4e432767" kindref="member">PresentationMode</ref></type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This signal is emitted when a frame has been actually presented on the screen. <emphasis>timestamp</emphasis> indicates the time when it took place. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="111" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_render_loop_1a3f161609c45a13da23b2134c2c05637e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::RenderLoop::frameRequested</definition>
+        <argsstring>(RenderLoop *loop)</argsstring>
+        <name>frameRequested</name>
+        <qualifiedname>KWin::RenderLoop::frameRequested</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_render_loop" kindref="compound">RenderLoop</ref> *</type>
+          <declname>loop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This signal is emitted when the render loop wants a new frame to be composited.</para>
+<para>The <ref refid="class_k_win_1_1_compositor" kindref="compound">Compositor</ref> should make a connection to this signal using Qt::DirectConnection. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/renderloop.h" line="118" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="class_k_win_1_1_render_loop" kindref="compound">RenderLoop</ref> class represents the compositing scheduler on a particular output.</para>
+<para>The <ref refid="class_k_win_1_1_render_loop" kindref="compound">RenderLoop</ref> class drives the compositing. The <ref refid="class_k_win_1_1_render_loop_1a3f161609c45a13da23b2134c2c05637e" kindref="member">frameRequested()</ref> signal is emitted when the loop wants a new frame to be rendered. The frameCompleted() signal is emitted when a previously rendered frame has been presented on the screen. In case you want the compositor to repaint the scene, call the <ref refid="class_k_win_1_1_render_loop_1a6a1fb042e767625e8596efb70408b15a" kindref="member">scheduleRepaint()</ref> function. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::RenderLoop</label>
+        <link refid="class_k_win_1_1_render_loop"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::RenderLoop</label>
+        <link refid="class_k_win_1_1_render_loop"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/core/renderloop.h" line="31" column="1" bodyfile="kwin/src/core/renderloop.h" bodystart="32" bodyend="123"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_render_loop_1a51030577fe784d126428f018def13ead" prot="public" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>activeWindowControlsVrrRefreshRate</name></member>
+      <member refid="class_k_win_1_1_render_loop_1aeeb14f716dfa67e1f234088efeac8a34" prot="private" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>d</name></member>
+      <member refid="class_k_win_1_1_render_loop_1a458787fe400b208721c1d29686ef3872" prot="public" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>framePresented</name></member>
+      <member refid="class_k_win_1_1_render_loop_1a3f161609c45a13da23b2134c2c05637e" prot="public" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>frameRequested</name></member>
+      <member refid="class_k_win_1_1_render_loop_1ae6b3008f29e5ee9b0971c36fae9f3719" prot="public" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>inhibit</name></member>
+      <member refid="class_k_win_1_1_render_loop_1aad36ff9f661f69fc0065581f63b6448f" prot="public" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>lastPresentationTimestamp</name></member>
+      <member refid="class_k_win_1_1_render_loop_1ab7210116a0b5c9ef4fa433cfbb668eb3" prot="public" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>nextPresentationTimestamp</name></member>
+      <member refid="class_k_win_1_1_render_loop_1abd989b58114305e719a0550e7fe352e1" prot="public" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>predictedRenderTime</name></member>
+      <member refid="class_k_win_1_1_render_loop_1a38275bc527efdb56632fc03e059fa280" prot="public" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>prepareNewFrame</name></member>
+      <member refid="class_k_win_1_1_render_loop_1a052da12b6c4baef672ea7fbf3a3d7f6c" prot="public" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>refreshRate</name></member>
+      <member refid="class_k_win_1_1_render_loop_1a82b71bfeb7ae7d21c12584553b07aca4" prot="public" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>refreshRateChanged</name></member>
+      <member refid="class_k_win_1_1_render_loop_1aca48dcab491277b7fcaaef346d3b94c3" prot="public" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>RenderLoop</name></member>
+      <member refid="class_k_win_1_1_render_loop_1a36a3e27bf90642afde8915054616af3c" prot="private" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>RenderLoopPrivate</name></member>
+      <member refid="class_k_win_1_1_render_loop_1a6a1fb042e767625e8596efb70408b15a" prot="public" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>scheduleRepaint</name></member>
+      <member refid="class_k_win_1_1_render_loop_1a8163fe6276185cfef8108c31ceafe7a6" prot="public" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>setMaxPendingFrameCount</name></member>
+      <member refid="class_k_win_1_1_render_loop_1a4190d7deb1ba46f6993f1668e482b92c" prot="public" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>setPresentationMode</name></member>
+      <member refid="class_k_win_1_1_render_loop_1ac9b4d465e1ab4cf2f29a55e49b07d2de" prot="public" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>setPresentationSafetyMargin</name></member>
+      <member refid="class_k_win_1_1_render_loop_1ac43e8cd7cc2ab723d8b88e7b3fe7e4e1" prot="public" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>setRefreshRate</name></member>
+      <member refid="class_k_win_1_1_render_loop_1a3e66a57f79bbafd89fcbf4e127308222" prot="public" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>uninhibit</name></member>
+      <member refid="class_k_win_1_1_render_loop_1a5d345af9265ca65109fbc5c3f0000f93" prot="public" virt="non-virtual"><scope>KWin::RenderLoop</scope><name>~RenderLoop</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

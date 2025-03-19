@@ -1,0 +1,429 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_graphics_buffer" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>KWin::GraphicsBuffer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_dumb_graphics_buffer" prot="public" virt="non-virtual">KWin::DumbGraphicsBuffer</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_gbm_graphics_buffer" prot="public" virt="non-virtual">KWin::GbmGraphicsBuffer</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_linux_dma_buf_v1_client_buffer" prot="public" virt="non-virtual">KWin::LinuxDmaBufV1ClientBuffer</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_shm_client_buffer" prot="public" virt="non-virtual">KWin::ShmClientBuffer</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_shm_graphics_buffer" prot="public" virt="non-virtual">KWin::ShmGraphicsBuffer</derivedcompoundref>
+    <includes refid="graphicsbuffer_8h" local="no">graphicsbuffer.h</includes>
+    <innerclass refid="struct_k_win_1_1_graphics_buffer_1_1_map" prot="public">KWin::GraphicsBuffer::Map</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_k_win_1_1_graphics_buffer_1ab01475abfaf9300dfe2ba846db7e4ae4" prot="public" static="no" strong="no">
+        <type></type>
+        <name>MapFlag</name>
+        <qualifiedname>KWin::GraphicsBuffer::MapFlag</qualifiedname>
+        <enumvalue id="class_k_win_1_1_graphics_buffer_1ab01475abfaf9300dfe2ba846db7e4ae4a97a8598815489519310048c0f60c2059" prot="public">
+          <name>Read</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_graphics_buffer_1ab01475abfaf9300dfe2ba846db7e4ae4aa0c38edda47690199b4462b188a830db" prot="public">
+          <name>Write</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/graphicsbuffer.h" line="64" column="5" bodyfile="kwin/src/core/graphicsbuffer.h" bodystart="64" bodyend="67"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_graphics_buffer_1a2928609ea80626025fc8e728aaa18057" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KWin::GraphicsBuffer::m_refCount</definition>
+        <argsstring></argsstring>
+        <name>m_refCount</name>
+        <qualifiedname>KWin::GraphicsBuffer::m_refCount</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/graphicsbuffer.h" line="95" column="9" bodyfile="kwin/src/core/graphicsbuffer.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_graphics_buffer_1ad40715c555717f55f389ec1f36d30038" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::GraphicsBuffer::m_dropped</definition>
+        <argsstring></argsstring>
+        <name>m_dropped</name>
+        <qualifiedname>KWin::GraphicsBuffer::m_dropped</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/graphicsbuffer.h" line="96" column="10" bodyfile="kwin/src/core/graphicsbuffer.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_graphics_buffer_1a6f476e2a040b103e783e71e6e51b71de" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_k_win_1_1_sync_release_point" kindref="compound">SyncReleasePoint</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;SyncReleasePoint&gt; &gt; KWin::GraphicsBuffer::m_releasePoints</definition>
+        <argsstring></argsstring>
+        <name>m_releasePoints</name>
+        <qualifiedname>KWin::GraphicsBuffer::m_releasePoints</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/graphicsbuffer.h" line="97" column="17" bodyfile="kwin/src/core/graphicsbuffer.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_graphics_buffer_1af0d40610e9115f323dcfa0a2d1f67697" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::GraphicsBuffer::GraphicsBuffer</definition>
+        <argsstring>(QObject *parent=nullptr)</argsstring>
+        <name>GraphicsBuffer</name>
+        <qualifiedname>KWin::GraphicsBuffer::GraphicsBuffer</qualifiedname>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/graphicsbuffer.h" line="55" column="14" bodyfile="kwin/src/core/graphicsbuffer.cpp" bodystart="17" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_graphics_buffer_1afdb02f1ae060f64b7618130a055b0f42" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GraphicsBuffer::isReferenced</definition>
+        <argsstring>() const</argsstring>
+        <name>isReferenced</name>
+        <qualifiedname>KWin::GraphicsBuffer::isReferenced</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/graphicsbuffer.h" line="57" column="10" bodyfile="kwin/src/core/graphicsbuffer.cpp" bodystart="22" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_graphics_buffer_1abc5c2b498a66a48573f33f154dde6097" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GraphicsBuffer::isDropped</definition>
+        <argsstring>() const</argsstring>
+        <name>isDropped</name>
+        <qualifiedname>KWin::GraphicsBuffer::isDropped</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/graphicsbuffer.h" line="58" column="10" bodyfile="kwin/src/core/graphicsbuffer.cpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_graphics_buffer_1abe09a46569d14b3f163f6cc416f4184b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GraphicsBuffer::ref</definition>
+        <argsstring>()</argsstring>
+        <name>ref</name>
+        <qualifiedname>KWin::GraphicsBuffer::ref</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/graphicsbuffer.h" line="60" column="10" bodyfile="kwin/src/core/graphicsbuffer.cpp" bodystart="32" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_graphics_buffer_1ab17e36ea633d5e9b8849b86695c119a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GraphicsBuffer::unref</definition>
+        <argsstring>()</argsstring>
+        <name>unref</name>
+        <qualifiedname>KWin::GraphicsBuffer::unref</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/graphicsbuffer.h" line="61" column="10" bodyfile="kwin/src/core/graphicsbuffer.cpp" bodystart="38" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_graphics_buffer_1a7d0b964ea8c12167b315075b4de6cdfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GraphicsBuffer::drop</definition>
+        <argsstring>()</argsstring>
+        <name>drop</name>
+        <qualifiedname>KWin::GraphicsBuffer::drop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/graphicsbuffer.h" line="62" column="10" bodyfile="kwin/src/core/graphicsbuffer.cpp" bodystart="53" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_graphics_buffer_1a00aa1056d617ca382f59b6598f9f9bf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="struct_k_win_1_1_graphics_buffer_1_1_map" kindref="compound">Map</ref></type>
+        <definition>GraphicsBuffer::Map KWin::GraphicsBuffer::map</definition>
+        <argsstring>(MapFlags flags)</argsstring>
+        <name>map</name>
+        <qualifiedname>KWin::GraphicsBuffer::map</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_dumb_graphics_buffer_1a183202660ae8f42b1e5c7f9ae8d4c1f5">map</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_gbm_graphics_buffer_1ad6e15062b0a65090b4513cf23561c319">map</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_shm_client_buffer_1a706d0cad9e7266765d494751804f541c">map</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_shm_graphics_buffer_1a5ff88602ff1b645c0890b5f2b8e16ee4">map</reimplementedby>
+        <param>
+          <type>MapFlags</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/graphicsbuffer.h" line="75" column="17" bodyfile="kwin/src/core/graphicsbuffer.cpp" bodystart="62" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_graphics_buffer_1a94197a697c14fbdc32a5a763c641b87b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::GraphicsBuffer::unmap</definition>
+        <argsstring>()</argsstring>
+        <name>unmap</name>
+        <qualifiedname>KWin::GraphicsBuffer::unmap</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_dumb_graphics_buffer_1a9dfc0a004f77e36cc8440f61c4418179">unmap</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_gbm_graphics_buffer_1a269e9db0c6d965fc99904d5c15aa3bf5">unmap</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_shm_client_buffer_1a8b26c2bc0ce83be21dbe4efadf9844f2">unmap</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_shm_graphics_buffer_1a66d5a346af67c6e7996e58843c79287d">unmap</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/graphicsbuffer.h" line="76" column="18" bodyfile="kwin/src/core/graphicsbuffer.cpp" bodystart="67" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_graphics_buffer_1aead3f70f1ac9792f8ee014f326097fb5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>QSize</type>
+        <definition>virtual QSize KWin::GraphicsBuffer::size</definition>
+        <argsstring>() const =0</argsstring>
+        <name>size</name>
+        <qualifiedname>KWin::GraphicsBuffer::size</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_dumb_graphics_buffer_1a073d253bfeeb26929ed129e3c437006a">size</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_gbm_graphics_buffer_1a51d88e60e17a8f877c91f97caa59e37d">size</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_linux_dma_buf_v1_client_buffer_1acfbf2d91b26013e32fe782147f056e3a">size</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_shm_client_buffer_1ad558f66ba21118d75bdacc476ef62f40">size</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_shm_graphics_buffer_1a8b90af6bb39e166f95c61442b8339e60">size</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/graphicsbuffer.h" line="78" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_graphics_buffer_1a1640dbf550ef6e420d82c18f2c8697a0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool KWin::GraphicsBuffer::hasAlphaChannel</definition>
+        <argsstring>() const =0</argsstring>
+        <name>hasAlphaChannel</name>
+        <qualifiedname>KWin::GraphicsBuffer::hasAlphaChannel</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_dumb_graphics_buffer_1ad042154d16eabfa2bf083af1a270b39d">hasAlphaChannel</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_gbm_graphics_buffer_1acf88c64911e03d5bb4a9c756e047892d">hasAlphaChannel</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_linux_dma_buf_v1_client_buffer_1aad3f752031150e6c9a703cde1a871c86">hasAlphaChannel</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_shm_client_buffer_1ac5508bf87f99094b6c3abb4d1b1adeeb">hasAlphaChannel</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_shm_graphics_buffer_1ab031981afb8fbad698f32812d437653c">hasAlphaChannel</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/graphicsbuffer.h" line="79" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_graphics_buffer_1a975e80a802fa0d119921c13d4f06e576" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const <ref refid="struct_k_win_1_1_dma_buf_attributes" kindref="compound">DmaBufAttributes</ref> *</type>
+        <definition>const DmaBufAttributes * KWin::GraphicsBuffer::dmabufAttributes</definition>
+        <argsstring>() const</argsstring>
+        <name>dmabufAttributes</name>
+        <qualifiedname>KWin::GraphicsBuffer::dmabufAttributes</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_dumb_graphics_buffer_1a99bcba6884aa765fea82e2afe164f66f">dmabufAttributes</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_gbm_graphics_buffer_1a854ba473ee19b1307f51e782e0615826">dmabufAttributes</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_linux_dma_buf_v1_client_buffer_1a4d9ed004aa8901b69f73be7224bd7031">dmabufAttributes</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/graphicsbuffer.h" line="81" column="36" bodyfile="kwin/src/core/graphicsbuffer.cpp" bodystart="71" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_graphics_buffer_1ac2be51e8fa6ea0bcf1c9368b3605aa57" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const <ref refid="struct_k_win_1_1_shm_attributes" kindref="compound">ShmAttributes</ref> *</type>
+        <definition>const ShmAttributes * KWin::GraphicsBuffer::shmAttributes</definition>
+        <argsstring>() const</argsstring>
+        <name>shmAttributes</name>
+        <qualifiedname>KWin::GraphicsBuffer::shmAttributes</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_shm_client_buffer_1adbf3435ac6039d8afc308d0cad46c9d9">shmAttributes</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_shm_graphics_buffer_1af11f0b035d1015b86eabd457adf17f51">shmAttributes</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/graphicsbuffer.h" line="82" column="33" bodyfile="kwin/src/core/graphicsbuffer.cpp" bodystart="76" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_graphics_buffer_1adfb110d5e5cc2eb89b39b55531de68cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GraphicsBuffer::addReleasePoint</definition>
+        <argsstring>(const std::shared_ptr&lt; SyncReleasePoint &gt; &amp;releasePoint)</argsstring>
+        <name>addReleasePoint</name>
+        <qualifiedname>KWin::GraphicsBuffer::addReleasePoint</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_k_win_1_1_sync_release_point" kindref="compound">SyncReleasePoint</ref> &gt; &amp;</type>
+          <declname>releasePoint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>the added release point will be referenced as long as this buffer is referenced </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/graphicsbuffer.h" line="87" column="10" bodyfile="kwin/src/core/graphicsbuffer.cpp" bodystart="81" bodyend="84"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_graphics_buffer_1a7233a35f2682c6564fe7dcab11704d19" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GraphicsBuffer::alphaChannelFromDrmFormat</definition>
+        <argsstring>(uint32_t format)</argsstring>
+        <name>alphaChannelFromDrmFormat</name>
+        <qualifiedname>KWin::GraphicsBuffer::alphaChannelFromDrmFormat</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>format</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/graphicsbuffer.h" line="89" column="17" bodyfile="kwin/src/core/graphicsbuffer.cpp" bodystart="86" bodyend="90"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_graphics_buffer_1af3c47088ddbdb12a67df0417be2f7347" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GraphicsBuffer::released</definition>
+        <argsstring>()</argsstring>
+        <name>released</name>
+        <qualifiedname>KWin::GraphicsBuffer::released</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/graphicsbuffer.h" line="92" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref> class represents a chunk of memory containing graphics data.</para>
+<para>A graphics buffer can be referenced. In which case, it won&apos;t be destroyed until all references are dropped. You can use the <ref refid="class_k_win_1_1_graphics_buffer_1abc5c2b498a66a48573f33f154dde6097" kindref="member">isDropped()</ref> function to check whether the buffer has been marked as destroyed. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>KWin::DumbGraphicsBuffer</label>
+        <link refid="class_k_win_1_1_dumb_graphics_buffer"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>KWin::GbmGraphicsBuffer</label>
+        <link refid="class_k_win_1_1_gbm_graphics_buffer"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::GraphicsBuffer</label>
+        <link refid="class_k_win_1_1_graphics_buffer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>KWin::LinuxDmaBufV1ClientBuffer</label>
+        <link refid="class_k_win_1_1_linux_dma_buf_v1_client_buffer"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>KWin::ShmClientBuffer</label>
+        <link refid="class_k_win_1_1_shm_client_buffer"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>KWin::ShmGraphicsBuffer</label>
+        <link refid="class_k_win_1_1_shm_graphics_buffer"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::GraphicsBuffer</label>
+        <link refid="class_k_win_1_1_graphics_buffer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/core/graphicsbuffer.h" line="50" column="1" bodyfile="kwin/src/core/graphicsbuffer.h" bodystart="51" bodyend="98"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_graphics_buffer_1adfb110d5e5cc2eb89b39b55531de68cc" prot="public" virt="non-virtual"><scope>KWin::GraphicsBuffer</scope><name>addReleasePoint</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1a7233a35f2682c6564fe7dcab11704d19" prot="public" virt="non-virtual"><scope>KWin::GraphicsBuffer</scope><name>alphaChannelFromDrmFormat</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1a975e80a802fa0d119921c13d4f06e576" prot="public" virt="virtual"><scope>KWin::GraphicsBuffer</scope><name>dmabufAttributes</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1a7d0b964ea8c12167b315075b4de6cdfa" prot="public" virt="non-virtual"><scope>KWin::GraphicsBuffer</scope><name>drop</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1af0d40610e9115f323dcfa0a2d1f67697" prot="public" virt="non-virtual"><scope>KWin::GraphicsBuffer</scope><name>GraphicsBuffer</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1a1640dbf550ef6e420d82c18f2c8697a0" prot="public" virt="pure-virtual"><scope>KWin::GraphicsBuffer</scope><name>hasAlphaChannel</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1abc5c2b498a66a48573f33f154dde6097" prot="public" virt="non-virtual"><scope>KWin::GraphicsBuffer</scope><name>isDropped</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1afdb02f1ae060f64b7618130a055b0f42" prot="public" virt="non-virtual"><scope>KWin::GraphicsBuffer</scope><name>isReferenced</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1ad40715c555717f55f389ec1f36d30038" prot="protected" virt="non-virtual"><scope>KWin::GraphicsBuffer</scope><name>m_dropped</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1a2928609ea80626025fc8e728aaa18057" prot="protected" virt="non-virtual"><scope>KWin::GraphicsBuffer</scope><name>m_refCount</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1a6f476e2a040b103e783e71e6e51b71de" prot="protected" virt="non-virtual"><scope>KWin::GraphicsBuffer</scope><name>m_releasePoints</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1a00aa1056d617ca382f59b6598f9f9bf4" prot="public" virt="virtual"><scope>KWin::GraphicsBuffer</scope><name>map</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1ab01475abfaf9300dfe2ba846db7e4ae4" prot="public" virt="non-virtual"><scope>KWin::GraphicsBuffer</scope><name>MapFlag</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1ab01475abfaf9300dfe2ba846db7e4ae4a97a8598815489519310048c0f60c2059" prot="public" virt="non-virtual"><scope>KWin::GraphicsBuffer</scope><name>Read</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1abe09a46569d14b3f163f6cc416f4184b" prot="public" virt="non-virtual"><scope>KWin::GraphicsBuffer</scope><name>ref</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1af3c47088ddbdb12a67df0417be2f7347" prot="public" virt="non-virtual"><scope>KWin::GraphicsBuffer</scope><name>released</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1ac2be51e8fa6ea0bcf1c9368b3605aa57" prot="public" virt="virtual"><scope>KWin::GraphicsBuffer</scope><name>shmAttributes</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1aead3f70f1ac9792f8ee014f326097fb5" prot="public" virt="pure-virtual"><scope>KWin::GraphicsBuffer</scope><name>size</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1a94197a697c14fbdc32a5a763c641b87b" prot="public" virt="virtual"><scope>KWin::GraphicsBuffer</scope><name>unmap</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1ab17e36ea633d5e9b8849b86695c119a6" prot="public" virt="non-virtual"><scope>KWin::GraphicsBuffer</scope><name>unref</name></member>
+      <member refid="class_k_win_1_1_graphics_buffer_1ab01475abfaf9300dfe2ba846db7e4ae4aa0c38edda47690199b4462b188a830db" prot="public" virt="non-virtual"><scope>KWin::GraphicsBuffer</scope><name>Write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

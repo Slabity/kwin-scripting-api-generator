@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="virtualkeyboard__dbus_8cpp" kind="file" language="C++">
+    <compoundname>virtualkeyboard_dbus.cpp</compoundname>
+    <includes refid="virtualkeyboard__dbus_8h" local="yes">virtualkeyboard_dbus.h</includes>
+    <includes local="no">QDBusConnection</includes>
+    <includes local="yes">moc_virtualkeyboard_dbus.cpp</includes>
+    <incdepgraph>
+      <node id="13">
+        <label>input_event_spy.h</label>
+        <link refid="input__event__spy_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>inputmethod.h</label>
+        <link refid="inputmethod_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/virtualkeyboard_dbus.cpp</label>
+        <link refid="virtualkeyboard__dbus_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>virtualkeyboard_dbus.h</label>
+        <link refid="virtualkeyboard__dbus_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>textinput.h</label>
+        <link refid="textinput_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>wayland/textinput_v2.h</label>
+        <link refid="textinput__v2_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>QDBusConnection</label>
+      </node>
+      <node id="9">
+        <label>QMetaType</label>
+      </node>
+      <node id="6">
+        <label>QObject</label>
+      </node>
+      <node id="15">
+        <label>QPointer</label>
+      </node>
+      <node id="16">
+        <label>QTimer</label>
+      </node>
+      <node id="10">
+        <label>QtGlobal</label>
+      </node>
+      <node id="14">
+        <label>chrono</label>
+      </node>
+      <node id="5">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="7">
+        <label>memory</label>
+      </node>
+      <node id="18">
+        <label>moc_virtualkeyboard_dbus.cpp</label>
+      </node>
+      <node id="11">
+        <label>utility</label>
+      </node>
+      <node id="12">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2017<sp/>Martin<sp/>Flöser<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="virtualkeyboard__dbus_8h" kindref="compound">virtualkeyboard_dbus.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDBusConnection&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="class_k_win_1_1_virtual_keyboard_d_bus_1af1a9a891209b75c916a3c05aacecfa79" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1af1a9a891209b75c916a3c05aacecfa79" kindref="member">VirtualKeyboardDBus::VirtualKeyboardDBus</ref>(<ref refid="class_k_win_1_1_input_method" kindref="compound">InputMethod</ref><sp/>*parent)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QObject(parent)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_inputMethod(parent)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>QDBusConnection::sessionBus().registerObject(QStringLiteral(</highlight><highlight class="stringliteral">&quot;/VirtualKeyboard&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QDBusConnection::ExportAllProperties<sp/>|<sp/>QDBusConnection::ExportScriptableContents<sp/>|<sp/></highlight><highlight class="comment">//<sp/>qdbuscpp2xml<sp/>doesn&apos;t<sp/>support<sp/>yet<sp/>properties<sp/>with<sp/>NOTIFY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QDBusConnection::ExportAllSlots);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(parent,<sp/>&amp;<ref refid="class_k_win_1_1_input_method_1ab5aa0575d7741abf17220c55f4ba8753" kindref="member">InputMethod::activeChanged</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1adaf792a3ae74af701aa32df1ec9cfb8b" kindref="member">VirtualKeyboardDBus::activeChanged</ref>);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(parent,<sp/>&amp;<ref refid="class_k_win_1_1_input_method_1a41a4fa279d9764fb774ae4d2a4254f3f" kindref="member">InputMethod::enabledChanged</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1aa9c3b809ce999766fc013c14190b569e" kindref="member">VirtualKeyboardDBus::enabledChanged</ref>);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(parent,<sp/>&amp;<ref refid="class_k_win_1_1_input_method_1ad8f1d4f79bf8169695cdc67839d67076" kindref="member">InputMethod::visibleChanged</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1ad09108b08c3b220c0fe9a856c2883fab" kindref="member">VirtualKeyboardDBus::visibleChanged</ref>);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(parent,<sp/>&amp;<ref refid="class_k_win_1_1_input_method_1ad9265c04e0de3a1cc7bb81f470145d45" kindref="member">InputMethod::availableChanged</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1ab2a7f8afbbcd7ae1bee6339b400be459" kindref="member">VirtualKeyboardDBus::availableChanged</ref>);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(parent,<sp/>&amp;<ref refid="class_k_win_1_1_input_method_1a1a049a3a210a42a17e97459b8ffa574f" kindref="member">InputMethod::activeClientSupportsTextInputChanged</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1aed47d2d82d002dc25bc0b7fba0ee5147" kindref="member">VirtualKeyboardDBus::activeClientSupportsTextInputChanged</ref>);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a01094317363abb474e9940f508446544" kindref="member">VirtualKeyboardDBus::~VirtualKeyboardDBus</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="class_k_win_1_1_virtual_keyboard_d_bus_1a740ff1b0264b59a5515ebfe88b3a25b9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a740ff1b0264b59a5515ebfe88b3a25b9" kindref="member">VirtualKeyboardDBus::isActive</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="32"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_inputMethod-&gt;isActive();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="class_k_win_1_1_virtual_keyboard_d_bus_1a78fd7a0a6ab33535380ba973a5fe812c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a78fd7a0a6ab33535380ba973a5fe812c" kindref="member">VirtualKeyboardDBus::setEnabled</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1aaf234fd93d816ef22e5370b96a34bdf6" kindref="member">enabled</ref>)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>m_inputMethod-&gt;setEnabled(<ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1aaf234fd93d816ef22e5370b96a34bdf6" kindref="member">enabled</ref>);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="class_k_win_1_1_virtual_keyboard_d_bus_1ae9ff191ebb15d9093f88b93127f26cb5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1ae9ff191ebb15d9093f88b93127f26cb5" kindref="member">VirtualKeyboardDBus::setActive</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1ad0617289f1c8781cc16d79c3e3720152" kindref="member">active</ref>)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>m_inputMethod-&gt;setActive(<ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1ad0617289f1c8781cc16d79c3e3720152" kindref="member">active</ref>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="class_k_win_1_1_virtual_keyboard_d_bus_1a6dcfcc07bf2f3caf07329715090fd6c4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a6dcfcc07bf2f3caf07329715090fd6c4" kindref="member">VirtualKeyboardDBus::isEnabled</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="47"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_inputMethod-&gt;isEnabled();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="class_k_win_1_1_virtual_keyboard_d_bus_1a7fb674cb2ea5abdb5c87f6addbe60a96" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a7fb674cb2ea5abdb5c87f6addbe60a96" kindref="member">VirtualKeyboardDBus::isVisible</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="52"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_inputMethod-&gt;isVisible();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="class_k_win_1_1_virtual_keyboard_d_bus_1a15ec2893cd64225ec1248001a7fc0d4d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a15ec2893cd64225ec1248001a7fc0d4d" kindref="member">VirtualKeyboardDBus::isAvailable</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="57"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_inputMethod-&gt;isAvailable();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="class_k_win_1_1_virtual_keyboard_d_bus_1a067900c6340a959cfe131c3309c11015" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a8974c27b44550f60cb90145ff0c3c2a5" kindref="member">VirtualKeyboardDBus::activeClientSupportsTextInput</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="62"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_inputMethod-&gt;activeClientSupportsTextInput();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="class_k_win_1_1_virtual_keyboard_d_bus_1acfba404b63c84886f003763961537e4d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1acfba404b63c84886f003763961537e4d" kindref="member">VirtualKeyboardDBus::willShowOnActive</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="67"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a15ec2893cd64225ec1248001a7fc0d4d" kindref="member">isAvailable</ref>()<sp/>&amp;&amp;<sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1a6dcfcc07bf2f3caf07329715090fd6c4" kindref="member">isEnabled</ref>()<sp/>&amp;&amp;<sp/>m_inputMethod-&gt;shouldShowOnActive();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="class_k_win_1_1_virtual_keyboard_d_bus_1ac062001ff08602b36299b33bb048b775" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_virtual_keyboard_d_bus_1ac062001ff08602b36299b33bb048b775" kindref="member">VirtualKeyboardDBus::forceActivate</ref>()</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>m_inputMethod-&gt;forceActivate();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;moc_virtualkeyboard_dbus.cpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/virtualkeyboard_dbus.cpp"/>
+  </compounddef>
+</doxygen>

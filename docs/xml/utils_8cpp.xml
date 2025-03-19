@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="utils_8cpp" kind="file" language="C++">
+    <compoundname>utils.cpp</compoundname>
+    <includes refid="utils_8h" local="yes">utils.h</includes>
+    <includes local="no">KConfigGroup</includes>
+    <includes local="no">KLocalizedString</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/kcms/decoration/utils.cpp</label>
+        <link refid="utils_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>utils.h</label>
+        <link refid="utils_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>KConfigGroup</label>
+      </node>
+      <node id="3">
+        <label>KDecoration3/DecorationButton</label>
+      </node>
+      <node id="7">
+        <label>KLocalizedString</label>
+      </node>
+      <node id="4">
+        <label>KSharedConfig</label>
+      </node>
+      <node id="5">
+        <label>QList</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_utils">Utils</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2019<sp/>Valerio<sp/>Pilo<sp/>&lt;vpilo@coldshock.net&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>LGPL-2.0-only</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="utils_8h" kindref="compound">utils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KConfigGroup&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KLocalizedString&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QMap&lt;QString,<sp/>KDecoration3::BorderSize&gt;<sp/>s_borderSizes{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>{QStringLiteral(</highlight><highlight class="stringliteral">&quot;None&quot;</highlight><highlight class="normal">),<sp/>KDecoration3::BorderSize::None},</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>{QStringLiteral(</highlight><highlight class="stringliteral">&quot;NoSides&quot;</highlight><highlight class="normal">),<sp/>KDecoration3::BorderSize::NoSides},</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>{QStringLiteral(</highlight><highlight class="stringliteral">&quot;Tiny&quot;</highlight><highlight class="normal">),<sp/>KDecoration3::BorderSize::Tiny},</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>{QStringLiteral(</highlight><highlight class="stringliteral">&quot;Normal&quot;</highlight><highlight class="normal">),<sp/>KDecoration3::BorderSize::Normal},</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>{QStringLiteral(</highlight><highlight class="stringliteral">&quot;Large&quot;</highlight><highlight class="normal">),<sp/>KDecoration3::BorderSize::Large},</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>{QStringLiteral(</highlight><highlight class="stringliteral">&quot;VeryLarge&quot;</highlight><highlight class="normal">),<sp/>KDecoration3::BorderSize::VeryLarge},</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>{QStringLiteral(</highlight><highlight class="stringliteral">&quot;Huge&quot;</highlight><highlight class="normal">),<sp/>KDecoration3::BorderSize::Huge},</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>{QStringLiteral(</highlight><highlight class="stringliteral">&quot;VeryHuge&quot;</highlight><highlight class="normal">),<sp/>KDecoration3::BorderSize::VeryHuge},</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>{QStringLiteral(</highlight><highlight class="stringliteral">&quot;Oversized&quot;</highlight><highlight class="normal">),<sp/>KDecoration3::BorderSize::Oversized}};</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QMap&lt;KDecoration3::BorderSize,<sp/>QString&gt;<sp/>s_borderSizeNames{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::BorderSize::None,<sp/>i18n(</highlight><highlight class="stringliteral">&quot;No<sp/>window<sp/>borders&quot;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::BorderSize::NoSides,<sp/>i18n(</highlight><highlight class="stringliteral">&quot;No<sp/>side<sp/>window<sp/>borders&quot;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::BorderSize::Tiny,<sp/>i18n(</highlight><highlight class="stringliteral">&quot;Tiny<sp/>window<sp/>borders&quot;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::BorderSize::Normal,<sp/>i18n(</highlight><highlight class="stringliteral">&quot;Normal<sp/>window<sp/>borders&quot;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::BorderSize::Large,<sp/>i18n(</highlight><highlight class="stringliteral">&quot;Large<sp/>window<sp/>borders&quot;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::BorderSize::VeryLarge,<sp/>i18n(</highlight><highlight class="stringliteral">&quot;Very<sp/>large<sp/>window<sp/>borders&quot;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::BorderSize::Huge,<sp/>i18n(</highlight><highlight class="stringliteral">&quot;Huge<sp/>window<sp/>borders&quot;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::BorderSize::VeryHuge,<sp/>i18n(</highlight><highlight class="stringliteral">&quot;Very<sp/>huge<sp/>window<sp/>borders&quot;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::BorderSize::Oversized,<sp/>i18n(</highlight><highlight class="stringliteral">&quot;Oversized<sp/>window<sp/>borders&quot;</highlight><highlight class="normal">)}};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QHash&lt;KDecoration3::DecorationButtonType,<sp/>QChar&gt;<sp/>s_buttonNames{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::DecorationButtonType::Menu,<sp/>QChar(</highlight><highlight class="charliteral">&apos;M&apos;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::DecorationButtonType::ApplicationMenu,<sp/>QChar(</highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::DecorationButtonType::OnAllDesktops,<sp/>QChar(</highlight><highlight class="charliteral">&apos;S&apos;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::DecorationButtonType::ContextHelp,<sp/>QChar(</highlight><highlight class="charliteral">&apos;H&apos;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::DecorationButtonType::Minimize,<sp/>QChar(</highlight><highlight class="charliteral">&apos;I&apos;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::DecorationButtonType::Maximize,<sp/>QChar(</highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::DecorationButtonType::Close,<sp/>QChar(</highlight><highlight class="charliteral">&apos;X&apos;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::DecorationButtonType::KeepAbove,<sp/>QChar(</highlight><highlight class="charliteral">&apos;F&apos;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::DecorationButtonType::KeepBelow,<sp/>QChar(</highlight><highlight class="charliteral">&apos;B&apos;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::DecorationButtonType::Shade,<sp/>QChar(</highlight><highlight class="charliteral">&apos;L&apos;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>{KDecoration3::DecorationButtonType::Spacer,<sp/>QChar(</highlight><highlight class="charliteral">&apos;_&apos;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="namespace_utils" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_utils" kindref="compound">Utils</ref></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="namespace_utils_1af940e715f9e698ec4d85784e3e9b5f3b" refkind="member"><highlight class="normal">QString<sp/><ref refid="namespace_utils_1af940e715f9e698ec4d85784e3e9b5f3b" kindref="member">buttonsToString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="utils_8h_1aef90f006c02dd01ca69df597a17c03ca" kindref="member">DecorationButtonsList</ref><sp/>&amp;buttons)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>buttonToString<sp/>=<sp/>[](KDecoration3::DecorationButtonType<sp/>button)<sp/>-&gt;<sp/>QChar<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>s_buttonNames.constFind(button);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>!=<sp/>s_buttonNames.constEnd())<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>it.value();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QChar();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>ret;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>button<sp/>:<sp/>buttons)<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret.append(buttonToString(button));</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="namespace_utils_1a106c959fbeff2043dc16e16d97f1bb55" refkind="member"><highlight class="normal"><ref refid="utils_8h_1aef90f006c02dd01ca69df597a17c03ca" kindref="member">DecorationButtonsList</ref><sp/><ref refid="namespace_utils_1a106c959fbeff2043dc16e16d97f1bb55" kindref="member">buttonsFromString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;buttons)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="utils_8h_1aef90f006c02dd01ca69df597a17c03ca" kindref="member">DecorationButtonsList</ref><sp/>ret;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>buttons.begin();<sp/>it<sp/>!=<sp/>buttons.end();<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it2<sp/>=<sp/>s_buttonNames.constBegin();<sp/>it2<sp/>!=<sp/>s_buttonNames.constEnd();<sp/>++it2)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it2.value()<sp/>==<sp/>(*it))<sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret<sp/>&lt;&lt;<sp/>it2.key();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="namespace_utils_1afc6995ea039f1ba46811e5872b3e1408" refkind="member"><highlight class="normal"><ref refid="utils_8h_1aef90f006c02dd01ca69df597a17c03ca" kindref="member">DecorationButtonsList</ref><sp/><ref refid="namespace_utils_1afc6995ea039f1ba46811e5872b3e1408" kindref="member">readDecorationButtons</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>KConfigGroup<sp/>&amp;config,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;key,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="utils_8h_1aef90f006c02dd01ca69df597a17c03ca" kindref="member">DecorationButtonsList</ref><sp/>&amp;defaultValue)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_utils_1a106c959fbeff2043dc16e16d97f1bb55" kindref="member">buttonsFromString</ref>(config.readEntry(key,<sp/><ref refid="namespace_utils_1af940e715f9e698ec4d85784e3e9b5f3b" kindref="member">buttonsToString</ref>(defaultValue)));</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="namespace_utils_1aaffd7f2465754d15323143f2780a5b79" refkind="member"><highlight class="normal">KDecoration3::BorderSize<sp/><ref refid="namespace_utils_1aaffd7f2465754d15323143f2780a5b79" kindref="member">stringToBorderSize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;name)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>s_borderSizes.constFind(name);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>==<sp/>s_borderSizes.constEnd())<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>non<sp/>sense<sp/>values<sp/>are<sp/>interpreted<sp/>just<sp/>like<sp/>normal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>KDecoration3::BorderSize::Normal;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>it.value();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="namespace_utils_1ac3ed82dca2d3d09d61cc52ab9fd5ab4e" refkind="member"><highlight class="normal">QString<sp/><ref refid="namespace_utils_1ac3ed82dca2d3d09d61cc52ab9fd5ab4e" kindref="member">borderSizeToString</ref>(KDecoration3::BorderSize<sp/>size)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>s_borderSizes.key(size);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="namespace_utils_1ae963a49b112be9fe284f8c1bec5446b0" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QMap&lt;KDecoration3::BorderSize,<sp/>QString&gt;<sp/>&amp;<ref refid="namespace_utils_1ae963a49b112be9fe284f8c1bec5446b0" kindref="member">getBorderSizeNames</ref>()</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>s_borderSizeNames;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Utils</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/kcms/decoration/utils.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="plasmashell_8h" kind="file" language="C++">
+    <compoundname>plasmashell.h</compoundname>
+    <includes local="yes">kwin_export.h</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">memory</includes>
+    <includedby refid="plasmashell_8cpp" local="yes">kwin/src/wayland/plasmashell.cpp</includedby>
+    <includedby refid="wayland__server_8cpp" local="yes">kwin/src/wayland_server.cpp</includedby>
+    <includedby refid="xdgshellwindow_8cpp" local="yes">kwin/src/xdgshellwindow.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/wayland/plasmashell.h</label>
+        <link refid="plasmashell_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+      <node id="2">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/wayland/plasmashell.cpp</label>
+        <link refid="plasmashell_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/wayland/plasmashell.h</label>
+        <link refid="plasmashell_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>kwin/src/wayland_server.cpp</label>
+        <link refid="wayland__server_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/xdgshellwindow.cpp</label>
+        <link refid="xdgshellwindow_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_plasma_shell_interface" prot="public">KWin::PlasmaShellInterface</innerclass>
+    <innerclass refid="class_k_win_1_1_plasma_shell_surface_interface" prot="public">KWin::PlasmaShellSurfaceInterface</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2015<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2020<sp/>David<sp/>Edmundson<sp/>&lt;davidedmundson@kde.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>LGPL-2.1-only<sp/>OR<sp/>LGPL-3.0-only<sp/>OR<sp/>LicenseRef-KDE-Accepted-LGPL</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;kwin_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QSize;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_resource;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_plasma_shell_surface_interface" kindref="compound">PlasmaShellSurfaceInterface</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_plasma_shell_interface_private" kindref="compound">PlasmaShellInterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_plasma_shell_surface_interface_private" kindref="compound">PlasmaShellSurfaceInterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="class_k_win_1_1_plasma_shell_interface" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_plasma_shell_interface_1ab1af341ea6fe99c4b263df14fd9e3646" kindref="member">PlasmaShellInterface</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plasma_shell_interface_1ab1af341ea6fe99c4b263df14fd9e3646" kindref="member">PlasmaShellInterface</ref>(<ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*display,<sp/>QObject<sp/>*parent);</highlight></codeline>
+<codeline lineno="42" refid="class_k_win_1_1_plasma_shell_interface_1a1791078841c7067b28cba6ff1963ff89" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plasma_shell_interface_1a1791078841c7067b28cba6ff1963ff89" kindref="member">~PlasmaShellInterface</ref>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="48" refid="class_k_win_1_1_plasma_shell_interface_1a600356fe81bca114252cc881116ddd40" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plasma_shell_interface_1a600356fe81bca114252cc881116ddd40" kindref="member">surfaceCreated</ref>(<ref refid="class_k_win_1_1_plasma_shell_surface_interface" kindref="compound">KWin::PlasmaShellSurfaceInterface</ref><sp/>*);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;PlasmaShellInterfacePrivate&gt;<sp/>d;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="class_k_win_1_1_plasma_shell_surface_interface" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/>PlasmaShellSurfaceInterface<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="63" refid="class_k_win_1_1_plasma_shell_surface_interface_1a2c277daa88a781e091506cd144ae84c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1a2c277daa88a781e091506cd144ae84c3" kindref="member">~PlasmaShellSurfaceInterface</ref>();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref><sp/>*<ref refid="class_k_win_1_1_plasma_shell_surface_interface_1a349d58daed2690dbf1558f117155d0d3" kindref="member">surface</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>QPoint<sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1a5e2b853241241d3fb01ab16a3ba72142" kindref="member">position</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1a95bbc19c7e6d2fb164fd75af0c496d4c" kindref="member">isPositionSet</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1a558ff206fee10a6c51c22acf5d6320c3" kindref="member">wantsOpenUnderCursor</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804" kindref="member">Role</ref><sp/>{</highlight></codeline>
+<codeline lineno="88" refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804a960b44c579bc2f6818d2daaf9e4c16f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804a960b44c579bc2f6818d2daaf9e4c16f0" kindref="member">Normal</ref>,<sp/></highlight></codeline>
+<codeline lineno="89" refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804a2310408a63388fe57e3a4177168a8798" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804a2310408a63388fe57e3a4177168a8798" kindref="member">Desktop</ref>,<sp/></highlight></codeline>
+<codeline lineno="90" refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804ab8da6df14bf06283cbf588df6998722e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804ab8da6df14bf06283cbf588df6998722e" kindref="member">Panel</ref>,<sp/></highlight></codeline>
+<codeline lineno="91" refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804ad1163214ae0eb81427f7baf7e5cc7280" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804ad1163214ae0eb81427f7baf7e5cc7280" kindref="member">OnScreenDisplay</ref>,<sp/></highlight></codeline>
+<codeline lineno="92" refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804a96d008db67fc0b5551a926842bbb6a71" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804a96d008db67fc0b5551a926842bbb6a71" kindref="member">Notification</ref>,<sp/></highlight></codeline>
+<codeline lineno="93" refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804af2740703e3fef3d0f513acb7ab1d7a36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804af2740703e3fef3d0f513acb7ab1d7a36" kindref="member">ToolTip</ref>,<sp/></highlight></codeline>
+<codeline lineno="94" refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804a83e0e7b9ab8e5f1ffe568072e16cf1d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804a83e0e7b9ab8e5f1ffe568072e16cf1d8" kindref="member">CriticalNotification</ref>,<sp/></highlight></codeline>
+<codeline lineno="95" refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804af61d3dfc51cf3fdd6d1d08bd6ccfad5c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804af61d3dfc51cf3fdd6d1d08bd6ccfad5c" kindref="member">AppletPopup</ref>,<sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>Role<sp/>role()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106" refid="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665" kindref="member">PanelBehavior</ref><sp/>{</highlight></codeline>
+<codeline lineno="107" refid="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665acd1810dcd59004d43111b80b7bad31cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665acd1810dcd59004d43111b80b7bad31cb" kindref="member">AlwaysVisible</ref>,<sp/></highlight></codeline>
+<codeline lineno="108" refid="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665a6060ccae5af5a564eac006bcc8968cb9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665a6060ccae5af5a564eac006bcc8968cb9" kindref="member">AutoHide</ref>,<sp/></highlight></codeline>
+<codeline lineno="109" refid="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665aa39b2b50b34f1abbecfa2b6b09f98f6e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665aa39b2b50b34f1abbecfa2b6b09f98f6e" kindref="member">WindowsCanCover</ref>,<sp/></highlight></codeline>
+<codeline lineno="110" refid="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665a3ce61f3b43bfdffd64bfe5df98a70d47" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665a3ce61f3b43bfdffd64bfe5df98a70d47" kindref="member">WindowsGoBelow</ref>,<sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>PanelBehavior<sp/>panelBehavior()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>skipTaskbar()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>skipSwitcher()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>hideAutoHidingPanel();</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>showAutoHidingPanel();</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>KF6<sp/>rename<sp/>to<sp/>something<sp/>generic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>panelTakesFocus()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface" kindref="compound">PlasmaShellSurfaceInterface</ref><sp/>*get(wl_resource<sp/>*native);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface" kindref="compound">PlasmaShellSurfaceInterface</ref><sp/>*get(<ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref><sp/>*surface);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="172" refid="class_k_win_1_1_plasma_shell_surface_interface_1ad25faa32e347e0a74a71ec848e31c9f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ad25faa32e347e0a74a71ec848e31c9f2" kindref="member">positionChanged</ref>();</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178" refid="class_k_win_1_1_plasma_shell_surface_interface_1a864cb6ded01f98bb613a3600c7ced48d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1a864cb6ded01f98bb613a3600c7ced48d" kindref="member">openUnderCursorRequested</ref>();</highlight></codeline>
+<codeline lineno="182" refid="class_k_win_1_1_plasma_shell_surface_interface_1a05c2dda7fbfe4cc7b70e8ac7d17e36b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1a05c2dda7fbfe4cc7b70e8ac7d17e36b6" kindref="member">roleChanged</ref>();</highlight></codeline>
+<codeline lineno="186" refid="class_k_win_1_1_plasma_shell_surface_interface_1a67c220ff32125564df10442fe4844e4c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1a67c220ff32125564df10442fe4844e4c" kindref="member">panelBehaviorChanged</ref>();</highlight></codeline>
+<codeline lineno="190" refid="class_k_win_1_1_plasma_shell_surface_interface_1a201592ca0e89797957c0e2894db79091" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1a201592ca0e89797957c0e2894db79091" kindref="member">skipTaskbarChanged</ref>();</highlight></codeline>
+<codeline lineno="194" refid="class_k_win_1_1_plasma_shell_surface_interface_1a81148cef7a2cc4f137070fe2305b00a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1a81148cef7a2cc4f137070fe2305b00a2" kindref="member">skipSwitcherChanged</ref>();</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209" refid="class_k_win_1_1_plasma_shell_surface_interface_1ae9306e1df196f201da68646ccc7313d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ae9306e1df196f201da68646ccc7313d3" kindref="member">panelAutoHideHideRequested</ref>();</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221" refid="class_k_win_1_1_plasma_shell_surface_interface_1abd68846373d26264b94840e89f8c2b9d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1abd68846373d26264b94840e89f8c2b9d" kindref="member">panelAutoHideShowRequested</ref>();</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="224"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Emitted<sp/>when<sp/>panelTakesFocus<sp/>changes</highlight></codeline>
+<codeline lineno="225"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@see<sp/>panelTakesFocus</highlight></codeline>
+<codeline lineno="226"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227" refid="class_k_win_1_1_plasma_shell_surface_interface_1aa55050d75db2dcd44f79bdb8d045f84d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1aa55050d75db2dcd44f79bdb8d045f84d" kindref="member">panelTakesFocusChanged</ref>();</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="230" refid="class_k_win_1_1_plasma_shell_surface_interface_1ae322e5d5510ab6e1daf91d22480d9ad8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ae322e5d5510ab6e1daf91d22480d9ad8" kindref="member">PlasmaShellInterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/>PlasmaShellSurfaceInterface(<ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref><sp/>*<ref refid="class_k_win_1_1_plasma_shell_surface_interface_1a349d58daed2690dbf1558f117155d0d3" kindref="member">surface</ref>,<sp/>wl_resource<sp/>*resource);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;PlasmaShellSurfaceInterfacePrivate&gt;<sp/>d;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal">Q_DECLARE_METATYPE(<ref refid="class_k_win_1_1_plasma_shell_surface_interface_1ad5c7525195ed6d39bd115a9d676f0804" kindref="member">KWin::PlasmaShellSurfaceInterface::Role</ref>)</highlight></codeline>
+<codeline lineno="238"><highlight class="normal">Q_DECLARE_METATYPE(<ref refid="class_k_win_1_1_plasma_shell_surface_interface_1af2d1bd0b0a4fba66bc3197140c63d665" kindref="member">KWin::PlasmaShellSurfaceInterface::PanelBehavior</ref>)</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/wayland/plasmashell.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="colorpipelinestage_8cpp" kind="file" language="C++">
+    <compoundname>colorpipelinestage.cpp</compoundname>
+    <includes refid="colorpipelinestage_8h" local="yes">colorpipelinestage.h</includes>
+    <includes local="no">lcms2.h</includes>
+    <includes refid="common_8h" local="yes">utils/common.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/core/colorpipelinestage.cpp</label>
+        <link refid="colorpipelinestage_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>colorpipelinestage.h</label>
+        <link refid="colorpipelinestage_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>utils/common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>utils/version.h</label>
+        <link refid="version_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>QByteArray</label>
+      </node>
+      <node id="9">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="10">
+        <label>QImage</label>
+      </node>
+      <node id="17">
+        <label>QList</label>
+      </node>
+      <node id="18">
+        <label>QLoggingCategory</label>
+      </node>
+      <node id="19">
+        <label>QMatrix4x4</label>
+      </node>
+      <node id="11">
+        <label>QPoint</label>
+      </node>
+      <node id="20">
+        <label>QRect</label>
+      </node>
+      <node id="16">
+        <label>QString</label>
+      </node>
+      <node id="12">
+        <label>QVariant</label>
+      </node>
+      <node id="13">
+        <label>QVector2D</label>
+      </node>
+      <node id="21">
+        <label>climits</label>
+      </node>
+      <node id="7">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="3">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="5">
+        <label>lcms2.h</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2022<sp/>Xaver<sp/>Hugl<sp/>&lt;xaver.hugl@gmail.com&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="colorpipelinestage_8h" kindref="compound">colorpipelinestage.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;lcms2.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="common_8h" kindref="compound">utils/common.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="class_k_win_1_1_color_pipeline_stage_1a5ffb8ee6c5a97ba84330f89fd5cd9ca7" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_color_pipeline_stage_1a5ffb8ee6c5a97ba84330f89fd5cd9ca7" kindref="member">ColorPipelineStage::ColorPipelineStage</ref>(<ref refid="colorpipelinestage_8h_1ab7f38f1229e05a280cb49aae3abb18c2" kindref="member">cmsStage</ref><sp/>*<ref refid="class_k_win_1_1_color_pipeline_stage_1a0a18daa416d193aadacc1c8235ce4347" kindref="member">stage</ref>)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>m_stage(<ref refid="class_k_win_1_1_color_pipeline_stage_1a0a18daa416d193aadacc1c8235ce4347" kindref="member">stage</ref>)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="class_k_win_1_1_color_pipeline_stage_1a5ed651ee67f1cabdd26734175ff898df" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_color_pipeline_stage_1a5ed651ee67f1cabdd26734175ff898df" kindref="member">ColorPipelineStage::~ColorPipelineStage</ref>()</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_stage)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cmsStageFree(m_stage);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="class_k_win_1_1_color_pipeline_stage_1a64c1d9cf88d2c5a1528b9e02311d6ada" refkind="member"><highlight class="normal">std::unique_ptr&lt;ColorPipelineStage&gt;<sp/><ref refid="class_k_win_1_1_color_pipeline_stage_1a64c1d9cf88d2c5a1528b9e02311d6ada" kindref="member">ColorPipelineStage::dup</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="31"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_stage)<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_color_pipeline_stage_1a64c1d9cf88d2c5a1528b9e02311d6ada" kindref="member">dup</ref><sp/>=<sp/>cmsStageDup(m_stage);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_k_win_1_1_color_pipeline_stage_1a64c1d9cf88d2c5a1528b9e02311d6ada" kindref="member">dup</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::make_unique&lt;ColorPipelineStage&gt;(<ref refid="class_k_win_1_1_color_pipeline_stage_1a64c1d9cf88d2c5a1528b9e02311d6ada" kindref="member">dup</ref>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qCWarning(KWIN_CORE)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>duplicate<sp/>cmsStage!&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="class_k_win_1_1_color_pipeline_stage_1a0a18daa416d193aadacc1c8235ce4347" refkind="member"><highlight class="normal"><ref refid="colorpipelinestage_8h_1ab7f38f1229e05a280cb49aae3abb18c2" kindref="member">cmsStage</ref><sp/>*<ref refid="class_k_win_1_1_color_pipeline_stage_1a0a18daa416d193aadacc1c8235ce4347" kindref="member">ColorPipelineStage::stage</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="44"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_stage;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/core/colorpipelinestage.cpp"/>
+  </compounddef>
+</doxygen>

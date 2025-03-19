@@ -1,0 +1,940 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_focus_chain" kind="class" language="C++" prot="public">
+    <compoundname>KWin::FocusChain</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="focuschain_8h" local="no">focuschain.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_k_win_1_1_focus_chain_1acab3b23e1580c8efd3734cf5f5243de7" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Change</name>
+        <qualifiedname>KWin::FocusChain::Change</qualifiedname>
+        <enumvalue id="class_k_win_1_1_focus_chain_1acab3b23e1580c8efd3734cf5f5243de7a9b0c9b8b20ea9d810dbf7be51526f985" prot="public">
+          <name>MakeFirst</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_focus_chain_1acab3b23e1580c8efd3734cf5f5243de7a49c20e683b7b6086c9551ea9547af3dd" prot="public">
+          <name>MakeLast</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_focus_chain_1acab3b23e1580c8efd3734cf5f5243de7a6e0f018a3e8ff555dbde94cbef9a6645" prot="public">
+          <name>Update</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_focus_chain_1acab3b23e1580c8efd3734cf5f5243de7aab53c3653b7ef22857bb07037c280de4" prot="public">
+          <name>MakeFirstMinimized</name>
+          <initializer>= MakeFirst</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="42" column="5" bodyfile="kwin/src/focuschain.h" bodystart="42" bodyend="47"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="class_k_win_1_1_focus_chain_1a46df6fa786358f2c7e94028f11259c6c" prot="private" static="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> * &gt;</type>
+        <definition>using KWin::FocusChain::Chain =  QList&lt;Window *&gt;</definition>
+        <argsstring></argsstring>
+        <name>Chain</name>
+        <qualifiedname>KWin::FocusChain::Chain</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="184" column="5" bodyfile="kwin/src/focuschain.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_focus_chain_1a1aabd6d24f61db34759aaefae76971b3" prot="private" static="no" mutable="no">
+        <type>Chain</type>
+        <definition>Chain KWin::FocusChain::m_mostRecentlyUsed</definition>
+        <argsstring></argsstring>
+        <name>m_mostRecentlyUsed</name>
+        <qualifiedname>KWin::FocusChain::m_mostRecentlyUsed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="211" column="11" bodyfile="kwin/src/focuschain.h" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_focus_chain_1afc2317a8a72296f956d747b8b2d15f34" prot="private" static="no" mutable="no">
+        <type>QHash&lt; <ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref> *, Chain &gt;</type>
+        <definition>QHash&lt;VirtualDesktop *, Chain&gt; KWin::FocusChain::m_desktopFocusChains</definition>
+        <argsstring></argsstring>
+        <name>m_desktopFocusChains</name>
+        <qualifiedname>KWin::FocusChain::m_desktopFocusChains</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="212" column="11" bodyfile="kwin/src/focuschain.h" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_focus_chain_1ad1058dd8a939de37a9fd82a2ae20b75c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::FocusChain::m_separateScreenFocus</definition>
+        <argsstring></argsstring>
+        <name>m_separateScreenFocus</name>
+        <qualifiedname>KWin::FocusChain::m_separateScreenFocus</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="213" column="10" bodyfile="kwin/src/focuschain.h" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_focus_chain_1a704fd584e26324669e8fc810a758f20f" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+        <definition>Window* KWin::FocusChain::m_activeWindow</definition>
+        <argsstring></argsstring>
+        <name>m_activeWindow</name>
+        <qualifiedname>KWin::FocusChain::m_activeWindow</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="214" column="12" bodyfile="kwin/src/focuschain.h" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_focus_chain_1a66094a793d18667fe78045f829bb5209" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref> *</type>
+        <definition>VirtualDesktop* KWin::FocusChain::m_currentDesktop</definition>
+        <argsstring></argsstring>
+        <name>m_currentDesktop</name>
+        <qualifiedname>KWin::FocusChain::m_currentDesktop</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="215" column="20" bodyfile="kwin/src/focuschain.h" bodystart="215" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_focus_chain_1ad8679d2ea016799f41512b1f21d3bf08" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::FocusChain::FocusChain</definition>
+        <argsstring>()=default</argsstring>
+        <name>FocusChain</name>
+        <qualifiedname>KWin::FocusChain::FocusChain</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="48" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_focus_chain_1a48b2e8b7d9947521ba3ddcc8e1dde952" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::FocusChain::update</definition>
+        <argsstring>(Window *window, Change change)</argsstring>
+        <name>update</name>
+        <qualifiedname>KWin::FocusChain::update</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_focus_chain_1acab3b23e1580c8efd3734cf5f5243de7" kindref="member">Change</ref></type>
+          <declname>change</declname>
+        </param>
+        <briefdescription>
+<para>Updates the position of the <computeroutput>window</computeroutput> according to the requested <computeroutput>change</computeroutput> in the focus chain. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method affects both the most recently used focus chain and the per virtual desktop focus chain.</para>
+<para>In case the window does no longer want to get focus, it is removed from all chains. In case the window is on all virtual desktops it is ensured that it is present in each of the virtual desktops focus chain. In case it&apos;s on exactly one virtual desktop it is ensured that it is only in the focus chain for that virtual desktop.</para>
+<para>Depending on <computeroutput>change</computeroutput> the <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> is inserted at different positions in the focus chain. In case of <computeroutput>MakeFirst</computeroutput> it is moved to the first position of the chain, in case of <computeroutput>MakeLast</computeroutput> it is moved to the last position of the chain. In all other cases it depends on whether the <computeroutput>window</computeroutput> is the currently active <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref>. If it is the active <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> it becomes the first <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> in the chain, otherwise it is inserted at the second position that is directly after the currently active <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> which should be moved inside the chains. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>change</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where to move the <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="73" column="10" bodyfile="kwin/src/focuschain.cpp" bodystart="62" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_focus_chain_1a3d2ff2351179d9795b49ac41406784f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::FocusChain::moveAfterWindow</definition>
+        <argsstring>(Window *window, Window *reference)</argsstring>
+        <name>moveAfterWindow</name>
+        <qualifiedname>KWin::FocusChain::moveAfterWindow</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>reference</declname>
+        </param>
+        <briefdescription>
+<para>Moves <computeroutput>window</computeroutput> behind the <computeroutput>reference</computeroutput> <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> in all focus chains. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> to move in the chains </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reference</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> behind which the <computeroutput>window</computeroutput> should be moved </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="81" column="10" bodyfile="kwin/src/focuschain.cpp" bodystart="134" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_focus_chain_1a48a30437bb28cffb01433a3c736842ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::FocusChain::moveBeforeWindow</definition>
+        <argsstring>(Window *window, Window *reference)</argsstring>
+        <name>moveBeforeWindow</name>
+        <qualifiedname>KWin::FocusChain::moveBeforeWindow</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>reference</declname>
+        </param>
+        <briefdescription>
+<para>Moves <computeroutput>window</computeroutput> in front of the <computeroutput>reference</computeroutput> <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> in all focus chains. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> to move in the chains </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reference</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> in front of which the <computeroutput>window</computeroutput> should be moved </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="89" column="10" bodyfile="kwin/src/focuschain.cpp" bodystart="157" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_focus_chain_1a1a79062a0764c2d01bd009c63d0b71a6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+        <definition>Window * KWin::FocusChain::getForActivation</definition>
+        <argsstring>(VirtualDesktop *desktop) const</argsstring>
+        <name>getForActivation</name>
+        <qualifiedname>KWin::FocusChain::getForActivation</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref> *</type>
+          <declname>desktop</declname>
+        </param>
+        <briefdescription>
+<para>Finds the best <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> to become the new active <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> in the focus chain for the given virtual <computeroutput>desktop</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In case that separate screen focus is used only Windows on the current screen are considered. If no <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> for activation is found <computeroutput>null</computeroutput> is returned.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>desktop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The virtual desktop to look for a <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> for activation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>:<ref refid="class_k_win_1_1_x11_window" kindref="compound">X11Window</ref> *The <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> which could be activated or <computeroutput>null</computeroutput> if there is none. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="100" column="12" bodyfile="kwin/src/focuschain.cpp" bodystart="39" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_focus_chain_1ae7884d1a929eb9409912f7047fd7a670" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+        <definition>Window * KWin::FocusChain::getForActivation</definition>
+        <argsstring>(VirtualDesktop *desktop, Output *output) const</argsstring>
+        <name>getForActivation</name>
+        <qualifiedname>KWin::FocusChain::getForActivation</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref> *</type>
+          <declname>desktop</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+<para>Finds the best <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> to become the new active <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> in the focus chain for the given virtual <computeroutput>desktop</computeroutput> on the given <computeroutput>screen</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method makes only sense to use if separate screen focus is used. If separate screen focus is disabled the <computeroutput>screen</computeroutput> is ignored. If no <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> for activation is found <computeroutput>null</computeroutput> is returned.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>desktop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The virtual desktop to look for a <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> for activation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The screen to constrain the search on with separate screen focus </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>:<ref refid="class_k_win_1_1_x11_window" kindref="compound">X11Window</ref> *The <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> which could be activated or <computeroutput>null</computeroutput> if there is none. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="113" column="12" bodyfile="kwin/src/focuschain.cpp" bodystart="44" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_focus_chain_1a9604f738cac8866be71342f8d5207e1d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::FocusChain::contains</definition>
+        <argsstring>(Window *window) const</argsstring>
+        <name>contains</name>
+        <qualifiedname>KWin::FocusChain::contains</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether the most recently used focus chain contains the given <computeroutput>window</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Does not consider the per-desktop focus chains. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> to look for. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool <computeroutput>true</computeroutput> if the most recently used focus chain contains <computeroutput>window</computeroutput>, <computeroutput>false</computeroutput> otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="122" column="10" bodyfile="kwin/src/focuschain.h" bodystart="218" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_focus_chain_1ad97895546e264ef1738cad0933d852a5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::FocusChain::contains</definition>
+        <argsstring>(Window *window, VirtualDesktop *desktop) const</argsstring>
+        <name>contains</name>
+        <qualifiedname>KWin::FocusChain::contains</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref> *</type>
+          <declname>desktop</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether the focus chain for the given <computeroutput>desktop</computeroutput> contains the given <computeroutput>window</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Does not consider the most recently used focus chain.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> to look for. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desktop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The virtual desktop whose focus chain should be used </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool <computeroutput>true</computeroutput> if the focus chain for <computeroutput>desktop</computeroutput> contains <computeroutput>window</computeroutput>, <computeroutput>false</computeroutput> otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="132" column="10" bodyfile="kwin/src/focuschain.cpp" bodystart="287" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_focus_chain_1ada1346e7450d500c29be1ccc3e95ae89" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+        <definition>Window * KWin::FocusChain::nextMostRecentlyUsed</definition>
+        <argsstring>(Window *reference) const</argsstring>
+        <name>nextMostRecentlyUsed</name>
+        <qualifiedname>KWin::FocusChain::nextMostRecentlyUsed</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>reference</declname>
+        </param>
+        <briefdescription>
+<para>Queries the most recently used focus chain for the next <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> after the given <computeroutput>reference</computeroutput> <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The navigation wraps around the borders of the chain. That is if the <computeroutput>reference</computeroutput> <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> is the last item of the focus chain, the first <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> will be returned.</para>
+<para>If the <computeroutput>reference</computeroutput> <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> cannot be found in the focus chain, the first element of the focus chain is returned.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reference</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The start point in the focus chain to search </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>:<ref refid="class_k_win_1_1_x11_window" kindref="compound">X11Window</ref> *The relatively next <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> in the most recently used chain. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="146" column="12" bodyfile="kwin/src/focuschain.cpp" bodystart="232" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_focus_chain_1a88a496ebbc6f1794232b715d95b66634" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+        <definition>Window * KWin::FocusChain::nextForDesktop</definition>
+        <argsstring>(Window *reference, VirtualDesktop *desktop) const</argsstring>
+        <name>nextForDesktop</name>
+        <qualifiedname>KWin::FocusChain::nextForDesktop</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>reference</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref> *</type>
+          <declname>desktop</declname>
+        </param>
+        <briefdescription>
+<para>Queries the focus chain for <computeroutput>desktop</computeroutput> for the next <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> in relation to the given <computeroutput>reference</computeroutput> <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The method finds the first usable <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> which is not the <computeroutput>reference</computeroutput> <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref>. If no <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> can be found <computeroutput>null</computeroutput> is returned</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reference</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reference <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> which should not be returned </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desktop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The virtual desktop whose focus chain should be used </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>:<ref refid="class_k_win_1_1_x11_window" kindref="compound">X11Window</ref> *The next usable <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> or <computeroutput>null</computeroutput> if none can be found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="158" column="12" bodyfile="kwin/src/focuschain.cpp" bodystart="253" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_focus_chain_1ace6f644f23d1f6c0877134e4f0ffb4d4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+        <definition>Window * KWin::FocusChain::firstMostRecentlyUsed</definition>
+        <argsstring>() const</argsstring>
+        <name>firstMostRecentlyUsed</name>
+        <qualifiedname>KWin::FocusChain::firstMostRecentlyUsed</qualifiedname>
+        <briefdescription>
+<para>Returns the first <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> in the most recently used focus chain. First <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> in this case means really the first <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> in the chain and not the most recently used <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>:<ref refid="class_k_win_1_1_x11_window" kindref="compound">X11Window</ref> *The first <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> in the most recently used chain. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="165" column="12" bodyfile="kwin/src/focuschain.cpp" bodystart="224" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_focus_chain_1ab66fd13e55a7c9e4ad78ad509b298547" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::FocusChain::isUsableFocusCandidate</definition>
+        <argsstring>(Window *window, Window *prev) const</argsstring>
+        <name>isUsableFocusCandidate</name>
+        <qualifiedname>KWin::FocusChain::isUsableFocusCandidate</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>prev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="167" column="10" bodyfile="kwin/src/focuschain.cpp" bodystart="248" bodyend="251"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_k_win_1_1_focus_chain_1a489f7471a25ec16e81b83147acbf97e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::FocusChain::remove</definition>
+        <argsstring>(KWin::Window *window)</argsstring>
+        <name>remove</name>
+        <qualifiedname>KWin::FocusChain::remove</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">KWin::Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Removes <computeroutput>window</computeroutput> from all focus chains. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> to remove from all focus chains. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="176" column="10" bodyfile="kwin/src/focuschain.cpp" bodystart="16" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_focus_chain_1af03b813cbce2ec06e9649fa6e16f90ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::FocusChain::setSeparateScreenFocus</definition>
+        <argsstring>(bool enabled)</argsstring>
+        <name>setSeparateScreenFocus</name>
+        <qualifiedname>KWin::FocusChain::setSeparateScreenFocus</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="177" column="10" bodyfile="kwin/src/focuschain.h" bodystart="223" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_focus_chain_1ae1897c2c4d0f42f2f71b1f8107d20c0c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::FocusChain::setActiveWindow</definition>
+        <argsstring>(KWin::Window *window)</argsstring>
+        <name>setActiveWindow</name>
+        <qualifiedname>KWin::FocusChain::setActiveWindow</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">KWin::Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="178" column="10" bodyfile="kwin/src/focuschain.h" bodystart="228" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_focus_chain_1a66e1bc615468742db06773fd9aff1d37" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::FocusChain::setCurrentDesktop</definition>
+        <argsstring>(VirtualDesktop *desktop)</argsstring>
+        <name>setCurrentDesktop</name>
+        <qualifiedname>KWin::FocusChain::setCurrentDesktop</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref> *</type>
+          <declname>desktop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="179" column="10" bodyfile="kwin/src/focuschain.h" bodystart="233" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_focus_chain_1a5c6c64def40066e850fd164b8fb46a1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::FocusChain::addDesktop</definition>
+        <argsstring>(VirtualDesktop *desktop)</argsstring>
+        <name>addDesktop</name>
+        <qualifiedname>KWin::FocusChain::addDesktop</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref> *</type>
+          <declname>desktop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="180" column="10" bodyfile="kwin/src/focuschain.cpp" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_focus_chain_1a2b70f1ee48e54522d85a4e9f3ce7b364" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::FocusChain::removeDesktop</definition>
+        <argsstring>(VirtualDesktop *desktop)</argsstring>
+        <name>removeDesktop</name>
+        <qualifiedname>KWin::FocusChain::removeDesktop</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref> *</type>
+          <declname>desktop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="181" column="10" bodyfile="kwin/src/focuschain.cpp" bodystart="31" bodyend="37"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_focus_chain_1a69b34894b4a0a8582ef0185802f2fc44" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::FocusChain::makeFirstInChain</definition>
+        <argsstring>(Window *window, Chain &amp;chain)</argsstring>
+        <name>makeFirstInChain</name>
+        <qualifiedname>KWin::FocusChain::makeFirstInChain</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type>Chain &amp;</type>
+          <declname>chain</declname>
+        </param>
+        <briefdescription>
+<para>Makes <computeroutput>window</computeroutput> the first <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> in the given focus <computeroutput>chain</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This means the existing position of <computeroutput>window</computeroutput> is dropped and <computeroutput>window</computeroutput> is appended to the <computeroutput>chain</computeroutput> which makes it the first item.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> to become the first in <computeroutput>chain</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>chain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The focus chain to operate on </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="195" column="10" bodyfile="kwin/src/focuschain.cpp" bodystart="269" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_focus_chain_1ab769c6119e216c23691bae2c8b4a7eaf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::FocusChain::makeLastInChain</definition>
+        <argsstring>(Window *window, Chain &amp;chain)</argsstring>
+        <name>makeLastInChain</name>
+        <qualifiedname>KWin::FocusChain::makeLastInChain</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type>Chain &amp;</type>
+          <declname>chain</declname>
+        </param>
+        <briefdescription>
+<para>Makes <computeroutput>window</computeroutput> the last <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> in the given focus <computeroutput>chain</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This means the existing position of <computeroutput>window</computeroutput> is dropped and <computeroutput>window</computeroutput> is prepended to the <computeroutput>chain</computeroutput> which makes it the last item.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> to become the last in <computeroutput>chain</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>chain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The focus chain to operate on </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="206" column="10" bodyfile="kwin/src/focuschain.cpp" bodystart="278" bodyend="285"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_focus_chain_1a1da3b289ab98917f9a55ad6aa2d371b3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::FocusChain::moveAfterWindowInChain</definition>
+        <argsstring>(Window *window, Window *reference, Chain &amp;chain)</argsstring>
+        <name>moveAfterWindowInChain</name>
+        <qualifiedname>KWin::FocusChain::moveAfterWindowInChain</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>reference</declname>
+        </param>
+        <param>
+          <type>Chain &amp;</type>
+          <declname>chain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="207" column="10" bodyfile="kwin/src/focuschain.cpp" bodystart="180" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_focus_chain_1a22ecfa9cf15ae34091dbff5d21388376" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::FocusChain::moveBeforeWindowInChain</definition>
+        <argsstring>(Window *window, Window *reference, Chain &amp;chain)</argsstring>
+        <name>moveBeforeWindowInChain</name>
+        <qualifiedname>KWin::FocusChain::moveBeforeWindowInChain</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>reference</declname>
+        </param>
+        <param>
+          <type>Chain &amp;</type>
+          <declname>chain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="208" column="10" bodyfile="kwin/src/focuschain.cpp" bodystart="202" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_focus_chain_1a38cdcb089988a52c554b6f49973ce1d0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::FocusChain::updateWindowInChain</definition>
+        <argsstring>(Window *window, Change change, Chain &amp;chain)</argsstring>
+        <name>updateWindowInChain</name>
+        <qualifiedname>KWin::FocusChain::updateWindowInChain</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_focus_chain_1acab3b23e1580c8efd3734cf5f5243de7" kindref="member">Change</ref></type>
+          <declname>change</declname>
+        </param>
+        <param>
+          <type>Chain &amp;</type>
+          <declname>chain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="209" column="10" bodyfile="kwin/src/focuschain.cpp" bodystart="106" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_focus_chain_1aaa5ec80320d5aa3502868e49afd605cd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::FocusChain::insertWindowIntoChain</definition>
+        <argsstring>(Window *window, Chain &amp;chain)</argsstring>
+        <name>insertWindowIntoChain</name>
+        <qualifiedname>KWin::FocusChain::insertWindowIntoChain</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type>Chain &amp;</type>
+          <declname>chain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/focuschain.h" line="210" column="10" bodyfile="kwin/src/focuschain.cpp" bodystart="117" bodyend="132"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Singleton class to handle the various focus chains. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A focus chain is a list of Windows containing information on which <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> should be activated.</para>
+<para>Internally this <ref refid="class_k_win_1_1_focus_chain" kindref="compound">FocusChain</ref> holds multiple independent chains. There is one chain of most recently used Windows which is primarily used by <ref refid="namespace_k_win_1_1_tab_box" kindref="compound">TabBox</ref> to build up the list of Windows for navigation. The chains are organized as a normal QList of Windows with the most recently used <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> being the last item of the list, that is a LIFO like structure.</para>
+<para>In addition there is one chain for each virtual desktop which is used to determine which <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> should get activated when the user switches to another virtual desktop.</para>
+<para>Furthermore this class contains various helper methods for the two different kind of chains. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::FocusChain</label>
+        <link refid="class_k_win_1_1_focus_chain"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::FocusChain</label>
+        <link refid="class_k_win_1_1_focus_chain"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/focuschain.h" line="38" column="1" bodyfile="kwin/src/focuschain.h" bodystart="39" bodyend="216"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_focus_chain_1a5c6c64def40066e850fd164b8fb46a1a" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>addDesktop</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1a46df6fa786358f2c7e94028f11259c6c" prot="private" virt="non-virtual"><scope>KWin::FocusChain</scope><name>Chain</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1acab3b23e1580c8efd3734cf5f5243de7" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>Change</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1a9604f738cac8866be71342f8d5207e1d" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>contains</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1ad97895546e264ef1738cad0933d852a5" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>contains</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1ace6f644f23d1f6c0877134e4f0ffb4d4" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>firstMostRecentlyUsed</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1ad8679d2ea016799f41512b1f21d3bf08" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>FocusChain</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1a1a79062a0764c2d01bd009c63d0b71a6" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>getForActivation</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1ae7884d1a929eb9409912f7047fd7a670" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>getForActivation</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1aaa5ec80320d5aa3502868e49afd605cd" prot="private" virt="non-virtual"><scope>KWin::FocusChain</scope><name>insertWindowIntoChain</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1ab66fd13e55a7c9e4ad78ad509b298547" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>isUsableFocusCandidate</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1a704fd584e26324669e8fc810a758f20f" prot="private" virt="non-virtual"><scope>KWin::FocusChain</scope><name>m_activeWindow</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1a66094a793d18667fe78045f829bb5209" prot="private" virt="non-virtual"><scope>KWin::FocusChain</scope><name>m_currentDesktop</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1afc2317a8a72296f956d747b8b2d15f34" prot="private" virt="non-virtual"><scope>KWin::FocusChain</scope><name>m_desktopFocusChains</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1a1aabd6d24f61db34759aaefae76971b3" prot="private" virt="non-virtual"><scope>KWin::FocusChain</scope><name>m_mostRecentlyUsed</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1ad1058dd8a939de37a9fd82a2ae20b75c" prot="private" virt="non-virtual"><scope>KWin::FocusChain</scope><name>m_separateScreenFocus</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1acab3b23e1580c8efd3734cf5f5243de7a9b0c9b8b20ea9d810dbf7be51526f985" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>MakeFirst</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1a69b34894b4a0a8582ef0185802f2fc44" prot="private" virt="non-virtual"><scope>KWin::FocusChain</scope><name>makeFirstInChain</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1acab3b23e1580c8efd3734cf5f5243de7aab53c3653b7ef22857bb07037c280de4" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>MakeFirstMinimized</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1acab3b23e1580c8efd3734cf5f5243de7a49c20e683b7b6086c9551ea9547af3dd" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>MakeLast</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1ab769c6119e216c23691bae2c8b4a7eaf" prot="private" virt="non-virtual"><scope>KWin::FocusChain</scope><name>makeLastInChain</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1a3d2ff2351179d9795b49ac41406784f9" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>moveAfterWindow</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1a1da3b289ab98917f9a55ad6aa2d371b3" prot="private" virt="non-virtual"><scope>KWin::FocusChain</scope><name>moveAfterWindowInChain</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1a48a30437bb28cffb01433a3c736842ec" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>moveBeforeWindow</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1a22ecfa9cf15ae34091dbff5d21388376" prot="private" virt="non-virtual"><scope>KWin::FocusChain</scope><name>moveBeforeWindowInChain</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1a88a496ebbc6f1794232b715d95b66634" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>nextForDesktop</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1ada1346e7450d500c29be1ccc3e95ae89" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>nextMostRecentlyUsed</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1a489f7471a25ec16e81b83147acbf97e9" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>remove</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1a2b70f1ee48e54522d85a4e9f3ce7b364" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>removeDesktop</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1ae1897c2c4d0f42f2f71b1f8107d20c0c" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>setActiveWindow</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1a66e1bc615468742db06773fd9aff1d37" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>setCurrentDesktop</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1af03b813cbce2ec06e9649fa6e16f90ae" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>setSeparateScreenFocus</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1acab3b23e1580c8efd3734cf5f5243de7a6e0f018a3e8ff555dbde94cbef9a6645" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>Update</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1a48b2e8b7d9947521ba3ddcc8e1dde952" prot="public" virt="non-virtual"><scope>KWin::FocusChain</scope><name>update</name></member>
+      <member refid="class_k_win_1_1_focus_chain_1a38cdcb089988a52c554b6f49973ce1d0" prot="private" virt="non-virtual"><scope>KWin::FocusChain</scope><name>updateWindowInChain</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

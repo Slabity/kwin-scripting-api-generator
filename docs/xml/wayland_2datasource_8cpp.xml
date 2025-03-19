@@ -1,0 +1,357 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="wayland_2datasource_8cpp" kind="file" language="C++">
+    <compoundname>datasource.cpp</compoundname>
+    <includes refid="wayland_2datasource_8h" local="yes">datasource.h</includes>
+    <includes refid="clientconnection_8h" local="yes">clientconnection.h</includes>
+    <includes refid="datadevicemanager_8h" local="yes">datadevicemanager.h</includes>
+    <includes refid="datasource__p_8h" local="yes">datasource_p.h</includes>
+    <includes refid="resource_8h" local="yes">utils/resource.h</includes>
+    <includes local="no">QStringList</includes>
+    <includes local="no">qwayland-server-wayland.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="yes">moc_datasource.cpp</includes>
+    <incdepgraph>
+      <node id="14">
+        <label>utils/resource.h</label>
+        <link refid="resource_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>abstract_data_source.h</label>
+        <link refid="abstract__data__source_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>abstract_drop_handler.h</label>
+        <link refid="abstract__drop__handler_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>clientconnection.h</label>
+        <link refid="clientconnection_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>datadevice.h</label>
+        <link refid="datadevice_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>datadevicemanager.h</label>
+        <link refid="datadevicemanager_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/wayland/datasource.cpp</label>
+        <link refid="wayland_2datasource_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>datasource.h</label>
+        <link refid="wayland_2datasource_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>datasource_p.h</label>
+        <link refid="datasource__p_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>QObject</label>
+      </node>
+      <node id="17">
+        <label>QStringList</label>
+      </node>
+      <node id="3">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="15">
+        <label>limits</label>
+      </node>
+      <node id="8">
+        <label>memory</label>
+      </node>
+      <node id="19">
+        <label>moc_datasource.cpp</label>
+      </node>
+      <node id="13">
+        <label>qwayland-server-wayland.h</label>
+      </node>
+      <node id="6">
+        <label>sys/types.h</label>
+      </node>
+      <node id="16">
+        <label>type_traits</label>
+      </node>
+      <node id="18">
+        <label>unistd.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2014<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2020<sp/>David<sp/>Edmundson<sp/>&lt;davidedmundson@kde.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>LGPL-2.1-only<sp/>OR<sp/>LGPL-3.0-only<sp/>OR<sp/>LicenseRef-KDE-Accepted-LGPL</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="wayland_2datasource_8h" kindref="compound">datasource.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="clientconnection_8h" kindref="compound">clientconnection.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="datadevicemanager_8h" kindref="compound">datadevicemanager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="datasource__p_8h" kindref="compound">datasource_p.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="resource_8h" kindref="compound">utils/resource.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Qt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QStringList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Wayland</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;qwayland-server-wayland.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>system</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21" refid="class_k_win_1_1_data_source_interface_private_1a46bb925de4df31611225f9a2a49baca1" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_data_source_interface_private_1a46bb925de4df31611225f9a2a49baca1" kindref="member">DataSourceInterfacePrivate::DataSourceInterfacePrivate</ref>(<ref refid="class_k_win_1_1_data_source_interface" kindref="compound">DataSourceInterface</ref><sp/>*_q,<sp/>::wl_resource<sp/>*resource)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QtWaylandServer::wl_data_source(resource)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_data_source_interface_private_1ac9e3cd3db74733c154c346aca19634fa" kindref="member">q</ref>(_q)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="class_k_win_1_1_data_source_interface_private_1aa858ba76af9363bb53e2b88c6a3bdbff" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_private_1aa858ba76af9363bb53e2b88c6a3bdbff" kindref="member">DataSourceInterfacePrivate::data_source_destroy_resource</ref>(Resource<sp/>*resource)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_data_source_interface_private_1ac9e3cd3db74733c154c346aca19634fa" kindref="member">q</ref>-&gt;aboutToBeDestroyed();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_private_1ac9e3cd3db74733c154c346aca19634fa" kindref="member">q</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="class_k_win_1_1_data_source_interface_private_1a5efc0fe7f1f9205d5dee6cd1add06415" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_private_1a5efc0fe7f1f9205d5dee6cd1add06415" kindref="member">DataSourceInterfacePrivate::data_source_offer</ref>(QtWaylandServer::wl_data_source::Resource<sp/>*resource,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;mime_type)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_data_source_interface_private_1a4bae63af2ea2b25ffaa3c075972f0848" kindref="member">mimeTypes</ref><sp/>&lt;&lt;<sp/>mime_type;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_data_source_interface_private_1ac9e3cd3db74733c154c346aca19634fa" kindref="member">q</ref>-&gt;mimeTypeOffered(mime_type);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="class_k_win_1_1_data_source_interface_private_1a655a7de2b9c2bc19eec4aa57a395868a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_private_1a655a7de2b9c2bc19eec4aa57a395868a" kindref="member">DataSourceInterfacePrivate::data_source_destroy</ref>(QtWaylandServer::wl_data_source::Resource<sp/>*resource)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_resource_destroy(resource-&gt;handle);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>DataSourceInterfacePrivate::offer(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;mimeType)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_data_source_interface_private_1a4bae63af2ea2b25ffaa3c075972f0848" kindref="member">mimeTypes</ref><sp/>&lt;&lt;<sp/>mimeType;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_data_source_interface_private_1ac9e3cd3db74733c154c346aca19634fa" kindref="member">q</ref>-&gt;<ref refid="class_k_win_1_1_abstract_data_source_1a6ded9e772ce9d66f9aa2eb42927401ac" kindref="member">mimeTypeOffered</ref>(mimeType);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="class_k_win_1_1_data_source_interface_private_1a8a5c7a2e9eed9469f4bd985e9b8d1d68" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_private_1a8a5c7a2e9eed9469f4bd985e9b8d1d68" kindref="member">DataSourceInterfacePrivate::data_source_set_actions</ref>(Resource<sp/>*resource,<sp/>uint32_t<sp/>dnd_actions)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>verify<sp/>that<sp/>the<sp/>no<sp/>other<sp/>actions<sp/>are<sp/>sent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dnd_actions</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>~(QtWaylandServer::wl_data_device_manager::dnd_action_copy<sp/>|<sp/>QtWaylandServer::wl_data_device_manager::dnd_action_move</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>QtWaylandServer::wl_data_device_manager::dnd_action_ask))<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wl_resource_post_error(resource-&gt;handle,<sp/>error_invalid_action_mask,<sp/></highlight><highlight class="stringliteral">&quot;Invalid<sp/>action<sp/>mask&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>DataDeviceManagerInterface::DnDActions<sp/>supportedActions;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dnd_actions<sp/>&amp;<sp/>QtWaylandServer::wl_data_device_manager::dnd_action_copy)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>supportedActions<sp/>|=<sp/>DataDeviceManagerInterface::DnDAction::Copy;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dnd_actions<sp/>&amp;<sp/>QtWaylandServer::wl_data_device_manager::dnd_action_move)<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>supportedActions<sp/>|=<sp/>DataDeviceManagerInterface::DnDAction::Move;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dnd_actions<sp/>&amp;<sp/>QtWaylandServer::wl_data_device_manager::dnd_action_ask)<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>supportedActions<sp/>|=<sp/>DataDeviceManagerInterface::DnDAction::Ask;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_k_win_1_1_data_source_interface_private_1a87c3be914d91d146cd9690da2e706ba0" kindref="member">supportedDnDActions</ref><sp/>!=<sp/>supportedActions)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_data_source_interface_private_1a87c3be914d91d146cd9690da2e706ba0" kindref="member">supportedDnDActions</ref><sp/>=<sp/>supportedActions;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_data_source_interface_private_1ac9e3cd3db74733c154c346aca19634fa" kindref="member">q</ref>-&gt;supportedDragAndDropActionsChanged();</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="class_k_win_1_1_data_source_interface_private_1ac4a1c13cde9f629d55b73411dcd63cdc" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_data_source_interface_private_1a46bb925de4df31611225f9a2a49baca1" kindref="member">DataSourceInterfacePrivate</ref><sp/>*<ref refid="class_k_win_1_1_data_source_interface_private_1ac4a1c13cde9f629d55b73411dcd63cdc" kindref="member">DataSourceInterfacePrivate::get</ref>(<ref refid="class_k_win_1_1_data_source_interface" kindref="compound">DataSourceInterface</ref><sp/>*dataSource)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>dataSource-&gt;d.get();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal">DataSourceInterface::DataSourceInterface(wl_resource<sp/>*resource)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>d(new<sp/><ref refid="class_k_win_1_1_data_source_interface_private" kindref="compound">DataSourceInterfacePrivate</ref>(this,<sp/>resource))</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d-&gt;resource()-&gt;version()<sp/>&lt;<sp/>WL_DATA_SOURCE_ACTION_SINCE_VERSION)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d-&gt;supportedDnDActions<sp/>=<sp/>DataDeviceManagerInterface::DnDAction::Copy;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><ref refid="class_k_win_1_1_data_source_interface_1a16e0497ca8aacacbbafe44e84019fb78" kindref="member">DataSourceInterface::~DataSourceInterface</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="class_k_win_1_1_data_source_interface_1ad2fe2deacb54d2e36b3bfa3d92766ad7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_1ad2fe2deacb54d2e36b3bfa3d92766ad7" kindref="member">DataSourceInterface::accept</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;mimeType)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;send_target(mimeType);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;isAccepted<sp/>=<sp/>!mimeType.isNull();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_abstract_data_source_1a5eba5e4548f5f4f1e4d0a60866916549" kindref="member">acceptedChanged</ref>();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="class_k_win_1_1_data_source_interface_1a37db70dfd2a8fd0e2b7ea41a16a6c0bb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_1a37db70dfd2a8fd0e2b7ea41a16a6c0bb" kindref="member">DataSourceInterface::requestData</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;mimeType,<sp/>qint32<sp/>fd)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;send_send(mimeType,<sp/>int32_t(fd));</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>close(fd);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="class_k_win_1_1_data_source_interface_1ac2120b84438a2c0dbcaea412fb021cb8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_1ac2120b84438a2c0dbcaea412fb021cb8" kindref="member">DataSourceInterface::cancel</ref>()</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;send_cancelled();</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="class_k_win_1_1_data_source_interface_1ad88cb5fc9c5cb7d598ac1dc60eba36e1" refkind="member"><highlight class="normal">QStringList<sp/><ref refid="class_k_win_1_1_data_source_interface_1ad88cb5fc9c5cb7d598ac1dc60eba36e1" kindref="member">DataSourceInterface::mimeTypes</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="109"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;mimeTypes;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="class_k_win_1_1_data_source_interface_1ac1e03427d7f868e2e7da4bc3eb73f2ea" refkind="member"><highlight class="normal">DataSourceInterface<sp/>*<ref refid="class_k_win_1_1_data_source_interface_1ac1e03427d7f868e2e7da4bc3eb73f2ea" kindref="member">DataSourceInterface::get</ref>(wl_resource<sp/>*native)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>sourcePrivate<sp/>=<sp/><ref refid="namespace_k_win_1a8c77ef01a5298009b38f91650c249957" kindref="member">resource_cast&lt;DataSourceInterfacePrivate *&gt;</ref>(native))<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sourcePrivate-&gt;q;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="class_k_win_1_1_data_source_interface_1ade02b7f35b9ca7dfa17a5a2393473a7e" refkind="member"><highlight class="normal">DataDeviceManagerInterface::DnDActions<sp/><ref refid="class_k_win_1_1_data_source_interface_1ade02b7f35b9ca7dfa17a5a2393473a7e" kindref="member">DataSourceInterface::supportedDragAndDropActions</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="122"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;supportedDnDActions;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="class_k_win_1_1_data_source_interface_1ae3d626bdefd50ab1c4a766ad1ece4128" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_data_device_manager_interface_1a8aae415a2e33ca11c48d18e128f627b4" kindref="member">DataDeviceManagerInterface::DnDAction</ref><sp/><ref refid="class_k_win_1_1_data_source_interface_1ae3d626bdefd50ab1c4a766ad1ece4128" kindref="member">DataSourceInterface::selectedDndAction</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="127"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;selectedDndAction;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="class_k_win_1_1_data_source_interface_1a4a9baca61039e900fa65b37d46ad9eb6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_1a4a9baca61039e900fa65b37d46ad9eb6" kindref="member">DataSourceInterface::dropPerformed</ref>()</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_abstract_data_source_1a65f2b093e5f66a6b28bc7a7481d21191" kindref="member">AbstractDataSource::dropPerformed</ref>();</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d-&gt;resource()-&gt;version()<sp/>&lt;<sp/>WL_DATA_SOURCE_DND_DROP_PERFORMED_SINCE_VERSION)<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;send_dnd_drop_performed();</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="class_k_win_1_1_data_source_interface_1a1cbd5d010c84ef32567c4f92acf6a0cd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_1a1cbd5d010c84ef32567c4f92acf6a0cd" kindref="member">DataSourceInterface::dndFinished</ref>()</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_abstract_data_source_1a419978ef7682e7e20fabd0d7f829414f" kindref="member">AbstractDataSource::dndFinished</ref>();</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d-&gt;resource()-&gt;version()<sp/>&lt;<sp/>WL_DATA_SOURCE_DND_FINISHED_SINCE_VERSION)<sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;send_dnd_finished();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="class_k_win_1_1_data_source_interface_1a206b6596e56a9ca49857e8fa6003af4d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_1a206b6596e56a9ca49857e8fa6003af4d" kindref="member">DataSourceInterface::dndAction</ref>(<ref refid="class_k_win_1_1_data_device_manager_interface_1a8aae415a2e33ca11c48d18e128f627b4" kindref="member">DataDeviceManagerInterface::DnDAction</ref><sp/>action)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;selectedDndAction<sp/>=<sp/>action;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_abstract_data_source_1aba520f884563ddaddd262e31c4aa54bb" kindref="member">dndActionChanged</ref>();</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d-&gt;resource()-&gt;version()<sp/>&lt;<sp/>WL_DATA_SOURCE_ACTION_SINCE_VERSION)<sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>wlAction<sp/>=<sp/>QtWaylandServer::wl_data_device_manager::dnd_action_none;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(action<sp/>==<sp/>DataDeviceManagerInterface::DnDAction::Copy)<sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wlAction<sp/>=<sp/>QtWaylandServer::wl_data_device_manager::dnd_action_copy;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(action<sp/>==<sp/>DataDeviceManagerInterface::DnDAction::Move)<sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wlAction<sp/>=<sp/>QtWaylandServer::wl_data_device_manager::dnd_action_move;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(action<sp/>==<sp/>DataDeviceManagerInterface::DnDAction::Ask)<sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wlAction<sp/>=<sp/>QtWaylandServer::wl_data_device_manager::dnd_action_ask;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;send_action(wlAction);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="class_k_win_1_1_data_source_interface_1a4c3415fa999963371cc811465d63dff2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_1a4c3415fa999963371cc811465d63dff2" kindref="member">DataSourceInterface::dndCancelled</ref>()</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_abstract_data_source_1a151dd37839962abe10cceb359f54f024" kindref="member">AbstractDataSource::dndCancelled</ref>();</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>for<sp/>v3<sp/>or<sp/>less,<sp/>cancel<sp/>should<sp/>not<sp/>be<sp/>called<sp/>after<sp/>a<sp/>failed<sp/>drag<sp/>operation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(wl_resource_get_version(<ref refid="class_k_win_1_1_data_source_interface_1a1e4a481f62c63c6b500c2a719787017f" kindref="member">resource</ref>())<sp/>&lt;<sp/>3)<sp/>{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;send_cancelled();</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178" refid="class_k_win_1_1_data_source_interface_1a1e4a481f62c63c6b500c2a719787017f" refkind="member"><highlight class="normal">wl_resource<sp/>*<ref refid="class_k_win_1_1_data_source_interface_1a1e4a481f62c63c6b500c2a719787017f" kindref="member">DataSourceInterface::resource</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="179"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;resource()-&gt;handle;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="class_k_win_1_1_data_source_interface_1ab475d5f500dfda403f5eac65d4e0d6ae" refkind="member"><highlight class="normal">wl_client<sp/>*<ref refid="class_k_win_1_1_data_source_interface_1ab475d5f500dfda403f5eac65d4e0d6ae" kindref="member">DataSourceInterface::client</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="184"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;resource()-&gt;client();</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="class_k_win_1_1_data_source_interface_1a1458642819757d8d0804b42586f2578c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_data_source_interface_1a1458642819757d8d0804b42586f2578c" kindref="member">DataSourceInterface::isAccepted</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="189"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;isAccepted;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193" refid="class_k_win_1_1_data_source_interface_1afdc2d8691e969e43a1b23f9d82bca6c4" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_xdg_toplevel_drag_v1_interface" kindref="compound">XdgToplevelDragV1Interface</ref><sp/>*<ref refid="class_k_win_1_1_data_source_interface_1afdc2d8691e969e43a1b23f9d82bca6c4" kindref="member">DataSourceInterface::xdgToplevelDrag</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="194"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;xdgToplevelDrag;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;moc_datasource.cpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/wayland/datasource.cpp"/>
+  </compounddef>
+</doxygen>

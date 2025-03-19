@@ -1,0 +1,561 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_gesture_recognizer" kind="class" language="C++" prot="public">
+    <compoundname>KWin::GestureRecognizer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="gestures_8h" local="no">gestures.h</includes>
+    <sectiondef kind="private-type">
+      <memberdef kind="enum" id="class_k_win_1_1_gesture_recognizer_1ad258f6812a9ddad05d1f313c98af008a" prot="private" static="no" strong="yes">
+        <type></type>
+        <name>StartPositionBehavior</name>
+        <qualifiedname>KWin::GestureRecognizer::StartPositionBehavior</qualifiedname>
+        <enumvalue id="class_k_win_1_1_gesture_recognizer_1ad258f6812a9ddad05d1f313c98af008aa49120343651af33741d17b0f74e410ea" prot="private">
+          <name>Relevant</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_gesture_recognizer_1ad258f6812a9ddad05d1f313c98af008aa027a5217b659e8bedb70978dea494d6b" prot="private">
+          <name>Irrelevant</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="196" column="5" bodyfile="kwin/src/gestures.h" bodystart="196" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_gesture_recognizer_1ac8fc8732243ba0f9db104d24a0fd171f" prot="private" static="no" strong="yes">
+        <type></type>
+        <name>Axis</name>
+        <qualifiedname>KWin::GestureRecognizer::Axis</qualifiedname>
+        <enumvalue id="class_k_win_1_1_gesture_recognizer_1ac8fc8732243ba0f9db104d24a0fd171fac1b5fa03ecdb95d4a45dd1c40b02527f" prot="private">
+          <name>Horizontal</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_gesture_recognizer_1ac8fc8732243ba0f9db104d24a0fd171fa06ce2a25e5d12c166a36f654dbea6012" prot="private">
+          <name>Vertical</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_gesture_recognizer_1ac8fc8732243ba0f9db104d24a0fd171fa6adf97f83acf6453d4a6a4b1070f3754" prot="private">
+          <name>None</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="200" column="5" bodyfile="kwin/src/gestures.h" bodystart="200" bodyend="204"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_gesture_recognizer_1a3cce6a63c15388805a3cc0f99db61e01" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_swipe_gesture" kindref="compound">SwipeGesture</ref> * &gt;</type>
+        <definition>QList&lt;SwipeGesture *&gt; KWin::GestureRecognizer::m_swipeGestures</definition>
+        <argsstring></argsstring>
+        <name>m_swipeGestures</name>
+        <qualifiedname>KWin::GestureRecognizer::m_swipeGestures</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="206" column="11" bodyfile="kwin/src/gestures.h" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_gesture_recognizer_1adc24efc881a21ffc5a2f30d19b03052e" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_pinch_gesture" kindref="compound">PinchGesture</ref> * &gt;</type>
+        <definition>QList&lt;PinchGesture *&gt; KWin::GestureRecognizer::m_pinchGestures</definition>
+        <argsstring></argsstring>
+        <name>m_pinchGestures</name>
+        <qualifiedname>KWin::GestureRecognizer::m_pinchGestures</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="207" column="11" bodyfile="kwin/src/gestures.h" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_gesture_recognizer_1af7f479572aa78911b2088a1753c92f63" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_swipe_gesture" kindref="compound">SwipeGesture</ref> * &gt;</type>
+        <definition>QList&lt;SwipeGesture *&gt; KWin::GestureRecognizer::m_activeSwipeGestures</definition>
+        <argsstring></argsstring>
+        <name>m_activeSwipeGestures</name>
+        <qualifiedname>KWin::GestureRecognizer::m_activeSwipeGestures</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="208" column="11" bodyfile="kwin/src/gestures.h" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_gesture_recognizer_1a347ec42f4b4da5d710ff38a968b9e19c" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_pinch_gesture" kindref="compound">PinchGesture</ref> * &gt;</type>
+        <definition>QList&lt;PinchGesture *&gt; KWin::GestureRecognizer::m_activePinchGestures</definition>
+        <argsstring></argsstring>
+        <name>m_activePinchGestures</name>
+        <qualifiedname>KWin::GestureRecognizer::m_activePinchGestures</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="209" column="11" bodyfile="kwin/src/gestures.h" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_gesture_recognizer_1a361dcd898f055ed377c571374ea5e973" prot="private" static="no" mutable="no">
+        <type>QMap&lt; <ref refid="class_k_win_1_1_gesture" kindref="compound">Gesture</ref> *, QMetaObject::Connection &gt;</type>
+        <definition>QMap&lt;Gesture *, QMetaObject::Connection&gt; KWin::GestureRecognizer::m_destroyConnections</definition>
+        <argsstring></argsstring>
+        <name>m_destroyConnections</name>
+        <qualifiedname>KWin::GestureRecognizer::m_destroyConnections</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="210" column="10" bodyfile="kwin/src/gestures.h" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_gesture_recognizer_1a64f773616200455d575585d3d2775e3f" prot="private" static="no" mutable="no">
+        <type>QPointF</type>
+        <definition>QPointF KWin::GestureRecognizer::m_currentDelta</definition>
+        <argsstring></argsstring>
+        <name>m_currentDelta</name>
+        <qualifiedname>KWin::GestureRecognizer::m_currentDelta</qualifiedname>
+        <initializer>= QPointF(0, 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="212" column="13" bodyfile="kwin/src/gestures.h" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_gesture_recognizer_1ac012e8d9f6c1ef4fa2638e7aa008daf1" prot="private" static="no" mutable="no">
+        <type>qreal</type>
+        <definition>qreal KWin::GestureRecognizer::m_currentScale</definition>
+        <argsstring></argsstring>
+        <name>m_currentScale</name>
+        <qualifiedname>KWin::GestureRecognizer::m_currentScale</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="213" column="11" bodyfile="kwin/src/gestures.h" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_gesture_recognizer_1a976d6cef087bd18ad7450b14eff1a38f" prot="private" static="no" mutable="no">
+        <type>uint</type>
+        <definition>uint KWin::GestureRecognizer::m_currentFingerCount</definition>
+        <argsstring></argsstring>
+        <name>m_currentFingerCount</name>
+        <qualifiedname>KWin::GestureRecognizer::m_currentFingerCount</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="214" column="10" bodyfile="kwin/src/gestures.h" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_gesture_recognizer_1af16d171dd208806f6f238eba1d968e10" prot="private" static="no" mutable="no">
+        <type>Axis</type>
+        <definition>Axis KWin::GestureRecognizer::m_currentSwipeAxis</definition>
+        <argsstring></argsstring>
+        <name>m_currentSwipeAxis</name>
+        <qualifiedname>KWin::GestureRecognizer::m_currentSwipeAxis</qualifiedname>
+        <initializer>= Axis::None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="215" column="10" bodyfile="kwin/src/gestures.h" bodystart="215" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_gesture_recognizer_1a9171cea986ae3dedf728728ac0b33a3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::GestureRecognizer::GestureRecognizer</definition>
+        <argsstring>(QObject *parent=nullptr)</argsstring>
+        <name>GestureRecognizer</name>
+        <qualifiedname>KWin::GestureRecognizer::GestureRecognizer</qualifiedname>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="174" column="5" bodyfile="kwin/src/gestures.cpp" bodystart="84" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_gesture_recognizer_1a8919f55d1c98aef7fe38ef19a5efc559" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::GestureRecognizer::~GestureRecognizer</definition>
+        <argsstring>() override</argsstring>
+        <name>~GestureRecognizer</name>
+        <qualifiedname>KWin::GestureRecognizer::~GestureRecognizer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="175" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_gesture_recognizer_1a8d777169188f8ee7935dc2c36154361b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GestureRecognizer::registerSwipeGesture</definition>
+        <argsstring>(SwipeGesture *gesture)</argsstring>
+        <name>registerSwipeGesture</name>
+        <qualifiedname>KWin::GestureRecognizer::registerSwipeGesture</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_swipe_gesture" kindref="compound">SwipeGesture</ref> *</type>
+          <declname>gesture</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="177" column="10" bodyfile="kwin/src/gestures.cpp" bodystart="91" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_gesture_recognizer_1a7783ca68e31c2f7848b81a63ab595128" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GestureRecognizer::unregisterSwipeGesture</definition>
+        <argsstring>(SwipeGesture *gesture)</argsstring>
+        <name>unregisterSwipeGesture</name>
+        <qualifiedname>KWin::GestureRecognizer::unregisterSwipeGesture</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_swipe_gesture" kindref="compound">SwipeGesture</ref> *</type>
+          <declname>gesture</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="178" column="10" bodyfile="kwin/src/gestures.cpp" bodystart="99" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_gesture_recognizer_1abc49c6bc54a209fa0150c8693a3bc5d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GestureRecognizer::registerPinchGesture</definition>
+        <argsstring>(PinchGesture *gesture)</argsstring>
+        <name>registerPinchGesture</name>
+        <qualifiedname>KWin::GestureRecognizer::registerPinchGesture</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_pinch_gesture" kindref="compound">PinchGesture</ref> *</type>
+          <declname>gesture</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="179" column="10" bodyfile="kwin/src/gestures.cpp" bodystart="112" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_gesture_recognizer_1add16741c555f410adc1986bed3f5131e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GestureRecognizer::unregisterPinchGesture</definition>
+        <argsstring>(PinchGesture *gesture)</argsstring>
+        <name>unregisterPinchGesture</name>
+        <qualifiedname>KWin::GestureRecognizer::unregisterPinchGesture</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_pinch_gesture" kindref="compound">PinchGesture</ref> *</type>
+          <declname>gesture</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="180" column="10" bodyfile="kwin/src/gestures.cpp" bodystart="120" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_gesture_recognizer_1ac7595bba0cf50802eed24ffb646ccfa0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int KWin::GestureRecognizer::startSwipeGesture</definition>
+        <argsstring>(uint fingerCount)</argsstring>
+        <name>startSwipeGesture</name>
+        <qualifiedname>KWin::GestureRecognizer::startSwipeGesture</qualifiedname>
+        <param>
+          <type>uint</type>
+          <declname>fingerCount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="182" column="9" bodyfile="kwin/src/gestures.cpp" bodystart="571" bodyend="574"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_gesture_recognizer_1a146a354801e1476196e66203e4374528" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int KWin::GestureRecognizer::startSwipeGesture</definition>
+        <argsstring>(const QPointF &amp;startPos)</argsstring>
+        <name>startSwipeGesture</name>
+        <qualifiedname>KWin::GestureRecognizer::startSwipeGesture</qualifiedname>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>startPos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="183" column="9" bodyfile="kwin/src/gestures.cpp" bodystart="576" bodyend="579"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_gesture_recognizer_1a39aacf2c7d3d096208aa6bd3012ae3ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GestureRecognizer::updateSwipeGesture</definition>
+        <argsstring>(const QPointF &amp;delta)</argsstring>
+        <name>updateSwipeGesture</name>
+        <qualifiedname>KWin::GestureRecognizer::updateSwipeGesture</qualifiedname>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="185" column="10" bodyfile="kwin/src/gestures.cpp" bodystart="199" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_gesture_recognizer_1ac06d90018011773dec8d56f9a8d4d4d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GestureRecognizer::cancelSwipeGesture</definition>
+        <argsstring>()</argsstring>
+        <name>cancelSwipeGesture</name>
+        <qualifiedname>KWin::GestureRecognizer::cancelSwipeGesture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="186" column="10" bodyfile="kwin/src/gestures.cpp" bodystart="281" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_gesture_recognizer_1a112d2f0856f5019301f9a2681e199b67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GestureRecognizer::endSwipeGesture</definition>
+        <argsstring>()</argsstring>
+        <name>endSwipeGesture</name>
+        <qualifiedname>KWin::GestureRecognizer::endSwipeGesture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="187" column="10" bodyfile="kwin/src/gestures.cpp" bodystart="289" bodyend="303"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_gesture_recognizer_1a03b981bc00b890a6a63e5c5560f3a81e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int KWin::GestureRecognizer::startPinchGesture</definition>
+        <argsstring>(uint fingerCount)</argsstring>
+        <name>startPinchGesture</name>
+        <qualifiedname>KWin::GestureRecognizer::startPinchGesture</qualifiedname>
+        <param>
+          <type>uint</type>
+          <declname>fingerCount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="189" column="9" bodyfile="kwin/src/gestures.cpp" bodystart="305" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_gesture_recognizer_1ab109c012b4b1d55361d776f02457e130" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GestureRecognizer::updatePinchGesture</definition>
+        <argsstring>(qreal scale, qreal angleDelta, const QPointF &amp;posDelta)</argsstring>
+        <name>updatePinchGesture</name>
+        <qualifiedname>KWin::GestureRecognizer::updatePinchGesture</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>scale</declname>
+        </param>
+        <param>
+          <type>qreal</type>
+          <declname>angleDelta</declname>
+        </param>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>posDelta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="190" column="10" bodyfile="kwin/src/gestures.cpp" bodystart="332" bodyend="365"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_gesture_recognizer_1a7e62df97dc8c4c9621149a3625cb7c4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GestureRecognizer::cancelPinchGesture</definition>
+        <argsstring>()</argsstring>
+        <name>cancelPinchGesture</name>
+        <qualifiedname>KWin::GestureRecognizer::cancelPinchGesture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="191" column="10" bodyfile="kwin/src/gestures.cpp" bodystart="367" bodyend="373"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_gesture_recognizer_1ad16f090a1a4afe9bd44aca98e3d839dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GestureRecognizer::endPinchGesture</definition>
+        <argsstring>()</argsstring>
+        <name>endPinchGesture</name>
+        <qualifiedname>KWin::GestureRecognizer::endPinchGesture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="192" column="10" bodyfile="kwin/src/gestures.cpp" bodystart="375" bodyend="389"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_gesture_recognizer_1acb548f47a05a991d013b278d8e2a43ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GestureRecognizer::cancelActiveGestures</definition>
+        <argsstring>()</argsstring>
+        <name>cancelActiveGestures</name>
+        <qualifiedname>KWin::GestureRecognizer::cancelActiveGestures</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="195" column="10" bodyfile="kwin/src/gestures.cpp" bodystart="266" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_gesture_recognizer_1af1536af8b2181872626672ad53b8c514" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int KWin::GestureRecognizer::startSwipeGesture</definition>
+        <argsstring>(uint fingerCount, const QPointF &amp;startPos, StartPositionBehavior startPosBehavior)</argsstring>
+        <name>startSwipeGesture</name>
+        <qualifiedname>KWin::GestureRecognizer::startSwipeGesture</qualifiedname>
+        <param>
+          <type>uint</type>
+          <declname>fingerCount</declname>
+        </param>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>startPos</declname>
+        </param>
+        <param>
+          <type>StartPositionBehavior</type>
+          <declname>startPosBehavior</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/gestures.h" line="205" column="9" bodyfile="kwin/src/gestures.cpp" bodystart="133" bodyend="197"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::GestureRecognizer</label>
+        <link refid="class_k_win_1_1_gesture_recognizer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::GestureRecognizer</label>
+        <link refid="class_k_win_1_1_gesture_recognizer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/gestures.h" line="170" column="1" bodyfile="kwin/src/gestures.h" bodystart="171" bodyend="216"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_gesture_recognizer_1ac8fc8732243ba0f9db104d24a0fd171f" prot="private" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>Axis</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1acb548f47a05a991d013b278d8e2a43ca" prot="private" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>cancelActiveGestures</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1a7e62df97dc8c4c9621149a3625cb7c4d" prot="public" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>cancelPinchGesture</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1ac06d90018011773dec8d56f9a8d4d4d4" prot="public" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>cancelSwipeGesture</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1ad16f090a1a4afe9bd44aca98e3d839dd" prot="public" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>endPinchGesture</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1a112d2f0856f5019301f9a2681e199b67" prot="public" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>endSwipeGesture</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1a9171cea986ae3dedf728728ac0b33a3d" prot="public" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>GestureRecognizer</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1a347ec42f4b4da5d710ff38a968b9e19c" prot="private" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>m_activePinchGestures</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1af7f479572aa78911b2088a1753c92f63" prot="private" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>m_activeSwipeGestures</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1a64f773616200455d575585d3d2775e3f" prot="private" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>m_currentDelta</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1a976d6cef087bd18ad7450b14eff1a38f" prot="private" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>m_currentFingerCount</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1ac012e8d9f6c1ef4fa2638e7aa008daf1" prot="private" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>m_currentScale</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1af16d171dd208806f6f238eba1d968e10" prot="private" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>m_currentSwipeAxis</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1a361dcd898f055ed377c571374ea5e973" prot="private" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>m_destroyConnections</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1adc24efc881a21ffc5a2f30d19b03052e" prot="private" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>m_pinchGestures</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1a3cce6a63c15388805a3cc0f99db61e01" prot="private" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>m_swipeGestures</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1abc49c6bc54a209fa0150c8693a3bc5d7" prot="public" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>registerPinchGesture</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1a8d777169188f8ee7935dc2c36154361b" prot="public" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>registerSwipeGesture</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1a03b981bc00b890a6a63e5c5560f3a81e" prot="public" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>startPinchGesture</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1ad258f6812a9ddad05d1f313c98af008a" prot="private" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>StartPositionBehavior</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1ac7595bba0cf50802eed24ffb646ccfa0" prot="public" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>startSwipeGesture</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1a146a354801e1476196e66203e4374528" prot="public" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>startSwipeGesture</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1af1536af8b2181872626672ad53b8c514" prot="private" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>startSwipeGesture</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1add16741c555f410adc1986bed3f5131e" prot="public" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>unregisterPinchGesture</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1a7783ca68e31c2f7848b81a63ab595128" prot="public" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>unregisterSwipeGesture</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1ab109c012b4b1d55361d776f02457e130" prot="public" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>updatePinchGesture</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1a39aacf2c7d3d096208aa6bd3012ae3ff" prot="public" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>updateSwipeGesture</name></member>
+      <member refid="class_k_win_1_1_gesture_recognizer_1a8919f55d1c98aef7fe38ef19a5efc559" prot="public" virt="non-virtual"><scope>KWin::GestureRecognizer</scope><name>~GestureRecognizer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

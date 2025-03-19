@@ -1,0 +1,721 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_window_item" kind="class" language="C++" prot="public">
+    <compoundname>KWin::WindowItem</compoundname>
+    <basecompoundref refid="class_k_win_1_1_item" prot="public" virt="non-virtual">KWin::Item</basecompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_window_item_internal" prot="public" virt="non-virtual">KWin::WindowItemInternal</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_window_item_wayland" prot="public" virt="non-virtual">KWin::WindowItemWayland</derivedcompoundref>
+    <includes refid="windowitem_8h" local="no">windowitem.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_k_win_1_1_window_item_1ab89619bc7f4eb4b439cc8b8dd0904724" prot="public" static="no" strong="no">
+        <type></type>
+        <name></name>
+        <qualifiedname>KWin::WindowItem</qualifiedname>
+        <enumvalue id="class_k_win_1_1_window_item_1ab89619bc7f4eb4b439cc8b8dd0904724ae9917c3f96b5af365d24007aaf542920" prot="public">
+          <name>PAINT_DISABLED_BY_HIDDEN</name>
+          <initializer>= 1 &lt;&lt; 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_window_item_1ab89619bc7f4eb4b439cc8b8dd0904724a92c40bfcd544cafb04eebf31377c7353" prot="public">
+          <name>PAINT_DISABLED_BY_DESKTOP</name>
+          <initializer>= 1 &lt;&lt; 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_window_item_1ab89619bc7f4eb4b439cc8b8dd0904724af5fda3214c32b700cec1adcb4398cca1" prot="public">
+          <name>PAINT_DISABLED_BY_MINIMIZE</name>
+          <initializer>= 1 &lt;&lt; 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_window_item_1ab89619bc7f4eb4b439cc8b8dd0904724aa0a7cb7d7e4400ac274510d9701d4bb6" prot="public">
+          <name>PAINT_DISABLED_BY_ACTIVITY</name>
+          <initializer>= 1 &lt;&lt; 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="40" column="5" bodyfile="kwin/src/scene/windowitem.h" bodystart="40" bodyend="45"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_window_item_1a005ec82b1815ad0ce843610c9f45b93e" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+        <definition>Window* KWin::WindowItem::m_window</definition>
+        <argsstring></argsstring>
+        <name>m_window</name>
+        <qualifiedname>KWin::WindowItem::m_window</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="81" column="12" bodyfile="kwin/src/scene/windowitem.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_window_item_1a7cd3db18528c79010c6bd208a906378b" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_surface_item" kindref="compound">SurfaceItem</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;SurfaceItem&gt; KWin::WindowItem::m_surfaceItem</definition>
+        <argsstring></argsstring>
+        <name>m_surfaceItem</name>
+        <qualifiedname>KWin::WindowItem::m_surfaceItem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="82" column="21" bodyfile="kwin/src/scene/windowitem.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_window_item_1a8e7c970dc54014f8829f552cdb91be6c" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_decoration_item" kindref="compound">DecorationItem</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;DecorationItem&gt; KWin::WindowItem::m_decorationItem</definition>
+        <argsstring></argsstring>
+        <name>m_decorationItem</name>
+        <qualifiedname>KWin::WindowItem::m_decorationItem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="83" column="21" bodyfile="kwin/src/scene/windowitem.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_window_item_1a24a1b6fcd129a2aa29f5b0e6e5979a94" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_shadow_item" kindref="compound">ShadowItem</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;ShadowItem&gt; KWin::WindowItem::m_shadowItem</definition>
+        <argsstring></argsstring>
+        <name>m_shadowItem</name>
+        <qualifiedname>KWin::WindowItem::m_shadowItem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="84" column="21" bodyfile="kwin/src/scene/windowitem.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_window_item_1a6a31efe4f7960f787c491f8057eaaa80" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;EffectWindow&gt; KWin::WindowItem::m_effectWindow</definition>
+        <argsstring></argsstring>
+        <name>m_effectWindow</name>
+        <qualifiedname>KWin::WindowItem::m_effectWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="85" column="21" bodyfile="kwin/src/scene/windowitem.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_window_item_1a4b295235f36b50d0e6c14b167eca5a09" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; int &gt;</type>
+        <definition>std::optional&lt;int&gt; KWin::WindowItem::m_elevation</definition>
+        <argsstring></argsstring>
+        <name>m_elevation</name>
+        <qualifiedname>KWin::WindowItem::m_elevation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="86" column="19" bodyfile="kwin/src/scene/windowitem.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_window_item_1a1e2cbe3ef89d1ce8a7928f2f285803f4" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KWin::WindowItem::m_forceVisibleByHiddenCount</definition>
+        <argsstring></argsstring>
+        <name>m_forceVisibleByHiddenCount</name>
+        <qualifiedname>KWin::WindowItem::m_forceVisibleByHiddenCount</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="87" column="9" bodyfile="kwin/src/scene/windowitem.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_window_item_1a045b7fa2942911cd867fbad38f14db2b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KWin::WindowItem::m_forceVisibleByDesktopCount</definition>
+        <argsstring></argsstring>
+        <name>m_forceVisibleByDesktopCount</name>
+        <qualifiedname>KWin::WindowItem::m_forceVisibleByDesktopCount</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="88" column="9" bodyfile="kwin/src/scene/windowitem.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_window_item_1ae7908341cb0cf701ed4ba8f665b4cbfb" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KWin::WindowItem::m_forceVisibleByMinimizeCount</definition>
+        <argsstring></argsstring>
+        <name>m_forceVisibleByMinimizeCount</name>
+        <qualifiedname>KWin::WindowItem::m_forceVisibleByMinimizeCount</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="89" column="9" bodyfile="kwin/src/scene/windowitem.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_window_item_1a48fc47a84d58e6fb76c85bf583419a11" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KWin::WindowItem::m_forceVisibleByActivityCount</definition>
+        <argsstring></argsstring>
+        <name>m_forceVisibleByActivityCount</name>
+        <qualifiedname>KWin::WindowItem::m_forceVisibleByActivityCount</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="90" column="9" bodyfile="kwin/src/scene/windowitem.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_window_item_1a41ce4744743b2595c329f5e162f4fa1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::WindowItem::~WindowItem</definition>
+        <argsstring>() override</argsstring>
+        <name>~WindowItem</name>
+        <qualifiedname>KWin::WindowItem::~WindowItem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="47" column="5" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="68" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_item_1a268375a0b07adc93b11119facb09ced1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_surface_item" kindref="compound">SurfaceItem</ref> *</type>
+        <definition>SurfaceItem * KWin::WindowItem::surfaceItem</definition>
+        <argsstring>() const</argsstring>
+        <name>surfaceItem</name>
+        <qualifiedname>KWin::WindowItem::surfaceItem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="49" column="17" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="72" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_item_1aabfcb15bfc2d461c6e2580e54b84922e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_decoration_item" kindref="compound">DecorationItem</ref> *</type>
+        <definition>DecorationItem * KWin::WindowItem::decorationItem</definition>
+        <argsstring>() const</argsstring>
+        <name>decorationItem</name>
+        <qualifiedname>KWin::WindowItem::decorationItem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="50" column="20" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="77" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_item_1ae7926acc0c1efa2dcb936f83f33123b5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_shadow_item" kindref="compound">ShadowItem</ref> *</type>
+        <definition>ShadowItem * KWin::WindowItem::shadowItem</definition>
+        <argsstring>() const</argsstring>
+        <name>shadowItem</name>
+        <qualifiedname>KWin::WindowItem::shadowItem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="51" column="16" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="82" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_item_1a4166f95373e7af5f59ea80b38dd5bef4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+        <definition>Window * KWin::WindowItem::window</definition>
+        <argsstring>() const</argsstring>
+        <name>window</name>
+        <qualifiedname>KWin::WindowItem::window</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="52" column="12" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="87" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_item_1aa7848c43c34d776c2e160ce8557b80c8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+        <definition>EffectWindow * KWin::WindowItem::effectWindow</definition>
+        <argsstring>() const</argsstring>
+        <name>effectWindow</name>
+        <qualifiedname>KWin::WindowItem::effectWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="53" column="18" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="92" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_item_1a3f7d72bb814e40eb21be3bdc2f9e313b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowItem::refVisible</definition>
+        <argsstring>(int reason)</argsstring>
+        <name>refVisible</name>
+        <qualifiedname>KWin::WindowItem::refVisible</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>reason</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="55" column="10" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="97" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_item_1a592ac7f0340779ae0beed5659607e2a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowItem::unrefVisible</definition>
+        <argsstring>(int reason)</argsstring>
+        <name>unrefVisible</name>
+        <qualifiedname>KWin::WindowItem::unrefVisible</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>reason</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="56" column="10" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="114" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_item_1a15146d67a8272c540ebedcaac1de945e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowItem::elevate</definition>
+        <argsstring>()</argsstring>
+        <name>elevate</name>
+        <qualifiedname>KWin::WindowItem::elevate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="58" column="10" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="135" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_item_1a719e3e58a9c7203d37b9a05362099297" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowItem::deelevate</definition>
+        <argsstring>()</argsstring>
+        <name>deelevate</name>
+        <qualifiedname>KWin::WindowItem::deelevate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="59" column="10" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="147" bodyend="151"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_k_win_1_1_window_item_1a97e3f388070d83182d9446342a13460e" prot="protected" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::WindowItem::WindowItem</definition>
+        <argsstring>(Window *window, Item *parent=nullptr)</argsstring>
+        <name>WindowItem</name>
+        <qualifiedname>KWin::WindowItem::WindowItem</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="62" column="14" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="27" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_item_1a9ea20f6d719b46ebb7e1252b74a66956" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowItem::updateSurfaceItem</definition>
+        <argsstring>(std::unique_ptr&lt; SurfaceItem &gt; &amp;&amp;surfaceItem)</argsstring>
+        <name>updateSurfaceItem</name>
+        <qualifiedname>KWin::WindowItem::updateSurfaceItem</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_surface_item" kindref="compound">SurfaceItem</ref> &gt; &amp;&amp;</type>
+          <declname>surfaceItem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="63" column="10" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="210" bodyend="227"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_k_win_1_1_window_item_1aa8fa9601a88b1e213c387461fb4cd2e9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowItem::updateDecorationItem</definition>
+        <argsstring>()</argsstring>
+        <name>updateDecorationItem</name>
+        <qualifiedname>KWin::WindowItem::updateDecorationItem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="66" column="10" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="260" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_window_item_1a8dd83549f2d89864ef1c579adba2157c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowItem::updateShadowItem</definition>
+        <argsstring>()</argsstring>
+        <name>updateShadowItem</name>
+        <qualifiedname>KWin::WindowItem::updateShadowItem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="67" column="10" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="242" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_window_item_1aa89167285bc7f02c4dddae2c6ab3ae11" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowItem::updateSurfacePosition</definition>
+        <argsstring>()</argsstring>
+        <name>updateSurfacePosition</name>
+        <qualifiedname>KWin::WindowItem::updateSurfacePosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="68" column="10" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="229" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_window_item_1abed810c1188351771e300725d5fbbf03" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowItem::updateSurfaceVisibility</definition>
+        <argsstring>()</argsstring>
+        <name>updateSurfaceVisibility</name>
+        <qualifiedname>KWin::WindowItem::updateSurfaceVisibility</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="69" column="10" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="237" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_window_item_1af8f405dbd51e8721364211c2ffe9c06a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowItem::updatePosition</definition>
+        <argsstring>()</argsstring>
+        <name>updatePosition</name>
+        <qualifiedname>KWin::WindowItem::updatePosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="70" column="10" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="194" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_window_item_1aab2232da9a10b7949bb713a66e455048" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowItem::updateOpacity</definition>
+        <argsstring>()</argsstring>
+        <name>updateOpacity</name>
+        <qualifiedname>KWin::WindowItem::updateOpacity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="71" column="10" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="279" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_window_item_1a4545d0e28b6ed4aaa8d17cc5fee76a33" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowItem::updateStackingOrder</definition>
+        <argsstring>()</argsstring>
+        <name>updateStackingOrder</name>
+        <qualifiedname>KWin::WindowItem::updateStackingOrder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="72" column="10" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="284" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_window_item_1a94d8035b295eaa701bab4f2727416b6f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowItem::addSurfaceItemDamageConnects</definition>
+        <argsstring>(Item *item)</argsstring>
+        <name>addSurfaceItemDamageConnects</name>
+        <qualifiedname>KWin::WindowItem::addSurfaceItemDamageConnects</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="73" column="10" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="199" bodyend="208"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_window_item_1a0c8399bc3a28bb490b566a39a674d8f6" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::WindowItem::computeVisibility</definition>
+        <argsstring>() const</argsstring>
+        <name>computeVisibility</name>
+        <qualifiedname>KWin::WindowItem::computeVisibility</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="76" column="10" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="153" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_item_1aba4244699026b03738b4f27a01bb406e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowItem::updateVisibility</definition>
+        <argsstring>()</argsstring>
+        <name>updateVisibility</name>
+        <qualifiedname>KWin::WindowItem::updateVisibility</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="77" column="10" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="184" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_item_1a561d999b43cb138f4369eed1b8db5c66" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowItem::markDamaged</definition>
+        <argsstring>()</argsstring>
+        <name>markDamaged</name>
+        <qualifiedname>KWin::WindowItem::markDamaged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="78" column="10" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="293" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_item_1a3e467513ed15592d763151c5056537e4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowItem::freeze</definition>
+        <argsstring>()</argsstring>
+        <name>freeze</name>
+        <qualifiedname>KWin::WindowItem::freeze</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/windowitem.h" line="79" column="10" bodyfile="kwin/src/scene/windowitem.cpp" bodystart="298" bodyend="303"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="class_k_win_1_1_window_item" kindref="compound">WindowItem</ref> class represents a window in the scene.</para>
+<para>A <ref refid="class_k_win_1_1_window_item" kindref="compound">WindowItem</ref> is made of a surface with client contents and optionally a server-side frame and a drop-shadow. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>KWin::Item</label>
+        <link refid="class_k_win_1_1_item"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::WindowItem</label>
+        <link refid="class_k_win_1_1_window_item"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>KWin::WindowItemInternal</label>
+        <link refid="class_k_win_1_1_window_item_internal"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>KWin::WindowItemWayland</label>
+        <link refid="class_k_win_1_1_window_item_wayland"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>KWin::Item</label>
+        <link refid="class_k_win_1_1_item"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::WindowItem</label>
+        <link refid="class_k_win_1_1_window_item"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/scene/windowitem.h" line="35" column="1" bodyfile="kwin/src/scene/windowitem.h" bodystart="36" bodyend="91"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_item_1aa4ff40a28180af18a130c71752f24024" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>addEffect</name></member>
+      <member refid="class_k_win_1_1_window_item_1a94d8035b295eaa701bab4f2727416b6f" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>addSurfaceItemDamageConnects</name></member>
+      <member refid="class_k_win_1_1_item_1a2cd75e545d4de3d2cf9a58c90fe95a82" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>boundingRect</name></member>
+      <member refid="class_k_win_1_1_item_1afe542ac410794a496433aa91921fcc51" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>boundingRectChanged</name></member>
+      <member refid="class_k_win_1_1_item_1a6878479968c6b288bca50f615ba3b739" prot="protected" virt="virtual"><scope>KWin::WindowItem</scope><name>buildQuads</name></member>
+      <member refid="class_k_win_1_1_item_1a17c2db06f671b7374afdbf09b4043a1b" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>childAdded</name></member>
+      <member refid="class_k_win_1_1_item_1ac0dc5aebbfc288debf9e59ede6f4d39b" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>childItems</name></member>
+      <member refid="class_k_win_1_1_item_1ab938104b60ece620180da2d602eb3982" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>colorDescription</name></member>
+      <member refid="class_k_win_1_1_window_item_1a0c8399bc3a28bb490b566a39a674d8f6" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>computeVisibility</name></member>
+      <member refid="class_k_win_1_1_window_item_1aabfcb15bfc2d461c6e2580e54b84922e" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>decorationItem</name></member>
+      <member refid="class_k_win_1_1_window_item_1a719e3e58a9c7203d37b9a05362099297" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>deelevate</name></member>
+      <member refid="class_k_win_1_1_item_1ab79a5c5e8295377ef19c948d53ff158f" prot="protected" virt="non-virtual"><scope>KWin::WindowItem</scope><name>discardQuads</name></member>
+      <member refid="class_k_win_1_1_window_item_1aa7848c43c34d776c2e160ce8557b80c8" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>effectWindow</name></member>
+      <member refid="class_k_win_1_1_window_item_1a15146d67a8272c540ebedcaac1de945e" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>elevate</name></member>
+      <member refid="class_k_win_1_1_item_1a3d43908f92f8e7f5b53790e5d4118f32" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>explicitVisible</name></member>
+      <member refid="class_k_win_1_1_window_item_1a3e467513ed15592d763151c5056537e4" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>freeze</name></member>
+      <member refid="class_k_win_1_1_item_1a5a02454926dad542b44dd7dc3037877c" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>hasEffects</name></member>
+      <member refid="class_k_win_1_1_item_1a3115fe9f6c0836415bbaa8638ce45048" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>isVisible</name></member>
+      <member refid="class_k_win_1_1_item_1ab87c45c078db860d6ffd118ecdd7843a" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>Item</name></member>
+      <member refid="class_k_win_1_1_window_item_1a8e7c970dc54014f8829f552cdb91be6c" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>m_decorationItem</name></member>
+      <member refid="class_k_win_1_1_window_item_1a6a31efe4f7960f787c491f8057eaaa80" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>m_effectWindow</name></member>
+      <member refid="class_k_win_1_1_window_item_1a4b295235f36b50d0e6c14b167eca5a09" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>m_elevation</name></member>
+      <member refid="class_k_win_1_1_window_item_1a48fc47a84d58e6fb76c85bf583419a11" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>m_forceVisibleByActivityCount</name></member>
+      <member refid="class_k_win_1_1_window_item_1a045b7fa2942911cd867fbad38f14db2b" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>m_forceVisibleByDesktopCount</name></member>
+      <member refid="class_k_win_1_1_window_item_1a1e2cbe3ef89d1ce8a7928f2f285803f4" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>m_forceVisibleByHiddenCount</name></member>
+      <member refid="class_k_win_1_1_window_item_1ae7908341cb0cf701ed4ba8f665b4cbfb" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>m_forceVisibleByMinimizeCount</name></member>
+      <member refid="class_k_win_1_1_window_item_1a24a1b6fcd129a2aa29f5b0e6e5979a94" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>m_shadowItem</name></member>
+      <member refid="class_k_win_1_1_window_item_1a7cd3db18528c79010c6bd208a906378b" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>m_surfaceItem</name></member>
+      <member refid="class_k_win_1_1_window_item_1a005ec82b1815ad0ce843610c9f45b93e" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>m_window</name></member>
+      <member refid="class_k_win_1_1_item_1a086a2e271563ecb85cde6fbf2a616c71" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>mapFromScene</name></member>
+      <member refid="class_k_win_1_1_item_1aa7f7455ed653a89d4df4687ea1a38b8f" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>mapToScene</name></member>
+      <member refid="class_k_win_1_1_item_1ac7c0c20e7600b827785b73ee0374e085" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>mapToScene</name></member>
+      <member refid="class_k_win_1_1_window_item_1a561d999b43cb138f4369eed1b8db5c66" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>markDamaged</name></member>
+      <member refid="class_k_win_1_1_item_1a0cd9ffaa64f975eddcc65c76a0bde096" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>opacity</name></member>
+      <member refid="class_k_win_1_1_item_1a274cdc9fe90fa038d749b0552d777481" prot="public" virt="virtual"><scope>KWin::WindowItem</scope><name>opaque</name></member>
+      <member refid="class_k_win_1_1_window_item_1ab89619bc7f4eb4b439cc8b8dd0904724aa0a7cb7d7e4400ac274510d9701d4bb6" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>PAINT_DISABLED_BY_ACTIVITY</name></member>
+      <member refid="class_k_win_1_1_window_item_1ab89619bc7f4eb4b439cc8b8dd0904724a92c40bfcd544cafb04eebf31377c7353" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>PAINT_DISABLED_BY_DESKTOP</name></member>
+      <member refid="class_k_win_1_1_window_item_1ab89619bc7f4eb4b439cc8b8dd0904724ae9917c3f96b5af365d24007aaf542920" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>PAINT_DISABLED_BY_HIDDEN</name></member>
+      <member refid="class_k_win_1_1_window_item_1ab89619bc7f4eb4b439cc8b8dd0904724af5fda3214c32b700cec1adcb4398cca1" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>PAINT_DISABLED_BY_MINIMIZE</name></member>
+      <member refid="class_k_win_1_1_item_1adf691376eafaf7e3545e4cdee16c6a8f" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>paintedArea</name></member>
+      <member refid="class_k_win_1_1_item_1a831e137ba1e2ceb1091cd340d3a375ce" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>paintedArea</name></member>
+      <member refid="class_k_win_1_1_item_1a7cbfb2f1aa4960f7c6265c5b67e7e4b0" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>parentItem</name></member>
+      <member refid="class_k_win_1_1_item_1a0b6c7ffb1764ad316f544f928496fa24" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>position</name></member>
+      <member refid="class_k_win_1_1_item_1a2424c89c8f2411b64cc7c97e25e905b5" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>positionChanged</name></member>
+      <member refid="class_k_win_1_1_item_1a06d0f2aea8e42db7557896d494e690af" prot="public" virt="virtual"><scope>KWin::WindowItem</scope><name>preprocess</name></member>
+      <member refid="class_k_win_1_1_item_1a2aae596524c3ffa5e3f095b932fe2cac" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>presentationHint</name></member>
+      <member refid="class_k_win_1_1_item_1a636cc0d032fc8813db966c4acdb3df50" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>quads</name></member>
+      <member refid="class_k_win_1_1_item_1a6e9ab7045e27f6d1aa1d023234c5f5ff" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>rect</name></member>
+      <member refid="class_k_win_1_1_window_item_1a3f7d72bb814e40eb21be3bdc2f9e313b" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>refVisible</name></member>
+      <member refid="class_k_win_1_1_item_1a9876e64e6c4cda1fb61d073448d71188" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>removeEffect</name></member>
+      <member refid="class_k_win_1_1_item_1a30178857b737d8c5a512b5bba9827989" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>renderingIntent</name></member>
+      <member refid="class_k_win_1_1_item_1a982be6965729c6101b0e24c8bead45c3" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>resetRepaints</name></member>
+      <member refid="class_k_win_1_1_item_1a28ece053baba86da188cc6f0e580ca8c" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>scene</name></member>
+      <member refid="class_k_win_1_1_item_1a3ed94abcac992105cd9d4579fda2b6c7" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>scheduleFrame</name></member>
+      <member refid="class_k_win_1_1_item_1ad3ad797c32e96df4e9715cca925bc4e7" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>scheduleRepaint</name></member>
+      <member refid="class_k_win_1_1_item_1a5f1eda36c0709c78a579b06726d467cf" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>scheduleRepaint</name></member>
+      <member refid="class_k_win_1_1_item_1a4ef686262e1ea5e07d3d1f232f87632b" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>scheduleRepaint</name></member>
+      <member refid="class_k_win_1_1_item_1a97610f6c8011c4197f2683230d920adc" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>scheduleSceneRepaint</name></member>
+      <member refid="class_k_win_1_1_item_1a2553e90c867bcb4c04a1650d9db1cc6b" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>scheduleSceneRepaint</name></member>
+      <member refid="class_k_win_1_1_item_1a054862680e34938384c9b905303d4609" prot="protected" virt="non-virtual"><scope>KWin::WindowItem</scope><name>setColorDescription</name></member>
+      <member refid="class_k_win_1_1_item_1aceea0be9507d2c0565629c9c2304942d" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>setOpacity</name></member>
+      <member refid="class_k_win_1_1_item_1a2a7a1c768681631446b853b595b90b5a" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>setParentItem</name></member>
+      <member refid="class_k_win_1_1_item_1addfb9f3bc08701f6856e025d2b8dfd66" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>setPosition</name></member>
+      <member refid="class_k_win_1_1_item_1a9326cf1000c0a2a1707c8f7f8955e7c1" prot="protected" virt="non-virtual"><scope>KWin::WindowItem</scope><name>setPresentationHint</name></member>
+      <member refid="class_k_win_1_1_item_1a426759a0d352b2a51fece60c7ed5b4d1" prot="protected" virt="non-virtual"><scope>KWin::WindowItem</scope><name>setRenderingIntent</name></member>
+      <member refid="class_k_win_1_1_item_1a0abc1858b1c4074f51b23e85d953baa2" prot="protected" virt="non-virtual"><scope>KWin::WindowItem</scope><name>setScene</name></member>
+      <member refid="class_k_win_1_1_item_1aadbea3fa26cfec91732450904af7d54e" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>setSize</name></member>
+      <member refid="class_k_win_1_1_item_1a00e9897feae250e280a29a1beda4029c" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>setTransform</name></member>
+      <member refid="class_k_win_1_1_item_1a35c893e1d8bd33f1776876de4b426f64" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>setVisible</name></member>
+      <member refid="class_k_win_1_1_item_1acd230ffa121bcc3d8305349fd7ecf993" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>setZ</name></member>
+      <member refid="class_k_win_1_1_window_item_1ae7926acc0c1efa2dcb936f83f33123b5" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>shadowItem</name></member>
+      <member refid="class_k_win_1_1_item_1aec25718545880feac8c9c4b0cab138ad" prot="public" virt="virtual"><scope>KWin::WindowItem</scope><name>shape</name></member>
+      <member refid="class_k_win_1_1_item_1ad0ad42f5708479d6339fd50999dfdfa2" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>size</name></member>
+      <member refid="class_k_win_1_1_item_1a00ea88f0a5981ad8434b959bfb73041e" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>sizeChanged</name></member>
+      <member refid="class_k_win_1_1_item_1a1043a499bdf86472bb3373bd456945fd" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>sortedChildItems</name></member>
+      <member refid="class_k_win_1_1_item_1a92b47e4fc74c0957b83aa9555b6592ad" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>stackAfter</name></member>
+      <member refid="class_k_win_1_1_item_1ad8e4299cc2a392edc4cc55102347d4a1" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>stackBefore</name></member>
+      <member refid="class_k_win_1_1_window_item_1a268375a0b07adc93b11119facb09ced1" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>surfaceItem</name></member>
+      <member refid="class_k_win_1_1_item_1a768d9f08db75f2f4169fa0d1f43ebd8f" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>takeRepaints</name></member>
+      <member refid="class_k_win_1_1_item_1ac7469129e8d2fdb52056e43f795c850e" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>transform</name></member>
+      <member refid="class_k_win_1_1_window_item_1a592ac7f0340779ae0beed5659607e2a8" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>unrefVisible</name></member>
+      <member refid="class_k_win_1_1_window_item_1aa8fa9601a88b1e213c387461fb4cd2e9" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>updateDecorationItem</name></member>
+      <member refid="class_k_win_1_1_window_item_1aab2232da9a10b7949bb713a66e455048" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>updateOpacity</name></member>
+      <member refid="class_k_win_1_1_window_item_1af8f405dbd51e8721364211c2ffe9c06a" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>updatePosition</name></member>
+      <member refid="class_k_win_1_1_window_item_1a8dd83549f2d89864ef1c579adba2157c" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>updateShadowItem</name></member>
+      <member refid="class_k_win_1_1_window_item_1a4545d0e28b6ed4aaa8d17cc5fee76a33" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>updateStackingOrder</name></member>
+      <member refid="class_k_win_1_1_window_item_1a9ea20f6d719b46ebb7e1252b74a66956" prot="protected" virt="non-virtual"><scope>KWin::WindowItem</scope><name>updateSurfaceItem</name></member>
+      <member refid="class_k_win_1_1_window_item_1aa89167285bc7f02c4dddae2c6ab3ae11" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>updateSurfacePosition</name></member>
+      <member refid="class_k_win_1_1_window_item_1abed810c1188351771e300725d5fbbf03" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>updateSurfaceVisibility</name></member>
+      <member refid="class_k_win_1_1_window_item_1aba4244699026b03738b4f27a01bb406e" prot="private" virt="non-virtual"><scope>KWin::WindowItem</scope><name>updateVisibility</name></member>
+      <member refid="class_k_win_1_1_window_item_1a4166f95373e7af5f59ea80b38dd5bef4" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>window</name></member>
+      <member refid="class_k_win_1_1_window_item_1a97e3f388070d83182d9446342a13460e" prot="protected" virt="non-virtual"><scope>KWin::WindowItem</scope><name>WindowItem</name></member>
+      <member refid="class_k_win_1_1_item_1ab03fdfba46eabb08d8e7813eddbe8a46" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>z</name></member>
+      <member refid="class_k_win_1_1_item_1a4eaf32a5e38d0b1c0cd219e65ce9d49b" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>~Item</name></member>
+      <member refid="class_k_win_1_1_window_item_1a41ce4744743b2595c329f5e162f4fa1d" prot="public" virt="non-virtual"><scope>KWin::WindowItem</scope><name>~WindowItem</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

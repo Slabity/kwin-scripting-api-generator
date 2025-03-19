@@ -1,0 +1,430 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_abstract_effect_loader" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>KWin::AbstractEffectLoader</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_effect_loader" prot="public" virt="non-virtual">KWin::EffectLoader</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_plugin_effect_loader" prot="public" virt="non-virtual">KWin::PluginEffectLoader</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_scripted_effect_loader" prot="public" virt="non-virtual">KWin::ScriptedEffectLoader</derivedcompoundref>
+    <includes refid="effectloader_8h" local="no">effectloader.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_abstract_effect_loader_1a508e00aaeab412b4c9a8bfeb8e6c3ea4" prot="private" static="no" mutable="no">
+        <type>KSharedConfig::Ptr</type>
+        <definition>KSharedConfig::Ptr KWin::AbstractEffectLoader::m_config</definition>
+        <argsstring></argsstring>
+        <name>m_config</name>
+        <qualifiedname>KWin::AbstractEffectLoader::m_config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effectloader.h" line="186" column="24" bodyfile="kwin/src/effect/effectloader.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_abstract_effect_loader_1a4bb5209f35491c73801410b4da6f3933" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::AbstractEffectLoader::~AbstractEffectLoader</definition>
+        <argsstring>() override</argsstring>
+        <name>~AbstractEffectLoader</name>
+        <qualifiedname>KWin::AbstractEffectLoader::~AbstractEffectLoader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effectloader.h" line="61" column="5" bodyfile="kwin/src/effect/effectloader.cpp" bodystart="43" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_effect_loader_1ae8c28c5fb1964a05d46e3fac76016ab1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::AbstractEffectLoader::setConfig</definition>
+        <argsstring>(KSharedConfig::Ptr config)</argsstring>
+        <name>setConfig</name>
+        <qualifiedname>KWin::AbstractEffectLoader::setConfig</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_effect_loader_1a5edaf6cb786fa68d8e65253e514c440f">setConfig</reimplementedby>
+        <param>
+          <type>KSharedConfig::Ptr</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para>The KSharedConfig this <ref refid="class_k_win_1_1_effect_loader" kindref="compound">EffectLoader</ref> should operate on. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Important: a valid KSharedConfig must be provided before trying to load any effects!</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effectloader.h" line="71" column="18" bodyfile="kwin/src/effect/effectloader.cpp" bodystart="47" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_effect_loader_1a60477aa2be67a8391bb9d45d2cbb7fb9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool KWin::AbstractEffectLoader::hasEffect</definition>
+        <argsstring>(const QString &amp;name) const =0</argsstring>
+        <name>hasEffect</name>
+        <qualifiedname>KWin::AbstractEffectLoader::hasEffect</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_effect_loader_1a72cb689ba0ce539e92d0b8443121dddb">hasEffect</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_plugin_effect_loader_1a792df507e54006388082cbe30a3e0e10">hasEffect</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_scripted_effect_loader_1a14bfc49779e1271bd14285162301d155">hasEffect</reimplementedby>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Whether this <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> Loader can load the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> with the given <computeroutput>name</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> Loader determines whether it knows or can find an <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> called <computeroutput>name</computeroutput>, and thus whether it can attempt to load the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> to look for. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool <computeroutput>true</computeroutput> if the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> Loader knows this effect, false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effectloader.h" line="82" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_effect_loader_1a37acdd75a09f5b80cd72ab9df2858b81" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>QStringList</type>
+        <definition>virtual QStringList KWin::AbstractEffectLoader::listOfKnownEffects</definition>
+        <argsstring>() const =0</argsstring>
+        <name>listOfKnownEffects</name>
+        <qualifiedname>KWin::AbstractEffectLoader::listOfKnownEffects</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_effect_loader_1a42fb49b2befdd7b4e606378ff44b2370">listOfKnownEffects</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_plugin_effect_loader_1ae1c513ef89efcd11ac5ad53dfcccbaa9">listOfKnownEffects</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_scripted_effect_loader_1ac1c7da03a4cb17fd81148a378734f587">listOfKnownEffects</reimplementedby>
+        <briefdescription>
+<para>All the Effects this loader knows of. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The implementation should re-query its store whenever this method is invoked. It&apos;s possible that the store of effects changed (e.g. a new one got installed)</para>
+<para><simplesect kind="return"><para>QStringList The internal names of the known Effects </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effectloader.h" line="92" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_effect_loader_1ab2ad0c661413834127d8ba00f7517f76" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool KWin::AbstractEffectLoader::loadEffect</definition>
+        <argsstring>(const QString &amp;name)=0</argsstring>
+        <name>loadEffect</name>
+        <qualifiedname>KWin::AbstractEffectLoader::loadEffect</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_effect_loader_1acb2ee7307f9f6bdc420fc582c7f9afb2">loadEffect</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_plugin_effect_loader_1a2e8b5b4ba517b4f57fbde16117934026">loadEffect</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_scripted_effect_loader_1a351e0f5b5f7a07c944118f9c4a17f5d1">loadEffect</reimplementedby>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Synchronous loading of the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> with the given <computeroutput>name</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> without checking any configuration value or any enabled by default function provided by the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref>.</para>
+<para>The loader is expected to apply the following checks: If the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> is already loaded, the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> should not get loaded again. Thus the loader is expected to track which Effects it has loaded, and which of those have been destroyed. The loader should check whether the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> is supported. If the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> indicates it is not supported, it should not get loaded.</para>
+<para>If the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> loaded successfully the signal <ref refid="class_k_win_1_1_abstract_effect_loader_1a4a431e11259b47ecb9ba3346b8012e63" kindref="member">effectLoaded(KWin::Effect*,const QString&amp;)</ref> must be emitted. Otherwise the user of the loader is not able to get the loaded <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref>. It&apos;s not returning the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> as <ref refid="class_k_win_1_1_abstract_effect_loader_1a5ee594e63dee4af44d512d0a262a5ff1" kindref="member">queryAndLoadAll()</ref> is working async and thus the users of the loader are expected to be prepared for async loading.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The internal name of the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> which should be loaded </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool <computeroutput>true</computeroutput> if the effect could be loaded, <computeroutput>false</computeroutput> in error case </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_abstract_effect_loader_1a5ee594e63dee4af44d512d0a262a5ff1" kindref="member">queryAndLoadAll()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_abstract_effect_loader_1a4a431e11259b47ecb9ba3346b8012e63" kindref="member">effectLoaded(KWin::Effect*,const QString&amp;)</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effectloader.h" line="116" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_effect_loader_1a5ee594e63dee4af44d512d0a262a5ff1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void KWin::AbstractEffectLoader::queryAndLoadAll</definition>
+        <argsstring>()=0</argsstring>
+        <name>queryAndLoadAll</name>
+        <qualifiedname>KWin::AbstractEffectLoader::queryAndLoadAll</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_effect_loader_1abda4690d3dfdb04c897a748c5ab7966b">queryAndLoadAll</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_plugin_effect_loader_1ad05c86ab5c8baf0a0b4d550a640a5d18">queryAndLoadAll</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_scripted_effect_loader_1a5cacc8e5513db640e4656422b95478f8">queryAndLoadAll</reimplementedby>
+        <briefdescription>
+<para>The <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> Loader should query its store for all available effects and try to load them. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> Loader is supposed to perform this operation in a highly async way. If there is IO which needs to be performed this should be done in a background thread and a queue should be used to load the effects. The loader should make sure to not load more than one <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> in one event cycle. Loading the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> has to be performed in the <ref refid="class_k_win_1_1_compositor" kindref="compound">Compositor</ref> thread and thus blocks the <ref refid="class_k_win_1_1_compositor" kindref="compound">Compositor</ref>. Therefore after loading one <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> all events should get processed first, so that the <ref refid="class_k_win_1_1_compositor" kindref="compound">Compositor</ref> can perform a painting pass if needed. To simplify this operation one can use the <ref refid="class_k_win_1_1_effect_load_queue" kindref="compound">EffectLoadQueue</ref>. This requires to add another loadEffect method with the custom loader specific type to refer to an <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> and LoadEffectFlags.</para>
+<para>The LoadEffectFlags have to be determined by querying the configuration with <ref refid="class_k_win_1_1_abstract_effect_loader_1ac47832e9c8313b3c7fa6b1b5bda554e7" kindref="member">readConfig()</ref>. If the Load flag is set the loading can proceed and all the checks from <ref refid="class_k_win_1_1_abstract_effect_loader_1ab2ad0c661413834127d8ba00f7517f76" kindref="member">loadEffect(const QString &amp;)</ref> have to be applied. In addition if the CheckDefaultFunction flag is set and the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> provides such a method, it should be queried to determine whether the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> is enabled by default. If such a method returns <computeroutput>false</computeroutput> the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> should not get loaded. If the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> does not provide a way to query whether it&apos;s enabled by default at runtime the flag can get ignored.</para>
+<para>If the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> loaded successfully the signal <ref refid="class_k_win_1_1_abstract_effect_loader_1a4a431e11259b47ecb9ba3346b8012e63" kindref="member">effectLoaded(KWin::Effect*,const QString&amp;)</ref> must be emitted.</para>
+<para><simplesect kind="see"><para><ref refid="class_k_win_1_1_abstract_effect_loader_1ab2ad0c661413834127d8ba00f7517f76" kindref="member">loadEffect(const QString &amp;)</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_abstract_effect_loader_1a4a431e11259b47ecb9ba3346b8012e63" kindref="member">effectLoaded(KWin::Effect*,const QString&amp;)</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effectloader.h" line="144" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_effect_loader_1af4d8106dd1ba61715e7388583af8cdad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool KWin::AbstractEffectLoader::isEffectSupported</definition>
+        <argsstring>(const QString &amp;name) const =0</argsstring>
+        <name>isEffectSupported</name>
+        <qualifiedname>KWin::AbstractEffectLoader::isEffectSupported</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_effect_loader_1aa3c8cde0a570830fbb4defd2bc9e180b">isEffectSupported</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_plugin_effect_loader_1a047d7beff7dc7f1520df827f91c4a0fd">isEffectSupported</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_scripted_effect_loader_1a4e367f59d1bae48b787a95494a87bcbb">isEffectSupported</reimplementedby>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Whether the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> with the given <computeroutput>name</computeroutput> is supported by the compositing backend. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool <computeroutput>true</computeroutput> if it is supported, <computeroutput>false</computeroutput> otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effectloader.h" line="152" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_effect_loader_1a7fe32dee9950b830dbb552d59d79b6ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void KWin::AbstractEffectLoader::clear</definition>
+        <argsstring>()=0</argsstring>
+        <name>clear</name>
+        <qualifiedname>KWin::AbstractEffectLoader::clear</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_effect_loader_1a0f2ddd646c670342618e5717213da4d0">clear</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_plugin_effect_loader_1a4b70a5057c935d1de35137967f54e7fc">clear</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_scripted_effect_loader_1a5a08dbe16b75903b259417fbdac3c0ca">clear</reimplementedby>
+        <briefdescription>
+<para>Clears the load queue, that is all scheduled Effects are discarded from loading. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effectloader.h" line="157" column="18"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_abstract_effect_loader_1a4a431e11259b47ecb9ba3346b8012e63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::AbstractEffectLoader::effectLoaded</definition>
+        <argsstring>(KWin::Effect *effect, const QString &amp;name)</argsstring>
+        <name>effectLoaded</name>
+        <qualifiedname>KWin::AbstractEffectLoader::effectLoaded</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect" kindref="compound">KWin::Effect</ref> *</type>
+          <declname>effect</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>The loader emits this signal when it successfully loaded an effect. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>effect</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The created <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The internal name of the loaded <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effectloader.h" line="167" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_k_win_1_1_abstract_effect_loader_1abce33027093225995ad61aa665aeb45e" prot="protected" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::AbstractEffectLoader::AbstractEffectLoader</definition>
+        <argsstring>(QObject *parent=nullptr)</argsstring>
+        <name>AbstractEffectLoader</name>
+        <qualifiedname>KWin::AbstractEffectLoader::AbstractEffectLoader</qualifiedname>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effectloader.h" line="170" column="14" bodyfile="kwin/src/effect/effectloader.cpp" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_effect_loader_1ac47832e9c8313b3c7fa6b1b5bda554e7" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>LoadEffectFlags</type>
+        <definition>LoadEffectFlags KWin::AbstractEffectLoader::readConfig</definition>
+        <argsstring>(const QString &amp;effectName, bool defaultValue) const</argsstring>
+        <name>readConfig</name>
+        <qualifiedname>KWin::AbstractEffectLoader::readConfig</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>effectName</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>defaultValue</declname>
+        </param>
+        <briefdescription>
+<para>Checks the configuration for the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> identified by <computeroutput>effectName</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For each <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> there could be a key called &quot;&lt;effectName&gt;Enabled&quot;. If there is such a key the returned flags will contain Load in case it&apos;s <computeroutput>true</computeroutput>. If the key does not exist the <computeroutput>defaultValue</computeroutput> determines whether the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> should be loaded. A value of <computeroutput>true</computeroutput> means that Load | CheckDefaultFunction is returned, in case of <computeroutput>false</computeroutput> no Load flags are returned.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>effectName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> to look for in the configuration </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> is enabled by default or not. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Flags indicating whether the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> should be loaded and how it should be loaded </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effectloader.h" line="183" column="21" bodyfile="kwin/src/effect/effectloader.cpp" bodystart="52" bodyend="70"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Interface to describe how an effect loader has to function. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="class_k_win_1_1_abstract_effect_loader" kindref="compound">AbstractEffectLoader</ref> specifies the methods a concrete loader has to implement and how those methods are expected to perform. Also it provides an interface to the outside world (that is <ref refid="class_k_win_1_1_effects_handler" kindref="compound">EffectsHandler</ref>).</para>
+<para>The abstraction is used because there are multiple types of Effects which need to be loaded: <itemizedlist>
+<listitem><para>Built-In Effects </para>
+</listitem>
+<listitem><para>Scripted Effects </para>
+</listitem>
+<listitem><para>Binary <ref refid="class_k_win_1_1_plugin" kindref="compound">Plugin</ref> Effects</para>
+</listitem>
+</itemizedlist>
+Serving all of them with one <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> Loader is rather complex given that different stores need to be queried at the same time. Thus the idea is to have one implementation per type and one implementation which makes use of all of them and combines the loading. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::AbstractEffectLoader</label>
+        <link refid="class_k_win_1_1_abstract_effect_loader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>KWin::EffectLoader</label>
+        <link refid="class_k_win_1_1_effect_loader"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>KWin::PluginEffectLoader</label>
+        <link refid="class_k_win_1_1_plugin_effect_loader"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>KWin::ScriptedEffectLoader</label>
+        <link refid="class_k_win_1_1_scripted_effect_loader"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::AbstractEffectLoader</label>
+        <link refid="class_k_win_1_1_abstract_effect_loader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/effect/effectloader.h" line="57" column="1" bodyfile="kwin/src/effect/effectloader.h" bodystart="58" bodyend="187"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_abstract_effect_loader_1abce33027093225995ad61aa665aeb45e" prot="protected" virt="non-virtual"><scope>KWin::AbstractEffectLoader</scope><name>AbstractEffectLoader</name></member>
+      <member refid="class_k_win_1_1_abstract_effect_loader_1a7fe32dee9950b830dbb552d59d79b6ff" prot="public" virt="pure-virtual"><scope>KWin::AbstractEffectLoader</scope><name>clear</name></member>
+      <member refid="class_k_win_1_1_abstract_effect_loader_1a4a431e11259b47ecb9ba3346b8012e63" prot="public" virt="non-virtual"><scope>KWin::AbstractEffectLoader</scope><name>effectLoaded</name></member>
+      <member refid="class_k_win_1_1_abstract_effect_loader_1a60477aa2be67a8391bb9d45d2cbb7fb9" prot="public" virt="pure-virtual"><scope>KWin::AbstractEffectLoader</scope><name>hasEffect</name></member>
+      <member refid="class_k_win_1_1_abstract_effect_loader_1af4d8106dd1ba61715e7388583af8cdad" prot="public" virt="pure-virtual"><scope>KWin::AbstractEffectLoader</scope><name>isEffectSupported</name></member>
+      <member refid="class_k_win_1_1_abstract_effect_loader_1a37acdd75a09f5b80cd72ab9df2858b81" prot="public" virt="pure-virtual"><scope>KWin::AbstractEffectLoader</scope><name>listOfKnownEffects</name></member>
+      <member refid="class_k_win_1_1_abstract_effect_loader_1ab2ad0c661413834127d8ba00f7517f76" prot="public" virt="pure-virtual"><scope>KWin::AbstractEffectLoader</scope><name>loadEffect</name></member>
+      <member refid="class_k_win_1_1_abstract_effect_loader_1a508e00aaeab412b4c9a8bfeb8e6c3ea4" prot="private" virt="non-virtual"><scope>KWin::AbstractEffectLoader</scope><name>m_config</name></member>
+      <member refid="class_k_win_1_1_abstract_effect_loader_1a5ee594e63dee4af44d512d0a262a5ff1" prot="public" virt="pure-virtual"><scope>KWin::AbstractEffectLoader</scope><name>queryAndLoadAll</name></member>
+      <member refid="class_k_win_1_1_abstract_effect_loader_1ac47832e9c8313b3c7fa6b1b5bda554e7" prot="protected" virt="non-virtual"><scope>KWin::AbstractEffectLoader</scope><name>readConfig</name></member>
+      <member refid="class_k_win_1_1_abstract_effect_loader_1ae8c28c5fb1964a05d46e3fac76016ab1" prot="public" virt="virtual"><scope>KWin::AbstractEffectLoader</scope><name>setConfig</name></member>
+      <member refid="class_k_win_1_1_abstract_effect_loader_1a4bb5209f35491c73801410b4da6f3933" prot="public" virt="non-virtual"><scope>KWin::AbstractEffectLoader</scope><name>~AbstractEffectLoader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

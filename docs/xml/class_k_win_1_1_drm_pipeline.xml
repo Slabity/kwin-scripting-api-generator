@@ -1,0 +1,1418 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_drm_pipeline" kind="class" language="C++" prot="public">
+    <compoundname>KWin::DrmPipeline</compoundname>
+    <includes refid="drm__pipeline_8h" local="no">drm_pipeline.h</includes>
+    <innerclass refid="struct_k_win_1_1_drm_pipeline_1_1_state" prot="private">KWin::DrmPipeline::State</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Error</name>
+        <qualifiedname>KWin::DrmPipeline::Error</qualifiedname>
+        <enumvalue id="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5ba6adf97f83acf6453d4a6a4b1070f3754" prot="public">
+          <name>None</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5ba0fce51713c5b85159c90435fa877e225" prot="public">
+          <name>OutofMemory</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5bae73a2e92f1c87086c838b442552a4775" prot="public">
+          <name>InvalidArguments</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5ba5eb47444d07dffc6d504bea4145a0ad8" prot="public">
+          <name>NoPermission</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5baae7987f09dd89eebf719e8a31371f1f6" prot="public">
+          <name>FramePending</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5ba041b9356343474123a9604fbd61c5dc4" prot="public">
+          <name>TestBufferFailed</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5bac226fb82b3826a0c54741c483019af95" prot="public">
+          <name>NotEnoughCrtcs</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5ba88183b946cc5f0e8c96b2e66e1c74a7e" prot="public">
+          <name>Unknown</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="44" column="5" bodyfile="kwin/src/backends/drm/drm_pipeline.h" bodystart="44" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894c" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>CommitMode</name>
+        <qualifiedname>KWin::DrmPipeline::CommitMode</qualifiedname>
+        <enumvalue id="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894ca0cbc6611f5540bd0809a388dc95a615b" prot="public">
+          <name>Test</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894ca4cc63495694df017edaa8cca4a578e3f" prot="public">
+          <name>TestAllowModeset</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894cae60a24390723aaabf0dec8612ff6517b" prot="public">
+          <name>CommitModeset</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="120" column="5" bodyfile="kwin/src/backends/drm/drm_pipeline.h" bodystart="120" bodyend="124"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_drm_pipeline_1a58267add20b9a9bbe886c7dbac525032" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_output" kindref="compound">DrmOutput</ref> *</type>
+        <definition>DrmOutput* KWin::DrmPipeline::m_output</definition>
+        <argsstring></argsstring>
+        <name>m_output</name>
+        <qualifiedname>KWin::DrmPipeline::m_output</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="150" column="15" bodyfile="kwin/src/backends/drm/drm_pipeline.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_pipeline_1a728ae6df2da9c93a3b537538c3b35cdd" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_connector" kindref="compound">DrmConnector</ref> *</type>
+        <definition>DrmConnector* KWin::DrmPipeline::m_connector</definition>
+        <argsstring></argsstring>
+        <name>m_connector</name>
+        <qualifiedname>KWin::DrmPipeline::m_connector</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="151" column="18" bodyfile="kwin/src/backends/drm/drm_pipeline.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_pipeline_1ab7d70f77c446db82dac732fbeb590dcf" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::DrmPipeline::m_modesetPresentPending</definition>
+        <argsstring></argsstring>
+        <name>m_modesetPresentPending</name>
+        <qualifiedname>KWin::DrmPipeline::m_modesetPresentPending</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="153" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_pipeline_1aca22f60bfea5ed5d0fa5708ed99d0af8" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_color_pipeline" kindref="compound">ColorPipeline</ref></type>
+        <definition>ColorPipeline KWin::DrmPipeline::m_currentLegacyGamma</definition>
+        <argsstring></argsstring>
+        <name>m_currentLegacyGamma</name>
+        <qualifiedname>KWin::DrmPipeline::m_currentLegacyGamma</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="154" column="19" bodyfile="kwin/src/backends/drm/drm_pipeline.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_pipeline_1a94a1b8f20a980a34255790e40471017c" prot="private" static="no" mutable="no">
+        <type>State</type>
+        <definition>State KWin::DrmPipeline::m_pending</definition>
+        <argsstring></argsstring>
+        <name>m_pending</name>
+        <qualifiedname>KWin::DrmPipeline::m_pending</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="177" column="11" bodyfile="kwin/src/backends/drm/drm_pipeline.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_pipeline_1aa15b0dde2597f039a04dbf3ead42bcc8" prot="private" static="no" mutable="no">
+        <type>State</type>
+        <definition>State KWin::DrmPipeline::m_next</definition>
+        <argsstring></argsstring>
+        <name>m_next</name>
+        <qualifiedname>KWin::DrmPipeline::m_next</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="179" column="11" bodyfile="kwin/src/backends/drm/drm_pipeline.h" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_pipeline_1ae35964b756701c890be53c86144c80f8" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_drm_commit_thread" kindref="compound">DrmCommitThread</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;DrmCommitThread&gt; KWin::DrmPipeline::m_commitThread</definition>
+        <argsstring></argsstring>
+        <name>m_commitThread</name>
+        <qualifiedname>KWin::DrmPipeline::m_commitThread</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="181" column="21" bodyfile="kwin/src/backends/drm/drm_pipeline.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_pipeline_1ab990d50c00e004b6404e710579b65c85" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_pipeline_layer" kindref="compound">DrmPipelineLayer</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;DrmPipelineLayer&gt; KWin::DrmPipeline::m_primaryLayer</definition>
+        <argsstring></argsstring>
+        <name>m_primaryLayer</name>
+        <qualifiedname>KWin::DrmPipeline::m_primaryLayer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="182" column="21" bodyfile="kwin/src/backends/drm/drm_pipeline.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_pipeline_1a08756c75d8a81d53fe77eb629e1be0b0" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_pipeline_layer" kindref="compound">DrmPipelineLayer</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;DrmPipelineLayer&gt; KWin::DrmPipeline::m_cursorLayer</definition>
+        <argsstring></argsstring>
+        <name>m_cursorLayer</name>
+        <qualifiedname>KWin::DrmPipeline::m_cursorLayer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="183" column="21" bodyfile="kwin/src/backends/drm/drm_pipeline.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1ad74039facf0e4ea1a1dc0b2753067a02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::DrmPipeline::DrmPipeline</definition>
+        <argsstring>(DrmConnector *conn)</argsstring>
+        <name>DrmPipeline</name>
+        <qualifiedname>KWin::DrmPipeline::DrmPipeline</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_connector" kindref="compound">DrmConnector</ref> *</type>
+          <declname>conn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="41" column="5" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="41" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a8b254855358b104ced5ca679abd421ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::DrmPipeline::~DrmPipeline</definition>
+        <argsstring>()</argsstring>
+        <name>~DrmPipeline</name>
+        <qualifiedname>KWin::DrmPipeline::~DrmPipeline</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="42" column="5" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="47" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1aee4d9fad0e623f6afb450f000fcf29a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref></type>
+        <definition>DrmPipeline::Error KWin::DrmPipeline::present</definition>
+        <argsstring>(const std::shared_ptr&lt; OutputFrame &gt; &amp;frame)</argsstring>
+        <name>present</name>
+        <qualifiedname>KWin::DrmPipeline::present</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_k_win_1_1_output_frame" kindref="compound">OutputFrame</ref> &gt; &amp;</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>tests the pending commit first and commits it if the test passes if the test fails, there is a guarantee for no lasting changes </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="60" column="11" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="54" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a862d8a5337e2ced557eb169d0365ce5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::maybeModeset</definition>
+        <argsstring>(const std::shared_ptr&lt; OutputFrame &gt; &amp;frame)</argsstring>
+        <name>maybeModeset</name>
+        <qualifiedname>KWin::DrmPipeline::maybeModeset</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_k_win_1_1_output_frame" kindref="compound">OutputFrame</ref> &gt; &amp;</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="61" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="78" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a99756c008e80a303ad18144002a02a70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::forceLegacyModeset</definition>
+        <argsstring>()</argsstring>
+        <name>forceLegacyModeset</name>
+        <qualifiedname>KWin::DrmPipeline::forceLegacyModeset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="62" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline_legacy.cpp" bodystart="45" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a521450612c74412d1d071d9e6fb239ef" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmPipeline::needsModeset</definition>
+        <argsstring>() const</argsstring>
+        <name>needsModeset</name>
+        <qualifiedname>KWin::DrmPipeline::needsModeset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="64" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="529" bodyend="532"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a90b0a1bbf427a54f251ce1919183637f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::applyPendingChanges</definition>
+        <argsstring>()</argsstring>
+        <name>applyPendingChanges</name>
+        <qualifiedname>KWin::DrmPipeline::applyPendingChanges</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="65" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="439" bodyend="445"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a599705ade89e3dc8767e6e024126581f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::revertPendingChanges</definition>
+        <argsstring>()</argsstring>
+        <name>revertPendingChanges</name>
+        <qualifiedname>KWin::DrmPipeline::revertPendingChanges</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="66" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="539" bodyend="542"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a422edce2f2d2e9cd4e91e253445b27e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmPipeline::updateCursor</definition>
+        <argsstring>(std::optional&lt; std::chrono::nanoseconds &gt; allowedVrrDelay)</argsstring>
+        <name>updateCursor</name>
+        <qualifiedname>KWin::DrmPipeline::updateCursor</qualifiedname>
+        <param>
+          <type>std::optional&lt; std::chrono::nanoseconds &gt;</type>
+          <declname>allowedVrrDelay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="68" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="402" bodyend="431"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a0a1be2bd5b198c9e965f5a20dc4dcb05" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_connector" kindref="compound">DrmConnector</ref> *</type>
+        <definition>DrmConnector * KWin::DrmPipeline::connector</definition>
+        <argsstring>() const</argsstring>
+        <name>connector</name>
+        <qualifiedname>KWin::DrmPipeline::connector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="70" column="18" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="447" bodyend="450"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a8cfc628f8e5de110f1b5386ebc15750a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref> *</type>
+        <definition>DrmGpu * KWin::DrmPipeline::gpu</definition>
+        <argsstring>() const</argsstring>
+        <name>gpu</name>
+        <qualifiedname>KWin::DrmPipeline::gpu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="71" column="12" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="452" bodyend="455"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a635f6747b7f5335e59f20295d5bc8f19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::pageFlipped</definition>
+        <argsstring>(std::chrono::nanoseconds timestamp)</argsstring>
+        <name>pageFlipped</name>
+        <qualifiedname>KWin::DrmPipeline::pageFlipped</qualifiedname>
+        <param>
+          <type>std::chrono::nanoseconds</type>
+          <declname>timestamp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="73" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="457" bodyend="464"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1abc443a8ca037cc8d489435211d4fb3c7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmPipeline::modesetPresentPending</definition>
+        <argsstring>() const</argsstring>
+        <name>modesetPresentPending</name>
+        <qualifiedname>KWin::DrmPipeline::modesetPresentPending</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="74" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="549" bodyend="552"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1af37ca2cb26628c00ac9b4d80d9087722" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::resetModesetPresentPending</definition>
+        <argsstring>()</argsstring>
+        <name>resetModesetPresentPending</name>
+        <qualifiedname>KWin::DrmPipeline::resetModesetPresentPending</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="75" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="554" bodyend="557"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a931ed2c09308d6999116c4a68cb47fe0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_commit_thread" kindref="compound">DrmCommitThread</ref> *</type>
+        <definition>DrmCommitThread * KWin::DrmPipeline::commitThread</definition>
+        <argsstring>() const</argsstring>
+        <name>commitThread</name>
+        <qualifiedname>KWin::DrmPipeline::commitThread</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="76" column="21" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="544" bodyend="547"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a659af5c1ddc86cdae0541708830ce395" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QHash&lt; uint32_t, QList&lt; uint64_t &gt; &gt;</type>
+        <definition>QHash&lt; uint32_t, QList&lt; uint64_t &gt; &gt; KWin::DrmPipeline::formats</definition>
+        <argsstring>(DrmPlane::TypeIndex planeType) const</argsstring>
+        <name>formats</name>
+        <qualifiedname>KWin::DrmPipeline::formats</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_plane_1a3cf72c069e4b10ac10646deba960d050" kindref="member">DrmPlane::TypeIndex</ref></type>
+          <declname>planeType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="78" column="11" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="476" bodyend="491"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a12f9842b63bfc88c7843f7032320265f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmPipeline::pruneModifier</definition>
+        <argsstring>()</argsstring>
+        <name>pruneModifier</name>
+        <qualifiedname>KWin::DrmPipeline::pruneModifier</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="79" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="493" bodyend="506"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a5a4192335eae02699cbc465137827ee7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; QSize &gt;</type>
+        <definition>QList&lt; QSize &gt; KWin::DrmPipeline::recommendedSizes</definition>
+        <argsstring>(DrmPlane::TypeIndex planeType) const</argsstring>
+        <name>recommendedSizes</name>
+        <qualifiedname>KWin::DrmPipeline::recommendedSizes</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_plane_1a3cf72c069e4b10ac10646deba960d050" kindref="member">DrmPlane::TypeIndex</ref></type>
+          <declname>planeType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="80" column="11" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="508" bodyend="527"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a227f5f6f02d73931ade20876e918d926" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::setOutput</definition>
+        <argsstring>(DrmOutput *output)</argsstring>
+        <name>setOutput</name>
+        <qualifiedname>KWin::DrmPipeline::setOutput</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_output" kindref="compound">DrmOutput</ref> *</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="82" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="466" bodyend="469"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a419d39b2b9bab964dacfb1ed55267dd2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_output" kindref="compound">DrmOutput</ref> *</type>
+        <definition>DrmOutput * KWin::DrmPipeline::output</definition>
+        <argsstring>() const</argsstring>
+        <name>output</name>
+        <qualifiedname>KWin::DrmPipeline::output</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="83" column="15" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="471" bodyend="474"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a63a376ab067026dafe709a0c7ccc1b3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::setLayers</definition>
+        <argsstring>(const std::shared_ptr&lt; DrmPipelineLayer &gt; &amp;primaryLayer, const std::shared_ptr&lt; DrmPipelineLayer &gt; &amp;cursorLayer)</argsstring>
+        <name>setLayers</name>
+        <qualifiedname>KWin::DrmPipeline::setLayers</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_pipeline_layer" kindref="compound">DrmPipelineLayer</ref> &gt; &amp;</type>
+          <declname>primaryLayer</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_pipeline_layer" kindref="compound">DrmPipelineLayer</ref> &gt; &amp;</type>
+          <declname>cursorLayer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="85" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="639" bodyend="643"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1ae914f5dc7b8f8dbe31bead04ced20481" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_pipeline_layer" kindref="compound">DrmPipelineLayer</ref> *</type>
+        <definition>DrmPipelineLayer * KWin::DrmPipeline::primaryLayer</definition>
+        <argsstring>() const</argsstring>
+        <name>primaryLayer</name>
+        <qualifiedname>KWin::DrmPipeline::primaryLayer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="86" column="22" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="579" bodyend="582"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a050f4592818862139a1ac68c65de1fd8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_pipeline_layer" kindref="compound">DrmPipelineLayer</ref> *</type>
+        <definition>DrmPipelineLayer * KWin::DrmPipeline::cursorLayer</definition>
+        <argsstring>() const</argsstring>
+        <name>cursorLayer</name>
+        <qualifiedname>KWin::DrmPipeline::cursorLayer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="87" column="22" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="584" bodyend="587"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a9dbb51784d5da0cf55369110414c8a5b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::chrono::nanoseconds</type>
+        <definition>std::chrono::nanoseconds KWin::DrmPipeline::presentationDeadline</definition>
+        <argsstring>() const</argsstring>
+        <name>presentationDeadline</name>
+        <qualifiedname>KWin::DrmPipeline::presentationDeadline</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="88" column="30" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="738" bodyend="741"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1ade877865c237b042bcff6884eaa6be0a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_crtc" kindref="compound">DrmCrtc</ref> *</type>
+        <definition>DrmCrtc * KWin::DrmPipeline::crtc</definition>
+        <argsstring>() const</argsstring>
+        <name>crtc</name>
+        <qualifiedname>KWin::DrmPipeline::crtc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="90" column="13" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="559" bodyend="562"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1ae307f58fb2fca752e89e3c28a679f78d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_connector_mode" kindref="compound">DrmConnectorMode</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; DrmConnectorMode &gt; KWin::DrmPipeline::mode</definition>
+        <argsstring>() const</argsstring>
+        <name>mode</name>
+        <qualifiedname>KWin::DrmPipeline::mode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="91" column="21" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="564" bodyend="567"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a611dd21649097e4b1d71a0bfbfa7619b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmPipeline::active</definition>
+        <argsstring>() const</argsstring>
+        <name>active</name>
+        <qualifiedname>KWin::DrmPipeline::active</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="92" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="569" bodyend="572"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1af7db525a7239d89edbaf003be2bfac72" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmPipeline::activePending</definition>
+        <argsstring>() const</argsstring>
+        <name>activePending</name>
+        <qualifiedname>KWin::DrmPipeline::activePending</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="93" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="534" bodyend="537"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1ac0222fa45462fb13b328ef9c72b6f4da" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmPipeline::enabled</definition>
+        <argsstring>() const</argsstring>
+        <name>enabled</name>
+        <qualifiedname>KWin::DrmPipeline::enabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="94" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="574" bodyend="577"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a44fb995ea3d8a91b838a77c7de531279" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespace_k_win_1a5bac5dc1ad9b6deedfa5c46c4e432767" kindref="member">PresentationMode</ref></type>
+        <definition>PresentationMode KWin::DrmPipeline::presentationMode</definition>
+        <argsstring>() const</argsstring>
+        <name>presentationMode</name>
+        <qualifiedname>KWin::DrmPipeline::presentationMode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="95" column="22" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="589" bodyend="592"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a185b3ebefd1120f5f728ab3478c0a67d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t KWin::DrmPipeline::overscan</definition>
+        <argsstring>() const</argsstring>
+        <name>overscan</name>
+        <qualifiedname>KWin::DrmPipeline::overscan</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="96" column="14" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="594" bodyend="597"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a04fe039dcc8163db4bf3ecc38cc9d6d0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_output_1a091c0b392d5241b7208e2a63d0f89a83" kindref="member">Output::RgbRange</ref></type>
+        <definition>Output::RgbRange KWin::DrmPipeline::rgbRange</definition>
+        <argsstring>() const</argsstring>
+        <name>rgbRange</name>
+        <qualifiedname>KWin::DrmPipeline::rgbRange</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="97" column="22" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="599" bodyend="602"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1af2a134d3b85dd66f9ae507d8e9fefbd6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_connector_1ac103a1aa529fa1efb645f6e589046cc0" kindref="member">DrmConnector::DrmContentType</ref></type>
+        <definition>DrmConnector::DrmContentType KWin::DrmPipeline::contentType</definition>
+        <argsstring>() const</argsstring>
+        <name>contentType</name>
+        <qualifiedname>KWin::DrmPipeline::contentType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="98" column="34" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="604" bodyend="607"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a56ba24f18c01bc5687edbc15af4c988d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::shared_ptr&lt; <ref refid="class_k_win_1_1_icc_profile" kindref="compound">IccProfile</ref> &gt; &amp;</type>
+        <definition>const std::shared_ptr&lt; IccProfile &gt; &amp; KWin::DrmPipeline::iccProfile</definition>
+        <argsstring>() const</argsstring>
+        <name>iccProfile</name>
+        <qualifiedname>KWin::DrmPipeline::iccProfile</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="99" column="27" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="609" bodyend="612"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1ab603e9a49c112d0f03516ccefdce9848" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::setCrtc</definition>
+        <argsstring>(DrmCrtc *crtc)</argsstring>
+        <name>setCrtc</name>
+        <qualifiedname>KWin::DrmPipeline::setCrtc</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_crtc" kindref="compound">DrmCrtc</ref> *</type>
+          <declname>crtc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="101" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="614" bodyend="622"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a50c0987e4e4de9dd5795356bc725dd6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::setMode</definition>
+        <argsstring>(const std::shared_ptr&lt; DrmConnectorMode &gt; &amp;mode)</argsstring>
+        <name>setMode</name>
+        <qualifiedname>KWin::DrmPipeline::setMode</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_connector_mode" kindref="compound">DrmConnectorMode</ref> &gt; &amp;</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="102" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="624" bodyend="627"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1ab03b55a4ac01ffe95e082ff7ba9f4e47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::setActive</definition>
+        <argsstring>(bool active)</argsstring>
+        <name>setActive</name>
+        <qualifiedname>KWin::DrmPipeline::setActive</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>active</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="103" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="629" bodyend="632"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1aa0facff113d04a5ae2d877c45a191017" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::setEnable</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>setEnable</name>
+        <qualifiedname>KWin::DrmPipeline::setEnable</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="104" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="634" bodyend="637"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1ae227e331a52dec246aa620488f1415b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::setPresentationMode</definition>
+        <argsstring>(PresentationMode mode)</argsstring>
+        <name>setPresentationMode</name>
+        <qualifiedname>KWin::DrmPipeline::setPresentationMode</qualifiedname>
+        <param>
+          <type><ref refid="namespace_k_win_1a5bac5dc1ad9b6deedfa5c46c4e432767" kindref="member">PresentationMode</ref></type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="105" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="645" bodyend="648"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1ae9a20e9b4cb4650b3841f08cadaa1226" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::setOverscan</definition>
+        <argsstring>(uint32_t overscan)</argsstring>
+        <name>setOverscan</name>
+        <qualifiedname>KWin::DrmPipeline::setOverscan</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>overscan</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="106" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="650" bodyend="653"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a788a568351705079f1b6c71149e22371" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::setRgbRange</definition>
+        <argsstring>(Output::RgbRange range)</argsstring>
+        <name>setRgbRange</name>
+        <qualifiedname>KWin::DrmPipeline::setRgbRange</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_output_1a091c0b392d5241b7208e2a63d0f89a83" kindref="member">Output::RgbRange</ref></type>
+          <declname>range</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="107" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="655" bodyend="658"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a2eb009faa45f6945276ffbdfceb899db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::setCrtcColorPipeline</definition>
+        <argsstring>(const ColorPipeline &amp;pipeline)</argsstring>
+        <name>setCrtcColorPipeline</name>
+        <qualifiedname>KWin::DrmPipeline::setCrtcColorPipeline</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_color_pipeline" kindref="compound">ColorPipeline</ref> &amp;</type>
+          <declname>pipeline</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="108" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="660" bodyend="663"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a41c6f95188f82d509b6a61297b9313c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::setContentType</definition>
+        <argsstring>(DrmConnector::DrmContentType type)</argsstring>
+        <name>setContentType</name>
+        <qualifiedname>KWin::DrmPipeline::setContentType</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_connector_1ac103a1aa529fa1efb645f6e589046cc0" kindref="member">DrmConnector::DrmContentType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="109" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="680" bodyend="683"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1ae7fe59a518246e4b2ed6c18ffe56cb61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::setIccProfile</definition>
+        <argsstring>(const std::shared_ptr&lt; IccProfile &gt; &amp;profile)</argsstring>
+        <name>setIccProfile</name>
+        <qualifiedname>KWin::DrmPipeline::setIccProfile</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_k_win_1_1_icc_profile" kindref="compound">IccProfile</ref> &gt; &amp;</type>
+          <declname>profile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="110" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="685" bodyend="688"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a7a133b6c60e13370f9fdf78aa877ece0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::setHighDynamicRange</definition>
+        <argsstring>(bool hdr)</argsstring>
+        <name>setHighDynamicRange</name>
+        <qualifiedname>KWin::DrmPipeline::setHighDynamicRange</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>hdr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="111" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="665" bodyend="668"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1af72968f1cf479b7e043da1b210434537" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::setWideColorGamut</definition>
+        <argsstring>(bool wcg)</argsstring>
+        <name>setWideColorGamut</name>
+        <qualifiedname>KWin::DrmPipeline::setWideColorGamut</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>wcg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="112" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="670" bodyend="673"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1acec79364d852674c682b69ce064ef40d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::setMaxBpc</definition>
+        <argsstring>(uint32_t max)</argsstring>
+        <name>setMaxBpc</name>
+        <qualifiedname>KWin::DrmPipeline::setMaxBpc</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="113" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="675" bodyend="678"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a1310c8bfa4079793297cc7eaa777c176" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmPipeline::amdgpuVrrWorkaroundActive</definition>
+        <argsstring>() const</argsstring>
+        <name>amdgpuVrrWorkaroundActive</name>
+        <qualifiedname>KWin::DrmPipeline::amdgpuVrrWorkaroundActive</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>amdgpu drops cursor updates with adaptive sync: <ulink url="https://gitlab.freedesktop.org/drm/amd/-/issues/2186">https://gitlab.freedesktop.org/drm/amd/-/issues/2186</ulink> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="118" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="433" bodyend="437"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1ad2120a27a0a06b86f4b03cd6c912b430" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref></type>
+        <definition>DrmPipeline::Error KWin::DrmPipeline::commitPipelines</definition>
+        <argsstring>(const QList&lt; DrmPipeline * &gt; &amp;pipelines, CommitMode mode, const QList&lt; DrmObject * &gt; &amp;unusedObjects={})</argsstring>
+        <name>commitPipelines</name>
+        <qualifiedname>KWin::DrmPipeline::commitPipelines</qualifiedname>
+        <param>
+          <type>const QList&lt; <ref refid="class_k_win_1_1_drm_pipeline" kindref="compound">DrmPipeline</ref> * &gt; &amp;</type>
+          <declname>pipelines</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894c" kindref="member">CommitMode</ref></type>
+          <declname>mode</declname>
+        </param>
+        <param>
+          <type>const QList&lt; <ref refid="class_k_win_1_1_drm_object" kindref="compound">DrmObject</ref> * &gt; &amp;</type>
+          <declname>unusedObjects</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="126" column="18" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="84" bodyend="92"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a5e92b5f82fcb5ad38d73a47f2f191305" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmPipeline::isBufferForDirectScanout</definition>
+        <argsstring>() const</argsstring>
+        <name>isBufferForDirectScanout</name>
+        <qualifiedname>KWin::DrmPipeline::isBufferForDirectScanout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="129" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a446e4dbc58cc72cbbc0b39f0dba06a14" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t KWin::DrmPipeline::calculateUnderscan</definition>
+        <argsstring>()</argsstring>
+        <name>calculateUnderscan</name>
+        <qualifiedname>KWin::DrmPipeline::calculateUnderscan</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="130" column="14" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="373" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a36f771374369c9e89476f5a44f63d744" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_blob" kindref="compound">DrmBlob</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; DrmBlob &gt; KWin::DrmPipeline::createHdrMetadata</definition>
+        <argsstring>(TransferFunction::Type transferFunction) const</argsstring>
+        <name>createHdrMetadata</name>
+        <qualifiedname>KWin::DrmPipeline::createHdrMetadata</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_transfer_function_1af52e6a1609afb57e5738028613f90c13" kindref="member">TransferFunction::Type</ref></type>
+          <declname>transferFunction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="132" column="21" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="690" bodyend="736"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1af358684f5bbeff0698992418a02a55bf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref></type>
+        <definition>DrmPipeline::Error KWin::DrmPipeline::presentLegacy</definition>
+        <argsstring>(const std::shared_ptr&lt; OutputFrame &gt; &amp;frame)</argsstring>
+        <name>presentLegacy</name>
+        <qualifiedname>KWin::DrmPipeline::presentLegacy</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_k_win_1_1_output_frame" kindref="compound">OutputFrame</ref> &gt; &amp;</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="135" column="11" bodyfile="kwin/src/backends/drm/drm_pipeline_legacy.cpp" bodystart="27" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1ac0cd7d5543106d8b4001734c64698e8d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref></type>
+        <definition>DrmPipeline::Error KWin::DrmPipeline::legacyModeset</definition>
+        <argsstring>()</argsstring>
+        <name>legacyModeset</name>
+        <qualifiedname>KWin::DrmPipeline::legacyModeset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="136" column="11" bodyfile="kwin/src/backends/drm/drm_pipeline_legacy.cpp" bodystart="53" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1aa70c60ce1c746520647b00b175b48249" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref></type>
+        <definition>DrmPipeline::Error KWin::DrmPipeline::setLegacyGamma</definition>
+        <argsstring>()</argsstring>
+        <name>setLegacyGamma</name>
+        <qualifiedname>KWin::DrmPipeline::setLegacyGamma</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="137" column="11" bodyfile="kwin/src/backends/drm/drm_pipeline_legacy.cpp" bodystart="167" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1ab6b4076530b8e4cf9a7048b16bf705a9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref></type>
+        <definition>DrmPipeline::Error KWin::DrmPipeline::applyPendingChangesLegacy</definition>
+        <argsstring>()</argsstring>
+        <name>applyPendingChangesLegacy</name>
+        <qualifiedname>KWin::DrmPipeline::applyPendingChangesLegacy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="138" column="11" bodyfile="kwin/src/backends/drm/drm_pipeline_legacy.cpp" bodystart="101" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1aa3d0983c5e7ad68bbb413fa1a7a14cc0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmPipeline::setCursorLegacy</definition>
+        <argsstring>()</argsstring>
+        <name>setCursorLegacy</name>
+        <qualifiedname>KWin::DrmPipeline::setCursorLegacy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="139" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline_legacy.cpp" bodystart="199" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1abf8fefe3ac2119f753bf78fa4279e1d2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref></type>
+        <definition>DrmPipeline::Error KWin::DrmPipeline::prepareAtomicCommit</definition>
+        <argsstring>(DrmAtomicCommit *commit, CommitMode mode, const std::shared_ptr&lt; OutputFrame &gt; &amp;frame)</argsstring>
+        <name>prepareAtomicCommit</name>
+        <qualifiedname>KWin::DrmPipeline::prepareAtomicCommit</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_atomic_commit" kindref="compound">DrmAtomicCommit</ref> *</type>
+          <declname>commit</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894c" kindref="member">CommitMode</ref></type>
+          <declname>mode</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_k_win_1_1_output_frame" kindref="compound">OutputFrame</ref> &gt; &amp;</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="143" column="11" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="158" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a29c4b933b3a4419fc7b693b243847b6e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::DrmPipeline::prepareAtomicModeset</definition>
+        <argsstring>(DrmAtomicCommit *commit)</argsstring>
+        <name>prepareAtomicModeset</name>
+        <qualifiedname>KWin::DrmPipeline::prepareAtomicModeset</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_atomic_commit" kindref="compound">DrmAtomicCommit</ref> *</type>
+          <declname>commit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="144" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="297" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1ac85e63ffb45313b42f97302c7cb05d19" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref></type>
+        <definition>DrmPipeline::Error KWin::DrmPipeline::prepareAtomicPresentation</definition>
+        <argsstring>(DrmAtomicCommit *commit, const std::shared_ptr&lt; OutputFrame &gt; &amp;frame)</argsstring>
+        <name>prepareAtomicPresentation</name>
+        <qualifiedname>KWin::DrmPipeline::prepareAtomicPresentation</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_atomic_commit" kindref="compound">DrmAtomicCommit</ref> *</type>
+          <declname>commit</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_k_win_1_1_output_frame" kindref="compound">OutputFrame</ref> &gt; &amp;</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="145" column="11" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="178" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1aa26829b516a782df75865b5eab2b2880" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::prepareAtomicCursor</definition>
+        <argsstring>(DrmAtomicCommit *commit)</argsstring>
+        <name>prepareAtomicCursor</name>
+        <qualifiedname>KWin::DrmPipeline::prepareAtomicCursor</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_atomic_commit" kindref="compound">DrmAtomicCommit</ref> *</type>
+          <declname>commit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="146" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="252" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a0b97533f3d67be00c2951c956bd3b2c6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmPipeline::prepareAtomicDisable</definition>
+        <argsstring>(DrmAtomicCommit *commit)</argsstring>
+        <name>prepareAtomicDisable</name>
+        <qualifiedname>KWin::DrmPipeline::prepareAtomicDisable</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_atomic_commit" kindref="compound">DrmAtomicCommit</ref> *</type>
+          <declname>commit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="147" column="10" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="270" bodyend="280"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1ad3df54ab8ce43d80a55ad7d82783656d" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref></type>
+        <definition>DrmPipeline::Error KWin::DrmPipeline::errnoToError</definition>
+        <argsstring>()</argsstring>
+        <name>errnoToError</name>
+        <qualifiedname>KWin::DrmPipeline::errnoToError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="131" column="18" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="386" bodyend="400"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1a191daf3f9f4d33cdfac1d45e8d802166" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref></type>
+        <definition>DrmPipeline::Error KWin::DrmPipeline::commitPipelinesLegacy</definition>
+        <argsstring>(const QList&lt; DrmPipeline * &gt; &amp;pipelines, CommitMode mode, const QList&lt; DrmObject * &gt; &amp;unusedObjects)</argsstring>
+        <name>commitPipelinesLegacy</name>
+        <qualifiedname>KWin::DrmPipeline::commitPipelinesLegacy</qualifiedname>
+        <param>
+          <type>const QList&lt; <ref refid="class_k_win_1_1_drm_pipeline" kindref="compound">DrmPipeline</ref> * &gt; &amp;</type>
+          <declname>pipelines</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894c" kindref="member">CommitMode</ref></type>
+          <declname>mode</declname>
+        </param>
+        <param>
+          <type>const QList&lt; <ref refid="class_k_win_1_1_drm_object" kindref="compound">DrmObject</ref> * &gt; &amp;</type>
+          <declname>unusedObjects</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="140" column="18" bodyfile="kwin/src/backends/drm/drm_pipeline_legacy.cpp" bodystart="70" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_pipeline_1ab32882af385c939ca070734c9c6ea138" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref></type>
+        <definition>DrmPipeline::Error KWin::DrmPipeline::commitPipelinesAtomic</definition>
+        <argsstring>(const QList&lt; DrmPipeline * &gt; &amp;pipelines, CommitMode mode, const std::shared_ptr&lt; OutputFrame &gt; &amp;frame, const QList&lt; DrmObject * &gt; &amp;unusedObjects)</argsstring>
+        <name>commitPipelinesAtomic</name>
+        <qualifiedname>KWin::DrmPipeline::commitPipelinesAtomic</qualifiedname>
+        <param>
+          <type>const QList&lt; <ref refid="class_k_win_1_1_drm_pipeline" kindref="compound">DrmPipeline</ref> * &gt; &amp;</type>
+          <declname>pipelines</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894c" kindref="member">CommitMode</ref></type>
+          <declname>mode</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_k_win_1_1_output_frame" kindref="compound">OutputFrame</ref> &gt; &amp;</type>
+          <declname>frame</declname>
+        </param>
+        <param>
+          <type>const QList&lt; <ref refid="class_k_win_1_1_drm_object" kindref="compound">DrmObject</ref> * &gt; &amp;</type>
+          <declname>unusedObjects</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_pipeline.h" line="148" column="18" bodyfile="kwin/src/backends/drm/drm_pipeline.cpp" bodystart="94" bodyend="156"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="kwin/src/backends/drm/drm_pipeline.h" line="38" column="1" bodyfile="kwin/src/backends/drm/drm_pipeline.h" bodystart="39" bodyend="184"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_drm_pipeline_1a611dd21649097e4b1d71a0bfbfa7619b" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>active</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1af7db525a7239d89edbaf003be2bfac72" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>activePending</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a1310c8bfa4079793297cc7eaa777c176" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>amdgpuVrrWorkaroundActive</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a90b0a1bbf427a54f251ce1919183637f" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>applyPendingChanges</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1ab6b4076530b8e4cf9a7048b16bf705a9" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>applyPendingChangesLegacy</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a446e4dbc58cc72cbbc0b39f0dba06a14" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>calculateUnderscan</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894c" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>CommitMode</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1ad2120a27a0a06b86f4b03cd6c912b430" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>commitPipelines</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1ab32882af385c939ca070734c9c6ea138" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>commitPipelinesAtomic</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a191daf3f9f4d33cdfac1d45e8d802166" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>commitPipelinesLegacy</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a931ed2c09308d6999116c4a68cb47fe0" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>commitThread</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a0a1be2bd5b198c9e965f5a20dc4dcb05" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>connector</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1af2a134d3b85dd66f9ae507d8e9fefbd6" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>contentType</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a36f771374369c9e89476f5a44f63d744" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>createHdrMetadata</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1ade877865c237b042bcff6884eaa6be0a" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>crtc</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a050f4592818862139a1ac68c65de1fd8" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>cursorLayer</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1ad74039facf0e4ea1a1dc0b2753067a02" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>DrmPipeline</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1ac0222fa45462fb13b328ef9c72b6f4da" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>enabled</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1ad3df54ab8ce43d80a55ad7d82783656d" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>errnoToError</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>Error</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a99756c008e80a303ad18144002a02a70" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>forceLegacyModeset</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a659af5c1ddc86cdae0541708830ce395" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>formats</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a8cfc628f8e5de110f1b5386ebc15750a" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>gpu</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a56ba24f18c01bc5687edbc15af4c988d" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>iccProfile</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a5e92b5f82fcb5ad38d73a47f2f191305" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>isBufferForDirectScanout</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1ac0cd7d5543106d8b4001734c64698e8d" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>legacyModeset</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1ae35964b756701c890be53c86144c80f8" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>m_commitThread</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a728ae6df2da9c93a3b537538c3b35cdd" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>m_connector</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1aca22f60bfea5ed5d0fa5708ed99d0af8" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>m_currentLegacyGamma</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a08756c75d8a81d53fe77eb629e1be0b0" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>m_cursorLayer</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1ab7d70f77c446db82dac732fbeb590dcf" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>m_modesetPresentPending</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1aa15b0dde2597f039a04dbf3ead42bcc8" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>m_next</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a58267add20b9a9bbe886c7dbac525032" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>m_output</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a94a1b8f20a980a34255790e40471017c" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>m_pending</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1ab990d50c00e004b6404e710579b65c85" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>m_primaryLayer</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a862d8a5337e2ced557eb169d0365ce5f" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>maybeModeset</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1ae307f58fb2fca752e89e3c28a679f78d" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>mode</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1abc443a8ca037cc8d489435211d4fb3c7" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>modesetPresentPending</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a521450612c74412d1d071d9e6fb239ef" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>needsModeset</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a419d39b2b9bab964dacfb1ed55267dd2" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>output</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a185b3ebefd1120f5f728ab3478c0a67d" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>overscan</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a635f6747b7f5335e59f20295d5bc8f19" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>pageFlipped</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1abf8fefe3ac2119f753bf78fa4279e1d2" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>prepareAtomicCommit</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1aa26829b516a782df75865b5eab2b2880" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>prepareAtomicCursor</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a0b97533f3d67be00c2951c956bd3b2c6" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>prepareAtomicDisable</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a29c4b933b3a4419fc7b693b243847b6e" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>prepareAtomicModeset</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1ac85e63ffb45313b42f97302c7cb05d19" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>prepareAtomicPresentation</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1aee4d9fad0e623f6afb450f000fcf29a6" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>present</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a9dbb51784d5da0cf55369110414c8a5b" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>presentationDeadline</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a44fb995ea3d8a91b838a77c7de531279" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>presentationMode</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1af358684f5bbeff0698992418a02a55bf" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>presentLegacy</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1ae914f5dc7b8f8dbe31bead04ced20481" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>primaryLayer</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a12f9842b63bfc88c7843f7032320265f" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>pruneModifier</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a5a4192335eae02699cbc465137827ee7" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>recommendedSizes</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1af37ca2cb26628c00ac9b4d80d9087722" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>resetModesetPresentPending</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a599705ade89e3dc8767e6e024126581f" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>revertPendingChanges</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a04fe039dcc8163db4bf3ecc38cc9d6d0" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>rgbRange</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1ab03b55a4ac01ffe95e082ff7ba9f4e47" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>setActive</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a41c6f95188f82d509b6a61297b9313c3" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>setContentType</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1ab603e9a49c112d0f03516ccefdce9848" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>setCrtc</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a2eb009faa45f6945276ffbdfceb899db" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>setCrtcColorPipeline</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1aa3d0983c5e7ad68bbb413fa1a7a14cc0" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>setCursorLegacy</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1aa0facff113d04a5ae2d877c45a191017" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>setEnable</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a7a133b6c60e13370f9fdf78aa877ece0" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>setHighDynamicRange</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1ae7fe59a518246e4b2ed6c18ffe56cb61" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>setIccProfile</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a63a376ab067026dafe709a0c7ccc1b3f" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>setLayers</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1aa70c60ce1c746520647b00b175b48249" prot="private" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>setLegacyGamma</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1acec79364d852674c682b69ce064ef40d" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>setMaxBpc</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a50c0987e4e4de9dd5795356bc725dd6f" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>setMode</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a227f5f6f02d73931ade20876e918d926" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>setOutput</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1ae9a20e9b4cb4650b3841f08cadaa1226" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>setOverscan</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1ae227e331a52dec246aa620488f1415b9" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>setPresentationMode</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a788a568351705079f1b6c71149e22371" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>setRgbRange</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1af72968f1cf479b7e043da1b210434537" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>setWideColorGamut</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a422edce2f2d2e9cd4e91e253445b27e3" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>updateCursor</name></member>
+      <member refid="class_k_win_1_1_drm_pipeline_1a8b254855358b104ced5ca679abd421ad" prot="public" virt="non-virtual"><scope>KWin::DrmPipeline</scope><name>~DrmPipeline</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

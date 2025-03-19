@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="integration_8h" kind="file" language="C++">
+    <compoundname>integration.h</compoundname>
+    <includes local="no">epoxy/egl.h</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">QtGui/private/qdesktopunixservices_p.h</includes>
+    <includes local="no">qpa/qplatformintegration.h</includes>
+    <includedby refid="integration_8cpp" local="yes">kwin/src/plugins/qpa/integration.cpp</includedby>
+    <includedby refid="plugins_2qpa_2main_8cpp" local="yes">kwin/src/plugins/qpa/main.cpp</includedby>
+    <includedby refid="screen_8cpp" local="yes">kwin/src/plugins/qpa/screen.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/plugins/qpa/integration.h</label>
+        <link refid="integration_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+      <node id="4">
+        <label>QtGui/private/qdesktopunixservices_p.h</label>
+      </node>
+      <node id="2">
+        <label>epoxy/egl.h</label>
+      </node>
+      <node id="5">
+        <label>qpa/qplatformintegration.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/plugins/qpa/integration.cpp</label>
+        <link refid="integration_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/plugins/qpa/integration.h</label>
+        <link refid="integration_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>kwin/src/plugins/qpa/main.cpp</label>
+        <link refid="plugins_2qpa_2main_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/plugins/qpa/screen.cpp</label>
+        <link refid="screen_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_q_p_a_1_1_integration" prot="public">KWin::QPA::Integration</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <innernamespace refid="namespace_k_win_1_1_q_p_a">KWin::QPA</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2015<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2019<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epoxy/egl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>QT_VERSION<sp/>&gt;=<sp/>QT_VERSION_CHECK(6,<sp/>9,<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QtGui/private/qdesktopunixservices_p.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QtGui/private/qgenericunixservices_p.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;qpa/qplatformintegration.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win_1_1_q_p_a" kindref="compound">QPA</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_q_p_a_1_1_clipboard" kindref="compound">Clipboard</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_q_p_a_1_1_screen" kindref="compound">Screen</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="class_k_win_1_1_q_p_a_1_1_integration" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_q_p_a_1_1_integration_1a1e36a22b19f7cd17e095924907a5805a" kindref="member">Integration</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QPlatformIntegration</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_q_p_a_1_1_integration_1a1e36a22b19f7cd17e095924907a5805a" kindref="member">Integration</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_q_p_a_1_1_integration_1ad934b97bb789f609a033c9833d243f31" kindref="member">~Integration</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_q_p_a_1_1_integration_1a2e2cc669cf7ee496794a9b5237a6d006" kindref="member">hasCapability</ref>(Capability<sp/>cap)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>QPlatformWindow<sp/>*<ref refid="class_k_win_1_1_q_p_a_1_1_integration_1a033350a139f07b77f835db172790bc49" kindref="member">createPlatformWindow</ref>(QWindow<sp/>*window)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>QPlatformOffscreenSurface<sp/>*<ref refid="class_k_win_1_1_q_p_a_1_1_integration_1afb368934f655ac47b6981eb763cd9f9c" kindref="member">createPlatformOffscreenSurface</ref>(QOffscreenSurface<sp/>*surface)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>QPlatformBackingStore<sp/>*<ref refid="class_k_win_1_1_q_p_a_1_1_integration_1a426e81ff1d7ce5ad7319d79c328f8cfb" kindref="member">createPlatformBackingStore</ref>(QWindow<sp/>*window)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>QAbstractEventDispatcher<sp/>*<ref refid="class_k_win_1_1_q_p_a_1_1_integration_1a1b11beee5846ff9f9a34a492eee13d43" kindref="member">createEventDispatcher</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>QPlatformFontDatabase<sp/>*<ref refid="class_k_win_1_1_q_p_a_1_1_integration_1aaa5cbc99eefee61848574b007d0f0b0a" kindref="member">fontDatabase</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>QStringList<sp/><ref refid="class_k_win_1_1_q_p_a_1_1_integration_1af5cd559a94bea07dd7aaff8ac0c79700" kindref="member">themeNames</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>QPlatformTheme<sp/>*<ref refid="class_k_win_1_1_q_p_a_1_1_integration_1a5ff651096d4b6910aec3a416a32e2292" kindref="member">createPlatformTheme</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;name)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>QPlatformOpenGLContext<sp/>*<ref refid="class_k_win_1_1_q_p_a_1_1_integration_1a579cb1873ee73f36efde7d820608a9f9" kindref="member">createPlatformOpenGLContext</ref>(QOpenGLContext<sp/>*context)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>QPlatformAccessibility<sp/>*<ref refid="class_k_win_1_1_q_p_a_1_1_integration_1aeb02dc574d50362056f2886a5efe7a85" kindref="member">accessibility</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>QPlatformNativeInterface<sp/>*<ref refid="class_k_win_1_1_q_p_a_1_1_integration_1a5e009d0dca17eda2cd0e17e6ffcb3442" kindref="member">nativeInterface</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>QPlatformInputContext<sp/>*<ref refid="class_k_win_1_1_q_p_a_1_1_integration_1a7b08d02da1954995179a432959394b54" kindref="member">inputContext</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>QPlatformServices<sp/>*<ref refid="class_k_win_1_1_q_p_a_1_1_integration_1af017752b43e837eb25914cb468321c5c" kindref="member">services</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>QPlatformClipboard<sp/>*<ref refid="class_k_win_1_1_q_p_a_1_1_integration_1a60ec5ef000db96d7b9c7e2fefc77e930" kindref="member">clipboard</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_q_p_a_1_1_integration_1a85bb70c764728fb5e2fc5f5c9029f635" kindref="member">initialize</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>QHash&lt;Output<sp/>*,<sp/>Screen<sp/>*&gt;<sp/><ref refid="class_k_win_1_1_q_p_a_1_1_integration_1af36b51a272f5bc86fec4f94fa3107598" kindref="member">screens</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handleOutputEnabled(<ref refid="class_k_win_1_1_output" kindref="compound">Output</ref><sp/>*output);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handleOutputDisabled(<ref refid="class_k_win_1_1_output" kindref="compound">Output</ref><sp/>*output);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handleWorkspaceCreated();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;QPlatformFontDatabase&gt;<sp/>m_fontDb;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;QPlatformAccessibility&gt;<sp/>m_accessibility;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;QPlatformNativeInterface&gt;<sp/>m_nativeInterface;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>QPlatformPlaceholderScreen<sp/>*m_dummyScreen<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>QHash&lt;Output<sp/>*,<sp/>Screen<sp/>*&gt;<sp/>m_screens;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>QT_VERSION<sp/>&gt;=<sp/>QT_VERSION_CHECK(6,<sp/>9,<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;QDesktopUnixServices&gt;<sp/>m_services;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;QGenericUnixServices&gt;<sp/>m_services;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;Clipboard&gt;<sp/>m_clipboard;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/plugins/qpa/integration.h"/>
+  </compounddef>
+</doxygen>

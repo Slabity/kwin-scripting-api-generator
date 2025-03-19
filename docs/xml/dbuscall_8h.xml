@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dbuscall_8h" kind="file" language="C++">
+    <compoundname>dbuscall.h</compoundname>
+    <includes local="no">QObject</includes>
+    <includes local="no">QString</includes>
+    <includes local="no">QVariant</includes>
+    <includedby refid="dbuscall_8cpp" local="yes">kwin/src/scripting/dbuscall.cpp</includedby>
+    <includedby refid="scripting_8cpp" local="yes">kwin/src/scripting/scripting.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/scripting/dbuscall.h</label>
+        <link refid="dbuscall_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+      <node id="3">
+        <label>QString</label>
+      </node>
+      <node id="4">
+        <label>QVariant</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/scripting/dbuscall.cpp</label>
+        <link refid="dbuscall_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/scripting/dbuscall.h</label>
+        <link refid="dbuscall_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>kwin/src/scripting/scripting.cpp</label>
+        <link refid="scripting_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_d_bus_call" prot="public">KWin::DBusCall</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="dbuscall_8h_1a2b4158296bd0f4d6223a83f998602c75" prot="public" static="no">
+        <name>GENERIC_WRAPPER</name>
+        <param><defname>type</defname></param>
+        <param><defname>name</defname></param>
+        <param><defname>upperName</defname></param>
+        <initializer>    inline type DBusCall::name() const              \
+    {                                               \
+        return m_##name;                            \
+    }                                               \
+    inline void DBusCall::set##upperName(type name) \
+    {                                               \
+        if (m_##name == name) {                     \
+            return;                                 \
+        }                                           \
+        m_##name = name;                            \
+        Q_EMIT name##Changed();                     \
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/dbuscall.h" line="109" column="9" bodyfile="kwin/src/scripting/dbuscall.h" bodystart="109" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="define" id="dbuscall_8h_1a8fcaa41c5057630606033629ac5406d4" prot="public" static="no">
+        <name>WRAPPER</name>
+        <param><defname>name</defname></param>
+        <param><defname>upperName</defname></param>
+        <initializer>    <ref refid="dbuscall_8h_1a2b4158296bd0f4d6223a83f998602c75" kindref="member">GENERIC_WRAPPER</ref>(const QString &amp;, name, upperName)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/dbuscall.h" line="122" column="9" bodyfile="kwin/src/scripting/dbuscall.h" bodystart="122" bodyend="123"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2013<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QString&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QVariant&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="class_k_win_1_1_d_bus_call" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_d_bus_call_1afb4d8e8b113a2ab136ef94f67fcec9a5" kindref="member">DBusCall</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="67" refid="class_k_win_1_1_d_bus_call_1a69f61a8846810228bca674bfe554b154" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QString<sp/><ref refid="class_k_win_1_1_d_bus_call_1a69f61a8846810228bca674bfe554b154" kindref="member">service</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_d_bus_call_1a69f61a8846810228bca674bfe554b154" kindref="member">service</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_d_bus_call_1a5f05071ad41ba991ed15cd654b7fcc30" kindref="member">setService</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_d_bus_call_1a008cf98b5c25c92dcda57750685f2409" kindref="member">serviceChanged</ref>)</highlight></codeline>
+<codeline lineno="68" refid="class_k_win_1_1_d_bus_call_1a99fe998204d2890ef6cd514ea336b97e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QString<sp/><ref refid="class_k_win_1_1_d_bus_call_1a99fe998204d2890ef6cd514ea336b97e" kindref="member">path</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_d_bus_call_1a99fe998204d2890ef6cd514ea336b97e" kindref="member">path</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_d_bus_call_1a0bbc64b4b5c4e5c7cd8730dc1c1e01c0" kindref="member">setPath</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_d_bus_call_1a74b3fc94e83d4e7b3886c2b171b50840" kindref="member">pathChanged</ref>)</highlight></codeline>
+<codeline lineno="69" refid="class_k_win_1_1_d_bus_call_1a00066f286c7104b0eb4ebdcf5e171e6e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QString<sp/><ref refid="class_k_win_1_1_d_bus_call_1a00066f286c7104b0eb4ebdcf5e171e6e" kindref="member">dbusInterface</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_d_bus_call_1aa764783b2c44227b0b0a0a168be6c649" kindref="member">interface</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_d_bus_call_1a19957bcd149dcd65aa4fa43812bc0235" kindref="member">setInterface</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_d_bus_call_1a4e29e71efa2fe83aec8e43624d27ba3a" kindref="member">interfaceChanged</ref>)</highlight></codeline>
+<codeline lineno="70" refid="class_k_win_1_1_d_bus_call_1a9270e07ce2ed17f8167b39ec19870dc1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QString<sp/><ref refid="class_k_win_1_1_d_bus_call_1a9270e07ce2ed17f8167b39ec19870dc1" kindref="member">method</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_d_bus_call_1a9270e07ce2ed17f8167b39ec19870dc1" kindref="member">method</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_d_bus_call_1abe770def47f64f9893ef63189e6541b0" kindref="member">setMethod</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_d_bus_call_1a70ce539528ddfac3f973e9e3ae8bf134" kindref="member">methodChanged</ref>)</highlight></codeline>
+<codeline lineno="71" refid="class_k_win_1_1_d_bus_call_1a5b4d1af1768bb9d81b54ff3462652f9c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QVariantList<sp/><ref refid="class_k_win_1_1_d_bus_call_1a5b4d1af1768bb9d81b54ff3462652f9c" kindref="member">arguments</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_d_bus_call_1a5b4d1af1768bb9d81b54ff3462652f9c" kindref="member">arguments</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_d_bus_call_1a9497ad2d4909076e09b22733d1ccc620" kindref="member">setArguments</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_d_bus_call_1a7d3c52a3800d830c765c705c10047e38" kindref="member">argumentsChanged</ref>)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>explicit<sp/><ref refid="class_k_win_1_1_d_bus_call_1afb4d8e8b113a2ab136ef94f67fcec9a5" kindref="member">DBusCall</ref>(QObject<sp/>*parent<sp/>=<sp/></highlight><highlight class="keywordtype">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="class_k_win_1_1_d_bus_call_1afb4d8e8b113a2ab136ef94f67fcec9a5" kindref="member">DBusCall</ref>()<sp/>override;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="class_k_win_1_1_d_bus_call_1a492b24dc8a9bbfe0e26e8125bdf40994" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>QString<sp/>&amp;<ref refid="class_k_win_1_1_d_bus_call_1a69f61a8846810228bca674bfe554b154" kindref="member">service</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="77" refid="class_k_win_1_1_d_bus_call_1ade71a6bb9bb9452e1bb62bc0fa948d54" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>QString<sp/>&amp;<ref refid="class_k_win_1_1_d_bus_call_1a99fe998204d2890ef6cd514ea336b97e" kindref="member">path</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="78" refid="class_k_win_1_1_d_bus_call_1aa764783b2c44227b0b0a0a168be6c649" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>QString<sp/>&amp;<ref refid="class_k_win_1_1_d_bus_call_1aa764783b2c44227b0b0a0a168be6c649" kindref="member">interface</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="79" refid="class_k_win_1_1_d_bus_call_1ad2b4bd544e661cb5c6e26923804ab5d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>QString<sp/>&amp;<ref refid="class_k_win_1_1_d_bus_call_1a9270e07ce2ed17f8167b39ec19870dc1" kindref="member">method</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="80" refid="class_k_win_1_1_d_bus_call_1a907133c85b78776e2bf4b50e282310d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>QVariantList<sp/>&amp;<ref refid="class_k_win_1_1_d_bus_call_1a5b4d1af1768bb9d81b54ff3462652f9c" kindref="member">arguments</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">public<sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_call_1a477d6b513a53efd4059d312d7748c49c" kindref="member">call</ref>();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="class_k_win_1_1_d_bus_call_1a5f05071ad41ba991ed15cd654b7fcc30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_call_1a5f05071ad41ba991ed15cd654b7fcc30" kindref="member">setService</ref>(const<sp/>QString<sp/>&amp;<ref refid="class_k_win_1_1_d_bus_call_1a69f61a8846810228bca674bfe554b154" kindref="member">service</ref>);</highlight></codeline>
+<codeline lineno="86" refid="class_k_win_1_1_d_bus_call_1a0bbc64b4b5c4e5c7cd8730dc1c1e01c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_call_1a0bbc64b4b5c4e5c7cd8730dc1c1e01c0" kindref="member">setPath</ref>(const<sp/>QString<sp/>&amp;<ref refid="class_k_win_1_1_d_bus_call_1a99fe998204d2890ef6cd514ea336b97e" kindref="member">path</ref>);</highlight></codeline>
+<codeline lineno="87" refid="class_k_win_1_1_d_bus_call_1a19957bcd149dcd65aa4fa43812bc0235" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_call_1a19957bcd149dcd65aa4fa43812bc0235" kindref="member">setInterface</ref>(const<sp/>QString<sp/>&amp;<ref refid="class_k_win_1_1_d_bus_call_1aa764783b2c44227b0b0a0a168be6c649" kindref="member">interface</ref>);</highlight></codeline>
+<codeline lineno="88" refid="class_k_win_1_1_d_bus_call_1abe770def47f64f9893ef63189e6541b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_call_1abe770def47f64f9893ef63189e6541b0" kindref="member">setMethod</ref>(const<sp/>QString<sp/>&amp;<ref refid="class_k_win_1_1_d_bus_call_1a9270e07ce2ed17f8167b39ec19870dc1" kindref="member">method</ref>);</highlight></codeline>
+<codeline lineno="89" refid="class_k_win_1_1_d_bus_call_1a9497ad2d4909076e09b22733d1ccc620" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_call_1a9497ad2d4909076e09b22733d1ccc620" kindref="member">setArguments</ref>(const<sp/>QVariantList<sp/>&amp;<ref refid="class_k_win_1_1_d_bus_call_1a5b4d1af1768bb9d81b54ff3462652f9c" kindref="member">arguments</ref>);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="92" refid="class_k_win_1_1_d_bus_call_1a103dee59e551cd55c66071f64c181c91" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_call_1a103dee59e551cd55c66071f64c181c91" kindref="member">finished</ref>(QVariantList<sp/>returnValue);</highlight></codeline>
+<codeline lineno="93" refid="class_k_win_1_1_d_bus_call_1a43d8c552326e1c56322c40d7b3814486" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_call_1a43d8c552326e1c56322c40d7b3814486" kindref="member">failed</ref>();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="class_k_win_1_1_d_bus_call_1a008cf98b5c25c92dcda57750685f2409" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_call_1a008cf98b5c25c92dcda57750685f2409" kindref="member">serviceChanged</ref>();</highlight></codeline>
+<codeline lineno="96" refid="class_k_win_1_1_d_bus_call_1a74b3fc94e83d4e7b3886c2b171b50840" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_call_1a74b3fc94e83d4e7b3886c2b171b50840" kindref="member">pathChanged</ref>();</highlight></codeline>
+<codeline lineno="97" refid="class_k_win_1_1_d_bus_call_1a4e29e71efa2fe83aec8e43624d27ba3a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_call_1a4e29e71efa2fe83aec8e43624d27ba3a" kindref="member">interfaceChanged</ref>();</highlight></codeline>
+<codeline lineno="98" refid="class_k_win_1_1_d_bus_call_1a70ce539528ddfac3f973e9e3ae8bf134" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_call_1a70ce539528ddfac3f973e9e3ae8bf134" kindref="member">methodChanged</ref>();</highlight></codeline>
+<codeline lineno="99" refid="class_k_win_1_1_d_bus_call_1a7d3c52a3800d830c765c705c10047e38" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_d_bus_call_1a7d3c52a3800d830c765c705c10047e38" kindref="member">argumentsChanged</ref>();</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal">private:</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>m_service;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>m_path;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>m_interface;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>m_method;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>QVariantList<sp/>m_arguments;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="dbuscall_8h_1a2b4158296bd0f4d6223a83f998602c75" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GENERIC_WRAPPER(type,<sp/>name,<sp/>upperName)<sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="110"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>inline<sp/>type<sp/>DBusCall::name()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="111"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="112"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>m_##name;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="113"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="114"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>inline<sp/>void<sp/>DBusCall::set##upperName(type<sp/>name)<sp/>\</highlight></codeline>
+<codeline lineno="115"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="116"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(m_##name<sp/>==<sp/>name)<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="117"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="118"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="119"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_##name<sp/>=<sp/>name;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="120"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Q_EMIT<sp/>name##Changed();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="121"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="dbuscall_8h_1a8fcaa41c5057630606033629ac5406d4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WRAPPER(name,<sp/>upperName)<sp/>\</highlight></codeline>
+<codeline lineno="123"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>GENERIC_WRAPPER(const<sp/>QString<sp/>&amp;,<sp/>name,<sp/>upperName)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><ref refid="dbuscall_8h_1a8fcaa41c5057630606033629ac5406d4" kindref="member">WRAPPER</ref>(<ref refid="class_k_win_1_1_d_bus_call_1aa764783b2c44227b0b0a0a168be6c649" kindref="member">interface</ref>,<sp/>Interface)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><ref refid="dbuscall_8h_1a8fcaa41c5057630606033629ac5406d4" kindref="member">WRAPPER</ref>(<ref refid="class_k_win_1_1_d_bus_call_1a9270e07ce2ed17f8167b39ec19870dc1" kindref="member">method</ref>,<sp/>Method)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><ref refid="dbuscall_8h_1a8fcaa41c5057630606033629ac5406d4" kindref="member">WRAPPER</ref>(<ref refid="class_k_win_1_1_d_bus_call_1a99fe998204d2890ef6cd514ea336b97e" kindref="member">path</ref>,<sp/>Path)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><ref refid="dbuscall_8h_1a8fcaa41c5057630606033629ac5406d4" kindref="member">WRAPPER</ref>(<ref refid="class_k_win_1_1_d_bus_call_1a69f61a8846810228bca674bfe554b154" kindref="member">service</ref>,<sp/>Service)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><ref refid="dbuscall_8h_1a2b4158296bd0f4d6223a83f998602c75" kindref="member">GENERIC_WRAPPER</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QVariantList<sp/>&amp;,<sp/><ref refid="class_k_win_1_1_d_bus_call_1a5b4d1af1768bb9d81b54ff3462652f9c" kindref="member">arguments</ref>,<sp/>Arguments)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>WRAPPER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>GENERIC_WRAPPER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/scripting/dbuscall.h"/>
+  </compounddef>
+</doxygen>

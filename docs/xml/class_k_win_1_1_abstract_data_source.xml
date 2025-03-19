@@ -1,0 +1,544 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_abstract_data_source" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>KWin::AbstractDataSource</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_data_control_source_v1_interface" prot="public" virt="non-virtual">KWin::DataControlSourceV1Interface</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_data_source_interface" prot="public" virt="non-virtual">KWin::DataSourceInterface</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_primary_selection_source_v1_interface" prot="public" virt="non-virtual">KWin::PrimarySelectionSourceV1Interface</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_q_p_a_1_1_clipboard_data_source" prot="public" virt="non-virtual">KWin::QPA::ClipboardDataSource</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_xwl_1_1_xwl_data_source" prot="public" virt="non-virtual">KWin::Xwl::XwlDataSource</derivedcompoundref>
+    <includes refid="abstract__data__source_8h" local="no">abstract_data_source.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_abstract_data_source_1a0301c8309e5b06f511c33e84b840552e" prot="private" static="no" mutable="no">
+        <type>Qt::KeyboardModifiers</type>
+        <definition>Qt::KeyboardModifiers KWin::AbstractDataSource::m_heldModifiers</definition>
+        <argsstring></argsstring>
+        <name>m_heldModifiers</name>
+        <qualifiedname>KWin::AbstractDataSource::m_heldModifiers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="120" column="27" bodyfile="kwin/src/wayland/abstract_data_source.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_abstract_data_source_1afe480ab6563ade2ea275615f898d6fd2" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::AbstractDataSource::m_dndCancelled</definition>
+        <argsstring></argsstring>
+        <name>m_dndCancelled</name>
+        <qualifiedname>KWin::AbstractDataSource::m_dndCancelled</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="121" column="10" bodyfile="kwin/src/wayland/abstract_data_source.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_abstract_data_source_1a991e103a890f41f7dc40f45a4b3bb9db" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::AbstractDataSource::m_dndDropped</definition>
+        <argsstring></argsstring>
+        <name>m_dndDropped</name>
+        <qualifiedname>KWin::AbstractDataSource::m_dndDropped</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="122" column="10" bodyfile="kwin/src/wayland/abstract_data_source.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_abstract_data_source_1a6f40c68749ae92f2e311e16668b5630f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool KWin::AbstractDataSource::isAccepted</definition>
+        <argsstring>() const</argsstring>
+        <name>isAccepted</name>
+        <qualifiedname>KWin::AbstractDataSource::isAccepted</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_data_source_interface_1a1458642819757d8d0804b42586f2578c">isAccepted</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_xwl_data_source_1a60f8360c090a25469548f8af3e8a6761">isAccepted</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="32" column="18" bodyfile="kwin/src/wayland/abstract_data_source.h" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_data_source_1a9daa8224b51d455f4b9b225d4796f828" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void KWin::AbstractDataSource::accept</definition>
+        <argsstring>(const QString &amp;mimeType)</argsstring>
+        <name>accept</name>
+        <qualifiedname>KWin::AbstractDataSource::accept</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_data_source_interface_1ad2fe2deacb54d2e36b3bfa3d92766ad7">accept</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_xwl_data_source_1ac63de24ff2c7874adfd338ae58e34336">accept</reimplementedby>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>mimeType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="37" column="18" bodyfile="kwin/src/wayland/abstract_data_source.h" bodystart="37" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_data_source_1ad50acf789732a5927510404140a30f48" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void KWin::AbstractDataSource::requestData</definition>
+        <argsstring>(const QString &amp;mimeType, qint32 fd)=0</argsstring>
+        <name>requestData</name>
+        <qualifiedname>KWin::AbstractDataSource::requestData</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_data_control_source_v1_interface_1ab42e904f97cf3c6dd7e84db619899842">requestData</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_data_source_interface_1a37db70dfd2a8fd0e2b7ea41a16a6c0bb">requestData</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_primary_selection_source_v1_interface_1ab93531d480b22f104a591319a2b3c9e5">requestData</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_q_p_a_1_1_clipboard_data_source_1ac1a50b0af71bc0bece7f2ce4dfac1b0d">requestData</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_xwl_data_source_1ada3b58e44d2bd2677d841af67ca057f2">requestData</reimplementedby>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>mimeType</declname>
+        </param>
+        <param>
+          <type>qint32</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="40" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_data_source_1a42dfb170e4f29c3ed428f0cd69177390" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void KWin::AbstractDataSource::cancel</definition>
+        <argsstring>()=0</argsstring>
+        <name>cancel</name>
+        <qualifiedname>KWin::AbstractDataSource::cancel</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_data_control_source_v1_interface_1a1e5b3fced59b857270a9bcbf55523604">cancel</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_data_source_interface_1ac2120b84438a2c0dbcaea412fb021cb8">cancel</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_primary_selection_source_v1_interface_1aa365565900b58283f725d878ac5f5103">cancel</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_q_p_a_1_1_clipboard_data_source_1a98de86424c009a5663845e72ab2c6b95">cancel</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_xwl_data_source_1a9092d9b922769b14a15075f8284f8423">cancel</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="41" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_data_source_1a7084f24d8e6573093d77da28d52b0a80" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>QStringList</type>
+        <definition>virtual QStringList KWin::AbstractDataSource::mimeTypes</definition>
+        <argsstring>() const =0</argsstring>
+        <name>mimeTypes</name>
+        <qualifiedname>KWin::AbstractDataSource::mimeTypes</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_data_control_source_v1_interface_1ad74c0b2b7c9a06de4fabe1f93dd48f41">mimeTypes</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_data_source_interface_1ad88cb5fc9c5cb7d598ac1dc60eba36e1">mimeTypes</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_primary_selection_source_v1_interface_1ad6b225c9ceb292849ed795b3986e49cd">mimeTypes</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_q_p_a_1_1_clipboard_data_source_1a3f4a564c172d5a4de066ea21c144925d">mimeTypes</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_xwl_data_source_1a710d31a402abedec893a8537c626d319">mimeTypes</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="43" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_data_source_1a5233ed309a59d1070c3c17c90c69de3e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>DataDeviceManagerInterface::DnDActions</type>
+        <definition>virtual DataDeviceManagerInterface::DnDActions KWin::AbstractDataSource::supportedDragAndDropActions</definition>
+        <argsstring>() const</argsstring>
+        <name>supportedDragAndDropActions</name>
+        <qualifiedname>KWin::AbstractDataSource::supportedDragAndDropActions</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_data_source_interface_1ade02b7f35b9ca7dfa17a5a2393473a7e">supportedDragAndDropActions</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_xwl_data_source_1a2ae12527c822fe2b2f35a9c6c10d2f79">supportedDragAndDropActions</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The Drag and Drop actions supported by this <ref refid="class_k_win_1_1_data_source_interface" kindref="compound">DataSourceInterface</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="48" column="52" bodyfile="kwin/src/wayland/abstract_data_source.h" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_data_source_1a0a6698a72aa50e1a1ad0e942667b5cf7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="class_k_win_1_1_data_device_manager_interface_1a8aae415a2e33ca11c48d18e128f627b4" kindref="member">DataDeviceManagerInterface::DnDAction</ref></type>
+        <definition>virtual DataDeviceManagerInterface::DnDAction KWin::AbstractDataSource::selectedDndAction</definition>
+        <argsstring>() const</argsstring>
+        <name>selectedDndAction</name>
+        <qualifiedname>KWin::AbstractDataSource::selectedDndAction</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_data_source_interface_1ae3d626bdefd50ab1c4a766ad1ece4128">selectedDndAction</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_xwl_data_source_1ac4d66ac08ccc935801271726174fccf2">selectedDndAction</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="52" column="51" bodyfile="kwin/src/wayland/abstract_data_source.h" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_data_source_1a65f2b093e5f66a6b28bc7a7481d21191" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void KWin::AbstractDataSource::dropPerformed</definition>
+        <argsstring>()</argsstring>
+        <name>dropPerformed</name>
+        <qualifiedname>KWin::AbstractDataSource::dropPerformed</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_data_source_interface_1a4a9baca61039e900fa65b37d46ad9eb6">dropPerformed</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_xwl_data_source_1a1a80c961fae50784ee0adf732c0be328">dropPerformed</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The user performed the drop action during a drag and drop operation. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="59" column="18" bodyfile="kwin/src/wayland/abstract_data_source.h" bodystart="59" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_data_source_1a419978ef7682e7e20fabd0d7f829414f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void KWin::AbstractDataSource::dndFinished</definition>
+        <argsstring>()</argsstring>
+        <name>dndFinished</name>
+        <qualifiedname>KWin::AbstractDataSource::dndFinished</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_data_source_interface_1a1cbd5d010c84ef32567c4f92acf6a0cd">dndFinished</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_xwl_data_source_1acab476ac158fcedd9c105478bed5e860">dndFinished</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The drop destination finished interoperating with this data source. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="66" column="18" bodyfile="kwin/src/wayland/abstract_data_source.h" bodystart="66" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_data_source_1aa9292aa0ddbe1780c008c6ec889013ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void KWin::AbstractDataSource::dndAction</definition>
+        <argsstring>(DataDeviceManagerInterface::DnDAction action)</argsstring>
+        <name>dndAction</name>
+        <qualifiedname>KWin::AbstractDataSource::dndAction</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_data_source_interface_1a206b6596e56a9ca49857e8fa6003af4d">dndAction</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_xwl_data_source_1a5c026031bf096722a4b232a242f8fa76">dndAction</reimplementedby>
+        <param>
+          <type><ref refid="class_k_win_1_1_data_device_manager_interface_1a8aae415a2e33ca11c48d18e128f627b4" kindref="member">DataDeviceManagerInterface::DnDAction</ref></type>
+          <declname>action</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This event indicates the <computeroutput>action</computeroutput> selected by the compositor after matching the source/destination side actions. Only one action (or none) will be offered here. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="73" column="18" bodyfile="kwin/src/wayland/abstract_data_source.h" bodystart="73" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_data_source_1a686bc11e9738f20b302ade8bc18c4f93" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::AbstractDataSource::isDndCancelled</definition>
+        <argsstring>() const</argsstring>
+        <name>isDndCancelled</name>
+        <qualifiedname>KWin::AbstractDataSource::isDndCancelled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="77" column="10" bodyfile="kwin/src/wayland/abstract_data_source.h" bodystart="77" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_data_source_1a84c95001a6b03fd489c3dc6b2e922fb5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::AbstractDataSource::isDropPerformed</definition>
+        <argsstring>() const</argsstring>
+        <name>isDropPerformed</name>
+        <qualifiedname>KWin::AbstractDataSource::isDropPerformed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="82" column="10" bodyfile="kwin/src/wayland/abstract_data_source.h" bodystart="82" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_data_source_1a151dd37839962abe10cceb359f54f024" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void KWin::AbstractDataSource::dndCancelled</definition>
+        <argsstring>()</argsstring>
+        <name>dndCancelled</name>
+        <qualifiedname>KWin::AbstractDataSource::dndCancelled</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_data_source_interface_1a4c3415fa999963371cc811465d63dff2">dndCancelled</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_xwl_1_1_xwl_data_source_1ac111fcac463d617f8972bd8f1361fd5a">dndCancelled</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when a user stops clicking but it is not accepted by a client. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="90" column="18" bodyfile="kwin/src/wayland/abstract_data_source.h" bodystart="90" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_data_source_1abd5ef82f01eca5ffb2a343d705a597fd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>wl_client *</type>
+        <definition>virtual wl_client * KWin::AbstractDataSource::client</definition>
+        <argsstring>() const</argsstring>
+        <name>client</name>
+        <qualifiedname>KWin::AbstractDataSource::client</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_data_control_source_v1_interface_1a7286a23be2fd110f06b41371ca062759">client</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_data_source_interface_1ab475d5f500dfda403f5eac65d4e0d6ae">client</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_primary_selection_source_v1_interface_1a7fad16b2864869007899b77a63d7e07b">client</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="95" column="23" bodyfile="kwin/src/wayland/abstract_data_source.h" bodystart="95" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_data_source_1af544f751f7ffac38067cd2989d8b42ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::AbstractDataSource::setKeyboardModifiers</definition>
+        <argsstring>(Qt::KeyboardModifiers heldModifiers)</argsstring>
+        <name>setKeyboardModifiers</name>
+        <qualifiedname>KWin::AbstractDataSource::setKeyboardModifiers</qualifiedname>
+        <param>
+          <type>Qt::KeyboardModifiers</type>
+          <declname>heldModifiers</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called from kwin core code, this updates the keyboard modifiers currently pressed which can be used to determine the best DND action </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="104" column="10" bodyfile="kwin/src/wayland/abstract_data_source.cpp" bodystart="17" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_abstract_data_source_1a8dbc475a9c5159ddf9b416ce562203a9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Qt::KeyboardModifiers</type>
+        <definition>Qt::KeyboardModifiers KWin::AbstractDataSource::keyboardModifiers</definition>
+        <argsstring>() const</argsstring>
+        <name>keyboardModifiers</name>
+        <qualifiedname>KWin::AbstractDataSource::keyboardModifiers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="105" column="27" bodyfile="kwin/src/wayland/abstract_data_source.cpp" bodystart="26" bodyend="29"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_abstract_data_source_1ac8e054ef0032554e4626026daf463c85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::AbstractDataSource::aboutToBeDestroyed</definition>
+        <argsstring>()</argsstring>
+        <name>aboutToBeDestroyed</name>
+        <qualifiedname>KWin::AbstractDataSource::aboutToBeDestroyed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="108" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_abstract_data_source_1a6ded9e772ce9d66f9aa2eb42927401ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::AbstractDataSource::mimeTypeOffered</definition>
+        <argsstring>(const QString &amp;)</argsstring>
+        <name>mimeTypeOffered</name>
+        <qualifiedname>KWin::AbstractDataSource::mimeTypeOffered</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="110" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_abstract_data_source_1a846f413ac1bc5048788818001693d664" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::AbstractDataSource::supportedDragAndDropActionsChanged</definition>
+        <argsstring>()</argsstring>
+        <name>supportedDragAndDropActionsChanged</name>
+        <qualifiedname>KWin::AbstractDataSource::supportedDragAndDropActionsChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="111" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_abstract_data_source_1aa1f13c49d12329931aa62e987d836cdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::AbstractDataSource::keyboardModifiersChanged</definition>
+        <argsstring>()</argsstring>
+        <name>keyboardModifiersChanged</name>
+        <qualifiedname>KWin::AbstractDataSource::keyboardModifiersChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="112" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_abstract_data_source_1aba520f884563ddaddd262e31c4aa54bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::AbstractDataSource::dndActionChanged</definition>
+        <argsstring>()</argsstring>
+        <name>dndActionChanged</name>
+        <qualifiedname>KWin::AbstractDataSource::dndActionChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="113" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_abstract_data_source_1a5eba5e4548f5f4f1e4d0a60866916549" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::AbstractDataSource::acceptedChanged</definition>
+        <argsstring>()</argsstring>
+        <name>acceptedChanged</name>
+        <qualifiedname>KWin::AbstractDataSource::acceptedChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="114" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_k_win_1_1_abstract_data_source_1a1e3237ff4c54f1cc6712b1a0021864db" prot="protected" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::AbstractDataSource::AbstractDataSource</definition>
+        <argsstring>(QObject *parent=nullptr)</argsstring>
+        <name>AbstractDataSource</name>
+        <qualifiedname>KWin::AbstractDataSource::AbstractDataSource</qualifiedname>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland/abstract_data_source.h" line="117" column="14" bodyfile="kwin/src/wayland/abstract_data_source.cpp" bodystart="12" bodyend="15"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_k_win_1_1_abstract_data_source" kindref="compound">AbstractDataSource</ref> class abstracts the data that can be transferred to another client. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>It loosely maps to <ref refid="class_k_win_1_1_data_device_interface" kindref="compound">DataDeviceInterface</ref> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::AbstractDataSource</label>
+        <link refid="class_k_win_1_1_abstract_data_source"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>KWin::DataControlSourceV1Interface</label>
+        <link refid="class_k_win_1_1_data_control_source_v1_interface"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>KWin::DataSourceInterface</label>
+        <link refid="class_k_win_1_1_data_source_interface"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>KWin::PrimarySelectionSourceV1Interface</label>
+        <link refid="class_k_win_1_1_primary_selection_source_v1_interface"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>KWin::QPA::ClipboardDataSource</label>
+        <link refid="class_k_win_1_1_q_p_a_1_1_clipboard_data_source"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>KWin::Xwl::XwlDataSource</label>
+        <link refid="class_k_win_1_1_xwl_1_1_xwl_data_source"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::AbstractDataSource</label>
+        <link refid="class_k_win_1_1_abstract_data_source"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/wayland/abstract_data_source.h" line="28" column="1" bodyfile="kwin/src/wayland/abstract_data_source.h" bodystart="29" bodyend="123"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_abstract_data_source_1ac8e054ef0032554e4626026daf463c85" prot="public" virt="non-virtual"><scope>KWin::AbstractDataSource</scope><name>aboutToBeDestroyed</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1a1e3237ff4c54f1cc6712b1a0021864db" prot="protected" virt="non-virtual"><scope>KWin::AbstractDataSource</scope><name>AbstractDataSource</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1a9daa8224b51d455f4b9b225d4796f828" prot="public" virt="virtual"><scope>KWin::AbstractDataSource</scope><name>accept</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1a5eba5e4548f5f4f1e4d0a60866916549" prot="public" virt="non-virtual"><scope>KWin::AbstractDataSource</scope><name>acceptedChanged</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1a42dfb170e4f29c3ed428f0cd69177390" prot="public" virt="pure-virtual"><scope>KWin::AbstractDataSource</scope><name>cancel</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1abd5ef82f01eca5ffb2a343d705a597fd" prot="public" virt="virtual"><scope>KWin::AbstractDataSource</scope><name>client</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1aa9292aa0ddbe1780c008c6ec889013ec" prot="public" virt="virtual"><scope>KWin::AbstractDataSource</scope><name>dndAction</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1aba520f884563ddaddd262e31c4aa54bb" prot="public" virt="non-virtual"><scope>KWin::AbstractDataSource</scope><name>dndActionChanged</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1a151dd37839962abe10cceb359f54f024" prot="public" virt="virtual"><scope>KWin::AbstractDataSource</scope><name>dndCancelled</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1a419978ef7682e7e20fabd0d7f829414f" prot="public" virt="virtual"><scope>KWin::AbstractDataSource</scope><name>dndFinished</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1a65f2b093e5f66a6b28bc7a7481d21191" prot="public" virt="virtual"><scope>KWin::AbstractDataSource</scope><name>dropPerformed</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1a6f40c68749ae92f2e311e16668b5630f" prot="public" virt="virtual"><scope>KWin::AbstractDataSource</scope><name>isAccepted</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1a686bc11e9738f20b302ade8bc18c4f93" prot="public" virt="non-virtual"><scope>KWin::AbstractDataSource</scope><name>isDndCancelled</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1a84c95001a6b03fd489c3dc6b2e922fb5" prot="public" virt="non-virtual"><scope>KWin::AbstractDataSource</scope><name>isDropPerformed</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1a8dbc475a9c5159ddf9b416ce562203a9" prot="public" virt="non-virtual"><scope>KWin::AbstractDataSource</scope><name>keyboardModifiers</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1aa1f13c49d12329931aa62e987d836cdf" prot="public" virt="non-virtual"><scope>KWin::AbstractDataSource</scope><name>keyboardModifiersChanged</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1afe480ab6563ade2ea275615f898d6fd2" prot="private" virt="non-virtual"><scope>KWin::AbstractDataSource</scope><name>m_dndCancelled</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1a991e103a890f41f7dc40f45a4b3bb9db" prot="private" virt="non-virtual"><scope>KWin::AbstractDataSource</scope><name>m_dndDropped</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1a0301c8309e5b06f511c33e84b840552e" prot="private" virt="non-virtual"><scope>KWin::AbstractDataSource</scope><name>m_heldModifiers</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1a6ded9e772ce9d66f9aa2eb42927401ac" prot="public" virt="non-virtual"><scope>KWin::AbstractDataSource</scope><name>mimeTypeOffered</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1a7084f24d8e6573093d77da28d52b0a80" prot="public" virt="pure-virtual"><scope>KWin::AbstractDataSource</scope><name>mimeTypes</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1ad50acf789732a5927510404140a30f48" prot="public" virt="pure-virtual"><scope>KWin::AbstractDataSource</scope><name>requestData</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1a0a6698a72aa50e1a1ad0e942667b5cf7" prot="public" virt="virtual"><scope>KWin::AbstractDataSource</scope><name>selectedDndAction</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1af544f751f7ffac38067cd2989d8b42ab" prot="public" virt="non-virtual"><scope>KWin::AbstractDataSource</scope><name>setKeyboardModifiers</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1a5233ed309a59d1070c3c17c90c69de3e" prot="public" virt="virtual"><scope>KWin::AbstractDataSource</scope><name>supportedDragAndDropActions</name></member>
+      <member refid="class_k_win_1_1_abstract_data_source_1a846f413ac1bc5048788818001693d664" prot="public" virt="non-virtual"><scope>KWin::AbstractDataSource</scope><name>supportedDragAndDropActionsChanged</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

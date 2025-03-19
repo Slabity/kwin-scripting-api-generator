@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_abstract_effect_load_queue" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>KWin::AbstractEffectLoadQueue</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_effect_load_queue" prot="public" virt="non-virtual">KWin::EffectLoadQueue&lt; KWin::ScriptedEffectLoader, KPluginMetaData &gt;</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_effect_load_queue" prot="public" virt="non-virtual">KWin::EffectLoadQueue&lt; Loader, QueueType &gt;</derivedcompoundref>
+    <includes refid="effectloader_8h" local="no">effectloader.h</includes>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_k_win_1_1_abstract_effect_load_queue_1ae18d88325db928f9ae4fb41f95dc25e6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Loader</type>
+          </param>
+          <param>
+            <type>typename QueueType</type>
+          </param>
+        </templateparamlist>
+        <type>class</type>
+        <definition>friend class EffectLoadQueue</definition>
+        <argsstring></argsstring>
+        <name>EffectLoadQueue</name>
+        <qualifiedname>KWin::AbstractEffectLoadQueue::EffectLoadQueue</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_load_queue" kindref="compound">EffectLoadQueue</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effectloader.h" line="221" column="18" bodyfile="kwin/src/effect/effectloader.h" bodystart="221" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_abstract_effect_load_queue_1aab40f7a13bde7d8f49b130bb75042e48" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>KWin::AbstractEffectLoadQueue::AbstractEffectLoadQueue</definition>
+        <argsstring>(QObject *parent=nullptr)</argsstring>
+        <name>AbstractEffectLoadQueue</name>
+        <qualifiedname>KWin::AbstractEffectLoadQueue::AbstractEffectLoadQueue</qualifiedname>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effectloader.h" line="212" column="14" bodyfile="kwin/src/effect/effectloader.h" bodystart="212" bodyend="215"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-slot">
+      <memberdef kind="slot" id="class_k_win_1_1_abstract_effect_load_queue_1acb42642094c5acfc86625064d9e09cdc" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void KWin::AbstractEffectLoadQueue::dequeue</definition>
+        <argsstring>()=0</argsstring>
+        <name>dequeue</name>
+        <qualifiedname>KWin::AbstractEffectLoadQueue::dequeue</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_effect_load_queue_1aa441537495b823f4acf9c1d4e565f686">dequeue</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_effect_load_queue_1aa441537495b823f4acf9c1d4e565f686">dequeue</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effectloader.h" line="217" column="18"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Helper class to queue the loading of Effects. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Loading an <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> has to be done in the compositor thread and thus the <ref refid="class_k_win_1_1_compositor" kindref="compound">Compositor</ref> is blocked while the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> loads. To not block the compositor for several frames the loading of all Effects need to be queued. By invoking the slot <ref refid="class_k_win_1_1_abstract_effect_load_queue_1acb42642094c5acfc86625064d9e09cdc" kindref="member">dequeue()</ref> through a QueuedConnection the queue can ensure that events are processed between the loading of two Effects and thus the compositor doesn&apos;t block.</para>
+<para>As it needs to be a slot, the queue must subclass QObject, but it also needs to be templated as the information to load an <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> is specific to the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> Loader. Thus there is the <ref refid="class_k_win_1_1_abstract_effect_load_queue" kindref="compound">AbstractEffectLoadQueue</ref> providing the slots as pure virtual functions and the templated <ref refid="class_k_win_1_1_effect_load_queue" kindref="compound">EffectLoadQueue</ref> inheriting from <ref refid="class_k_win_1_1_abstract_effect_load_queue" kindref="compound">AbstractEffectLoadQueue</ref>.</para>
+<para>The queue operates like a normal queue providing enqueue and a scheduleDequeue instead of dequeue. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::AbstractEffectLoadQueue</label>
+        <link refid="class_k_win_1_1_abstract_effect_load_queue"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>KWin::EffectLoadQueue&lt; Loader, QueueType &gt;</label>
+        <link refid="class_k_win_1_1_effect_load_queue"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>KWin::EffectLoadQueue&lt; KWin::ScriptedEffectLoader, KPluginMetaData &gt;</label>
+        <link refid="class_k_win_1_1_effect_load_queue"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::AbstractEffectLoadQueue</label>
+        <link refid="class_k_win_1_1_abstract_effect_load_queue"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/effect/effectloader.h" line="208" column="1" bodyfile="kwin/src/effect/effectloader.h" bodystart="209" bodyend="222"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_abstract_effect_load_queue_1aab40f7a13bde7d8f49b130bb75042e48" prot="public" virt="non-virtual"><scope>KWin::AbstractEffectLoadQueue</scope><name>AbstractEffectLoadQueue</name></member>
+      <member refid="class_k_win_1_1_abstract_effect_load_queue_1acb42642094c5acfc86625064d9e09cdc" prot="protected" virt="pure-virtual"><scope>KWin::AbstractEffectLoadQueue</scope><name>dequeue</name></member>
+      <member refid="class_k_win_1_1_abstract_effect_load_queue_1ae18d88325db928f9ae4fb41f95dc25e6" prot="private" virt="non-virtual"><scope>KWin::AbstractEffectLoadQueue</scope><name>EffectLoadQueue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

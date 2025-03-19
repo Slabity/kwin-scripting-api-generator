@@ -1,0 +1,498 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_window_motion_manager" kind="class" language="C++" prot="public">
+    <compoundname>KWin::WindowMotionManager</compoundname>
+    <includes refid="motionmanager_8h" local="no">motionmanager.h</includes>
+    <innerclass refid="struct_k_win_1_1_window_motion_manager_1_1_window_motion" prot="private">KWin::WindowMotionManager::WindowMotion</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_window_motion_manager_1ac5caa800612f6f207130d151954e6ba0" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::WindowMotionManager::m_useGlobalAnimationModifier</definition>
+        <argsstring></argsstring>
+        <name>m_useGlobalAnimationModifier</name>
+        <qualifiedname>KWin::WindowMotionManager::m_useGlobalAnimationModifier</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="299" column="10" bodyfile="kwin/src/plugins/slideback/motionmanager.h" bodystart="299" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_window_motion_manager_1ae83509f5647f99ce744d4c5bbd1b9f30" prot="private" static="no" mutable="no">
+        <type>QHash&lt; <ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *, WindowMotion &gt;</type>
+        <definition>QHash&lt;EffectWindow *, WindowMotion&gt; KWin::WindowMotionManager::m_managedWindows</definition>
+        <argsstring></argsstring>
+        <name>m_managedWindows</name>
+        <qualifiedname>KWin::WindowMotionManager::m_managedWindows</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="306" column="11" bodyfile="kwin/src/plugins/slideback/motionmanager.h" bodystart="306" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_window_motion_manager_1ae016ad34fac751e2d0eb319bd67b54d7" prot="private" static="no" mutable="no">
+        <type>QSet&lt; <ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> * &gt;</type>
+        <definition>QSet&lt;EffectWindow *&gt; KWin::WindowMotionManager::m_movingWindowsSet</definition>
+        <argsstring></argsstring>
+        <name>m_movingWindowsSet</name>
+        <qualifiedname>KWin::WindowMotionManager::m_movingWindowsSet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="307" column="10" bodyfile="kwin/src/plugins/slideback/motionmanager.h" bodystart="307" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1a16fd9c1740ea753b35b5c3ecd867d153" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::WindowMotionManager::WindowMotionManager</definition>
+        <argsstring>(bool useGlobalAnimationModifier=true)</argsstring>
+        <name>WindowMotionManager</name>
+        <qualifiedname>KWin::WindowMotionManager::WindowMotionManager</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>useGlobalAnimationModifier</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new window manager object. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="160" column="14" bodyfile="kwin/src/plugins/slideback/motionmanager.cpp" bodystart="54" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1a56800ac9f076bca9e84527f3189aa0ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::WindowMotionManager::~WindowMotionManager</definition>
+        <argsstring>()</argsstring>
+        <name>~WindowMotionManager</name>
+        <qualifiedname>KWin::WindowMotionManager::~WindowMotionManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="161" column="5" bodyfile="kwin/src/plugins/slideback/motionmanager.cpp" bodystart="61" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1a430d3fa789182b3683ad709d63ee8aad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowMotionManager::manage</definition>
+        <argsstring>(EffectWindow *w)</argsstring>
+        <name>manage</name>
+        <qualifiedname>KWin::WindowMotionManager::manage</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Register a window for managing. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="166" column="10" bodyfile="kwin/src/plugins/slideback/motionmanager.cpp" bodystart="65" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1a02642a27bc215ccb54ac806032e25695" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowMotionManager::manage</definition>
+        <argsstring>(const QList&lt; EffectWindow * &gt; &amp;list)</argsstring>
+        <name>manage</name>
+        <qualifiedname>KWin::WindowMotionManager::manage</qualifiedname>
+        <param>
+          <type>const QList&lt; <ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> * &gt; &amp;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Register a list of windows for managing. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="170" column="17" bodyfile="kwin/src/plugins/slideback/motionmanager.h" bodystart="170" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1a2075a34b4d2ccb85bcf89d50b5eb6167" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowMotionManager::unmanage</definition>
+        <argsstring>(EffectWindow *w)</argsstring>
+        <name>unmanage</name>
+        <qualifiedname>KWin::WindowMotionManager::unmanage</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Deregister a window. All transformations applied to the window will be permanently removed and cannot be recovered. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="180" column="10" bodyfile="kwin/src/plugins/slideback/motionmanager.cpp" bodystart="89" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1a2d51b7695ffc094857902fc60912a943" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowMotionManager::unmanageAll</definition>
+        <argsstring>()</argsstring>
+        <name>unmanageAll</name>
+        <qualifiedname>KWin::WindowMotionManager::unmanageAll</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Deregister all windows, returning the manager to its originally initiated state. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="185" column="10" bodyfile="kwin/src/plugins/slideback/motionmanager.cpp" bodystart="95" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1a0ce73ac2c6604049200b7b567e3acd24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowMotionManager::calculate</definition>
+        <argsstring>(int time)</argsstring>
+        <name>calculate</name>
+        <qualifiedname>KWin::WindowMotionManager::calculate</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Determine the new positions for windows that have not reached their target. Called once per frame, usually in prePaintScreen(). Remember to set the <ref refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da124dd798e5f793087e81da77e11a9b1e" kindref="member">Effect::PAINT_SCREEN_WITH_TRANSFORMED_WINDOWS</ref> flag. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="192" column="10" bodyfile="kwin/src/plugins/slideback/motionmanager.cpp" bodystart="101" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1a94c581e7ac7746410b5d34f626b1acc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowMotionManager::apply</definition>
+        <argsstring>(EffectWindow *w, WindowPaintData &amp;data)</argsstring>
+        <name>apply</name>
+        <qualifiedname>KWin::WindowMotionManager::apply</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Modify a registered window&apos;s paint data to make it appear at its real location on the screen. Usually called in paintWindow(). Remember to flag the window as having been transformed in prePaintWindow() by calling <ref refid="group__kwineffects_1gafefa807129c120e7358cd8a2247f9c31" kindref="member">WindowPrePaintData::setTransformed()</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="200" column="10" bodyfile="kwin/src/plugins/slideback/motionmanager.cpp" bodystart="188" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1a9fd450d2edbe345708ebcef3405c7835" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowMotionManager::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <qualifiedname>KWin::WindowMotionManager::reset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set all motion targets and values back to where the windows were before transformations. The same as unmanaging then remanaging all windows. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="206" column="10" bodyfile="kwin/src/plugins/slideback/motionmanager.cpp" bodystart="161" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1ab2c88e872d710e2e5797c345fdc09259" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowMotionManager::reset</definition>
+        <argsstring>(EffectWindow *w)</argsstring>
+        <name>reset</name>
+        <qualifiedname>KWin::WindowMotionManager::reset</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resets the motion target and current value of a single window. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="211" column="10" bodyfile="kwin/src/plugins/slideback/motionmanager.cpp" bodystart="174" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1ab47386e107ba762cc9b67b77fe11984e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowMotionManager::moveWindow</definition>
+        <argsstring>(EffectWindow *w, QPoint target, double scale=1.0, double yScale=0.0)</argsstring>
+        <name>moveWindow</name>
+        <qualifiedname>KWin::WindowMotionManager::moveWindow</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>QPoint</type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+          <defval>1.0</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>yScale</declname>
+          <defval>0.0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ask the manager to move the window to the target position with the specified scale. If <computeroutput>yScale</computeroutput> is not provided or set to 0.0, <computeroutput>scale</computeroutput> will be used as the scale in the vertical direction as well as in the horizontal direction. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="219" column="10" bodyfile="kwin/src/plugins/slideback/motionmanager.cpp" bodystart="201" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1ab4f956974320d7e394bd2b284209ef1a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowMotionManager::moveWindow</definition>
+        <argsstring>(EffectWindow *w, QRect target)</argsstring>
+        <name>moveWindow</name>
+        <qualifiedname>KWin::WindowMotionManager::moveWindow</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>QRect</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded method, provided for convenience.</para>
+<para>Ask the manager to move the window to the target rectangle. Automatically determines scale. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="226" column="17" bodyfile="kwin/src/plugins/slideback/motionmanager.h" bodystart="226" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1acf7afde36dac4357ddd68d23d8f6791e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QRectF</type>
+        <definition>QRectF KWin::WindowMotionManager::transformedGeometry</definition>
+        <argsstring>(EffectWindow *w) const</argsstring>
+        <name>transformedGeometry</name>
+        <qualifiedname>KWin::WindowMotionManager::transformedGeometry</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieve the current tranformed geometry of a registered window. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="237" column="12" bodyfile="kwin/src/plugins/slideback/motionmanager.cpp" bodystart="223" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1afd87d0c0333e33b1c230cda32957c36b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowMotionManager::setTransformedGeometry</definition>
+        <argsstring>(EffectWindow *w, const QRectF &amp;geometry)</argsstring>
+        <name>setTransformedGeometry</name>
+        <qualifiedname>KWin::WindowMotionManager::setTransformedGeometry</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>const QRectF &amp;</type>
+          <declname>geometry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the current transformed geometry of a registered window to the given geometry. <simplesect kind="see"><para><ref refid="class_k_win_1_1_window_motion_manager_1acf7afde36dac4357ddd68d23d8f6791e" kindref="member">transformedGeometry</ref> </para>
+</simplesect>
+<simplesect kind="since"><para>4.5 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="243" column="10" bodyfile="kwin/src/plugins/slideback/motionmanager.cpp" bodystart="241" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1a478bb1ce7e3fe0280222a25512f64787" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QRectF</type>
+        <definition>QRectF KWin::WindowMotionManager::targetGeometry</definition>
+        <argsstring>(EffectWindow *w) const</argsstring>
+        <name>targetGeometry</name>
+        <qualifiedname>KWin::WindowMotionManager::targetGeometry</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieve the current target geometry of a registered window. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="248" column="12" bodyfile="kwin/src/plugins/slideback/motionmanager.cpp" bodystart="252" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1a10bb546a230f0617aa053d3d6b647d13" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+        <definition>EffectWindow * KWin::WindowMotionManager::windowAtPoint</definition>
+        <argsstring>(QPoint point, bool useStackingOrder=true) const</argsstring>
+        <name>windowAtPoint</name>
+        <qualifiedname>KWin::WindowMotionManager::windowAtPoint</qualifiedname>
+        <param>
+          <type>QPoint</type>
+          <declname>point</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useStackingOrder</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the window that has its transformed geometry under the specified point. It is recommended to use the stacking order as it&apos;s what the user sees, but it is slightly slower to process. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="255" column="18" bodyfile="kwin/src/plugins/slideback/motionmanager.cpp" bodystart="270" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1a658a3c061eb48b665e97b0c9d589b5e3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QList&lt; <ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> * &gt;</type>
+        <definition>QList&lt; EffectWindow * &gt; KWin::WindowMotionManager::managedWindows</definition>
+        <argsstring>() const</argsstring>
+        <name>managedWindows</name>
+        <qualifiedname>KWin::WindowMotionManager::managedWindows</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return a list of all currently registered windows. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="260" column="18" bodyfile="kwin/src/plugins/slideback/motionmanager.h" bodystart="260" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1affe212dbb4b5a65ae284bd77cb3659c2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::WindowMotionManager::isManaging</definition>
+        <argsstring>(EffectWindow *w) const</argsstring>
+        <name>isManaging</name>
+        <qualifiedname>KWin::WindowMotionManager::isManaging</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns whether or not a specified window is being managed by this manager object. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="268" column="17" bodyfile="kwin/src/plugins/slideback/motionmanager.h" bodystart="268" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1a01f1bef526b3eecc048409e59ddfcfbe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::WindowMotionManager::managingWindows</definition>
+        <argsstring>() const</argsstring>
+        <name>managingWindows</name>
+        <qualifiedname>KWin::WindowMotionManager::managingWindows</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns whether or not this manager object is actually managing any windows or not. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="276" column="17" bodyfile="kwin/src/plugins/slideback/motionmanager.h" bodystart="276" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1aa52140a91413fd79d4d8b82109419e32" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::WindowMotionManager::areWindowsMoving</definition>
+        <argsstring>() const</argsstring>
+        <name>areWindowsMoving</name>
+        <qualifiedname>KWin::WindowMotionManager::areWindowsMoving</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns whether all windows have reached their targets yet or not. Can be used to see if an effect should be processed and displayed or not. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="285" column="17" bodyfile="kwin/src/plugins/slideback/motionmanager.h" bodystart="285" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_window_motion_manager_1a3b7f9173b0710a9c01e430485cd512d3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::WindowMotionManager::isWindowMoving</definition>
+        <argsstring>(EffectWindow *w) const</argsstring>
+        <name>isWindowMoving</name>
+        <qualifiedname>KWin::WindowMotionManager::isWindowMoving</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns whether a window has reached its targets yet or not. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slideback/motionmanager.h" line="293" column="17" bodyfile="kwin/src/plugins/slideback/motionmanager.h" bodystart="293" bodyend="296"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Helper class for motion dynamics in <ref refid="namespace_k_win" kindref="compound">KWin</ref> effects. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This motion manager class is intended to help <ref refid="namespace_k_win" kindref="compound">KWin</ref> effect authors move windows across the screen smoothly and naturally. Once windows are registered by the manager the effect can issue move commands with the <ref refid="class_k_win_1_1_window_motion_manager_1ab47386e107ba762cc9b67b77fe11984e" kindref="member">moveWindow()</ref> methods. The position of any managed window can be determined in realtime by the <ref refid="class_k_win_1_1_window_motion_manager_1acf7afde36dac4357ddd68d23d8f6791e" kindref="member">transformedGeometry()</ref> method. As the manager knows if any windows are moving at any given time it can also be used as a notifier as to see whether the effect is active or not. </para>
+    </detaileddescription>
+    <location file="kwin/src/plugins/slideback/motionmanager.h" line="154" column="1" bodyfile="kwin/src/plugins/slideback/motionmanager.h" bodystart="155" bodyend="308"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_window_motion_manager_1a94c581e7ac7746410b5d34f626b1acc3" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>apply</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1aa52140a91413fd79d4d8b82109419e32" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>areWindowsMoving</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1a0ce73ac2c6604049200b7b567e3acd24" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>calculate</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1affe212dbb4b5a65ae284bd77cb3659c2" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>isManaging</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1a3b7f9173b0710a9c01e430485cd512d3" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>isWindowMoving</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1ae83509f5647f99ce744d4c5bbd1b9f30" prot="private" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>m_managedWindows</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1ae016ad34fac751e2d0eb319bd67b54d7" prot="private" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>m_movingWindowsSet</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1ac5caa800612f6f207130d151954e6ba0" prot="private" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>m_useGlobalAnimationModifier</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1a430d3fa789182b3683ad709d63ee8aad" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>manage</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1a02642a27bc215ccb54ac806032e25695" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>manage</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1a658a3c061eb48b665e97b0c9d589b5e3" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>managedWindows</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1a01f1bef526b3eecc048409e59ddfcfbe" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>managingWindows</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1ab47386e107ba762cc9b67b77fe11984e" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>moveWindow</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1ab4f956974320d7e394bd2b284209ef1a" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>moveWindow</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1a9fd450d2edbe345708ebcef3405c7835" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>reset</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1ab2c88e872d710e2e5797c345fdc09259" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>reset</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1afd87d0c0333e33b1c230cda32957c36b" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>setTransformedGeometry</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1a478bb1ce7e3fe0280222a25512f64787" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>targetGeometry</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1acf7afde36dac4357ddd68d23d8f6791e" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>transformedGeometry</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1a2075a34b4d2ccb85bcf89d50b5eb6167" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>unmanage</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1a2d51b7695ffc094857902fc60912a943" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>unmanageAll</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1a10bb546a230f0617aa053d3d6b647d13" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>windowAtPoint</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1a16fd9c1740ea753b35b5c3ecd867d153" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>WindowMotionManager</name></member>
+      <member refid="class_k_win_1_1_window_motion_manager_1a56800ac9f076bca9e84527f3189aa0ff" prot="public" virt="non-virtual"><scope>KWin::WindowMotionManager</scope><name>~WindowMotionManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

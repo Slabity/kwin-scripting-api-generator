@@ -1,0 +1,1577 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_wayland_server" kind="class" language="C++" prot="public">
+    <compoundname>KWin::WaylandServer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="wayland__server_8h" local="no">wayland_server.h</includes>
+    <innerclass refid="class_k_win_1_1_wayland_server_1_1_lock_screen_presentation_watcher" prot="private">KWin::WaylandServer::LockScreenPresentationWatcher</innerclass>
+    <innerclass refid="struct_k_win_1_1_wayland_server_1_1_socket_pair_connection" prot="public">KWin::WaylandServer::SocketPairConnection</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1aa05f0280bad64f23e5212fb2a1cb1658" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref> *</type>
+        <definition>Display* KWin::WaylandServer::m_display</definition>
+        <argsstring></argsstring>
+        <name>m_display</name>
+        <qualifiedname>KWin::WaylandServer::m_display</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="255" column="13" bodyfile="kwin/src/wayland_server.h" bodystart="255" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a5d5581d57cdd4efdf850e69aeab3bcbf" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_compositor_interface" kindref="compound">CompositorInterface</ref> *</type>
+        <definition>CompositorInterface* KWin::WaylandServer::m_compositor</definition>
+        <argsstring></argsstring>
+        <name>m_compositor</name>
+        <qualifiedname>KWin::WaylandServer::m_compositor</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="256" column="25" bodyfile="kwin/src/wayland_server.h" bodystart="256" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a33b5c12c03738d9dc16520e0027c60bd" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_seat_interface" kindref="compound">SeatInterface</ref> *</type>
+        <definition>SeatInterface* KWin::WaylandServer::m_seat</definition>
+        <argsstring></argsstring>
+        <name>m_seat</name>
+        <qualifiedname>KWin::WaylandServer::m_seat</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="257" column="19" bodyfile="kwin/src/wayland_server.h" bodystart="257" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a005dca4479d286e43f223464c2e5514d" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_tablet_manager_v2_interface" kindref="compound">TabletManagerV2Interface</ref> *</type>
+        <definition>TabletManagerV2Interface* KWin::WaylandServer::m_tabletManagerV2</definition>
+        <argsstring></argsstring>
+        <name>m_tabletManagerV2</name>
+        <qualifiedname>KWin::WaylandServer::m_tabletManagerV2</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="258" column="30" bodyfile="kwin/src/wayland_server.h" bodystart="258" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1aaee7c013145a51b61d0b784896aa5116" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_data_device_manager_interface" kindref="compound">DataDeviceManagerInterface</ref> *</type>
+        <definition>DataDeviceManagerInterface* KWin::WaylandServer::m_dataDeviceManager</definition>
+        <argsstring></argsstring>
+        <name>m_dataDeviceManager</name>
+        <qualifiedname>KWin::WaylandServer::m_dataDeviceManager</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="259" column="32" bodyfile="kwin/src/wayland_server.h" bodystart="259" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1ae87e507876fd8144f6f271a9684fff2c" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_plasma_shell_interface" kindref="compound">PlasmaShellInterface</ref> *</type>
+        <definition>PlasmaShellInterface* KWin::WaylandServer::m_plasmaShell</definition>
+        <argsstring></argsstring>
+        <name>m_plasmaShell</name>
+        <qualifiedname>KWin::WaylandServer::m_plasmaShell</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="260" column="26" bodyfile="kwin/src/wayland_server.h" bodystart="260" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1aed5e594f243217dcabb06949180ccb54" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_plasma_window_activation_feedback_interface" kindref="compound">PlasmaWindowActivationFeedbackInterface</ref> *</type>
+        <definition>PlasmaWindowActivationFeedbackInterface* KWin::WaylandServer::m_plasmaActivationFeedback</definition>
+        <argsstring></argsstring>
+        <name>m_plasmaActivationFeedback</name>
+        <qualifiedname>KWin::WaylandServer::m_plasmaActivationFeedback</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="261" column="45" bodyfile="kwin/src/wayland_server.h" bodystart="261" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a098a707a8400cacb3159c6553a31ec04" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_plasma_window_management_interface" kindref="compound">PlasmaWindowManagementInterface</ref> *</type>
+        <definition>PlasmaWindowManagementInterface* KWin::WaylandServer::m_windowManagement</definition>
+        <argsstring></argsstring>
+        <name>m_windowManagement</name>
+        <qualifiedname>KWin::WaylandServer::m_windowManagement</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="262" column="37" bodyfile="kwin/src/wayland_server.h" bodystart="262" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a3f4810fce784dfdedec8e09ddada1a1a" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_plasma_virtual_desktop_management_interface" kindref="compound">PlasmaVirtualDesktopManagementInterface</ref> *</type>
+        <definition>PlasmaVirtualDesktopManagementInterface* KWin::WaylandServer::m_virtualDesktopManagement</definition>
+        <argsstring></argsstring>
+        <name>m_virtualDesktopManagement</name>
+        <qualifiedname>KWin::WaylandServer::m_virtualDesktopManagement</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="263" column="45" bodyfile="kwin/src/wayland_server.h" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1aa410d28562afa8060f38dab2d6e001a7" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_server_side_decoration_manager_interface" kindref="compound">ServerSideDecorationManagerInterface</ref> *</type>
+        <definition>ServerSideDecorationManagerInterface* KWin::WaylandServer::m_decorationManager</definition>
+        <argsstring></argsstring>
+        <name>m_decorationManager</name>
+        <qualifiedname>KWin::WaylandServer::m_decorationManager</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="264" column="42" bodyfile="kwin/src/wayland_server.h" bodystart="264" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a01ce1d9e1af31e91f189efdf67aed5c0" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_output_management_v2_interface" kindref="compound">OutputManagementV2Interface</ref> *</type>
+        <definition>OutputManagementV2Interface* KWin::WaylandServer::m_outputManagement</definition>
+        <argsstring></argsstring>
+        <name>m_outputManagement</name>
+        <qualifiedname>KWin::WaylandServer::m_outputManagement</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="265" column="33" bodyfile="kwin/src/wayland_server.h" bodystart="265" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a52ff99ec3021cce9e6f55252985f79d5" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_app_menu_manager_interface" kindref="compound">AppMenuManagerInterface</ref> *</type>
+        <definition>AppMenuManagerInterface* KWin::WaylandServer::m_appMenuManager</definition>
+        <argsstring></argsstring>
+        <name>m_appMenuManager</name>
+        <qualifiedname>KWin::WaylandServer::m_appMenuManager</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="266" column="29" bodyfile="kwin/src/wayland_server.h" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a3166ceb88a4b51b1551f5cd3d69501cb" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_server_side_decoration_palette_manager_interface" kindref="compound">ServerSideDecorationPaletteManagerInterface</ref> *</type>
+        <definition>ServerSideDecorationPaletteManagerInterface* KWin::WaylandServer::m_paletteManager</definition>
+        <argsstring></argsstring>
+        <name>m_paletteManager</name>
+        <qualifiedname>KWin::WaylandServer::m_paletteManager</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="267" column="49" bodyfile="kwin/src/wayland_server.h" bodystart="267" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a38563630c49f2ef539caa4fe0430de22" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_idle_interface" kindref="compound">IdleInterface</ref> *</type>
+        <definition>IdleInterface* KWin::WaylandServer::m_idle</definition>
+        <argsstring></argsstring>
+        <name>m_idle</name>
+        <qualifiedname>KWin::WaylandServer::m_idle</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="268" column="19" bodyfile="kwin/src/wayland_server.h" bodystart="268" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a444e43f0f3a347172375e1c5f061c09f" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_xdg_output_manager_v1_interface" kindref="compound">XdgOutputManagerV1Interface</ref> *</type>
+        <definition>XdgOutputManagerV1Interface* KWin::WaylandServer::m_xdgOutputManagerV1</definition>
+        <argsstring></argsstring>
+        <name>m_xdgOutputManagerV1</name>
+        <qualifiedname>KWin::WaylandServer::m_xdgOutputManagerV1</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="269" column="33" bodyfile="kwin/src/wayland_server.h" bodystart="269" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a41631b3b0b7888a46b5e880de71b434d" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_xdg_decoration_manager_v1_interface" kindref="compound">XdgDecorationManagerV1Interface</ref> *</type>
+        <definition>XdgDecorationManagerV1Interface* KWin::WaylandServer::m_xdgDecorationManagerV1</definition>
+        <argsstring></argsstring>
+        <name>m_xdgDecorationManagerV1</name>
+        <qualifiedname>KWin::WaylandServer::m_xdgDecorationManagerV1</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="270" column="37" bodyfile="kwin/src/wayland_server.h" bodystart="270" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a42f3b6d0e6368906bce7d1587ca61f16" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_client_buffer_integration" kindref="compound">DrmClientBufferIntegration</ref> *</type>
+        <definition>DrmClientBufferIntegration* KWin::WaylandServer::m_drm</definition>
+        <argsstring></argsstring>
+        <name>m_drm</name>
+        <qualifiedname>KWin::WaylandServer::m_drm</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="271" column="32" bodyfile="kwin/src/wayland_server.h" bodystart="271" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a3be30392ffccfa7b6d267f5665068939" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_linux_dma_buf_v1_client_buffer_integration" kindref="compound">LinuxDmaBufV1ClientBufferIntegration</ref> *</type>
+        <definition>LinuxDmaBufV1ClientBufferIntegration* KWin::WaylandServer::m_linuxDmabuf</definition>
+        <argsstring></argsstring>
+        <name>m_linuxDmabuf</name>
+        <qualifiedname>KWin::WaylandServer::m_linuxDmabuf</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="272" column="42" bodyfile="kwin/src/wayland_server.h" bodystart="272" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1aaf91a9d0177ad4867e17854ca1acf4db" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_keyboard_shortcuts_inhibit_manager_v1_interface" kindref="compound">KeyboardShortcutsInhibitManagerV1Interface</ref> *</type>
+        <definition>KeyboardShortcutsInhibitManagerV1Interface* KWin::WaylandServer::m_keyboardShortcutsInhibitManager</definition>
+        <argsstring></argsstring>
+        <name>m_keyboardShortcutsInhibitManager</name>
+        <qualifiedname>KWin::WaylandServer::m_keyboardShortcutsInhibitManager</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="273" column="48" bodyfile="kwin/src/wayland_server.h" bodystart="273" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1af998f7bcfd50a64a52664335258dcab6" prot="private" static="no" mutable="no">
+        <type>QPointer&lt; <ref refid="class_k_win_1_1_client_connection" kindref="compound">ClientConnection</ref> &gt;</type>
+        <definition>QPointer&lt;ClientConnection&gt; KWin::WaylandServer::m_xwaylandConnection</definition>
+        <argsstring></argsstring>
+        <name>m_xwaylandConnection</name>
+        <qualifiedname>KWin::WaylandServer::m_xwaylandConnection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="274" column="14" bodyfile="kwin/src/wayland_server.h" bodystart="274" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1acbd85d47a4882017a3727cbef3497048" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_input_method_v1_interface" kindref="compound">InputMethodV1Interface</ref> *</type>
+        <definition>InputMethodV1Interface* KWin::WaylandServer::m_inputMethod</definition>
+        <argsstring></argsstring>
+        <name>m_inputMethod</name>
+        <qualifiedname>KWin::WaylandServer::m_inputMethod</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="275" column="28" bodyfile="kwin/src/wayland_server.h" bodystart="275" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1afb19ff9bffe9cd4491cab3a15d1699c8" prot="private" static="no" mutable="no">
+        <type>QPointer&lt; <ref refid="class_k_win_1_1_client_connection" kindref="compound">ClientConnection</ref> &gt;</type>
+        <definition>QPointer&lt;ClientConnection&gt; KWin::WaylandServer::m_inputMethodServerConnection</definition>
+        <argsstring></argsstring>
+        <name>m_inputMethodServerConnection</name>
+        <qualifiedname>KWin::WaylandServer::m_inputMethodServerConnection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="276" column="14" bodyfile="kwin/src/wayland_server.h" bodystart="276" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a39e147401d2a615d3fe4264fa86db4ad" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_client_connection" kindref="compound">ClientConnection</ref> *</type>
+        <definition>ClientConnection* KWin::WaylandServer::m_screenLockerClientConnection</definition>
+        <argsstring></argsstring>
+        <name>m_screenLockerClientConnection</name>
+        <qualifiedname>KWin::WaylandServer::m_screenLockerClientConnection</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="277" column="22" bodyfile="kwin/src/wayland_server.h" bodystart="277" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a66d228e38c20e5f0485ed423bfe0ea0f" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_xdg_foreign_v2_interface" kindref="compound">XdgForeignV2Interface</ref> *</type>
+        <definition>XdgForeignV2Interface* KWin::WaylandServer::m_XdgForeign</definition>
+        <argsstring></argsstring>
+        <name>m_XdgForeign</name>
+        <qualifiedname>KWin::WaylandServer::m_XdgForeign</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="278" column="27" bodyfile="kwin/src/wayland_server.h" bodystart="278" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a0dbd3b28c541d7505a337fe84cbda6ca" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_xdg_activation_v1_integration" kindref="compound">XdgActivationV1Integration</ref> *</type>
+        <definition>XdgActivationV1Integration* KWin::WaylandServer::m_xdgActivationIntegration</definition>
+        <argsstring></argsstring>
+        <name>m_xdgActivationIntegration</name>
+        <qualifiedname>KWin::WaylandServer::m_xdgActivationIntegration</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="279" column="32" bodyfile="kwin/src/wayland_server.h" bodystart="279" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1aa2e3cd502a750752e436d751d1fc3721" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_content_type_manager_v1_interface" kindref="compound">ContentTypeManagerV1Interface</ref> *</type>
+        <definition>ContentTypeManagerV1Interface* KWin::WaylandServer::m_contentTypeManager</definition>
+        <argsstring></argsstring>
+        <name>m_contentTypeManager</name>
+        <qualifiedname>KWin::WaylandServer::m_contentTypeManager</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="283" column="35" bodyfile="kwin/src/wayland_server.h" bodystart="283" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a6d22fc867b4854ab88ffd8e50e36deff" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_tearing_control_manager_v1_interface" kindref="compound">TearingControlManagerV1Interface</ref> *</type>
+        <definition>TearingControlManagerV1Interface* KWin::WaylandServer::m_tearingControlInterface</definition>
+        <argsstring></argsstring>
+        <name>m_tearingControlInterface</name>
+        <qualifiedname>KWin::WaylandServer::m_tearingControlInterface</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="284" column="38" bodyfile="kwin/src/wayland_server.h" bodystart="284" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a30ce295ba58c4a266c286307003acbc6" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_xwayland_shell_v1_interface" kindref="compound">XwaylandShellV1Interface</ref> *</type>
+        <definition>XwaylandShellV1Interface* KWin::WaylandServer::m_xwaylandShell</definition>
+        <argsstring></argsstring>
+        <name>m_xwaylandShell</name>
+        <qualifiedname>KWin::WaylandServer::m_xwaylandShell</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="285" column="30" bodyfile="kwin/src/wayland_server.h" bodystart="285" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a02fbca06dfa265827ceba01dfc4e1c85" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_presentation_time" kindref="compound">PresentationTime</ref> *</type>
+        <definition>PresentationTime* KWin::WaylandServer::m_presentationTime</definition>
+        <argsstring></argsstring>
+        <name>m_presentationTime</name>
+        <qualifiedname>KWin::WaylandServer::m_presentationTime</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="286" column="22" bodyfile="kwin/src/wayland_server.h" bodystart="286" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a444df5172d3ae9ec7b0cc7f0e79d6c6f" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_linux_drm_sync_obj_v1_interface" kindref="compound">LinuxDrmSyncObjV1Interface</ref> *</type>
+        <definition>LinuxDrmSyncObjV1Interface* KWin::WaylandServer::m_linuxDrmSyncObj</definition>
+        <argsstring></argsstring>
+        <name>m_linuxDrmSyncObj</name>
+        <qualifiedname>KWin::WaylandServer::m_linuxDrmSyncObj</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="287" column="32" bodyfile="kwin/src/wayland_server.h" bodystart="287" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1ad12918662fbd80135c9d847cf5049c69" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> * &gt;</type>
+        <definition>QList&lt;Window *&gt; KWin::WaylandServer::m_windows</definition>
+        <argsstring></argsstring>
+        <name>m_windows</name>
+        <qualifiedname>KWin::WaylandServer::m_windows</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="288" column="11" bodyfile="kwin/src/wayland_server.h" bodystart="288" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a51b357730b143e5839ec2a7392d5290e" prot="private" static="no" mutable="no">
+        <type>QHash&lt; <ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *, <ref refid="class_k_win_1_1_output_interface" kindref="compound">OutputInterface</ref> * &gt;</type>
+        <definition>QHash&lt;Output *, OutputInterface *&gt; KWin::WaylandServer::m_waylandOutputs</definition>
+        <argsstring></argsstring>
+        <name>m_waylandOutputs</name>
+        <qualifiedname>KWin::WaylandServer::m_waylandOutputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="289" column="11" bodyfile="kwin/src/wayland_server.h" bodystart="289" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a39eb4d0982a7c843df4cb1cad2f4a32e" prot="private" static="no" mutable="no">
+        <type>QHash&lt; <ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *, <ref refid="class_k_win_1_1_output_device_v2_interface" kindref="compound">OutputDeviceV2Interface</ref> * &gt;</type>
+        <definition>QHash&lt;Output *, OutputDeviceV2Interface *&gt; KWin::WaylandServer::m_waylandOutputDevices</definition>
+        <argsstring></argsstring>
+        <name>m_waylandOutputDevices</name>
+        <qualifiedname>KWin::WaylandServer::m_waylandOutputDevices</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="290" column="11" bodyfile="kwin/src/wayland_server.h" bodystart="290" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a6d30b90667b062994de05afa7cae4142" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_lease_manager_v1" kindref="compound">DrmLeaseManagerV1</ref> *</type>
+        <definition>DrmLeaseManagerV1* KWin::WaylandServer::m_leaseManager</definition>
+        <argsstring></argsstring>
+        <name>m_leaseManager</name>
+        <qualifiedname>KWin::WaylandServer::m_leaseManager</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="291" column="23" bodyfile="kwin/src/wayland_server.h" bodystart="291" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a3e6c6f2ba730fca889322b6c9c60796a" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_output_order_v1_interface" kindref="compound">OutputOrderV1Interface</ref> *</type>
+        <definition>OutputOrderV1Interface* KWin::WaylandServer::m_outputOrder</definition>
+        <argsstring></argsstring>
+        <name>m_outputOrder</name>
+        <qualifiedname>KWin::WaylandServer::m_outputOrder</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="292" column="28" bodyfile="kwin/src/wayland_server.h" bodystart="292" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1a6cb0dd195ddaa924ce3f3bccdcf4f712" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_color_manager_v1" kindref="compound">ColorManagerV1</ref> *</type>
+        <definition>ColorManagerV1* KWin::WaylandServer::m_colorManager</definition>
+        <argsstring></argsstring>
+        <name>m_colorManager</name>
+        <qualifiedname>KWin::WaylandServer::m_colorManager</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="293" column="20" bodyfile="kwin/src/wayland_server.h" bodystart="293" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1ad6d4ce6beb0c4ba3f6297dbd09d45928" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_xdg_dialog_wm_v1_interface" kindref="compound">XdgDialogWmV1Interface</ref> *</type>
+        <definition>XdgDialogWmV1Interface* KWin::WaylandServer::m_xdgDialogWm</definition>
+        <argsstring></argsstring>
+        <name>m_xdgDialogWm</name>
+        <qualifiedname>KWin::WaylandServer::m_xdgDialogWm</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="294" column="28" bodyfile="kwin/src/wayland_server.h" bodystart="294" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1ab27f5a9e559ac78cde10722d2385d050" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_external_brightness_v1" kindref="compound">ExternalBrightnessV1</ref> *</type>
+        <definition>ExternalBrightnessV1* KWin::WaylandServer::m_externalBrightness</definition>
+        <argsstring></argsstring>
+        <name>m_externalBrightness</name>
+        <qualifiedname>KWin::WaylandServer::m_externalBrightness</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="295" column="26" bodyfile="kwin/src/wayland_server.h" bodystart="295" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_server_1ab2f88481f0a06cf9761463bd60c487c1" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_alpha_modifier_manager_v1" kindref="compound">AlphaModifierManagerV1</ref> *</type>
+        <definition>AlphaModifierManagerV1* KWin::WaylandServer::m_alphaModifierManager</definition>
+        <argsstring></argsstring>
+        <name>m_alphaModifierManager</name>
+        <qualifiedname>KWin::WaylandServer::m_alphaModifierManager</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="296" column="28" bodyfile="kwin/src/wayland_server.h" bodystart="296" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1afa4fe383bd9856341f7de5bd162f1ba0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::WaylandServer::~WaylandServer</definition>
+        <argsstring>() override</argsstring>
+        <name>~WaylandServer</name>
+        <qualifiedname>KWin::WaylandServer::~WaylandServer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="74" column="5" bodyfile="kwin/src/wayland_server.cpp" bodystart="216" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a7b35cc8999a975fdc9f136c2a89f423a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::WaylandServer::init</definition>
+        <argsstring>(const QString &amp;socketName)</argsstring>
+        <name>init</name>
+        <qualifiedname>KWin::WaylandServer::init</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>socketName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="75" column="10" bodyfile="kwin/src/wayland_server.cpp" bodystart="334" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a2c505b13e469916a76f0c4b14873847e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::WaylandServer::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <qualifiedname>KWin::WaylandServer::init</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="76" column="10" bodyfile="kwin/src/wayland_server.cpp" bodystart="342" bodyend="514"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a22aaee071ac7967e6e6dcf4c0b866234" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::WaylandServer::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <qualifiedname>KWin::WaylandServer::start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="78" column="10" bodyfile="kwin/src/wayland_server.cpp" bodystart="322" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a86c30976bd1f0d56f359f9d25160e1f6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref> *</type>
+        <definition>Display * KWin::WaylandServer::display</definition>
+        <argsstring>() const</argsstring>
+        <name>display</name>
+        <qualifiedname>KWin::WaylandServer::display</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="80" column="13" bodyfile="kwin/src/wayland_server.h" bodystart="80" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1ab1645e1c9678acdc5904d08ad23440e4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_compositor_interface" kindref="compound">CompositorInterface</ref> *</type>
+        <definition>CompositorInterface * KWin::WaylandServer::compositor</definition>
+        <argsstring>() const</argsstring>
+        <name>compositor</name>
+        <qualifiedname>KWin::WaylandServer::compositor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="84" column="25" bodyfile="kwin/src/wayland_server.h" bodystart="84" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a5eb1a9f63d831179f22f4baf0c630f0e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_seat_interface" kindref="compound">SeatInterface</ref> *</type>
+        <definition>SeatInterface * KWin::WaylandServer::seat</definition>
+        <argsstring>() const</argsstring>
+        <name>seat</name>
+        <qualifiedname>KWin::WaylandServer::seat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="88" column="19" bodyfile="kwin/src/wayland_server.h" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a7615b966ceb5fdb4ae7f75e7ca45b345" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_tablet_manager_v2_interface" kindref="compound">TabletManagerV2Interface</ref> *</type>
+        <definition>TabletManagerV2Interface * KWin::WaylandServer::tabletManagerV2</definition>
+        <argsstring>() const</argsstring>
+        <name>tabletManagerV2</name>
+        <qualifiedname>KWin::WaylandServer::tabletManagerV2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="92" column="30" bodyfile="kwin/src/wayland_server.h" bodystart="92" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a7c63cac39fdac0623f6cdea3af59b4c1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_data_device_manager_interface" kindref="compound">DataDeviceManagerInterface</ref> *</type>
+        <definition>DataDeviceManagerInterface * KWin::WaylandServer::dataDeviceManager</definition>
+        <argsstring>() const</argsstring>
+        <name>dataDeviceManager</name>
+        <qualifiedname>KWin::WaylandServer::dataDeviceManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="96" column="32" bodyfile="kwin/src/wayland_server.h" bodystart="96" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a7eebe9b25037789eef665a0e1c0a156e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_plasma_window_activation_feedback_interface" kindref="compound">PlasmaWindowActivationFeedbackInterface</ref> *</type>
+        <definition>PlasmaWindowActivationFeedbackInterface * KWin::WaylandServer::plasmaActivationFeedback</definition>
+        <argsstring>() const</argsstring>
+        <name>plasmaActivationFeedback</name>
+        <qualifiedname>KWin::WaylandServer::plasmaActivationFeedback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="100" column="45" bodyfile="kwin/src/wayland_server.h" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a4619353ee9a028dd143758a9db1a7077" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_plasma_virtual_desktop_management_interface" kindref="compound">PlasmaVirtualDesktopManagementInterface</ref> *</type>
+        <definition>PlasmaVirtualDesktopManagementInterface * KWin::WaylandServer::virtualDesktopManagement</definition>
+        <argsstring>() const</argsstring>
+        <name>virtualDesktopManagement</name>
+        <qualifiedname>KWin::WaylandServer::virtualDesktopManagement</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="104" column="45" bodyfile="kwin/src/wayland_server.h" bodystart="104" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a4089cde9741bba1006333ffe0906899e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_plasma_window_management_interface" kindref="compound">PlasmaWindowManagementInterface</ref> *</type>
+        <definition>PlasmaWindowManagementInterface * KWin::WaylandServer::windowManagement</definition>
+        <argsstring>() const</argsstring>
+        <name>windowManagement</name>
+        <qualifiedname>KWin::WaylandServer::windowManagement</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="108" column="37" bodyfile="kwin/src/wayland_server.h" bodystart="108" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a3c182c66198c0965b60d622e8f9e34e8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_server_side_decoration_manager_interface" kindref="compound">ServerSideDecorationManagerInterface</ref> *</type>
+        <definition>ServerSideDecorationManagerInterface * KWin::WaylandServer::decorationManager</definition>
+        <argsstring>() const</argsstring>
+        <name>decorationManager</name>
+        <qualifiedname>KWin::WaylandServer::decorationManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="112" column="42" bodyfile="kwin/src/wayland_server.h" bodystart="112" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a531fc9be48e73269bcf19927bfb9b58b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_xdg_output_manager_v1_interface" kindref="compound">XdgOutputManagerV1Interface</ref> *</type>
+        <definition>XdgOutputManagerV1Interface * KWin::WaylandServer::xdgOutputManagerV1</definition>
+        <argsstring>() const</argsstring>
+        <name>xdgOutputManagerV1</name>
+        <qualifiedname>KWin::WaylandServer::xdgOutputManagerV1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="116" column="33" bodyfile="kwin/src/wayland_server.h" bodystart="116" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1ab621f9ce6ce0357ea07e75acb5a2d7f0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_keyboard_shortcuts_inhibit_manager_v1_interface" kindref="compound">KeyboardShortcutsInhibitManagerV1Interface</ref> *</type>
+        <definition>KeyboardShortcutsInhibitManagerV1Interface * KWin::WaylandServer::keyboardShortcutsInhibitManager</definition>
+        <argsstring>() const</argsstring>
+        <name>keyboardShortcutsInhibitManager</name>
+        <qualifiedname>KWin::WaylandServer::keyboardShortcutsInhibitManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="120" column="48" bodyfile="kwin/src/wayland_server.h" bodystart="120" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a18be1ac980825f0b28e1a9eab89fdad4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::WaylandServer::isKeyboardShortcutsInhibited</definition>
+        <argsstring>() const</argsstring>
+        <name>isKeyboardShortcutsInhibited</name>
+        <qualifiedname>KWin::WaylandServer::isKeyboardShortcutsInhibited</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="131" column="10" bodyfile="kwin/src/wayland_server.cpp" bodystart="788" bodyend="803"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1afc342b8910934d16a8e81cdacab175aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_client_buffer_integration" kindref="compound">DrmClientBufferIntegration</ref> *</type>
+        <definition>DrmClientBufferIntegration * KWin::WaylandServer::drm</definition>
+        <argsstring>()</argsstring>
+        <name>drm</name>
+        <qualifiedname>KWin::WaylandServer::drm</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="133" column="32" bodyfile="kwin/src/wayland_server.cpp" bodystart="516" bodyend="522"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a464300496b099b6280015953eed3fb6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_linux_dma_buf_v1_client_buffer_integration" kindref="compound">LinuxDmaBufV1ClientBufferIntegration</ref> *</type>
+        <definition>LinuxDmaBufV1ClientBufferIntegration * KWin::WaylandServer::linuxDmabuf</definition>
+        <argsstring>()</argsstring>
+        <name>linuxDmabuf</name>
+        <qualifiedname>KWin::WaylandServer::linuxDmabuf</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="134" column="42" bodyfile="kwin/src/wayland_server.cpp" bodystart="524" bodyend="530"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1acf9ed9e051f7e8aff17d7789132ea015" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_input_method_v1_interface" kindref="compound">InputMethodV1Interface</ref> *</type>
+        <definition>InputMethodV1Interface * KWin::WaylandServer::inputMethod</definition>
+        <argsstring>() const</argsstring>
+        <name>inputMethod</name>
+        <qualifiedname>KWin::WaylandServer::inputMethod</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="136" column="28" bodyfile="kwin/src/wayland_server.h" bodystart="136" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a7cce9a807049351f0c3ea02cc6c6ec7b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_idle_interface" kindref="compound">IdleInterface</ref> *</type>
+        <definition>IdleInterface * KWin::WaylandServer::idle</definition>
+        <argsstring>() const</argsstring>
+        <name>idle</name>
+        <qualifiedname>KWin::WaylandServer::idle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="140" column="19" bodyfile="kwin/src/wayland_server.h" bodystart="140" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1ac4de344a0c44fca55051a9f0124a76f7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QList&lt; <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> * &gt;</type>
+        <definition>QList&lt; Window * &gt; KWin::WaylandServer::windows</definition>
+        <argsstring>() const</argsstring>
+        <name>windows</name>
+        <qualifiedname>KWin::WaylandServer::windows</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="144" column="11" bodyfile="kwin/src/wayland_server.h" bodystart="144" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1abd4507b2752e5abc669f83e55c628c8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WaylandServer::removeWindow</definition>
+        <argsstring>(Window *c)</argsstring>
+        <name>removeWindow</name>
+        <qualifiedname>KWin::WaylandServer::removeWindow</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="148" column="10" bodyfile="kwin/src/wayland_server.cpp" bodystart="736" bodyend="742"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a5b85a441a6db58a50e401a099e778b27" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+        <definition>Window * KWin::WaylandServer::findWindow</definition>
+        <argsstring>(const SurfaceInterface *surface) const</argsstring>
+        <name>findWindow</name>
+        <qualifiedname>KWin::WaylandServer::findWindow</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>surface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="149" column="12" bodyfile="kwin/src/wayland_server.cpp" bodystart="755" bodyend="764"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a139064efd8688ef4c35d779441636d18" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_xdg_toplevel_window" kindref="compound">XdgToplevelWindow</ref> *</type>
+        <definition>XdgToplevelWindow * KWin::WaylandServer::findXdgToplevelWindow</definition>
+        <argsstring>(SurfaceInterface *surface) const</argsstring>
+        <name>findXdgToplevelWindow</name>
+        <qualifiedname>KWin::WaylandServer::findXdgToplevelWindow</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>surface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="150" column="23" bodyfile="kwin/src/wayland_server.cpp" bodystart="766" bodyend="769"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a1b30b3f68aff6e597c31e6865414876f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_xdg_surface_window" kindref="compound">XdgSurfaceWindow</ref> *</type>
+        <definition>XdgSurfaceWindow * KWin::WaylandServer::findXdgSurfaceWindow</definition>
+        <argsstring>(SurfaceInterface *surface) const</argsstring>
+        <name>findXdgSurfaceWindow</name>
+        <qualifiedname>KWin::WaylandServer::findXdgSurfaceWindow</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>surface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="151" column="22" bodyfile="kwin/src/wayland_server.cpp" bodystart="771" bodyend="774"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a140611d1b19a6f8b615eea9b041639a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+        <definition>SurfaceInterface * KWin::WaylandServer::findForeignTransientForSurface</definition>
+        <argsstring>(SurfaceInterface *surface)</argsstring>
+        <name>findForeignTransientForSurface</name>
+        <qualifiedname>KWin::WaylandServer::findForeignTransientForSurface</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>surface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a transient parent of a surface imported with the foreign protocol, if any </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="156" column="22" bodyfile="kwin/src/wayland_server.cpp" bodystart="532" bodyend="535"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a23ba3a331e501da7a9fdcdb08bc74827" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_xdg_exported_surface" kindref="compound">XdgExportedSurface</ref> *</type>
+        <definition>XdgExportedSurface * KWin::WaylandServer::exportAsForeign</definition>
+        <argsstring>(SurfaceInterface *surface)</argsstring>
+        <name>exportAsForeign</name>
+        <qualifiedname>KWin::WaylandServer::exportAsForeign</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref> *</type>
+          <declname>surface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Exports a surface with the foreign protocol </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="161" column="24" bodyfile="kwin/src/wayland_server.cpp" bodystart="537" bodyend="540"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a213c60683b861fa73946660e06b595a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int KWin::WaylandServer::createInputMethodConnection</definition>
+        <argsstring>()</argsstring>
+        <name>createInputMethodConnection</name>
+        <qualifiedname>KWin::WaylandServer::createInputMethodConnection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>file descriptor to the input method server&apos;s socket. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="174" column="9" bodyfile="kwin/src/wayland_server.cpp" bodystart="717" bodyend="725"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a53403486a058a27289b9500cbb1d62f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WaylandServer::destroyInputMethodConnection</definition>
+        <argsstring>()</argsstring>
+        <name>destroyInputMethodConnection</name>
+        <qualifiedname>KWin::WaylandServer::destroyInputMethodConnection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="175" column="10" bodyfile="kwin/src/wayland_server.cpp" bodystart="727" bodyend="734"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a10fdc669c5562df9a1c91d65a42f4b16" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::WaylandServer::isScreenLocked</definition>
+        <argsstring>() const</argsstring>
+        <name>isScreenLocked</name>
+        <qualifiedname>KWin::WaylandServer::isScreenLocked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if screen is locked. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="180" column="10" bodyfile="kwin/src/wayland_server.cpp" bodystart="776" bodyend="786"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a633542f1bc5594bd682cf51218da32b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WaylandServer::initWorkspace</definition>
+        <argsstring>()</argsstring>
+        <name>initWorkspace</name>
+        <qualifiedname>KWin::WaylandServer::initWorkspace</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="182" column="10" bodyfile="kwin/src/wayland_server.cpp" bodystart="542" bodyend="618"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1ac7d5fe2453e171c5f09bccf3d37f12a5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_client_connection" kindref="compound">ClientConnection</ref> *</type>
+        <definition>ClientConnection * KWin::WaylandServer::xWaylandConnection</definition>
+        <argsstring>() const</argsstring>
+        <name>xWaylandConnection</name>
+        <qualifiedname>KWin::WaylandServer::xWaylandConnection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="184" column="22" bodyfile="kwin/src/wayland_server.cpp" bodystart="221" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1af336f71c5eefbb20610ff26c4a714eb1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_client_connection" kindref="compound">ClientConnection</ref> *</type>
+        <definition>ClientConnection * KWin::WaylandServer::inputMethodConnection</definition>
+        <argsstring>() const</argsstring>
+        <name>inputMethodConnection</name>
+        <qualifiedname>KWin::WaylandServer::inputMethodConnection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="185" column="22" bodyfile="kwin/src/wayland_server.cpp" bodystart="226" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1aec9bf4664c335232727b98e5a4d9c949" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_client_connection" kindref="compound">ClientConnection</ref> *</type>
+        <definition>ClientConnection * KWin::WaylandServer::screenLockerClientConnection</definition>
+        <argsstring>() const</argsstring>
+        <name>screenLockerClientConnection</name>
+        <qualifiedname>KWin::WaylandServer::screenLockerClientConnection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="186" column="22" bodyfile="kwin/src/wayland_server.h" bodystart="186" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a3c497d595d73b1654ab86cfc2ad35a65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_k_win_1_1_wayland_server_1_1_socket_pair_connection" kindref="compound">SocketPairConnection</ref></type>
+        <definition>WaylandServer::SocketPairConnection KWin::WaylandServer::createConnection</definition>
+        <argsstring>()</argsstring>
+        <name>createConnection</name>
+        <qualifiedname>KWin::WaylandServer::createConnection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a <ref refid="namespace_k_win_1_1_wayland" kindref="compound">Wayland</ref> connection using a socket pair. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="209" column="26" bodyfile="kwin/src/wayland_server.cpp" bodystart="664" bodyend="675"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1ac3c5fa28bcbb69633b9bdcb83b642329" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString KWin::WaylandServer::socketName</definition>
+        <argsstring>() const</argsstring>
+        <name>socketName</name>
+        <qualifiedname>KWin::WaylandServer::socketName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the first socket name that can be used to connect to this server. For a full list, use <ref refid="class_k_win_1_1_wayland_server_1a86c30976bd1f0d56f359f9d25160e1f6" kindref="member">display()</ref>-&gt;socketNames() </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="215" column="13" bodyfile="kwin/src/wayland_server.cpp" bodystart="805" bodyend="812"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1ac9da0c5bd8d087cc0abe11effa59929d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_xdg_activation_v1_integration" kindref="compound">XdgActivationV1Integration</ref> *</type>
+        <definition>XdgActivationV1Integration * KWin::WaylandServer::xdgActivationIntegration</definition>
+        <argsstring>() const</argsstring>
+        <name>xdgActivationIntegration</name>
+        <qualifiedname>KWin::WaylandServer::xdgActivationIntegration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="217" column="32" bodyfile="kwin/src/wayland_server.h" bodystart="217" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a6716b7958ec9b224a3dc67d1527f15a6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_linux_drm_sync_obj_v1_interface" kindref="compound">LinuxDrmSyncObjV1Interface</ref> *</type>
+        <definition>LinuxDrmSyncObjV1Interface * KWin::WaylandServer::linuxSyncObj</definition>
+        <argsstring>() const</argsstring>
+        <name>linuxSyncObj</name>
+        <qualifiedname>KWin::WaylandServer::linuxSyncObj</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="222" column="32" bodyfile="kwin/src/wayland_server.cpp" bodystart="814" bodyend="817"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a73ddab98753d831bb7871c68a8a930d6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_external_brightness_v1" kindref="compound">ExternalBrightnessV1</ref> *</type>
+        <definition>ExternalBrightnessV1 * KWin::WaylandServer::externalBrightness</definition>
+        <argsstring>() const</argsstring>
+        <name>externalBrightness</name>
+        <qualifiedname>KWin::WaylandServer::externalBrightness</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="223" column="26" bodyfile="kwin/src/wayland_server.cpp" bodystart="819" bodyend="822"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a366551b5a78f99b00fe2d7fef9ebc5b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WaylandServer::setRenderBackend</definition>
+        <argsstring>(RenderBackend *backend)</argsstring>
+        <name>setRenderBackend</name>
+        <qualifiedname>KWin::WaylandServer::setRenderBackend</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_render_backend" kindref="compound">RenderBackend</ref> *</type>
+          <declname>backend</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="225" column="10" bodyfile="kwin/src/wayland_server.cpp" bodystart="824" bodyend="843"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_wayland_server_1aef3b6c0753f3369406ed97794f4ce5bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WaylandServer::windowAdded</definition>
+        <argsstring>(KWin::Window *)</argsstring>
+        <name>windowAdded</name>
+        <qualifiedname>KWin::WaylandServer::windowAdded</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">KWin::Window</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="228" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_wayland_server_1a200f7629e509e09fc64371d663c8a308" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WaylandServer::windowRemoved</definition>
+        <argsstring>(KWin::Window *)</argsstring>
+        <name>windowRemoved</name>
+        <qualifiedname>KWin::WaylandServer::windowRemoved</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">KWin::Window</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="229" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_wayland_server_1aaa98acfe9c6c0f2544842144a2e452e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WaylandServer::initialized</definition>
+        <argsstring>()</argsstring>
+        <name>initialized</name>
+        <qualifiedname>KWin::WaylandServer::initialized</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="230" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_wayland_server_1ae21c4440446ec363d37a14d72027f617" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WaylandServer::foreignTransientChanged</definition>
+        <argsstring>(KWin::SurfaceInterface *child)</argsstring>
+        <name>foreignTransientChanged</name>
+        <qualifiedname>KWin::WaylandServer::foreignTransientChanged</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_surface_interface" kindref="compound">KWin::SurfaceInterface</ref> *</type>
+          <declname>child</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="231" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_wayland_server_1a18e3cc6255c6a3f2c84f8d0beb89f0ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WaylandServer::lockStateChanged</definition>
+        <argsstring>()</argsstring>
+        <name>lockStateChanged</name>
+        <qualifiedname>KWin::WaylandServer::lockStateChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="232" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1ab4b04f8c5e96f93a721a86fe9283698c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int KWin::WaylandServer::createScreenLockerConnection</definition>
+        <argsstring>()</argsstring>
+        <name>createScreenLockerConnection</name>
+        <qualifiedname>KWin::WaylandServer::createScreenLockerConnection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="235" column="9" bodyfile="kwin/src/wayland_server.cpp" bodystart="677" bodyend="688"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a1cfb5e103b67263e6dbe7031f9bd1caa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WaylandServer::initScreenLocker</definition>
+        <argsstring>()</argsstring>
+        <name>initScreenLocker</name>
+        <qualifiedname>KWin::WaylandServer::initScreenLocker</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="236" column="10" bodyfile="kwin/src/wayland_server.cpp" bodystart="620" bodyend="662"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1ac6460e5dc00c26250a91a2b444a9bf03" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WaylandServer::registerXdgGenericWindow</definition>
+        <argsstring>(Window *window)</argsstring>
+        <name>registerXdgGenericWindow</name>
+        <qualifiedname>KWin::WaylandServer::registerXdgGenericWindow</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="237" column="10" bodyfile="kwin/src/wayland_server.cpp" bodystart="275" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a97a6f3ecaf52bfe6c064ca2c585d78b5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WaylandServer::registerXdgToplevelWindow</definition>
+        <argsstring>(XdgToplevelWindow *window)</argsstring>
+        <name>registerXdgToplevelWindow</name>
+        <qualifiedname>KWin::WaylandServer::registerXdgToplevelWindow</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_xdg_toplevel_window" kindref="compound">XdgToplevelWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="238" column="10" bodyfile="kwin/src/wayland_server.cpp" bodystart="243" bodyend="273"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a875149cd9edad9be3ae230889bab0bdc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WaylandServer::registerXdgPopupWindow</definition>
+        <argsstring>(XdgPopupWindow *window)</argsstring>
+        <name>registerXdgPopupWindow</name>
+        <qualifiedname>KWin::WaylandServer::registerXdgPopupWindow</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_xdg_popup_window" kindref="compound">XdgPopupWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="239" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1af105a49bb193305980b60a9ff7f535c9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WaylandServer::registerWindow</definition>
+        <argsstring>(Window *window)</argsstring>
+        <name>registerWindow</name>
+        <qualifiedname>KWin::WaylandServer::registerWindow</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="240" column="10" bodyfile="kwin/src/wayland_server.cpp" bodystart="231" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1ab246d914652b3b4c15b18a40493257c9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WaylandServer::handleOutputAdded</definition>
+        <argsstring>(Output *output)</argsstring>
+        <name>handleOutputAdded</name>
+        <qualifiedname>KWin::WaylandServer::handleOutputAdded</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="241" column="10" bodyfile="kwin/src/wayland_server.cpp" bodystart="291" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a6b3a0eaa39d33a4e0d605f54dc7332a6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WaylandServer::handleOutputRemoved</definition>
+        <argsstring>(Output *output)</argsstring>
+        <name>handleOutputRemoved</name>
+        <qualifiedname>KWin::WaylandServer::handleOutputRemoved</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="242" column="10" bodyfile="kwin/src/wayland_server.cpp" bodystart="298" bodyend="303"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1a1704798775207053616b0d7c3094d022" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WaylandServer::handleOutputEnabled</definition>
+        <argsstring>(Output *output)</argsstring>
+        <name>handleOutputEnabled</name>
+        <qualifiedname>KWin::WaylandServer::handleOutputEnabled</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="243" column="10" bodyfile="kwin/src/wayland_server.cpp" bodystart="305" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_server_1ad5ec52cd1d8f6cb37042e60931f11608" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WaylandServer::handleOutputDisabled</definition>
+        <argsstring>(Output *output)</argsstring>
+        <name>handleOutputDisabled</name>
+        <qualifiedname>KWin::WaylandServer::handleOutputDisabled</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/wayland_server.h" line="244" column="10" bodyfile="kwin/src/wayland_server.cpp" bodystart="315" bodyend="320"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::WaylandServer</label>
+        <link refid="class_k_win_1_1_wayland_server"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::WaylandServer</label>
+        <link refid="class_k_win_1_1_wayland_server"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/wayland_server.h" line="69" column="1" bodyfile="kwin/src/wayland_server.h" bodystart="70" bodyend="298"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_wayland_server_1ab1645e1c9678acdc5904d08ad23440e4" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>compositor</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a3c497d595d73b1654ab86cfc2ad35a65" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>createConnection</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a213c60683b861fa73946660e06b595a3" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>createInputMethodConnection</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1ab4b04f8c5e96f93a721a86fe9283698c" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>createScreenLockerConnection</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a7c63cac39fdac0623f6cdea3af59b4c1" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>dataDeviceManager</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a3c182c66198c0965b60d622e8f9e34e8" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>decorationManager</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a53403486a058a27289b9500cbb1d62f7" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>destroyInputMethodConnection</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a86c30976bd1f0d56f359f9d25160e1f6" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>display</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1afc342b8910934d16a8e81cdacab175aa" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>drm</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a23ba3a331e501da7a9fdcdb08bc74827" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>exportAsForeign</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a73ddab98753d831bb7871c68a8a930d6" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>externalBrightness</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a140611d1b19a6f8b615eea9b041639a3" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>findForeignTransientForSurface</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a5b85a441a6db58a50e401a099e778b27" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>findWindow</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a1b30b3f68aff6e597c31e6865414876f" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>findXdgSurfaceWindow</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a139064efd8688ef4c35d779441636d18" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>findXdgToplevelWindow</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1ae21c4440446ec363d37a14d72027f617" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>foreignTransientChanged</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1ab246d914652b3b4c15b18a40493257c9" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>handleOutputAdded</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1ad5ec52cd1d8f6cb37042e60931f11608" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>handleOutputDisabled</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a1704798775207053616b0d7c3094d022" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>handleOutputEnabled</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a6b3a0eaa39d33a4e0d605f54dc7332a6" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>handleOutputRemoved</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a7cce9a807049351f0c3ea02cc6c6ec7b" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>idle</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a7b35cc8999a975fdc9f136c2a89f423a" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>init</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a2c505b13e469916a76f0c4b14873847e" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>init</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1aaa98acfe9c6c0f2544842144a2e452e1" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>initialized</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a1cfb5e103b67263e6dbe7031f9bd1caa" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>initScreenLocker</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a633542f1bc5594bd682cf51218da32b4" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>initWorkspace</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1acf9ed9e051f7e8aff17d7789132ea015" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>inputMethod</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1af336f71c5eefbb20610ff26c4a714eb1" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>inputMethodConnection</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a18be1ac980825f0b28e1a9eab89fdad4" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>isKeyboardShortcutsInhibited</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a10fdc669c5562df9a1c91d65a42f4b16" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>isScreenLocked</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1ab621f9ce6ce0357ea07e75acb5a2d7f0" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>keyboardShortcutsInhibitManager</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a464300496b099b6280015953eed3fb6d" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>linuxDmabuf</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a6716b7958ec9b224a3dc67d1527f15a6" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>linuxSyncObj</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a18e3cc6255c6a3f2c84f8d0beb89f0ff" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>lockStateChanged</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1ab2f88481f0a06cf9761463bd60c487c1" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_alphaModifierManager</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a52ff99ec3021cce9e6f55252985f79d5" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_appMenuManager</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a6cb0dd195ddaa924ce3f3bccdcf4f712" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_colorManager</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a5d5581d57cdd4efdf850e69aeab3bcbf" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_compositor</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1aa2e3cd502a750752e436d751d1fc3721" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_contentTypeManager</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1aaee7c013145a51b61d0b784896aa5116" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_dataDeviceManager</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1aa410d28562afa8060f38dab2d6e001a7" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_decorationManager</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1aa05f0280bad64f23e5212fb2a1cb1658" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_display</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a42f3b6d0e6368906bce7d1587ca61f16" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_drm</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1ab27f5a9e559ac78cde10722d2385d050" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_externalBrightness</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a38563630c49f2ef539caa4fe0430de22" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_idle</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1acbd85d47a4882017a3727cbef3497048" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_inputMethod</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1afb19ff9bffe9cd4491cab3a15d1699c8" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_inputMethodServerConnection</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1aaf91a9d0177ad4867e17854ca1acf4db" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_keyboardShortcutsInhibitManager</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a6d30b90667b062994de05afa7cae4142" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_leaseManager</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a3be30392ffccfa7b6d267f5665068939" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_linuxDmabuf</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a444df5172d3ae9ec7b0cc7f0e79d6c6f" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_linuxDrmSyncObj</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a01ce1d9e1af31e91f189efdf67aed5c0" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_outputManagement</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a3e6c6f2ba730fca889322b6c9c60796a" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_outputOrder</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a3166ceb88a4b51b1551f5cd3d69501cb" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_paletteManager</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1aed5e594f243217dcabb06949180ccb54" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_plasmaActivationFeedback</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1ae87e507876fd8144f6f271a9684fff2c" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_plasmaShell</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a02fbca06dfa265827ceba01dfc4e1c85" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_presentationTime</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a39e147401d2a615d3fe4264fa86db4ad" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_screenLockerClientConnection</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a33b5c12c03738d9dc16520e0027c60bd" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_seat</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a005dca4479d286e43f223464c2e5514d" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_tabletManagerV2</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a6d22fc867b4854ab88ffd8e50e36deff" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_tearingControlInterface</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a3f4810fce784dfdedec8e09ddada1a1a" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_virtualDesktopManagement</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a39eb4d0982a7c843df4cb1cad2f4a32e" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_waylandOutputDevices</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a51b357730b143e5839ec2a7392d5290e" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_waylandOutputs</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a098a707a8400cacb3159c6553a31ec04" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_windowManagement</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1ad12918662fbd80135c9d847cf5049c69" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_windows</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a0dbd3b28c541d7505a337fe84cbda6ca" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_xdgActivationIntegration</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a41631b3b0b7888a46b5e880de71b434d" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_xdgDecorationManagerV1</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1ad6d4ce6beb0c4ba3f6297dbd09d45928" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_xdgDialogWm</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a66d228e38c20e5f0485ed423bfe0ea0f" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_XdgForeign</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a444e43f0f3a347172375e1c5f061c09f" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_xdgOutputManagerV1</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1af998f7bcfd50a64a52664335258dcab6" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_xwaylandConnection</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a30ce295ba58c4a266c286307003acbc6" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>m_xwaylandShell</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a7eebe9b25037789eef665a0e1c0a156e" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>plasmaActivationFeedback</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1af105a49bb193305980b60a9ff7f535c9" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>registerWindow</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1ac6460e5dc00c26250a91a2b444a9bf03" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>registerXdgGenericWindow</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a875149cd9edad9be3ae230889bab0bdc" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>registerXdgPopupWindow</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a97a6f3ecaf52bfe6c064ca2c585d78b5" prot="private" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>registerXdgToplevelWindow</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1abd4507b2752e5abc669f83e55c628c8d" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>removeWindow</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1aec9bf4664c335232727b98e5a4d9c949" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>screenLockerClientConnection</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a5eb1a9f63d831179f22f4baf0c630f0e" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>seat</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a366551b5a78f99b00fe2d7fef9ebc5b0" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>setRenderBackend</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1ac3c5fa28bcbb69633b9bdcb83b642329" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>socketName</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a22aaee071ac7967e6e6dcf4c0b866234" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>start</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a7615b966ceb5fdb4ae7f75e7ca45b345" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>tabletManagerV2</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a4619353ee9a028dd143758a9db1a7077" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>virtualDesktopManagement</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1aef3b6c0753f3369406ed97794f4ce5bc" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>windowAdded</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a4089cde9741bba1006333ffe0906899e" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>windowManagement</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a200f7629e509e09fc64371d663c8a308" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>windowRemoved</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1ac4de344a0c44fca55051a9f0124a76f7" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>windows</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1ac9da0c5bd8d087cc0abe11effa59929d" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>xdgActivationIntegration</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1a531fc9be48e73269bcf19927bfb9b58b" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>xdgOutputManagerV1</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1ac7d5fe2453e171c5f09bccf3d37f12a5" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>xWaylandConnection</name></member>
+      <member refid="class_k_win_1_1_wayland_server_1afa4fe383bd9856341f7de5bd162f1ba0" prot="public" virt="non-virtual"><scope>KWin::WaylandServer</scope><name>~WaylandServer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

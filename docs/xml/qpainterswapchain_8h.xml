@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="qpainterswapchain_8h" kind="file" language="C++">
+    <compoundname>qpainterswapchain.h</compoundname>
+    <includes local="yes">kwin_export.h</includes>
+    <includes local="no">QImage</includes>
+    <includes local="no">QList</includes>
+    <includes local="no">QSize</includes>
+    <includes local="no">memory</includes>
+    <includedby refid="drm__egl__layer__surface_8cpp" local="yes">kwin/src/backends/drm/drm_egl_layer_surface.cpp</includedby>
+    <includedby refid="drm__qpainter__layer_8cpp" local="yes">kwin/src/backends/drm/drm_qpainter_layer.cpp</includedby>
+    <includedby refid="virtual__qpainter__backend_8cpp" local="yes">kwin/src/backends/virtual/virtual_qpainter_backend.cpp</includedby>
+    <includedby refid="wayland__qpainter__backend_8cpp" local="yes">kwin/src/backends/wayland/wayland_qpainter_backend.cpp</includedby>
+    <includedby refid="x11__windowed__qpainter__backend_8cpp" local="yes">kwin/src/backends/x11/x11_windowed_qpainter_backend.cpp</includedby>
+    <includedby refid="qpainterswapchain_8cpp" local="yes">kwin/src/platformsupport/scenes/qpainter/qpainterswapchain.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/platformsupport/scenes/qpainter/qpainterswapchain.h</label>
+        <link refid="qpainterswapchain_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QImage</label>
+      </node>
+      <node id="4">
+        <label>QList</label>
+      </node>
+      <node id="5">
+        <label>QSize</label>
+      </node>
+      <node id="2">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="6">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/backends/drm/drm_egl_layer_surface.cpp</label>
+        <link refid="drm__egl__layer__surface_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/backends/drm/drm_qpainter_layer.cpp</label>
+        <link refid="drm__qpainter__layer_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/backends/virtual/virtual_qpainter_backend.cpp</label>
+        <link refid="virtual__qpainter__backend_8cpp"/>
+      </node>
+      <node id="5">
+        <label>kwin/src/backends/wayland/wayland_qpainter_backend.cpp</label>
+        <link refid="wayland__qpainter__backend_8cpp"/>
+      </node>
+      <node id="6">
+        <label>kwin/src/backends/x11/x11_windowed_qpainter_backend.cpp</label>
+        <link refid="x11__windowed__qpainter__backend_8cpp"/>
+      </node>
+      <node id="7">
+        <label>kwin/src/platformsupport/scenes/qpainter/qpainterswapchain.cpp</label>
+        <link refid="qpainterswapchain_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/platformsupport/scenes/qpainter/qpainterswapchain.h</label>
+        <link refid="qpainterswapchain_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_q_painter_swapchain_slot" prot="public">KWin::QPainterSwapchainSlot</innerclass>
+    <innerclass refid="class_k_win_1_1_q_painter_swapchain" prot="public">KWin::QPainterSwapchain</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2021<sp/>Xaver<sp/>Hugl<sp/>&lt;xaver.hugl@gmail.com&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2023<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;kwin_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QImage&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QSize&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_graphics_buffer_allocator" kindref="compound">GraphicsBufferAllocator</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_graphics_buffer_view" kindref="compound">GraphicsBufferView</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="class_k_win_1_1_q_painter_swapchain_slot" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_q_painter_swapchain_slot_1ac7b620980b210310b4fea0f72a8012a1" kindref="member">QPainterSwapchainSlot</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_q_painter_swapchain_slot_1ac7b620980b210310b4fea0f72a8012a1" kindref="member">QPainterSwapchainSlot</ref>(<ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref><sp/>*<ref refid="class_k_win_1_1_q_painter_swapchain_slot_1a827b8c41038b22b86b7d7b62a63cde8c" kindref="member">buffer</ref>,<sp/>std::unique_ptr&lt;GraphicsBufferView&gt;<sp/>&amp;&amp;<ref refid="class_k_win_1_1_q_painter_swapchain_slot_1a8c6cae326cf2dec0faca44f93861bef3" kindref="member">view</ref>);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_q_painter_swapchain_slot_1ac7b620980b210310b4fea0f72a8012a1" kindref="member">~QPainterSwapchainSlot</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref><sp/>*<ref refid="class_k_win_1_1_q_painter_swapchain_slot_1a827b8c41038b22b86b7d7b62a63cde8c" kindref="member">buffer</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_graphics_buffer_view" kindref="compound">GraphicsBufferView</ref><sp/>*<ref refid="class_k_win_1_1_q_painter_swapchain_slot_1a8c6cae326cf2dec0faca44f93861bef3" kindref="member">view</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_q_painter_swapchain_slot_1a1fcef5fb5f133e79554543ae4fba2d35" kindref="member">age</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;QPainterSwapchainSlot&gt;<sp/><ref refid="class_k_win_1_1_q_painter_swapchain_slot_1a1e2d13d9509d910a331df6b35969e2fb" kindref="member">create</ref>(<ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref><sp/>*<ref refid="class_k_win_1_1_q_painter_swapchain_slot_1a827b8c41038b22b86b7d7b62a63cde8c" kindref="member">buffer</ref>);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref><sp/>*m_buffer;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;GraphicsBufferView&gt;<sp/>m_view;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_age<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="44" refid="class_k_win_1_1_q_painter_swapchain_slot_1afabf0b7b50448ecfb75514f95c0d2465" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_q_painter_swapchain_slot_1afabf0b7b50448ecfb75514f95c0d2465" kindref="member">QPainterSwapchain</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="class_k_win_1_1_q_painter_swapchain" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_q_painter_swapchain_1ae46e00663c0342bc2273444b092945c8" kindref="member">QPainterSwapchain</ref></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_q_painter_swapchain_1ae46e00663c0342bc2273444b092945c8" kindref="member">QPainterSwapchain</ref>(<ref refid="class_k_win_1_1_graphics_buffer_allocator" kindref="compound">GraphicsBufferAllocator</ref><sp/>*allocator,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QSize<sp/>&amp;<ref refid="class_k_win_1_1_q_painter_swapchain_1a3c187d7134fe1e9e42d6a8f2a5a00d8f" kindref="member">size</ref>,<sp/>uint32_t<sp/><ref refid="class_k_win_1_1_q_painter_swapchain_1ab55727bec0b2ecbabaf2ac7e052bacab" kindref="member">format</ref>);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_q_painter_swapchain_1ae46e00663c0342bc2273444b092945c8" kindref="member">~QPainterSwapchain</ref>();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>QSize<sp/><ref refid="class_k_win_1_1_q_painter_swapchain_1a3c187d7134fe1e9e42d6a8f2a5a00d8f" kindref="member">size</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="class_k_win_1_1_q_painter_swapchain_1ab55727bec0b2ecbabaf2ac7e052bacab" kindref="member">format</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;QPainterSwapchainSlot&gt;<sp/><ref refid="class_k_win_1_1_q_painter_swapchain_1aaf6468c035e5691cc3d5eee1b1bf1137" kindref="member">acquire</ref>();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_q_painter_swapchain_1adb8b097b7cc5b73a55e3eebe8733dfa9" kindref="member">release</ref>(std::shared_ptr&lt;QPainterSwapchainSlot&gt;<sp/>slot);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_graphics_buffer_allocator" kindref="compound">GraphicsBufferAllocator</ref><sp/>*m_allocator;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;std::shared_ptr&lt;QPainterSwapchainSlot&gt;&gt;<sp/>m_slots;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>QSize<sp/>m_size;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>m_format;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/platformsupport/scenes/qpainter/qpainterswapchain.h"/>
+  </compounddef>
+</doxygen>

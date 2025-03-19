@@ -1,0 +1,270 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="screencaststream_8h" kind="file" language="C++">
+    <compoundname>screencaststream.h</compoundname>
+    <includes refid="screencast__v1_8h" local="yes">wayland/screencast_v1.h</includes>
+    <includes local="no">QHash</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">QRegion</includes>
+    <includes local="no">QTimer</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">optional</includes>
+    <includes local="no">pipewire/pipewire.h</includes>
+    <includes local="no">spa/param/format-utils.h</includes>
+    <includes local="no">spa/param/props.h</includes>
+    <includes local="no">spa/param/video/format-utils.h</includes>
+    <includedby refid="screencastmanager_8cpp" local="yes">kwin/src/plugins/screencast/screencastmanager.cpp</includedby>
+    <includedby refid="screencaststream_8cpp" local="yes">kwin/src/plugins/screencast/screencaststream.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/plugins/screencast/screencaststream.h</label>
+        <link refid="screencaststream_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wayland/screencast_v1.h</label>
+        <link refid="screencast__v1_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>QHash</label>
+      </node>
+      <node id="4">
+        <label>QObject</label>
+      </node>
+      <node id="7">
+        <label>QRegion</label>
+      </node>
+      <node id="8">
+        <label>QTimer</label>
+      </node>
+      <node id="9">
+        <label>chrono</label>
+      </node>
+      <node id="3">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="5">
+        <label>memory</label>
+      </node>
+      <node id="10">
+        <label>optional</label>
+      </node>
+      <node id="11">
+        <label>pipewire/pipewire.h</label>
+      </node>
+      <node id="12">
+        <label>spa/param/format-utils.h</label>
+      </node>
+      <node id="13">
+        <label>spa/param/props.h</label>
+      </node>
+      <node id="14">
+        <label>spa/param/video/format-utils.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/plugins/screencast/screencastmanager.cpp</label>
+        <link refid="screencastmanager_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/plugins/screencast/screencaststream.cpp</label>
+        <link refid="screencaststream_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/plugins/screencast/screencaststream.h</label>
+        <link refid="screencaststream_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_k_win_1_1_screen_cast_dma_buf_texture_params" prot="public">KWin::ScreenCastDmaBufTextureParams</innerclass>
+    <innerclass refid="class_k_win_1_1_screen_cast_stream" prot="public">KWin::ScreenCastStream</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2018-2020<sp/>Red<sp/>Hat<sp/>Inc</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2020<sp/>Aleix<sp/>Pol<sp/>Gonzalez<sp/>&lt;aleixpol@kde.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileContributor:<sp/>Jan<sp/>Grulich<sp/>&lt;jgrulich@redhat.com&gt;</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>LGPL-2.0-or-later</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="screencast__v1_8h" kindref="compound">wayland/screencast_v1.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QHash&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QRegion&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QTimer&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pipewire/pipewire.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;spa/param/format-utils.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;spa/param/props.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;spa/param/video/format-utils.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_cursor" kindref="compound">Cursor</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_g_l_texture" kindref="compound">GLTexture</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_pipe_wire_core" kindref="compound">PipeWireCore</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_screen_cast_buffer" kindref="compound">ScreenCastBuffer</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_screen_cast_source" kindref="compound">ScreenCastSource</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="struct_k_win_1_1_screen_cast_dma_buf_texture_params" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_k_win_1_1_screen_cast_dma_buf_texture_params" kindref="compound">ScreenCastDmaBufTextureParams</ref></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37" refid="struct_k_win_1_1_screen_cast_dma_buf_texture_params_1aeee94b483f67fce3bd08b000fa5f3d91" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_screen_cast_dma_buf_texture_params_1aeee94b483f67fce3bd08b000fa5f3d91" kindref="member">planeCount</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="38" refid="struct_k_win_1_1_screen_cast_dma_buf_texture_params_1a8348eeb202352f0bb69088f8a6c05d62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_screen_cast_dma_buf_texture_params_1a8348eeb202352f0bb69088f8a6c05d62" kindref="member">width</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="39" refid="struct_k_win_1_1_screen_cast_dma_buf_texture_params_1ad592116ee05a6b6f5c1e43153320f3ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_screen_cast_dma_buf_texture_params_1ad592116ee05a6b6f5c1e43153320f3ec" kindref="member">height</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="40" refid="struct_k_win_1_1_screen_cast_dma_buf_texture_params_1a5ac7ee2a0241640dfe485a7365974d51" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_k_win_1_1_screen_cast_dma_buf_texture_params_1a5ac7ee2a0241640dfe485a7365974d51" kindref="member">format</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="41" refid="struct_k_win_1_1_screen_cast_dma_buf_texture_params_1a920c072ca08b0574607c6ea0ca060584" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="struct_k_win_1_1_screen_cast_dma_buf_texture_params_1a920c072ca08b0574607c6ea0ca060584" kindref="member">modifier</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="class_k_win_1_1_screen_cast_stream" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_screen_cast_stream_1ab65d3aae3ee037e9c16ce714f598121e" kindref="member">ScreenCastStream</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_screen_cast_stream_1ab65d3aae3ee037e9c16ce714f598121e" kindref="member">ScreenCastStream</ref>(<ref refid="class_k_win_1_1_screen_cast_source" kindref="compound">ScreenCastSource</ref><sp/>*source,<sp/>std::shared_ptr&lt;PipeWireCore&gt;<sp/>pwCore,<sp/>QObject<sp/>*parent);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_screen_cast_stream_1ab65d3aae3ee037e9c16ce714f598121e" kindref="member">~ScreenCastStream</ref>();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="class_k_win_1_1_screen_cast_stream_1a1d58f5372b4ed2c7f28e6f3a95c61cc8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_screen_cast_stream_1a1d58f5372b4ed2c7f28e6f3a95c61cc8" kindref="member">Content</ref><sp/>{</highlight></codeline>
+<codeline lineno="52" refid="class_k_win_1_1_screen_cast_stream_1a1d58f5372b4ed2c7f28e6f3a95c61cc8a6adf97f83acf6453d4a6a4b1070f3754" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_screen_cast_stream_1a1d58f5372b4ed2c7f28e6f3a95c61cc8a6adf97f83acf6453d4a6a4b1070f3754" kindref="member">None</ref>,</highlight></codeline>
+<codeline lineno="53" refid="class_k_win_1_1_screen_cast_stream_1a1d58f5372b4ed2c7f28e6f3a95c61cc8a34e2d1989a1dbf75cd631596133ee5ee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_screen_cast_stream_1a1d58f5372b4ed2c7f28e6f3a95c61cc8a34e2d1989a1dbf75cd631596133ee5ee" kindref="member">Video</ref><sp/>=<sp/>0x1,</highlight></codeline>
+<codeline lineno="54" refid="class_k_win_1_1_screen_cast_stream_1a1d58f5372b4ed2c7f28e6f3a95c61cc8a9abdae4fa5d93330363a88ed8a5e7946" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_screen_cast_stream_1a1d58f5372b4ed2c7f28e6f3a95c61cc8a9abdae4fa5d93330363a88ed8a5e7946" kindref="member">Cursor</ref><sp/>=<sp/>0x2,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_FLAG(Content)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_DECLARE_FLAGS(Contents,<sp/>Content)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>init();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>uint<sp/>framerate();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>uint<sp/>nodeId();</highlight></codeline>
+<codeline lineno="62" refid="class_k_win_1_1_screen_cast_stream_1aad2d45d520e465abd2e4ec1b4fbcdbd5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_screen_cast_stream_1aad2d45d520e465abd2e4ec1b4fbcdbd5" kindref="member">error</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="63"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_error;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>close();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>scheduleRecord(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegion<sp/>&amp;damage,<sp/>Contents<sp/>contents<sp/>=<sp/>Content::Video);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setCursorMode(<ref refid="class_k_win_1_1_screencast_v1_interface_1adee0056f6cdc75b1f5b2860349f4146c" kindref="member">ScreencastV1Interface::CursorMode</ref><sp/>mode);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>invalidateCursor();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="77" refid="class_k_win_1_1_screen_cast_stream_1ac41b7d1babaf910345d7b4d63aefcfc6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_screen_cast_stream_1ac41b7d1babaf910345d7b4d63aefcfc6" kindref="member">ready</ref>(quint32<sp/><ref refid="class_k_win_1_1_screen_cast_stream_1ad095c5acb4f1a90fef02bfe7f04d8a25" kindref="member">nodeId</ref>);</highlight></codeline>
+<codeline lineno="78" refid="class_k_win_1_1_screen_cast_stream_1a000c11d670f0193f592be97e2989f06a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_screen_cast_stream_1a000c11d670f0193f592be97e2989f06a" kindref="member">closed</ref>();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onStreamParamChanged(uint32_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>spa_pod<sp/>*<ref refid="namespace_k_win_1a6ef3f38157c98f3fe83ae3ec855ee903" kindref="member">format</ref>);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onStreamStateChanged(pw_stream_state<sp/>old,<sp/>pw_stream_state<sp/>state,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*error_message);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onStreamAddBuffer(pw_buffer<sp/>*buffer);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onStreamRemoveBuffer(pw_buffer<sp/>*buffer);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>createStream();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;const<sp/>spa_pod<sp/>*&gt;<sp/>buildFormats(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>fixate,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buffer[2048]);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateParams();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>resize(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QSize<sp/>&amp;resolution);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>coreFailed(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;errorMessage);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addCursorMetadata(spa_buffer<sp/>*spaBuffer,<sp/><ref refid="class_k_win_1_1_screen_cast_stream_1a1d58f5372b4ed2c7f28e6f3a95c61cc8a9abdae4fa5d93330363a88ed8a5e7946" kindref="member">Cursor</ref><sp/>*cursor);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>QRegion<sp/>addCursorEmbedded(<ref refid="class_k_win_1_1_screen_cast_buffer" kindref="compound">ScreenCastBuffer</ref><sp/>*buffer,<sp/><ref refid="class_k_win_1_1_screen_cast_stream_1a1d58f5372b4ed2c7f28e6f3a95c61cc8a9abdae4fa5d93330363a88ed8a5e7946" kindref="member">Cursor</ref><sp/>*cursor);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addHeader(spa_buffer<sp/>*spaBuffer);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>corruptHeader(spa_buffer<sp/>*spaBuffer);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addDamage(spa_buffer<sp/>*spaBuffer,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegion<sp/>&amp;damagedRegion);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>newStreamParams();</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>spa_pod<sp/>*buildFormat(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>spa_pod_builder<sp/>*b,<sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>spa_video_format<sp/><ref refid="namespace_k_win_1a6ef3f38157c98f3fe83ae3ec855ee903" kindref="member">format</ref>,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>spa_rectangle<sp/>*resolution,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>spa_fraction<sp/>*defaultFramerate,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>spa_fraction<sp/>*minFramerate,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>spa_fraction<sp/>*maxFramerate,</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;uint64_t&gt;<sp/>&amp;modifiers,<sp/>quint32<sp/>modifiersFlags);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>pw_buffer<sp/>*dequeueBuffer();</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>record(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegion<sp/>&amp;damage,<sp/>Contents<sp/>contents);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;ScreenCastDmaBufTextureParams&gt;<sp/>testCreateDmaBuf(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QSize<sp/>&amp;size,<sp/>quint32<sp/><ref refid="namespace_k_win_1a6ef3f38157c98f3fe83ae3ec855ee903" kindref="member">format</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;uint64_t&gt;<sp/>&amp;modifiers);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;PipeWireCore&gt;<sp/>m_pwCore;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;ScreenCastSource&gt;<sp/>m_source;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">pw_stream<sp/>*m_pwStream<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>spa_hook<sp/>m_streamListener;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>pw_stream_events<sp/>m_pwStreamEvents<sp/>=<sp/>{};</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>m_pwNodeId<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>QSize<sp/>m_resolution;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_closed<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>spa_video_info_raw<sp/>m_videoFormat;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>m_error;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;uint64_t&gt;<sp/>m_modifiers;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;ScreenCastDmaBufTextureParams&gt;<sp/>m_dmabufParams;<sp/></highlight><highlight class="comment">//<sp/>when<sp/>fixated</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="123" refid="class_k_win_1_1_screen_cast_stream_1a381ef34a4e01b19afd8c202bdb7912d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_screencast_v1_interface_1adee0056f6cdc75b1f5b2860349f4146c" kindref="member">ScreencastV1Interface::CursorMode</ref><sp/><ref refid="class_k_win_1_1_screen_cast_stream_1a381ef34a4e01b19afd8c202bdb7912d4" kindref="member">mode</ref><sp/>=<sp/><ref refid="class_k_win_1_1_screencast_v1_interface_1adee0056f6cdc75b1f5b2860349f4146ca4a869d1e9e5539e38da59b9088e61689" kindref="member">ScreencastV1Interface::Hidden</ref>;</highlight></codeline>
+<codeline lineno="124" refid="class_k_win_1_1_screen_cast_stream_1a91c03c637a099efd5b7a4a8e8ef5b817" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QSize<sp/><ref refid="class_k_win_1_1_screen_cast_stream_1a91c03c637a099efd5b7a4a8e8ef5b817" kindref="member">bitmapSize</ref><sp/>=<sp/>QSize(256,<sp/>256);</highlight></codeline>
+<codeline lineno="125" refid="class_k_win_1_1_screen_cast_stream_1a066e9f8772156f5c306c0e1a129cb375" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QRectF<sp/><ref refid="class_k_win_1_1_screen_cast_stream_1a066e9f8772156f5c306c0e1a129cb375" kindref="member">lastRect</ref>;</highlight></codeline>
+<codeline lineno="126" refid="class_k_win_1_1_screen_cast_stream_1adde0c211d1ad30ab13cbaeb387e1d940" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unique_ptr&lt;GLTexture&gt;<sp/><ref refid="class_k_win_1_1_screen_cast_stream_1adde0c211d1ad30ab13cbaeb387e1d940" kindref="member">texture</ref>;</highlight></codeline>
+<codeline lineno="127" refid="class_k_win_1_1_screen_cast_stream_1a16bb4c51ef2ce79c2e19c49a4557223e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_screen_cast_stream_1a16bb4c51ef2ce79c2e19c49a4557223e" kindref="member">visible</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="128" refid="class_k_win_1_1_screen_cast_stream_1a08d8f88cee5fc786561ee68049587e12" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_screen_cast_stream_1a08d8f88cee5fc786561ee68049587e12" kindref="member">invalid</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="129" refid="class_k_win_1_1_screen_cast_stream_1a95566d68d84598b16a869892abd2992a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QMetaObject::Connection<sp/><ref refid="class_k_win_1_1_screen_cast_stream_1a95566d68d84598b16a869892abd2992a" kindref="member">changedConnection</ref><sp/>=<sp/>QMetaObject::Connection();</highlight></codeline>
+<codeline lineno="130" refid="class_k_win_1_1_screen_cast_stream_1aa30677c7bcc0ea066c442b5ce6408cad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QMetaObject::Connection<sp/><ref refid="class_k_win_1_1_screen_cast_stream_1aa30677c7bcc0ea066c442b5ce6408cad" kindref="member">positionChangedConnection</ref><sp/>=<sp/>QMetaObject::Connection();</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>m_cursor;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>quint64<sp/>m_sequential<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_hasDmaBuf<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>quint32<sp/>m_drmFormat<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;std::chrono::steady_clock::time_point&gt;<sp/>m_lastSent;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>QRegion<sp/>m_pendingDamage;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>QTimer<sp/>m_pendingFrame;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>Contents<sp/>m_pendingContents<sp/>=<sp/>Content::None;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;pw_buffer<sp/>*&gt;<sp/>m_dequeuedBuffers;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal">Q_DECLARE_OPERATORS_FOR_FLAGS(KWin::ScreenCastStream::Contents)</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/plugins/screencast/screencaststream.h"/>
+  </compounddef>
+</doxygen>

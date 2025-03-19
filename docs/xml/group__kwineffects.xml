@@ -1,0 +1,3161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="group__kwineffects" kind="group">
+    <compoundname>kwineffects</compoundname>
+    <title>KWin effects library</title>
+    <innerclass refid="class_k_win_1_1_paint_data" prot="public">KWin::PaintData</innerclass>
+    <innerclass refid="class_k_win_1_1_window_pre_paint_data" prot="public">KWin::WindowPrePaintData</innerclass>
+    <innerclass refid="class_k_win_1_1_window_paint_data" prot="public">KWin::WindowPaintData</innerclass>
+    <innerclass refid="class_k_win_1_1_screen_pre_paint_data" prot="public">KWin::ScreenPrePaintData</innerclass>
+    <innerclass refid="class_k_win_1_1_effect" prot="public">KWin::Effect</innerclass>
+    <innerclass refid="class_k_win_1_1_effect_plugin_factory" prot="public">KWin::EffectPluginFactory</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__kwineffects_1ga26b3491296f952420a75b4a0ab33378d" prot="public" static="no" strong="no">
+        <type></type>
+        <name></name>
+        <qualifiedname>KWin::Effect</qualifiedname>
+        <enumvalue id="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dac606d3dcf2dd150234f71c4c39083c7d" prot="public">
+          <name>PAINT_WINDOW_OPAQUE</name>
+          <initializer>= 1 &lt;&lt; 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> (or at least part of it) will be painted opaque. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dac7237bf4bb4d6ea6d6fb1215db19b45e" prot="public">
+          <name>PAINT_WINDOW_TRANSLUCENT</name>
+          <initializer>= 1 &lt;&lt; 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> (or at least part of it) will be painted translucent. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da684bb6c6c278b900b6d0c889e79233b8" prot="public">
+          <name>PAINT_WINDOW_TRANSFORMED</name>
+          <initializer>= 1 &lt;&lt; 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> will be painted with transformed geometry. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da43acbfc913cae9eb3c363aeb0524f18f" prot="public">
+          <name>PAINT_SCREEN_REGION</name>
+          <initializer>= 1 &lt;&lt; 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Paint only a region of the screen (can be optimized, cannot be used together with TRANSFORMED flags). </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da3e731594d83c3e92742bff7c420fb7f8" prot="public">
+          <name>PAINT_SCREEN_TRANSFORMED</name>
+          <initializer>= 1 &lt;&lt; 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The whole screen will be painted with transformed geometry. Forces the entire screen to be painted. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da124dd798e5f793087e81da77e11a9b1e" prot="public">
+          <name>PAINT_SCREEN_WITH_TRANSFORMED_WINDOWS</name>
+          <initializer>= 1 &lt;&lt; 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>At least one window will be painted with transformed geometry. Forces the entire screen to be painted. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dab0de2932c45bde6df3de10d00dbd6fcd" prot="public">
+          <name>PAINT_SCREEN_BACKGROUND_FIRST</name>
+          <initializer>= 1 &lt;&lt; 6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Clear whole background as the very first step, without optimizing it </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flags controlling how painting is done. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="512" column="5" bodyfile="kwin/src/effect/effect.h" bodystart="512" bodyend="544"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__kwineffects_1ga6337b2a9b5aadfbb6b696119144b56ae" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Feature</name>
+        <qualifiedname>KWin::Effect::Feature</qualifiedname>
+        <enumvalue id="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea170229312ed2ec0e446ee89ba7f6b6ca" prot="public">
+          <name>Nothing</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea592ea0de7a4d658a1ef9bbb48b18e15a" prot="public">
+          <name>ScreenInversion</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea67d120ab5ce1dc424476e63c132af6c1" prot="public">
+          <name>Blur</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aead805f717a48c23959a1e9ecd7722d15d" prot="public">
+          <name>Contrast</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aeaecbb77ad241419970ece3d45296c4838" prot="public">
+          <name>HighlightWindows</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea19036d413806c53978a3234e7eb197c4" prot="public">
+          <name>SystemBell</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="546" column="5" bodyfile="kwin/src/effect/effect.h" bodystart="546" bodyend="553"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__kwineffects_1ga4aebd7d0f695e37678debaa118fa92dc" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ReconfigureFlag</name>
+        <qualifiedname>KWin::Effect::ReconfigureFlag</qualifiedname>
+        <enumvalue id="group__kwineffects_1gga4aebd7d0f695e37678debaa118fa92dca19d3e23e53788c8d9cc9c18fbf75fc7d" prot="public">
+          <name>ReconfigureAll</name>
+          <initializer>= 1 &lt;&lt; 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flags describing which parts of configuration have changed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="573" column="5" bodyfile="kwin/src/effect/effect.h" bodystart="573" bodyend="575"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="group__kwineffects_1gadb01459e3f7e05c2a7ebf5a9d6c76270" prot="private" static="no" mutable="no">
+        <type>const std::unique_ptr&lt; PaintDataPrivate &gt;</type>
+        <definition>const std::unique_ptr&lt;PaintDataPrivate&gt; KWin::PaintData::d</definition>
+        <argsstring></argsstring>
+        <name>d</name>
+        <qualifiedname>KWin::PaintData::d</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="274" column="27" bodyfile="kwin/src/effect/effect.h" bodystart="274" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__kwineffects_1ga2fa934b7286a02d2be895bb798b53957" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KWin::WindowPrePaintData::mask</definition>
+        <argsstring></argsstring>
+        <name>mask</name>
+        <qualifiedname>KWin::WindowPrePaintData::mask</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="280" column="9" bodyfile="kwin/src/effect/effect.h" bodystart="280" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__kwineffects_1gaefc88d4e7164ec16e1fca4feb683e88e" prot="public" static="no" mutable="no">
+        <type>QRegion</type>
+        <definition>QRegion KWin::WindowPrePaintData::paint</definition>
+        <argsstring></argsstring>
+        <name>paint</name>
+        <qualifiedname>KWin::WindowPrePaintData::paint</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Region that will be painted, in screen coordinates. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="284" column="13" bodyfile="kwin/src/effect/effect.h" bodystart="284" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__kwineffects_1ga663b223e213df88d506393ce436e10a4" prot="public" static="no" mutable="no">
+        <type>QRegion</type>
+        <definition>QRegion KWin::WindowPrePaintData::opaque</definition>
+        <argsstring></argsstring>
+        <name>opaque</name>
+        <qualifiedname>KWin::WindowPrePaintData::opaque</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Region indicating the opaque content. It can be used to avoid painting windows occluded by the opaque region. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="289" column="13" bodyfile="kwin/src/effect/effect.h" bodystart="289" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__kwineffects_1ga548d26d63ee0d7b7fcf99bc27ce9f164" prot="private" static="no" mutable="no">
+        <type>const std::unique_ptr&lt; WindowPaintDataPrivate &gt;</type>
+        <definition>const std::unique_ptr&lt;WindowPaintDataPrivate&gt; KWin::WindowPaintData::d</definition>
+        <argsstring></argsstring>
+        <name>d</name>
+        <qualifiedname>KWin::WindowPaintData::d</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="430" column="27" bodyfile="kwin/src/effect/effect.h" bodystart="430" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__kwineffects_1ga4d5154f78b8ef3ee05dd1544cd13866a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KWin::ScreenPrePaintData::mask</definition>
+        <argsstring></argsstring>
+        <name>mask</name>
+        <qualifiedname>KWin::ScreenPrePaintData::mask</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="436" column="9" bodyfile="kwin/src/effect/effect.h" bodystart="436" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__kwineffects_1ga3ff0cb052f03ff7f243927e8082a33fd" prot="public" static="no" mutable="no">
+        <type>QRegion</type>
+        <definition>QRegion KWin::ScreenPrePaintData::paint</definition>
+        <argsstring></argsstring>
+        <name>paint</name>
+        <qualifiedname>KWin::ScreenPrePaintData::paint</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="437" column="13" bodyfile="kwin/src/effect/effect.h" bodystart="437" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__kwineffects_1ga83ff0d327946e316b5038ab813959a79" prot="public" static="no" mutable="no">
+        <type>Output *</type>
+        <definition>Output* KWin::ScreenPrePaintData::screen</definition>
+        <argsstring></argsstring>
+        <name>screen</name>
+        <qualifiedname>KWin::ScreenPrePaintData::screen</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="438" column="12" bodyfile="kwin/src/effect/effect.h" bodystart="438" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__kwineffects_1ga797201b31f835bf61d42f0860f588d5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>KWin::PaintData::~PaintData</definition>
+        <argsstring>()</argsstring>
+        <name>~PaintData</name>
+        <qualifiedname>KWin::PaintData::~PaintData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="111" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gace5cca0325fe9ae39a42103979566310" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::PaintData::xScale</definition>
+        <argsstring>() const</argsstring>
+        <name>xScale</name>
+        <qualifiedname>KWin::PaintData::xScale</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>scale factor in X direction. </para>
+</simplesect>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="116" column="11" bodyfile="kwin/src/effect/effect.cpp" bodystart="56" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga78d0bdf8c2b9b71888e47978bbfc63c5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::PaintData::yScale</definition>
+        <argsstring>() const</argsstring>
+        <name>yScale</name>
+        <qualifiedname>KWin::PaintData::yScale</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>scale factor in Y direction. </para>
+</simplesect>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="121" column="11" bodyfile="kwin/src/effect/effect.cpp" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gaad3e87955120c2001ac964ebd5d644bc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::PaintData::zScale</definition>
+        <argsstring>() const</argsstring>
+        <name>zScale</name>
+        <qualifiedname>KWin::PaintData::zScale</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>scale factor in Z direction. </para>
+</simplesect>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="126" column="11" bodyfile="kwin/src/effect/effect.cpp" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga5f745f1747890bcc1dea4b4a669a672f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PaintData::setXScale</definition>
+        <argsstring>(qreal scale)</argsstring>
+        <name>setXScale</name>
+        <qualifiedname>KWin::PaintData::setXScale</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the scale factor in X direction to <computeroutput>scale</computeroutput> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scale factor in X direction </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="132" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="81" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gab275347d13c1fe995ef9205f6643b86c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PaintData::setYScale</definition>
+        <argsstring>(qreal scale)</argsstring>
+        <name>setYScale</name>
+        <qualifiedname>KWin::PaintData::setYScale</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the scale factor in Y direction to <computeroutput>scale</computeroutput> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scale factor in Y direction </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="138" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="86" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gafafc5dde4e25740b923a4fe647d02065" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PaintData::setZScale</definition>
+        <argsstring>(qreal scale)</argsstring>
+        <name>setZScale</name>
+        <qualifiedname>KWin::PaintData::setZScale</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the scale factor in Z direction to <computeroutput>scale</computeroutput> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scale factor in Z direction </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="144" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="91" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga944fb6639dbe2177cde766c22fcd057d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PaintData::setScale</definition>
+        <argsstring>(const QVector2D &amp;scale)</argsstring>
+        <name>setScale</name>
+        <qualifiedname>KWin::PaintData::setScale</qualifiedname>
+        <param>
+          <type>const QVector2D &amp;</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the scale factor in X and Y direction. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scale factor for X and Y direction </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="150" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="71" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gaaf1dea379e7141b4176ed2bbb2819c75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PaintData::setScale</definition>
+        <argsstring>(const QVector3D &amp;scale)</argsstring>
+        <name>setScale</name>
+        <qualifiedname>KWin::PaintData::setScale</qualifiedname>
+        <param>
+          <type>const QVector3D &amp;</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the scale factor in X, Y and Z direction <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scale factor for X, Y and Z direction </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="156" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="77" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga2a9c75b516b768f233a3c29f95607f7d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const QVector3D &amp;</type>
+        <definition>const QVector3D &amp; KWin::PaintData::scale</definition>
+        <argsstring>() const</argsstring>
+        <name>scale</name>
+        <qualifiedname>KWin::PaintData::scale</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="157" column="21" bodyfile="kwin/src/effect/effect.cpp" bodystart="96" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga64927c840390da81332f528f807a9f57" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const QVector3D &amp;</type>
+        <definition>const QVector3D &amp; KWin::PaintData::translation</definition>
+        <argsstring>() const</argsstring>
+        <name>translation</name>
+        <qualifiedname>KWin::PaintData::translation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="158" column="21" bodyfile="kwin/src/effect/effect.cpp" bodystart="141" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gace652abd960b5d1c0d54c297fe2f5725" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::PaintData::xTranslation</definition>
+        <argsstring>() const</argsstring>
+        <name>xTranslation</name>
+        <qualifiedname>KWin::PaintData::xTranslation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the translation in X direction. </para>
+</simplesect>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="163" column="11" bodyfile="kwin/src/effect/effect.cpp" bodystart="126" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga7219eb8c50c3c5d27ac6bd94e6757552" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::PaintData::yTranslation</definition>
+        <argsstring>() const</argsstring>
+        <name>yTranslation</name>
+        <qualifiedname>KWin::PaintData::yTranslation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the translation in Y direction. </para>
+</simplesect>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="168" column="11" bodyfile="kwin/src/effect/effect.cpp" bodystart="131" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga9e02bb50332131839d017c670c887ffe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::PaintData::zTranslation</definition>
+        <argsstring>() const</argsstring>
+        <name>zTranslation</name>
+        <qualifiedname>KWin::PaintData::zTranslation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the translation in Z direction. </para>
+</simplesect>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="173" column="11" bodyfile="kwin/src/effect/effect.cpp" bodystart="136" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga359b10a9e26865ddf8082d58cbc26202" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PaintData::setXTranslation</definition>
+        <argsstring>(qreal translate)</argsstring>
+        <name>setXTranslation</name>
+        <qualifiedname>KWin::PaintData::setXTranslation</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>translate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the translation in X direction to <computeroutput>translate</computeroutput>. <simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="178" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="101" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga0fcd8106248fabbec098cb46589c3c41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PaintData::setYTranslation</definition>
+        <argsstring>(qreal translate)</argsstring>
+        <name>setYTranslation</name>
+        <qualifiedname>KWin::PaintData::setYTranslation</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>translate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the translation in Y direction to <computeroutput>translate</computeroutput>. <simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="183" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="106" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gaf8d1685739f4e42d66fb6b7fc8d7a50a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PaintData::setZTranslation</definition>
+        <argsstring>(qreal translate)</argsstring>
+        <name>setZTranslation</name>
+        <qualifiedname>KWin::PaintData::setZTranslation</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>translate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the translation in Z direction to <computeroutput>translate</computeroutput>. <simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="188" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="111" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gaf3984fc3ac473104512c3cebc790ad35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PaintData::translate</definition>
+        <argsstring>(qreal x, qreal y=0.0, qreal z=0.0)</argsstring>
+        <name>translate</name>
+        <qualifiedname>KWin::PaintData::translate</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>qreal</type>
+          <declname>y</declname>
+          <defval>0.0</defval>
+        </param>
+        <param>
+          <type>qreal</type>
+          <declname>z</declname>
+          <defval>0.0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs a translation by adding the values component wise. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Translation in X direction </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Translation in Y direction </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Translation in Z direction </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="196" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="116" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga897ccdb8f65d6e69dfaaa828435f44a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PaintData::translate</definition>
+        <argsstring>(const QVector3D &amp;translate)</argsstring>
+        <name>translate</name>
+        <qualifiedname>KWin::PaintData::translate</qualifiedname>
+        <param>
+          <type>const QVector3D &amp;</type>
+          <declname>translate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs a translation by adding the values component wise. Overloaded method for convenience. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>translate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The translation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="203" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="121" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga0229654c12cbbf3a18db0aac016107fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PaintData::setRotationAngle</definition>
+        <argsstring>(qreal angle)</argsstring>
+        <name>setRotationAngle</name>
+        <qualifiedname>KWin::PaintData::setRotationAngle</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the rotation angle. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new rotation angle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="group__kwineffects_1gafa4e6734b2ffa1ca92403dee20f84a28" kindref="member">rotationAngle()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="211" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="161" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gafa4e6734b2ffa1ca92403dee20f84a28" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::PaintData::rotationAngle</definition>
+        <argsstring>() const</argsstring>
+        <name>rotationAngle</name>
+        <qualifiedname>KWin::PaintData::rotationAngle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the rotation angle. Initially 0.0. <simplesect kind="return"><para>The current rotation angle. </para>
+</simplesect>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="group__kwineffects_1ga0229654c12cbbf3a18db0aac016107fc" kindref="member">setRotationAngle</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="219" column="11" bodyfile="kwin/src/effect/effect.cpp" bodystart="146" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gaaf168811bfb58a02788b7da60d2ba874" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PaintData::setRotationOrigin</definition>
+        <argsstring>(const QVector3D &amp;origin)</argsstring>
+        <name>setRotationOrigin</name>
+        <qualifiedname>KWin::PaintData::setRotationOrigin</qualifiedname>
+        <param>
+          <type>const QVector3D &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the rotation origin. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new rotation origin. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="group__kwineffects_1ga1ebf00b8775c7ef0488952fc72dd1497" kindref="member">rotationOrigin()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="226" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="186" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga1ebf00b8775c7ef0488952fc72dd1497" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QVector3D</type>
+        <definition>QVector3D KWin::PaintData::rotationOrigin</definition>
+        <argsstring>() const</argsstring>
+        <name>rotationOrigin</name>
+        <qualifiedname>KWin::PaintData::rotationOrigin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the rotation origin. That is the point in space which is fixed during the rotation. Initially this is 0/0/0. <simplesect kind="return"><para>The rotation&apos;s origin </para>
+</simplesect>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="group__kwineffects_1gaaf168811bfb58a02788b7da60d2ba874" kindref="member">setRotationOrigin()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="234" column="15" bodyfile="kwin/src/effect/effect.cpp" bodystart="156" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga76a6aed41525618f198fa7673a1fd2c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PaintData::setRotationAxis</definition>
+        <argsstring>(const QVector3D &amp;axis)</argsstring>
+        <name>setRotationAxis</name>
+        <qualifiedname>KWin::PaintData::setRotationAxis</qualifiedname>
+        <param>
+          <type>const QVector3D &amp;</type>
+          <declname>axis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the rotation axis. Set a component to 1.0 to rotate around this axis and to 0.0 to disable rotation around the axis. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector holding information on which axis to rotate </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="group__kwineffects_1gac66a7159bd120a66b0221aa5274003c6" kindref="member">rotationAxis()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="243" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="181" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga9e199c4aaf895ee462c73cbc585a3fa5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PaintData::setRotationAxis</definition>
+        <argsstring>(Qt::Axis axis)</argsstring>
+        <name>setRotationAxis</name>
+        <qualifiedname>KWin::PaintData::setRotationAxis</qualifiedname>
+        <param>
+          <type>Qt::Axis</type>
+          <declname>axis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the rotation axis. Overloaded method for convenience. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The axis around which should be rotated. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="group__kwineffects_1gac66a7159bd120a66b0221aa5274003c6" kindref="member">rotationAxis()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="251" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="166" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gac66a7159bd120a66b0221aa5274003c6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QVector3D</type>
+        <definition>QVector3D KWin::PaintData::rotationAxis</definition>
+        <argsstring>() const</argsstring>
+        <name>rotationAxis</name>
+        <qualifiedname>KWin::PaintData::rotationAxis</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The current rotation axis. By default the rotation is (0/0/1) which means a rotation around the z axis. <simplesect kind="return"><para>The current rotation axis. </para>
+</simplesect>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="group__kwineffects_1ga76a6aed41525618f198fa7673a1fd2c1" kindref="member">setRotationAxis</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="259" column="15" bodyfile="kwin/src/effect/effect.cpp" bodystart="151" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga60a1cbe0f048945c45cc843d79ae2104" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QMatrix4x4</type>
+        <definition>QMatrix4x4 KWin::PaintData::toMatrix</definition>
+        <argsstring>(qreal deviceScale) const</argsstring>
+        <name>toMatrix</name>
+        <qualifiedname>KWin::PaintData::toMatrix</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>deviceScale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the corresponding transform matrix.</para>
+<para>The transform matrix is converted to device coordinates using the supplied deviceScale. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="267" column="16" bodyfile="kwin/src/effect/effect.cpp" bodystart="191" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga309aec2bad89e9384d787a52a5f348f7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::PaintData::PaintData</definition>
+        <argsstring>()</argsstring>
+        <name>PaintData</name>
+        <qualifiedname>KWin::PaintData::PaintData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="270" column="5" bodyfile="kwin/src/effect/effect.cpp" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gaacf10ea8e1f29ba9193508a0f52bbbfa" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::PaintData::PaintData</definition>
+        <argsstring>(const PaintData &amp;other)</argsstring>
+        <name>PaintData</name>
+        <qualifiedname>KWin::PaintData::PaintData</qualifiedname>
+        <param>
+          <type>const PaintData &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="271" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gae278f7907a55f5015ce725d6a69c0d62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowPrePaintData::setTranslucent</definition>
+        <argsstring>()</argsstring>
+        <name>setTranslucent</name>
+        <qualifiedname>KWin::WindowPrePaintData::setTranslucent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Simple helper that sets data to say the window will be painted as non-opaque. Takes also care of changing the regions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="294" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="20" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gafefa807129c120e7358cd8a2247f9c31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowPrePaintData::setTransformed</definition>
+        <argsstring>()</argsstring>
+        <name>setTransformed</name>
+        <qualifiedname>KWin::WindowPrePaintData::setTransformed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Helper to mark that this window will be transformed </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="298" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gae41bb6cfac51249bab8058ce2f256bad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::WindowPaintData::WindowPaintData</definition>
+        <argsstring>()</argsstring>
+        <name>WindowPaintData</name>
+        <qualifiedname>KWin::WindowPaintData::WindowPaintData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="304" column="5" bodyfile="kwin/src/effect/effect.cpp" bodystart="219" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga723ab1842379122c581d6a7c70922c96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::WindowPaintData::WindowPaintData</definition>
+        <argsstring>(const WindowPaintData &amp;other)</argsstring>
+        <name>WindowPaintData</name>
+        <qualifiedname>KWin::WindowPaintData::WindowPaintData</qualifiedname>
+        <param>
+          <type>const WindowPaintData &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="305" column="5" bodyfile="kwin/src/effect/effect.cpp" bodystart="229" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gadbe8ba9de9c71bbb701bddaf3bf23966" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::WindowPaintData::~WindowPaintData</definition>
+        <argsstring>() override</argsstring>
+        <name>~WindowPaintData</name>
+        <qualifiedname>KWin::WindowPaintData::~WindowPaintData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="306" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gae72e5e494e2f63d017081a9e8e8ea348" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>WindowPaintData &amp;</type>
+        <definition>WindowPaintData &amp; KWin::WindowPaintData::operator*=</definition>
+        <argsstring>(qreal scale)</argsstring>
+        <name>operator*=</name>
+        <qualifiedname>KWin::WindowPaintData::operator*=</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Scales the window by <computeroutput>scale</computeroutput> factor. Multiplies all three components by the given factor. <simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="312" column="21" bodyfile="kwin/src/effect/effect.cpp" bodystart="306" bodyend="312"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga17327d51fa5f400914c9a5994f1dfc28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>WindowPaintData &amp;</type>
+        <definition>WindowPaintData &amp; KWin::WindowPaintData::operator*=</definition>
+        <argsstring>(const QVector2D &amp;scale)</argsstring>
+        <name>operator*=</name>
+        <qualifiedname>KWin::WindowPaintData::operator*=</qualifiedname>
+        <param>
+          <type>const QVector2D &amp;</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Scales the window by <computeroutput>scale</computeroutput> factor. Performs a component wise multiplication on x and y components. <simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="318" column="21" bodyfile="kwin/src/effect/effect.cpp" bodystart="314" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga18c664d120d2c766ad22f7207bab2085" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>WindowPaintData &amp;</type>
+        <definition>WindowPaintData &amp; KWin::WindowPaintData::operator*=</definition>
+        <argsstring>(const QVector3D &amp;scale)</argsstring>
+        <name>operator*=</name>
+        <qualifiedname>KWin::WindowPaintData::operator*=</qualifiedname>
+        <param>
+          <type>const QVector3D &amp;</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Scales the window by <computeroutput>scale</computeroutput> factor. Performs a component wise multiplication. <simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="324" column="21" bodyfile="kwin/src/effect/effect.cpp" bodystart="321" bodyend="327"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga3df73cb4f1be4bfa271ddcacf8eaa952" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>WindowPaintData &amp;</type>
+        <definition>WindowPaintData &amp; KWin::WindowPaintData::operator+=</definition>
+        <argsstring>(const QPointF &amp;translation)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>KWin::WindowPaintData::operator+=</qualifiedname>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>translation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Translates the window by the given <computeroutput>translation</computeroutput> and returns a reference to the ScreenPaintData. <simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="329" column="21" bodyfile="kwin/src/effect/effect.cpp" bodystart="329" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga935afc63f7e886708c68b77a2401e745" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>WindowPaintData &amp;</type>
+        <definition>WindowPaintData &amp; KWin::WindowPaintData::operator+=</definition>
+        <argsstring>(const QPoint &amp;translation)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>KWin::WindowPaintData::operator+=</qualifiedname>
+        <param>
+          <type>const QPoint &amp;</type>
+          <declname>translation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Translates the window by the given <computeroutput>translation</computeroutput> and returns a reference to the ScreenPaintData. Overloaded method for convenience. <simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="335" column="21" bodyfile="kwin/src/effect/effect.cpp" bodystart="334" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga8a88d85c6479d906d4c5de236308aeeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>WindowPaintData &amp;</type>
+        <definition>WindowPaintData &amp; KWin::WindowPaintData::operator+=</definition>
+        <argsstring>(const QVector2D &amp;translation)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>KWin::WindowPaintData::operator+=</qualifiedname>
+        <param>
+          <type>const QVector2D &amp;</type>
+          <declname>translation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Translates the window by the given <computeroutput>translation</computeroutput> and returns a reference to the ScreenPaintData. Overloaded method for convenience. <simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="341" column="21" bodyfile="kwin/src/effect/effect.cpp" bodystart="339" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gaee5dc334381a9004beb93107d8ba5758" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>WindowPaintData &amp;</type>
+        <definition>WindowPaintData &amp; KWin::WindowPaintData::operator+=</definition>
+        <argsstring>(const QVector3D &amp;translation)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>KWin::WindowPaintData::operator+=</qualifiedname>
+        <param>
+          <type>const QVector3D &amp;</type>
+          <declname>translation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Translates the window by the given <computeroutput>translation</computeroutput> and returns a reference to the ScreenPaintData. Overloaded method for convenience. <simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="347" column="21" bodyfile="kwin/src/effect/effect.cpp" bodystart="344" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gad0f1f0aca1042097e8cfecc97bef02f4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::WindowPaintData::opacity</definition>
+        <argsstring>() const</argsstring>
+        <name>opacity</name>
+        <qualifiedname>KWin::WindowPaintData::opacity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> opacity, in range 0 = transparent to 1 = fully opaque <simplesect kind="see"><para><ref refid="group__kwineffects_1ga60ace1f0ae9acfbfc67723a1e77337dd" kindref="member">setOpacity</ref> </para>
+</simplesect>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="353" column="11" bodyfile="kwin/src/effect/effect.cpp" bodystart="248" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga60ace1f0ae9acfbfc67723a1e77337dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowPaintData::setOpacity</definition>
+        <argsstring>(qreal opacity)</argsstring>
+        <name>setOpacity</name>
+        <qualifiedname>KWin::WindowPaintData::setOpacity</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>opacity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the window opacity to the new <computeroutput>opacity</computeroutput>. If you want to modify the existing opacity level consider using multiplyOpacity. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>opacity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new opacity level </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="360" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="263" bodyend="266"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga5bb3899f1e72bb0cdd8ef5c14b56fd5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::WindowPaintData::multiplyOpacity</definition>
+        <argsstring>(qreal factor)</argsstring>
+        <name>multiplyOpacity</name>
+        <qualifiedname>KWin::WindowPaintData::multiplyOpacity</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies the current opacity with the <computeroutput>factor</computeroutput>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>factor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Factor with which the opacity should be multiplied </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>New opacity level </para>
+</simplesect>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="367" column="11" bodyfile="kwin/src/effect/effect.cpp" bodystart="288" bodyend="292"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga32dfa2fc9fc75375a52c0baba1d1b95c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::WindowPaintData::saturation</definition>
+        <argsstring>() const</argsstring>
+        <name>saturation</name>
+        <qualifiedname>KWin::WindowPaintData::saturation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Saturation of the window, in range [0; 1] 1 means that the window is unchanged, 0 means that it&apos;s completely unsaturated (greyscale). 0.5 would make the colors less intense, but not completely grey Use EffectsHandler::saturationSupported() to find out whether saturation is supported by the system, otherwise this value has no effect. <simplesect kind="return"><para>The current saturation </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="group__kwineffects_1ga61063a77202fabbd267208da6132ff9d" kindref="member">setSaturation()</ref> </para>
+</simplesect>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="379" column="11" bodyfile="kwin/src/effect/effect.cpp" bodystart="253" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga61063a77202fabbd267208da6132ff9d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowPaintData::setSaturation</definition>
+        <argsstring>(qreal saturation) const</argsstring>
+        <name>setSaturation</name>
+        <qualifiedname>KWin::WindowPaintData::setSaturation</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>saturation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the window saturation level to <computeroutput>saturation</computeroutput>. If you want to modify the existing saturation level consider using multiplySaturation. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>saturation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new saturation level </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="386" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="268" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga352c819f32b796f3a86f5ffd8ec82431" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::WindowPaintData::multiplySaturation</definition>
+        <argsstring>(qreal factor)</argsstring>
+        <name>multiplySaturation</name>
+        <qualifiedname>KWin::WindowPaintData::multiplySaturation</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies the current saturation with <computeroutput>factor</computeroutput>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>factor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>with which the saturation should be multiplied </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>New saturation level </para>
+</simplesect>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="393" column="11" bodyfile="kwin/src/effect/effect.cpp" bodystart="294" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga9193084e08528baecd524d2a3fe64315" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::WindowPaintData::brightness</definition>
+        <argsstring>() const</argsstring>
+        <name>brightness</name>
+        <qualifiedname>KWin::WindowPaintData::brightness</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Brightness of the window, in range [0; 1] 1 means that the window is unchanged, 0 means that it&apos;s completely black. 0.5 would make it 50% darker than usual </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="399" column="11" bodyfile="kwin/src/effect/effect.cpp" bodystart="258" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga80ece242c78e89130498b0fb8361531f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowPaintData::setBrightness</definition>
+        <argsstring>(qreal brightness)</argsstring>
+        <name>setBrightness</name>
+        <qualifiedname>KWin::WindowPaintData::setBrightness</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>brightness</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the window brightness level to <computeroutput>brightness</computeroutput>. If you want to modify the existing brightness level consider using multiplyBrightness. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>brightness</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new brightness level </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="405" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="273" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga990800e60005ba17d3ed2f1b516d2cc9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::WindowPaintData::multiplyBrightness</definition>
+        <argsstring>(qreal factor)</argsstring>
+        <name>multiplyBrightness</name>
+        <qualifiedname>KWin::WindowPaintData::multiplyBrightness</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies the current brightness level with <computeroutput>factor</computeroutput>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>factor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>with which the brightness should be multiplied. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>New brightness level </para>
+</simplesect>
+<simplesect kind="since"><para>4.10 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="412" column="11" bodyfile="kwin/src/effect/effect.cpp" bodystart="300" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gaff3b52efe12b366ad73dcbb5d1fbedfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WindowPaintData::setCrossFadeProgress</definition>
+        <argsstring>(qreal factor)</argsstring>
+        <name>setCrossFadeProgress</name>
+        <qualifiedname>KWin::WindowPaintData::setCrossFadeProgress</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+<para>Sets the cross fading <computeroutput>factor</computeroutput> to fade over with previously sized window. If <computeroutput>1.0</computeroutput> only the current window is used, if <computeroutput>0.0</computeroutput> only the previous window is used. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>By default only the current window is used. This factor can only make any visual difference if the previous window get referenced.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>factor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cross fade factor between <computeroutput>0.0</computeroutput> (previous window) and <computeroutput>1.0</computeroutput> (current window) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="group__kwineffects_1ga1dac14ebb3addc453cd32df7f99e0d4c" kindref="member">crossFadeProgress</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="423" column="10" bodyfile="kwin/src/effect/effect.cpp" bodystart="283" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga1dac14ebb3addc453cd32df7f99e0d4c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::WindowPaintData::crossFadeProgress</definition>
+        <argsstring>() const</argsstring>
+        <name>crossFadeProgress</name>
+        <qualifiedname>KWin::WindowPaintData::crossFadeProgress</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="group__kwineffects_1gaff3b52efe12b366ad73dcbb5d1fbedfd" kindref="member">setCrossFadeProgress</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="427" column="11" bodyfile="kwin/src/effect/effect.cpp" bodystart="278" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga7bd8262f4cb2c5c3090c748eb388ad7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::Effect::Effect</definition>
+        <argsstring>(QObject *parent=nullptr)</argsstring>
+        <name>Effect</name>
+        <qualifiedname>KWin::Effect::Effect</qualifiedname>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs new <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> object.</para>
+<para>In OpenGL based compositing, the frameworks ensures that the context is current when the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> is constructed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="561" column="5" bodyfile="kwin/src/effect/effect.cpp" bodystart="350" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga50174eb0169aebceb78ebd5aff71c481" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::Effect::~Effect</definition>
+        <argsstring>() override</argsstring>
+        <name>~Effect</name>
+        <qualifiedname>KWin::Effect::~Effect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructs the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> object.</para>
+<para>In OpenGL based compositing, the frameworks ensures that the context is current when the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> is destroyed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="568" column="5" bodyfile="kwin/src/effect/effect.cpp" bodystart="355" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga737c6d80eb8f8b24fdc6398209c38e3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::Effect::reconfigure</definition>
+        <argsstring>(ReconfigureFlags flags)</argsstring>
+        <name>reconfigure</name>
+        <qualifiedname>KWin::Effect::reconfigure</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_blur_effect_1a374355a81d2cf08d2fe3379974b673e8">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_color_blindness_correction_effect_1a89a746f6049b3f9139c6a4459f664a13">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_dim_inactive_effect_1a49377f1565ce51cf1fdd11da28e20735">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_fall_apart_effect_1a89a352430cbc412086506047f7d38125">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_glide_effect_1a39b90f1fc9d832c4140ec58737995793">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_hide_cursor_effect_1ac840cffb0d3d6434537be91e6c8417fc">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_kscreen_effect_1a73da7406eaa031287e4e549a0fb35f87">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_magic_lamp_effect_1a306c5cec717fff129fa52a219792c460">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_magnifier_effect_1a0d8f43191c8edbe7a38882a4d63e6270">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_mouse_click_effect_1a9d89ee05179a0170bb6e0c2c23ef9543">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_mouse_mark_effect_1a2bd79e98c34107387698c81aedae0044">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_overview_effect_1ab6a28ce988c85662944306bf8ea9df87">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_scripted_effect_1a94e3eae80a2fc9eb8b2eaad622b7d615">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_scripted_quick_scene_effect_1a7e9dc5b204abb57ad4796259b90965d6">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_shake_cursor_effect_1a78172c875da7737a9852742f7f7a52fa">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_sheet_effect_1a3daa28fa8f42bab4950fce0482c0be72">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_slide_effect_1a4543e5720fd4f237931e08f97b53f49d">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_sliding_popups_effect_1a3b7a7f7f2147b074fed99bdacfff0732">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_snap_helper_effect_1a1524238930987831b00e2486a14dec75">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_startup_feedback_effect_1ab6125bce4610ec0ad231a98b951288b8">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_system_bell_effect_1ae45d386100483ca87186c20aac51e1a5">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_thumbnail_aside_effect_1ad359338aebb33426593bd5dba5c5b797">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_tiles_editor_effect_1ac2e5acf7a858794a6177a6e41a84ec9d">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_track_mouse_effect_1a4ae0d7ef4cd70b72eb44e92f5c82a2c5">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_window_view_effect_1acf7ee418e3713fc098847bf1ce9ea220">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_wobbly_windows_effect_1abe866e5adad959c2773fae5434906788">reconfigure</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_zoom_effect_1a46275077ebc937fecae4d3d5a62da1b3">reconfigure</reimplementedby>
+        <param>
+          <type>ReconfigureFlags</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when configuration changes (either the effect&apos;s or <ref refid="namespace_k_win" kindref="compound">KWin</ref>&apos;s global).</para>
+<para>In OpenGL based compositing, the frameworks ensures that the context is current when the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> is reconfigured. If this method is called from within the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> it is required to ensure that the context is current if the implementation does OpenGL calls. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="585" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="359" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga2edc1b757e36bb6bcbbacde454dfc05c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::Effect::prePaintScreen</definition>
+        <argsstring>(ScreenPrePaintData &amp;data, std::chrono::milliseconds presentTime)</argsstring>
+        <name>prePaintScreen</name>
+        <qualifiedname>KWin::Effect::prePaintScreen</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_blend_changes_1a0d8947f707e3c4b8e25d005e57ecc922">prePaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_blur_effect_1ade94c2258eac39e2e600d073e89f204e">prePaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_dim_inactive_effect_1a3cfe9ebcbc40f1e8c560932beb83e1b1">prePaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_fall_apart_effect_1a0314c3bc6fbbc652afcb7a91113cf2fe">prePaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_kscreen_effect_1a20450a462cc747d7a754d7c7eb267b71">prePaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_magic_lamp_effect_1a38b860d3c8f2827197e7caf59302f77b">prePaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_magnifier_effect_1a5108c180a2b6a90916445e5083605150">prePaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_mouse_click_effect_1a71e9bdef9454470d10dc0a3807986ca5">prePaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_quick_scene_effect_1a0d7d939598d998e5a722a7afb4ffa74d">prePaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_screen_transform_effect_1a79c0084e41a4dc2fd03d5ff4aa77949a">prePaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_show_compositing_effect_1a3026c3e4bf165e82f2cd7966757cf3ea">prePaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_show_fps_effect_1acfea0f5c4dbdd62c2f512f1f40cb925d">prePaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_slide_back_effect_1ac17d5382158040a6c545e55e6437d642">prePaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_slide_effect_1a5735587217f0004c988d69e4ce701a40">prePaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_snap_helper_effect_1a11939bf9dd38b57f7b1a08e50f0b0a20">prePaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_startup_feedback_effect_1a6a2dd70b7f80b8e7694cf0e27dbba28e">prePaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_touch_points_effect_1acacb5d2ec656d437c600104d4b83943e">prePaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_track_mouse_effect_1a05cbedc41a29202b9323a45b1e46cd27">prePaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_wobbly_windows_effect_1a2ddf16f348c8db49d8540a5b070e277c">prePaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_zoom_effect_1a2e3f1a179e7461e1f32e96ca6310f29e">prePaintScreen</reimplementedby>
+        <param>
+          <type>ScreenPrePaintData &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>std::chrono::milliseconds</type>
+          <declname>presentTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called before starting to paint the screen. In this method you can: <itemizedlist>
+<listitem><para>set whether the windows or the entire screen will be transformed </para>
+</listitem>
+<listitem><para>change the region of the screen that will be painted </para>
+</listitem>
+<listitem><para>do various housekeeping tasks such as initing your effect&apos;s variables for the upcoming paint pass or updating animation&apos;s progress</para>
+</listitem>
+</itemizedlist>
+<emphasis>presentTime</emphasis> specifies the expected monotonic time when the rendered frame will be displayed on the screen. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="598" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="376" bodyend="379"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga44ee94161446ce6fb2502376af6515a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::Effect::paintScreen</definition>
+        <argsstring>(const RenderTarget &amp;renderTarget, const RenderViewport &amp;viewport, int mask, const QRegion &amp;region, Output *screen)</argsstring>
+        <name>paintScreen</name>
+        <qualifiedname>KWin::Effect::paintScreen</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_color_picker_effect_1a25bb4303f6b32f7e932e705a7926108b">paintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_magnifier_effect_1ac6a4b12d7aa9f92d2944763e6d916948">paintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_mouse_click_effect_1a88a4a64dd58924a4a9de755690823657">paintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_mouse_mark_effect_1a81f8ee4cb79732c938f4f84e1f724f21">paintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_output_locator_effect_1a00fe408fdb307406109871bc2b6b40c9">paintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_quick_scene_effect_1a0736963c0152e2068e26f639cdfa950c">paintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_screen_shot_effect_1a92167984135dbcdf7c1925956faa13a7">paintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_screen_transform_effect_1a3204fcd2e0051f6847a691a2d967d81f">paintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_show_compositing_effect_1a58f64c6a1a73093ff630e150a977ef85">paintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_show_fps_effect_1add684242792fff163f6a06ad0cd6d274">paintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_show_paint_effect_1af781765d717bbf6b86bfef54d9706a40">paintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_slide_effect_1ae9d2f5c858bef31be832e7d63ac839a5">paintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_snap_helper_effect_1aac1528cb0b41fdb3c2292d871b5da46d">paintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_startup_feedback_effect_1a7a56fae5b260899c3302e35bb821496e">paintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_thumbnail_aside_effect_1a093629e8749bd25c6bafd019ba84aed5">paintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_touch_points_effect_1a30c2980ff4f68bb70d1f6d3d2e0dc342">paintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_zoom_effect_1a27833b5e244cd4a5c3137a128fed48c9">paintScreen</reimplementedby>
+        <param>
+          <type>const RenderTarget &amp;</type>
+          <declname>renderTarget</declname>
+        </param>
+        <param>
+          <type>const RenderViewport &amp;</type>
+          <declname>viewport</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type>Output *</type>
+          <declname>screen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>In this method you can: <itemizedlist>
+<listitem><para>paint something on top of the windows (by painting after calling effects-&gt;<ref refid="group__kwineffects_1ga44ee94161446ce6fb2502376af6515a8" kindref="member">paintScreen()</ref>) </para>
+</listitem>
+<listitem><para>paint multiple desktops and/or multiple copies of the same desktop by calling effects-&gt;<ref refid="group__kwineffects_1ga44ee94161446ce6fb2502376af6515a8" kindref="member">paintScreen()</ref> multiple times</para>
+</listitem>
+</itemizedlist>
+In OpenGL based compositing, the frameworks ensures that the context is current when this method is invoked. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="610" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="381" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga10021cf9704c00d60beae284d53846e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::Effect::postPaintScreen</definition>
+        <argsstring>()</argsstring>
+        <name>postPaintScreen</name>
+        <qualifiedname>KWin::Effect::postPaintScreen</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_animation_effect_1a149ee7d8e665976d69fb6a3510daa9f6">postPaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_blend_changes_1a419df08599fc12082fb7ff0944247028">postPaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_dim_inactive_effect_1a7a7b3121090b8d76500973fba49a325a">postPaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_fall_apart_effect_1abf1462fc8bf179e27cb29ecab6cb7a96">postPaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_kscreen_effect_1af5de5dfb037b1c0527a7bae9679fd11c">postPaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_magic_lamp_effect_1a80c30f3735c200877ffb220f20a5c57d">postPaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_magnifier_effect_1a72e81fe3004ccbac58646d39b9e3ad31">postPaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_mouse_click_effect_1a8e31f473ff244772c91be6ee1fc177e5">postPaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_show_fps_effect_1a210faec8987209568f4c5e5ba6e9fa21">postPaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_slide_back_effect_1a0f379eed3e9b6c7c0c04724896f111f3">postPaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_slide_effect_1a863c59a4d211fe806b34e20c4d509a4a">postPaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_snap_helper_effect_1aa59806708343036194b2e1c3c6b3c2f7">postPaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_startup_feedback_effect_1a50276e5b47a10cfad4749e5e792703b1">postPaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_touch_points_effect_1a10bdb58e0f644d101d7560cbe042e72d">postPaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_wobbly_windows_effect_1a5b0fbd81a207740ebac90546f8a5f3c7">postPaintScreen</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_zoom_effect_1ac7baeffd5ac3747d482dd011bd3dfc32">postPaintScreen</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called after all the painting has been finished. In this method you can: <itemizedlist>
+<listitem><para>schedule next repaint in case of animations You shouldn&apos;t paint anything here.</para>
+</listitem>
+</itemizedlist>
+In OpenGL based compositing, the frameworks ensures that the context is current when this method is invoked. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="620" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="386" bodyend="389"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga2832c7831c0f49f9f5cf0267ffc53672" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::Effect::prePaintWindow</definition>
+        <argsstring>(EffectWindow *w, WindowPrePaintData &amp;data, std::chrono::milliseconds presentTime)</argsstring>
+        <name>prePaintWindow</name>
+        <qualifiedname>KWin::Effect::prePaintWindow</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_animation_effect_1a2f37667a2ccbd4e65c493d7633b029f3">prePaintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_blur_effect_1a8bba67739362d5f3d50e1580fa4296be">prePaintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_fall_apart_effect_1a57a9d27a953306c4e1c3aa5cc6c24254">prePaintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_glide_effect_1a991e31a8720b20c40d0434397e4466c8">prePaintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_kscreen_effect_1a4d9766ddfc0cd4b80add7aabeed5e1fe">prePaintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_magic_lamp_effect_1a788b5df1fe7ea5472dbf90d5f9ca5236">prePaintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_sheet_effect_1ab6c31947dc5ffc74126ae752e1787999">prePaintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_slide_back_effect_1a174d651038e7f48d42bbe14b473d7623">prePaintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_slide_effect_1a6474e7f391e32914d46385ef1c0391b9">prePaintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_sliding_popups_effect_1ab60bf0b3f2bcd6539e6d0d72e8306a3d">prePaintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_wobbly_windows_effect_1ab61cba4718f96d0f93fb5540cb3b4dfc">prePaintWindow</reimplementedby>
+        <param>
+          <type>EffectWindow *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>WindowPrePaintData &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>std::chrono::milliseconds</type>
+          <declname>presentTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called for every window before the actual paint pass In this method you can: <itemizedlist>
+<listitem><para>enable or disable painting of the window (e.g. enable paiting of minimized window) </para>
+</listitem>
+<listitem><para>set window to be painted with translucency </para>
+</listitem>
+<listitem><para>set window to be transformed </para>
+</listitem>
+<listitem><para>request the window to be divided into multiple parts</para>
+</listitem>
+</itemizedlist>
+In OpenGL based compositing, the frameworks ensures that the context is current when this method is invoked.</para>
+<para><emphasis>presentTime</emphasis> specifies the expected monotonic time when the rendered frame will be displayed on the screen. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="636" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="391" bodyend="394"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga0f0292db2bf016a0843ef7cc06219378" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::Effect::paintWindow</definition>
+        <argsstring>(const RenderTarget &amp;renderTarget, const RenderViewport &amp;viewport, EffectWindow *w, int mask, QRegion region, WindowPaintData &amp;data)</argsstring>
+        <name>paintWindow</name>
+        <qualifiedname>KWin::Effect::paintWindow</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_animation_effect_1a86754f3f8727ccb0a0b4f8416c78e235">paintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_blend_changes_1a1e5d56b564281adca4a376218dc366ee">paintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_dim_inactive_effect_1ac4c437997c50d48c4ab623cbddedc67f">paintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_kscreen_effect_1a7536165dc55104022c81a54ff9bf563a">paintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_show_fps_effect_1a7952685b3417252c7ce37dab7373fd47">paintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_show_paint_effect_1ad34874fdbb62716262d72ddc24be7ee5">paintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_slide_back_effect_1adf6f00edd48bb5a009598645f71228d8">paintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_slide_effect_1ab20bb8079454129461c2f63f598f46a5">paintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_sliding_popups_effect_1a55c5a4bbd0beb7aa0f98a222e62e2c98">paintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_thumbnail_aside_effect_1ae5dda2adba4cfd8d3543c5dbacb0c6c8">paintWindow</reimplementedby>
+        <param>
+          <type>const RenderTarget &amp;</type>
+          <declname>renderTarget</declname>
+        </param>
+        <param>
+          <type>const RenderViewport &amp;</type>
+          <declname>viewport</declname>
+        </param>
+        <param>
+          <type>EffectWindow *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>QRegion</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type>WindowPaintData &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the main method for painting windows. In this method you can: <itemizedlist>
+<listitem><para>do various transformations </para>
+</listitem>
+<listitem><para>change opacity of the window </para>
+</listitem>
+<listitem><para>change brightness and/or saturation, if it&apos;s supported</para>
+</listitem>
+</itemizedlist>
+In OpenGL based compositing, the frameworks ensures that the context is current when this method is invoked. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="648" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="396" bodyend="399"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga9b7cf82c6f74331cffabb06c63ef914c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::Effect::postPaintWindow</definition>
+        <argsstring>(EffectWindow *w)</argsstring>
+        <name>postPaintWindow</name>
+        <qualifiedname>KWin::Effect::postPaintWindow</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_glide_effect_1aef5e4608ef83a59e3257fcf3dfa528ee">postPaintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_sheet_effect_1ae00b3525abb8fbf7c0f35f9ab4efee1e">postPaintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_slide_back_effect_1a49b1c7f0c0798b9dfcc4fb98845d90d9">postPaintWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_sliding_popups_effect_1a7c34f618e639f35f1045f9a9bf44b0b4">postPaintWindow</reimplementedby>
+        <param>
+          <type>EffectWindow *</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called for every window after all painting has been finished. In this method you can: <itemizedlist>
+<listitem><para>schedule next repaint for individual window(s) in case of animations You shouldn&apos;t paint anything here.</para>
+</listitem>
+</itemizedlist>
+In OpenGL based compositing, the frameworks ensures that the context is current when this method is invoked. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="658" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="401" bodyend="404"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga30fc2cbbdd90f95568a9e350f34bf2b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::Effect::provides</definition>
+        <argsstring>(Feature)</argsstring>
+        <name>provides</name>
+        <qualifiedname>KWin::Effect::provides</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_blur_effect_1a23a30186ebba6a0e10be9b6c7dc8df04">provides</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_color_blindness_correction_effect_1a6b99e143fd445c4f466e350fff87749a">provides</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_contrast_effect_1ac75adc75bb74068052707369e510f256">provides</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_highlight_window_effect_1a4548b2d7c01d193ac45a38d7ae0d9bef">provides</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_invert_effect_1aafeb3f5320263aade98b09f0c60956c3">provides</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_system_bell_effect_1a175eb7e5fb5b338487e0e3da38051492">provides</reimplementedby>
+        <param>
+          <type>Feature</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called on Transparent resizes. return true if your effect substitutes questioned feature </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="664" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="406" bodyend="409"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga5fb1bc87ff54dcc2cfe87b070816ab00" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::Effect::perform</definition>
+        <argsstring>(Feature feature, const QVariantList &amp;arguments)</argsstring>
+        <name>perform</name>
+        <qualifiedname>KWin::Effect::perform</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_highlight_window_effect_1a1a0695a592e9f9969cccc509bba25184">perform</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_system_bell_effect_1adbbbd832f84a4730c283f8716bc7bed1">perform</reimplementedby>
+        <param>
+          <type>Feature</type>
+          <declname>feature</declname>
+        </param>
+        <param>
+          <type>const QVariantList &amp;</type>
+          <declname>arguments</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs the <computeroutput>feature</computeroutput> with the <computeroutput>arguments</computeroutput>.</para>
+<para>This allows to have specific protocols between <ref refid="namespace_k_win" kindref="compound">KWin</ref> core and an <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref>.</para>
+<para>The method is supposed to return <computeroutput>true</computeroutput> if it performed the features, <computeroutput>false</computeroutput> otherwise.</para>
+<para>The default implementation returns <computeroutput>false</computeroutput>. <simplesect kind="since"><para>5.8 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="677" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="483" bodyend="486"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga254b1a3e8bb8b9b671e9b000ca027b7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::Effect::drawWindow</definition>
+        <argsstring>(const RenderTarget &amp;renderTarget, const RenderViewport &amp;viewport, EffectWindow *w, int mask, const QRegion &amp;region, WindowPaintData &amp;data)</argsstring>
+        <name>drawWindow</name>
+        <qualifiedname>KWin::Effect::drawWindow</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_blur_effect_1a287fa715361c0797f247ec3a830d2225">drawWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_contrast_effect_1a118354adfc091cf77afb55ef4332bf8b">drawWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_cross_fade_effect_1af425332f0e69817a60019b5a64a18746">drawWindow</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_offscreen_effect_1a0a6ba121aa03a17457d3080054ef1615">drawWindow</reimplementedby>
+        <param>
+          <type>const RenderTarget &amp;</type>
+          <declname>renderTarget</declname>
+        </param>
+        <param>
+          <type>const RenderViewport &amp;</type>
+          <declname>viewport</declname>
+        </param>
+        <param>
+          <type>EffectWindow *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type>WindowPaintData &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Can be called to draw multiple copies (e.g. thumbnails) of a window. You can change window&apos;s opacity/brightness/etc here, but you can&apos;t do any transformations.</para>
+<para>In OpenGL based compositing, the frameworks ensures that the context is current when this method is invoked. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="687" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="421" bodyend="424"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga7b142933c38cb9b4a433b768b266e7cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::Effect::windowInputMouseEvent</definition>
+        <argsstring>(QEvent *e)</argsstring>
+        <name>windowInputMouseEvent</name>
+        <qualifiedname>KWin::Effect::windowInputMouseEvent</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_quick_scene_effect_1a35e3d1c44216d995e5909607c9c1df52">windowInputMouseEvent</reimplementedby>
+        <param>
+          <type>QEvent *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="689" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="363" bodyend="365"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gab5e0581ae4b2dffe8014ff5cf6c21158" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::Effect::grabbedKeyboardEvent</definition>
+        <argsstring>(QKeyEvent *e)</argsstring>
+        <name>grabbedKeyboardEvent</name>
+        <qualifiedname>KWin::Effect::grabbedKeyboardEvent</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_quick_scene_effect_1aa82a50b9a15168bbc3416744d746f103">grabbedKeyboardEvent</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_tiles_editor_effect_1a4a5f810a51a3c3bfc87df7a79919e8e1">grabbedKeyboardEvent</reimplementedby>
+        <param>
+          <type>QKeyEvent *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="690" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="367" bodyend="369"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga596b6c0ed146b97b293f5db5f27fc40f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::Effect::isActive</definition>
+        <argsstring>() const</argsstring>
+        <name>isActive</name>
+        <qualifiedname>KWin::Effect::isActive</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_animation_effect_1aedee2e7f119b23b594b11389629cfd7f">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_blend_changes_1a1278a62c0557c566e25f17e21f3b1cac">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_blur_effect_1a5f554f81efd8ce083c89f4135cecc97b">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_color_blindness_correction_effect_1a5018e69ddd2d7b592c1a5cbd19aaa79b">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_color_picker_effect_1a97b468eb07b3860d5e0f3a1190b0804f">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_contrast_effect_1a5833f4f81307c568049d59cd98660b11">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_dim_inactive_effect_1a7de5a83cd18feba308803d0f22d231c2">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_fall_apart_effect_1a072fd7b339be9ff2764b6345459774fd">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_glide_effect_1a46716131aaa19825ce7c30e722e93c80">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_hide_cursor_effect_1a649d4d3d02b5a84ed627e277bd8a6087">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_invert_effect_1aee1dfa11d9a3eae2de6ec3daa2e1ab18">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_kscreen_effect_1a7c2dfea613b83510a6dde5a28d2e1ace">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_magic_lamp_effect_1aa0c93774f14024de2d284c5c59649479">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_magnifier_effect_1a03ef7e8ec474936ff0a77a25c6ab0337">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_mouse_click_effect_1afd9bd4a61cacd9141be793fa36190616">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_mouse_mark_effect_1ab92c448879fa5a5e83dcaeff5040e645">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_output_locator_effect_1acc5ed5215819fe1d7c6d29e33f958fa6">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_quick_scene_effect_1a6a675af8b47f99d140fe248641755440">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_screen_edge_effect_1ae1b8ce50b370da649d2ed26949c92e94">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_screen_shot_effect_1a9d7011962911b7d98683f3eeaae359ca">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_screen_transform_effect_1a84fe62fc3d69ea50f1f3168a42c52f69">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_shake_cursor_effect_1aa25e728bdb2622c5085ef3c2c213e0ae">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_sheet_effect_1af7c85805596ed28cdd6662b5b577c232">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_show_paint_effect_1a74b5f198507074f83d154c93f4ee2618">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_slide_back_effect_1a19665dc3a67f1ac9f0855cc6ba165ebd">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_slide_effect_1a63ee05a844e140d4f0060e72eb85884b">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_sliding_popups_effect_1a3ee50d74e6d43fd8168bc04fdb7c6d78">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_snap_helper_effect_1a9da393f488ca320a3dde07722e2031a1">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_startup_feedback_effect_1a383b0db88ac3cec4d64bcef2d327ce24">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_system_bell_effect_1af2906166b0bdf678d0604e9068580481">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_thumbnail_aside_effect_1a1952a974fe4a7a94798fc7a6a9e9f721">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_touch_points_effect_1ac62f0e69310b6b24c1d825bd5748e46d">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_track_mouse_effect_1af785e4a26facaec5ae56e241e78a3341">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_wobbly_windows_effect_1a7f518538e5a62f0a2d108042136b5e38">isActive</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_zoom_effect_1aaa2064a62ae28697504e327cf524097b">isActive</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Overwrite this method to indicate whether your effect will be doing something in the next frame to be rendered. If the method returns <computeroutput>false</computeroutput> the effect will be excluded from the chained methods in the next rendered frame.</para>
+<para>This method is called always directly before the paint loop begins. So it is totally fine to e.g. react on a window event, issue a repaint to trigger an animation and change a flag to indicate that this method returns <computeroutput>true</computeroutput>.</para>
+<para>As the method is called each frame, you should not perform complex calculations. Best use just a boolean flag.</para>
+<para>The default implementation of this method returns <computeroutput>true</computeroutput>. <simplesect kind="since"><para>4.8 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="707" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="411" bodyend="414"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga0c159e00c3a51ca733bea49cf8d52691" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QString</type>
+        <definition>QString KWin::Effect::debug</definition>
+        <argsstring>(const QString &amp;parameter) const</argsstring>
+        <name>debug</name>
+        <qualifiedname>KWin::Effect::debug</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_animation_effect_1ad6d998c75de0348a1f99ed13cc0a4dba">debug</reimplementedby>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>parameter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reimplement this method to provide online debugging. This could be as trivial as printing specific detail information about the effect state but could also be used to move the effect in and out of a special debug modes, clear bogus data, etc. Notice that the functions is const by intent! Whenever you alter the state of the object due to random user input, you should do so with greatest care, hence const_cast&lt;&gt; your object - signalling &quot;let me alone, i know what i&apos;m doing&quot; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>parameter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A freeform string user input for your effect to interpret. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>4.11 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="720" column="21" bodyfile="kwin/src/effect/effect.cpp" bodystart="416" bodyend="419"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga120531588e58691a5a18028158d2947a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int KWin::Effect::requestedEffectChainPosition</definition>
+        <argsstring>() const</argsstring>
+        <name>requestedEffectChainPosition</name>
+        <qualifiedname>KWin::Effect::requestedEffectChainPosition</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_blend_changes_1a4af2cfe8603f43657a44def7eb57bc14">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_blur_effect_1a3b7801dbcb72a8e5e0b54ff232714337">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_color_blindness_correction_effect_1a0ecdc11cbf520b530ed30a924551d36e">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_color_picker_effect_1ac8bea676b6f334cef0d1e49c61e971bf">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_contrast_effect_1ab17d5f90a4e02b84ade103a7f5ae6176">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_dim_inactive_effect_1a3071acd9931f8daae3b2343b7136a3da">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_fall_apart_effect_1ae662a9ac65a0e4dfa38d09c7c66ece76">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_glide_effect_1add9b7899a07d20c6aeb8c13268c2f559">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_highlight_window_effect_1a51df352a2fc53332a465992399f6ae21">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_invert_effect_1a08af5fbcff074719e15b01ebffa2098b">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_kscreen_effect_1aefde27d1005deb6c83fd296252e5d78d">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_magic_lamp_effect_1a7ca4a0b6726da765a1c3206f89d0c12f">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_mouse_mark_effect_1aab534e48d9b81910f36c0c705b4232dc">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_overview_effect_1ac57b3a393d5dfe08db32fb43a5ffcf63">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_screen_edge_effect_1a535ae85c943cc1e0d7414db3bc0c0e00">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_screen_shot_effect_1a125b9558a7e9257215a712a45e3a9852">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_screen_transform_effect_1a14f2a9db5547a6c3948d0de7756dd8b1">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_scripted_effect_1aa1c85dfde7c960c579f5701ccfec7c4e">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_scripted_quick_scene_effect_1afd21e29f3b202a771c82eeabf10ae35f">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_sheet_effect_1ad1e14c396726694d268a64a5312ef4b9">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_slide_back_effect_1a1ee691059dd16fc9b3c56fc00c4d0e94">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_slide_effect_1ae1894a93388ff7fa3d65b922034d3800">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_sliding_popups_effect_1ae7c2b1edfcab347f7022992f11cbf4cc">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_startup_feedback_effect_1a37c06b30185acdeca2b1a9351a0f83a8">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_system_bell_effect_1ad7b89d939d0ac295dac04ab9d4d0b468">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_tiles_editor_effect_1af2ebfdd37c0bf53f60edc4f2956d47eb">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_window_view_effect_1aef3f3531fd4356c990f7867b5321850b">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_wobbly_windows_effect_1aa3536bf83dc6d62acdf1429ea46328a0">requestedEffectChainPosition</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_zoom_effect_1aa9223deed59ea567bf25298820600f9d">requestedEffectChainPosition</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reimplement this method to indicate where in the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> chain the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> should be placed.</para>
+<para>A low number indicates early chain position, thus before other Effects got called, a high number indicates a late position. The returned number should be in the interval [0, 100]. The default value is 0.</para>
+<para>In KWin4 this information was provided in the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref>&apos;s desktop file as property X-KDE-Ordering. In the case of Scripted Effects this property is still used.</para>
+<para><simplesect kind="since"><para>5.0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="734" column="17" bodyfile="kwin/src/effect/effect.cpp" bodystart="459" bodyend="462"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga315fd305e7570f41e7bce7db6812381f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::Effect::touchDown</definition>
+        <argsstring>(qint32 id, const QPointF &amp;pos, std::chrono::microseconds time)</argsstring>
+        <name>touchDown</name>
+        <qualifiedname>KWin::Effect::touchDown</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_quick_scene_effect_1ac651b98599c748937a04e4932ec3da0e">touchDown</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_touch_points_effect_1a64f0f32fdda6bd97c5568f89e36ca179">touchDown</reimplementedby>
+        <param>
+          <type>qint32</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>std::chrono::microseconds</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A touch point was pressed.</para>
+<para>If the effect wants to exclusively use the touch event it should return <computeroutput>true</computeroutput>. If <computeroutput>false</computeroutput> is returned the touch event is passed to further effects.</para>
+<para>In general an <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> should only return <computeroutput>true</computeroutput> if it is the exclusive effect getting input events. E.g. has grabbed mouse events.</para>
+<para>Default implementation returns <computeroutput>false</computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The unique id of the touch point </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position of the touch point in global coordinates </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Timestamp</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="group__kwineffects_1ga54d00a9e05b5d4597db40c2f5b1d36de" kindref="member">touchMotion</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="group__kwineffects_1gaf3871967d6199eb7c87621bc75b925bb" kindref="member">touchUp</ref> </para>
+</simplesect>
+<simplesect kind="since"><para>5.8 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="755" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="464" bodyend="467"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga54d00a9e05b5d4597db40c2f5b1d36de" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::Effect::touchMotion</definition>
+        <argsstring>(qint32 id, const QPointF &amp;pos, std::chrono::microseconds time)</argsstring>
+        <name>touchMotion</name>
+        <qualifiedname>KWin::Effect::touchMotion</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_quick_scene_effect_1a4da9d3ed861829bb7abcbb4113c2079a">touchMotion</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_touch_points_effect_1af438b9b693a3c8cfdb1471665c2fffb8">touchMotion</reimplementedby>
+        <param>
+          <type>qint32</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>std::chrono::microseconds</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A touch point moved.</para>
+<para>If the effect wants to exclusively use the touch event it should return <computeroutput>true</computeroutput>. If <computeroutput>false</computeroutput> is returned the touch event is passed to further effects.</para>
+<para>In general an <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> should only return <computeroutput>true</computeroutput> if it is the exclusive effect getting input events. E.g. has grabbed mouse events.</para>
+<para>Default implementation returns <computeroutput>false</computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The unique id of the touch point </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position of the touch point in global coordinates </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Timestamp</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="group__kwineffects_1ga315fd305e7570f41e7bce7db6812381f" kindref="member">touchDown</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="group__kwineffects_1gaf3871967d6199eb7c87621bc75b925bb" kindref="member">touchUp</ref> </para>
+</simplesect>
+<simplesect kind="since"><para>5.8 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="775" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="469" bodyend="472"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gaf3871967d6199eb7c87621bc75b925bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::Effect::touchUp</definition>
+        <argsstring>(qint32 id, std::chrono::microseconds time)</argsstring>
+        <name>touchUp</name>
+        <qualifiedname>KWin::Effect::touchUp</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_quick_scene_effect_1ad5d08b788a7b90ddaa3acd7f06f7720f">touchUp</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_touch_points_effect_1a44eaa40230ef9ea1908a1a4038c488ce">touchUp</reimplementedby>
+        <param>
+          <type>qint32</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>std::chrono::microseconds</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A touch point was released.</para>
+<para>If the effect wants to exclusively use the touch event it should return <computeroutput>true</computeroutput>. If <computeroutput>false</computeroutput> is returned the touch event is passed to further effects.</para>
+<para>In general an <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> should only return <computeroutput>true</computeroutput> if it is the exclusive effect getting input events. E.g. has grabbed mouse events.</para>
+<para>Default implementation returns <computeroutput>false</computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The unique id of the touch point </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Timestamp</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="group__kwineffects_1ga315fd305e7570f41e7bce7db6812381f" kindref="member">touchDown</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="group__kwineffects_1ga54d00a9e05b5d4597db40c2f5b1d36de" kindref="member">touchMotion</ref> </para>
+</simplesect>
+<simplesect kind="since"><para>5.8 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="794" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="474" bodyend="477"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gaa31554949bc00085e6380b50be16138e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::Effect::touchCancel</definition>
+        <argsstring>()</argsstring>
+        <name>touchCancel</name>
+        <qualifiedname>KWin::Effect::touchCancel</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_quick_scene_effect_1a025cb10749bb171c06e1d32c190f1663">touchCancel</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>All touch points were canceled <simplesect kind="since"><para>6.3 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="799" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="479" bodyend="481"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga4ed77506be381680bf664dbc8c20e036" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::Effect::tabletToolProximity</definition>
+        <argsstring>(TabletToolProximityEvent *event)</argsstring>
+        <name>tabletToolProximity</name>
+        <qualifiedname>KWin::Effect::tabletToolProximity</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_mouse_click_effect_1aba1f7be1b3fa22d269fe02d214e8657d">tabletToolProximity</reimplementedby>
+        <param>
+          <type>TabletToolProximityEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>There has been a proximity tablet tool event. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="804" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="488" bodyend="491"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga1d4ae01f5935ea887a12018d59191cbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::Effect::tabletToolAxis</definition>
+        <argsstring>(TabletToolAxisEvent *event)</argsstring>
+        <name>tabletToolAxis</name>
+        <qualifiedname>KWin::Effect::tabletToolAxis</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_mouse_click_effect_1a6c6fa193c35ae68c7b5028dc6c9a4dfd">tabletToolAxis</reimplementedby>
+        <param>
+          <type>TabletToolAxisEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>There has been an axis tablet tool event. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="809" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="493" bodyend="496"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gaf16e9ca42cceb738fb859d1a1a462548" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::Effect::tabletToolTip</definition>
+        <argsstring>(TabletToolTipEvent *event)</argsstring>
+        <name>tabletToolTip</name>
+        <qualifiedname>KWin::Effect::tabletToolTip</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_mouse_click_effect_1a0d6474aeb624796e9b5ed868a86a6b0c">tabletToolTip</reimplementedby>
+        <param>
+          <type>TabletToolTipEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>There has been a tip tablet tool event. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="814" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="498" bodyend="501"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga7a984d7d83dfa97962b8404301c6aba9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::Effect::tabletToolButtonEvent</definition>
+        <argsstring>(uint button, bool pressed, quint64 toolId)</argsstring>
+        <name>tabletToolButtonEvent</name>
+        <qualifiedname>KWin::Effect::tabletToolButtonEvent</qualifiedname>
+        <param>
+          <type>uint</type>
+          <declname>button</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>pressed</declname>
+        </param>
+        <param>
+          <type>quint64</type>
+          <declname>toolId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>There has been an event from a button on a drawing tablet tool</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>button</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which button </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pressed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true if pressed, false when released </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>toolId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the identifier of the tool id</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>5.25 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="825" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="503" bodyend="506"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga2d22a8f0b8a4d81615dff67dc1ef970f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::Effect::tabletPadButtonEvent</definition>
+        <argsstring>(uint button, bool pressed, void *device)</argsstring>
+        <name>tabletPadButtonEvent</name>
+        <qualifiedname>KWin::Effect::tabletPadButtonEvent</qualifiedname>
+        <param>
+          <type>uint</type>
+          <declname>button</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>pressed</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>device</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>There has been an event from a button on a drawing tablet pad</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>button</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which button </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pressed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true if pressed, false when released </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>device</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the identifier of the tool id</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>5.25 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="836" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="508" bodyend="511"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga4998fb0983bd97163935cad2c4dedd76" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::Effect::tabletPadStripEvent</definition>
+        <argsstring>(int number, int position, bool isFinger, void *device)</argsstring>
+        <name>tabletPadStripEvent</name>
+        <qualifiedname>KWin::Effect::tabletPadStripEvent</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>number</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isFinger</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>device</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>There has been an event from a input strip on a drawing tablet pad</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which strip </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value within the strip that was selected </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isFinger</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if it was activated with a finger </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>device</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the identifier of the tool id</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>5.25 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="848" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="513" bodyend="516"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gaa084e5a45597f5775213715eb5506f63" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::Effect::tabletPadRingEvent</definition>
+        <argsstring>(int number, int position, bool isFinger, void *device)</argsstring>
+        <name>tabletPadRingEvent</name>
+        <qualifiedname>KWin::Effect::tabletPadRingEvent</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>number</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isFinger</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>device</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>There has been an event from a input ring on a drawing tablet pad</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which ring </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value within the ring that was selected </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isFinger</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if it was activated with a finger </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>device</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the identifier of the tool id</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>5.25 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="860" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="518" bodyend="521"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga4da344d8b8f2cb9eecd6e64a9b758740" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QPointF</type>
+        <definition>QPointF KWin::Effect::cursorPos</definition>
+        <argsstring>()</argsstring>
+        <name>cursorPos</name>
+        <qualifiedname>KWin::Effect::cursorPos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="862" column="20" bodyfile="kwin/src/effect/effect.cpp" bodystart="442" bodyend="445"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gab9bcf52072fe74567496b0a894d1d873" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double KWin::Effect::animationTime</definition>
+        <argsstring>(const KConfigGroup &amp;cfg, const QString &amp;key, std::chrono::milliseconds defaultTime)</argsstring>
+        <name>animationTime</name>
+        <qualifiedname>KWin::Effect::animationTime</qualifiedname>
+        <param>
+          <type>const KConfigGroup &amp;</type>
+          <declname>cfg</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>std::chrono::milliseconds</type>
+          <declname>defaultTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Read animation time from the configuration and possibly adjust using animationTimeFactor(). The configuration value in the effect should also have special value &apos;default&apos; (set using QSpinBox::setSpecialValueText()) with the value 0. This special value is adjusted using the global animation speed, otherwise the exact time configured is returned. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cfg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>configuration group to read value from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>configuration key to read value from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>defaultTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>default animation time in milliseconds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="874" column="19" bodyfile="kwin/src/effect/effect.cpp" bodystart="447" bodyend="451"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga3a167fe6d9c46376ed46db13caf2d135" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double KWin::Effect::animationTime</definition>
+        <argsstring>(std::chrono::milliseconds defaultTime)</argsstring>
+        <name>animationTime</name>
+        <qualifiedname>KWin::Effect::animationTime</qualifiedname>
+        <param>
+          <type>std::chrono::milliseconds</type>
+          <declname>defaultTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="879" column="19" bodyfile="kwin/src/effect/effect.cpp" bodystart="453" bodyend="457"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga0ba05f1463195d0f92ea1dd3396a5d16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>int</type>
+        <definition>int KWin::Effect::animationTime</definition>
+        <argsstring>(std::chrono::milliseconds defaultDuration)</argsstring>
+        <name>animationTime</name>
+        <qualifiedname>KWin::Effect::animationTime</qualifiedname>
+        <param>
+          <type>std::chrono::milliseconds</type>
+          <declname>defaultDuration</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="885" column="9" bodyfile="kwin/src/effect/effect.h" bodystart="911" bodyend="914"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga7b0ecb57667179e95c188f0ee7416d00" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>static double KWin::Effect::interpolate</definition>
+        <argsstring>(double x, double y, double a)</argsstring>
+        <name>interpolate</name>
+        <qualifiedname>KWin::Effect::interpolate</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Linearly interpolates between <computeroutput>x</computeroutput> and <computeroutput>y</computeroutput>.</para>
+<para>Returns <computeroutput>x</computeroutput> when <computeroutput>a</computeroutput> = 0; returns <computeroutput>y</computeroutput> when <computeroutput>a</computeroutput> = 1. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="891" column="19" bodyfile="kwin/src/effect/effect.h" bodystart="891" bodyend="894"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga1efc42cd9be15e8200c6e55f6bf47cb8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Effect::setPositionTransformations</definition>
+        <argsstring>(WindowPaintData &amp;data, QRect &amp;region, EffectWindow *w, const QRect &amp;r, Qt::AspectRatioMode aspect)</argsstring>
+        <name>setPositionTransformations</name>
+        <qualifiedname>KWin::Effect::setPositionTransformations</qualifiedname>
+        <param>
+          <type>WindowPaintData &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>QRect &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type>EffectWindow *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>const QRect &amp;</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>Qt::AspectRatioMode</type>
+          <declname>aspect</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Helper to set <ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref> and QRegion to necessary transformations so that a following <ref refid="group__kwineffects_1ga254b1a3e8bb8b9b671e9b000ca027b7c" kindref="member">drawWindow()</ref> would put the window at the requested geometry (useful for thumbnails) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="898" column="17" bodyfile="kwin/src/effect/effect.cpp" bodystart="426" bodyend="440"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga7cf8035c970fcde177e3038d79015289" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::Effect::blocksDirectScanout</definition>
+        <argsstring>() const</argsstring>
+        <name>blocksDirectScanout</name>
+        <qualifiedname>KWin::Effect::blocksDirectScanout</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_blur_effect_1a74393318ecaf1a6ab1347a078972b179">blocksDirectScanout</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_contrast_effect_1a17ee36d3be19cfccd03c9fed8db1d2c0">blocksDirectScanout</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_cross_fade_effect_1a07422c4fb7d5c983a07ffffc677c5ec2">blocksDirectScanout</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_glide_effect_1a914b2eae5794f410c84b7655d130ffd5">blocksDirectScanout</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_offscreen_effect_1a112119e708233a1ddcfac249089f2fee">blocksDirectScanout</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_show_compositing_effect_1aa2fcad6e296a189e7b7544332455ceba">blocksDirectScanout</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_sliding_popups_effect_1abebda0519daab8ac68275237f455d522">blocksDirectScanout</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>overwrite this method to return false if your effect does not need to be drawn over opaque fullscreen windows </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="904" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="523" bodyend="526"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gacc4f9a14a7d9cc2bbec63c183268dcbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::EffectPluginFactory::EffectPluginFactory</definition>
+        <argsstring>()</argsstring>
+        <name>EffectPluginFactory</name>
+        <qualifiedname>KWin::EffectPluginFactory::EffectPluginFactory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="923" column="5" bodyfile="kwin/src/effect/effect.cpp" bodystart="528" bodyend="530"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga1c68ca4be715ddd692d0881fde53ede8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::EffectPluginFactory::~EffectPluginFactory</definition>
+        <argsstring>() override</argsstring>
+        <name>~EffectPluginFactory</name>
+        <qualifiedname>KWin::EffectPluginFactory::~EffectPluginFactory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="924" column="5" bodyfile="kwin/src/effect/effect.cpp" bodystart="532" bodyend="534"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1ga47596e8d3d377af809f3bb26cda507f6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::EffectPluginFactory::isSupported</definition>
+        <argsstring>() const</argsstring>
+        <name>isSupported</name>
+        <qualifiedname>KWin::EffectPluginFactory::isSupported</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns whether the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> is supported.</para>
+<para>An <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> can implement this method to determine at runtime whether the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> is supported.</para>
+<para>If the current compositing backend is not supported it should return <computeroutput>false</computeroutput>.</para>
+<para>This method is optional, by default <computeroutput>true</computeroutput> is returned. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="934" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="541" bodyend="544"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gae83860aca4784876f06d9794163d86bb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::EffectPluginFactory::enabledByDefault</definition>
+        <argsstring>() const</argsstring>
+        <name>enabledByDefault</name>
+        <qualifiedname>KWin::EffectPluginFactory::enabledByDefault</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns whether the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> should get enabled by default.</para>
+<para>This function provides a way for an effect to override the default at runtime, e.g. based on the capabilities of the hardware.</para>
+<para>This method is optional; the effect doesn&apos;t have to provide it.</para>
+<para>Note that this function is only called if the supported() function returns true, and if X-KDE-PluginInfo-EnabledByDefault is set to true in the .desktop file.</para>
+<para>This method is optional, by default <computeroutput>true</computeroutput> is returned. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="948" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="536" bodyend="539"/>
+      </memberdef>
+      <memberdef kind="function" id="group__kwineffects_1gadd5b5621a7a2023fbe3b3f3d4fba0637" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="class_k_win_1_1_effect" kindref="compound">KWin::Effect</ref> *</type>
+        <definition>virtual KWin::Effect * KWin::EffectPluginFactory::createEffect</definition>
+        <argsstring>() const =0</argsstring>
+        <name>createEffect</name>
+        <qualifiedname>KWin::EffectPluginFactory::createEffect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method returns the created <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="952" column="26"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="">
+      <memberdef kind="slot" id="group__kwineffects_1gab8a94f591b743b59b7285911e641e7d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::Effect::borderActivated</definition>
+        <argsstring>(ElectricBorder border)</argsstring>
+        <name>borderActivated</name>
+        <qualifiedname>KWin::Effect::borderActivated</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_overview_effect_1abbfa76ee40d3cb367a2b4a6dcece5352">borderActivated</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_window_view_effect_1a0b774baae51e9a8fa502478e778e0798">borderActivated</reimplementedby>
+        <param>
+          <type>ElectricBorder</type>
+          <declname>border</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="907" column="18" bodyfile="kwin/src/effect/effect.cpp" bodystart="371" bodyend="374"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__kwineffects_1ga46b145d7b96cec35ad12eb095341c80b" prot="public" static="no">
+        <name>KWIN_EFFECT_API_MAKE_VERSION</name>
+        <param><defname>major</defname></param>
+        <param><defname>minor</defname></param>
+        <initializer>((major) &lt;&lt; 8 | (minor))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="102" column="9" bodyfile="kwin/src/effect/effect.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__kwineffects_1gad17745c60c4c5d12b34ad15ab17fc6b6" prot="public" static="no">
+        <name>KWIN_EFFECT_API_VERSION_MAJOR</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="103" column="9" bodyfile="kwin/src/effect/effect.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__kwineffects_1ga75d7750a20d3bce22eecf180b4a4e9e7" prot="public" static="no">
+        <name>KWIN_EFFECT_API_VERSION_MINOR</name>
+        <initializer>236</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="104" column="9" bodyfile="kwin/src/effect/effect.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__kwineffects_1gac8672e5bafe8c84ba66ab350429b00e9" prot="public" static="no">
+        <name>KWIN_EFFECT_API_VERSION</name>
+        <initializer>    <ref refid="group__kwineffects_1ga46b145d7b96cec35ad12eb095341c80b" kindref="member">KWIN_EFFECT_API_MAKE_VERSION</ref>( \
+    <ref refid="group__kwineffects_1gad17745c60c4c5d12b34ad15ab17fc6b6" kindref="member">KWIN_EFFECT_API_VERSION_MAJOR</ref>, <ref refid="group__kwineffects_1ga75d7750a20d3bce22eecf180b4a4e9e7" kindref="member">KWIN_EFFECT_API_VERSION_MINOR</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="105" column="9" bodyfile="kwin/src/effect/effect.h" bodystart="105" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="define" id="group__kwineffects_1gabd8c29ca35274302e404cabda7de27bf" prot="public" static="no">
+        <name>EffectPluginFactory_iid</name>
+        <initializer>&quot;org.kde.kwin.EffectPluginFactory&quot; KWIN_PLUGIN_VERSION_STRING</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="955" column="9" bodyfile="kwin/src/effect/effect.h" bodystart="955" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__kwineffects_1gac3ef82ec8bea0e99eb4f8baf4674c247" prot="public" static="no">
+        <name>KWIN_PLUGIN_FACTORY_NAME</name>
+        <initializer>KPLUGINFACTORY_PLUGIN_CLASS_INTERNAL_NAME</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="956" column="9" bodyfile="kwin/src/effect/effect.h" bodystart="956" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__kwineffects_1gada17f15863f1f3efe698df298a42e6bd" prot="public" static="no">
+        <name>KWIN_EFFECT_FACTORY_SUPPORTED_ENABLED</name>
+        <param><defname>className</defname></param>
+        <param><defname>jsonFile</defname></param>
+        <param><defname>supported</defname></param>
+        <param><defname>enabled</defname></param>
+        <initializer>    class <ref refid="group__kwineffects_1gac3ef82ec8bea0e99eb4f8baf4674c247" kindref="member">KWIN_PLUGIN_FACTORY_NAME</ref> : public <ref refid="class_k_win_1_1_effect_plugin_factory" kindref="compound">KWin::EffectPluginFactory</ref>                  \
+    {                                                                                  \
+        Q_OBJECT                                                                       \
+        Q_PLUGIN_METADATA(IID <ref refid="group__kwineffects_1gabd8c29ca35274302e404cabda7de27bf" kindref="member">EffectPluginFactory_iid</ref> FILE jsonFile)                   \
+        Q_INTERFACES(KPluginFactory)                                                   \
+    public:                                                                            \
+        explicit <ref refid="group__kwineffects_1gac3ef82ec8bea0e99eb4f8baf4674c247" kindref="member">KWIN_PLUGIN_FACTORY_NAME</ref>()                                            \
+        {                                                                              \
+        }                                                                              \
+        ~<ref refid="group__kwineffects_1gac3ef82ec8bea0e99eb4f8baf4674c247" kindref="member">KWIN_PLUGIN_FACTORY_NAME</ref>()                                                    \
+        {                                                                              \
+        }                                                                              \
+        bool isSupported() const override                                              \
+        {                                                                              \
+            supported                                                                  \
+        }                                                                              \
+        bool enabledByDefault() const override{                                        \
+            enabled} <ref refid="class_k_win_1_1_effect" kindref="compound">KWin::Effect</ref> *createEffect() const override                       \
+        {                                                                              \
+            return new className();                                                    \
+        }                                                                              \
+    };</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Defines an EffectPluginFactory sub class with customized isSupported and enabledByDefault methods.</para>
+<para>If the Effect to be created does not need the isSupported or enabledByDefault methods prefer the simplified KWIN_EFFECT_FACTORY, KWIN_EFFECT_FACTORY_SUPPORTED or KWIN_EFFECT_FACTORY_ENABLED macros which create an EffectPluginFactory with a useable default value.</para>
+<para>This API is not providing binary compatibility and thus the effect plugin must be compiled against the same kwineffects library version as <ref refid="namespace_k_win" kindref="compound">KWin</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>factoryName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name to be used for the EffectPluginFactory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>className</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The class name of the Effect sub class which is to be created by the factory </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>jsonFile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the json file to be compiled into the plugin as metadata </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>supported</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source code to go into the isSupported() method, must return a boolean </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source code to go into the enabledByDefault() method, must return a boolean </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="974" column="9" bodyfile="kwin/src/effect/effect.h" bodystart="974" bodyend="996"/>
+      </memberdef>
+      <memberdef kind="define" id="group__kwineffects_1gaa4c2b4e484444274920618ead97337a3" prot="public" static="no">
+        <name>KWIN_EFFECT_FACTORY_ENABLED</name>
+        <param><defname>className</defname></param>
+        <param><defname>jsonFile</defname></param>
+        <param><defname>enabled</defname></param>
+        <initializer>    <ref refid="group__kwineffects_1gada17f15863f1f3efe698df298a42e6bd" kindref="member">KWIN_EFFECT_FACTORY_SUPPORTED_ENABLED</ref>(className, jsonFile, return true;, enabled)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="998" column="9" bodyfile="kwin/src/effect/effect.h" bodystart="998" bodyend="999"/>
+      </memberdef>
+      <memberdef kind="define" id="group__kwineffects_1gacab13b858ad6e049403685dfcb2a8d65" prot="public" static="no">
+        <name>KWIN_EFFECT_FACTORY_SUPPORTED</name>
+        <param><defname>className</defname></param>
+        <param><defname>jsonFile</defname></param>
+        <param><defname>supported</defname></param>
+        <initializer>    <ref refid="group__kwineffects_1gada17f15863f1f3efe698df298a42e6bd" kindref="member">KWIN_EFFECT_FACTORY_SUPPORTED_ENABLED</ref>(className, jsonFile, supported, return true;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="1001" column="9" bodyfile="kwin/src/effect/effect.h" bodystart="1001" bodyend="1002"/>
+      </memberdef>
+      <memberdef kind="define" id="group__kwineffects_1ga70e7ca51db99c7f3d1508c6c0e07c7e3" prot="public" static="no">
+        <name>KWIN_EFFECT_FACTORY</name>
+        <param><defname>className</defname></param>
+        <param><defname>jsonFile</defname></param>
+        <initializer>    <ref refid="group__kwineffects_1gada17f15863f1f3efe698df298a42e6bd" kindref="member">KWIN_EFFECT_FACTORY_SUPPORTED_ENABLED</ref>(className, jsonFile, return true;, return true;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/effect.h" line="1004" column="9" bodyfile="kwin/src/effect/effect.h" bodystart="1004" bodyend="1005"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="namespace_k_win" kindref="compound">KWin</ref> effects library contains necessary classes for creating new <ref refid="namespace_k_win" kindref="compound">KWin</ref> compositing effects.</para>
+<sect1 id="group__kwineffects_1creating">
+<title>Creating new effects</title><para>This example will demonstrate the basics of creating an effect. We&apos;ll use CoolEffect as the class name, cooleffect as internal name and &quot;Cool Effect&quot; as user-visible name of the effect.</para>
+<para>This example doesn&apos;t demonstrate how to write the effect&apos;s code. For that, see the documentation of the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> class.</para>
+<sect2 id="group__kwineffects_1creating-class">
+<title>CoolEffect class</title><para>First you need to create CoolEffect class which has to be a subclass of <ref refid="class_k_win_1_1_effect" kindref="compound">KWin::Effect</ref>. In that class you can reimplement various virtual methods to control how and where the windows are drawn.</para>
+</sect2>
+<sect2 id="group__kwineffects_1creating-macro">
+<title>KWIN_EFFECT_FACTORY macro</title><para>This library provides a specialized KPluginFactory subclass and macros to create a sub class. This subclass of KPluginFactory has to be used, otherwise <ref refid="namespace_k_win" kindref="compound">KWin</ref> won&apos;t load the plugin. Use the <ref refid="namespace_k_win_1ab95e2edd6aa25d81b4b49d2556e3c062" kindref="member">KWIN_EFFECT_FACTORY</ref> macro to create the plugin factory. This macro will take the embedded json metadata filename as the second argument.</para>
+</sect2>
+<sect2 id="group__kwineffects_1creating-buildsystem">
+<title>Buildsystem</title><para>To build the effect, you can use the kcoreaddons_add_plugin cmake macro which takes care of creating the library and installing it. The first parameter is the name of the library, this is the same as the id of the plugin. If our effect&apos;s source is in cooleffect.cpp, we&apos;d use following: <programlisting><codeline><highlight class="normal">kcoreaddons_add_plugin(cooleffect<sp/>SOURCES<sp/>cooleffect.cpp<sp/>INSTALL_NAMESPACE<sp/></highlight><highlight class="stringliteral">&quot;kwin/effects/plugins&quot;</highlight><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="group__kwineffects_1creating-json-metadata">
+<title>Effect&apos;s .json file for embedded metadata</title><para>The format follows the one of the <simplesect kind="see"><para>KPluginMetaData class.</para>
+</simplesect>
+Example cooleffect.json file: <programlisting><codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;KPlugin&quot;</highlight><highlight class="normal">:<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Authors&quot;</highlight><highlight class="normal">:<sp/>[</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Email&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;my@email.here&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Name&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;My<sp/>Name&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>],</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Category&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;Misc&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Description&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>coolest<sp/>effect<sp/>you&apos;ve<sp/>ever<sp/>seen&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Icon&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;preferences-system-windows-effect-cooleffect&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Name&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;Cool<sp/>Effect&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+</sect1>
+<sect1 id="group__kwineffects_1accessing">
+<title>Accessing windows and workspace</title><para>Effects can gain access to the properties of windows and workspace via <ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> and <ref refid="class_k_win_1_1_effects_handler" kindref="compound">EffectsHandler</ref> classes.</para>
+<para>There is one global <ref refid="class_k_win_1_1_effects_handler" kindref="compound">EffectsHandler</ref> object which you can access using the <ref refid="namespace_k_win_1ad780e509c41727e08e1cc641d4cad7b5" kindref="member">effects</ref> pointer. For each window, there is an <ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> object which can be used to read window properties such as position and also to change them.</para>
+<para>For more information about this, see the documentation of the corresponding classes.</para>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

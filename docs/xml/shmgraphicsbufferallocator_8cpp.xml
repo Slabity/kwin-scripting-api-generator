@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="shmgraphicsbufferallocator_8cpp" kind="file" language="C++">
+    <compoundname>shmgraphicsbufferallocator.cpp</compoundname>
+    <includes refid="shmgraphicsbufferallocator_8h" local="yes">core/shmgraphicsbufferallocator.h</includes>
+    <includes local="yes">config-kwin.h</includes>
+    <includes refid="graphicsbuffer_8h" local="yes">core/graphicsbuffer.h</includes>
+    <includes refid="memorymap_8h" local="yes">utils/memorymap.h</includes>
+    <includes local="no">drm_fourcc.h</includes>
+    <includes local="no">fcntl.h</includes>
+    <includes local="no">sys/mman.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="yes">moc_shmgraphicsbufferallocator.cpp</includes>
+    <includes local="yes">shmgraphicsbufferallocator.moc</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>core/graphicsbuffer.h</label>
+        <link refid="graphicsbuffer_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>core/graphicsbufferallocator.h</label>
+        <link refid="graphicsbufferallocator_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/core/shmgraphicsbufferallocator.cpp</label>
+        <link refid="shmgraphicsbufferallocator_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>core/shmgraphicsbufferallocator.h</label>
+        <link refid="shmgraphicsbufferallocator_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>utils/filedescriptor.h</label>
+        <link refid="filedescriptor_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>utils/memorymap.h</label>
+        <link refid="memorymap_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QList</label>
+      </node>
+      <node id="10">
+        <label>QObject</label>
+      </node>
+      <node id="6">
+        <label>QSize</label>
+      </node>
+      <node id="7">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="14">
+        <label>drm_fourcc.h</label>
+      </node>
+      <node id="15">
+        <label>fcntl.h</label>
+      </node>
+      <node id="4">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="17">
+        <label>moc_shmgraphicsbufferallocator.cpp</label>
+      </node>
+      <node id="18">
+        <label>shmgraphicsbufferallocator.moc</label>
+      </node>
+      <node id="13">
+        <label>sys/mman.h</label>
+      </node>
+      <node id="16">
+        <label>unistd.h</label>
+      </node>
+      <node id="11">
+        <label>utility</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_k_win_1_1_shm_graphics_buffer" prot="public">KWin::ShmGraphicsBuffer</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2023<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="shmgraphicsbufferallocator_8h" kindref="compound">core/shmgraphicsbufferallocator.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;config-kwin.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="graphicsbuffer_8h" kindref="compound">core/graphicsbuffer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="memorymap_8h" kindref="compound">utils/memorymap.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;drm_fourcc.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fcntl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/mman.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="class_k_win_1_1_shm_graphics_buffer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_shm_graphics_buffer_1a3b8260197a9d01e3313d7e4cc40bd7cf" kindref="member">ShmGraphicsBuffer</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_graphics_buffer_1af0d40610e9115f323dcfa0a2d1f67697" kindref="member">GraphicsBuffer</ref></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_shm_graphics_buffer_1a3b8260197a9d01e3313d7e4cc40bd7cf" kindref="member">ShmGraphicsBuffer</ref>(<ref refid="struct_k_win_1_1_shm_attributes" kindref="compound">ShmAttributes</ref><sp/>&amp;&amp;attributes,<sp/><ref refid="class_k_win_1_1_memory_map" kindref="compound">MemoryMap</ref><sp/>&amp;&amp;memoryMap);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_k_win_1_1_graphics_buffer_1_1_map" kindref="compound">Map</ref><sp/><ref refid="class_k_win_1_1_shm_graphics_buffer_1a5ff88602ff1b645c0890b5f2b8e16ee4" kindref="member">map</ref>(MapFlags<sp/>flags)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_shm_graphics_buffer_1a66d5a346af67c6e7996e58843c79287d" kindref="member">unmap</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>QSize<sp/><ref refid="class_k_win_1_1_shm_graphics_buffer_1a8b90af6bb39e166f95c61442b8339e60" kindref="member">size</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_shm_graphics_buffer_1ab031981afb8fbad698f32812d437653c" kindref="member">hasAlphaChannel</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_shm_attributes" kindref="compound">ShmAttributes</ref><sp/>*<ref refid="class_k_win_1_1_shm_graphics_buffer_1af11f0b035d1015b86eabd457adf17f51" kindref="member">shmAttributes</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_k_win_1_1_shm_attributes" kindref="compound">ShmAttributes</ref><sp/>m_attributes;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_memory_map" kindref="compound">MemoryMap</ref><sp/>m_memoryMap;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_hasAlphaChannel;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="class_k_win_1_1_shm_graphics_buffer_1a3b8260197a9d01e3313d7e4cc40bd7cf" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_shm_graphics_buffer_1a3b8260197a9d01e3313d7e4cc40bd7cf" kindref="member">ShmGraphicsBuffer::ShmGraphicsBuffer</ref>(<ref refid="struct_k_win_1_1_shm_attributes" kindref="compound">ShmAttributes</ref><sp/>&amp;&amp;attributes,<sp/><ref refid="class_k_win_1_1_memory_map" kindref="compound">MemoryMap</ref><sp/>&amp;&amp;memoryMap)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>m_attributes(std::move(attributes))</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_memoryMap(std::move(memoryMap))</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_hasAlphaChannel(<ref refid="class_k_win_1_1_graphics_buffer_1a7233a35f2682c6564fe7dcab11704d19" kindref="member">alphaChannelFromDrmFormat</ref>(attributes.<ref refid="namespace_k_win_1a6ef3f38157c98f3fe83ae3ec855ee903" kindref="member">format</ref>))</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="class_k_win_1_1_shm_graphics_buffer_1a5ff88602ff1b645c0890b5f2b8e16ee4" refkind="member"><highlight class="normal"><ref refid="struct_k_win_1_1_graphics_buffer_1_1_map" kindref="compound">GraphicsBuffer::Map</ref><sp/><ref refid="class_k_win_1_1_shm_graphics_buffer_1a5ff88602ff1b645c0890b5f2b8e16ee4" kindref="member">ShmGraphicsBuffer::map</ref>(MapFlags<sp/>flags)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_memoryMap.isValid())<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_graphics_buffer_1_1_map" kindref="compound">Map</ref>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.data<sp/>=<sp/>m_memoryMap.data(),</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.stride<sp/>=<sp/>uint32_t(m_attributes.stride),</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_graphics_buffer_1_1_map" kindref="compound">Map</ref>{};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="class_k_win_1_1_shm_graphics_buffer_1a66d5a346af67c6e7996e58843c79287d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_shm_graphics_buffer_1a66d5a346af67c6e7996e58843c79287d" kindref="member">ShmGraphicsBuffer::unmap</ref>()</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="class_k_win_1_1_shm_graphics_buffer_1a8b90af6bb39e166f95c61442b8339e60" refkind="member"><highlight class="normal">QSize<sp/><ref refid="class_k_win_1_1_shm_graphics_buffer_1a8b90af6bb39e166f95c61442b8339e60" kindref="member">ShmGraphicsBuffer::size</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="66"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_attributes.size;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="class_k_win_1_1_shm_graphics_buffer_1ab031981afb8fbad698f32812d437653c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_shm_graphics_buffer_1ab031981afb8fbad698f32812d437653c" kindref="member">ShmGraphicsBuffer::hasAlphaChannel</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="71"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_hasAlphaChannel;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="class_k_win_1_1_shm_graphics_buffer_1af11f0b035d1015b86eabd457adf17f51" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_shm_attributes" kindref="compound">ShmAttributes</ref><sp/>*<ref refid="class_k_win_1_1_shm_graphics_buffer_1af11f0b035d1015b86eabd457adf17f51" kindref="member">ShmGraphicsBuffer::shmAttributes</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="76"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;m_attributes;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="class_k_win_1_1_shm_graphics_buffer_allocator_1a94f2d1ed24a6becdef0578115d7d001c" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref><sp/>*<ref refid="class_k_win_1_1_shm_graphics_buffer_allocator_1a94f2d1ed24a6becdef0578115d7d001c" kindref="member">ShmGraphicsBufferAllocator::allocate</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_graphics_buffer_options" kindref="compound">GraphicsBufferOptions</ref><sp/>&amp;<ref refid="namespace_k_win_1aacddce7916a99bb943d9071c40754c1c" kindref="member">options</ref>)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="namespace_k_win_1aacddce7916a99bb943d9071c40754c1c" kindref="member">options</ref>.software)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="namespace_k_win_1aacddce7916a99bb943d9071c40754c1c" kindref="member">options</ref>.modifiers.isEmpty()<sp/>&amp;&amp;<sp/>!<ref refid="namespace_k_win_1aacddce7916a99bb943d9071c40754c1c" kindref="member">options</ref>.modifiers.contains(DRM_FORMAT_MOD_LINEAR))<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="namespace_k_win_1aacddce7916a99bb943d9071c40754c1c" kindref="member">options</ref>.format)<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>DRM_FORMAT_ARGB8888:</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>DRM_FORMAT_XRGB8888:</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stride<sp/>=<sp/><ref refid="namespace_k_win_1aacddce7916a99bb943d9071c40754c1c" kindref="member">options</ref>.size.width()<sp/>*<sp/>4;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bufferSize<sp/>=<sp/><ref refid="namespace_k_win_1aacddce7916a99bb943d9071c40754c1c" kindref="member">options</ref>.size.height()<sp/>*<sp/>stride;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>HAVE_MEMFD</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>fd<sp/>=<sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref>(memfd_create(</highlight><highlight class="stringliteral">&quot;shm&quot;</highlight><highlight class="normal">,<sp/>MFD_CLOEXEC<sp/>|<sp/>MFD_ALLOW_SEALING));</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!fd.<ref refid="class_k_win_1_1_file_descriptor_1ae7440b8498e75596486adce9934a416d" kindref="member">isValid</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ftruncate(fd.<ref refid="class_k_win_1_1_file_descriptor_1ab59a3ce5116b1e7718d8fb7994d47a41" kindref="member">get</ref>(),<sp/>bufferSize)<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>fcntl(fd.<ref refid="class_k_win_1_1_file_descriptor_1ab59a3ce5116b1e7718d8fb7994d47a41" kindref="member">get</ref>(),<sp/>F_ADD_SEALS,<sp/>F_SEAL_SHRINK<sp/>|<sp/>F_SEAL_GROW<sp/>|<sp/>F_SEAL_SEAL);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>templateName[]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;/tmp/kwin-shm-XXXXXX&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>fd{mkstemp(templateName)};</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!fd.<ref refid="class_k_win_1_1_file_descriptor_1ae7440b8498e75596486adce9934a416d" kindref="member">isValid</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>unlink(templateName);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags<sp/>=<sp/>fcntl(fd.<ref refid="class_k_win_1_1_file_descriptor_1ab59a3ce5116b1e7718d8fb7994d47a41" kindref="member">get</ref>(),<sp/>F_GETFD);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(flags<sp/>==<sp/>-1<sp/>||<sp/>fcntl(fd.<ref refid="class_k_win_1_1_file_descriptor_1ab59a3ce5116b1e7718d8fb7994d47a41" kindref="member">get</ref>(),<sp/>F_SETFD,<sp/>flags<sp/>|<sp/>FD_CLOEXEC)<sp/>==<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ftruncate(fd.<ref refid="class_k_win_1_1_file_descriptor_1ab59a3ce5116b1e7718d8fb7994d47a41" kindref="member">get</ref>(),<sp/>bufferSize)<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_k_win_1_1_shm_attributes" kindref="compound">ShmAttributes</ref><sp/>attributes{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.fd<sp/>=<sp/>std::move(fd),</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.stride<sp/>=<sp/>stride,</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.offset<sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.size<sp/>=<sp/><ref refid="namespace_k_win_1aacddce7916a99bb943d9071c40754c1c" kindref="member">options</ref>.size,</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.format<sp/>=<sp/><ref refid="namespace_k_win_1aacddce7916a99bb943d9071c40754c1c" kindref="member">options</ref>.format,</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_memory_map" kindref="compound">MemoryMap</ref><sp/>memoryMap(attributes.stride<sp/>*<sp/>attributes.size.height(),<sp/>PROT_READ<sp/>|<sp/>PROT_WRITE,<sp/>MAP_SHARED,<sp/>attributes.fd.get(),<sp/>attributes.offset);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!memoryMap.<ref refid="class_k_win_1_1_memory_map_1a371c3508bb6fac8e027ff976b6807de0" kindref="member">isValid</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_shm_graphics_buffer" kindref="compound">ShmGraphicsBuffer</ref>(std::move(attributes),<sp/>std::move(memoryMap));</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;moc_shmgraphicsbufferallocator.cpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;shmgraphicsbufferallocator.moc&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/core/shmgraphicsbufferallocator.cpp"/>
+  </compounddef>
+</doxygen>

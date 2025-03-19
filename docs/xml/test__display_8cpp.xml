@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="test__display_8cpp" kind="file" language="C++">
+    <compoundname>test_display.cpp</compoundname>
+    <includes local="no">QSignalSpy</includes>
+    <includes local="no">QTest</includes>
+    <includes refid="clientconnection_8h" local="yes">wayland/clientconnection.h</includes>
+    <includes refid="display_8h" local="yes">wayland/display.h</includes>
+    <includes local="no">wayland-server.h</includes>
+    <includes local="no">sys/socket.h</includes>
+    <includes local="no">sys/types.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="yes">test_display.moc</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/autotests/wayland/server/test_display.cpp</label>
+        <link refid="test__display_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>wayland/clientconnection.h</label>
+        <link refid="clientconnection_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>wayland/display.h</label>
+        <link refid="display_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>QList</label>
+      </node>
+      <node id="7">
+        <label>QObject</label>
+      </node>
+      <node id="2">
+        <label>QSignalSpy</label>
+      </node>
+      <node id="3">
+        <label>QTest</label>
+      </node>
+      <node id="5">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="8">
+        <label>memory</label>
+      </node>
+      <node id="12">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="6">
+        <label>sys/types.h</label>
+      </node>
+      <node id="14">
+        <label>test_display.moc</label>
+      </node>
+      <node id="13">
+        <label>unistd.h</label>
+      </node>
+      <node id="11">
+        <label>wayland-server.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_test_wayland_server_display" prot="public">TestWaylandServerDisplay</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2014<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>LGPL-2.1-only<sp/>OR<sp/>LGPL-3.0-only<sp/>OR<sp/>LicenseRef-KDE-Accepted-LGPL</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Qt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QSignalSpy&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QTest&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>WaylandServer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="clientconnection_8h" kindref="compound">wayland/clientconnection.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="display_8h" kindref="compound">wayland/display.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Wayland</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;wayland-server.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>system</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/socket.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="class_test_wayland_server_display" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_test_wayland_server_display" kindref="compound">TestWaylandServerDisplay</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>testSocketName();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>testStartStop();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>testClientConnection();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>testConnectNoSocket();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>testAutoSocketName();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TestWaylandServerDisplay::testSocketName()</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_display" kindref="compound">KWin::Display</ref><sp/>display;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>QSignalSpy<sp/>changedSpy(&amp;display,<sp/>&amp;<ref refid="class_k_win_1_1_display_1ab01e78a46ce6279919e4e853658fa771" kindref="member">KWin::Display::socketNamesChanged</ref>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(display.<ref refid="class_k_win_1_1_display_1a0d0e89f4da09f16cdb95e7f7440fbe33" kindref="member">socketNames</ref>(),<sp/>QStringList());</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>testSName<sp/>=<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;fooBar&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>display.<ref refid="class_k_win_1_1_display_1aa4c4acfe47f745065df276fab792b431" kindref="member">addSocketName</ref>(testSName);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(display.<ref refid="class_k_win_1_1_display_1a0d0e89f4da09f16cdb95e7f7440fbe33" kindref="member">socketNames</ref>(),<sp/>QStringList{testSName});</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(changedSpy.count(),<sp/>1);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>changing<sp/>to<sp/>same<sp/>name<sp/>again<sp/>should<sp/>not<sp/>emit<sp/>signal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>display.<ref refid="class_k_win_1_1_display_1aa4c4acfe47f745065df276fab792b431" kindref="member">addSocketName</ref>(testSName);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(changedSpy.count(),<sp/>1);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TestWaylandServerDisplay::testStartStop()</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>testSocketName<sp/>=<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;kwin-wayland-server-display-test-0&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>QDir<sp/>runtimeDir(qgetenv(</highlight><highlight class="stringliteral">&quot;XDG_RUNTIME_DIR&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(runtimeDir.exists());</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(!runtimeDir.exists(testSocketName));</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;KWin::Display&gt;<sp/>display(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>KWin::Display);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>QSignalSpy<sp/>runningSpy(display.get(),<sp/>&amp;<ref refid="class_k_win_1_1_display_1a923ef782d0c9b5b8d0afed92c506d11c" kindref="member">KWin::Display::runningChanged</ref>);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>display-&gt;<ref refid="class_k_win_1_1_display_1aa4c4acfe47f745065df276fab792b431" kindref="member">addSocketName</ref>(testSocketName);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(!display-&gt;<ref refid="class_k_win_1_1_display_1aa50d346a6be40bd7db06214c0350456a" kindref="member">isRunning</ref>());</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>display-&gt;<ref refid="class_k_win_1_1_display_1af36443417f1832645373ce713cb226c7" kindref="member">start</ref>();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>QVERIFY(runningSpy.wait());</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(runningSpy.count(),<sp/>1);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(runningSpy.first().first().toBool());</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(display-&gt;<ref refid="class_k_win_1_1_display_1aa50d346a6be40bd7db06214c0350456a" kindref="member">isRunning</ref>());</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(runtimeDir.exists(testSocketName));</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>display.reset();</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(!runtimeDir.exists(testSocketName));</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TestWaylandServerDisplay::testClientConnection()</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>KWin::Display<sp/>display;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>display.<ref refid="class_k_win_1_1_display_1aa4c4acfe47f745065df276fab792b431" kindref="member">addSocketName</ref>(QStringLiteral(</highlight><highlight class="stringliteral">&quot;kwin-wayland-server-display-test-client-connection&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>display.<ref refid="class_k_win_1_1_display_1af36443417f1832645373ce713cb226c7" kindref="member">start</ref>();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>QSignalSpy<sp/>connectedSpy(&amp;display,<sp/>&amp;<ref refid="class_k_win_1_1_display_1a04054e9c882bab1a04bbf319585712e5" kindref="member">KWin::Display::clientConnected</ref>);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>QSignalSpy<sp/>disconnectedSpy(&amp;display,<sp/>&amp;<ref refid="class_k_win_1_1_display_1a2dae745448a325e7f6e8d0e640080047" kindref="member">KWin::Display::clientDisconnected</ref>);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sv[2];</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(socketpair(AF_UNIX,<sp/>SOCK_STREAM,<sp/>0,<sp/>sv)<sp/>&gt;=<sp/>0);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>client<sp/>=<sp/>wl_client_create(display,<sp/>sv[0]);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(client);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(connectedSpy.isEmpty());</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>ClientConnection<sp/>*<ref refid="namespace_k_win_1aa7f02d94c7c3eb413790afa48eff03e8" kindref="member">connection</ref><sp/>=<sp/>display.<ref refid="class_k_win_1_1_display_1a79c16fcdaf407c74c7a0d4395762a86f" kindref="member">getConnection</ref>(client);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(<ref refid="namespace_k_win_1aa7f02d94c7c3eb413790afa48eff03e8" kindref="member">connection</ref>);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(<ref refid="namespace_k_win_1aa7f02d94c7c3eb413790afa48eff03e8" kindref="member">connection</ref>-&gt;client(),<sp/>client);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getuid()<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QEXPECT_FAIL(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Please<sp/>don&apos;t<sp/>run<sp/>test<sp/>as<sp/>root&quot;</highlight><highlight class="normal">,<sp/>Continue);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(<ref refid="namespace_k_win_1aa7f02d94c7c3eb413790afa48eff03e8" kindref="member">connection</ref>-&gt;userId()<sp/>!=<sp/>0);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getgid()<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QEXPECT_FAIL(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Please<sp/>don&apos;t<sp/>run<sp/>test<sp/>as<sp/>root&quot;</highlight><highlight class="normal">,<sp/>Continue);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(<ref refid="namespace_k_win_1aa7f02d94c7c3eb413790afa48eff03e8" kindref="member">connection</ref>-&gt;groupId()<sp/>!=<sp/>0);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(<ref refid="namespace_k_win_1aa7f02d94c7c3eb413790afa48eff03e8" kindref="member">connection</ref>-&gt;processId()<sp/>!=<sp/>0);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(<ref refid="namespace_k_win_1aa7f02d94c7c3eb413790afa48eff03e8" kindref="member">connection</ref>-&gt;display(),<sp/>&amp;display);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(<ref refid="namespace_k_win_1aa7f02d94c7c3eb413790afa48eff03e8" kindref="member">connection</ref>-&gt;executablePath(),<sp/>QCoreApplication::applicationFilePath());</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE((wl_client<sp/>*)*<ref refid="namespace_k_win_1aa7f02d94c7c3eb413790afa48eff03e8" kindref="member">connection</ref>,<sp/>client);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ClientConnection<sp/>&amp;constRef<sp/>=<sp/>*<ref refid="namespace_k_win_1aa7f02d94c7c3eb413790afa48eff03e8" kindref="member">connection</ref>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE((wl_client<sp/>*)constRef,<sp/>client);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(connectedSpy.count(),<sp/>1);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(connectedSpy.first().first().value&lt;ClientConnection<sp/>*&gt;(),<sp/><ref refid="namespace_k_win_1aa7f02d94c7c3eb413790afa48eff03e8" kindref="member">connection</ref>);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(<ref refid="namespace_k_win_1aa7f02d94c7c3eb413790afa48eff03e8" kindref="member">connection</ref>,<sp/>display.<ref refid="class_k_win_1_1_display_1a79c16fcdaf407c74c7a0d4395762a86f" kindref="member">getConnection</ref>(client));</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(connectedSpy.count(),<sp/>1);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>a<sp/>second<sp/>client</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sv2[2];</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(socketpair(AF_UNIX,<sp/>SOCK_STREAM,<sp/>0,<sp/>sv2)<sp/>&gt;=<sp/>0);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>client2<sp/>=<sp/>display.<ref refid="class_k_win_1_1_display_1a07034ffcff1c993fe2efabbb4371ab77" kindref="member">createClient</ref>(sv2[0]);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(client2);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>ClientConnection<sp/>*connection2<sp/>=<sp/>display.<ref refid="class_k_win_1_1_display_1a79c16fcdaf407c74c7a0d4395762a86f" kindref="member">getConnection</ref>(client2-&gt;client());</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(connection2);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(connection2,<sp/>client2);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(connectedSpy.count(),<sp/>2);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(connectedSpy.first().first().value&lt;ClientConnection<sp/>*&gt;(),<sp/><ref refid="namespace_k_win_1aa7f02d94c7c3eb413790afa48eff03e8" kindref="member">connection</ref>);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(connectedSpy.last().first().value&lt;ClientConnection<sp/>*&gt;(),<sp/>connection2);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(connectedSpy.last().first().value&lt;ClientConnection<sp/>*&gt;(),<sp/>client2);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>and<sp/>destroy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(disconnectedSpy.isEmpty());</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_client_destroy(client);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(disconnectedSpy.count(),<sp/>1);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>QSignalSpy<sp/>clientDestroyedSpy(client2,<sp/>&amp;QObject::destroyed);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>client2-&gt;destroy();</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(clientDestroyedSpy.count(),<sp/>1);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(disconnectedSpy.count(),<sp/>2);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>close(sv[0]);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>close(sv[1]);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>close(sv2[0]);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>close(sv2[1]);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TestWaylandServerDisplay::testConnectNoSocket()</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>KWin::Display<sp/>display;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>display.<ref refid="class_k_win_1_1_display_1af36443417f1832645373ce713cb226c7" kindref="member">start</ref>();</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(display.<ref refid="class_k_win_1_1_display_1aa50d346a6be40bd7db06214c0350456a" kindref="member">isRunning</ref>());</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>let&apos;s<sp/>try<sp/>connecting<sp/>a<sp/>client</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sv[2];</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(socketpair(AF_UNIX,<sp/>SOCK_STREAM,<sp/>0,<sp/>sv)<sp/>&gt;=<sp/>0);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>client<sp/>=<sp/>display.<ref refid="class_k_win_1_1_display_1a07034ffcff1c993fe2efabbb4371ab77" kindref="member">createClient</ref>(sv[0]);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(client);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_client_destroy(client-&gt;client());</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>close(sv[0]);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>close(sv[1]);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TestWaylandServerDisplay::testAutoSocketName()</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>QTemporaryDir<sp/>runtimeDir;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(runtimeDir.isValid());</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(qputenv(</highlight><highlight class="stringliteral">&quot;XDG_RUNTIME_DIR&quot;</highlight><highlight class="normal">,<sp/>runtimeDir.path().toUtf8()));</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>KWin::Display<sp/>display0;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>QSignalSpy<sp/>socketNameChangedSpy0(&amp;display0,<sp/>&amp;<ref refid="class_k_win_1_1_display_1ab01e78a46ce6279919e4e853658fa771" kindref="member">KWin::Display::socketNamesChanged</ref>);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(socketNameChangedSpy0.isValid());</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(display0.<ref refid="class_k_win_1_1_display_1aa4c4acfe47f745065df276fab792b431" kindref="member">addSocketName</ref>());</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>display0.<ref refid="class_k_win_1_1_display_1af36443417f1832645373ce713cb226c7" kindref="member">start</ref>();</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(display0.<ref refid="class_k_win_1_1_display_1aa50d346a6be40bd7db06214c0350456a" kindref="member">isRunning</ref>());</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(socketNameChangedSpy0.count(),<sp/>1);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>KWin::Display<sp/>display1;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>QSignalSpy<sp/>socketNameChangedSpy1(&amp;display1,<sp/>&amp;<ref refid="class_k_win_1_1_display_1ab01e78a46ce6279919e4e853658fa771" kindref="member">KWin::Display::socketNamesChanged</ref>);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(socketNameChangedSpy1.isValid());</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(display1.<ref refid="class_k_win_1_1_display_1aa4c4acfe47f745065df276fab792b431" kindref="member">addSocketName</ref>());</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>display1.<ref refid="class_k_win_1_1_display_1af36443417f1832645373ce713cb226c7" kindref="member">start</ref>();</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(display1.<ref refid="class_k_win_1_1_display_1aa50d346a6be40bd7db06214c0350456a" kindref="member">isRunning</ref>());</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>QCOMPARE(socketNameChangedSpy1.count(),<sp/>1);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal">QTEST_GUILESS_MAIN(<ref refid="class_test_wayland_server_display" kindref="compound">TestWaylandServerDisplay</ref>)</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;test_display.moc&quot;</highlight></codeline>
+    </programlisting>
+    <location file="kwin/autotests/wayland/server/test_display.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="tabboxhandler_8h" kind="file" language="C++">
+    <compoundname>tabboxhandler.h</compoundname>
+    <includes refid="tabboxconfig_8h" local="yes">tabboxconfig.h</includes>
+    <includes local="no">QModelIndex</includes>
+    <includes local="no">QPixmap</includes>
+    <includes local="no">QString</includes>
+    <includedby refid="clientmodel_8h" local="yes">kwin/src/tabbox/clientmodel.h</includedby>
+    <includedby refid="switcheritem_8cpp" local="yes">kwin/src/tabbox/switcheritem.cpp</includedby>
+    <includedby refid="tabbox_8h" local="yes">kwin/src/tabbox/tabbox.h</includedby>
+    <includedby refid="tabboxhandler_8cpp" local="yes">kwin/src/tabbox/tabboxhandler.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>tabboxconfig.h</label>
+        <link refid="tabboxconfig_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/tabbox/tabboxhandler.h</label>
+        <link refid="tabboxhandler_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QModelIndex</label>
+      </node>
+      <node id="5">
+        <label>QPixmap</label>
+      </node>
+      <node id="3">
+        <label>QString</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="7">
+        <label>kwin/src/layers.cpp</label>
+        <link refid="layers_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/tabbox/clientmodel.cpp</label>
+        <link refid="clientmodel_8cpp"/>
+      </node>
+      <node id="2">
+        <label>kwin/src/tabbox/clientmodel.h</label>
+        <link refid="clientmodel_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>kwin/src/tabbox/switcheritem.cpp</label>
+        <link refid="switcheritem_8cpp"/>
+      </node>
+      <node id="8">
+        <label>kwin/src/tabbox/tabbox.cpp</label>
+        <link refid="tabbox_8cpp"/>
+      </node>
+      <node id="6">
+        <label>kwin/src/tabbox/tabbox.h</label>
+        <link refid="tabbox_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>kwin/src/tabbox/tabboxhandler.cpp</label>
+        <link refid="tabboxhandler_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/tabbox/tabboxhandler.h</label>
+        <link refid="tabboxhandler_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_tab_box_1_1_tab_box_handler" prot="public">KWin::TabBox::TabBoxHandler</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <innernamespace refid="namespace_k_win_1_1_tab_box">KWin::TabBox</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This file contains the classes which hide <ref refid="namespace_k_win" kindref="compound">KWin</ref> core from tabbox.</para>
+<para><simplesect kind="author"><para>Martin Gräßlin <ulink url="mailto:mgraesslin@kde.org">mgraesslin@kde.org</ulink> </para>
+</simplesect>
+<simplesect kind="since"><para>4.4 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2009<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="tabboxconfig_8h" kindref="compound">tabboxconfig.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QModelIndex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QPixmap&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QString&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QKeyEvent;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win_1_1_tab_box" kindref="compound">TabBox</ref></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_client_model" kindref="compound">ClientModel</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config" kindref="compound">TabBoxConfig</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_private" kindref="compound">TabBoxHandlerPrivate</ref>;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1afd9c605d4b851b017536e5a7934b6da2" kindref="member">TabBoxHandler</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1afd9c605d4b851b017536e5a7934b6da2" kindref="member">TabBoxHandler</ref>(QObject<sp/>*parent);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1abd4d01a7af70776b0209b35b6cbb17c9" kindref="member">~TabBoxHandler</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a835a3a99578c46256f785aa139478810" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a835a3a99578c46256f785aa139478810" kindref="member">activeScreen</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="89" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1ab84bb67514e3a108c2fa6d070e22f4cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1ab84bb67514e3a108c2fa6d070e22f4cf" kindref="member">activeClient</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="94" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a1ca7f3daa9b307dbe36772ccae621afd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a1ca7f3daa9b307dbe36772ccae621afd" kindref="member">nextClientFocusChain</ref>(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a913dac104fcbe61766ab024f1c674f80" kindref="member">client</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="102" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a5b00471bfed7957cb251a94e3b5dbb39" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a5b00471bfed7957cb251a94e3b5dbb39" kindref="member">firstClientFocusChain</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="116" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a5430ccba40f20b8e2cba54ea46e9e4d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a5430ccba40f20b8e2cba54ea46e9e4d8" kindref="member">isInFocusChain</ref>(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a913dac104fcbe61766ab024f1c674f80" kindref="member">client</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="122" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a93c8d7064108f456363ab1fada1b2bc0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a93c8d7064108f456363ab1fada1b2bc0" kindref="member">desktopName</ref>(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a913dac104fcbe61766ab024f1c674f80" kindref="member">client</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1aedc1923f16c9b312ba368baf4f3bf71c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1aedc1923f16c9b312ba368baf4f3bf71c" kindref="member">isKWinCompositing</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1adc79a68ce2e1b96de9f4e0bd64e4ab6e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1adc79a68ce2e1b96de9f4e0bd64e4ab6e" kindref="member">elevateClient</ref>(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*c,<sp/>QWindow<sp/>*tabbox,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>elevate)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a17bf330a869128e8753245e460d538ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a17bf330a869128e8753245e460d538ff" kindref="member">raiseClient</ref>(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*c)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1ad3dfbbccaeb9119a6f8511f88f387434" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1ad3dfbbccaeb9119a6f8511f88f387434" kindref="member">restack</ref>(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*c,<sp/><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*under)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a34f054117697437aaa5ac929f1ef067d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a34f054117697437aaa5ac929f1ef067d" kindref="member">shadeClient</ref>(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*c,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>b)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a2b9d12f0ffca03cdae3b04cebf53025f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a2b9d12f0ffca03cdae3b04cebf53025f" kindref="member">highlightWindows</ref>(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*window<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/>QWindow<sp/>*controller<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a9a72c4f4f9079ca60a5c151297645d06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>QList&lt;Window<sp/>*&gt;<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a9a72c4f4f9079ca60a5c151297645d06" kindref="member">stackingOrder</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="172" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a866b954e11daf2ff29a568e34c412c5d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a866b954e11daf2ff29a568e34c412c5d" kindref="member">clientToAddToList</ref>(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a913dac104fcbe61766ab024f1c674f80" kindref="member">client</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="176" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a17d4fa8986e27803dcefce9ada63f17f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a17d4fa8986e27803dcefce9ada63f17f" kindref="member">desktopClient</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="180" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1ae61b3a6a810810a54dd80b6c999c057b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1ae61b3a6a810810a54dd80b6c999c057b" kindref="member">activateAndClose</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config" kindref="compound">TabBoxConfig</ref><sp/>&amp;<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1aab06239dbde732513bfea7314a591fc5" kindref="member">config</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a3acd26a3cd3ecbef086d7b27cb2af0c4" kindref="member">setConfig</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_config" kindref="compound">TabBoxConfig</ref><sp/>&amp;<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1aab06239dbde732513bfea7314a591fc5" kindref="member">config</ref>);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a4474cf46a142bc64d418ecd68786a43a" kindref="member">show</ref>();</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a4c2bb70440f803a93fdc1d86452fcddf" kindref="member">hide</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>abort<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1abe666340fa17a9b13d54d598444fad7b" kindref="member">setCurrentIndex</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1aa5574eda1e9944da7ec3204565f685d4" kindref="member">index</ref>);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a1b285fdf4fa107e2f43c66ca022c9a51" kindref="member">currentIndex</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>QModelIndex<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a7fa99fa6ceb163c461d888c688f46f5c" kindref="member">nextPrev</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>forward)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a0ec37149b20e97a01c73622b776dad1d" kindref="member">createModel</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>partialReset<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a79c91051310646f932094c7376722254" kindref="member">grabbedKeyEvent</ref>(QKeyEvent<sp/>*event)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a26bc0992590b6dcfb92ef5f1d09ffacf" kindref="member">containsPos</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPoint<sp/>&amp;pos)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>QModelIndex<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1aa5574eda1e9944da7ec3204565f685d4" kindref="member">index</ref>(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a913dac104fcbe61766ab024f1c674f80" kindref="member">client</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;Window<sp/>*&gt;<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a4d36491fe85396618223ad617d008824" kindref="member">clientList</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a913dac104fcbe61766ab024f1c674f80" kindref="member">client</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;<ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1aa5574eda1e9944da7ec3204565f685d4" kindref="member">index</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>QModelIndex<sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1aee584b93ac358f6c323258662ab3bf6c" kindref="member">first</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a888f356cdd3546f027bb002a76c76924" kindref="member">eventFilter</ref>(QObject<sp/>*watcher,<sp/>QEvent<sp/>*event)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a9799723678f579adfe9286e4d015c318" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a9799723678f579adfe9286e4d015c318" kindref="member">noModifierGrab</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="286" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1abd53ec5810a0ca18fb39c01c2354284c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1abd53ec5810a0ca18fb39c01c2354284c" kindref="member">configChanged</ref>();</highlight></codeline>
+<codeline lineno="287" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a9f408a3c9c90a32fa815a6c1e17185fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1a9f408a3c9c90a32fa815a6c1e17185fa" kindref="member">selectedIndexChanged</ref>();</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initHighlightWindows();</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="293" refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1ae3e2153de3ee069afd603d926cd3d026" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1ae3e2153de3ee069afd603d926cd3d026" kindref="member">TabBoxHandlerPrivate</ref>;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler_1ae3e2153de3ee069afd603d926cd3d026" kindref="member">TabBoxHandlerPrivate</ref><sp/>*d;</highlight></codeline>
+<codeline lineno="295"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_tab_box_handler" kindref="compound">TabBoxHandler</ref><sp/>*<ref refid="namespace_k_win_1_1_tab_box_1ab8e1cbfa02924a1537b961051b1a4038" kindref="member">tabBox</ref>;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>TabBox</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/tabbox/tabboxhandler.h"/>
+  </compounddef>
+</doxygen>

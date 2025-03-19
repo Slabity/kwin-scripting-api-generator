@@ -1,0 +1,460 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_spring_motion" kind="class" language="C++" prot="public">
+    <compoundname>KWin::SpringMotion</compoundname>
+    <includes refid="springmotion_8h" local="no">springmotion.h</includes>
+    <innerclass refid="struct_k_win_1_1_spring_motion_1_1_slope" prot="private">KWin::SpringMotion::Slope</innerclass>
+    <innerclass refid="struct_k_win_1_1_spring_motion_1_1_state" prot="private">KWin::SpringMotion::State</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_spring_motion_1ac9f882366ec4b75557f472a77aa176be" prot="private" static="no" mutable="no">
+        <type>State</type>
+        <definition>State KWin::SpringMotion::m_prev</definition>
+        <argsstring></argsstring>
+        <name>m_prev</name>
+        <qualifiedname>KWin::SpringMotion::m_prev</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="91" column="11" bodyfile="kwin/src/plugins/slide/springmotion.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_spring_motion_1a7082709c9b277e83fb1978ec4efb01a9" prot="private" static="no" mutable="no">
+        <type>State</type>
+        <definition>State KWin::SpringMotion::m_next</definition>
+        <argsstring></argsstring>
+        <name>m_next</name>
+        <qualifiedname>KWin::SpringMotion::m_next</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="92" column="11" bodyfile="kwin/src/plugins/slide/springmotion.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_spring_motion_1a29e1552557477bfddf60dd083a40ad92" prot="private" static="no" mutable="no">
+        <type>qreal</type>
+        <definition>qreal KWin::SpringMotion::m_t</definition>
+        <argsstring></argsstring>
+        <name>m_t</name>
+        <qualifiedname>KWin::SpringMotion::m_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="93" column="11" bodyfile="kwin/src/plugins/slide/springmotion.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_spring_motion_1a46dc1c1519725e5c1b67caae1ca5495e" prot="private" static="no" mutable="no">
+        <type>qreal</type>
+        <definition>qreal KWin::SpringMotion::m_timestep</definition>
+        <argsstring></argsstring>
+        <name>m_timestep</name>
+        <qualifiedname>KWin::SpringMotion::m_timestep</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="94" column="11" bodyfile="kwin/src/plugins/slide/springmotion.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_spring_motion_1a44260e70c34eb7cfb83cecc8936a43a9" prot="private" static="no" mutable="no">
+        <type>qreal</type>
+        <definition>qreal KWin::SpringMotion::m_anchor</definition>
+        <argsstring></argsstring>
+        <name>m_anchor</name>
+        <qualifiedname>KWin::SpringMotion::m_anchor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="96" column="11" bodyfile="kwin/src/plugins/slide/springmotion.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_spring_motion_1acc19965e14a14a739fb3cf8b7e7ab706" prot="private" static="no" mutable="no">
+        <type>qreal</type>
+        <definition>qreal KWin::SpringMotion::m_springConstant</definition>
+        <argsstring></argsstring>
+        <name>m_springConstant</name>
+        <qualifiedname>KWin::SpringMotion::m_springConstant</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="97" column="11" bodyfile="kwin/src/plugins/slide/springmotion.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_spring_motion_1a9b24a0b2c9d9cf2b2bfb61e3e46f9b4e" prot="private" static="no" mutable="no">
+        <type>qreal</type>
+        <definition>qreal KWin::SpringMotion::m_dampingRatio</definition>
+        <argsstring></argsstring>
+        <name>m_dampingRatio</name>
+        <qualifiedname>KWin::SpringMotion::m_dampingRatio</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="98" column="11" bodyfile="kwin/src/plugins/slide/springmotion.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_spring_motion_1a8af4825760eebe9a6ade8174336b5e1c" prot="private" static="no" mutable="no">
+        <type>qreal</type>
+        <definition>qreal KWin::SpringMotion::m_dampingCoefficient</definition>
+        <argsstring></argsstring>
+        <name>m_dampingCoefficient</name>
+        <qualifiedname>KWin::SpringMotion::m_dampingCoefficient</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="99" column="11" bodyfile="kwin/src/plugins/slide/springmotion.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_spring_motion_1a3343403a8a1770cc86b63212357a96a6" prot="private" static="no" mutable="no">
+        <type>qreal</type>
+        <definition>qreal KWin::SpringMotion::m_epsilon</definition>
+        <argsstring></argsstring>
+        <name>m_epsilon</name>
+        <qualifiedname>KWin::SpringMotion::m_epsilon</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="100" column="11" bodyfile="kwin/src/plugins/slide/springmotion.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_spring_motion_1ae70d0b7e56adca95f96f20a548d72898" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::SpringMotion::SpringMotion</definition>
+        <argsstring>()</argsstring>
+        <name>SpringMotion</name>
+        <qualifiedname>KWin::SpringMotion::SpringMotion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="24" column="5" bodyfile="kwin/src/plugins/slide/springmotion.cpp" bodystart="19" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_spring_motion_1aaec4096c908fb4d8f67afd77568b74b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::SpringMotion::SpringMotion</definition>
+        <argsstring>(qreal springConstant, qreal dampingRatio)</argsstring>
+        <name>SpringMotion</name>
+        <qualifiedname>KWin::SpringMotion::SpringMotion</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>springConstant</declname>
+        </param>
+        <param>
+          <type>qreal</type>
+          <declname>dampingRatio</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="25" column="5" bodyfile="kwin/src/plugins/slide/springmotion.cpp" bodystart="24" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_spring_motion_1a26148664c8c853e7f9b2c5d9c26d8e33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SpringMotion::advance</definition>
+        <argsstring>(std::chrono::milliseconds delta)</argsstring>
+        <name>advance</name>
+        <qualifiedname>KWin::SpringMotion::advance</qualifiedname>
+        <param>
+          <type>std::chrono::milliseconds</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Advance the simulation by the given <emphasis>delta</emphasis> milliseconds. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="30" column="10" bodyfile="kwin/src/plugins/slide/springmotion.cpp" bodystart="139" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_spring_motion_1ad6ccafbb4c2f0e2843ebf41259f7fc22" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::SpringMotion::isMoving</definition>
+        <argsstring>() const</argsstring>
+        <name>isMoving</name>
+        <qualifiedname>KWin::SpringMotion::isMoving</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="31" column="10" bodyfile="kwin/src/plugins/slide/springmotion.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_spring_motion_1a515cd7fd689c8d46f279702186a4f1db" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::SpringMotion::velocity</definition>
+        <argsstring>() const</argsstring>
+        <name>velocity</name>
+        <qualifiedname>KWin::SpringMotion::velocity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the current velocity. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="36" column="11" bodyfile="kwin/src/plugins/slide/springmotion.cpp" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_spring_motion_1aa48045267bb0c01be9fa17cfd1bde67d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SpringMotion::setVelocity</definition>
+        <argsstring>(qreal velocity)</argsstring>
+        <name>setVelocity</name>
+        <qualifiedname>KWin::SpringMotion::setVelocity</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>velocity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="37" column="10" bodyfile="kwin/src/plugins/slide/springmotion.cpp" bodystart="57" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_spring_motion_1adb0547ac688d6276315a0935de345acd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::SpringMotion::position</definition>
+        <argsstring>() const</argsstring>
+        <name>position</name>
+        <qualifiedname>KWin::SpringMotion::position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the current position. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="42" column="11" bodyfile="kwin/src/plugins/slide/springmotion.cpp" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_spring_motion_1a7ab9ebf04b8b82460c1fb1e76956cae2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SpringMotion::setPosition</definition>
+        <argsstring>(qreal position)</argsstring>
+        <name>setPosition</name>
+        <qualifiedname>KWin::SpringMotion::setPosition</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="43" column="10" bodyfile="kwin/src/plugins/slide/springmotion.cpp" bodystart="71" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_spring_motion_1adb9393d41cb9d298a96b0db0eff0e2f2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::SpringMotion::anchor</definition>
+        <argsstring>() const</argsstring>
+        <name>anchor</name>
+        <qualifiedname>KWin::SpringMotion::anchor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the anchor position. It&apos;s the position that the spring is pulled towards. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="48" column="11" bodyfile="kwin/src/plugins/slide/springmotion.cpp" bodystart="90" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_spring_motion_1a83539cacc8faddf33ab245660728716c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SpringMotion::setAnchor</definition>
+        <argsstring>(qreal anchor)</argsstring>
+        <name>setAnchor</name>
+        <qualifiedname>KWin::SpringMotion::setAnchor</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>anchor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="49" column="10" bodyfile="kwin/src/plugins/slide/springmotion.cpp" bodystart="95" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_spring_motion_1a17811b2930b0cef4c931abcc169a31a9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::SpringMotion::springConstant</definition>
+        <argsstring>() const</argsstring>
+        <name>springConstant</name>
+        <qualifiedname>KWin::SpringMotion::springConstant</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the spring constant. It controls the acceleration of the spring. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="54" column="11" bodyfile="kwin/src/plugins/slide/springmotion.cpp" bodystart="42" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_spring_motion_1afcacf0810c7f673e90f85b3e81a40e37" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::SpringMotion::dampingRatio</definition>
+        <argsstring>() const</argsstring>
+        <name>dampingRatio</name>
+        <qualifiedname>KWin::SpringMotion::dampingRatio</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the damping ratio. It controls the oscillation of the spring. Potential values:</para>
+<para><itemizedlist>
+<listitem><para>0 or undamped: the spring will oscillate indefinitely</para>
+</listitem><listitem><para>less than 1 or underdamped: the mass tends to overshoot its starting position, but with every oscillation some energy is dissipated and the oscillation dies away</para>
+</listitem><listitem><para>1 or critically damped: the mass will fail to overshoot and make a single oscillation</para>
+</listitem><listitem><para>greater than 1 or overdamped: the mass slowly returns to the anchor position without overshooting </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="66" column="11" bodyfile="kwin/src/plugins/slide/springmotion.cpp" bodystart="47" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_spring_motion_1a9dc952e373ce0862ef402f0f80e04115" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::SpringMotion::epsilon</definition>
+        <argsstring>() const</argsstring>
+        <name>epsilon</name>
+        <qualifiedname>KWin::SpringMotion::epsilon</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>If the distance of the mass between two consecutive simulations is smaller than the epsilon value, consider that the mass has stopped moving. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="72" column="11" bodyfile="kwin/src/plugins/slide/springmotion.cpp" bodystart="80" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_spring_motion_1a20a192e292a5b9e00684003f65b21bc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SpringMotion::setEpsilon</definition>
+        <argsstring>(qreal epsilon)</argsstring>
+        <name>setEpsilon</name>
+        <qualifiedname>KWin::SpringMotion::setEpsilon</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>epsilon</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="73" column="10" bodyfile="kwin/src/plugins/slide/springmotion.cpp" bodystart="85" bodyend="88"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_spring_motion_1ab139796acde4bd688c29d42256dd98e3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>State</type>
+        <definition>SpringMotion::State KWin::SpringMotion::integrate</definition>
+        <argsstring>(const State &amp;state, qreal dt)</argsstring>
+        <name>integrate</name>
+        <qualifiedname>KWin::SpringMotion::integrate</qualifiedname>
+        <param>
+          <type>const State &amp;</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>qreal</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="88" column="11" bodyfile="kwin/src/plugins/slide/springmotion.cpp" bodystart="118" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_spring_motion_1aae657916ee7d0a720ed5db41dc5bef4d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Slope</type>
+        <definition>SpringMotion::Slope KWin::SpringMotion::evaluate</definition>
+        <argsstring>(const State &amp;state, qreal dt, const Slope &amp;slope)</argsstring>
+        <name>evaluate</name>
+        <qualifiedname>KWin::SpringMotion::evaluate</qualifiedname>
+        <param>
+          <type>const State &amp;</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>qreal</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>const Slope &amp;</type>
+          <declname>slope</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/slide/springmotion.h" line="89" column="11" bodyfile="kwin/src/plugins/slide/springmotion.cpp" bodystart="100" bodyend="116"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="class_k_win_1_1_spring_motion" kindref="compound">SpringMotion</ref> class simulates the motion of a spring along one dimension using the mass-spring-damper model. The sping constant parameter controls the acceleration of the spring. The damping ratio controls the oscillation of the spring. </para>
+    </detaileddescription>
+    <location file="kwin/src/plugins/slide/springmotion.h" line="21" column="1" bodyfile="kwin/src/plugins/slide/springmotion.h" bodystart="22" bodyend="101"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_spring_motion_1a26148664c8c853e7f9b2c5d9c26d8e33" prot="public" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>advance</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1adb9393d41cb9d298a96b0db0eff0e2f2" prot="public" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>anchor</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1afcacf0810c7f673e90f85b3e81a40e37" prot="public" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>dampingRatio</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1a9dc952e373ce0862ef402f0f80e04115" prot="public" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>epsilon</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1aae657916ee7d0a720ed5db41dc5bef4d" prot="private" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>evaluate</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1ab139796acde4bd688c29d42256dd98e3" prot="private" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>integrate</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1ad6ccafbb4c2f0e2843ebf41259f7fc22" prot="public" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>isMoving</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1a44260e70c34eb7cfb83cecc8936a43a9" prot="private" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>m_anchor</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1a8af4825760eebe9a6ade8174336b5e1c" prot="private" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>m_dampingCoefficient</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1a9b24a0b2c9d9cf2b2bfb61e3e46f9b4e" prot="private" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>m_dampingRatio</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1a3343403a8a1770cc86b63212357a96a6" prot="private" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>m_epsilon</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1a7082709c9b277e83fb1978ec4efb01a9" prot="private" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>m_next</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1ac9f882366ec4b75557f472a77aa176be" prot="private" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>m_prev</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1acc19965e14a14a739fb3cf8b7e7ab706" prot="private" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>m_springConstant</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1a29e1552557477bfddf60dd083a40ad92" prot="private" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>m_t</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1a46dc1c1519725e5c1b67caae1ca5495e" prot="private" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>m_timestep</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1adb0547ac688d6276315a0935de345acd" prot="public" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>position</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1a83539cacc8faddf33ab245660728716c" prot="public" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>setAnchor</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1a20a192e292a5b9e00684003f65b21bc0" prot="public" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>setEpsilon</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1a7ab9ebf04b8b82460c1fb1e76956cae2" prot="public" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>setPosition</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1aa48045267bb0c01be9fa17cfd1bde67d" prot="public" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>setVelocity</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1a17811b2930b0cef4c931abcc169a31a9" prot="public" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>springConstant</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1ae70d0b7e56adca95f96f20a548d72898" prot="public" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>SpringMotion</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1aaec4096c908fb4d8f67afd77568b74b1" prot="public" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>SpringMotion</name></member>
+      <member refid="class_k_win_1_1_spring_motion_1a515cd7fd689c8d46f279702186a4f1db" prot="public" virt="non-virtual"><scope>KWin::SpringMotion</scope><name>velocity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

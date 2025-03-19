@@ -1,0 +1,446 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="fakeinputbackend_8cpp" kind="file" language="C++">
+    <compoundname>fakeinputbackend.cpp</compoundname>
+    <includes refid="fakeinputbackend_8h" local="yes">fakeinputbackend.h</includes>
+    <includes refid="fakeinputdevice_8h" local="yes">fakeinputdevice.h</includes>
+    <includes refid="display_8h" local="yes">wayland/display.h</includes>
+    <includes local="yes">wayland/qwayland-server-fake-input.h</includes>
+    <includes local="yes">moc_fakeinputbackend.cpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/backends/fakeinput/fakeinputbackend.cpp</label>
+        <link refid="fakeinputbackend_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>fakeinputbackend.h</label>
+        <link refid="fakeinputbackend_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>fakeinputdevice.h</label>
+        <link refid="fakeinputdevice_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>core/inputbackend.h</label>
+        <link refid="inputbackend_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>core/inputdevice.h</label>
+        <link refid="inputdevice_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>wayland/display.h</label>
+        <link refid="display_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>KSharedConfig</label>
+      </node>
+      <node id="13">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="14">
+        <label>QImage</label>
+      </node>
+      <node id="20">
+        <label>QList</label>
+      </node>
+      <node id="6">
+        <label>QObject</label>
+      </node>
+      <node id="15">
+        <label>QPoint</label>
+      </node>
+      <node id="18">
+        <label>QSet</label>
+      </node>
+      <node id="16">
+        <label>QVariant</label>
+      </node>
+      <node id="17">
+        <label>QVector2D</label>
+      </node>
+      <node id="12">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="4">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="7">
+        <label>map</label>
+      </node>
+      <node id="8">
+        <label>memory</label>
+      </node>
+      <node id="22">
+        <label>moc_fakeinputbackend.cpp</label>
+      </node>
+      <node id="21">
+        <label>wayland/qwayland-server-fake-input.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_k_win_1_1_fake_input_backend_private" prot="public">KWin::FakeInputBackendPrivate</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2021<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fakeinputbackend_8h" kindref="compound">fakeinputbackend.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fakeinputdevice_8h" kindref="compound">fakeinputdevice.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="display_8h" kindref="compound">wayland/display.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;wayland/qwayland-server-fake-input.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>quint32<sp/>s_version<sp/>=<sp/>5;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="class_k_win_1_1_fake_input_backend_private" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_fake_input_backend_private_1aa7f7eba5abe49abef5254eb2ce4c8ef4" kindref="member">FakeInputBackendPrivate</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QtWaylandServer::org_kde_kwin_fake_input</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1aa7f7eba5abe49abef5254eb2ce4c8ef4" kindref="member">FakeInputBackendPrivate</ref>(<ref refid="class_k_win_1_1_fake_input_backend" kindref="compound">FakeInputBackend</ref><sp/>*<ref refid="class_k_win_1_1_fake_input_backend_private_1a4cf689cac974bb3cfc63d8cfcf9c80d5" kindref="member">q</ref>,<sp/><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*<ref refid="class_k_win_1_1_fake_input_backend_private_1ade9f440e78a7d080e122d30751355bcb" kindref="member">display</ref>);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="class_k_win_1_1_fake_input_backend_private_1ace2ff34d7c0961f1d348f71d65ca0e82" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_fake_input_backend_private_1ace2ff34d7c0961f1d348f71d65ca0e82" kindref="member">FakeInputDeviceMap</ref><sp/>=<sp/>std::map&lt;Resource<sp/>*,<sp/>std::unique_ptr&lt;FakeInputDevice&gt;&gt;;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_fake_input_device" kindref="compound">FakeInputDevice</ref><sp/>*<ref refid="class_k_win_1_1_fake_input_backend_private_1ae29a61cc98bfb5983ca3c27cfdd658cf" kindref="member">findDevice</ref>(Resource<sp/>*resource);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1acb2ab7101a9b21082f703e9f3303517c" kindref="member">removeDeviceByResource</ref>(Resource<sp/>*resource);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1abb8cf05f5c522dbe3e9df8949dae69f0" kindref="member">removeDeviceByIterator</ref>(FakeInputDeviceMap::iterator<sp/>it);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::microseconds<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a61b1cce62466808e85b957985e1bc72b" kindref="member">currentTime</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="class_k_win_1_1_fake_input_backend_private_1a4cf689cac974bb3cfc63d8cfcf9c80d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_fake_input_backend" kindref="compound">FakeInputBackend</ref><sp/>*<ref refid="class_k_win_1_1_fake_input_backend_private_1a4cf689cac974bb3cfc63d8cfcf9c80d5" kindref="member">q</ref>;</highlight></codeline>
+<codeline lineno="31" refid="class_k_win_1_1_fake_input_backend_private_1ade9f440e78a7d080e122d30751355bcb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*<ref refid="class_k_win_1_1_fake_input_backend_private_1ade9f440e78a7d080e122d30751355bcb" kindref="member">display</ref>;</highlight></codeline>
+<codeline lineno="32" refid="class_k_win_1_1_fake_input_backend_private_1a1d5526b6510177a4cc20cfe5e46cced4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1ace2ff34d7c0961f1d348f71d65ca0e82" kindref="member">FakeInputDeviceMap</ref><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a1d5526b6510177a4cc20cfe5e46cced4" kindref="member">devices</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a010beef7b5d3959524c5c144d11ca6ca" kindref="member">org_kde_kwin_fake_input_bind_resource</ref>(Resource<sp/>*resource)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a0ed1842259ad7adfce581ada72c82d98" kindref="member">org_kde_kwin_fake_input_destroy_resource</ref>(Resource<sp/>*resource)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a40c96ef1418a6d197045b41fc453716d" kindref="member">org_kde_kwin_fake_input_authenticate</ref>(Resource<sp/>*resource,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;application,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;reason)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1ad44534e920bc0086264aa116eea3e433" kindref="member">org_kde_kwin_fake_input_pointer_motion</ref>(Resource<sp/>*resource,<sp/>wl_fixed_t<sp/>delta_x,<sp/>wl_fixed_t<sp/>delta_y)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a31e0399bba2c9fe4f346f2f4c0f1f885" kindref="member">org_kde_kwin_fake_input_button</ref>(Resource<sp/>*resource,<sp/>uint32_t<sp/>button,<sp/>uint32_t<sp/>state)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a8f93b26bff32343d45f49c398cca716d" kindref="member">org_kde_kwin_fake_input_axis</ref>(Resource<sp/>*resource,<sp/>uint32_t<sp/>axis,<sp/>wl_fixed_t<sp/>value)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a4ad0ff965d7f5f1655ecc7a10aaf361e" kindref="member">org_kde_kwin_fake_input_touch_down</ref>(Resource<sp/>*resource,<sp/>uint32_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>wl_fixed_t<sp/>x,<sp/>wl_fixed_t<sp/>y)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a1a94c3ec574ca1dc48a97ad0d1c2e051" kindref="member">org_kde_kwin_fake_input_touch_motion</ref>(Resource<sp/>*resource,<sp/>uint32_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>wl_fixed_t<sp/>x,<sp/>wl_fixed_t<sp/>y)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a01aa8cdfbedbf093a3d1ccba00b9bd4f" kindref="member">org_kde_kwin_fake_input_touch_up</ref>(Resource<sp/>*resource,<sp/>uint32_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a4f013c0c3bea0c561da283893b552887" kindref="member">org_kde_kwin_fake_input_touch_cancel</ref>(Resource<sp/>*resource)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a8d607f63fdc0628861abb466fccf1fc5" kindref="member">org_kde_kwin_fake_input_touch_frame</ref>(Resource<sp/>*resource)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a8f54456eb5897d42b1a390bdaf9c03fd" kindref="member">org_kde_kwin_fake_input_pointer_motion_absolute</ref>(Resource<sp/>*resource,<sp/>wl_fixed_t<sp/>x,<sp/>wl_fixed_t<sp/>y)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a6caaa6e158dedaeaea4964b5604a283a" kindref="member">org_kde_kwin_fake_input_keyboard_key</ref>(Resource<sp/>*resource,<sp/>uint32_t<sp/>button,<sp/>uint32_t<sp/>state)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a9998653afca8b9ae5a2de6d0e1d7b653" kindref="member">org_kde_kwin_fake_input_destroy</ref>(Resource<sp/>*resource)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="class_k_win_1_1_fake_input_backend_private_1aa7f7eba5abe49abef5254eb2ce4c8ef4" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_fake_input_backend_private_1aa7f7eba5abe49abef5254eb2ce4c8ef4" kindref="member">FakeInputBackendPrivate::FakeInputBackendPrivate</ref>(<ref refid="class_k_win_1_1_fake_input_backend" kindref="compound">FakeInputBackend</ref><sp/>*<ref refid="class_k_win_1_1_fake_input_backend_private_1a4cf689cac974bb3cfc63d8cfcf9c80d5" kindref="member">q</ref>,<sp/><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*<ref refid="class_k_win_1_1_fake_input_backend_private_1ade9f440e78a7d080e122d30751355bcb" kindref="member">display</ref>)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a4cf689cac974bb3cfc63d8cfcf9c80d5" kindref="member">q</ref>(<ref refid="class_k_win_1_1_fake_input_backend_private_1a4cf689cac974bb3cfc63d8cfcf9c80d5" kindref="member">q</ref>)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1ade9f440e78a7d080e122d30751355bcb" kindref="member">display</ref>(<ref refid="class_k_win_1_1_fake_input_backend_private_1ade9f440e78a7d080e122d30751355bcb" kindref="member">display</ref>)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="class_k_win_1_1_fake_input_backend_private_1a010beef7b5d3959524c5c144d11ca6ca" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a010beef7b5d3959524c5c144d11ca6ca" kindref="member">FakeInputBackendPrivate::org_kde_kwin_fake_input_bind_resource</ref>(Resource<sp/>*resource)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>device<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_device" kindref="compound">FakeInputDevice</ref>(<ref refid="class_k_win_1_1_fake_input_backend_private_1a4cf689cac974bb3cfc63d8cfcf9c80d5" kindref="member">q</ref>);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a1d5526b6510177a4cc20cfe5e46cced4" kindref="member">devices</ref>[resource]<sp/>=<sp/>std::unique_ptr&lt;FakeInputDevice&gt;(device);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a4cf689cac974bb3cfc63d8cfcf9c80d5" kindref="member">q</ref>-&gt;deviceAdded(device);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="class_k_win_1_1_fake_input_backend_private_1a9998653afca8b9ae5a2de6d0e1d7b653" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a9998653afca8b9ae5a2de6d0e1d7b653" kindref="member">FakeInputBackendPrivate::org_kde_kwin_fake_input_destroy</ref>(Resource<sp/>*resource)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_resource_destroy(resource-&gt;handle);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="class_k_win_1_1_fake_input_backend_private_1a0ed1842259ad7adfce581ada72c82d98" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a0ed1842259ad7adfce581ada72c82d98" kindref="member">FakeInputBackendPrivate::org_kde_kwin_fake_input_destroy_resource</ref>(Resource<sp/>*resource)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1acb2ab7101a9b21082f703e9f3303517c" kindref="member">removeDeviceByResource</ref>(resource);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="class_k_win_1_1_fake_input_backend_private_1ae29a61cc98bfb5983ca3c27cfdd658cf" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_fake_input_device" kindref="compound">FakeInputDevice</ref><sp/>*<ref refid="class_k_win_1_1_fake_input_backend_private_1ae29a61cc98bfb5983ca3c27cfdd658cf" kindref="member">FakeInputBackendPrivate::findDevice</ref>(Resource<sp/>*resource)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a1d5526b6510177a4cc20cfe5e46cced4" kindref="member">devices</ref>[resource].get();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="class_k_win_1_1_fake_input_backend_private_1acb2ab7101a9b21082f703e9f3303517c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1acb2ab7101a9b21082f703e9f3303517c" kindref="member">FakeInputBackendPrivate::removeDeviceByResource</ref>(Resource<sp/>*resource)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a1d5526b6510177a4cc20cfe5e46cced4" kindref="member">devices</ref>.find(resource);<sp/>it<sp/>!=<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a1d5526b6510177a4cc20cfe5e46cced4" kindref="member">devices</ref>.end())<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1abb8cf05f5c522dbe3e9df8949dae69f0" kindref="member">removeDeviceByIterator</ref>(it);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="class_k_win_1_1_fake_input_backend_private_1abb8cf05f5c522dbe3e9df8949dae69f0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1abb8cf05f5c522dbe3e9df8949dae69f0" kindref="member">FakeInputBackendPrivate::removeDeviceByIterator</ref>(FakeInputDeviceMap::iterator<sp/>it)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>device<sp/>=<sp/>std::move(it-&gt;second);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>button<sp/>:<sp/>device-&gt;pressedButtons)<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Q_EMIT<sp/>device-&gt;pointerButtonChanged(button,<sp/><ref refid="namespace_k_win_1af04c7f9798b123fe6f74415788dd38d3aea1e34304a5d8ffa7c9b0ed8ede4ef1a" kindref="member">PointerButtonState::Released</ref>,<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a61b1cce62466808e85b957985e1bc72b" kindref="member">currentTime</ref>(),<sp/>device.get());</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>key<sp/>:<sp/>device-&gt;pressedKeys)<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Q_EMIT<sp/>device-&gt;keyChanged(key,<sp/><ref refid="namespace_k_win_1a01355afe201da93e2da84b64923a02f1aea1e34304a5d8ffa7c9b0ed8ede4ef1a" kindref="member">KeyboardKeyState::Released</ref>,<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a61b1cce62466808e85b957985e1bc72b" kindref="member">currentTime</ref>(),<sp/>device.get());</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!device-&gt;activeTouches.empty())<sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Q_EMIT<sp/>device-&gt;touchCanceled(device.get());</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a1d5526b6510177a4cc20cfe5e46cced4" kindref="member">devices</ref>.erase(it);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a4cf689cac974bb3cfc63d8cfcf9c80d5" kindref="member">q</ref>-&gt;deviceRemoved(device.get());</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="class_k_win_1_1_fake_input_backend_private_1a61b1cce62466808e85b957985e1bc72b" refkind="member"><highlight class="normal">std::chrono::microseconds<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a61b1cce62466808e85b957985e1bc72b" kindref="member">FakeInputBackendPrivate::currentTime</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="103"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(std::chrono::steady_clock::now().time_since_epoch());</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="class_k_win_1_1_fake_input_backend_private_1a40c96ef1418a6d197045b41fc453716d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a40c96ef1418a6d197045b41fc453716d" kindref="member">FakeInputBackendPrivate::org_kde_kwin_fake_input_authenticate</ref>(Resource<sp/>*resource,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;application,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;reason)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_fake_input_device" kindref="compound">FakeInputDevice</ref><sp/>*device<sp/>=<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1ae29a61cc98bfb5983ca3c27cfdd658cf" kindref="member">findDevice</ref>(resource);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(device)<sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>make<sp/>secure</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1aa312505126134a95afb7b1bab1fe9e55" kindref="member">setAuthenticated</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="class_k_win_1_1_fake_input_backend_private_1ad44534e920bc0086264aa116eea3e433" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1ad44534e920bc0086264aa116eea3e433" kindref="member">FakeInputBackendPrivate::org_kde_kwin_fake_input_pointer_motion</ref>(Resource<sp/>*resource,<sp/>wl_fixed_t<sp/>delta_x,<sp/>wl_fixed_t<sp/>delta_y)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_fake_input_device" kindref="compound">FakeInputDevice</ref><sp/>*device<sp/>=<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1ae29a61cc98bfb5983ca3c27cfdd658cf" kindref="member">findDevice</ref>(resource);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a7e5816e4ead431ec95fb43a5829fa953" kindref="member">isAuthenticated</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>delta(wl_fixed_to_double(delta_x),<sp/>wl_fixed_to_double(delta_y));</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/>device-&gt;<ref refid="class_k_win_1_1_input_device_1a41f177939241acaec7df62607e7370d3" kindref="member">pointerMotion</ref>(delta,<sp/>delta,<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a61b1cce62466808e85b957985e1bc72b" kindref="member">currentTime</ref>(),<sp/>device);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/>device-&gt;<ref refid="class_k_win_1_1_input_device_1a43d563ab496cbbc60cd1098fce57ab70" kindref="member">pointerFrame</ref>(device);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="class_k_win_1_1_fake_input_backend_private_1a31e0399bba2c9fe4f346f2f4c0f1f885" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a31e0399bba2c9fe4f346f2f4c0f1f885" kindref="member">FakeInputBackendPrivate::org_kde_kwin_fake_input_button</ref>(Resource<sp/>*resource,<sp/>uint32_t<sp/>button,<sp/>uint32_t<sp/>state)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_fake_input_device" kindref="compound">FakeInputDevice</ref><sp/>*device<sp/>=<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1ae29a61cc98bfb5983ca3c27cfdd658cf" kindref="member">findDevice</ref>(resource);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a7e5816e4ead431ec95fb43a5829fa953" kindref="member">isAuthenticated</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1af04c7f9798b123fe6f74415788dd38d3" kindref="member">PointerButtonState</ref><sp/>nativeState;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(state)<sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WL_POINTER_BUTTON_STATE_PRESSED:</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nativeState<sp/>=<sp/><ref refid="namespace_k_win_1af04c7f9798b123fe6f74415788dd38d3ad78a68f6a85421ae121c2cb5b73a1040" kindref="member">PointerButtonState::Pressed</ref>;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a8e758e13177a3a202037f689a38f4eec" kindref="member">pressedButtons</ref>.contains(button))<sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a8e758e13177a3a202037f689a38f4eec" kindref="member">pressedButtons</ref>.insert(button);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WL_POINTER_BUTTON_STATE_RELEASED:</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nativeState<sp/>=<sp/><ref refid="namespace_k_win_1af04c7f9798b123fe6f74415788dd38d3aea1e34304a5d8ffa7c9b0ed8ede4ef1a" kindref="member">PointerButtonState::Released</ref>;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a8e758e13177a3a202037f689a38f4eec" kindref="member">pressedButtons</ref>.remove(button))<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/>device-&gt;<ref refid="class_k_win_1_1_input_device_1af2aa67c0f21aa2f83c1e17a611e75f85" kindref="member">pointerButtonChanged</ref>(button,<sp/>nativeState,<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a61b1cce62466808e85b957985e1bc72b" kindref="member">currentTime</ref>(),<sp/>device);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/>device-&gt;<ref refid="class_k_win_1_1_input_device_1a43d563ab496cbbc60cd1098fce57ab70" kindref="member">pointerFrame</ref>(device);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="class_k_win_1_1_fake_input_backend_private_1a8f93b26bff32343d45f49c398cca716d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a8f93b26bff32343d45f49c398cca716d" kindref="member">FakeInputBackendPrivate::org_kde_kwin_fake_input_axis</ref>(Resource<sp/>*resource,<sp/>uint32_t<sp/>axis,<sp/>wl_fixed_t<sp/>value)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_fake_input_device" kindref="compound">FakeInputDevice</ref><sp/>*device<sp/>=<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1ae29a61cc98bfb5983ca3c27cfdd658cf" kindref="member">findDevice</ref>(resource);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a7e5816e4ead431ec95fb43a5829fa953" kindref="member">isAuthenticated</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1aec4516626e95b6dc22c614c769a43590" kindref="member">PointerAxis</ref><sp/>nativeAxis;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(axis)<sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WL_POINTER_AXIS_HORIZONTAL_SCROLL:</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nativeAxis<sp/>=<sp/><ref refid="namespace_k_win_1aec4516626e95b6dc22c614c769a43590ac1b5fa03ecdb95d4a45dd1c40b02527f" kindref="member">PointerAxis::Horizontal</ref>;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WL_POINTER_AXIS_VERTICAL_SCROLL:</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nativeAxis<sp/>=<sp/><ref refid="namespace_k_win_1aec4516626e95b6dc22c614c769a43590a06ce2a25e5d12c166a36f654dbea6012" kindref="member">PointerAxis::Vertical</ref>;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/>device-&gt;<ref refid="class_k_win_1_1_input_device_1a33bbebff1d2b1a59a57c88dafa72eaaa" kindref="member">pointerAxisChanged</ref>(nativeAxis,<sp/>wl_fixed_to_double(value),<sp/>0,<sp/><ref refid="namespace_k_win_1a143704533be3f7be8a43b2b962600248a88183b946cc5f0e8c96b2e66e1c74a7e" kindref="member">PointerAxisSource::Unknown</ref>,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a61b1cce62466808e85b957985e1bc72b" kindref="member">currentTime</ref>(),<sp/>device);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/>device-&gt;<ref refid="class_k_win_1_1_input_device_1a43d563ab496cbbc60cd1098fce57ab70" kindref="member">pointerFrame</ref>(device);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="class_k_win_1_1_fake_input_backend_private_1a4ad0ff965d7f5f1655ecc7a10aaf361e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a4ad0ff965d7f5f1655ecc7a10aaf361e" kindref="member">FakeInputBackendPrivate::org_kde_kwin_fake_input_touch_down</ref>(Resource<sp/>*resource,<sp/>uint32_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>wl_fixed_t<sp/>x,<sp/>wl_fixed_t<sp/>y)</highlight></codeline>
+<codeline lineno="184"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_fake_input_device" kindref="compound">FakeInputDevice</ref><sp/>*device<sp/>=<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1ae29a61cc98bfb5983ca3c27cfdd658cf" kindref="member">findDevice</ref>(resource);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a7e5816e4ead431ec95fb43a5829fa953" kindref="member">isAuthenticated</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a2049dc4d8b9ffd516343015dbd2f4881" kindref="member">activeTouches</ref>.contains(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a2049dc4d8b9ffd516343015dbd2f4881" kindref="member">activeTouches</ref>.insert(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/>device-&gt;<ref refid="class_k_win_1_1_input_device_1a980b0a91ad2c70a7c1ed4360fccb76e7" kindref="member">touchDown</ref>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>QPointF(wl_fixed_to_double(x),<sp/>wl_fixed_to_double(y)),<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a61b1cce62466808e85b957985e1bc72b" kindref="member">currentTime</ref>(),<sp/>device);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196" refid="class_k_win_1_1_fake_input_backend_private_1a1a94c3ec574ca1dc48a97ad0d1c2e051" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a1a94c3ec574ca1dc48a97ad0d1c2e051" kindref="member">FakeInputBackendPrivate::org_kde_kwin_fake_input_touch_motion</ref>(Resource<sp/>*resource,<sp/>uint32_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>wl_fixed_t<sp/>x,<sp/>wl_fixed_t<sp/>y)</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_fake_input_device" kindref="compound">FakeInputDevice</ref><sp/>*device<sp/>=<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1ae29a61cc98bfb5983ca3c27cfdd658cf" kindref="member">findDevice</ref>(resource);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a7e5816e4ead431ec95fb43a5829fa953" kindref="member">isAuthenticated</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a2049dc4d8b9ffd516343015dbd2f4881" kindref="member">activeTouches</ref>.contains(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/>device-&gt;<ref refid="class_k_win_1_1_input_device_1a3179642a0ae2196f397d221d0ff38b3d" kindref="member">touchMotion</ref>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>QPointF(wl_fixed_to_double(x),<sp/>wl_fixed_to_double(y)),<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a61b1cce62466808e85b957985e1bc72b" kindref="member">currentTime</ref>(),<sp/>device);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208" refid="class_k_win_1_1_fake_input_backend_private_1a01aa8cdfbedbf093a3d1ccba00b9bd4f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a01aa8cdfbedbf093a3d1ccba00b9bd4f" kindref="member">FakeInputBackendPrivate::org_kde_kwin_fake_input_touch_up</ref>(Resource<sp/>*resource,<sp/>uint32_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_fake_input_device" kindref="compound">FakeInputDevice</ref><sp/>*device<sp/>=<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1ae29a61cc98bfb5983ca3c27cfdd658cf" kindref="member">findDevice</ref>(resource);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a7e5816e4ead431ec95fb43a5829fa953" kindref="member">isAuthenticated</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a2049dc4d8b9ffd516343015dbd2f4881" kindref="member">activeTouches</ref>.remove(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Q_EMIT<sp/>device-&gt;<ref refid="class_k_win_1_1_input_device_1afcc35ba1cd647736c8122951a54025b8" kindref="member">touchUp</ref>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a61b1cce62466808e85b957985e1bc72b" kindref="member">currentTime</ref>(),<sp/>device);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="217"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219" refid="class_k_win_1_1_fake_input_backend_private_1a4f013c0c3bea0c561da283893b552887" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a4f013c0c3bea0c561da283893b552887" kindref="member">FakeInputBackendPrivate::org_kde_kwin_fake_input_touch_cancel</ref>(Resource<sp/>*resource)</highlight></codeline>
+<codeline lineno="220"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_fake_input_device" kindref="compound">FakeInputDevice</ref><sp/>*device<sp/>=<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1ae29a61cc98bfb5983ca3c27cfdd658cf" kindref="member">findDevice</ref>(resource);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a7e5816e4ead431ec95fb43a5829fa953" kindref="member">isAuthenticated</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a2049dc4d8b9ffd516343015dbd2f4881" kindref="member">activeTouches</ref>.clear();</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/>device-&gt;<ref refid="class_k_win_1_1_input_device_1a3605b08e0a373f1e91c09c87557fd020" kindref="member">touchCanceled</ref>(device);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229" refid="class_k_win_1_1_fake_input_backend_private_1a8d607f63fdc0628861abb466fccf1fc5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a8d607f63fdc0628861abb466fccf1fc5" kindref="member">FakeInputBackendPrivate::org_kde_kwin_fake_input_touch_frame</ref>(Resource<sp/>*resource)</highlight></codeline>
+<codeline lineno="230"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_fake_input_device" kindref="compound">FakeInputDevice</ref><sp/>*device<sp/>=<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1ae29a61cc98bfb5983ca3c27cfdd658cf" kindref="member">findDevice</ref>(resource);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a7e5816e4ead431ec95fb43a5829fa953" kindref="member">isAuthenticated</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/>device-&gt;<ref refid="class_k_win_1_1_input_device_1a2af070611afbc3b97fb0930ac3898346" kindref="member">touchFrame</ref>(device);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238" refid="class_k_win_1_1_fake_input_backend_private_1a8f54456eb5897d42b1a390bdaf9c03fd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a8f54456eb5897d42b1a390bdaf9c03fd" kindref="member">FakeInputBackendPrivate::org_kde_kwin_fake_input_pointer_motion_absolute</ref>(Resource<sp/>*resource,<sp/>wl_fixed_t<sp/>x,<sp/>wl_fixed_t<sp/>y)</highlight></codeline>
+<codeline lineno="239"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_fake_input_device" kindref="compound">FakeInputDevice</ref><sp/>*device<sp/>=<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1ae29a61cc98bfb5983ca3c27cfdd658cf" kindref="member">findDevice</ref>(resource);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a7e5816e4ead431ec95fb43a5829fa953" kindref="member">isAuthenticated</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/>device-&gt;<ref refid="class_k_win_1_1_input_device_1aabda249f682e8597843a656c55525d5d" kindref="member">pointerMotionAbsolute</ref>(QPointF(wl_fixed_to_double(x),<sp/>wl_fixed_to_double(y)),<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a61b1cce62466808e85b957985e1bc72b" kindref="member">currentTime</ref>(),<sp/>device);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/>device-&gt;<ref refid="class_k_win_1_1_input_device_1a43d563ab496cbbc60cd1098fce57ab70" kindref="member">pointerFrame</ref>(device);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249" refid="class_k_win_1_1_fake_input_backend_private_1a6caaa6e158dedaeaea4964b5604a283a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a6caaa6e158dedaeaea4964b5604a283a" kindref="member">FakeInputBackendPrivate::org_kde_kwin_fake_input_keyboard_key</ref>(Resource<sp/>*resource,<sp/>uint32_t<sp/>key,<sp/>uint32_t<sp/>state)</highlight></codeline>
+<codeline lineno="250"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_fake_input_device" kindref="compound">FakeInputDevice</ref><sp/>*device<sp/>=<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1ae29a61cc98bfb5983ca3c27cfdd658cf" kindref="member">findDevice</ref>(resource);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a7e5816e4ead431ec95fb43a5829fa953" kindref="member">isAuthenticated</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a01355afe201da93e2da84b64923a02f1" kindref="member">KeyboardKeyState</ref><sp/>nativeState;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(state)<sp/>{</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WL_KEYBOARD_KEY_STATE_PRESSED:</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nativeState<sp/>=<sp/><ref refid="namespace_k_win_1a01355afe201da93e2da84b64923a02f1ad78a68f6a85421ae121c2cb5b73a1040" kindref="member">KeyboardKeyState::Pressed</ref>;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a543e3c2c5dc4b0d5bd11c64f0b251b6a" kindref="member">pressedKeys</ref>.contains(key))<sp/>{</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a543e3c2c5dc4b0d5bd11c64f0b251b6a" kindref="member">pressedKeys</ref>.insert(key);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>WL_KEYBOARD_KEY_STATE_RELEASED:</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!device-&gt;<ref refid="class_k_win_1_1_fake_input_device_1a543e3c2c5dc4b0d5bd11c64f0b251b6a" kindref="member">pressedKeys</ref>.remove(key))<sp/>{</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nativeState<sp/>=<sp/><ref refid="namespace_k_win_1a01355afe201da93e2da84b64923a02f1aea1e34304a5d8ffa7c9b0ed8ede4ef1a" kindref="member">KeyboardKeyState::Released</ref>;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/>device-&gt;<ref refid="class_k_win_1_1_input_device_1a18c0e18750a071e1ab7a3e3cd575071a" kindref="member">keyChanged</ref>(key,<sp/>nativeState,<sp/><ref refid="class_k_win_1_1_fake_input_backend_private_1a61b1cce62466808e85b957985e1bc72b" kindref="member">currentTime</ref>(),<sp/>device);</highlight></codeline>
+<codeline lineno="278"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280" refid="class_k_win_1_1_fake_input_backend_1a70807bec2b998bb2c4688f8354cd482b" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_fake_input_backend_1a70807bec2b998bb2c4688f8354cd482b" kindref="member">FakeInputBackend::FakeInputBackend</ref>(<ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*display)</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>d(std::make_unique&lt;<ref refid="class_k_win_1_1_fake_input_backend_private" kindref="compound">FakeInputBackendPrivate</ref>&gt;(this,<sp/>display))</highlight></codeline>
+<codeline lineno="282"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="283"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285" refid="class_k_win_1_1_fake_input_backend_1a89d55f45cf6f33231c772aa81f475493" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_fake_input_backend_1a89d55f45cf6f33231c772aa81f475493" kindref="member">FakeInputBackend::~FakeInputBackend</ref>()</highlight></codeline>
+<codeline lineno="286"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!d-&gt;devices.empty())<sp/>{</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d-&gt;removeDeviceByIterator(d-&gt;devices.begin());</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="290"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292" refid="class_k_win_1_1_fake_input_backend_1ad606ec01fd0b69abea33bcf2b6b5c1d0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_fake_input_backend_1ad606ec01fd0b69abea33bcf2b6b5c1d0" kindref="member">FakeInputBackend::initialize</ref>()</highlight></codeline>
+<codeline lineno="293"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;init(*d-&gt;display,<sp/>s_version);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;moc_fakeinputbackend.cpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/backends/fakeinput/fakeinputbackend.cpp"/>
+  </compounddef>
+</doxygen>

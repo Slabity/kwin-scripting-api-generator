@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="clientconnection_8cpp" kind="file" language="C++">
+    <compoundname>clientconnection.cpp</compoundname>
+    <includes refid="clientconnection_8h" local="yes">clientconnection.h</includes>
+    <includes refid="display_8h" local="yes">display.h</includes>
+    <includes refid="executable__path_8h" local="yes">utils/executable_path.h</includes>
+    <includes local="no">QFileInfo</includes>
+    <includes local="no">QList</includes>
+    <includes local="no">wayland-server.h</includes>
+    <includes local="yes">moc_clientconnection.cpp</includes>
+    <incdepgraph>
+      <node id="9">
+        <label>utils/executable_path.h</label>
+        <link refid="executable__path_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/wayland/clientconnection.cpp</label>
+        <link refid="clientconnection_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>clientconnection.h</label>
+        <link refid="clientconnection_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>display.h</label>
+        <link refid="display_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>QFileInfo</label>
+      </node>
+      <node id="8">
+        <label>QList</label>
+      </node>
+      <node id="5">
+        <label>QObject</label>
+      </node>
+      <node id="10">
+        <label>QString</label>
+      </node>
+      <node id="3">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="6">
+        <label>memory</label>
+      </node>
+      <node id="13">
+        <label>moc_clientconnection.cpp</label>
+      </node>
+      <node id="4">
+        <label>sys/types.h</label>
+      </node>
+      <node id="12">
+        <label>wayland-server.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_k_win_1_1_client_connection_private" prot="public">KWin::ClientConnectionPrivate</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2014<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>LGPL-2.1-only<sp/>OR<sp/>LGPL-3.0-only<sp/>OR<sp/>LicenseRef-KDE-Accepted-LGPL</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="clientconnection_8h" kindref="compound">clientconnection.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="display_8h" kindref="compound">display.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="executable__path_8h" kindref="compound">utils/executable_path.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Qt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QFileInfo&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Wayland</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;wayland-server.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17" refid="class_k_win_1_1_client_connection_private" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_client_connection_private_1a567c5e9b14d1ef6c85272cc3d0b9c5d8" kindref="member">ClientConnectionPrivate</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_client_connection_private_1a567c5e9b14d1ef6c85272cc3d0b9c5d8" kindref="member">ClientConnectionPrivate</ref>(wl_client<sp/>*c,<sp/><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*<ref refid="class_k_win_1_1_client_connection_private_1ab9c88f42e1c2646c891f07653f00fd52" kindref="member">display</ref>,<sp/><ref refid="class_k_win_1_1_client_connection" kindref="compound">ClientConnection</ref><sp/>*q);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_client_connection_private_1a45f84b6df51f8f5e3f74fc8dfc0bdd77" kindref="member">~ClientConnectionPrivate</ref>();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="class_k_win_1_1_client_connection_private_1a6378378bb4f76db50308409c4013387a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_client<sp/>*<ref refid="class_k_win_1_1_client_connection_private_1a6378378bb4f76db50308409c4013387a" kindref="member">client</ref>;</highlight></codeline>
+<codeline lineno="24" refid="class_k_win_1_1_client_connection_private_1ab9c88f42e1c2646c891f07653f00fd52" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*<ref refid="class_k_win_1_1_client_connection_private_1ab9c88f42e1c2646c891f07653f00fd52" kindref="member">display</ref>;</highlight></codeline>
+<codeline lineno="25" refid="class_k_win_1_1_client_connection_private_1aacb5ac30c6810398f4effbeb043cea81" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>pid_t<sp/><ref refid="class_k_win_1_1_client_connection_private_1aacb5ac30c6810398f4effbeb043cea81" kindref="member">pid</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="26" refid="class_k_win_1_1_client_connection_private_1a0b4c72c6af2953fd6dca44cc5b8d5da0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uid_t<sp/><ref refid="class_k_win_1_1_client_connection_private_1a0b4c72c6af2953fd6dca44cc5b8d5da0" kindref="member">user</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="27" refid="class_k_win_1_1_client_connection_private_1a11094e40f4f6dc8c67378433e904708c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>gid_t<sp/><ref refid="class_k_win_1_1_client_connection_private_1a11094e40f4f6dc8c67378433e904708c" kindref="member">group</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="28" refid="class_k_win_1_1_client_connection_private_1a515af80fa0a1ce045b9b4cf410d62388" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_client_connection_private_1a515af80fa0a1ce045b9b4cf410d62388" kindref="member">executablePath</ref>;</highlight></codeline>
+<codeline lineno="29" refid="class_k_win_1_1_client_connection_private_1a2132a24fb507a218aa89108ddb031a3c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_client_connection_private_1a2132a24fb507a218aa89108ddb031a3c" kindref="member">securityContextAppId</ref>;</highlight></codeline>
+<codeline lineno="30" refid="class_k_win_1_1_client_connection_private_1a3b62b72f88c5e248dd9319dffd8c8840" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>qreal<sp/><ref refid="class_k_win_1_1_client_connection_private_1a3b62b72f88c5e248dd9319dffd8c8840" kindref="member">scaleOverride</ref><sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>destroyListenerCallback(wl_listener<sp/>*listener,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>destroyLateListenerCallback(wl_listener<sp/>*listener,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_client_connection" kindref="compound">ClientConnection</ref><sp/>*q;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_listener<sp/>destroyListener;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_listener<sp/>destroyLateListener;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>QList&lt;ClientConnectionPrivate<sp/>*&gt;<sp/>s_allClients;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">QList&lt;ClientConnectionPrivate<sp/>*&gt;<sp/>ClientConnectionPrivate::s_allClients;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="class_k_win_1_1_client_connection_private_1a567c5e9b14d1ef6c85272cc3d0b9c5d8" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_client_connection_private_1a567c5e9b14d1ef6c85272cc3d0b9c5d8" kindref="member">ClientConnectionPrivate::ClientConnectionPrivate</ref>(wl_client<sp/>*c,<sp/><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*<ref refid="class_k_win_1_1_client_connection_private_1ab9c88f42e1c2646c891f07653f00fd52" kindref="member">display</ref>,<sp/><ref refid="class_k_win_1_1_client_connection" kindref="compound">ClientConnection</ref><sp/>*q)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="class_k_win_1_1_client_connection_private_1a6378378bb4f76db50308409c4013387a" kindref="member">client</ref>(c)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_client_connection_private_1ab9c88f42e1c2646c891f07653f00fd52" kindref="member">display</ref>(<ref refid="class_k_win_1_1_client_connection_private_1ab9c88f42e1c2646c891f07653f00fd52" kindref="member">display</ref>)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>q(q)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>s_allClients<sp/>&lt;&lt;<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>destroyListener.notify<sp/>=<sp/>destroyListenerCallback;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_client_add_destroy_listener(c,<sp/>&amp;destroyListener);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>destroyLateListener.notify<sp/>=<sp/>destroyLateListenerCallback;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_client_add_destroy_late_listener(c,<sp/>&amp;destroyLateListener);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_client_get_credentials(<ref refid="class_k_win_1_1_client_connection_private_1a6378378bb4f76db50308409c4013387a" kindref="member">client</ref>,<sp/>&amp;<ref refid="class_k_win_1_1_client_connection_private_1aacb5ac30c6810398f4effbeb043cea81" kindref="member">pid</ref>,<sp/>&amp;<ref refid="class_k_win_1_1_client_connection_private_1a0b4c72c6af2953fd6dca44cc5b8d5da0" kindref="member">user</ref>,<sp/>&amp;<ref refid="class_k_win_1_1_client_connection_private_1a11094e40f4f6dc8c67378433e904708c" kindref="member">group</ref>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_client_connection_private_1a515af80fa0a1ce045b9b4cf410d62388" kindref="member">executablePath</ref><sp/>=<sp/><ref refid="executable__path_8h_1a39f4647eb8bba8af97edbfe7f101c903" kindref="member">executablePathFromPid</ref>(<ref refid="class_k_win_1_1_client_connection_private_1aacb5ac30c6810398f4effbeb043cea81" kindref="member">pid</ref>);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="class_k_win_1_1_client_connection_private_1a45f84b6df51f8f5e3f74fc8dfc0bdd77" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_client_connection_private_1a45f84b6df51f8f5e3f74fc8dfc0bdd77" kindref="member">ClientConnectionPrivate::~ClientConnectionPrivate</ref>()</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>s_allClients.removeAt(s_allClients.indexOf(</highlight><highlight class="keyword">this</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ClientConnectionPrivate::destroyListenerCallback(wl_listener<sp/>*listener,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_client<sp/>*<ref refid="class_k_win_1_1_client_connection_private_1a6378378bb4f76db50308409c4013387a" kindref="member">client</ref><sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">wl_client<sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(data);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>std::find_if(s_allClients.constBegin(),<sp/>s_allClients.constEnd(),<sp/>[<ref refid="class_k_win_1_1_client_connection_private_1a6378378bb4f76db50308409c4013387a" kindref="member">client</ref>](<ref refid="class_k_win_1_1_client_connection_private" kindref="compound">ClientConnectionPrivate</ref><sp/>*c)<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>c-&gt;client<sp/>==<sp/>client;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_ASSERT(it<sp/>!=<sp/>s_allClients.constEnd());</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p<sp/>=<sp/>(*it);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>q<sp/>=<sp/>p-&gt;q;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/>q-&gt;<ref refid="class_k_win_1_1_client_connection_1a8e212adb4355ce097b0ac314a8b744df" kindref="member">aboutToBeDestroyed</ref>();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_list_remove(&amp;p-&gt;destroyListener.link);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/>q-&gt;<ref refid="class_k_win_1_1_client_connection_1ad7bc6fb81b62838582ac033050abc13c" kindref="member">disconnected</ref>(q);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ClientConnectionPrivate::destroyLateListenerCallback(wl_listener<sp/>*listener,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_client<sp/>*<ref refid="class_k_win_1_1_client_connection_private_1a6378378bb4f76db50308409c4013387a" kindref="member">client</ref><sp/>=<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">wl_client<sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(data);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>std::find_if(s_allClients.constBegin(),<sp/>s_allClients.constEnd(),<sp/>[<ref refid="class_k_win_1_1_client_connection_private_1a6378378bb4f76db50308409c4013387a" kindref="member">client</ref>](<ref refid="class_k_win_1_1_client_connection_private_1a567c5e9b14d1ef6c85272cc3d0b9c5d8" kindref="member">ClientConnectionPrivate</ref><sp/>*c)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>c-&gt;client<sp/>==<sp/>client;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_ASSERT(it<sp/>!=<sp/>s_allClients.constEnd());</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p<sp/>=<sp/>(*it);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>q<sp/>=<sp/>p-&gt;q;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_list_remove(&amp;p-&gt;destroyLateListener.link);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>q;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">ClientConnection::ClientConnection(wl_client<sp/>*c,<sp/><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*parent)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QObject(parent)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>d(new<sp/><ref refid="class_k_win_1_1_client_connection_private" kindref="compound">ClientConnectionPrivate</ref>(c,<sp/>parent,<sp/>this))</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><ref refid="class_k_win_1_1_client_connection_1a4ee9e810b5c3f429f648d313ac5356f6" kindref="member">ClientConnection::~ClientConnection</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="class_k_win_1_1_client_connection_1a0d9bc58f88c4a594a6a3e581ddcfdac4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_client_connection_1a0d9bc58f88c4a594a6a3e581ddcfdac4" kindref="member">ClientConnection::flush</ref>()</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_client_flush(d-&gt;client);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="class_k_win_1_1_client_connection_1a88ead87bf9710ef8a329432a4aab854a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_client_connection_1a88ead87bf9710ef8a329432a4aab854a" kindref="member">ClientConnection::destroy</ref>()</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>wl_client_destroy(d-&gt;client);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="class_k_win_1_1_client_connection_1a5ba6671f13d50b3efd9328f81dd41aab" refkind="member"><highlight class="normal">wl_resource<sp/>*<ref refid="class_k_win_1_1_client_connection_1a5ba6671f13d50b3efd9328f81dd41aab" kindref="member">ClientConnection::getResource</ref>(quint32<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="113"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>wl_client_get_object(d-&gt;client,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="class_k_win_1_1_client_connection_1aa3b49670cf09ff8b5bf837f7ba29f7d2" refkind="member"><highlight class="normal">wl_client<sp/>*<ref refid="class_k_win_1_1_client_connection_1aa3b49670cf09ff8b5bf837f7ba29f7d2" kindref="member">ClientConnection::client</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="118"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;client;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="class_k_win_1_1_client_connection_1a95a6bcfedab45fe6df5918380894e834" refkind="member"><highlight class="normal">ClientConnection::operator<sp/>wl_client<sp/>*()</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;client;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="class_k_win_1_1_client_connection_1af0802b9573a77993ac928b1978fd147f" refkind="member"><highlight class="normal">ClientConnection::operator<sp/>wl_client<sp/>*()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;client;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="class_k_win_1_1_client_connection_1a635055023a16313b85a1715ef73b6e9f" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_client_connection_1a97af53b9a9ff09603a3dbcbe7074ad11" kindref="member">Display</ref><sp/>*<ref refid="class_k_win_1_1_client_connection_1a635055023a16313b85a1715ef73b6e9f" kindref="member">ClientConnection::display</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="133"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;display;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="class_k_win_1_1_client_connection_1a70dfcbf2db8478f74888bdad07c4ba5c" refkind="member"><highlight class="normal">gid_t<sp/><ref refid="class_k_win_1_1_client_connection_1a70dfcbf2db8478f74888bdad07c4ba5c" kindref="member">ClientConnection::groupId</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="138"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;group;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="class_k_win_1_1_client_connection_1a2f9fb48a2e72330e0f5b170a30fd4212" refkind="member"><highlight class="normal">pid_t<sp/><ref refid="class_k_win_1_1_client_connection_1a2f9fb48a2e72330e0f5b170a30fd4212" kindref="member">ClientConnection::processId</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="143"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;pid;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="class_k_win_1_1_client_connection_1a12cc688a7ce7fec08507f9f087f86b7c" refkind="member"><highlight class="normal">uid_t<sp/><ref refid="class_k_win_1_1_client_connection_1a12cc688a7ce7fec08507f9f087f86b7c" kindref="member">ClientConnection::userId</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="148"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;user;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="class_k_win_1_1_client_connection_1a14c8bb705cafaad238432319d429b68e" refkind="member"><highlight class="normal">QString<sp/><ref refid="class_k_win_1_1_client_connection_1a14c8bb705cafaad238432319d429b68e" kindref="member">ClientConnection::executablePath</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="153"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;executablePath;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157" refid="class_k_win_1_1_client_connection_1a12b3837602c68f64c096301e195bd82c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_client_connection_1a12b3837602c68f64c096301e195bd82c" kindref="member">ClientConnection::setScaleOverride</ref>(qreal<sp/>scaleOveride)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_ASSERT(scaleOveride<sp/>!=<sp/>0);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;scaleOverride<sp/>=<sp/>scaleOveride;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_client_connection_1add152dd3b2eec28cf0d737d8affb411f" kindref="member">scaleOverrideChanged</ref>();</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="class_k_win_1_1_client_connection_1aedf8276f02e493fe5297ff54ef901a68" refkind="member"><highlight class="normal">qreal<sp/><ref refid="class_k_win_1_1_client_connection_1aedf8276f02e493fe5297ff54ef901a68" kindref="member">ClientConnection::scaleOverride</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="165"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;scaleOverride;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169" refid="class_k_win_1_1_client_connection_1ad0243e8722894d431933828af1485000" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_client_connection_1ad0243e8722894d431933828af1485000" kindref="member">ClientConnection::setSecurityContextAppId</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;appId)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;securityContextAppId<sp/>=<sp/>appId;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174" refid="class_k_win_1_1_client_connection_1a575257ba6fc5d7b5d65e91092b15365b" refkind="member"><highlight class="normal">QString<sp/><ref refid="class_k_win_1_1_client_connection_1a575257ba6fc5d7b5d65e91092b15365b" kindref="member">ClientConnection::securityContextAppId</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="175"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;securityContextAppId;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;moc_clientconnection.cpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/wayland/clientconnection.cpp"/>
+  </compounddef>
+</doxygen>

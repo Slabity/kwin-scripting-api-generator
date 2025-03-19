@@ -1,0 +1,494 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_lib_input_1_1_connection" kind="class" language="C++" prot="public">
+    <compoundname>KWin::LibInput::Connection</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="connection_8h" local="no">connection.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_lib_input_1_1_connection_1a603e1c64ed5e1f4d2655aded854edc55" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; QSocketNotifier &gt;</type>
+        <definition>std::unique_ptr&lt;QSocketNotifier&gt; KWin::LibInput::Connection::m_notifier</definition>
+        <argsstring></argsstring>
+        <name>m_notifier</name>
+        <qualifiedname>KWin::LibInput::Connection::m_notifier</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="81" column="21" bodyfile="kwin/src/backends/libinput/connection.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_lib_input_1_1_connection_1afbad3bd8dbc80dd5cfe42e50ebf0dddc" prot="private" static="no" mutable="no">
+        <type>QRecursiveMutex</type>
+        <definition>QRecursiveMutex KWin::LibInput::Connection::m_mutex</definition>
+        <argsstring></argsstring>
+        <name>m_mutex</name>
+        <qualifiedname>KWin::LibInput::Connection::m_mutex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="82" column="21" bodyfile="kwin/src/backends/libinput/connection.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_lib_input_1_1_connection_1a22f3cb8fefd20987eb30ab2c9d45da49" prot="private" static="no" mutable="no">
+        <type>std::deque&lt; std::unique_ptr&lt; <ref refid="class_k_win_1_1_lib_input_1_1_event" kindref="compound">Event</ref> &gt; &gt;</type>
+        <definition>std::deque&lt;std::unique_ptr&lt;Event&gt; &gt; KWin::LibInput::Connection::m_eventQueue</definition>
+        <argsstring></argsstring>
+        <name>m_eventQueue</name>
+        <qualifiedname>KWin::LibInput::Connection::m_eventQueue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="83" column="16" bodyfile="kwin/src/backends/libinput/connection.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_lib_input_1_1_connection_1a79aa8d49f47c458199215afb6cca491c" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_lib_input_1_1_device" kindref="compound">Device</ref> * &gt;</type>
+        <definition>QList&lt;Device *&gt; KWin::LibInput::Connection::m_devices</definition>
+        <argsstring></argsstring>
+        <name>m_devices</name>
+        <qualifiedname>KWin::LibInput::Connection::m_devices</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="84" column="11" bodyfile="kwin/src/backends/libinput/connection.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_lib_input_1_1_connection_1acb7289493053ebd02e33a999252e573a" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_lib_input_1_1_tablet_tool" kindref="compound">TabletTool</ref> * &gt;</type>
+        <definition>QList&lt;TabletTool *&gt; KWin::LibInput::Connection::m_tools</definition>
+        <argsstring></argsstring>
+        <name>m_tools</name>
+        <qualifiedname>KWin::LibInput::Connection::m_tools</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="85" column="11" bodyfile="kwin/src/backends/libinput/connection.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_lib_input_1_1_connection_1aa36e20f47e32501daf5772499fb2f652" prot="private" static="no" mutable="no">
+        <type>KSharedConfigPtr</type>
+        <definition>KSharedConfigPtr KWin::LibInput::Connection::m_config</definition>
+        <argsstring></argsstring>
+        <name>m_config</name>
+        <qualifiedname>KWin::LibInput::Connection::m_config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="86" column="22" bodyfile="kwin/src/backends/libinput/connection.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_lib_input_1_1_connection_1a70a9401505137672022fc8fff56199e3" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_lib_input_1_1_connection_adaptor" kindref="compound">ConnectionAdaptor</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;ConnectionAdaptor&gt; KWin::LibInput::Connection::m_connectionAdaptor</definition>
+        <argsstring></argsstring>
+        <name>m_connectionAdaptor</name>
+        <qualifiedname>KWin::LibInput::Connection::m_connectionAdaptor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="87" column="21" bodyfile="kwin/src/backends/libinput/connection.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_lib_input_1_1_connection_1a41c5c228eac2bb75777c02572ed2f464" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_lib_input_1_1_context" kindref="compound">Context</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Context&gt; KWin::LibInput::Connection::m_input</definition>
+        <argsstring></argsstring>
+        <name>m_input</name>
+        <qualifiedname>KWin::LibInput::Connection::m_input</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="88" column="21" bodyfile="kwin/src/backends/libinput/connection.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_lib_input_1_1_connection_1a5914190178624d283dd39c93e5a30fa7" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_udev" kindref="compound">Udev</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Udev&gt; KWin::LibInput::Connection::m_udev</definition>
+        <argsstring></argsstring>
+        <name>m_udev</name>
+        <qualifiedname>KWin::LibInput::Connection::m_udev</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="89" column="21" bodyfile="kwin/src/backends/libinput/connection.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_lib_input_1_1_connection_1a8193f8f408cde81c217bbc34251939c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::LibInput::Connection::~Connection</definition>
+        <argsstring>() override</argsstring>
+        <name>~Connection</name>
+        <qualifiedname>KWin::LibInput::Connection::~Connection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="48" column="5" bodyfile="kwin/src/backends/libinput/connection.cpp" bodystart="113" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_lib_input_1_1_connection_1a53c630dd14523e4e0815ffaaa953e423" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::LibInput::Connection::setInputConfig</definition>
+        <argsstring>(const KSharedConfigPtr &amp;config)</argsstring>
+        <name>setInputConfig</name>
+        <qualifiedname>KWin::LibInput::Connection::setInputConfig</qualifiedname>
+        <param>
+          <type>const KSharedConfigPtr &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="50" column="10" bodyfile="kwin/src/backends/libinput/connection.h" bodystart="50" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_lib_input_1_1_connection_1a6778e7aa674771a20339d329cd1f013d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::LibInput::Connection::setup</definition>
+        <argsstring>()</argsstring>
+        <name>setup</name>
+        <qualifiedname>KWin::LibInput::Connection::setup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="55" column="10" bodyfile="kwin/src/backends/libinput/connection.cpp" bodystart="124" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_lib_input_1_1_connection_1ae24730b400ba7b76aba2d488ff646ee6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::LibInput::Connection::updateScreens</definition>
+        <argsstring>()</argsstring>
+        <name>updateScreens</name>
+        <qualifiedname>KWin::LibInput::Connection::updateScreens</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="56" column="10" bodyfile="kwin/src/backends/libinput/connection.cpp" bodystart="573" bodyend="579"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_lib_input_1_1_connection_1a38bc72c06da70430e1ee23d18fe19010" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::LibInput::Connection::deactivate</definition>
+        <argsstring>()</argsstring>
+        <name>deactivate</name>
+        <qualifiedname>KWin::LibInput::Connection::deactivate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="57" column="10" bodyfile="kwin/src/backends/libinput/connection.cpp" bodystart="151" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_lib_input_1_1_connection_1a996c67290e736271670c5f6d5e5a57b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::LibInput::Connection::processEvents</definition>
+        <argsstring>()</argsstring>
+        <name>processEvents</name>
+        <qualifiedname>KWin::LibInput::Connection::processEvents</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="58" column="10" bodyfile="kwin/src/backends/libinput/connection.cpp" bodystart="238" bodyend="571"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_lib_input_1_1_connection_1a4e173559b91e865e9be5735bb79c4be8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QStringList</type>
+        <definition>QStringList KWin::LibInput::Connection::devicesSysNames</definition>
+        <argsstring>() const</argsstring>
+        <name>devicesSysNames</name>
+        <qualifiedname>KWin::LibInput::Connection::devicesSysNames</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="60" column="17" bodyfile="kwin/src/backends/libinput/connection.cpp" bodystart="693" bodyend="700"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_lib_input_1_1_connection_1aa2c09bfdc0b5fd06abf24f3506bbe240" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_lib_input_1_1_connection" kindref="compound">Connection</ref> *</type>
+        <definition>Connection * KWin::LibInput::Connection::create</definition>
+        <argsstring>(Session *session)</argsstring>
+        <name>create</name>
+        <qualifiedname>KWin::LibInput::Connection::create</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_session" kindref="compound">Session</ref> *</type>
+          <declname>session</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="62" column="23" bodyfile="kwin/src/backends/libinput/connection.cpp" bodystart="83" bodyend="100"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_lib_input_1_1_connection_1a6c4e6df849b1581f4a7948b6543b8dac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::LibInput::Connection::deviceAdded</definition>
+        <argsstring>(KWin::LibInput::Device *)</argsstring>
+        <name>deviceAdded</name>
+        <qualifiedname>KWin::LibInput::Connection::deviceAdded</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_lib_input_1_1_device" kindref="compound">KWin::LibInput::Device</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="65" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_lib_input_1_1_connection_1a7c52d1b46ffb4349ef5cc2bba55ad476" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::LibInput::Connection::deviceRemoved</definition>
+        <argsstring>(KWin::LibInput::Device *)</argsstring>
+        <name>deviceRemoved</name>
+        <qualifiedname>KWin::LibInput::Connection::deviceRemoved</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_lib_input_1_1_device" kindref="compound">KWin::LibInput::Device</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="66" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_lib_input_1_1_connection_1a2d0c5708daf590cf282b756bfe767afd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::LibInput::Connection::eventsRead</definition>
+        <argsstring>()</argsstring>
+        <name>eventsRead</name>
+        <qualifiedname>KWin::LibInput::Connection::eventsRead</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="68" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_k_win_1_1_lib_input_1_1_connection_1ab7fd9b239fd1e3f44467c0d4510c674a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::LibInput::Connection::slotKGlobalSettingsNotifyChange</definition>
+        <argsstring>(int type, int arg)</argsstring>
+        <name>slotKGlobalSettingsNotifyChange</name>
+        <qualifiedname>KWin::LibInput::Connection::slotKGlobalSettingsNotifyChange</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>SettingsChanged</para>
+<para>SETTINGS_MOUSE</para>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="71" column="10" bodyfile="kwin/src/backends/libinput/connection.cpp" bodystart="681" bodyend="691"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_lib_input_1_1_connection_1aed0dde435334120456ba825ad4f8972a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::LibInput::Connection::Connection</definition>
+        <argsstring>(std::unique_ptr&lt; Context &gt; &amp;&amp;input)</argsstring>
+        <name>Connection</name>
+        <qualifiedname>KWin::LibInput::Connection::Connection</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_lib_input_1_1_context" kindref="compound">Context</ref> &gt; &amp;&amp;</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="74" column="5" bodyfile="kwin/src/backends/libinput/connection.cpp" bodystart="102" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_lib_input_1_1_connection_1a83feeaba55f4900056119652a17e60c9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::LibInput::Connection::handleEvent</definition>
+        <argsstring>()</argsstring>
+        <name>handleEvent</name>
+        <qualifiedname>KWin::LibInput::Connection::handleEvent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="75" column="10" bodyfile="kwin/src/backends/libinput/connection.cpp" bodystart="160" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_lib_input_1_1_connection_1ac786d0a19d6526ee9ab0b55958192e99" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::LibInput::Connection::applyDeviceConfig</definition>
+        <argsstring>(Device *device)</argsstring>
+        <name>applyDeviceConfig</name>
+        <qualifiedname>KWin::LibInput::Connection::applyDeviceConfig</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_lib_input_1_1_device" kindref="compound">Device</ref> *</type>
+          <declname>device</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="76" column="10" bodyfile="kwin/src/backends/libinput/connection.cpp" bodystart="660" bodyend="679"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_lib_input_1_1_connection_1a4c4d9b2b597cc209a130b3dd37f98938" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::LibInput::Connection::applyScreenToDevice</definition>
+        <argsstring>(Device *device)</argsstring>
+        <name>applyScreenToDevice</name>
+        <qualifiedname>KWin::LibInput::Connection::applyScreenToDevice</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_lib_input_1_1_device" kindref="compound">Device</ref> *</type>
+          <declname>device</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="77" column="10" bodyfile="kwin/src/backends/libinput/connection.cpp" bodystart="581" bodyend="658"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_lib_input_1_1_connection_1a481da0a5f6cd0d9e38b632cbb3c8d537" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::LibInput::Connection::doSetup</definition>
+        <argsstring>()</argsstring>
+        <name>doSetup</name>
+        <qualifiedname>KWin::LibInput::Connection::doSetup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="78" column="10" bodyfile="kwin/src/backends/libinput/connection.cpp" bodystart="129" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_lib_input_1_1_connection_1ab497c947bb986074877b0392cbe6fd19" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_lib_input_1_1_tablet_tool" kindref="compound">TabletTool</ref> *</type>
+        <definition>TabletTool * KWin::LibInput::Connection::getOrCreateTool</definition>
+        <argsstring>(libinput_tablet_tool *tool)</argsstring>
+        <name>getOrCreateTool</name>
+        <qualifiedname>KWin::LibInput::Connection::getOrCreateTool</qualifiedname>
+        <param>
+          <type>libinput_tablet_tool *</type>
+          <declname>tool</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/libinput/connection.h" line="79" column="16" bodyfile="kwin/src/backends/libinput/connection.cpp" bodystart="223" bodyend="236"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::LibInput::Connection</label>
+        <link refid="class_k_win_1_1_lib_input_1_1_connection"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::LibInput::Connection</label>
+        <link refid="class_k_win_1_1_lib_input_1_1_connection"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/backends/libinput/connection.h" line="43" column="1" bodyfile="kwin/src/backends/libinput/connection.h" bodystart="44" bodyend="90"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1ac786d0a19d6526ee9ab0b55958192e99" prot="private" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>applyDeviceConfig</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1a4c4d9b2b597cc209a130b3dd37f98938" prot="private" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>applyScreenToDevice</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1aed0dde435334120456ba825ad4f8972a" prot="private" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>Connection</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1aa2c09bfdc0b5fd06abf24f3506bbe240" prot="public" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>create</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1a38bc72c06da70430e1ee23d18fe19010" prot="public" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>deactivate</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1a6c4e6df849b1581f4a7948b6543b8dac" prot="public" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>deviceAdded</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1a7c52d1b46ffb4349ef5cc2bba55ad476" prot="public" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>deviceRemoved</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1a4e173559b91e865e9be5735bb79c4be8" prot="public" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>devicesSysNames</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1a481da0a5f6cd0d9e38b632cbb3c8d537" prot="private" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>doSetup</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1a2d0c5708daf590cf282b756bfe767afd" prot="public" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>eventsRead</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1ab497c947bb986074877b0392cbe6fd19" prot="private" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>getOrCreateTool</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1a83feeaba55f4900056119652a17e60c9" prot="private" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>handleEvent</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1aa36e20f47e32501daf5772499fb2f652" prot="private" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>m_config</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1a70a9401505137672022fc8fff56199e3" prot="private" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>m_connectionAdaptor</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1a79aa8d49f47c458199215afb6cca491c" prot="private" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>m_devices</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1a22f3cb8fefd20987eb30ab2c9d45da49" prot="private" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>m_eventQueue</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1a41c5c228eac2bb75777c02572ed2f464" prot="private" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>m_input</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1afbad3bd8dbc80dd5cfe42e50ebf0dddc" prot="private" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>m_mutex</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1a603e1c64ed5e1f4d2655aded854edc55" prot="private" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>m_notifier</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1acb7289493053ebd02e33a999252e573a" prot="private" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>m_tools</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1a5914190178624d283dd39c93e5a30fa7" prot="private" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>m_udev</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1a996c67290e736271670c5f6d5e5a57b1" prot="public" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>processEvents</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1a53c630dd14523e4e0815ffaaa953e423" prot="public" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>setInputConfig</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1a6778e7aa674771a20339d329cd1f013d" prot="public" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>setup</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1ab7fd9b239fd1e3f44467c0d4510c674a" prot="private" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>slotKGlobalSettingsNotifyChange</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1ae24730b400ba7b76aba2d488ff646ee6" prot="public" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>updateScreens</name></member>
+      <member refid="class_k_win_1_1_lib_input_1_1_connection_1a8193f8f408cde81c217bbc34251939c9" prot="public" virt="non-virtual"><scope>KWin::LibInput::Connection</scope><name>~Connection</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

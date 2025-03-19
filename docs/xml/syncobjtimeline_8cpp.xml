@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="syncobjtimeline_8cpp" kind="file" language="C++">
+    <compoundname>syncobjtimeline.cpp</compoundname>
+    <includes refid="syncobjtimeline_8h" local="yes">syncobjtimeline.h</includes>
+    <includes local="no">cerrno</includes>
+    <includes local="no">sys/eventfd.h</includes>
+    <includes local="no">sys/ioctl.h</includes>
+    <includes local="no">xf86drm.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/core/syncobjtimeline.cpp</label>
+        <link refid="syncobjtimeline_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>syncobjtimeline.h</label>
+        <link refid="syncobjtimeline_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>utils/filedescriptor.h</label>
+        <link refid="filedescriptor_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>cerrno</label>
+      </node>
+      <node id="3">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="5">
+        <label>memory</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="8">
+        <label>sys/eventfd.h</label>
+      </node>
+      <node id="9">
+        <label>sys/ioctl.h</label>
+      </node>
+      <node id="10">
+        <label>xf86drm.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structsync__merge__data" prot="public">sync_merge_data</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="syncobjtimeline_8cpp_1af85850f7f2fe3592ef0f0da49296e218" prot="public" static="no">
+        <name>SYNC_IOC_MAGIC</name>
+        <initializer>&apos;&gt;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/syncobjtimeline.cpp" line="24" column="9" bodyfile="kwin/src/core/syncobjtimeline.cpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="syncobjtimeline_8cpp_1a0569d57b39bfb94edafbe7abd2ec54df" prot="public" static="no">
+        <name>SYNC_IOC_MERGE</name>
+        <initializer>_IOWR(<ref refid="syncobjtimeline_8cpp_1af85850f7f2fe3592ef0f0da49296e218" kindref="member">SYNC_IOC_MAGIC</ref>, 3, struct <ref refid="structsync__merge__data" kindref="compound">sync_merge_data</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/core/syncobjtimeline.cpp" line="25" column="9" bodyfile="kwin/src/core/syncobjtimeline.cpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2024<sp/>Xaver<sp/>Hugl<sp/>&lt;xaver.hugl@gmail.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="syncobjtimeline_8h" kindref="compound">syncobjtimeline.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cerrno&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/eventfd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/ioctl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;xf86drm.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(Q_OS_LINUX)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;linux/sync_file.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="structsync__merge__data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structsync__merge__data" kindref="compound">sync_merge_data</ref></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18" refid="structsync__merge__data_1a5cde723a2c6cfa379746b99655f78135" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="structsync__merge__data_1a5cde723a2c6cfa379746b99655f78135" kindref="member">name</ref>[32];</highlight></codeline>
+<codeline lineno="19" refid="structsync__merge__data_1afdeadea8d7631adec32fc966352e698a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>__s32<sp/><ref refid="structsync__merge__data_1afdeadea8d7631adec32fc966352e698a" kindref="member">fd2</ref>;</highlight></codeline>
+<codeline lineno="20" refid="structsync__merge__data_1a573aa8d932d9d393a9aecbc0c839e67d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>__s32<sp/><ref refid="structsync__merge__data_1a573aa8d932d9d393a9aecbc0c839e67d" kindref="member">fence</ref>;</highlight></codeline>
+<codeline lineno="21" refid="structsync__merge__data_1aacd974b9accb6d8ebc449b04778875b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>__u32<sp/><ref refid="structsync__merge__data_1aacd974b9accb6d8ebc449b04778875b6" kindref="member">flags</ref>;</highlight></codeline>
+<codeline lineno="22" refid="structsync__merge__data_1a1b886d96d57f419fca441124b9c225fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>__u32<sp/><ref refid="structsync__merge__data_1a1b886d96d57f419fca441124b9c225fc" kindref="member">pad</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="24" refid="syncobjtimeline_8cpp_1af85850f7f2fe3592ef0f0da49296e218" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SYNC_IOC_MAGIC<sp/>&apos;&gt;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="syncobjtimeline_8cpp_1a0569d57b39bfb94edafbe7abd2ec54df" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SYNC_IOC_MERGE<sp/>_IOWR(SYNC_IOC_MAGIC,<sp/>3,<sp/>struct<sp/>sync_merge_data)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="class_k_win_1_1_sync_release_point_1a6d28430db9341a185fb5869fff2640a5" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_sync_release_point_1a6d28430db9341a185fb5869fff2640a5" kindref="member">SyncReleasePoint::SyncReleasePoint</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;SyncTimeline&gt;<sp/>&amp;<ref refid="class_k_win_1_1_sync_release_point_1a50fbd6d4b989f18b828eed0b8ccfec5b" kindref="member">timeline</ref>,<sp/>uint64_t<sp/><ref refid="class_k_win_1_1_sync_release_point_1af5001f0174dcdcae8231f03b2150fa0d" kindref="member">timelinePoint</ref>)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>m_timeline(<ref refid="class_k_win_1_1_sync_release_point_1a50fbd6d4b989f18b828eed0b8ccfec5b" kindref="member">timeline</ref>)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_timelinePoint(<ref refid="class_k_win_1_1_sync_release_point_1af5001f0174dcdcae8231f03b2150fa0d" kindref="member">timelinePoint</ref>)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="class_k_win_1_1_sync_release_point_1acccab0b6c2c91b9c3f6e0e899143d27c" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_sync_release_point_1acccab0b6c2c91b9c3f6e0e899143d27c" kindref="member">SyncReleasePoint::~SyncReleasePoint</ref>()</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_releaseFence.isValid())<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_timeline-&gt;moveInto(m_timelinePoint,<sp/>m_releaseFence);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_timeline-&gt;signal(m_timelinePoint);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>mergeSyncFds(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>&amp;fd1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>&amp;fd2)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structsync__merge__data" kindref="compound">sync_merge_data</ref><sp/>data</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="structsync__merge__data_1a5cde723a2c6cfa379746b99655f78135" kindref="member">name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;merged<sp/>release<sp/>fence&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.fd2<sp/>=<sp/>fd2.<ref refid="class_k_win_1_1_file_descriptor_1ab59a3ce5116b1e7718d8fb7994d47a41" kindref="member">get</ref>(),</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.fence<sp/>=<sp/>-1,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err<sp/>=<sp/>ioctl(fd1.<ref refid="class_k_win_1_1_file_descriptor_1ab59a3ce5116b1e7718d8fb7994d47a41" kindref="member">get</ref>(),<sp/><ref refid="syncobjtimeline_8cpp_1a0569d57b39bfb94edafbe7abd2ec54df" kindref="member">SYNC_IOC_MERGE</ref>,<sp/>&amp;data);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(err<sp/>==<sp/>-1<sp/>&amp;&amp;<sp/>(errno<sp/>==<sp/>EINTR<sp/>||<sp/>errno<sp/>==<sp/>EAGAIN));</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(err<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref>{};</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref>(data.fence);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="class_k_win_1_1_sync_release_point_1a3831e6b452fa34b6aa0bdc472bb026cf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_sync_release_point_1a3831e6b452fa34b6aa0bdc472bb026cf" kindref="member">SyncReleasePoint::addReleaseFence</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>&amp;fd)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_releaseFence.isValid())<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_releaseFence<sp/>=<sp/>mergeSyncFds(m_releaseFence,<sp/>fd);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_releaseFence<sp/>=<sp/>fd.<ref refid="class_k_win_1_1_file_descriptor_1af6d14c98af23cdfad88629ce10d10538" kindref="member">duplicate</ref>();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="class_k_win_1_1_sync_release_point_1a50fbd6d4b989f18b828eed0b8ccfec5b" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_sync_timeline" kindref="compound">SyncTimeline</ref><sp/>*<ref refid="class_k_win_1_1_sync_release_point_1a50fbd6d4b989f18b828eed0b8ccfec5b" kindref="member">SyncReleasePoint::timeline</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="75"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_timeline.get();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="class_k_win_1_1_sync_release_point_1af5001f0174dcdcae8231f03b2150fa0d" refkind="member"><highlight class="normal">uint64_t<sp/><ref refid="class_k_win_1_1_sync_release_point_1af5001f0174dcdcae8231f03b2150fa0d" kindref="member">SyncReleasePoint::timelinePoint</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="80"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_timelinePoint;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="class_k_win_1_1_sync_timeline_1a2bc02783ca7ae2d9e47ed282ecc1816e" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_sync_timeline_1a2bc02783ca7ae2d9e47ed282ecc1816e" kindref="member">SyncTimeline::SyncTimeline</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>drmFd,<sp/>uint32_t<sp/>handle)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>m_drmFd(drmFd)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_handle(handle)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="class_k_win_1_1_sync_timeline_1ad8b88574f6def0f2e894104150ac604b" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_sync_timeline_1a2bc02783ca7ae2d9e47ed282ecc1816e" kindref="member">SyncTimeline::SyncTimeline</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>drmFd)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>m_drmFd(drmFd)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>drmSyncobjCreate(m_drmFd,<sp/>0,<sp/>&amp;m_handle);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="class_k_win_1_1_sync_timeline_1af33495700e4e60b4b379bf4fb67a1ae4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>&amp;<ref refid="class_k_win_1_1_sync_timeline_1af33495700e4e60b4b379bf4fb67a1ae4" kindref="member">SyncTimeline::fileDescriptor</ref>()</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!m_fileDescriptor.isValid())<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>drmSyncobjHandleToFD(m_drmFd,<sp/>m_handle,<sp/>&amp;fd);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_fileDescriptor<sp/>=<sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref>(fd);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_fileDescriptor;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="class_k_win_1_1_sync_timeline_1a679600ff8f0ceba8550d3b9907285204" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_sync_timeline_1a679600ff8f0ceba8550d3b9907285204" kindref="member">SyncTimeline::~SyncTimeline</ref>()</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>drmSyncobjDestroy(m_drmFd,<sp/>m_handle);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="class_k_win_1_1_sync_timeline_1aac5c45511e4a4ff66059e4a2cb35185f" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/><ref refid="class_k_win_1_1_sync_timeline_1aac5c45511e4a4ff66059e4a2cb35185f" kindref="member">SyncTimeline::eventFd</ref>(uint64_t<sp/>timelinePoint)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="113"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>ret{eventfd(0,<sp/>EFD_CLOEXEC)};</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ret.isValid())<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{};</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(drmSyncobjEventfd(m_drmFd,<sp/>m_handle,<sp/>timelinePoint,<sp/>ret.get(),<sp/>0)<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{};</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="class_k_win_1_1_sync_timeline_1afc6d509775c52e445c7a5aabf4fec715" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_sync_timeline_1afc6d509775c52e445c7a5aabf4fec715" kindref="member">SyncTimeline::signal</ref>(uint64_t<sp/>timelinePoint)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>drmSyncobjTimelineSignal(m_drmFd,<sp/>&amp;m_handle,<sp/>&amp;timelinePoint,<sp/>1);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="class_k_win_1_1_sync_timeline_1a8c4906232459d49fd555c23854edd92c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_sync_timeline_1a8c4906232459d49fd555c23854edd92c" kindref="member">SyncTimeline::moveInto</ref>(uint64_t<sp/>timelinePoint,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/>&amp;fd)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>tempHandle<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>drmSyncobjCreate(m_drmFd,<sp/>0,<sp/>&amp;tempHandle);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>drmSyncobjImportSyncFile(m_drmFd,<sp/>tempHandle,<sp/>fd.<ref refid="class_k_win_1_1_file_descriptor_1ab59a3ce5116b1e7718d8fb7994d47a41" kindref="member">get</ref>());</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>drmSyncobjTransfer(m_drmFd,<sp/>m_handle,<sp/>timelinePoint,<sp/>tempHandle,<sp/>0,<sp/>0);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>drmSyncobjDestroy(m_drmFd,<sp/>tempHandle);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="class_k_win_1_1_sync_timeline_1a9f9813257489fe32c1a1dc01df1e73d3" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref><sp/><ref refid="class_k_win_1_1_sync_timeline_1a9f9813257489fe32c1a1dc01df1e73d3" kindref="member">SyncTimeline::exportSyncFile</ref>(uint64_t<sp/>timelinePoint)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>tempHandle<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>syncFileFd<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>drmSyncobjCreate(m_drmFd,<sp/>0,<sp/>&amp;tempHandle);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>drmSyncobjTransfer(m_drmFd,<sp/>tempHandle,<sp/>0,<sp/>m_handle,<sp/>timelinePoint,<sp/>0);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>drmSyncobjExportSyncFile(m_drmFd,<sp/>tempHandle,<sp/>&amp;syncFileFd);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>drmSyncobjDestroy(m_drmFd,<sp/>tempHandle);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_file_descriptor" kindref="compound">FileDescriptor</ref>(syncFileFd);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="class_k_win_1_1_sync_timeline_1adaf95b3daba89e2e49e2ad783eabb2c7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_sync_timeline_1adaf95b3daba89e2e49e2ad783eabb2c7" kindref="member">SyncTimeline::isMaterialized</ref>(uint64_t<sp/>timelinePoint)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(drmSyncobjTimelineWait(m_drmFd,</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;m_handle,</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;timelinePoint,</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DRM_SYNCOBJ_WAIT_FLAGS_WAIT_AVAILABLE,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>==<sp/>0);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/core/syncobjtimeline.cpp"/>
+  </compounddef>
+</doxygen>

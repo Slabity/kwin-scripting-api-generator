@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="poller_8cpp" kind="file" language="C++">
+    <compoundname>poller.cpp</compoundname>
+    <includes refid="poller_8h" local="yes">poller.h</includes>
+    <includes refid="idledetector_8h" local="yes">idledetector.h</includes>
+    <includes refid="input_8h" local="yes">input.h</includes>
+    <includes local="yes">moc_poller.cpp</includes>
+    <incdepgraph>
+      <node id="12">
+        <label>core/inputdevice.h</label>
+        <link refid="inputdevice_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>idledetector.h</label>
+        <link refid="idledetector_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>input.h</label>
+        <link refid="input_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/plugins/idletime/poller.cpp</label>
+        <link refid="poller_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>poller.h</label>
+        <link refid="poller_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>KConfigWatcher</label>
+      </node>
+      <node id="21">
+        <label>KSharedConfig</label>
+      </node>
+      <node id="8">
+        <label>QBasicTimer</label>
+      </node>
+      <node id="14">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="3">
+        <label>QHash</label>
+      </node>
+      <node id="15">
+        <label>QImage</label>
+      </node>
+      <node id="9">
+        <label>QObject</label>
+      </node>
+      <node id="16">
+        <label>QPoint</label>
+      </node>
+      <node id="19">
+        <label>QPointer</label>
+      </node>
+      <node id="22">
+        <label>QSet</label>
+      </node>
+      <node id="4">
+        <label>QTimer</label>
+      </node>
+      <node id="17">
+        <label>QVariant</label>
+      </node>
+      <node id="18">
+        <label>QVector2D</label>
+      </node>
+      <node id="11">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="23">
+        <label>functional</label>
+      </node>
+      <node id="7">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="24">
+        <label>moc_poller.cpp</label>
+      </node>
+      <node id="5">
+        <label>private/kabstractidletimepoller_p.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2015<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="poller_8h" kindref="compound">poller.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="idledetector_8h" kindref="compound">idledetector.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="input_8h" kindref="compound">input.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_k_win_1_1_k_win_idle_time_poller_1a241e29d513971e07c44bb27b96e6a1ca" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_k_win_idle_time_poller_1a241e29d513971e07c44bb27b96e6a1ca" kindref="member">KWinIdleTimePoller::KWinIdleTimePoller</ref>(QObject<sp/>*parent)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>KAbstractIdleTimePoller(parent)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="class_k_win_1_1_k_win_idle_time_poller_1ad513c32db7a10cb34f6af100e4e6ab6d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_idle_time_poller_1ad513c32db7a10cb34f6af100e4e6ab6d" kindref="member">KWinIdleTimePoller::isAvailable</ref>()</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="class_k_win_1_1_k_win_idle_time_poller_1a0016076f955d3aba104306609036b83e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_idle_time_poller_1a0016076f955d3aba104306609036b83e" kindref="member">KWinIdleTimePoller::setUpPoller</ref>()</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="class_k_win_1_1_k_win_idle_time_poller_1a30c04aa46c3b0368054f5ac5f86af9ab" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_idle_time_poller_1a30c04aa46c3b0368054f5ac5f86af9ab" kindref="member">KWinIdleTimePoller::unloadPoller</ref>()</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="class_k_win_1_1_k_win_idle_time_poller_1a6f461b387bd850a51135e04468efc2f1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_idle_time_poller_1a6f461b387bd850a51135e04468efc2f1" kindref="member">KWinIdleTimePoller::addTimeout</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nextTimeout)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_timeouts.contains(nextTimeout))<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>detector<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_idle_detector" kindref="compound">IdleDetector</ref>(std::chrono::milliseconds(nextTimeout),<sp/><ref refid="class_k_win_1_1_idle_detector_1ad0b017bde19f90fdf0836774554f47d1a165b4318dea692b5be9d2a63ca5b224a" kindref="member">IdleDetector::OperatingMode::FollowsInhibitors</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>m_timeouts.insert(nextTimeout,<sp/>detector);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(detector,<sp/>&amp;<ref refid="class_k_win_1_1_idle_detector_1aaffa15bb55ac7fb4406309ee79e8dc01" kindref="member">IdleDetector::idle</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>nextTimeout]<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Q_EMIT<sp/>timeoutReached(nextTimeout);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(detector,<sp/>&amp;<ref refid="class_k_win_1_1_idle_detector_1ae82738d04ededa79d4139519431f7ff5" kindref="member">IdleDetector::resumed</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KWinIdleTimePoller::resumingFromIdle);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="class_k_win_1_1_k_win_idle_time_poller_1a68fab0ce52c0edc2134573e4a88957b5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_idle_time_poller_1a68fab0ce52c0edc2134573e4a88957b5" kindref="member">KWinIdleTimePoller::removeTimeout</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nextTimeout)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>m_timeouts.take(nextTimeout);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="class_k_win_1_1_k_win_idle_time_poller_1a51ff6b86ea1a9058e8da63201aef30ff" refkind="member"><highlight class="normal">QList&lt;<sp/>int<sp/>&gt;<sp/><ref refid="class_k_win_1_1_k_win_idle_time_poller_1a51ff6b86ea1a9058e8da63201aef30ff" kindref="member">KWinIdleTimePoller::timeouts</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="55"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_timeouts.keys();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="class_k_win_1_1_k_win_idle_time_poller_1a1e718a2ec797912a7d8ffcda843aa2ef" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_idle_time_poller_1a1e718a2ec797912a7d8ffcda843aa2ef" kindref="member">KWinIdleTimePoller::catchIdleEvent</ref>()</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_catchResumeTimeout)<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>already<sp/>setup</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>m_catchResumeTimeout<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_idle_detector" kindref="compound">IdleDetector</ref>(std::chrono::milliseconds::zero(),<sp/><ref refid="class_k_win_1_1_idle_detector_1ad0b017bde19f90fdf0836774554f47d1a165b4318dea692b5be9d2a63ca5b224a" kindref="member">IdleDetector::OperatingMode::FollowsInhibitors</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(m_catchResumeTimeout,<sp/>&amp;<ref refid="class_k_win_1_1_idle_detector_1ae82738d04ededa79d4139519431f7ff5" kindref="member">IdleDetector::resumed</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">]()<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_catchResumeTimeout-&gt;deleteLater();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_catchResumeTimeout<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Q_EMIT<sp/>resumingFromIdle();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="class_k_win_1_1_k_win_idle_time_poller_1aca584c060411b71fc5b297ef94833c8e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_idle_time_poller_1aca584c060411b71fc5b297ef94833c8e" kindref="member">KWinIdleTimePoller::stopCatchingIdleEvents</ref>()</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>m_catchResumeTimeout;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>m_catchResumeTimeout<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="class_k_win_1_1_k_win_idle_time_poller_1a0afc39e9b9cd95a1dc5fed2848647467" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_idle_time_poller_1a0afc39e9b9cd95a1dc5fed2848647467" kindref="member">KWinIdleTimePoller::forcePollRequest</ref>()</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="class_k_win_1_1_k_win_idle_time_poller_1a63a875b20988958bd6f4cdb9dd6a1055" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_idle_time_poller_1a63a875b20988958bd6f4cdb9dd6a1055" kindref="member">KWinIdleTimePoller::simulateUserActivity</ref>()</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1abe2e249447d344f266998fdcef93fde0" kindref="member">input</ref>()-&gt;<ref refid="class_k_win_1_1_input_redirection_1a6779f3140053cb30ee8314c34536e8c8" kindref="member">simulateUserActivity</ref>();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;moc_poller.cpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/plugins/idletime/poller.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="atoms_8cpp" kind="file" language="C++">
+    <compoundname>atoms.cpp</compoundname>
+    <includes refid="atoms_8h" local="yes">atoms.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/atoms.cpp</label>
+        <link refid="atoms_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>atoms.h</label>
+        <link refid="atoms_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>effect/xcb.h</label>
+        <link refid="xcb_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>utils/c_ptr.h</label>
+        <link refid="c__ptr_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>utils/version.h</label>
+        <link refid="version_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>utils/xcbutils.h</label>
+        <link refid="xcbutils_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>QByteArray</label>
+      </node>
+      <node id="6">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="13">
+        <label>QGuiApplication</label>
+      </node>
+      <node id="7">
+        <label>QImage</label>
+      </node>
+      <node id="21">
+        <label>QList</label>
+      </node>
+      <node id="8">
+        <label>QPoint</label>
+      </node>
+      <node id="22">
+        <label>QRect</label>
+      </node>
+      <node id="23">
+        <label>QRegion</label>
+      </node>
+      <node id="20">
+        <label>QString</label>
+      </node>
+      <node id="9">
+        <label>QVariant</label>
+      </node>
+      <node id="10">
+        <label>QVector2D</label>
+      </node>
+      <node id="3">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="11">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="15">
+        <label>main.h</label>
+      </node>
+      <node id="17">
+        <label>memory</label>
+      </node>
+      <node id="24">
+        <label>xcb/composite.h</label>
+      </node>
+      <node id="25">
+        <label>xcb/randr.h</label>
+      </node>
+      <node id="26">
+        <label>xcb/shm.h</label>
+      </node>
+      <node id="14">
+        <label>xcb/xcb.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>1999,<sp/>2000<sp/>Matthias<sp/>Ettrich<sp/>&lt;ettrich@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2003<sp/>Lubos<sp/>Lunak<sp/>&lt;l.lunak@kde.org&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2013<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="atoms_8h" kindref="compound">atoms.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="class_k_win_1_1_atoms_1a2d96f711f911816f49a1da5c5cea6178" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_atoms_1a2d96f711f911816f49a1da5c5cea6178" kindref="member">Atoms::Atoms</ref>()</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="class_k_win_1_1_atoms_1ab09e6030496bfaafed511d16b9b146b1" kindref="member">activities</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_KDE_NET_WM_ACTIVITIES&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a4615f601d7948e23cc611e3396b25081" kindref="member">wm_protocols</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;WM_PROTOCOLS&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a04861a69381d6e894ed4300e1413df34" kindref="member">wm_delete_window</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;WM_DELETE_WINDOW&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a6d593c063b1303ca8115ccfd6c9c563f" kindref="member">wm_take_focus</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;WM_TAKE_FOCUS&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a12afc3c5e66fd486b2cc7a7def1226e9" kindref="member">wm_change_state</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;WM_CHANGE_STATE&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a61a557f5ac649f08a1824dd011fdf6ed" kindref="member">wm_client_leader</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;WM_CLIENT_LEADER&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1afda65de6ad2d10d684259d7fb167ae94" kindref="member">wm_window_role</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;WM_WINDOW_ROLE&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a44753ebd00915d4654cff9c71c9e7694" kindref="member">wm_state</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;WM_STATE&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a6fd531c7e71cd78e54c9327ec18c2b81" kindref="member">sm_client_id</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;SM_CLIENT_ID&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a2b2fcf9db9550a094b08fdffceb20a3a" kindref="member">motif_wm_hints</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_MOTIF_WM_HINTS&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1ab9e2a6d76394ff36103c48b94622d0f2" kindref="member">net_wm_context_help</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_NET_WM_CONTEXT_HELP&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1aa90dcc5f9a89055350ca31372861c722" kindref="member">net_wm_ping</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_NET_WM_PING&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1aa4a88b6ff47c5988afc883f63937a1b9" kindref="member">net_wm_user_time</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_NET_WM_USER_TIME&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1adf1e0a77cc3a2def4f5c233afb8b4caa" kindref="member">kde_net_wm_user_creation_time</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_KDE_NET_WM_USER_CREATION_TIME&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a10fcb551bfd5394dbc6ac0d4cb66ecc8" kindref="member">net_wm_take_activity</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_NET_WM_TAKE_ACTIVITY&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1aa440d0f0597b03b91888c848f1e98ed4" kindref="member">net_wm_window_opacity</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_NET_WM_WINDOW_OPACITY&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1ab5cbc2498cbf0bd69d9e21bc1b479d87" kindref="member">xdnd_selection</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;XdndSelection&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a7b20de89f8d7c7d06ae9b941d94c077c" kindref="member">xdnd_aware</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;XdndAware&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a1e29c9fce2c435b515f89ad191fe0600" kindref="member">xdnd_enter</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;XdndEnter&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1af2e8bfeb115ec1972745ae34e0ef62e3" kindref="member">xdnd_type_list</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;XdndTypeList&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1ad9e07a68bc2c8f07ae47081d3bfeccd4" kindref="member">xdnd_position</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;XdndPosition&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a856f8c2177fb46133f3966634c19d640" kindref="member">xdnd_status</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;XdndStatus&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a4f20fc8db02e13ddbb291baaabd8a963" kindref="member">xdnd_action_copy</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;XdndActionCopy&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1ae674905fe9f6c95119018c70c6df5b34" kindref="member">xdnd_action_move</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;XdndActionMove&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a863bb3a500980dfcf76ed25c39a39c51" kindref="member">xdnd_action_ask</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;XdndActionAsk&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a4def471a9c87269d5a461dd231cc067a" kindref="member">xdnd_drop</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;XdndDrop&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a1c8def8e669f66e488acd475ea280524" kindref="member">xdnd_leave</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;XdndLeave&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a0ad007c3a531222a8707e93dd243b424" kindref="member">xdnd_finished</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;XdndFinished&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a9f501d5720df83a0aa2d90cd86e23553" kindref="member">net_frame_extents</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_NET_FRAME_EXTENTS&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a5473ff21f9b1a8fba56862ae2bd2d824" kindref="member">kde_net_wm_frame_strut</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_KDE_NET_WM_FRAME_STRUT&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1ad9b9fc88ea1b8560e2a14c484d818c95" kindref="member">net_wm_sync_request_counter</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_NET_WM_SYNC_REQUEST_COUNTER&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a387fcff6033470220d31bccfcd5b3801" kindref="member">net_wm_sync_request</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_NET_WM_SYNC_REQUEST&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a8fe160fc7f3a92a19b4044b2d5ba2087" kindref="member">kde_net_wm_shadow</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_KDE_NET_WM_SHADOW&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a69da521dc225d84996f59ecf73f08d65" kindref="member">kde_color_sheme</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_KDE_NET_WM_COLOR_SCHEME&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a0056fba382aa5f7dde3f02e5a0aac8c5" kindref="member">kde_skip_close_animation</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_KDE_NET_WM_SKIP_CLOSE_ANIMATION&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1af3484f931bc77cb4a7d11915806c7932" kindref="member">kde_screen_edge_show</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_KDE_NET_WM_SCREEN_EDGE_SHOW&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1aae99f28465ea6d9dcc08a991d989a3e0" kindref="member">utf8_string</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;UTF8_STRING&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a1b1b1a60df058295c32ea3e7efd87937" kindref="member">text</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;TEXT&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a2bc49ef4be020851a892a4012413d382" kindref="member">uri_list</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;text/uri-list&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a06460a7459d4a70dadee8c34cfb74591" kindref="member">netscape_url</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_NETSCAPE_URL&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1ad7dbe2317fe32d6b19938b12f39510a1" kindref="member">moz_url</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;text/x-moz-url&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a7ac89cbf02e95aa658490849c29baa2d" kindref="member">wl_surface_serial</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;WL_SURFACE_SERIAL&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1ab23ba277f9e25743269c6c7ba0afa305" kindref="member">kde_net_wm_appmenu_service_name</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_KDE_NET_WM_APPMENU_SERVICE_NAME&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a361c059bf2a2de469973b7ea0fea5978" kindref="member">kde_net_wm_appmenu_object_path</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_KDE_NET_WM_APPMENU_OBJECT_PATH&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a475e218d9d52d0c5fd1ff7f6bb758a36" kindref="member">clipboard</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;CLIPBOARD&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a481e111aba376f675e24afa7897c883e" kindref="member">timestamp</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;TIMESTAMP&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a9b7e72e0c38699dfddcf1e7c46fe8625" kindref="member">targets</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;TARGETS&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a52551a091230dc9bb909bed714b9c9bd" kindref="member">delete_atom</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;DELETE&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a2c6d18960a4c2ac7c2052722965c10cb" kindref="member">incr</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;INCR&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a8d2f6ae64f150b58ccb9ac52e0e49602" kindref="member">wl_selection</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;WL_SELECTION&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a26021004caf7f969117838e720a762d4" kindref="member">primary</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;PRIMARY&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a409365598e27d717145caa4aa03bf575" kindref="member">edid</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;EDID&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_atoms_1a4fdd5e93ec6354ffb6d70ecd513505eb" kindref="member">xwayland_allow_commits</ref>(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_XWAYLAND_ALLOW_COMMITS&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_dtSmWindowInfo(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_DT_SM_WINDOW_INFO&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_motifSupport(QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;_MOTIF_WM_INFO&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_helpersRetrieved(false)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="class_k_win_1_1_atoms_1afc40ca5280be13b3a51f1fa14a38f17c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_atoms_1afc40ca5280be13b3a51f1fa14a38f17c" kindref="member">Atoms::retrieveHelpers</ref>()</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_helpersRetrieved)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>just<sp/>retrieve<sp/>the<sp/>atoms<sp/>once,<sp/>all<sp/>others<sp/>are<sp/>retrieved<sp/>when<sp/>being<sp/>accessed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>m_dtSmWindowInfo.getReply();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>m_motifSupport.getReply();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>m_helpersRetrieved<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/atoms.cpp"/>
+  </compounddef>
+</doxygen>

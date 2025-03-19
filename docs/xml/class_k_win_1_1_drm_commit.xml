@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_drm_commit" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>KWin::DrmCommit</compoundname>
+    <derivedcompoundref refid="class_k_win_1_1_drm_atomic_commit" prot="public" virt="non-virtual">KWin::DrmAtomicCommit</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_drm_legacy_commit" prot="public" virt="non-virtual">KWin::DrmLegacyCommit</derivedcompoundref>
+    <includes refid="drm__commit_8h" local="no">drm_commit.h</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_drm_commit_1a60efe7a7a9ba3f563ff10f3b0494637f" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref> *const</type>
+        <definition>DrmGpu* const KWin::DrmCommit::m_gpu</definition>
+        <argsstring></argsstring>
+        <name>m_gpu</name>
+        <qualifiedname>KWin::DrmCommit::m_gpu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="49" column="18" bodyfile="kwin/src/backends/drm/drm_commit.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_drm_commit_1a525e2a227233ff07fe626188e76d4f01" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::DrmCommit::m_defunct</definition>
+        <argsstring></argsstring>
+        <name>m_defunct</name>
+        <qualifiedname>KWin::DrmCommit::m_defunct</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="50" column="10" bodyfile="kwin/src/backends/drm/drm_commit.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_drm_commit_1a11debcbdb0965d730ed80519160d0773" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>KWin::DrmCommit::~DrmCommit</definition>
+        <argsstring>()</argsstring>
+        <name>~DrmCommit</name>
+        <qualifiedname>KWin::DrmCommit::~DrmCommit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="40" column="13" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_commit_1af8a218c85630a9fd793248fea96d568b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref> *</type>
+        <definition>DrmGpu * KWin::DrmCommit::gpu</definition>
+        <argsstring>() const</argsstring>
+        <name>gpu</name>
+        <qualifiedname>KWin::DrmCommit::gpu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="42" column="12" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_commit_1aeb86f0c56eef345e7ade669591d637a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void KWin::DrmCommit::pageFlipped</definition>
+        <argsstring>(std::chrono::nanoseconds timestamp)=0</argsstring>
+        <name>pageFlipped</name>
+        <qualifiedname>KWin::DrmCommit::pageFlipped</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_drm_atomic_commit_1a97397e69b3e6418ddf87a587caaf41bc">pageFlipped</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_drm_legacy_commit_1a41794d7a8b581f72ffa615018ca6336c">pageFlipped</reimplementedby>
+        <param>
+          <type>std::chrono::nanoseconds</type>
+          <declname>timestamp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="43" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_commit_1a7585238c00e7c147fcbe1a5ef74d6d0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmCommit::setDefunct</definition>
+        <argsstring>()</argsstring>
+        <name>setDefunct</name>
+        <qualifiedname>KWin::DrmCommit::setDefunct</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="44" column="10" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="42" bodyend="45"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_k_win_1_1_drm_commit_1af8e7719bbb7f0dc2a5ee577a6416857b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::DrmCommit::DrmCommit</definition>
+        <argsstring>(DrmGpu *gpu)</argsstring>
+        <name>DrmCommit</name>
+        <qualifiedname>KWin::DrmCommit::DrmCommit</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref> *</type>
+          <declname>gpu</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_commit.h" line="47" column="5" bodyfile="kwin/src/backends/drm/drm_commit.cpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>KWin::DrmAtomicCommit</label>
+        <link refid="class_k_win_1_1_drm_atomic_commit"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::DrmCommit</label>
+        <link refid="class_k_win_1_1_drm_commit"/>
+      </node>
+      <node id="3">
+        <label>KWin::DrmLegacyCommit</label>
+        <link refid="class_k_win_1_1_drm_legacy_commit"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::DrmCommit</label>
+        <link refid="class_k_win_1_1_drm_commit"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_gpu</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::DrmGpu</label>
+        <link refid="class_k_win_1_1_drm_gpu"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/backends/drm/drm_commit.h" line="37" column="1" bodyfile="kwin/src/backends/drm/drm_commit.h" bodystart="38" bodyend="51"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_drm_commit_1af8e7719bbb7f0dc2a5ee577a6416857b" prot="protected" virt="non-virtual"><scope>KWin::DrmCommit</scope><name>DrmCommit</name></member>
+      <member refid="class_k_win_1_1_drm_commit_1af8a218c85630a9fd793248fea96d568b" prot="public" virt="non-virtual"><scope>KWin::DrmCommit</scope><name>gpu</name></member>
+      <member refid="class_k_win_1_1_drm_commit_1a525e2a227233ff07fe626188e76d4f01" prot="protected" virt="non-virtual"><scope>KWin::DrmCommit</scope><name>m_defunct</name></member>
+      <member refid="class_k_win_1_1_drm_commit_1a60efe7a7a9ba3f563ff10f3b0494637f" prot="protected" virt="non-virtual"><scope>KWin::DrmCommit</scope><name>m_gpu</name></member>
+      <member refid="class_k_win_1_1_drm_commit_1aeb86f0c56eef345e7ade669591d637a4" prot="public" virt="pure-virtual"><scope>KWin::DrmCommit</scope><name>pageFlipped</name></member>
+      <member refid="class_k_win_1_1_drm_commit_1a7585238c00e7c147fcbe1a5ef74d6d0a" prot="public" virt="non-virtual"><scope>KWin::DrmCommit</scope><name>setDefunct</name></member>
+      <member refid="class_k_win_1_1_drm_commit_1a11debcbdb0965d730ed80519160d0773" prot="public" virt="virtual"><scope>KWin::DrmCommit</scope><name>~DrmCommit</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

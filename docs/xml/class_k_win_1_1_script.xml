@@ -1,0 +1,774 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_script" kind="class" language="C++" prot="public">
+    <compoundname>KWin::Script</compoundname>
+    <basecompoundref refid="class_k_win_1_1_abstract_script" prot="public" virt="non-virtual">KWin::AbstractScript</basecompoundref>
+    <basecompoundref prot="private" virt="non-virtual">QDBusContext</basecompoundref>
+    <includes refid="scripting_8h" local="no">scripting.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_script_1a1dcb7cbfd6dc8972cf71e3e3fb2db6c2" prot="private" static="no" mutable="no">
+        <type>QJSEngine *</type>
+        <definition>QJSEngine* KWin::Script::m_engine</definition>
+        <argsstring></argsstring>
+        <name>m_engine</name>
+        <qualifiedname>KWin::Script::m_engine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="244" column="15" bodyfile="kwin/src/scripting/scripting.h" bodystart="244" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_script_1a361c3ee0d635b6deec6f0be3b628b35c" prot="private" static="no" mutable="no">
+        <type>QDBusMessage</type>
+        <definition>QDBusMessage KWin::Script::m_invocationContext</definition>
+        <argsstring></argsstring>
+        <name>m_invocationContext</name>
+        <qualifiedname>KWin::Script::m_invocationContext</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="245" column="18" bodyfile="kwin/src/scripting/scripting.h" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_script_1ad6b483c7e1de20bf6ca4eef94bd4519c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::Script::m_starting</definition>
+        <argsstring></argsstring>
+        <name>m_starting</name>
+        <qualifiedname>KWin::Script::m_starting</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="246" column="10" bodyfile="kwin/src/scripting/scripting.h" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_script_1afc6ff507eb43a8bc9cdaf8508107bd31" prot="private" static="no" mutable="no">
+        <type>QHash&lt; int, QJSValueList &gt;</type>
+        <definition>QHash&lt;int, QJSValueList&gt; KWin::Script::m_screenEdgeCallbacks</definition>
+        <argsstring></argsstring>
+        <name>m_screenEdgeCallbacks</name>
+        <qualifiedname>KWin::Script::m_screenEdgeCallbacks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="247" column="11" bodyfile="kwin/src/scripting/scripting.h" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_script_1a53a74739ef2dca9d3052d91a7a9ace4d" prot="private" static="no" mutable="no">
+        <type>QHash&lt; int, QAction * &gt;</type>
+        <definition>QHash&lt;int, QAction *&gt; KWin::Script::m_touchScreenEdgeCallbacks</definition>
+        <argsstring></argsstring>
+        <name>m_touchScreenEdgeCallbacks</name>
+        <qualifiedname>KWin::Script::m_touchScreenEdgeCallbacks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="248" column="11" bodyfile="kwin/src/scripting/scripting.h" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_script_1aee181fdfbbe8d1a128fa21fea3cbcdd4" prot="private" static="no" mutable="no">
+        <type>QJSValueList</type>
+        <definition>QJSValueList KWin::Script::m_userActionsMenuCallbacks</definition>
+        <argsstring></argsstring>
+        <name>m_userActionsMenuCallbacks</name>
+        <qualifiedname>KWin::Script::m_userActionsMenuCallbacks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="249" column="18" bodyfile="kwin/src/scripting/scripting.h" bodystart="249" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_script_1a5386a6cb0c28b8bdf1538adc8808fac9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::Script::Script</definition>
+        <argsstring>(int id, QString scriptName, QString pluginName, QObject *parent=nullptr)</argsstring>
+        <name>Script</name>
+        <qualifiedname>KWin::Script::Script</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>QString</type>
+          <declname>scriptName</declname>
+        </param>
+        <param>
+          <type>QString</type>
+          <declname>pluginName</declname>
+        </param>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="107" column="5" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="133" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_script_1a86b6b20a771b7f03a51e127b2dca4459" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>KWin::Script::~Script</definition>
+        <argsstring>()</argsstring>
+        <name>~Script</name>
+        <qualifiedname>KWin::Script::~Script</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="108" column="13" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="161" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_script_1a21611e13f0afa92b37842baf67294599" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_INVOKABLE QVariant</type>
+        <definition>QVariant KWin::Script::readConfig</definition>
+        <argsstring>(const QString &amp;key, const QVariant &amp;defaultValue=QVariant())</argsstring>
+        <name>readConfig</name>
+        <qualifiedname>KWin::Script::readConfig</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const QVariant &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="110" column="26" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="295" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_script_1a585c5d02390b9e2b6ae7f77fbfdf4e4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_INVOKABLE void</type>
+        <definition>void KWin::Script::callDBus</definition>
+        <argsstring>(const QString &amp;service, const QString &amp;path, const QString &amp;interface, const QString &amp;method, const QJSValue &amp;arg1=QJSValue(), const QJSValue &amp;arg2=QJSValue(), const QJSValue &amp;arg3=QJSValue(), const QJSValue &amp;arg4=QJSValue(), const QJSValue &amp;arg5=QJSValue(), const QJSValue &amp;arg6=QJSValue(), const QJSValue &amp;arg7=QJSValue(), const QJSValue &amp;arg8=QJSValue(), const QJSValue &amp;arg9=QJSValue())</argsstring>
+        <name>callDBus</name>
+        <qualifiedname>KWin::Script::callDBus</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>service</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>interface</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>method</declname>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>arg1</declname>
+          <defval>QJSValue()</defval>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>arg2</declname>
+          <defval>QJSValue()</defval>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>arg3</declname>
+          <defval>QJSValue()</defval>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>arg4</declname>
+          <defval>QJSValue()</defval>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>arg5</declname>
+          <defval>QJSValue()</defval>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>arg6</declname>
+          <defval>QJSValue()</defval>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>arg7</declname>
+          <defval>QJSValue()</defval>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>arg8</declname>
+          <defval>QJSValue()</defval>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>arg9</declname>
+          <defval>QJSValue()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="112" column="22" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="300" bodyend="373"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_script_1a67c2e733f5d2bd4ecfccd69b9cae7721" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_INVOKABLE bool</type>
+        <definition>bool KWin::Script::registerShortcut</definition>
+        <argsstring>(const QString &amp;objectName, const QString &amp;text, const QString &amp;keySequence, const QJSValue &amp;callback)</argsstring>
+        <name>registerShortcut</name>
+        <qualifiedname>KWin::Script::registerShortcut</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>objectName</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>keySequence</declname>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="124" column="22" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="375" bodyend="394"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_script_1aec2f16a1931cb76ae63800317f59143f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_INVOKABLE bool</type>
+        <definition>bool KWin::Script::registerScreenEdge</definition>
+        <argsstring>(int edge, const QJSValue &amp;callback)</argsstring>
+        <name>registerScreenEdge</name>
+        <qualifiedname>KWin::Script::registerScreenEdge</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>edge</declname>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="127" column="22" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="396" bodyend="411"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_script_1ad1d31827251be0938d99afeb9c75fb15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_INVOKABLE bool</type>
+        <definition>bool KWin::Script::unregisterScreenEdge</definition>
+        <argsstring>(int edge)</argsstring>
+        <name>unregisterScreenEdge</name>
+        <qualifiedname>KWin::Script::unregisterScreenEdge</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>edge</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="128" column="22" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="413" bodyend="424"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_script_1a5c248700c9be5f45686920811c53f397" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_INVOKABLE bool</type>
+        <definition>bool KWin::Script::registerTouchScreenEdge</definition>
+        <argsstring>(int edge, const QJSValue &amp;callback)</argsstring>
+        <name>registerTouchScreenEdge</name>
+        <qualifiedname>KWin::Script::registerTouchScreenEdge</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>edge</declname>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="130" column="22" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="426" bodyend="445"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_script_1a3c166d77163bd5f8f1212aa2b0b9c103" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_INVOKABLE bool</type>
+        <definition>bool KWin::Script::unregisterTouchScreenEdge</definition>
+        <argsstring>(int edge)</argsstring>
+        <name>unregisterTouchScreenEdge</name>
+        <qualifiedname>KWin::Script::unregisterTouchScreenEdge</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>edge</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="131" column="22" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="447" bodyend="458"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_script_1abf13a1ea2aa7473b508aded77caa8c2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_INVOKABLE void</type>
+        <definition>void KWin::Script::registerUserActionsMenu</definition>
+        <argsstring>(const QJSValue &amp;callback)</argsstring>
+        <name>registerUserActionsMenu</name>
+        <qualifiedname>KWin::Script::registerUserActionsMenu</qualifiedname>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Registers the given <computeroutput>callback</computeroutput> to be invoked whenever the <ref refid="class_k_win_1_1_user_actions_menu" kindref="compound">UserActionsMenu</ref> is about to be showed. In the callback the script can create a further sub menu or menu entry to be added to the <ref refid="class_k_win_1_1_user_actions_menu" kindref="compound">UserActionsMenu</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_k_win_1_1_script" kindref="compound">Script</ref> method to execute when the <ref refid="class_k_win_1_1_user_actions_menu" kindref="compound">UserActionsMenu</ref> is about to be shown. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_k_win_1_1_script_1a71b2899512833c0f332ceb2e2dbd7087" kindref="member">actionsForUserActionMenu</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="142" column="22" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="460" bodyend="467"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_script_1a71b2899512833c0f332ceb2e2dbd7087" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; QAction * &gt;</type>
+        <definition>QList&lt; QAction * &gt; KWin::Script::actionsForUserActionMenu</definition>
+        <argsstring>(Window *client, QMenu *parent)</argsstring>
+        <name>actionsForUserActionMenu</name>
+        <qualifiedname>KWin::Script::actionsForUserActionMenu</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>QMenu *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+<para>Creates actions for the <ref refid="class_k_win_1_1_user_actions_menu" kindref="compound">UserActionsMenu</ref> by invoking the registered callbacks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method invokes all the callbacks previously registered with registerUseractionsMenuCallback. The <ref refid="class_client" kindref="compound">Client</ref> <computeroutput>c</computeroutput> is passed in as an argument to the invoked method.</para>
+<para>The invoked method is supposed to return a JavaScript object containing either the menu or menu entry to be added. In case the callback returns a null or undefined or any other invalid value, it is not considered for adding to the menu.</para>
+<para>The JavaScript object structure for a menu entry looks like the following: <programlisting><codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>title:<sp/></highlight><highlight class="stringliteral">&quot;My<sp/>Menu<sp/>Entry&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>checkable:<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>checked:<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>triggered:<sp/>function<sp/>(action)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>callback<sp/>when<sp/>the<sp/>menu<sp/>entry<sp/>is<sp/>triggered<sp/>with<sp/>the<sp/>QAction<sp/>as<sp/>argument</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para>To construct a complete Menu the JavaScript object looks like the following: <programlisting><codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>title:<sp/></highlight><highlight class="stringliteral">&quot;My<sp/>Menu<sp/>Title&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>items:<sp/>[{...},<sp/>{...},<sp/>...]<sp/></highlight><highlight class="comment">//<sp/>list<sp/>of<sp/>menu<sp/>entries<sp/>as<sp/>described<sp/>above</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para>The returned JavaScript object is introspected and for a menu entry a QAction is created, while for a menu a QMenu is created and QActions for the individual entries. Of course it is allowed to have nested structures.</para>
+<para>All created objects are (grand) children to the passed in <computeroutput>parent</computeroutput> menu, so that they get deleted whenever the menu is destroyed.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="class_client" kindref="compound">Client</ref> for which the menu is invoked, passed to the callback </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Parent for the created Menus or Actions </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>QList&lt; QAction* &gt; List of QActions obtained from asking the registered callbacks </para>
+</simplesect>
+<simplesect kind="see"><para>registerUseractionsMenuCallback </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="186" column="11" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="469" bodyend="488"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_k_win_1_1_script_1a5f98b562df6f7281531e4baaac9f7bfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Script::run</definition>
+        <argsstring>() override</argsstring>
+        <name>run</name>
+        <qualifiedname>KWin::Script::run</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="189" column="10" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="165" bodyend="180"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_k_win_1_1_script_1a53f9cf7c2c6d3a175ae97a1f514c1fa5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Script::slotScriptLoadedFromFile</definition>
+        <argsstring>()</argsstring>
+        <name>slotScriptLoadedFromFile</name>
+        <qualifiedname>KWin::Script::slotScriptLoadedFromFile</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback for when loadScriptFromFile has finished. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="195" column="10" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="192" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_script_1a9970379ccb0ceb101e3e31ef5d99fc8d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::Script::slotBorderActivated</definition>
+        <argsstring>(ElectricBorder border)</argsstring>
+        <name>slotBorderActivated</name>
+        <qualifiedname>KWin::Script::slotBorderActivated</qualifiedname>
+        <param>
+          <type><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5" kindref="member">ElectricBorder</ref></type>
+          <declname>border</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called when any reserve screen edge is triggered. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="200" column="10" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="490" bodyend="500"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_script_1a0f9f986315d824602e219f1dfb6eebcf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QByteArray</type>
+        <definition>QByteArray KWin::Script::loadScriptFromFile</definition>
+        <argsstring>(const QString &amp;fileName)</argsstring>
+        <name>loadScriptFromFile</name>
+        <qualifiedname>KWin::Script::loadScriptFromFile</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>fileName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Read the script from file into a byte array. If file cannot be read an empty byte array is returned. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="207" column="16" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="182" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_script_1a5bc264de5802bed0ecadfecf7cda5ea1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QAction *</type>
+        <definition>QAction * KWin::Script::scriptValueToAction</definition>
+        <argsstring>(const QJSValue &amp;value, QMenu *parent)</argsstring>
+        <name>scriptValueToAction</name>
+        <qualifiedname>KWin::Script::scriptValueToAction</qualifiedname>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>QMenu *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+<para>Parses the <computeroutput>value</computeroutput> to either a QMenu or QAction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ScriptValue describing either a menu or action </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parent to use for the created menu or action </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>QAction* The parsed action or menu action, if parsing fails returns <computeroutput>null</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="216" column="13" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="502" bodyend="516"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_script_1afb3859c8e48d3775c829b55b273ef61d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QAction *</type>
+        <definition>QAction * KWin::Script::createAction</definition>
+        <argsstring>(const QString &amp;title, const QJSValue &amp;item, QMenu *parent)</argsstring>
+        <name>createAction</name>
+        <qualifiedname>KWin::Script::createAction</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type>QMenu *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new QAction from the provided data and registers it for invoking the <computeroutput>callback</computeroutput> when the action is triggered. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The created action is added to the map of actions and callbacks shared with the global shortcuts.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The title of the action </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>checkable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether the action is checkable </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>checked</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether the checkable action is checked </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback to invoke when the action is triggered </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parent to be used for the new created action </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>QAction* The created action </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="232" column="13" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="518" bodyend="537"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_script_1a3dd65a71c304d8ffeef7d5bd08937034" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QAction *</type>
+        <definition>QAction * KWin::Script::createMenu</definition>
+        <argsstring>(const QString &amp;title, const QJSValue &amp;items, QMenu *parent)</argsstring>
+        <name>createMenu</name>
+        <qualifiedname>KWin::Script::createMenu</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>const QJSValue &amp;</type>
+          <declname>items</declname>
+        </param>
+        <param>
+          <type>QMenu *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+<para>Parses the <computeroutput>items</computeroutput> and creates a QMenu from it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The title of the Menu. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>items</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>JavaScript Array containing Menu items. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parent to use for the new created menu </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>QAction* The menu action for the new Menu </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="242" column="13" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="539" bodyend="562"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>KWin::AbstractScript</label>
+        <link refid="class_k_win_1_1_abstract_script"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::Script</label>
+        <link refid="class_k_win_1_1_script"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QDBusContext</label>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>KWin::AbstractScript</label>
+        <link refid="class_k_win_1_1_abstract_script"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::Script</label>
+        <link refid="class_k_win_1_1_script"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QDBusContext</label>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/scripting/scripting.h" line="103" column="1" bodyfile="kwin/src/scripting/scripting.h" bodystart="104" bodyend="250"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_abstract_script_1a76d921a0d06d2d9e3783739c683225d5" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>AbstractScript</name></member>
+      <member refid="class_k_win_1_1_script_1a71b2899512833c0f332ceb2e2dbd7087" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>actionsForUserActionMenu</name></member>
+      <member refid="class_k_win_1_1_script_1a585c5d02390b9e2b6ae7f77fbfdf4e4a" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>callDBus</name></member>
+      <member refid="class_k_win_1_1_abstract_script_1adedebe311021f5d95fe467faeffca8dc" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>config</name></member>
+      <member refid="class_k_win_1_1_script_1afb3859c8e48d3775c829b55b273ef61d" prot="private" virt="non-virtual"><scope>KWin::Script</scope><name>createAction</name></member>
+      <member refid="class_k_win_1_1_script_1a3dd65a71c304d8ffeef7d5bd08937034" prot="private" virt="non-virtual"><scope>KWin::Script</scope><name>createMenu</name></member>
+      <member refid="class_k_win_1_1_abstract_script_1a2dcb378e96229c16daad1c4f1dc7b468" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>fileName</name></member>
+      <member refid="class_k_win_1_1_script_1a0f9f986315d824602e219f1dfb6eebcf" prot="private" virt="non-virtual"><scope>KWin::Script</scope><name>loadScriptFromFile</name></member>
+      <member refid="class_k_win_1_1_script_1a1dcb7cbfd6dc8972cf71e3e3fb2db6c2" prot="private" virt="non-virtual"><scope>KWin::Script</scope><name>m_engine</name></member>
+      <member refid="class_k_win_1_1_script_1a361c3ee0d635b6deec6f0be3b628b35c" prot="private" virt="non-virtual"><scope>KWin::Script</scope><name>m_invocationContext</name></member>
+      <member refid="class_k_win_1_1_script_1afc6ff507eb43a8bc9cdaf8508107bd31" prot="private" virt="non-virtual"><scope>KWin::Script</scope><name>m_screenEdgeCallbacks</name></member>
+      <member refid="class_k_win_1_1_script_1ad6b483c7e1de20bf6ca4eef94bd4519c" prot="private" virt="non-virtual"><scope>KWin::Script</scope><name>m_starting</name></member>
+      <member refid="class_k_win_1_1_script_1a53a74739ef2dca9d3052d91a7a9ace4d" prot="private" virt="non-virtual"><scope>KWin::Script</scope><name>m_touchScreenEdgeCallbacks</name></member>
+      <member refid="class_k_win_1_1_script_1aee181fdfbbe8d1a128fa21fea3cbcdd4" prot="private" virt="non-virtual"><scope>KWin::Script</scope><name>m_userActionsMenuCallbacks</name></member>
+      <member refid="class_k_win_1_1_abstract_script_1a89bae1f44250e540c3952bceb3f46c65" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>pluginName</name></member>
+      <member refid="class_k_win_1_1_script_1a21611e13f0afa92b37842baf67294599" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>readConfig</name></member>
+      <member refid="class_k_win_1_1_script_1aec2f16a1931cb76ae63800317f59143f" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>registerScreenEdge</name></member>
+      <member refid="class_k_win_1_1_script_1a67c2e733f5d2bd4ecfccd69b9cae7721" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>registerShortcut</name></member>
+      <member refid="class_k_win_1_1_script_1a5c248700c9be5f45686920811c53f397" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>registerTouchScreenEdge</name></member>
+      <member refid="class_k_win_1_1_script_1abf13a1ea2aa7473b508aded77caa8c2b" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>registerUserActionsMenu</name></member>
+      <member refid="class_k_win_1_1_script_1a5f98b562df6f7281531e4baaac9f7bfa" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>run</name></member>
+      <member refid="class_k_win_1_1_abstract_script_1ac139b32bc133682b4589c4dc51434f66" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>running</name></member>
+      <member refid="class_k_win_1_1_abstract_script_1a34df1d9d42de65f3acc4daa41ded88af" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>runningChanged</name></member>
+      <member refid="class_k_win_1_1_script_1a5386a6cb0c28b8bdf1538adc8808fac9" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>Script</name></member>
+      <member refid="class_k_win_1_1_abstract_script_1ae8f1f9aa3f49d4ff42404fcc272ab4f5" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>scriptId</name></member>
+      <member refid="class_k_win_1_1_script_1a5bc264de5802bed0ecadfecf7cda5ea1" prot="private" virt="non-virtual"><scope>KWin::Script</scope><name>scriptValueToAction</name></member>
+      <member refid="class_k_win_1_1_abstract_script_1a232e0a50e7348d1381fb7a5f76459613" prot="protected" virt="non-virtual"><scope>KWin::Script</scope><name>setRunning</name></member>
+      <member refid="class_k_win_1_1_script_1a9970379ccb0ceb101e3e31ef5d99fc8d" prot="private" virt="non-virtual"><scope>KWin::Script</scope><name>slotBorderActivated</name></member>
+      <member refid="class_k_win_1_1_script_1a53f9cf7c2c6d3a175ae97a1f514c1fa5" prot="private" virt="non-virtual"><scope>KWin::Script</scope><name>slotScriptLoadedFromFile</name></member>
+      <member refid="class_k_win_1_1_abstract_script_1ad09c6008ab7e5629b49af42a3bf3271d" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>stop</name></member>
+      <member refid="class_k_win_1_1_script_1ad1d31827251be0938d99afeb9c75fb15" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>unregisterScreenEdge</name></member>
+      <member refid="class_k_win_1_1_script_1a3c166d77163bd5f8f1212aa2b0b9c103" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>unregisterTouchScreenEdge</name></member>
+      <member refid="class_k_win_1_1_abstract_script_1afac9b3c7d793923982af2b2919bca2c8" prot="public" virt="non-virtual"><scope>KWin::Script</scope><name>~AbstractScript</name></member>
+      <member refid="class_k_win_1_1_script_1a86b6b20a771b7f03a51e127b2dca4459" prot="public" virt="virtual"><scope>KWin::Script</scope><name>~Script</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

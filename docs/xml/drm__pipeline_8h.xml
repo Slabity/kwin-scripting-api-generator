@@ -1,0 +1,790 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="drm__pipeline_8h" kind="file" language="C++">
+    <compoundname>drm_pipeline.h</compoundname>
+    <includes local="no">QList</includes>
+    <includes local="no">QPoint</includes>
+    <includes local="no">QSize</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">xf86drmMode.h</includes>
+    <includes refid="colorpipeline_8h" local="yes">core/colorpipeline.h</includes>
+    <includes refid="colorspace_8h" local="yes">core/colorspace.h</includes>
+    <includes refid="core_2output_8h" local="yes">core/output.h</includes>
+    <includes refid="renderloop__p_8h" local="yes">core/renderloop_p.h</includes>
+    <includes refid="drm__blob_8h" local="yes">drm_blob.h</includes>
+    <includes refid="drm__connector_8h" local="yes">drm_connector.h</includes>
+    <includes refid="drm__plane_8h" local="yes">drm_plane.h</includes>
+    <includedby refid="drm__backend_8cpp" local="yes">kwin/src/backends/drm/drm_backend.cpp</includedby>
+    <includedby refid="drm__connector_8cpp" local="yes">kwin/src/backends/drm/drm_connector.cpp</includedby>
+    <includedby refid="drm__egl__backend_8cpp" local="yes">kwin/src/backends/drm/drm_egl_backend.cpp</includedby>
+    <includedby refid="drm__egl__layer_8cpp" local="yes">kwin/src/backends/drm/drm_egl_layer.cpp</includedby>
+    <includedby refid="drm__gpu_8cpp" local="yes">kwin/src/backends/drm/drm_gpu.cpp</includedby>
+    <includedby refid="drm__gpu_8h" local="yes">kwin/src/backends/drm/drm_gpu.h</includedby>
+    <includedby refid="drm__layer_8cpp" local="yes">kwin/src/backends/drm/drm_layer.cpp</includedby>
+    <includedby refid="drm__output_8cpp" local="yes">kwin/src/backends/drm/drm_output.cpp</includedby>
+    <includedby refid="drm__pipeline_8cpp" local="yes">kwin/src/backends/drm/drm_pipeline.cpp</includedby>
+    <includedby refid="drm__pipeline__legacy_8cpp" local="yes">kwin/src/backends/drm/drm_pipeline_legacy.cpp</includedby>
+    <includedby refid="drm__qpainter__backend_8cpp" local="yes">kwin/src/backends/drm/drm_qpainter_backend.cpp</includedby>
+    <includedby refid="drm__qpainter__layer_8cpp" local="yes">kwin/src/backends/drm/drm_qpainter_layer.cpp</includedby>
+    <incdepgraph>
+      <node id="41">
+        <label>drm_blob.h</label>
+        <link refid="drm__blob_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>drm_connector.h</label>
+        <link refid="drm__connector_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>drm_logging.h</label>
+        <link refid="drm__logging_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>drm_object.h</label>
+        <link refid="drm__object_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/backends/drm/drm_pipeline.h</label>
+        <link refid="drm__pipeline_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>drm_plane.h</label>
+        <link refid="drm__plane_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>drm_pointer.h</label>
+        <link refid="drm__pointer_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>drm_property.h</label>
+        <link refid="drm__property_8h"/>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>colorlut3d.h</label>
+        <link refid="colorlut3d_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>core/colorpipeline.h</label>
+        <link refid="colorpipeline_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>colorspace.h</label>
+        <link refid="colorspace_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>colortransformation.h</label>
+        <link refid="colortransformation_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>core/output.h</label>
+        <link refid="core_2output_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>renderbackend.h</label>
+        <link refid="renderbackend_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>renderjournal.h</label>
+        <link refid="renderjournal_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>renderloop.h</label>
+        <link refid="renderloop_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>core/renderloop_p.h</label>
+        <link refid="renderloop__p_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>core/rendertarget.h</label>
+        <link refid="rendertarget_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>utils/edid.h</label>
+        <link refid="edid_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>utils/filedescriptor.h</label>
+        <link refid="filedescriptor_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>QByteArray</label>
+      </node>
+      <node id="24">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="30">
+        <label>QDebug</label>
+      </node>
+      <node id="25">
+        <label>QImage</label>
+      </node>
+      <node id="2">
+        <label>QList</label>
+      </node>
+      <node id="49">
+        <label>QLoggingCategory</label>
+      </node>
+      <node id="44">
+        <label>QMap</label>
+      </node>
+      <node id="14">
+        <label>QMatrix4x4</label>
+      </node>
+      <node id="27">
+        <label>QObject</label>
+      </node>
+      <node id="3">
+        <label>QPoint</label>
+      </node>
+      <node id="37">
+        <label>QPointer</label>
+      </node>
+      <node id="31">
+        <label>QRect</label>
+      </node>
+      <node id="4">
+        <label>QSize</label>
+      </node>
+      <node id="39">
+        <label>QTimer</label>
+      </node>
+      <node id="32">
+        <label>QUuid</label>
+      </node>
+      <node id="26">
+        <label>QVariant</label>
+      </node>
+      <node id="9">
+        <label>QVector</label>
+      </node>
+      <node id="15">
+        <label>QVector2D</label>
+      </node>
+      <node id="5">
+        <label>chrono</label>
+      </node>
+      <node id="23">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="40">
+        <label>fstream</label>
+      </node>
+      <node id="11">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="10">
+        <label>memory</label>
+      </node>
+      <node id="13">
+        <label>optional</label>
+      </node>
+      <node id="51">
+        <label>qobjectdefs.h</label>
+      </node>
+      <node id="17">
+        <label>stdint.h</label>
+      </node>
+      <node id="18">
+        <label>tuple</label>
+      </node>
+      <node id="19">
+        <label>vector</label>
+      </node>
+      <node id="46">
+        <label>xf86drm.h</label>
+      </node>
+      <node id="6">
+        <label>xf86drmMode.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="8">
+        <label>kwin/src/backends/drm/drm_abstract_output.cpp</label>
+        <link refid="drm__abstract__output_8cpp"/>
+      </node>
+      <node id="2">
+        <label>kwin/src/backends/drm/drm_backend.cpp</label>
+        <link refid="drm__backend_8cpp"/>
+      </node>
+      <node id="9">
+        <label>kwin/src/backends/drm/drm_blob.cpp</label>
+        <link refid="drm__blob_8cpp"/>
+      </node>
+      <node id="10">
+        <label>kwin/src/backends/drm/drm_buffer.cpp</label>
+        <link refid="drm__buffer_8cpp"/>
+      </node>
+      <node id="11">
+        <label>kwin/src/backends/drm/drm_commit.cpp</label>
+        <link refid="drm__commit_8cpp"/>
+      </node>
+      <node id="12">
+        <label>kwin/src/backends/drm/drm_commit_thread.cpp</label>
+        <link refid="drm__commit__thread_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/backends/drm/drm_connector.cpp</label>
+        <link refid="drm__connector_8cpp"/>
+      </node>
+      <node id="13">
+        <label>kwin/src/backends/drm/drm_crtc.cpp</label>
+        <link refid="drm__crtc_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/backends/drm/drm_egl_backend.cpp</label>
+        <link refid="drm__egl__backend_8cpp"/>
+      </node>
+      <node id="5">
+        <label>kwin/src/backends/drm/drm_egl_layer.cpp</label>
+        <link refid="drm__egl__layer_8cpp"/>
+      </node>
+      <node id="14">
+        <label>kwin/src/backends/drm/drm_egl_layer_surface.cpp</label>
+        <link refid="drm__egl__layer__surface_8cpp"/>
+      </node>
+      <node id="6">
+        <label>kwin/src/backends/drm/drm_gpu.cpp</label>
+        <link refid="drm__gpu_8cpp"/>
+      </node>
+      <node id="7">
+        <label>kwin/src/backends/drm/drm_gpu.h</label>
+        <link refid="drm__gpu_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>kwin/src/backends/drm/drm_layer.cpp</label>
+        <link refid="drm__layer_8cpp"/>
+      </node>
+      <node id="15">
+        <label>kwin/src/backends/drm/drm_object.cpp</label>
+        <link refid="drm__object_8cpp"/>
+      </node>
+      <node id="16">
+        <label>kwin/src/backends/drm/drm_output.cpp</label>
+        <link refid="drm__output_8cpp"/>
+      </node>
+      <node id="17">
+        <label>kwin/src/backends/drm/drm_pipeline.cpp</label>
+        <link refid="drm__pipeline_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/backends/drm/drm_pipeline.h</label>
+        <link refid="drm__pipeline_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>kwin/src/backends/drm/drm_pipeline_legacy.cpp</label>
+        <link refid="drm__pipeline__legacy_8cpp"/>
+      </node>
+      <node id="19">
+        <label>kwin/src/backends/drm/drm_plane.cpp</label>
+        <link refid="drm__plane_8cpp"/>
+      </node>
+      <node id="20">
+        <label>kwin/src/backends/drm/drm_property.cpp</label>
+        <link refid="drm__property_8cpp"/>
+      </node>
+      <node id="21">
+        <label>kwin/src/backends/drm/drm_qpainter_backend.cpp</label>
+        <link refid="drm__qpainter__backend_8cpp"/>
+      </node>
+      <node id="22">
+        <label>kwin/src/backends/drm/drm_qpainter_layer.cpp</label>
+        <link refid="drm__qpainter__layer_8cpp"/>
+      </node>
+      <node id="23">
+        <label>kwin/src/backends/drm/drm_virtual_egl_layer.cpp</label>
+        <link refid="drm__virtual__egl__layer_8cpp"/>
+      </node>
+      <node id="24">
+        <label>kwin/src/backends/drm/drm_virtual_output.cpp</label>
+        <link refid="drm__virtual__output_8cpp"/>
+      </node>
+      <node id="26">
+        <label>kwin/src/wayland/drmlease_v1.cpp</label>
+        <link refid="drmlease__v1_8cpp"/>
+      </node>
+      <node id="25">
+        <label>kwin/src/wayland/drmlease_v1_p.h</label>
+        <link refid="drmlease__v1__p_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_drm_pipeline" prot="public">KWin::DrmPipeline</innerclass>
+    <innerclass refid="struct_k_win_1_1_drm_pipeline_1_1_state" prot="private">KWin::DrmPipeline::State</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2021<sp/>Xaver<sp/>Hugl<sp/>&lt;xaver.hugl@gmail.com&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QPoint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QSize&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;xf86drmMode.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="colorpipeline_8h" kindref="compound">core/colorpipeline.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="colorspace_8h" kindref="compound">core/colorspace.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="core_2output_8h" kindref="compound">core/output.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="renderloop__p_8h" kindref="compound">core/renderloop_p.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="drm__blob_8h" kindref="compound">drm_blob.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="drm__connector_8h" kindref="compound">drm_connector.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="drm__plane_8h" kindref="compound">drm_plane.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_drm_connector" kindref="compound">DrmConnector</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_drm_crtc" kindref="compound">DrmCrtc</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_drm_connector_mode" kindref="compound">DrmConnectorMode</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_drm_pipeline_layer" kindref="compound">DrmPipelineLayer</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_drm_commit_thread" kindref="compound">DrmCommitThread</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_output_frame" kindref="compound">OutputFrame</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="class_k_win_1_1_drm_pipeline" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_drm_pipeline_1ad74039facf0e4ea1a1dc0b2753067a02" kindref="member">DrmPipeline</ref></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1ad74039facf0e4ea1a1dc0b2753067a02" kindref="member">DrmPipeline</ref>(<ref refid="class_k_win_1_1_drm_connector" kindref="compound">DrmConnector</ref><sp/>*conn);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a8b254855358b104ced5ca679abd421ad" kindref="member">~DrmPipeline</ref>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref><sp/>{</highlight></codeline>
+<codeline lineno="45" refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5ba6adf97f83acf6453d4a6a4b1070f3754" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5ba6adf97f83acf6453d4a6a4b1070f3754" kindref="member">None</ref>,</highlight></codeline>
+<codeline lineno="46" refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5ba0fce51713c5b85159c90435fa877e225" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5ba0fce51713c5b85159c90435fa877e225" kindref="member">OutofMemory</ref>,</highlight></codeline>
+<codeline lineno="47" refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5bae73a2e92f1c87086c838b442552a4775" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5bae73a2e92f1c87086c838b442552a4775" kindref="member">InvalidArguments</ref>,</highlight></codeline>
+<codeline lineno="48" refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5ba5eb47444d07dffc6d504bea4145a0ad8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5ba5eb47444d07dffc6d504bea4145a0ad8" kindref="member">NoPermission</ref>,</highlight></codeline>
+<codeline lineno="49" refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5baae7987f09dd89eebf719e8a31371f1f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5baae7987f09dd89eebf719e8a31371f1f6" kindref="member">FramePending</ref>,</highlight></codeline>
+<codeline lineno="50" refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5ba041b9356343474123a9604fbd61c5dc4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5ba041b9356343474123a9604fbd61c5dc4" kindref="member">TestBufferFailed</ref>,</highlight></codeline>
+<codeline lineno="51" refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5bac226fb82b3826a0c54741c483019af95" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5bac226fb82b3826a0c54741c483019af95" kindref="member">NotEnoughCrtcs</ref>,</highlight></codeline>
+<codeline lineno="52" refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5ba88183b946cc5f0e8c96b2e66e1c74a7e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5ba88183b946cc5f0e8c96b2e66e1c74a7e" kindref="member">Unknown</ref>,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_ENUM(<ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref>)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref><sp/><ref refid="class_k_win_1_1_drm_pipeline_1aee4d9fad0e623f6afb450f000fcf29a6" kindref="member">present</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;OutputFrame&gt;<sp/>&amp;frame);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a862d8a5337e2ced557eb169d0365ce5f" kindref="member">maybeModeset</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;OutputFrame&gt;<sp/>&amp;frame);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a99756c008e80a303ad18144002a02a70" kindref="member">forceLegacyModeset</ref>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a521450612c74412d1d071d9e6fb239ef" kindref="member">needsModeset</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a90b0a1bbf427a54f251ce1919183637f" kindref="member">applyPendingChanges</ref>();</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a599705ade89e3dc8767e6e024126581f" kindref="member">revertPendingChanges</ref>();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a422edce2f2d2e9cd4e91e253445b27e3" kindref="member">updateCursor</ref>(std::optional&lt;std::chrono::nanoseconds&gt;<sp/>allowedVrrDelay);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_connector" kindref="compound">DrmConnector</ref><sp/>*<ref refid="class_k_win_1_1_drm_pipeline_1a0a1be2bd5b198c9e965f5a20dc4dcb05" kindref="member">connector</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref><sp/>*<ref refid="class_k_win_1_1_drm_pipeline_1a8cfc628f8e5de110f1b5386ebc15750a" kindref="member">gpu</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a635f6747b7f5335e59f20295d5bc8f19" kindref="member">pageFlipped</ref>(std::chrono::nanoseconds<sp/>timestamp);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1abc443a8ca037cc8d489435211d4fb3c7" kindref="member">modesetPresentPending</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1af37ca2cb26628c00ac9b4d80d9087722" kindref="member">resetModesetPresentPending</ref>();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_commit_thread" kindref="compound">DrmCommitThread</ref><sp/>*<ref refid="class_k_win_1_1_drm_pipeline_1a931ed2c09308d6999116c4a68cb47fe0" kindref="member">commitThread</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>QHash&lt;uint32_t,<sp/>QList&lt;uint64_t&gt;&gt;<sp/><ref refid="class_k_win_1_1_drm_pipeline_1a659af5c1ddc86cdae0541708830ce395" kindref="member">formats</ref>(<ref refid="class_k_win_1_1_drm_plane_1a3cf72c069e4b10ac10646deba960d050" kindref="member">DrmPlane::TypeIndex</ref><sp/>planeType)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a12f9842b63bfc88c7843f7032320265f" kindref="member">pruneModifier</ref>();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;QSize&gt;<sp/><ref refid="class_k_win_1_1_drm_pipeline_1a5a4192335eae02699cbc465137827ee7" kindref="member">recommendedSizes</ref>(<ref refid="class_k_win_1_1_drm_plane_1a3cf72c069e4b10ac10646deba960d050" kindref="member">DrmPlane::TypeIndex</ref><sp/>planeType)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a227f5f6f02d73931ade20876e918d926" kindref="member">setOutput</ref>(<ref refid="class_k_win_1_1_drm_output" kindref="compound">DrmOutput</ref><sp/>*<ref refid="class_k_win_1_1_drm_pipeline_1a419d39b2b9bab964dacfb1ed55267dd2" kindref="member">output</ref>);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_output" kindref="compound">DrmOutput</ref><sp/>*<ref refid="class_k_win_1_1_drm_pipeline_1a419d39b2b9bab964dacfb1ed55267dd2" kindref="member">output</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a63a376ab067026dafe709a0c7ccc1b3f" kindref="member">setLayers</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;DrmPipelineLayer&gt;<sp/>&amp;<ref refid="class_k_win_1_1_drm_pipeline_1ae914f5dc7b8f8dbe31bead04ced20481" kindref="member">primaryLayer</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;DrmPipelineLayer&gt;<sp/>&amp;<ref refid="class_k_win_1_1_drm_pipeline_1a050f4592818862139a1ac68c65de1fd8" kindref="member">cursorLayer</ref>);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_layer" kindref="compound">DrmPipelineLayer</ref><sp/>*<ref refid="class_k_win_1_1_drm_pipeline_1ae914f5dc7b8f8dbe31bead04ced20481" kindref="member">primaryLayer</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_layer" kindref="compound">DrmPipelineLayer</ref><sp/>*<ref refid="class_k_win_1_1_drm_pipeline_1a050f4592818862139a1ac68c65de1fd8" kindref="member">cursorLayer</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::nanoseconds<sp/><ref refid="class_k_win_1_1_drm_pipeline_1a9dbb51784d5da0cf55369110414c8a5b" kindref="member">presentationDeadline</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_crtc" kindref="compound">DrmCrtc</ref><sp/>*<ref refid="class_k_win_1_1_drm_pipeline_1ade877865c237b042bcff6884eaa6be0a" kindref="member">crtc</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;DrmConnectorMode&gt;<sp/><ref refid="class_k_win_1_1_drm_pipeline_1ae307f58fb2fca752e89e3c28a679f78d" kindref="member">mode</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a611dd21649097e4b1d71a0bfbfa7619b" kindref="member">active</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1af7db525a7239d89edbaf003be2bfac72" kindref="member">activePending</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1ac0222fa45462fb13b328ef9c72b6f4da" kindref="member">enabled</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a5bac5dc1ad9b6deedfa5c46c4e432767" kindref="member">PresentationMode</ref><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a44fb995ea3d8a91b838a77c7de531279" kindref="member">presentationMode</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="class_k_win_1_1_drm_pipeline_1a185b3ebefd1120f5f728ab3478c0a67d" kindref="member">overscan</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_output_1a091c0b392d5241b7208e2a63d0f89a83" kindref="member">Output::RgbRange</ref><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a04fe039dcc8163db4bf3ecc38cc9d6d0" kindref="member">rgbRange</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_connector_1ac103a1aa529fa1efb645f6e589046cc0" kindref="member">DrmConnector::DrmContentType</ref><sp/><ref refid="class_k_win_1_1_drm_pipeline_1af2a134d3b85dd66f9ae507d8e9fefbd6" kindref="member">contentType</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;IccProfile&gt;<sp/>&amp;<ref refid="class_k_win_1_1_drm_pipeline_1a56ba24f18c01bc5687edbc15af4c988d" kindref="member">iccProfile</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1ab603e9a49c112d0f03516ccefdce9848" kindref="member">setCrtc</ref>(<ref refid="class_k_win_1_1_drm_crtc" kindref="compound">DrmCrtc</ref><sp/>*<ref refid="class_k_win_1_1_drm_pipeline_1ade877865c237b042bcff6884eaa6be0a" kindref="member">crtc</ref>);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a50c0987e4e4de9dd5795356bc725dd6f" kindref="member">setMode</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;DrmConnectorMode&gt;<sp/>&amp;<ref refid="class_k_win_1_1_drm_pipeline_1ae307f58fb2fca752e89e3c28a679f78d" kindref="member">mode</ref>);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1ab03b55a4ac01ffe95e082ff7ba9f4e47" kindref="member">setActive</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a611dd21649097e4b1d71a0bfbfa7619b" kindref="member">active</ref>);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1aa0facff113d04a5ae2d877c45a191017" kindref="member">setEnable</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1ae227e331a52dec246aa620488f1415b9" kindref="member">setPresentationMode</ref>(<ref refid="namespace_k_win_1a5bac5dc1ad9b6deedfa5c46c4e432767" kindref="member">PresentationMode</ref><sp/><ref refid="class_k_win_1_1_drm_pipeline_1ae307f58fb2fca752e89e3c28a679f78d" kindref="member">mode</ref>);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1ae9a20e9b4cb4650b3841f08cadaa1226" kindref="member">setOverscan</ref>(uint32_t<sp/><ref refid="class_k_win_1_1_drm_pipeline_1a185b3ebefd1120f5f728ab3478c0a67d" kindref="member">overscan</ref>);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a788a568351705079f1b6c71149e22371" kindref="member">setRgbRange</ref>(<ref refid="class_k_win_1_1_output_1a091c0b392d5241b7208e2a63d0f89a83" kindref="member">Output::RgbRange</ref><sp/>range);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a2eb009faa45f6945276ffbdfceb899db" kindref="member">setCrtcColorPipeline</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_color_pipeline" kindref="compound">ColorPipeline</ref><sp/>&amp;pipeline);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a41c6f95188f82d509b6a61297b9313c3" kindref="member">setContentType</ref>(<ref refid="class_k_win_1_1_drm_connector_1ac103a1aa529fa1efb645f6e589046cc0" kindref="member">DrmConnector::DrmContentType</ref><sp/><ref refid="namespace_k_win_1a3223e96fea9ab917c25be94e2434013a" kindref="member">type</ref>);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1ae7fe59a518246e4b2ed6c18ffe56cb61" kindref="member">setIccProfile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;IccProfile&gt;<sp/>&amp;profile);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7a133b6c60e13370f9fdf78aa877ece0" kindref="member">setHighDynamicRange</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hdr);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1af72968f1cf479b7e043da1b210434537" kindref="member">setWideColorGamut</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>wcg);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1acec79364d852674c682b69ce064ef40d" kindref="member">setMaxBpc</ref>(uint32_t<sp/>max);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a1310c8bfa4079793297cc7eaa777c176" kindref="member">amdgpuVrrWorkaroundActive</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894c" kindref="member">CommitMode</ref><sp/>{</highlight></codeline>
+<codeline lineno="121" refid="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894ca0cbc6611f5540bd0809a388dc95a615b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894ca0cbc6611f5540bd0809a388dc95a615b" kindref="member">Test</ref>,</highlight></codeline>
+<codeline lineno="122" refid="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894ca4cc63495694df017edaa8cca4a578e3f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894ca4cc63495694df017edaa8cca4a578e3f" kindref="member">TestAllowModeset</ref>,</highlight></codeline>
+<codeline lineno="123" refid="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894cae60a24390723aaabf0dec8612ff6517b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894cae60a24390723aaabf0dec8612ff6517b" kindref="member">CommitModeset</ref></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_ENUM(<ref refid="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894c" kindref="member">CommitMode</ref>)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref><sp/><ref refid="class_k_win_1_1_drm_pipeline_1ad2120a27a0a06b86f4b03cd6c912b430" kindref="member">commitPipelines</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;DrmPipeline<sp/>*&gt;<sp/>&amp;pipelines,<sp/><ref refid="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894c" kindref="member">CommitMode</ref><sp/><ref refid="class_k_win_1_1_drm_pipeline_1ae307f58fb2fca752e89e3c28a679f78d" kindref="member">mode</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;DrmObject<sp/>*&gt;<sp/>&amp;unusedObjects<sp/>=<sp/>{});</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isBufferForDirectScanout()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>calculateUnderscan();</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref><sp/>errnoToError();</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;DrmBlob&gt;<sp/>createHdrMetadata(<ref refid="class_k_win_1_1_transfer_function_1af52e6a1609afb57e5738028613f90c13" kindref="member">TransferFunction::Type</ref><sp/>transferFunction)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>legacy<sp/>only</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref><sp/>presentLegacy(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;OutputFrame&gt;<sp/>&amp;frame);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref><sp/>legacyModeset();</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref><sp/>setLegacyGamma();</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref><sp/>applyPendingChangesLegacy();</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>setCursorLegacy();</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref><sp/>commitPipelinesLegacy(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;DrmPipeline<sp/>*&gt;<sp/>&amp;pipelines,<sp/><ref refid="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894c" kindref="member">CommitMode</ref><sp/><ref refid="class_k_win_1_1_drm_pipeline_1ae307f58fb2fca752e89e3c28a679f78d" kindref="member">mode</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;DrmObject<sp/>*&gt;<sp/>&amp;unusedObjects);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>atomic<sp/>modesetting<sp/>only</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref><sp/>prepareAtomicCommit(DrmAtomicCommit<sp/>*commit,<sp/><ref refid="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894c" kindref="member">CommitMode</ref><sp/><ref refid="class_k_win_1_1_drm_pipeline_1ae307f58fb2fca752e89e3c28a679f78d" kindref="member">mode</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;OutputFrame&gt;<sp/>&amp;frame);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>prepareAtomicModeset(DrmAtomicCommit<sp/>*commit);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref><sp/>prepareAtomicPresentation(DrmAtomicCommit<sp/>*commit,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;OutputFrame&gt;<sp/>&amp;frame);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>prepareAtomicCursor(DrmAtomicCommit<sp/>*commit);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>prepareAtomicDisable(DrmAtomicCommit<sp/>*commit);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_pipeline_1a7337b8e75c27725909108cd28f0b9c5b" kindref="member">Error</ref><sp/>commitPipelinesAtomic(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;DrmPipeline<sp/>*&gt;<sp/>&amp;pipelines,<sp/><ref refid="class_k_win_1_1_drm_pipeline_1a4a67a1165446e6f480dc766f26a4894c" kindref="member">CommitMode</ref><sp/><ref refid="class_k_win_1_1_drm_pipeline_1ae307f58fb2fca752e89e3c28a679f78d" kindref="member">mode</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;OutputFrame&gt;<sp/>&amp;frame,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;DrmObject<sp/>*&gt;<sp/>&amp;unusedObjects);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>DrmOutput<sp/>*m_output<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>DrmConnector<sp/>*m_connector<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_modesetPresentPending<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>ColorPipeline<sp/>m_currentLegacyGamma;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">State</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DrmCrtc<sp/>*crtc<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QHash&lt;uint32_t,<sp/>QList&lt;uint64_t&gt;&gt;<sp/>formats;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>active<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>whether<sp/>or<sp/>not<sp/>the<sp/>pipeline<sp/>should<sp/>be<sp/>currently<sp/>used</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>whether<sp/>or<sp/>not<sp/>the<sp/>pipeline<sp/>needs<sp/>a<sp/>crtc</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>needsModeset<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>needsModesetProperties<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;DrmConnectorMode&gt;<sp/>mode;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>overscan<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_output_1a091c0b392d5241b7208e2a63d0f89a83" kindref="member">Output::RgbRange</ref><sp/>rgbRange<sp/>=<sp/><ref refid="class_k_win_1_1_output_1a091c0b392d5241b7208e2a63d0f89a83a086247a9b57fde6eefee2a0c4752242d" kindref="member">Output::RgbRange::Automatic</ref>;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a5bac5dc1ad9b6deedfa5c46c4e432767" kindref="member">PresentationMode</ref><sp/>presentationMode<sp/>=<sp/><ref refid="namespace_k_win_1a5bac5dc1ad9b6deedfa5c46c4e432767a98b06ef30caa386be0f897d0e5c5a135" kindref="member">PresentationMode::VSync</ref>;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ColorPipeline<sp/>crtcColorPipeline;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_connector_1ac103a1aa529fa1efb645f6e589046cc0" kindref="member">DrmConnector::DrmContentType</ref><sp/>contentType<sp/>=<sp/><ref refid="class_k_win_1_1_drm_connector_1ac103a1aa529fa1efb645f6e589046cc0ad334dfcea59127bedfcdbe0a3ee7f494" kindref="member">DrmConnector::DrmContentType::Graphics</ref>;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;IccProfile&gt;<sp/>iccProfile;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hdr<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>wcg<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>maxBpc<sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>state<sp/>that<sp/>is<sp/>to<sp/>be<sp/>tested<sp/>next</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>State<sp/>m_pending;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>state<sp/>that<sp/>will<sp/>be<sp/>applied<sp/>at<sp/>the<sp/>next<sp/>real<sp/>atomic<sp/>commit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>State<sp/>m_next;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;DrmCommitThread&gt;<sp/>m_commitThread;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;DrmPipelineLayer&gt;<sp/>m_primaryLayer;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;DrmPipelineLayer&gt;<sp/>m_cursorLayer;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/backends/drm/drm_pipeline.h"/>
+  </compounddef>
+</doxygen>

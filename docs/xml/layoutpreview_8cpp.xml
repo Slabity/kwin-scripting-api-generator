@@ -1,0 +1,407 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="layoutpreview_8cpp" kind="file" language="C++">
+    <compoundname>layoutpreview.cpp</compoundname>
+    <includes refid="layoutpreview_8h" local="yes">layoutpreview.h</includes>
+    <includes local="no">KConfigGroup</includes>
+    <includes local="no">KDesktopFile</includes>
+    <includes local="no">KLocalizedString</includes>
+    <includes local="no">QApplication</includes>
+    <includes local="no">QDebug</includes>
+    <includes local="no">QQmlContext</includes>
+    <includes local="no">QQmlEngine</includes>
+    <includes local="no">QScreen</includes>
+    <includes local="no">QStandardPaths</includes>
+    <includes local="no">QStringLiteral</includes>
+    <includes local="yes">moc_layoutpreview.cpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/kcms/tabbox/layoutpreview.cpp</label>
+        <link refid="layoutpreview_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>layoutpreview.h</label>
+        <link refid="layoutpreview_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>thumbnailitem.h</label>
+        <link refid="thumbnailitem_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>KConfigGroup</label>
+      </node>
+      <node id="10">
+        <label>KDesktopFile</label>
+      </node>
+      <node id="11">
+        <label>KLocalizedString</label>
+      </node>
+      <node id="3">
+        <label>QAbstractListModel</label>
+      </node>
+      <node id="12">
+        <label>QApplication</label>
+      </node>
+      <node id="13">
+        <label>QDebug</label>
+      </node>
+      <node id="7">
+        <label>QImage</label>
+      </node>
+      <node id="14">
+        <label>QQmlContext</label>
+      </node>
+      <node id="15">
+        <label>QQmlEngine</label>
+      </node>
+      <node id="8">
+        <label>QQuickItem</label>
+      </node>
+      <node id="4">
+        <label>QQuickView</label>
+      </node>
+      <node id="5">
+        <label>QRect</label>
+      </node>
+      <node id="16">
+        <label>QScreen</label>
+      </node>
+      <node id="17">
+        <label>QStandardPaths</label>
+      </node>
+      <node id="18">
+        <label>QStringLiteral</label>
+      </node>
+      <node id="19">
+        <label>moc_layoutpreview.cpp</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <innernamespace refid="namespace_k_win_1_1_tab_box">KWin::TabBox</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2009,<sp/>2011<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>own</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="layoutpreview_8h" kindref="compound">layoutpreview.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KConfigGroup&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KDesktopFile&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KLocalizedString&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QApplication&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDebug&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QQmlContext&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QQmlEngine&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QScreen&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QStandardPaths&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QStringLiteral&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win_1_1_tab_box" kindref="compound">TabBox</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="class_k_win_1_1_tab_box_1_1_layout_preview_1a790a4c6aa49f031d02d9d5db008a4a86" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_layout_preview_1a790a4c6aa49f031d02d9d5db008a4a86" kindref="member">LayoutPreview::LayoutPreview</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;path,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>showDesktopThumbnail,<sp/>QObject<sp/>*parent)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QObject(parent)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_item(nullptr)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>QQmlEngine<sp/>*engine<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QQmlEngine(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>QQmlComponent<sp/>*component<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QQmlComponent(engine,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>qmlRegisterType&lt;WindowThumbnailItem&gt;(</highlight><highlight class="stringliteral">&quot;org.kde.kwin&quot;</highlight><highlight class="normal">,<sp/>3,<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;WindowThumbnail&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>qmlRegisterType&lt;SwitcherItem&gt;(</highlight><highlight class="stringliteral">&quot;org.kde.kwin&quot;</highlight><highlight class="normal">,<sp/>3,<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;TabBoxSwitcher&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>qmlRegisterType&lt;DesktopBackground&gt;(</highlight><highlight class="stringliteral">&quot;org.kde.kwin&quot;</highlight><highlight class="normal">,<sp/>3,<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;DesktopBackground&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>qmlRegisterAnonymousType&lt;QAbstractItemModel&gt;(</highlight><highlight class="stringliteral">&quot;org.kde.kwin&quot;</highlight><highlight class="normal">,<sp/>3);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>component-&gt;loadUrl(QUrl::fromLocalFile(path));</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(component-&gt;isError())<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qDebug()<sp/>&lt;&lt;<sp/>component-&gt;errorString();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>QObject<sp/>*item<sp/>=<sp/>component-&gt;create();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>findSwitcher<sp/>=<sp/>[item]()<sp/>-&gt;<sp/><ref refid="class_k_win_1_1_tab_box_1_1_switcher_item" kindref="compound">SwitcherItem</ref><sp/>*<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!item)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_k_win_1_1_tab_box_1_1_switcher_item" kindref="compound">SwitcherItem</ref><sp/>*i<sp/>=<sp/>qobject_cast&lt;SwitcherItem<sp/>*&gt;(item))<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(QQuickWindow<sp/>*w<sp/>=<sp/>qobject_cast&lt;QQuickWindow<sp/>*&gt;(item))<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>w-&gt;contentItem()-&gt;findChild&lt;<ref refid="class_k_win_1_1_tab_box_1_1_switcher_item" kindref="compound">SwitcherItem</ref><sp/>*&gt;();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item-&gt;findChild&lt;<ref refid="class_k_win_1_1_tab_box_1_1_switcher_item" kindref="compound">SwitcherItem</ref><sp/>*&gt;();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_k_win_1_1_tab_box_1_1_switcher_item" kindref="compound">SwitcherItem</ref><sp/>*switcher<sp/>=<sp/>findSwitcher())<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_item<sp/>=<sp/>switcher;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_example_client_model" kindref="compound">ExampleClientModel</ref><sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(switcher-&gt;model())-&gt;<ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a2bc085ffdb114af6e16c870e95336f69" kindref="member">showDesktopThumbnail</ref>(showDesktopThumbnail);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>switcher-&gt;setVisible(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>findWindow<sp/>=<sp/>[item]()<sp/>-&gt;<sp/>QQuickWindow<sp/>*<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!item)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(QQuickWindow<sp/>*w<sp/>=<sp/>qobject_cast&lt;QQuickWindow<sp/>*&gt;(item))<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>w;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item-&gt;findChild&lt;QQuickWindow<sp/>*&gt;();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(QQuickWindow<sp/>*w<sp/>=<sp/>findWindow())<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>w-&gt;setKeyboardGrabEnabled(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>w-&gt;installEventFilter(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="class_k_win_1_1_tab_box_1_1_layout_preview_1ad495f763864cde8c2ff83491c4a95f56" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_layout_preview_1ad495f763864cde8c2ff83491c4a95f56" kindref="member">LayoutPreview::~LayoutPreview</ref>()</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="class_k_win_1_1_tab_box_1_1_layout_preview_1a70ff66eb42dcac66a586596b589687e2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_layout_preview_1a70ff66eb42dcac66a586596b589687e2" kindref="member">LayoutPreview::eventFilter</ref>(QObject<sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/>QEvent<sp/>*event)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(event-&gt;type()<sp/>==<sp/>QEvent::KeyPress)<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QKeyEvent<sp/>*keyEvent<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">QKeyEvent<sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(event);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(keyEvent-&gt;key()<sp/>==<sp/>Qt::Key_Escape<sp/>||<sp/>keyEvent-&gt;key()<sp/>==<sp/>Qt::Key_Return<sp/>||<sp/>keyEvent-&gt;key()<sp/>==<sp/>Qt::Key_Enter<sp/>||<sp/>keyEvent-&gt;key()<sp/>==<sp/>Qt::Key_Space)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">-&gt;deleteLater();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>deleteLater();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_item<sp/>&amp;&amp;<sp/>keyEvent-&gt;key()<sp/>==<sp/>Qt::Key_Tab)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_item-&gt;incrementIndex();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_item<sp/>&amp;&amp;<sp/>keyEvent-&gt;key()<sp/>==<sp/>Qt::Key_Backtab)<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_item-&gt;decrementIndex();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(event-&gt;type()<sp/>==<sp/>QEvent::FocusOut)<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">-&gt;deleteLater();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>deleteLater();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QObject::eventFilter(</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/>event);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a24fe8515ef5bf0fc85c11539daeaabc8" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a24fe8515ef5bf0fc85c11539daeaabc8" kindref="member">ExampleClientModel::ExampleClientModel</ref>(QObject<sp/>*parent)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QAbstractListModel(parent)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>init();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a9e58fa8716a0ec797eba3dda4f40de3e" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a9e58fa8716a0ec797eba3dda4f40de3e" kindref="member">ExampleClientModel::~ExampleClientModel</ref>()</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ExampleClientModel::init()</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>m_thumbnails<sp/>&lt;&lt;<sp/>ThumbnailInfo{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_thumbnail_item_1a280897ea784c91c152824021e55cac14afd7e1d21fa2903953e7cc9356ea696db" kindref="member">WindowThumbnailItem::Dolphin</ref>,</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i18nc(</highlight><highlight class="stringliteral">&quot;The<sp/>name<sp/>of<sp/>KDE&apos;s<sp/>file<sp/>manager<sp/>in<sp/>this<sp/>language,<sp/>if<sp/>translated&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Dolphin&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;system-file-manager&quot;</highlight><highlight class="normal">)};</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>m_thumbnails<sp/>&lt;&lt;<sp/>ThumbnailInfo{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_thumbnail_item_1a280897ea784c91c152824021e55cac14a5cefab723ad10ecc832af240b9438bae" kindref="member">WindowThumbnailItem::Konqueror</ref>,</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i18nc(</highlight><highlight class="stringliteral">&quot;The<sp/>name<sp/>of<sp/>KDE&apos;s<sp/>web<sp/>browser<sp/>in<sp/>this<sp/>language,<sp/>if<sp/>translated&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Konqueror&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;konqueror&quot;</highlight><highlight class="normal">)};</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>m_thumbnails<sp/>&lt;&lt;<sp/>ThumbnailInfo{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_thumbnail_item_1a280897ea784c91c152824021e55cac14a0f5ba8b7b8e22191f2ddd92c13117c7f" kindref="member">WindowThumbnailItem::KMail</ref>,</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i18nc(</highlight><highlight class="stringliteral">&quot;The<sp/>name<sp/>of<sp/>KDE&apos;s<sp/>email<sp/>client<sp/>in<sp/>this<sp/>language,<sp/>if<sp/>translated&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;KMail&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;kmail&quot;</highlight><highlight class="normal">)};</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>m_thumbnails<sp/>&lt;&lt;<sp/>ThumbnailInfo{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_thumbnail_item_1a280897ea784c91c152824021e55cac14a21e82cd34813035d3f61f67ed1d76c30" kindref="member">WindowThumbnailItem::Systemsettings</ref>,</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i18nc(</highlight><highlight class="stringliteral">&quot;The<sp/>name<sp/>of<sp/>KDE&apos;s<sp/>System<sp/>Settings<sp/>app<sp/>in<sp/>this<sp/>language,<sp/>if<sp/>translated&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;System<sp/>Settings&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;systemsettings&quot;</highlight><highlight class="normal">)};</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a2bc085ffdb114af6e16c870e95336f69" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a2bc085ffdb114af6e16c870e95336f69" kindref="member">ExampleClientModel::showDesktopThumbnail</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>showDesktop)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ThumbnailInfo<sp/>desktopThumbnail<sp/>=<sp/>ThumbnailInfo{<ref refid="class_k_win_1_1_window_thumbnail_item_1a280897ea784c91c152824021e55cac14aab5aa4a6d933f2848123d2f379e682cf" kindref="member">WindowThumbnailItem::Desktop</ref>,<sp/>i18n(</highlight><highlight class="stringliteral">&quot;Show<sp/>Desktop&quot;</highlight><highlight class="normal">),<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;desktop&quot;</highlight><highlight class="normal">)};</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desktopIndex<sp/>=<sp/>m_thumbnails.indexOf(desktopThumbnail);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(showDesktop<sp/>==<sp/>(desktopIndex<sp/>&gt;=<sp/>0))<sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/>beginResetModel();</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(showDesktop)<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_thumbnails<sp/>&lt;&lt;<sp/>desktopThumbnail;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_thumbnails.removeAt(desktopIndex);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/>endResetModel();</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a195a755c90d071be1d474d43f555dab2" refkind="member"><highlight class="normal">QVariant<sp/><ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a195a755c90d071be1d474d43f555dab2" kindref="member">ExampleClientModel::data</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>role)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="147"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!index.isValid()<sp/>||<sp/>index.row()<sp/>&gt;=<sp/><ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1aa3b86efa36174670ed61b6c76c7161fb" kindref="member">rowCount</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QVariant();</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ThumbnailInfo<sp/>&amp;item<sp/>=<sp/>m_thumbnails.at(index.row());</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(role)<sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Qt::DisplayRole:</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a1316a12c6fa35eda2b1d4462dd4dc697a77b937b37f58651e8b2dcf7c1a54ab13" kindref="member">CaptionRole</ref>:</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item.caption;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a1316a12c6fa35eda2b1d4462dd4dc697a62dd181f4ccd6fee61bc25e11fefd420" kindref="member">MinimizedRole</ref>:</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a1316a12c6fa35eda2b1d4462dd4dc697a3e25e1815b2116bc7d87c867544f3b35" kindref="member">DesktopNameRole</ref>:</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i18nc(</highlight><highlight class="stringliteral">&quot;An<sp/>example<sp/>Desktop<sp/>Name&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Desktop<sp/>1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a1316a12c6fa35eda2b1d4462dd4dc697a61dbab9b20272c0a579d456034a443af" kindref="member">IconRole</ref>:</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item.icon;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a1316a12c6fa35eda2b1d4462dd4dc697a3f130ea818952ebddf463f143d8ae978" kindref="member">WindowIdRole</ref>:</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item.wId;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a1316a12c6fa35eda2b1d4462dd4dc697acaef3f31679ac0a278004c161ebbdbfd" kindref="member">CloseableRole</ref>:</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item.wId<sp/>!=<sp/><ref refid="class_k_win_1_1_window_thumbnail_item_1a280897ea784c91c152824021e55cac14aab5aa4a6d933f2848123d2f379e682cf" kindref="member">WindowThumbnailItem::Desktop</ref>;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QVariant();</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172" refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a56d2fbdaf7086f819f7f1f38ce6b94f8" refkind="member"><highlight class="normal">QString<sp/><ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a56d2fbdaf7086f819f7f1f38ce6b94f8" kindref="member">ExampleClientModel::longestCaption</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="173"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>caption;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;item<sp/>:<sp/>m_thumbnails)<sp/>{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item.caption.size()<sp/>&gt;<sp/>caption.size())<sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>caption<sp/>=<sp/>item.caption;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>caption;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="class_k_win_1_1_tab_box_1_1_example_client_model_1aa3b86efa36174670ed61b6c76c7161fb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1aa3b86efa36174670ed61b6c76c7161fb" kindref="member">ExampleClientModel::rowCount</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;parent)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="184"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_thumbnails.size();</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="class_k_win_1_1_tab_box_1_1_example_client_model_1acf256c79b9fe2c78fbd97d801ffe84dd" refkind="member"><highlight class="normal">QHash&lt;int,<sp/>QByteArray&gt;<sp/><ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1acf256c79b9fe2c78fbd97d801ffe84dd" kindref="member">ExampleClientModel::roleNames</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="189"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a1316a12c6fa35eda2b1d4462dd4dc697a77b937b37f58651e8b2dcf7c1a54ab13" kindref="member">CaptionRole</ref>,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;caption&quot;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a1316a12c6fa35eda2b1d4462dd4dc697a62dd181f4ccd6fee61bc25e11fefd420" kindref="member">MinimizedRole</ref>,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;minimized&quot;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a1316a12c6fa35eda2b1d4462dd4dc697a3e25e1815b2116bc7d87c867544f3b35" kindref="member">DesktopNameRole</ref>,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;desktopName&quot;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a1316a12c6fa35eda2b1d4462dd4dc697a61dbab9b20272c0a579d456034a443af" kindref="member">IconRole</ref>,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;icon&quot;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a1316a12c6fa35eda2b1d4462dd4dc697a3f130ea818952ebddf463f143d8ae978" kindref="member">WindowIdRole</ref>,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;windowId&quot;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<ref refid="class_k_win_1_1_tab_box_1_1_example_client_model_1a1316a12c6fa35eda2b1d4462dd4dc697acaef3f31679ac0a278004c161ebbdbfd" kindref="member">CloseableRole</ref>,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;closeable&quot;</highlight><highlight class="normal">)},</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200" refid="class_k_win_1_1_tab_box_1_1_switcher_item_1ada19094fb9d0c167a3d47496998125bb" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_switcher_item_1ada19094fb9d0c167a3d47496998125bb" kindref="member">SwitcherItem::SwitcherItem</ref>(QObject<sp/>*parent)</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QObject(parent)</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_model(new<sp/><ref refid="class_k_win_1_1_tab_box_1_1_example_client_model" kindref="compound">ExampleClientModel</ref>(this))</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_item(nullptr)</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_currentIndex(0)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_visible(false)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209" refid="class_k_win_1_1_tab_box_1_1_switcher_item_1ad99f05facc0a010dd5d18f77ebbf36ed" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_switcher_item_1ad99f05facc0a010dd5d18f77ebbf36ed" kindref="member">SwitcherItem::~SwitcherItem</ref>()</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213" refid="class_k_win_1_1_tab_box_1_1_switcher_item_1a7ae4bfb7b8e31302a37c45bdeb166cfd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_switcher_item_1a7ae4bfb7b8e31302a37c45bdeb166cfd" kindref="member">SwitcherItem::setVisible</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_switcher_item_1ae02dca681b4c95a4841442e4092f1717" kindref="member">visible</ref>)</highlight></codeline>
+<codeline lineno="214"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_visible<sp/>==<sp/><ref refid="class_k_win_1_1_tab_box_1_1_switcher_item_1ae02dca681b4c95a4841442e4092f1717" kindref="member">visible</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>m_visible<sp/>=<sp/><ref refid="class_k_win_1_1_tab_box_1_1_switcher_item_1ae02dca681b4c95a4841442e4092f1717" kindref="member">visible</ref>;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_tab_box_1_1_switcher_item_1a6cf5b168407b3141a61c7f56a8414fa1" kindref="member">visibleChanged</ref>();</highlight></codeline>
+<codeline lineno="220"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222" refid="class_k_win_1_1_tab_box_1_1_switcher_item_1aa113d098e7d31e28aa1f4e981eaa8441" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_switcher_item_1aa113d098e7d31e28aa1f4e981eaa8441" kindref="member">SwitcherItem::setItem</ref>(QObject<sp/>*<ref refid="class_k_win_1_1_tab_box_1_1_switcher_item_1ad33f2632daa1ad32f6bfa977a69112f8" kindref="member">item</ref>)</highlight></codeline>
+<codeline lineno="223"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>m_item<sp/>=<sp/><ref refid="class_k_win_1_1_tab_box_1_1_switcher_item_1ad33f2632daa1ad32f6bfa977a69112f8" kindref="member">item</ref>;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_tab_box_1_1_switcher_item_1a753d9c79c31c4cd0336a14979ea93307" kindref="member">itemChanged</ref>();</highlight></codeline>
+<codeline lineno="226"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228" refid="class_k_win_1_1_tab_box_1_1_switcher_item_1a454fe98aeeb591865e7ddf0e0deff6b5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_switcher_item_1a454fe98aeeb591865e7ddf0e0deff6b5" kindref="member">SwitcherItem::setCurrentIndex</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)</highlight></codeline>
+<codeline lineno="229"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_currentIndex<sp/>==<sp/>index)<sp/>{</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>m_currentIndex<sp/>=<sp/>index;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_tab_box_1_1_switcher_item_1a7881570d18dba75c02927da7df1ce0b3" kindref="member">currentIndexChanged</ref>(m_currentIndex);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237" refid="class_k_win_1_1_tab_box_1_1_switcher_item_1a6d30ba3ebf9e71b350a699ff48007bf2" refkind="member"><highlight class="normal">QRect<sp/><ref refid="class_k_win_1_1_tab_box_1_1_switcher_item_1af4eaa814e26c555da8fdd49d4751dde7" kindref="member">SwitcherItem::screenGeometry</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="238"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QScreen<sp/>*primaryScreen<sp/>=<sp/>qApp-&gt;primaryScreen();</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>primaryScreen-&gt;geometry();</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243" refid="class_k_win_1_1_tab_box_1_1_switcher_item_1a6f3be68231250d8ca4fb98b18cd4bdf6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_switcher_item_1a6f3be68231250d8ca4fb98b18cd4bdf6" kindref="member">SwitcherItem::incrementIndex</ref>()</highlight></codeline>
+<codeline lineno="244"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_tab_box_1_1_switcher_item_1a454fe98aeeb591865e7ddf0e0deff6b5" kindref="member">setCurrentIndex</ref>((m_currentIndex<sp/>+<sp/>1)<sp/>%<sp/>m_model-&gt;rowCount());</highlight></codeline>
+<codeline lineno="246"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248" refid="class_k_win_1_1_tab_box_1_1_switcher_item_1a0d25d7679f95a990d21a6da017d206fa" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_tab_box_1_1_switcher_item_1a0d25d7679f95a990d21a6da017d206fa" kindref="member">SwitcherItem::decrementIndex</ref>()</highlight></codeline>
+<codeline lineno="249"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>m_currentIndex<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>index<sp/>=<sp/>m_model-&gt;rowCount()<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_tab_box_1_1_switcher_item_1a454fe98aeeb591865e7ddf0e0deff6b5" kindref="member">setCurrentIndex</ref>(index);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257" refid="class_k_win_1_1_tab_box_1_1_desktop_background_1aeec5212321cc40558e50c8216bc834c1" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_tab_box_1_1_desktop_background_1aeec5212321cc40558e50c8216bc834c1" kindref="member">DesktopBackground::DesktopBackground</ref>(QQuickItem<sp/>*parent)</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="class_k_win_1_1_window_thumbnail_item_1ab574c9ee0d77683da19b46920ae42ff8" kindref="member">WindowThumbnailItem</ref>(parent)</highlight></codeline>
+<codeline lineno="259"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_thumbnail_item_1a22e4c8c627e7f20d7ea96fb5cda143c3" kindref="member">setWId</ref>(<ref refid="class_k_win_1_1_window_thumbnail_item_1a280897ea784c91c152824021e55cac14aab5aa4a6d933f2848123d2f379e682cf" kindref="member">WindowThumbnailItem::Desktop</ref>);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;QQuickItem::windowChanged,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;DesktopBackground::stretchToScreen);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>stretchToScreen();</highlight></codeline>
+<codeline lineno="264"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>DesktopBackground::stretchToScreen()</highlight></codeline>
+<codeline lineno="267"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QQuickWindow<sp/>*w<sp/>=<sp/>window();</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!w)<sp/>{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QScreen<sp/>*screen<sp/>=<sp/>w-&gt;screen();</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!screen)<sp/>{</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>setImplicitSize(screen-&gt;size().width(),<sp/>screen-&gt;size().height());</highlight></codeline>
+<codeline lineno="277"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>TabBox</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;moc_layoutpreview.cpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/kcms/tabbox/layoutpreview.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,340 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_idle_detector" kind="class" language="C++" prot="public">
+    <compoundname>KWin::IdleDetector</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="idledetector_8h" local="no">idledetector.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_k_win_1_1_idle_detector_1ad0b017bde19f90fdf0836774554f47d1" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>OperatingMode</name>
+        <qualifiedname>KWin::IdleDetector::OperatingMode</qualifiedname>
+        <enumvalue id="class_k_win_1_1_idle_detector_1ad0b017bde19f90fdf0836774554f47d1a165b4318dea692b5be9d2a63ca5b224a" prot="public">
+          <name>FollowsInhibitors</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_idle_detector_1ad0b017bde19f90fdf0836774554f47d1ae43d46b8e033de5b20e9d82bc54236cf" prot="public">
+          <name>IgnoresInhibitors</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/idledetector.h" line="22" column="5" bodyfile="kwin/src/idledetector.h" bodystart="22" bodyend="25"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_idle_detector_1ab83d1310abcaa32a358a07953ea0ac48" prot="private" static="no" mutable="no">
+        <type>QBasicTimer</type>
+        <definition>QBasicTimer KWin::IdleDetector::m_timer</definition>
+        <argsstring></argsstring>
+        <name>m_timer</name>
+        <qualifiedname>KWin::IdleDetector::m_timer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/idledetector.h" line="48" column="17" bodyfile="kwin/src/idledetector.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_idle_detector_1adf561bcb5773a782d1d28911ad8efb75" prot="private" static="no" mutable="no">
+        <type>std::chrono::milliseconds</type>
+        <definition>std::chrono::milliseconds KWin::IdleDetector::m_timeout</definition>
+        <argsstring></argsstring>
+        <name>m_timeout</name>
+        <qualifiedname>KWin::IdleDetector::m_timeout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/idledetector.h" line="49" column="31" bodyfile="kwin/src/idledetector.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_idle_detector_1ab9ad2cfa2792e8febc5e76689ae9467c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::IdleDetector::m_isIdle</definition>
+        <argsstring></argsstring>
+        <name>m_isIdle</name>
+        <qualifiedname>KWin::IdleDetector::m_isIdle</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/idledetector.h" line="50" column="10" bodyfile="kwin/src/idledetector.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_idle_detector_1a13e6205b22a3a39dd47c5478eeb07e8e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::IdleDetector::m_isInhibited</definition>
+        <argsstring></argsstring>
+        <name>m_isInhibited</name>
+        <qualifiedname>KWin::IdleDetector::m_isInhibited</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/idledetector.h" line="51" column="10" bodyfile="kwin/src/idledetector.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_idle_detector_1ad6f6edd74fda56b7ade14189e5ab8692" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_idle_detector_1ad0b017bde19f90fdf0836774554f47d1" kindref="member">OperatingMode</ref></type>
+        <definition>OperatingMode KWin::IdleDetector::m_mode</definition>
+        <argsstring></argsstring>
+        <name>m_mode</name>
+        <qualifiedname>KWin::IdleDetector::m_mode</qualifiedname>
+        <initializer>= <ref refid="class_k_win_1_1_idle_detector_1ad0b017bde19f90fdf0836774554f47d1a165b4318dea692b5be9d2a63ca5b224a" kindref="member">OperatingMode::FollowsInhibitors</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/idledetector.h" line="52" column="19" bodyfile="kwin/src/idledetector.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_idle_detector_1a87872b83a8f5f076b80ac8f0d847a738" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::IdleDetector::IdleDetector</definition>
+        <argsstring>(std::chrono::milliseconds timeout, OperatingMode mode, QObject *parent=nullptr)</argsstring>
+        <name>IdleDetector</name>
+        <qualifiedname>KWin::IdleDetector::IdleDetector</qualifiedname>
+        <param>
+          <type>std::chrono::milliseconds</type>
+          <declname>timeout</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_idle_detector_1ad0b017bde19f90fdf0836774554f47d1" kindref="member">OperatingMode</ref></type>
+          <declname>mode</declname>
+        </param>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/idledetector.h" line="27" column="14" bodyfile="kwin/src/idledetector.cpp" bodystart="15" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_idle_detector_1ac9be936609621f2855111178599e56ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::IdleDetector::~IdleDetector</definition>
+        <argsstring>() override</argsstring>
+        <name>~IdleDetector</name>
+        <qualifiedname>KWin::IdleDetector::~IdleDetector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/idledetector.h" line="28" column="5" bodyfile="kwin/src/idledetector.cpp" bodystart="26" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_idle_detector_1a2a058a5ca4d132b661f3e37e86e67211" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::IdleDetector::activity</definition>
+        <argsstring>()</argsstring>
+        <name>activity</name>
+        <qualifiedname>KWin::IdleDetector::activity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/idledetector.h" line="30" column="10" bodyfile="kwin/src/idledetector.cpp" bodystart="68" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_idle_detector_1a5590dd0dbf0ae84d91c9db5b9e5e5ae5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_idle_detector_1ad0b017bde19f90fdf0836774554f47d1" kindref="member">OperatingMode</ref></type>
+        <definition>IdleDetector::OperatingMode KWin::IdleDetector::mode</definition>
+        <argsstring>() const</argsstring>
+        <name>mode</name>
+        <qualifiedname>KWin::IdleDetector::mode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/idledetector.h" line="32" column="19" bodyfile="kwin/src/idledetector.cpp" bodystart="41" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_idle_detector_1a5ac405b4c94e1a54df22d773206762a6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::IdleDetector::isInhibited</definition>
+        <argsstring>() const</argsstring>
+        <name>isInhibited</name>
+        <qualifiedname>KWin::IdleDetector::isInhibited</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/idledetector.h" line="34" column="10" bodyfile="kwin/src/idledetector.cpp" bodystart="46" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_idle_detector_1a73099303fac18675edd7b52f899a809e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::IdleDetector::setInhibited</definition>
+        <argsstring>(bool inhibited)</argsstring>
+        <name>setInhibited</name>
+        <qualifiedname>KWin::IdleDetector::setInhibited</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>inhibited</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/idledetector.h" line="35" column="10" bodyfile="kwin/src/idledetector.cpp" bodystart="51" bodyend="66"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_idle_detector_1aaffa15bb55ac7fb4406309ee79e8dc01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::IdleDetector::idle</definition>
+        <argsstring>()</argsstring>
+        <name>idle</name>
+        <qualifiedname>KWin::IdleDetector::idle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/idledetector.h" line="38" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_idle_detector_1ae82738d04ededa79d4139519431f7ff5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::IdleDetector::resumed</definition>
+        <argsstring>()</argsstring>
+        <name>resumed</name>
+        <qualifiedname>KWin::IdleDetector::resumed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/idledetector.h" line="39" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_k_win_1_1_idle_detector_1a2d8505f8bb481b884c514686548d36b0" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::IdleDetector::timerEvent</definition>
+        <argsstring>(QTimerEvent *event) override</argsstring>
+        <name>timerEvent</name>
+        <qualifiedname>KWin::IdleDetector::timerEvent</qualifiedname>
+        <param>
+          <type>QTimerEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/idledetector.h" line="42" column="10" bodyfile="kwin/src/idledetector.cpp" bodystart="33" bodyend="39"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_idle_detector_1a4b69cd963c1f55264a5292583328d8ab" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::IdleDetector::markAsIdle</definition>
+        <argsstring>()</argsstring>
+        <name>markAsIdle</name>
+        <qualifiedname>KWin::IdleDetector::markAsIdle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/idledetector.h" line="45" column="10" bodyfile="kwin/src/idledetector.cpp" bodystart="76" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_idle_detector_1adaa0e3765b08e3f1aa9edd6ebd09932c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::IdleDetector::markAsResumed</definition>
+        <argsstring>()</argsstring>
+        <name>markAsResumed</name>
+        <qualifiedname>KWin::IdleDetector::markAsResumed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/idledetector.h" line="46" column="10" bodyfile="kwin/src/idledetector.cpp" bodystart="84" bodyend="90"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::IdleDetector</label>
+        <link refid="class_k_win_1_1_idle_detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::IdleDetector</label>
+        <link refid="class_k_win_1_1_idle_detector"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/idledetector.h" line="17" column="1" bodyfile="kwin/src/idledetector.h" bodystart="18" bodyend="53"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_idle_detector_1a2a058a5ca4d132b661f3e37e86e67211" prot="public" virt="non-virtual"><scope>KWin::IdleDetector</scope><name>activity</name></member>
+      <member refid="class_k_win_1_1_idle_detector_1aaffa15bb55ac7fb4406309ee79e8dc01" prot="public" virt="non-virtual"><scope>KWin::IdleDetector</scope><name>idle</name></member>
+      <member refid="class_k_win_1_1_idle_detector_1a87872b83a8f5f076b80ac8f0d847a738" prot="public" virt="non-virtual"><scope>KWin::IdleDetector</scope><name>IdleDetector</name></member>
+      <member refid="class_k_win_1_1_idle_detector_1a5ac405b4c94e1a54df22d773206762a6" prot="public" virt="non-virtual"><scope>KWin::IdleDetector</scope><name>isInhibited</name></member>
+      <member refid="class_k_win_1_1_idle_detector_1ab9ad2cfa2792e8febc5e76689ae9467c" prot="private" virt="non-virtual"><scope>KWin::IdleDetector</scope><name>m_isIdle</name></member>
+      <member refid="class_k_win_1_1_idle_detector_1a13e6205b22a3a39dd47c5478eeb07e8e" prot="private" virt="non-virtual"><scope>KWin::IdleDetector</scope><name>m_isInhibited</name></member>
+      <member refid="class_k_win_1_1_idle_detector_1ad6f6edd74fda56b7ade14189e5ab8692" prot="private" virt="non-virtual"><scope>KWin::IdleDetector</scope><name>m_mode</name></member>
+      <member refid="class_k_win_1_1_idle_detector_1adf561bcb5773a782d1d28911ad8efb75" prot="private" virt="non-virtual"><scope>KWin::IdleDetector</scope><name>m_timeout</name></member>
+      <member refid="class_k_win_1_1_idle_detector_1ab83d1310abcaa32a358a07953ea0ac48" prot="private" virt="non-virtual"><scope>KWin::IdleDetector</scope><name>m_timer</name></member>
+      <member refid="class_k_win_1_1_idle_detector_1a4b69cd963c1f55264a5292583328d8ab" prot="private" virt="non-virtual"><scope>KWin::IdleDetector</scope><name>markAsIdle</name></member>
+      <member refid="class_k_win_1_1_idle_detector_1adaa0e3765b08e3f1aa9edd6ebd09932c" prot="private" virt="non-virtual"><scope>KWin::IdleDetector</scope><name>markAsResumed</name></member>
+      <member refid="class_k_win_1_1_idle_detector_1a5590dd0dbf0ae84d91c9db5b9e5e5ae5" prot="public" virt="non-virtual"><scope>KWin::IdleDetector</scope><name>mode</name></member>
+      <member refid="class_k_win_1_1_idle_detector_1ad0b017bde19f90fdf0836774554f47d1" prot="public" virt="non-virtual"><scope>KWin::IdleDetector</scope><name>OperatingMode</name></member>
+      <member refid="class_k_win_1_1_idle_detector_1ae82738d04ededa79d4139519431f7ff5" prot="public" virt="non-virtual"><scope>KWin::IdleDetector</scope><name>resumed</name></member>
+      <member refid="class_k_win_1_1_idle_detector_1a73099303fac18675edd7b52f899a809e" prot="public" virt="non-virtual"><scope>KWin::IdleDetector</scope><name>setInhibited</name></member>
+      <member refid="class_k_win_1_1_idle_detector_1a2d8505f8bb481b884c514686548d36b0" prot="protected" virt="non-virtual"><scope>KWin::IdleDetector</scope><name>timerEvent</name></member>
+      <member refid="class_k_win_1_1_idle_detector_1ac9be936609621f2855111178599e56ad" prot="public" virt="non-virtual"><scope>KWin::IdleDetector</scope><name>~IdleDetector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

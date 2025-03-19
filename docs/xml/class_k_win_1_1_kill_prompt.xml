@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_kill_prompt" kind="class" language="C++" prot="public">
+    <compoundname>KWin::KillPrompt</compoundname>
+    <includes refid="killprompt_8h" local="no">killprompt.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_kill_prompt_1a28ec4c73e187ae15412426b74a714ce8" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+        <definition>Window* KWin::KillPrompt::m_window</definition>
+        <argsstring></argsstring>
+        <name>m_window</name>
+        <qualifiedname>KWin::KillPrompt::m_window</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/killprompt.h" line="41" column="12" bodyfile="kwin/src/killprompt.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_kill_prompt_1a2bdf5659d81abdea00748552b84d50e3" prot="private" static="no" mutable="no">
+        <type>QProcess</type>
+        <definition>QProcess KWin::KillPrompt::m_process</definition>
+        <argsstring></argsstring>
+        <name>m_process</name>
+        <qualifiedname>KWin::KillPrompt::m_process</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/killprompt.h" line="42" column="14" bodyfile="kwin/src/killprompt.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_kill_prompt_1ad1c360797207501d7b6c6454f71478d5" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::KillPrompt::KillPrompt</definition>
+        <argsstring>(Window *window)</argsstring>
+        <name>KillPrompt</name>
+        <qualifiedname>KWin::KillPrompt::KillPrompt</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Creates a kill helper process. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The window to kill, must be an <ref refid="class_k_win_1_1_x11_window" kindref="compound">X11Window</ref> or <ref refid="class_k_win_1_1_xdg_toplevel_window" kindref="compound">XdgToplevelWindow</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/killprompt.h" line="23" column="14" bodyfile="kwin/src/killprompt.cpp" bodystart="27" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_kill_prompt_1a179a5a600538b9e37bb86528a3ff7ca7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::KillPrompt::isRunning</definition>
+        <argsstring>() const</argsstring>
+        <name>isRunning</name>
+        <qualifiedname>KWin::KillPrompt::isRunning</qualifiedname>
+        <briefdescription>
+<para>Whether the kill helper process is currently running. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/killprompt.h" line="28" column="10" bodyfile="kwin/src/killprompt.cpp" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_kill_prompt_1ad7280de3da31c3c35c13714577035577" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::KillPrompt::start</definition>
+        <argsstring>(quint32 timestamp=0)</argsstring>
+        <name>start</name>
+        <qualifiedname>KWin::KillPrompt::start</qualifiedname>
+        <param>
+          <type>quint32</type>
+          <declname>timestamp</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Starts the kill helper process. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timestamp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The X activation timestamp. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/killprompt.h" line="34" column="10" bodyfile="kwin/src/killprompt.cpp" bodystart="53" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_kill_prompt_1a2b644220afec7671ad58e26ea8a1681f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::KillPrompt::quit</definition>
+        <argsstring>()</argsstring>
+        <name>quit</name>
+        <qualifiedname>KWin::KillPrompt::quit</qualifiedname>
+        <briefdescription>
+<para>Terminate the kill helper process. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/killprompt.h" line="38" column="10" bodyfile="kwin/src/killprompt.cpp" bodystart="111" bodyend="114"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="kwin/src/killprompt.h" line="16" column="1" bodyfile="kwin/src/killprompt.h" bodystart="17" bodyend="43"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_kill_prompt_1a179a5a600538b9e37bb86528a3ff7ca7" prot="public" virt="non-virtual"><scope>KWin::KillPrompt</scope><name>isRunning</name></member>
+      <member refid="class_k_win_1_1_kill_prompt_1ad1c360797207501d7b6c6454f71478d5" prot="public" virt="non-virtual"><scope>KWin::KillPrompt</scope><name>KillPrompt</name></member>
+      <member refid="class_k_win_1_1_kill_prompt_1a2bdf5659d81abdea00748552b84d50e3" prot="private" virt="non-virtual"><scope>KWin::KillPrompt</scope><name>m_process</name></member>
+      <member refid="class_k_win_1_1_kill_prompt_1a28ec4c73e187ae15412426b74a714ce8" prot="private" virt="non-virtual"><scope>KWin::KillPrompt</scope><name>m_window</name></member>
+      <member refid="class_k_win_1_1_kill_prompt_1a2b644220afec7671ad58e26ea8a1681f" prot="public" virt="non-virtual"><scope>KWin::KillPrompt</scope><name>quit</name></member>
+      <member refid="class_k_win_1_1_kill_prompt_1ad7280de3da31c3c35c13714577035577" prot="public" virt="non-virtual"><scope>KWin::KillPrompt</scope><name>start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

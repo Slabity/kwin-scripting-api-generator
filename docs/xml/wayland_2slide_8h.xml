@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="wayland_2slide_8h" kind="file" language="C++">
+    <compoundname>slide.h</compoundname>
+    <includes local="yes">kwin_export.h</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">memory</includes>
+    <includedby refid="slidingpopups_8cpp" local="yes">kwin/src/plugins/slidingpopups/slidingpopups.cpp</includedby>
+    <includedby refid="wayland_2slide_8cpp" local="yes">kwin/src/wayland/slide.cpp</includedby>
+    <includedby refid="surface_8cpp" local="yes">kwin/src/wayland/surface.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/wayland/slide.h</label>
+        <link refid="wayland_2slide_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+      <node id="2">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/plugins/slidingpopups/slidingpopups.cpp</label>
+        <link refid="slidingpopups_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/wayland/slide.cpp</label>
+        <link refid="wayland_2slide_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/wayland/slide.h</label>
+        <link refid="wayland_2slide_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>kwin/src/wayland/surface.cpp</label>
+        <link refid="surface_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_slide_manager_interface" prot="public">KWin::SlideManagerInterface</innerclass>
+    <innerclass refid="class_k_win_1_1_slide_interface" prot="public">KWin::SlideInterface</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2015<sp/>Marco<sp/>Martin<sp/>&lt;notmart@gmail.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>LGPL-2.1-only<sp/>OR<sp/>LGPL-3.0-only<sp/>OR<sp/>LicenseRef-KDE-Accepted-LGPL</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;kwin_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_resource;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_slide_manager_interface_private" kindref="compound">SlideManagerInterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_slide_interface_private" kindref="compound">SlideInterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="class_k_win_1_1_slide_manager_interface" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_slide_manager_interface_1a60420f9300b3224ac2e1bc900172b27b" kindref="member">SlideManagerInterface</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_slide_manager_interface_1a60420f9300b3224ac2e1bc900172b27b" kindref="member">SlideManagerInterface</ref>(<ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*display,<sp/>QObject<sp/>*parent<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_slide_manager_interface_1a60420f9300b3224ac2e1bc900172b27b" kindref="member">~SlideManagerInterface</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_slide_manager_interface_1ad71b76dac84c59e2dea7ae1720e4f225" kindref="member">remove</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;SlideManagerInterfacePrivate&gt;<sp/>d;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="class_k_win_1_1_slide_interface" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/>SlideInterface<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39" refid="class_k_win_1_1_slide_interface_1aa2f67d76b3f6fd2e24401a96dc8d7cdc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_slide_interface_1aa2f67d76b3f6fd2e24401a96dc8d7cdc" kindref="member">Location</ref><sp/>{</highlight></codeline>
+<codeline lineno="40" refid="class_k_win_1_1_slide_interface_1aa2f67d76b3f6fd2e24401a96dc8d7cdcab71a42fce55b9dcf7038fbe23f30aa15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_slide_interface_1aa2f67d76b3f6fd2e24401a96dc8d7cdcab71a42fce55b9dcf7038fbe23f30aa15" kindref="member">Left</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="41" refid="class_k_win_1_1_slide_interface_1aa2f67d76b3f6fd2e24401a96dc8d7cdca1538166493afe039d3349733a75c896e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_slide_interface_1aa2f67d76b3f6fd2e24401a96dc8d7cdca1538166493afe039d3349733a75c896e" kindref="member">Top</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="42" refid="class_k_win_1_1_slide_interface_1aa2f67d76b3f6fd2e24401a96dc8d7cdca9b24b9b78a3a6f26a2d787aff3d9251e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_slide_interface_1aa2f67d76b3f6fd2e24401a96dc8d7cdca9b24b9b78a3a6f26a2d787aff3d9251e" kindref="member">Right</ref><sp/>=<sp/>2,<sp/></highlight></codeline>
+<codeline lineno="43" refid="class_k_win_1_1_slide_interface_1aa2f67d76b3f6fd2e24401a96dc8d7cdca51d02d53502c274c87503717a75509de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_slide_interface_1aa2f67d76b3f6fd2e24401a96dc8d7cdca51d02d53502c274c87503717a75509de" kindref="member">Bottom</ref><sp/>=<sp/>3,<sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="class_k_win_1_1_slide_interface_1a461020966cde91ae4e07c1c8bc16f626" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_slide_interface_1a461020966cde91ae4e07c1c8bc16f626" kindref="member">~SlideInterface</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_slide_interface_1aa2f67d76b3f6fd2e24401a96dc8d7cdc" kindref="member">Location</ref><sp/><ref refid="class_k_win_1_1_slide_interface_1ab88cd601d138209e127ae671176f83ee" kindref="member">location</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>qint32<sp/><ref refid="class_k_win_1_1_slide_interface_1a388b8cd6640ac6dad8d18ee2d884bf55" kindref="member">offset</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/>SlideInterface(wl_resource<sp/>*resource);</highlight></codeline>
+<codeline lineno="61" refid="class_k_win_1_1_slide_interface_1ad262518386165406c2c4809c83b5a7db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_slide_interface_1ad262518386165406c2c4809c83b5a7db" kindref="member">SlideManagerInterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;SlideInterfacePrivate&gt;<sp/>d;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/wayland/slide.h"/>
+  </compounddef>
+</doxygen>

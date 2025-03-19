@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="screenpreviewwidget_8cpp" kind="file" language="C++">
+    <compoundname>screenpreviewwidget.cpp</compoundname>
+    <includes refid="screenpreviewwidget_8h" local="yes">screenpreviewwidget.h</includes>
+    <includes local="no">QPaintEvent</includes>
+    <includes local="no">QPainter</includes>
+    <includes local="no">QResizeEvent</includes>
+    <includes local="no">QDebug</includes>
+    <includes local="no">QMimeData</includes>
+    <includes local="no">KSvg/FrameSvg</includes>
+    <includes local="no">KSvg/ImageSet</includes>
+    <includes local="no">memory</includes>
+    <includes local="yes">moc_screenpreviewwidget.cpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/kcms/screenedges/screenpreviewwidget.cpp</label>
+        <link refid="screenpreviewwidget_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>screenpreviewwidget.h</label>
+        <link refid="screenpreviewwidget_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>KSvg/FrameSvg</label>
+      </node>
+      <node id="10">
+        <label>KSvg/ImageSet</label>
+      </node>
+      <node id="7">
+        <label>QDebug</label>
+      </node>
+      <node id="8">
+        <label>QMimeData</label>
+      </node>
+      <node id="4">
+        <label>QPaintEvent</label>
+      </node>
+      <node id="5">
+        <label>QPainter</label>
+      </node>
+      <node id="6">
+        <label>QResizeEvent</label>
+      </node>
+      <node id="3">
+        <label>QWidget</label>
+      </node>
+      <node id="11">
+        <label>memory</label>
+      </node>
+      <node id="12">
+        <label>moc_screenpreviewwidget.cpp</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_screen_preview_widget_private" prot="public">ScreenPreviewWidgetPrivate</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2009<sp/>Marco<sp/>Martin<sp/>&lt;notmart@gmail.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>LGPL-2.0-or-later</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="screenpreviewwidget_8h" kindref="compound">screenpreviewwidget.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QPaintEvent&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QPainter&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QResizeEvent&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDebug&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QMimeData&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KSvg/FrameSvg&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KSvg/ImageSet&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="class_screen_preview_widget_private" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_screen_preview_widget_private_1aec5019c15e2fbea2a8c2e74873705c00" kindref="member">ScreenPreviewWidgetPrivate</ref></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24" refid="class_screen_preview_widget_private_1aec5019c15e2fbea2a8c2e74873705c00" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_screen_preview_widget_private_1aec5019c15e2fbea2a8c2e74873705c00" kindref="member">ScreenPreviewWidgetPrivate</ref>(<ref refid="class_screen_preview_widget" kindref="compound">ScreenPreviewWidget</ref><sp/>*screen)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="class_screen_preview_widget_private_1af82a0480bf5af2ffbf5e82a504791ab2" kindref="member">q</ref>(screen)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_screen_preview_widget_private_1aab8ccdf5ff0352c8a4cfce5136fc6ad5" kindref="member">ratio</ref>(1)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_screen_preview_widget_private_1abd94ee15bd00d335c7510acc562a7e88" kindref="member">minimumContentWidth</ref>(0)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="class_screen_preview_widget_private_1a2792a0b779122c036557b2e3af2910cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_screen_preview_widget_private_1a2792a0b779122c036557b2e3af2910cd" kindref="member">~ScreenPreviewWidgetPrivate</ref>()</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="class_screen_preview_widget_private_1a4843a7e64aa2a25cbce842a638bb08f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_screen_preview_widget_private_1a4843a7e64aa2a25cbce842a638bb08f3" kindref="member">updateRect</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRectF<sp/>&amp;rect)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_screen_preview_widget_private_1af82a0480bf5af2ffbf5e82a504791ab2" kindref="member">q</ref>-&gt;update(rect.toRect());</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="class_screen_preview_widget_private_1a4e34ae5d0c18dee947ad6c3fdfcf5a59" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_screen_preview_widget_private_1a4e34ae5d0c18dee947ad6c3fdfcf5a59" kindref="member">updateScreenGraphics</ref>()</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bottomElements<sp/>=<sp/><ref refid="class_screen_preview_widget_private_1a6506075a6b78d1f47395ef9b642665b9" kindref="member">screenGraphics</ref>-&gt;elementSize(</highlight><highlight class="stringliteral">&quot;base&quot;</highlight><highlight class="normal">).height()<sp/>+<sp/><ref refid="class_screen_preview_widget_private_1a6506075a6b78d1f47395ef9b642665b9" kindref="member">screenGraphics</ref>-&gt;marginSize(KSvg::FrameSvg::BottomMargin);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QRect<sp/>bounds(QPoint(0,<sp/>0),<sp/>QSize(<ref refid="class_screen_preview_widget_private_1af82a0480bf5af2ffbf5e82a504791ab2" kindref="member">q</ref>-&gt;width(),<sp/><ref refid="class_screen_preview_widget_private_1af82a0480bf5af2ffbf5e82a504791ab2" kindref="member">q</ref>-&gt;height()<sp/>-<sp/>bottomElements));</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QSizeF<sp/>monitorSize(1.0,<sp/>1.0<sp/>/<sp/><ref refid="class_screen_preview_widget_private_1aab8ccdf5ff0352c8a4cfce5136fc6ad5" kindref="member">ratio</ref>);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>monitorSize.scale(bounds.size(),<sp/>Qt::KeepAspectRatio);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(monitorSize.isEmpty())<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>minFrameWidth<sp/>=<sp/><ref refid="class_screen_preview_widget_private_1abd94ee15bd00d335c7510acc562a7e88" kindref="member">minimumContentWidth</ref><sp/>+<sp/><ref refid="class_screen_preview_widget_private_1a6506075a6b78d1f47395ef9b642665b9" kindref="member">screenGraphics</ref>-&gt;marginSize(KSvg::FrameSvg::LeftMargin)<sp/>+<sp/><ref refid="class_screen_preview_widget_private_1a6506075a6b78d1f47395ef9b642665b9" kindref="member">screenGraphics</ref>-&gt;marginSize(KSvg::FrameSvg::RightMargin);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(monitorSize.width()<sp/>&lt;<sp/>minFrameWidth)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>monitorSize.setWidth(minFrameWidth);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_screen_preview_widget_private_1aa83ac2754e6329a1b98335350105b2cb" kindref="member">monitorRect</ref><sp/>=<sp/>QRect(QPoint(0,<sp/>0),<sp/>monitorSize.toSize());</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_screen_preview_widget_private_1aa83ac2754e6329a1b98335350105b2cb" kindref="member">monitorRect</ref>.moveCenter(bounds.center());</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_screen_preview_widget_private_1a6506075a6b78d1f47395ef9b642665b9" kindref="member">screenGraphics</ref>-&gt;resizeFrame(<ref refid="class_screen_preview_widget_private_1aa83ac2754e6329a1b98335350105b2cb" kindref="member">monitorRect</ref>.size());</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_screen_preview_widget_private_1a187753db21aa92b11e1f844d361ea8f1" kindref="member">previewRect</ref><sp/>=<sp/><ref refid="class_screen_preview_widget_private_1a6506075a6b78d1f47395ef9b642665b9" kindref="member">screenGraphics</ref>-&gt;contentsRect().toRect();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_screen_preview_widget_private_1a187753db21aa92b11e1f844d361ea8f1" kindref="member">previewRect</ref>.moveCenter(bounds.center());</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="class_screen_preview_widget_private_1af82a0480bf5af2ffbf5e82a504791ab2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_screen_preview_widget" kindref="compound">ScreenPreviewWidget</ref><sp/>*<ref refid="class_screen_preview_widget_private_1af82a0480bf5af2ffbf5e82a504791ab2" kindref="member">q</ref>;</highlight></codeline>
+<codeline lineno="67" refid="class_screen_preview_widget_private_1a365ee3c0017c7095ccd0323ed57a3dd3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;KSvg::ImageSet&gt;<sp/><ref refid="class_screen_preview_widget_private_1a365ee3c0017c7095ccd0323ed57a3dd3" kindref="member">svgImageSet</ref>;</highlight></codeline>
+<codeline lineno="68" refid="class_screen_preview_widget_private_1a6506075a6b78d1f47395ef9b642665b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>KSvg::FrameSvg<sp/>*<ref refid="class_screen_preview_widget_private_1a6506075a6b78d1f47395ef9b642665b9" kindref="member">screenGraphics</ref>;</highlight></codeline>
+<codeline lineno="69" refid="class_screen_preview_widget_private_1aeabc8f255d9f228542c1c847ac766417" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QPixmap<sp/><ref refid="class_screen_preview_widget_private_1aeabc8f255d9f228542c1c847ac766417" kindref="member">preview</ref>;</highlight></codeline>
+<codeline lineno="70" refid="class_screen_preview_widget_private_1aa83ac2754e6329a1b98335350105b2cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QRect<sp/><ref refid="class_screen_preview_widget_private_1aa83ac2754e6329a1b98335350105b2cb" kindref="member">monitorRect</ref>;</highlight></codeline>
+<codeline lineno="71" refid="class_screen_preview_widget_private_1aab8ccdf5ff0352c8a4cfce5136fc6ad5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>qreal<sp/><ref refid="class_screen_preview_widget_private_1aab8ccdf5ff0352c8a4cfce5136fc6ad5" kindref="member">ratio</ref>;</highlight></codeline>
+<codeline lineno="72" refid="class_screen_preview_widget_private_1abd94ee15bd00d335c7510acc562a7e88" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>qreal<sp/><ref refid="class_screen_preview_widget_private_1abd94ee15bd00d335c7510acc562a7e88" kindref="member">minimumContentWidth</ref>;</highlight></codeline>
+<codeline lineno="73" refid="class_screen_preview_widget_private_1a187753db21aa92b11e1f844d361ea8f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QRect<sp/><ref refid="class_screen_preview_widget_private_1a187753db21aa92b11e1f844d361ea8f1" kindref="member">previewRect</ref>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="class_screen_preview_widget_1a932b7ebd1a29c5d9b49c6b8103771015" refkind="member"><highlight class="normal"><ref refid="class_screen_preview_widget_1a932b7ebd1a29c5d9b49c6b8103771015" kindref="member">ScreenPreviewWidget::ScreenPreviewWidget</ref>(QWidget<sp/>*parent)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QWidget(parent)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>d(std::make_unique&lt;<ref refid="class_screen_preview_widget_private" kindref="compound">ScreenPreviewWidgetPrivate</ref>&gt;(this))</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;svgImageSet<sp/>=<sp/>std::make_unique&lt;KSvg::ImageSet&gt;();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;svgImageSet-&gt;setBasePath(</highlight><highlight class="stringliteral">&quot;plasma/desktoptheme&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;screenGraphics<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>KSvg::FrameSvg(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;screenGraphics-&gt;setImageSet(d-&gt;svgImageSet.get());</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;screenGraphics-&gt;setImagePath(</highlight><highlight class="stringliteral">&quot;widgets/monitor&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;updateScreenGraphics();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><ref refid="class_screen_preview_widget_1a82f4b3b0d43e11fc34e43e7e24618cb4" kindref="member">ScreenPreviewWidget::~ScreenPreviewWidget</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="class_screen_preview_widget_1acbc79300db4776c5e5d15ea28f8d108a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_screen_preview_widget_1acbc79300db4776c5e5d15ea28f8d108a" kindref="member">ScreenPreviewWidget::setPreview</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPixmap<sp/>&amp;<ref refid="class_screen_preview_widget_1a6fe702f6c358d8978b9abb7a05e39e2f" kindref="member">preview</ref>)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;preview<sp/>=<sp/><ref refid="class_screen_preview_widget_1a6fe702f6c358d8978b9abb7a05e39e2f" kindref="member">preview</ref>;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>update();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="class_screen_preview_widget_1a6fe702f6c358d8978b9abb7a05e39e2f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPixmap<sp/><ref refid="class_screen_preview_widget_1a6fe702f6c358d8978b9abb7a05e39e2f" kindref="member">ScreenPreviewWidget::preview</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="98"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;preview;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="class_screen_preview_widget_1a1a609c09633f32e971398aa1a24925b9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_screen_preview_widget_1a1a609c09633f32e971398aa1a24925b9" kindref="member">ScreenPreviewWidget::setRatio</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>qreal<sp/><ref refid="class_screen_preview_widget_1acf3b0df5e29978b4fddb9a405efbf585" kindref="member">ratio</ref>)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;ratio<sp/>=<sp/><ref refid="class_screen_preview_widget_1acf3b0df5e29978b4fddb9a405efbf585" kindref="member">ratio</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;updateScreenGraphics();</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="class_screen_preview_widget_1acf3b0df5e29978b4fddb9a405efbf585" refkind="member"><highlight class="normal">qreal<sp/><ref refid="class_screen_preview_widget_1acf3b0df5e29978b4fddb9a405efbf585" kindref="member">ScreenPreviewWidget::ratio</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="109"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;ratio;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="class_screen_preview_widget_1a5dc04d4a5bb3709ff8deeddd5c657213" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_screen_preview_widget_1a5dc04d4a5bb3709ff8deeddd5c657213" kindref="member">ScreenPreviewWidget::setMinimumContentWidth</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>qreal<sp/>minw)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;minimumContentWidth<sp/>=<sp/>minw;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;updateScreenGraphics();</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="class_screen_preview_widget_1a57b1015661674bf0ed4fbfb35afd14ac" refkind="member"><highlight class="normal">qreal<sp/><ref refid="class_screen_preview_widget_1a57b1015661674bf0ed4fbfb35afd14ac" kindref="member">ScreenPreviewWidget::minimumContentWidth</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="120"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;minimumContentWidth;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="class_screen_preview_widget_1aeca684e77c04b12f0c5371be70c410e6" refkind="member"><highlight class="normal">QRect<sp/><ref refid="class_screen_preview_widget_1aeca684e77c04b12f0c5371be70c410e6" kindref="member">ScreenPreviewWidget::previewRect</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="125"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;previewRect;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="class_screen_preview_widget_1aa4f8dc956e7d7c27665347d22ebb36c0" refkind="member"><highlight class="normal">KSvg::ImageSet<sp/>*<ref refid="class_screen_preview_widget_1aa4f8dc956e7d7c27665347d22ebb36c0" kindref="member">ScreenPreviewWidget::svgImageSet</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="130"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>d-&gt;svgImageSet.get();</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="class_screen_preview_widget_1a345077adaf237a973b041ee57088ca21" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_screen_preview_widget_1a345077adaf237a973b041ee57088ca21" kindref="member">ScreenPreviewWidget::resizeEvent</ref>(QResizeEvent<sp/>*e)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;updateScreenGraphics();</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="class_screen_preview_widget_1a8306479eccdd44e8809ca8114efeb5bc" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_screen_preview_widget_1a8306479eccdd44e8809ca8114efeb5bc" kindref="member">ScreenPreviewWidget::paintEvent</ref>(QPaintEvent<sp/>*event)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d-&gt;monitorRect.size().isEmpty())<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>QPainter<sp/>painter(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>QPoint<sp/>standPosition(d-&gt;monitorRect.center().x()<sp/>-<sp/>d-&gt;screenGraphics-&gt;elementSize(</highlight><highlight class="stringliteral">&quot;base&quot;</highlight><highlight class="normal">).width()<sp/>/<sp/>2,<sp/>d-&gt;previewRect.bottom());</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;screenGraphics-&gt;paint(&amp;painter,<sp/>QRect(standPosition,<sp/>d-&gt;screenGraphics-&gt;elementSize(</highlight><highlight class="stringliteral">&quot;base&quot;</highlight><highlight class="normal">).toSize()),<sp/></highlight><highlight class="stringliteral">&quot;base&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;screenGraphics-&gt;paintFrame(&amp;painter,<sp/>d-&gt;monitorRect.topLeft());</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>painter.save();</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!d-&gt;preview.isNull())<sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>painter.setRenderHint(QPainter::SmoothPixmapTransform);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>painter.drawPixmap(d-&gt;previewRect,<sp/>d-&gt;preview,<sp/>d-&gt;preview.rect());</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>painter.restore();</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;screenGraphics-&gt;paint(&amp;painter,<sp/>d-&gt;previewRect,<sp/></highlight><highlight class="stringliteral">&quot;glass&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;moc_screenpreviewwidget.cpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/kcms/screenedges/screenpreviewwidget.cpp"/>
+  </compounddef>
+</doxygen>

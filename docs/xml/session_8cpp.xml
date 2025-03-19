@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="session_8cpp" kind="file" language="C++">
+    <compoundname>session.cpp</compoundname>
+    <includes refid="session_8h" local="yes">session.h</includes>
+    <includes refid="session__consolekit_8h" local="yes">session_consolekit.h</includes>
+    <includes refid="session__logind_8h" local="yes">session_logind.h</includes>
+    <includes refid="session__noop_8h" local="yes">session_noop.h</includes>
+    <includes local="yes">moc_session.cpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/core/session.cpp</label>
+        <link refid="session_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>session.h</label>
+        <link refid="session_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>session_consolekit.h</label>
+        <link refid="session__consolekit_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>session_logind.h</label>
+        <link refid="session__logind_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>session_noop.h</label>
+        <link refid="session__noop_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>utils/filedescriptor.h</label>
+        <link refid="filedescriptor_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="17">
+        <label>QDBusUnixFileDescriptor</label>
+      </node>
+      <node id="6">
+        <label>QImage</label>
+      </node>
+      <node id="12">
+        <label>QObject</label>
+      </node>
+      <node id="7">
+        <label>QPoint</label>
+      </node>
+      <node id="13">
+        <label>QString</label>
+      </node>
+      <node id="8">
+        <label>QVariant</label>
+      </node>
+      <node id="9">
+        <label>QVector2D</label>
+      </node>
+      <node id="4">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="10">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="14">
+        <label>memory</label>
+      </node>
+      <node id="20">
+        <label>moc_session.cpp</label>
+      </node>
+      <node id="15">
+        <label>sys/types.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2020<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="session_8h" kindref="compound">session.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="session__consolekit_8h" kindref="compound">session_consolekit.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="session__logind_8h" kindref="compound">session_logind.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="session__noop_8h" kindref="compound">session_noop.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17" refid="namespace_k_win_1a3223e96fea9ab917c25be94e2434013a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_session_1ac65b810fca4a1ea95f3e88884f7a1f52" kindref="member">Session::Type</ref><sp/><ref refid="namespace_k_win_1a3223e96fea9ab917c25be94e2434013a" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="18" refid="namespace_k_win_1aa565670953926bf1b438dbeb79b0af9d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;std::unique_ptr&lt;Session&gt;()&gt;<sp/><ref refid="namespace_k_win_1aa565670953926bf1b438dbeb79b0af9d" kindref="member">createFunc</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}<sp/>s_availableSessions[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>{<ref refid="class_k_win_1_1_session_1ac65b810fca4a1ea95f3e88884f7a1f52a0a0b1f8a2effec1e0c555bedef917287" kindref="member">Session::Type::Logind</ref>,<sp/>&amp;<ref refid="class_k_win_1_1_logind_session_1ace4f987f4e4fb2e1c499eab547bccd30" kindref="member">LogindSession::create</ref>},</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>{<ref refid="class_k_win_1_1_session_1ac65b810fca4a1ea95f3e88884f7a1f52a20d7640e91409583c286feb2ad265320" kindref="member">Session::Type::ConsoleKit</ref>,<sp/>&amp;<ref refid="class_k_win_1_1_console_kit_session_1ad5230efab9da035e69308e5f4d3cc0d2" kindref="member">ConsoleKitSession::create</ref>},</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>{<ref refid="class_k_win_1_1_session_1ac65b810fca4a1ea95f3e88884f7a1f52a35721c181ec6a9cca6cdb99dd844d07b" kindref="member">Session::Type::Noop</ref>,<sp/>&amp;<ref refid="class_k_win_1_1_noop_session_1ae060d35674675c5f46f3a042287ead52" kindref="member">NoopSession::create</ref>},</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_k_win_1_1_session_1afd0186542d0af406ba5125e61959d4f9" refkind="member"><highlight class="normal">std::unique_ptr&lt;Session&gt;<sp/><ref refid="class_k_win_1_1_session_1afd0186542d0af406ba5125e61959d4f9" kindref="member">Session::create</ref>()</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;sessionInfo<sp/>:<sp/>s_availableSessions)<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unique_ptr&lt;Session&gt;<sp/>session<sp/>=<sp/>sessionInfo.createFunc();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(session)<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>session;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="class_k_win_1_1_session_1ac088a86b0228aefbd41f31ad9b84b0b7" refkind="member"><highlight class="normal">std::unique_ptr&lt;Session&gt;<sp/><ref refid="class_k_win_1_1_session_1afd0186542d0af406ba5125e61959d4f9" kindref="member">Session::create</ref>(<ref refid="class_k_win_1_1_session_1ac65b810fca4a1ea95f3e88884f7a1f52" kindref="member">Type</ref><sp/><ref refid="namespace_k_win_1a3223e96fea9ab917c25be94e2434013a" kindref="member">type</ref>)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;sessionInfo<sp/>:<sp/>s_availableSessions)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sessionInfo.type<sp/>==<sp/><ref refid="namespace_k_win_1a3223e96fea9ab917c25be94e2434013a" kindref="member">type</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sessionInfo.createFunc();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;moc_session.cpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/core/session.cpp"/>
+  </compounddef>
+</doxygen>

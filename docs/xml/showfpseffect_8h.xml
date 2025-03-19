@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="showfpseffect_8h" kind="file" language="C++">
+    <compoundname>showfpseffect.h</compoundname>
+    <includes refid="effect_8h" local="yes">effect/effect.h</includes>
+    <includes refid="offscreenquickview_8h" local="yes">effect/offscreenquickview.h</includes>
+    <includes local="no">QElapsedTimer</includes>
+    <includedby refid="plugins_2showfps_2main_8cpp" local="yes">kwin/src/plugins/showfps/main.cpp</includedby>
+    <includedby refid="showfpseffect_8cpp" local="yes">kwin/src/plugins/showfps/showfpseffect.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>effect/effect.h</label>
+        <link refid="effect_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>effect/offscreenquickview.h</label>
+        <link refid="offscreenquickview_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/plugins/showfps/showfpseffect.h</label>
+        <link refid="showfpseffect_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>KPluginFactory</label>
+      </node>
+      <node id="13">
+        <label>KSharedConfig</label>
+      </node>
+      <node id="5">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="19">
+        <label>QElapsedTimer</label>
+      </node>
+      <node id="6">
+        <label>QImage</label>
+      </node>
+      <node id="15">
+        <label>QObject</label>
+      </node>
+      <node id="7">
+        <label>QPoint</label>
+      </node>
+      <node id="16">
+        <label>QRect</label>
+      </node>
+      <node id="11">
+        <label>QRegion</label>
+      </node>
+      <node id="17">
+        <label>QUrl</label>
+      </node>
+      <node id="8">
+        <label>QVariant</label>
+      </node>
+      <node id="9">
+        <label>QVector2D</label>
+      </node>
+      <node id="4">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="10">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="18">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/plugins/showfps/main.cpp</label>
+        <link refid="plugins_2showfps_2main_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/plugins/showfps/showfpseffect.cpp</label>
+        <link refid="showfpseffect_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/plugins/showfps/showfpseffect.h</label>
+        <link refid="showfpseffect_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_show_fps_effect" prot="public">KWin::ShowFpsEffect</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2006<sp/>Lubos<sp/>Lunak<sp/>&lt;l.lunak@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2021<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2022<sp/>Arjen<sp/>Hiemstra<sp/>&lt;ahiemstra@heimr.nl&gt;</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="effect_8h" kindref="compound">effect/effect.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="offscreenquickview_8h" kindref="compound">effect/offscreenquickview.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QElapsedTimer&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="class_k_win_1_1_show_fps_effect" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_show_fps_effect_1a38e79193918d58b1383bffa1be37831f" kindref="member">ShowFpsEffect</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="group__kwineffects_1ga7bd8262f4cb2c5c3090c748eb388ad7e" kindref="member">Effect</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="22" refid="class_k_win_1_1_show_fps_effect_1ad3c84305fbd50de05e013678ffea7492" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_show_fps_effect_1ad3c84305fbd50de05e013678ffea7492" kindref="member">fps</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_show_fps_effect_1ad3c84305fbd50de05e013678ffea7492" kindref="member">fps</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_show_fps_effect_1a6cc58cd4f4150c551368c1e7bf34b25c" kindref="member">fpsChanged</ref>)</highlight></codeline>
+<codeline lineno="23" refid="class_k_win_1_1_show_fps_effect_1a60c8081883932cdcbb2159ed777ec429" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_show_fps_effect_1a60c8081883932cdcbb2159ed777ec429" kindref="member">maximumFps</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_show_fps_effect_1a60c8081883932cdcbb2159ed777ec429" kindref="member">maximumFps</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_show_fps_effect_1a9a455294b9b35deb7ff90e33f4d5f8c0" kindref="member">maximumFpsChanged</ref>)</highlight></codeline>
+<codeline lineno="24" refid="class_k_win_1_1_show_fps_effect_1afb12e16867cb6d37e2fe4945e7757ea9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_show_fps_effect_1afb12e16867cb6d37e2fe4945e7757ea9" kindref="member">paintDuration</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_show_fps_effect_1afb12e16867cb6d37e2fe4945e7757ea9" kindref="member">paintDuration</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_show_fps_effect_1ab7ff05ac8bf1030b741deb8760cfe7de" kindref="member">paintChanged</ref>)</highlight></codeline>
+<codeline lineno="25" refid="class_k_win_1_1_show_fps_effect_1adb17c2e7a1a9565af69b25d99c0aab66" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_show_fps_effect_1adb17c2e7a1a9565af69b25d99c0aab66" kindref="member">paintAmount</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_show_fps_effect_1adb17c2e7a1a9565af69b25d99c0aab66" kindref="member">paintAmount</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_show_fps_effect_1ab7ff05ac8bf1030b741deb8760cfe7de" kindref="member">paintChanged</ref>)</highlight></codeline>
+<codeline lineno="26" refid="class_k_win_1_1_show_fps_effect_1a564706b2cc8b05f568b9b448536eb32f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QColor<sp/><ref refid="class_k_win_1_1_show_fps_effect_1a564706b2cc8b05f568b9b448536eb32f" kindref="member">paintColor</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_show_fps_effect_1a564706b2cc8b05f568b9b448536eb32f" kindref="member">paintColor</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_show_fps_effect_1ab7ff05ac8bf1030b741deb8760cfe7de" kindref="member">paintChanged</ref>)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_show_fps_effect_1a38e79193918d58b1383bffa1be37831f" kindref="member">ShowFpsEffect</ref>();</highlight></codeline>
+<codeline lineno="30" refid="class_k_win_1_1_show_fps_effect_1ad5a304e43c4e80f404a2450dcc78b16a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="class_k_win_1_1_show_fps_effect_1a38e79193918d58b1383bffa1be37831f" kindref="member">ShowFpsEffect</ref>()<sp/>override;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_show_fps_effect_1ad3c84305fbd50de05e013678ffea7492" kindref="member">fps</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_show_fps_effect_1a60c8081883932cdcbb2159ed777ec429" kindref="member">maximumFps</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_show_fps_effect_1afb12e16867cb6d37e2fe4945e7757ea9" kindref="member">paintDuration</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_show_fps_effect_1adb17c2e7a1a9565af69b25d99c0aab66" kindref="member">paintAmount</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>QColor<sp/><ref refid="class_k_win_1_1_show_fps_effect_1a564706b2cc8b05f568b9b448536eb32f" kindref="member">paintColor</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_show_fps_effect_1acfea0f5c4dbdd62c2f512f1f40cb925d" kindref="member">prePaintScreen</ref>(<ref refid="class_k_win_1_1_screen_pre_paint_data" kindref="compound">ScreenPrePaintData</ref><sp/>&amp;data,<sp/>std::chrono::milliseconds<sp/>presentTime)<sp/>override;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_show_fps_effect_1add684242792fff163f6a06ad0cd6d274" kindref="member">paintScreen</ref>(const<sp/><ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref><sp/>&amp;renderTarget,<sp/>const<sp/><ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref><sp/>&amp;viewport,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask,<sp/>const<sp/>QRegion<sp/>&amp;region,<sp/><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref><sp/>*screen)<sp/>override;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_show_fps_effect_1a7952685b3417252c7ce37dab7373fd47" kindref="member">paintWindow</ref>(const<sp/><ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref><sp/>&amp;renderTarget,<sp/>const<sp/><ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref><sp/>&amp;viewport,<sp/><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask,<sp/>QRegion<sp/>region,<sp/><ref refid="namespace_k_win" kindref="compound">KWin</ref>::<ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref><sp/>&amp;data)<sp/>override;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_show_fps_effect_1a210faec8987209568f4c5e5ba6e9fa21" kindref="member">postPaintScreen</ref>()<sp/>override;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>static<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_show_fps_effect_1a7d60d9ad8874cbf40eb70386b49c64b8" kindref="member">supported</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="46" refid="class_k_win_1_1_show_fps_effect_1a6cc58cd4f4150c551368c1e7bf34b25c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_show_fps_effect_1a6cc58cd4f4150c551368c1e7bf34b25c" kindref="member">fpsChanged</ref>();</highlight></codeline>
+<codeline lineno="47" refid="class_k_win_1_1_show_fps_effect_1a9a455294b9b35deb7ff90e33f4d5f8c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_show_fps_effect_1a9a455294b9b35deb7ff90e33f4d5f8c0" kindref="member">maximumFpsChanged</ref>();</highlight></codeline>
+<codeline lineno="48" refid="class_k_win_1_1_show_fps_effect_1ab7ff05ac8bf1030b741deb8760cfe7de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_show_fps_effect_1ab7ff05ac8bf1030b741deb8760cfe7de" kindref="member">paintChanged</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">private:</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;<ref refid="class_k_win_1_1_offscreen_quick_scene" kindref="compound">OffscreenQuickScene</ref>&gt;<sp/>m_scene;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>m_maximumFps<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_fps<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_newFps<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::steady_clock::time_point<sp/>m_lastFpsTime;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_paintDuration<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_paintAmount<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>QElapsedTimer<sp/>m_paintDurationTimer;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/plugins/showfps/showfpseffect.h"/>
+  </compounddef>
+</doxygen>

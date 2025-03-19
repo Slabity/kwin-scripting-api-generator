@@ -1,0 +1,1651 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_item" kind="class" language="C++" prot="public">
+    <compoundname>KWin::Item</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_cursor_item" prot="public" virt="non-virtual">KWin::CursorItem</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_decoration_item" prot="public" virt="non-virtual">KWin::DecorationItem</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_drag_and_drop_icon_item" prot="public" virt="non-virtual">KWin::DragAndDropIconItem</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_image_item" prot="public" virt="non-virtual">KWin::ImageItem</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_root_item" prot="public" virt="non-virtual">KWin::RootItem</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_rotating_arcs_item" prot="public" virt="non-virtual">KWin::RotatingArcsItem</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_shadow_item" prot="public" virt="non-virtual">KWin::ShadowItem</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_shake_cursor_item" prot="public" virt="non-virtual">KWin::ShakeCursorItem</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_surface_item" prot="public" virt="non-virtual">KWin::SurfaceItem</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_window_item" prot="public" virt="non-virtual">KWin::WindowItem</derivedcompoundref>
+    <includes refid="item_8h" local="no">item.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_item_1a4b3205317500e4d613abe690019e74da" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_scene" kindref="compound">Scene</ref> *</type>
+        <definition>Scene* KWin::Item::m_scene</definition>
+        <argsstring></argsstring>
+        <name>m_scene</name>
+        <qualifiedname>KWin::Item::m_scene</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="184" column="11" bodyfile="kwin/src/scene/item.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_item_1a10ffbe9715be6777bab86664fff20f11" prot="private" static="no" mutable="no">
+        <type>QPointer&lt; <ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> &gt;</type>
+        <definition>QPointer&lt;Item&gt; KWin::Item::m_parentItem</definition>
+        <argsstring></argsstring>
+        <name>m_parentItem</name>
+        <qualifiedname>KWin::Item::m_parentItem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="185" column="14" bodyfile="kwin/src/scene/item.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_item_1ab6c2322c411f4f0f472f0bee5afa768b" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> * &gt;</type>
+        <definition>QList&lt;Item *&gt; KWin::Item::m_childItems</definition>
+        <argsstring></argsstring>
+        <name>m_childItems</name>
+        <qualifiedname>KWin::Item::m_childItems</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="186" column="11" bodyfile="kwin/src/scene/item.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_item_1a717ee35f0de0e8a3e56b644074d41b43" prot="private" static="no" mutable="no">
+        <type>QTransform</type>
+        <definition>QTransform KWin::Item::m_transform</definition>
+        <argsstring></argsstring>
+        <name>m_transform</name>
+        <qualifiedname>KWin::Item::m_transform</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="187" column="16" bodyfile="kwin/src/scene/item.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_item_1a165d33bb278fb18e9d0ff55fa6903a0b" prot="private" static="no" mutable="no">
+        <type>QTransform</type>
+        <definition>QTransform KWin::Item::m_itemToSceneTransform</definition>
+        <argsstring></argsstring>
+        <name>m_itemToSceneTransform</name>
+        <qualifiedname>KWin::Item::m_itemToSceneTransform</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="188" column="16" bodyfile="kwin/src/scene/item.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_item_1a7509f33ffecfbe2dff3298c9e7d4ae2e" prot="private" static="no" mutable="no">
+        <type>QTransform</type>
+        <definition>QTransform KWin::Item::m_sceneToItemTransform</definition>
+        <argsstring></argsstring>
+        <name>m_sceneToItemTransform</name>
+        <qualifiedname>KWin::Item::m_sceneToItemTransform</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="189" column="16" bodyfile="kwin/src/scene/item.h" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_item_1a5afeef387f57f72da8eb33148633cfcc" prot="private" static="no" mutable="no">
+        <type>QRectF</type>
+        <definition>QRectF KWin::Item::m_boundingRect</definition>
+        <argsstring></argsstring>
+        <name>m_boundingRect</name>
+        <qualifiedname>KWin::Item::m_boundingRect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="190" column="12" bodyfile="kwin/src/scene/item.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_item_1ae5cbe304de5428313ed140840b34e509" prot="private" static="no" mutable="no">
+        <type>QPointF</type>
+        <definition>QPointF KWin::Item::m_position</definition>
+        <argsstring></argsstring>
+        <name>m_position</name>
+        <qualifiedname>KWin::Item::m_position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="191" column="13" bodyfile="kwin/src/scene/item.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_item_1ab4481e1d9b804adbde19f90a7b2622e6" prot="private" static="no" mutable="no">
+        <type>QSizeF</type>
+        <definition>QSizeF KWin::Item::m_size</definition>
+        <argsstring></argsstring>
+        <name>m_size</name>
+        <qualifiedname>KWin::Item::m_size</qualifiedname>
+        <initializer>= QSize(0, 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="192" column="12" bodyfile="kwin/src/scene/item.h" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_item_1aa890b045f777dcdd70d067d506d6fc36" prot="private" static="no" mutable="no">
+        <type>qreal</type>
+        <definition>qreal KWin::Item::m_opacity</definition>
+        <argsstring></argsstring>
+        <name>m_opacity</name>
+        <qualifiedname>KWin::Item::m_opacity</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="193" column="11" bodyfile="kwin/src/scene/item.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_item_1a32129bc374e5fb0c1b7d0238fae7d506" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KWin::Item::m_z</definition>
+        <argsstring></argsstring>
+        <name>m_z</name>
+        <qualifiedname>KWin::Item::m_z</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="194" column="9" bodyfile="kwin/src/scene/item.h" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_item_1af8b05673d53e1a91761146afbcf4df55" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::Item::m_explicitVisible</definition>
+        <argsstring></argsstring>
+        <name>m_explicitVisible</name>
+        <qualifiedname>KWin::Item::m_explicitVisible</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="195" column="10" bodyfile="kwin/src/scene/item.h" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_item_1a5b83e5893b902c4bfd406076431d3d65" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::Item::m_effectiveVisible</definition>
+        <argsstring></argsstring>
+        <name>m_effectiveVisible</name>
+        <qualifiedname>KWin::Item::m_effectiveVisible</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="196" column="10" bodyfile="kwin/src/scene/item.h" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_item_1a9a0f5e5643f46fef7cda9a3087e3d6ef" prot="private" static="no" mutable="no">
+        <type>QMap&lt; <ref refid="class_k_win_1_1_scene_delegate" kindref="compound">SceneDelegate</ref> *, QRegion &gt;</type>
+        <definition>QMap&lt;SceneDelegate *, QRegion&gt; KWin::Item::m_repaints</definition>
+        <argsstring></argsstring>
+        <name>m_repaints</name>
+        <qualifiedname>KWin::Item::m_repaints</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="197" column="10" bodyfile="kwin/src/scene/item.h" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_item_1a18089eb68ac155bbf1d3c14388c60890" prot="private" static="no" mutable="yes">
+        <type>std::optional&lt; <ref refid="class_k_win_1_1_window_quad_list" kindref="compound">WindowQuadList</ref> &gt;</type>
+        <definition>std::optional&lt;WindowQuadList&gt; KWin::Item::m_quads</definition>
+        <argsstring></argsstring>
+        <name>m_quads</name>
+        <qualifiedname>KWin::Item::m_quads</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="198" column="27" bodyfile="kwin/src/scene/item.h" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_item_1a4210cf38db9928270fe61daec4dc1ff8" prot="private" static="no" mutable="yes">
+        <type>std::optional&lt; QList&lt; <ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> * &gt; &gt;</type>
+        <definition>std::optional&lt;QList&lt;Item *&gt; &gt; KWin::Item::m_sortedChildItems</definition>
+        <argsstring></argsstring>
+        <name>m_sortedChildItems</name>
+        <qualifiedname>KWin::Item::m_sortedChildItems</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="199" column="27" bodyfile="kwin/src/scene/item.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_item_1a0d0eec48754dd3047fbab009539797fc" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_color_description" kindref="compound">ColorDescription</ref></type>
+        <definition>ColorDescription KWin::Item::m_colorDescription</definition>
+        <argsstring></argsstring>
+        <name>m_colorDescription</name>
+        <qualifiedname>KWin::Item::m_colorDescription</qualifiedname>
+        <initializer>= <ref refid="class_k_win_1_1_color_description_1a329e58d9b909836414261f4f1857ccf6" kindref="member">ColorDescription::sRGB</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="200" column="22" bodyfile="kwin/src/scene/item.h" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_item_1ab6fff873d3e941a878c6d2d01d3086bf" prot="private" static="no" mutable="no">
+        <type><ref refid="namespace_k_win_1a72b8a93022757874f9e6f85fcf9bc4e9" kindref="member">RenderingIntent</ref></type>
+        <definition>RenderingIntent KWin::Item::m_renderingIntent</definition>
+        <argsstring></argsstring>
+        <name>m_renderingIntent</name>
+        <qualifiedname>KWin::Item::m_renderingIntent</qualifiedname>
+        <initializer>= <ref refid="namespace_k_win_1a72b8a93022757874f9e6f85fcf9bc4e9a09ab3095e9b2d0a7773cc3d2f0f879cd" kindref="member">RenderingIntent::Perceptual</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="201" column="21" bodyfile="kwin/src/scene/item.h" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_item_1a66953f4a85a5418d32acd745a6eec6c9" prot="private" static="no" mutable="no">
+        <type><ref refid="namespace_k_win_1a9b2c7d76c9b9021af62d089e13e456d6" kindref="member">PresentationModeHint</ref></type>
+        <definition>PresentationModeHint KWin::Item::m_presentationHint</definition>
+        <argsstring></argsstring>
+        <name>m_presentationHint</name>
+        <qualifiedname>KWin::Item::m_presentationHint</qualifiedname>
+        <initializer>= <ref refid="namespace_k_win_1a9b2c7d76c9b9021af62d089e13e456d6a98b06ef30caa386be0f897d0e5c5a135" kindref="member">PresentationModeHint::VSync</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="202" column="26" bodyfile="kwin/src/scene/item.h" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_item_1a7e9511756075a4da12c2932674b7f70b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KWin::Item::m_effectCount</definition>
+        <argsstring></argsstring>
+        <name>m_effectCount</name>
+        <qualifiedname>KWin::Item::m_effectCount</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="203" column="9" bodyfile="kwin/src/scene/item.h" bodystart="203" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_item_1ab87c45c078db860d6ffd118ecdd7843a" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::Item::Item</definition>
+        <argsstring>(Item *parent=nullptr)</argsstring>
+        <name>Item</name>
+        <qualifiedname>KWin::Item::Item</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="53" column="14" bodyfile="kwin/src/scene/item.cpp" bodystart="44" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a4eaf32a5e38d0b1c0cd219e65ce9d49b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::Item::~Item</definition>
+        <argsstring>() override</argsstring>
+        <name>~Item</name>
+        <qualifiedname>KWin::Item::~Item</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="54" column="5" bodyfile="kwin/src/scene/item.cpp" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a28ece053baba86da188cc6f0e580ca8c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_scene" kindref="compound">Scene</ref> *</type>
+        <definition>Scene * KWin::Item::scene</definition>
+        <argsstring>() const</argsstring>
+        <name>scene</name>
+        <qualifiedname>KWin::Item::scene</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="56" column="11" bodyfile="kwin/src/scene/item.cpp" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a0cd9ffaa64f975eddcc65c76a0bde096" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>qreal</type>
+        <definition>qreal KWin::Item::opacity</definition>
+        <argsstring>() const</argsstring>
+        <name>opacity</name>
+        <qualifiedname>KWin::Item::opacity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="58" column="11" bodyfile="kwin/src/scene/item.cpp" bodystart="59" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1aceea0be9507d2c0565629c9c2304942d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::setOpacity</definition>
+        <argsstring>(qreal opacity)</argsstring>
+        <name>setOpacity</name>
+        <qualifiedname>KWin::Item::setOpacity</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>opacity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="59" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="64" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a0b6c7ffb1764ad316f544f928496fa24" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QPointF</type>
+        <definition>QPointF KWin::Item::position</definition>
+        <argsstring>() const</argsstring>
+        <name>position</name>
+        <qualifiedname>KWin::Item::position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="61" column="13" bodyfile="kwin/src/scene/item.cpp" bodystart="168" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1addfb9f3bc08701f6856e025d2b8dfd66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::setPosition</definition>
+        <argsstring>(const QPointF &amp;point)</argsstring>
+        <name>setPosition</name>
+        <qualifiedname>KWin::Item::setPosition</qualifiedname>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="62" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="173" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1ad0ad42f5708479d6339fd50999dfdfa2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QSizeF</type>
+        <definition>QSizeF KWin::Item::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <qualifiedname>KWin::Item::size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="64" column="12" bodyfile="kwin/src/scene/item.cpp" bodystart="187" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1aadbea3fa26cfec91732450904af7d54e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::setSize</definition>
+        <argsstring>(const QSizeF &amp;size)</argsstring>
+        <name>setSize</name>
+        <qualifiedname>KWin::Item::setSize</qualifiedname>
+        <param>
+          <type>const QSizeF &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="65" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="192" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1ab03fdfba46eabb08d8e7813eddbe8a46" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int KWin::Item::z</definition>
+        <argsstring>() const</argsstring>
+        <name>z</name>
+        <qualifiedname>KWin::Item::z</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="67" column="9" bodyfile="kwin/src/scene/item.cpp" bodystart="72" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1acd230ffa121bcc3d8305349fd7ecf993" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::setZ</definition>
+        <argsstring>(int z)</argsstring>
+        <name>setZ</name>
+        <qualifiedname>KWin::Item::setZ</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="68" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="77" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a6e9ab7045e27f6d1aa1d023234c5f5ff" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QRectF</type>
+        <definition>QRectF KWin::Item::rect</definition>
+        <argsstring>() const</argsstring>
+        <name>rect</name>
+        <qualifiedname>KWin::Item::rect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the enclosing rectangle of the item. The rect equals QRect(0, 0, width(), height()). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="73" column="12" bodyfile="kwin/src/scene/item.cpp" bodystart="204" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a2cd75e545d4de3d2cf9a58c90fe95a82" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QRectF</type>
+        <definition>QRectF KWin::Item::boundingRect</definition>
+        <argsstring>() const</argsstring>
+        <name>boundingRect</name>
+        <qualifiedname>KWin::Item::boundingRect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the enclosing rectangle of the item and all of its descendants. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="77" column="12" bodyfile="kwin/src/scene/item.cpp" bodystart="209" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1aec25718545880feac8c9c4b0cab138ad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QList&lt; QRectF &gt;</type>
+        <definition>QList&lt; QRectF &gt; KWin::Item::shape</definition>
+        <argsstring>() const</argsstring>
+        <name>shape</name>
+        <qualifiedname>KWin::Item::shape</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_decoration_item_1acac7040cb6982f55880084a0a4da5213">shape</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_surface_item_internal_1ae88972bd09d288313b3036cf7fd977ca">shape</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_surface_item_wayland_1a2c375d1ee07c9cc4b8c7b8d77a84acc2">shape</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="79" column="19" bodyfile="kwin/src/scene/item.cpp" bodystart="229" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a274cdc9fe90fa038d749b0552d777481" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QRegion</type>
+        <definition>QRegion KWin::Item::opaque</definition>
+        <argsstring>() const</argsstring>
+        <name>opaque</name>
+        <qualifiedname>KWin::Item::opaque</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_decoration_item_1af59c8e70d131da8b234136ac10d55430">opaque</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_surface_item_wayland_1a782e7c604c323f691f8c2eb9c11f7292">opaque</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="80" column="21" bodyfile="kwin/src/scene/item.cpp" bodystart="234" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a7cbfb2f1aa4960f7c6265c5b67e7e4b0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> *</type>
+        <definition>Item * KWin::Item::parentItem</definition>
+        <argsstring>() const</argsstring>
+        <name>parentItem</name>
+        <qualifiedname>KWin::Item::parentItem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the visual parent of the item. Note that the visual parent differs from the QObject parent. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="86" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="89" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a2a7a1c768681631446b853b595b90b5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::setParentItem</definition>
+        <argsstring>(Item *parent)</argsstring>
+        <name>setParentItem</name>
+        <qualifiedname>KWin::Item::setParentItem</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="87" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="94" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1ac0dc5aebbfc288debf9e59ede6f4d39b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> * &gt;</type>
+        <definition>QList&lt; Item * &gt; KWin::Item::childItems</definition>
+        <argsstring>() const</argsstring>
+        <name>childItems</name>
+        <qualifiedname>KWin::Item::childItems</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="88" column="11" bodyfile="kwin/src/scene/item.cpp" bodystart="136" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a1043a499bdf86472bb3373bd456945fd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> * &gt;</type>
+        <definition>QList&lt; Item * &gt; KWin::Item::sortedChildItems</definition>
+        <argsstring>() const</argsstring>
+        <name>sortedChildItems</name>
+        <qualifiedname>KWin::Item::sortedChildItems</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="89" column="11" bodyfile="kwin/src/scene/item.cpp" bodystart="573" bodyend="581"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1ac7469129e8d2fdb52056e43f795c850e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QTransform</type>
+        <definition>QTransform KWin::Item::transform</definition>
+        <argsstring>() const</argsstring>
+        <name>transform</name>
+        <qualifiedname>KWin::Item::transform</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="91" column="16" bodyfile="kwin/src/scene/item.cpp" bodystart="239" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a00e9897feae250e280a29a1beda4029c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::setTransform</definition>
+        <argsstring>(const QTransform &amp;transform)</argsstring>
+        <name>setTransform</name>
+        <qualifiedname>KWin::Item::setTransform</qualifiedname>
+        <param>
+          <type>const QTransform &amp;</type>
+          <declname>transform</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="92" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="244" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1aa7f7455ed653a89d4df4687ea1a38b8f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QRegion</type>
+        <definition>QRegion KWin::Item::mapToScene</definition>
+        <argsstring>(const QRegion &amp;region) const</argsstring>
+        <name>mapToScene</name>
+        <qualifiedname>KWin::Item::mapToScene</qualifiedname>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maps the given <emphasis>region</emphasis> from the item&apos;s coordinate system to the scene&apos;s coordinate system. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="98" column="13" bodyfile="kwin/src/scene/item.cpp" bodystart="274" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1ac7c0c20e7600b827785b73ee0374e085" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QRectF</type>
+        <definition>QRectF KWin::Item::mapToScene</definition>
+        <argsstring>(const QRectF &amp;rect) const</argsstring>
+        <name>mapToScene</name>
+        <qualifiedname>KWin::Item::mapToScene</qualifiedname>
+        <param>
+          <type>const QRectF &amp;</type>
+          <declname>rect</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maps the given <emphasis>rect</emphasis> from the item&apos;s coordinate system to the scene&apos;s coordinate system. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="103" column="12" bodyfile="kwin/src/scene/item.cpp" bodystart="282" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a086a2e271563ecb85cde6fbf2a616c71" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QRectF</type>
+        <definition>QRectF KWin::Item::mapFromScene</definition>
+        <argsstring>(const QRectF &amp;rect) const</argsstring>
+        <name>mapFromScene</name>
+        <qualifiedname>KWin::Item::mapFromScene</qualifiedname>
+        <param>
+          <type>const QRectF &amp;</type>
+          <declname>rect</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maps the given <emphasis>rect</emphasis> from the scene&apos;s coordinate system to the item&apos;s coordinate system. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="108" column="12" bodyfile="kwin/src/scene/item.cpp" bodystart="290" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1ad8e4299cc2a392edc4cc55102347d4a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::stackBefore</definition>
+        <argsstring>(Item *sibling)</argsstring>
+        <name>stackBefore</name>
+        <qualifiedname>KWin::Item::stackBefore</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> *</type>
+          <declname>sibling</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Moves this item right before the specified <emphasis>sibling</emphasis> in the parent&apos;s children list. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="113" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="341" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a92b47e4fc74c0957b83aa9555b6592ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::stackAfter</definition>
+        <argsstring>(Item *sibling)</argsstring>
+        <name>stackAfter</name>
+        <qualifiedname>KWin::Item::stackAfter</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> *</type>
+          <declname>sibling</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Moves this item right after the specified <emphasis>sibling</emphasis> in the parent&apos;s children list. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="117" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="369" bodyend="395"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a3d43908f92f8e7f5b53790e5d4118f32" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::Item::explicitVisible</definition>
+        <argsstring>() const</argsstring>
+        <name>explicitVisible</name>
+        <qualifiedname>KWin::Item::explicitVisible</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="119" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="509" bodyend="512"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a3115fe9f6c0836415bbaa8638ce45048" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::Item::isVisible</definition>
+        <argsstring>() const</argsstring>
+        <name>isVisible</name>
+        <qualifiedname>KWin::Item::isVisible</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="120" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="514" bodyend="517"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a35c893e1d8bd33f1776876de4b426f64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::setVisible</definition>
+        <argsstring>(bool visible)</argsstring>
+        <name>setVisible</name>
+        <qualifiedname>KWin::Item::setVisible</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>visible</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="121" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="519" bodyend="525"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1adf691376eafaf7e3545e4cdee16c6a8f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QRect</type>
+        <definition>QRect KWin::Item::paintedArea</definition>
+        <argsstring>(SceneDelegate *delegate, const QRectF &amp;rect) const</argsstring>
+        <name>paintedArea</name>
+        <qualifiedname>KWin::Item::paintedArea</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_scene_delegate" kindref="compound">SceneDelegate</ref> *</type>
+          <declname>delegate</declname>
+        </param>
+        <param>
+          <type>const QRectF &amp;</type>
+          <declname>rect</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="123" column="11" bodyfile="kwin/src/scene/item.cpp" bodystart="298" bodyend="310"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a831e137ba1e2ceb1091cd340d3a375ce" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QRegion</type>
+        <definition>QRegion KWin::Item::paintedArea</definition>
+        <argsstring>(SceneDelegate *delegate, const QRegion &amp;region) const</argsstring>
+        <name>paintedArea</name>
+        <qualifiedname>KWin::Item::paintedArea</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_scene_delegate" kindref="compound">SceneDelegate</ref> *</type>
+          <declname>delegate</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="124" column="13" bodyfile="kwin/src/scene/item.cpp" bodystart="312" bodyend="339"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1ad3ad797c32e96df4e9715cca925bc4e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::scheduleRepaint</definition>
+        <argsstring>(const QRectF &amp;region)</argsstring>
+        <name>scheduleRepaint</name>
+        <qualifiedname>KWin::Item::scheduleRepaint</qualifiedname>
+        <param>
+          <type>const QRectF &amp;</type>
+          <declname>region</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="126" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="527" bodyend="530"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a97610f6c8011c4197f2683230d920adc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::scheduleSceneRepaint</definition>
+        <argsstring>(const QRectF &amp;region)</argsstring>
+        <name>scheduleSceneRepaint</name>
+        <qualifiedname>KWin::Item::scheduleSceneRepaint</qualifiedname>
+        <param>
+          <type>const QRectF &amp;</type>
+          <declname>region</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="127" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="532" bodyend="535"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a5f1eda36c0709c78a579b06726d467cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::scheduleRepaint</definition>
+        <argsstring>(const QRegion &amp;region)</argsstring>
+        <name>scheduleRepaint</name>
+        <qualifiedname>KWin::Item::scheduleRepaint</qualifiedname>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="128" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="397" bodyend="402"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a2553e90c867bcb4c04a1650d9db1cc6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::scheduleSceneRepaint</definition>
+        <argsstring>(const QRegion &amp;region)</argsstring>
+        <name>scheduleSceneRepaint</name>
+        <qualifiedname>KWin::Item::scheduleSceneRepaint</qualifiedname>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="129" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="537" bodyend="542"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a4ef686262e1ea5e07d3d1f232f87632b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::scheduleRepaint</definition>
+        <argsstring>(SceneDelegate *delegate, const QRegion &amp;region)</argsstring>
+        <name>scheduleRepaint</name>
+        <qualifiedname>KWin::Item::scheduleRepaint</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_scene_delegate" kindref="compound">SceneDelegate</ref> *</type>
+          <declname>delegate</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="130" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="404" bodyend="409"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a3ed94abcac992105cd9d4579fda2b6c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::scheduleFrame</definition>
+        <argsstring>()</argsstring>
+        <name>scheduleFrame</name>
+        <qualifiedname>KWin::Item::scheduleFrame</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="131" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="438" bodyend="453"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a768d9f08db75f2f4169fa0d1f43ebd8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QRegion</type>
+        <definition>QRegion KWin::Item::takeRepaints</definition>
+        <argsstring>(SceneDelegate *delegate)</argsstring>
+        <name>takeRepaints</name>
+        <qualifiedname>KWin::Item::takeRepaints</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_scene_delegate" kindref="compound">SceneDelegate</ref> *</type>
+          <declname>delegate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="132" column="13" bodyfile="kwin/src/scene/item.cpp" bodystart="491" bodyend="497"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a982be6965729c6101b0e24c8bead45c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::resetRepaints</definition>
+        <argsstring>(SceneDelegate *delegate)</argsstring>
+        <name>resetRepaints</name>
+        <qualifiedname>KWin::Item::resetRepaints</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_scene_delegate" kindref="compound">SceneDelegate</ref> *</type>
+          <declname>delegate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="133" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="499" bodyend="502"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a636cc0d032fc8813db966c4acdb3df50" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_window_quad_list" kindref="compound">WindowQuadList</ref></type>
+        <definition>WindowQuadList KWin::Item::quads</definition>
+        <argsstring>() const</argsstring>
+        <name>quads</name>
+        <qualifiedname>KWin::Item::quads</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="135" column="20" bodyfile="kwin/src/scene/item.cpp" bodystart="483" bodyend="489"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a06d0f2aea8e42db7557896d494e690af" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::Item::preprocess</definition>
+        <argsstring>()</argsstring>
+        <name>preprocess</name>
+        <qualifiedname>KWin::Item::preprocess</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_decoration_item_1a323591f88b02ac2357f78a4effda6050">preprocess</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_image_item_open_g_l_1a290e737b591b30424e9c2aa5c89ea0e1">preprocess</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_shadow_item_1ac7817210a552c73c2b86bb058e22868b">preprocess</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_surface_item_1a570c6c203fd0a4c79851b711da4e3b20">preprocess</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="136" column="18" bodyfile="kwin/src/scene/item.cpp" bodystart="469" bodyend="471"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1ab938104b60ece620180da2d602eb3982" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="class_k_win_1_1_color_description" kindref="compound">ColorDescription</ref> &amp;</type>
+        <definition>const ColorDescription &amp; KWin::Item::colorDescription</definition>
+        <argsstring>() const</argsstring>
+        <name>colorDescription</name>
+        <qualifiedname>KWin::Item::colorDescription</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="137" column="28" bodyfile="kwin/src/scene/item.cpp" bodystart="588" bodyend="591"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a30178857b737d8c5a512b5bba9827989" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespace_k_win_1a72b8a93022757874f9e6f85fcf9bc4e9" kindref="member">RenderingIntent</ref></type>
+        <definition>RenderingIntent KWin::Item::renderingIntent</definition>
+        <argsstring>() const</argsstring>
+        <name>renderingIntent</name>
+        <qualifiedname>KWin::Item::renderingIntent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="138" column="21" bodyfile="kwin/src/scene/item.cpp" bodystart="593" bodyend="596"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a2aae596524c3ffa5e3f095b932fe2cac" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespace_k_win_1a9b2c7d76c9b9021af62d089e13e456d6" kindref="member">PresentationModeHint</ref></type>
+        <definition>PresentationModeHint KWin::Item::presentationHint</definition>
+        <argsstring>() const</argsstring>
+        <name>presentationHint</name>
+        <qualifiedname>KWin::Item::presentationHint</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="139" column="26" bodyfile="kwin/src/scene/item.cpp" bodystart="608" bodyend="611"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a5a02454926dad542b44dd7dc3037877c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::Item::hasEffects</definition>
+        <argsstring>() const</argsstring>
+        <name>hasEffects</name>
+        <qualifiedname>KWin::Item::hasEffects</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="141" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="618" bodyend="621"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1aa4ff40a28180af18a130c71752f24024" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::addEffect</definition>
+        <argsstring>()</argsstring>
+        <name>addEffect</name>
+        <qualifiedname>KWin::Item::addEffect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="142" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="623" bodyend="626"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a9876e64e6c4cda1fb61d073448d71188" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::removeEffect</definition>
+        <argsstring>()</argsstring>
+        <name>removeEffect</name>
+        <qualifiedname>KWin::Item::removeEffect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="143" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="628" bodyend="632"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_item_1a17c2db06f671b7374afdbf09b4043a1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::childAdded</definition>
+        <argsstring>(Item *item)</argsstring>
+        <name>childAdded</name>
+        <qualifiedname>KWin::Item::childAdded</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="146" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_item_1a2424c89c8f2411b64cc7c97e25e905b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::positionChanged</definition>
+        <argsstring>()</argsstring>
+        <name>positionChanged</name>
+        <qualifiedname>KWin::Item::positionChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This signal is emitted when the position of this item has changed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="150" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_item_1a00ea88f0a5981ad8434b959bfb73041e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::sizeChanged</definition>
+        <argsstring>()</argsstring>
+        <name>sizeChanged</name>
+        <qualifiedname>KWin::Item::sizeChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This signal is emitted when the size of this item has changed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="154" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_item_1afe542ac410794a496433aa91921fcc51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::boundingRectChanged</definition>
+        <argsstring>()</argsstring>
+        <name>boundingRectChanged</name>
+        <qualifiedname>KWin::Item::boundingRectChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This signal is emitted when the rectangle that encloses this item and all of its children has changed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="160" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_k_win_1_1_item_1a6878479968c6b288bca50f615ba3b739" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_k_win_1_1_window_quad_list" kindref="compound">WindowQuadList</ref></type>
+        <definition>WindowQuadList KWin::Item::buildQuads</definition>
+        <argsstring>() const</argsstring>
+        <name>buildQuads</name>
+        <qualifiedname>KWin::Item::buildQuads</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_decoration_item_1a3b7be13b58572a5dc454d19bb677e5c9">buildQuads</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_image_item_open_g_l_1abe3c78149ac6f941dcccea9a8b2221f8">buildQuads</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_shadow_item_1ae8d0d8a7f5141ea15992f18ad4b683f4">buildQuads</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_surface_item_1a5b948a034f6caa25cdec3f9455bd8243">buildQuads</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="163" column="28" bodyfile="kwin/src/scene/item.cpp" bodystart="473" bodyend="476"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1ab79a5c5e8295377ef19c948d53ff158f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::discardQuads</definition>
+        <argsstring>()</argsstring>
+        <name>discardQuads</name>
+        <qualifiedname>KWin::Item::discardQuads</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="164" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="478" bodyend="481"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a054862680e34938384c9b905303d4609" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::setColorDescription</definition>
+        <argsstring>(const ColorDescription &amp;description)</argsstring>
+        <name>setColorDescription</name>
+        <qualifiedname>KWin::Item::setColorDescription</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_color_description" kindref="compound">ColorDescription</ref> &amp;</type>
+          <declname>description</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="165" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="598" bodyend="601"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a426759a0d352b2a51fece60c7ed5b4d1" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::setRenderingIntent</definition>
+        <argsstring>(RenderingIntent intent)</argsstring>
+        <name>setRenderingIntent</name>
+        <qualifiedname>KWin::Item::setRenderingIntent</qualifiedname>
+        <param>
+          <type><ref refid="namespace_k_win_1a72b8a93022757874f9e6f85fcf9bc4e9" kindref="member">RenderingIntent</ref></type>
+          <declname>intent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="166" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="603" bodyend="606"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a9326cf1000c0a2a1707c8f7f8955e7c1" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::setPresentationHint</definition>
+        <argsstring>(PresentationModeHint hint)</argsstring>
+        <name>setPresentationHint</name>
+        <qualifiedname>KWin::Item::setPresentationHint</qualifiedname>
+        <param>
+          <type><ref refid="namespace_k_win_1a9b2c7d76c9b9021af62d089e13e456d6" kindref="member">PresentationModeHint</ref></type>
+          <declname>hint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="167" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="613" bodyend="616"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a0abc1858b1c4074f51b23e85d953baa2" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::setScene</definition>
+        <argsstring>(Scene *scene)</argsstring>
+        <name>setScene</name>
+        <qualifiedname>KWin::Item::setScene</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_scene" kindref="compound">Scene</ref> *</type>
+          <declname>scene</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="168" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="141" bodyend="166"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_item_1a1123f4c5b92b63d2327451f15202b0f5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::addChild</definition>
+        <argsstring>(Item *item)</argsstring>
+        <name>addChild</name>
+        <qualifiedname>KWin::Item::addChild</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="171" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="112" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a4d60aff9d123e70c1cc2881b182278af" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::removeChild</definition>
+        <argsstring>(Item *item)</argsstring>
+        <name>removeChild</name>
+        <qualifiedname>KWin::Item::removeChild</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="172" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="125" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1ac59e1599c50c35823d336c881e72cd9e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::updateBoundingRect</definition>
+        <argsstring>()</argsstring>
+        <name>updateBoundingRect</name>
+        <qualifiedname>KWin::Item::updateBoundingRect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="173" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="214" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a6d4225065974c76510232b8a469a934b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::updateItemToSceneTransform</definition>
+        <argsstring>()</argsstring>
+        <name>updateItemToSceneTransform</name>
+        <qualifiedname>KWin::Item::updateItemToSceneTransform</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="174" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="258" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1af953421014be376905b0d5edc4d94fff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::scheduleRepaintInternal</definition>
+        <argsstring>(const QRegion &amp;region)</argsstring>
+        <name>scheduleRepaintInternal</name>
+        <qualifiedname>KWin::Item::scheduleRepaintInternal</qualifiedname>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="175" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="411" bodyend="424"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1ab757a14799270e301fa4ed507544d01a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::scheduleRepaintInternal</definition>
+        <argsstring>(SceneDelegate *delegate, const QRegion &amp;region)</argsstring>
+        <name>scheduleRepaintInternal</name>
+        <qualifiedname>KWin::Item::scheduleRepaintInternal</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_scene_delegate" kindref="compound">SceneDelegate</ref> *</type>
+          <declname>delegate</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="176" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="426" bodyend="436"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a2684bb4061c4c2d5dc396a7d996adca1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::scheduleSceneRepaintInternal</definition>
+        <argsstring>(const QRegion &amp;region)</argsstring>
+        <name>scheduleSceneRepaintInternal</name>
+        <qualifiedname>KWin::Item::scheduleSceneRepaintInternal</qualifiedname>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="177" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="455" bodyend="467"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a419a47035d40af886b1f23a3cdbfd25a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::markSortedChildItemsDirty</definition>
+        <argsstring>()</argsstring>
+        <name>markSortedChildItemsDirty</name>
+        <qualifiedname>KWin::Item::markSortedChildItemsDirty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="178" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="583" bodyend="586"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1a13c89fdb18dd41beb14a4c7a9cfcdc5e" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::Item::computeEffectiveVisibility</definition>
+        <argsstring>() const</argsstring>
+        <name>computeEffectiveVisibility</name>
+        <qualifiedname>KWin::Item::computeEffectiveVisibility</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="180" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="544" bodyend="547"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1ad57e6af9ae4dea5ed50300849940d17e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::updateEffectiveVisibility</definition>
+        <argsstring>()</argsstring>
+        <name>updateEffectiveVisibility</name>
+        <qualifiedname>KWin::Item::updateEffectiveVisibility</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="181" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="549" bodyend="566"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_item_1afac625e160339a248b02f78d280219bf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Item::removeRepaints</definition>
+        <argsstring>(SceneDelegate *delegate)</argsstring>
+        <name>removeRepaints</name>
+        <qualifiedname>KWin::Item::removeRepaints</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_scene_delegate" kindref="compound">SceneDelegate</ref> *</type>
+          <declname>delegate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/item.h" line="182" column="10" bodyfile="kwin/src/scene/item.cpp" bodystart="504" bodyend="507"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> class is the base class for items in the scene. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>KWin::CursorItem</label>
+        <link refid="class_k_win_1_1_cursor_item"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>KWin::DecorationItem</label>
+        <link refid="class_k_win_1_1_decoration_item"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>KWin::DragAndDropIconItem</label>
+        <link refid="class_k_win_1_1_drag_and_drop_icon_item"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>KWin::ImageItem</label>
+        <link refid="class_k_win_1_1_image_item"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>KWin::ImageItemOpenGL</label>
+        <link refid="class_k_win_1_1_image_item_open_g_l"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::Item</label>
+        <link refid="class_k_win_1_1_item"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>KWin::RootItem</label>
+        <link refid="class_k_win_1_1_root_item"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>KWin::RotatingArcsItem</label>
+        <link refid="class_k_win_1_1_rotating_arcs_item"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>KWin::ShadowItem</label>
+        <link refid="class_k_win_1_1_shadow_item"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>KWin::ShakeCursorItem</label>
+        <link refid="class_k_win_1_1_shake_cursor_item"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>KWin::SurfaceItem</label>
+        <link refid="class_k_win_1_1_surface_item"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>KWin::SurfaceItemInternal</label>
+        <link refid="class_k_win_1_1_surface_item_internal"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>KWin::SurfaceItemWayland</label>
+        <link refid="class_k_win_1_1_surface_item_wayland"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>KWin::WindowItem</label>
+        <link refid="class_k_win_1_1_window_item"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>KWin::WindowItemInternal</label>
+        <link refid="class_k_win_1_1_window_item_internal"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>KWin::WindowItemWayland</label>
+        <link refid="class_k_win_1_1_window_item_wayland"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::Item</label>
+        <link refid="class_k_win_1_1_item"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/scene/item.h" line="48" column="1" bodyfile="kwin/src/scene/item.h" bodystart="49" bodyend="204"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_item_1a1123f4c5b92b63d2327451f15202b0f5" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>addChild</name></member>
+      <member refid="class_k_win_1_1_item_1aa4ff40a28180af18a130c71752f24024" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>addEffect</name></member>
+      <member refid="class_k_win_1_1_item_1a2cd75e545d4de3d2cf9a58c90fe95a82" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>boundingRect</name></member>
+      <member refid="class_k_win_1_1_item_1afe542ac410794a496433aa91921fcc51" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>boundingRectChanged</name></member>
+      <member refid="class_k_win_1_1_item_1a6878479968c6b288bca50f615ba3b739" prot="protected" virt="virtual"><scope>KWin::Item</scope><name>buildQuads</name></member>
+      <member refid="class_k_win_1_1_item_1a17c2db06f671b7374afdbf09b4043a1b" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>childAdded</name></member>
+      <member refid="class_k_win_1_1_item_1ac0dc5aebbfc288debf9e59ede6f4d39b" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>childItems</name></member>
+      <member refid="class_k_win_1_1_item_1ab938104b60ece620180da2d602eb3982" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>colorDescription</name></member>
+      <member refid="class_k_win_1_1_item_1a13c89fdb18dd41beb14a4c7a9cfcdc5e" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>computeEffectiveVisibility</name></member>
+      <member refid="class_k_win_1_1_item_1ab79a5c5e8295377ef19c948d53ff158f" prot="protected" virt="non-virtual"><scope>KWin::Item</scope><name>discardQuads</name></member>
+      <member refid="class_k_win_1_1_item_1a3d43908f92f8e7f5b53790e5d4118f32" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>explicitVisible</name></member>
+      <member refid="class_k_win_1_1_item_1a5a02454926dad542b44dd7dc3037877c" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>hasEffects</name></member>
+      <member refid="class_k_win_1_1_item_1a3115fe9f6c0836415bbaa8638ce45048" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>isVisible</name></member>
+      <member refid="class_k_win_1_1_item_1ab87c45c078db860d6ffd118ecdd7843a" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>Item</name></member>
+      <member refid="class_k_win_1_1_item_1a5afeef387f57f72da8eb33148633cfcc" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_boundingRect</name></member>
+      <member refid="class_k_win_1_1_item_1ab6c2322c411f4f0f472f0bee5afa768b" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_childItems</name></member>
+      <member refid="class_k_win_1_1_item_1a0d0eec48754dd3047fbab009539797fc" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_colorDescription</name></member>
+      <member refid="class_k_win_1_1_item_1a7e9511756075a4da12c2932674b7f70b" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_effectCount</name></member>
+      <member refid="class_k_win_1_1_item_1a5b83e5893b902c4bfd406076431d3d65" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_effectiveVisible</name></member>
+      <member refid="class_k_win_1_1_item_1af8b05673d53e1a91761146afbcf4df55" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_explicitVisible</name></member>
+      <member refid="class_k_win_1_1_item_1a165d33bb278fb18e9d0ff55fa6903a0b" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_itemToSceneTransform</name></member>
+      <member refid="class_k_win_1_1_item_1aa890b045f777dcdd70d067d506d6fc36" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_opacity</name></member>
+      <member refid="class_k_win_1_1_item_1a10ffbe9715be6777bab86664fff20f11" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_parentItem</name></member>
+      <member refid="class_k_win_1_1_item_1ae5cbe304de5428313ed140840b34e509" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_position</name></member>
+      <member refid="class_k_win_1_1_item_1a66953f4a85a5418d32acd745a6eec6c9" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_presentationHint</name></member>
+      <member refid="class_k_win_1_1_item_1a18089eb68ac155bbf1d3c14388c60890" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_quads</name></member>
+      <member refid="class_k_win_1_1_item_1ab6fff873d3e941a878c6d2d01d3086bf" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_renderingIntent</name></member>
+      <member refid="class_k_win_1_1_item_1a9a0f5e5643f46fef7cda9a3087e3d6ef" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_repaints</name></member>
+      <member refid="class_k_win_1_1_item_1a4b3205317500e4d613abe690019e74da" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_scene</name></member>
+      <member refid="class_k_win_1_1_item_1a7509f33ffecfbe2dff3298c9e7d4ae2e" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_sceneToItemTransform</name></member>
+      <member refid="class_k_win_1_1_item_1ab4481e1d9b804adbde19f90a7b2622e6" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_size</name></member>
+      <member refid="class_k_win_1_1_item_1a4210cf38db9928270fe61daec4dc1ff8" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_sortedChildItems</name></member>
+      <member refid="class_k_win_1_1_item_1a717ee35f0de0e8a3e56b644074d41b43" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_transform</name></member>
+      <member refid="class_k_win_1_1_item_1a32129bc374e5fb0c1b7d0238fae7d506" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>m_z</name></member>
+      <member refid="class_k_win_1_1_item_1a086a2e271563ecb85cde6fbf2a616c71" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>mapFromScene</name></member>
+      <member refid="class_k_win_1_1_item_1aa7f7455ed653a89d4df4687ea1a38b8f" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>mapToScene</name></member>
+      <member refid="class_k_win_1_1_item_1ac7c0c20e7600b827785b73ee0374e085" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>mapToScene</name></member>
+      <member refid="class_k_win_1_1_item_1a419a47035d40af886b1f23a3cdbfd25a" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>markSortedChildItemsDirty</name></member>
+      <member refid="class_k_win_1_1_item_1a0cd9ffaa64f975eddcc65c76a0bde096" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>opacity</name></member>
+      <member refid="class_k_win_1_1_item_1a274cdc9fe90fa038d749b0552d777481" prot="public" virt="virtual"><scope>KWin::Item</scope><name>opaque</name></member>
+      <member refid="class_k_win_1_1_item_1adf691376eafaf7e3545e4cdee16c6a8f" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>paintedArea</name></member>
+      <member refid="class_k_win_1_1_item_1a831e137ba1e2ceb1091cd340d3a375ce" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>paintedArea</name></member>
+      <member refid="class_k_win_1_1_item_1a7cbfb2f1aa4960f7c6265c5b67e7e4b0" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>parentItem</name></member>
+      <member refid="class_k_win_1_1_item_1a0b6c7ffb1764ad316f544f928496fa24" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>position</name></member>
+      <member refid="class_k_win_1_1_item_1a2424c89c8f2411b64cc7c97e25e905b5" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>positionChanged</name></member>
+      <member refid="class_k_win_1_1_item_1a06d0f2aea8e42db7557896d494e690af" prot="public" virt="virtual"><scope>KWin::Item</scope><name>preprocess</name></member>
+      <member refid="class_k_win_1_1_item_1a2aae596524c3ffa5e3f095b932fe2cac" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>presentationHint</name></member>
+      <member refid="class_k_win_1_1_item_1a636cc0d032fc8813db966c4acdb3df50" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>quads</name></member>
+      <member refid="class_k_win_1_1_item_1a6e9ab7045e27f6d1aa1d023234c5f5ff" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>rect</name></member>
+      <member refid="class_k_win_1_1_item_1a4d60aff9d123e70c1cc2881b182278af" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>removeChild</name></member>
+      <member refid="class_k_win_1_1_item_1a9876e64e6c4cda1fb61d073448d71188" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>removeEffect</name></member>
+      <member refid="class_k_win_1_1_item_1afac625e160339a248b02f78d280219bf" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>removeRepaints</name></member>
+      <member refid="class_k_win_1_1_item_1a30178857b737d8c5a512b5bba9827989" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>renderingIntent</name></member>
+      <member refid="class_k_win_1_1_item_1a982be6965729c6101b0e24c8bead45c3" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>resetRepaints</name></member>
+      <member refid="class_k_win_1_1_item_1a28ece053baba86da188cc6f0e580ca8c" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>scene</name></member>
+      <member refid="class_k_win_1_1_item_1a3ed94abcac992105cd9d4579fda2b6c7" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>scheduleFrame</name></member>
+      <member refid="class_k_win_1_1_item_1ad3ad797c32e96df4e9715cca925bc4e7" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>scheduleRepaint</name></member>
+      <member refid="class_k_win_1_1_item_1a5f1eda36c0709c78a579b06726d467cf" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>scheduleRepaint</name></member>
+      <member refid="class_k_win_1_1_item_1a4ef686262e1ea5e07d3d1f232f87632b" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>scheduleRepaint</name></member>
+      <member refid="class_k_win_1_1_item_1af953421014be376905b0d5edc4d94fff" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>scheduleRepaintInternal</name></member>
+      <member refid="class_k_win_1_1_item_1ab757a14799270e301fa4ed507544d01a" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>scheduleRepaintInternal</name></member>
+      <member refid="class_k_win_1_1_item_1a97610f6c8011c4197f2683230d920adc" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>scheduleSceneRepaint</name></member>
+      <member refid="class_k_win_1_1_item_1a2553e90c867bcb4c04a1650d9db1cc6b" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>scheduleSceneRepaint</name></member>
+      <member refid="class_k_win_1_1_item_1a2684bb4061c4c2d5dc396a7d996adca1" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>scheduleSceneRepaintInternal</name></member>
+      <member refid="class_k_win_1_1_item_1a054862680e34938384c9b905303d4609" prot="protected" virt="non-virtual"><scope>KWin::Item</scope><name>setColorDescription</name></member>
+      <member refid="class_k_win_1_1_item_1aceea0be9507d2c0565629c9c2304942d" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>setOpacity</name></member>
+      <member refid="class_k_win_1_1_item_1a2a7a1c768681631446b853b595b90b5a" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>setParentItem</name></member>
+      <member refid="class_k_win_1_1_item_1addfb9f3bc08701f6856e025d2b8dfd66" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>setPosition</name></member>
+      <member refid="class_k_win_1_1_item_1a9326cf1000c0a2a1707c8f7f8955e7c1" prot="protected" virt="non-virtual"><scope>KWin::Item</scope><name>setPresentationHint</name></member>
+      <member refid="class_k_win_1_1_item_1a426759a0d352b2a51fece60c7ed5b4d1" prot="protected" virt="non-virtual"><scope>KWin::Item</scope><name>setRenderingIntent</name></member>
+      <member refid="class_k_win_1_1_item_1a0abc1858b1c4074f51b23e85d953baa2" prot="protected" virt="non-virtual"><scope>KWin::Item</scope><name>setScene</name></member>
+      <member refid="class_k_win_1_1_item_1aadbea3fa26cfec91732450904af7d54e" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>setSize</name></member>
+      <member refid="class_k_win_1_1_item_1a00e9897feae250e280a29a1beda4029c" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>setTransform</name></member>
+      <member refid="class_k_win_1_1_item_1a35c893e1d8bd33f1776876de4b426f64" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>setVisible</name></member>
+      <member refid="class_k_win_1_1_item_1acd230ffa121bcc3d8305349fd7ecf993" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>setZ</name></member>
+      <member refid="class_k_win_1_1_item_1aec25718545880feac8c9c4b0cab138ad" prot="public" virt="virtual"><scope>KWin::Item</scope><name>shape</name></member>
+      <member refid="class_k_win_1_1_item_1ad0ad42f5708479d6339fd50999dfdfa2" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>size</name></member>
+      <member refid="class_k_win_1_1_item_1a00ea88f0a5981ad8434b959bfb73041e" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>sizeChanged</name></member>
+      <member refid="class_k_win_1_1_item_1a1043a499bdf86472bb3373bd456945fd" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>sortedChildItems</name></member>
+      <member refid="class_k_win_1_1_item_1a92b47e4fc74c0957b83aa9555b6592ad" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>stackAfter</name></member>
+      <member refid="class_k_win_1_1_item_1ad8e4299cc2a392edc4cc55102347d4a1" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>stackBefore</name></member>
+      <member refid="class_k_win_1_1_item_1a768d9f08db75f2f4169fa0d1f43ebd8f" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>takeRepaints</name></member>
+      <member refid="class_k_win_1_1_item_1ac7469129e8d2fdb52056e43f795c850e" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>transform</name></member>
+      <member refid="class_k_win_1_1_item_1ac59e1599c50c35823d336c881e72cd9e" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>updateBoundingRect</name></member>
+      <member refid="class_k_win_1_1_item_1ad57e6af9ae4dea5ed50300849940d17e" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>updateEffectiveVisibility</name></member>
+      <member refid="class_k_win_1_1_item_1a6d4225065974c76510232b8a469a934b" prot="private" virt="non-virtual"><scope>KWin::Item</scope><name>updateItemToSceneTransform</name></member>
+      <member refid="class_k_win_1_1_item_1ab03fdfba46eabb08d8e7813eddbe8a46" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>z</name></member>
+      <member refid="class_k_win_1_1_item_1a4eaf32a5e38d0b1c0cd219e65ce9d49b" prot="public" virt="non-virtual"><scope>KWin::Item</scope><name>~Item</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

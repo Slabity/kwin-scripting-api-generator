@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="netinfo_8h" kind="file" language="C++">
+    <compoundname>netinfo.h</compoundname>
+    <includes local="yes">config-kwin.h</includes>
+    <includes local="no">NETWM</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">xcb/xcb.h</includes>
+    <includedby refid="events_8cpp" local="yes">kwin/src/events.cpp</includedby>
+    <includedby refid="netinfo_8cpp" local="yes">kwin/src/netinfo.cpp</includedby>
+    <includedby refid="rootinfo__filter_8cpp" local="yes">kwin/src/rootinfo_filter.cpp</includedby>
+    <includedby refid="x11window_8cpp" local="yes">kwin/src/x11window.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/netinfo.h</label>
+        <link refid="netinfo_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>NETWM</label>
+      </node>
+      <node id="2">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+      <node id="5">
+        <label>xcb/xcb.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/events.cpp</label>
+        <link refid="events_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/netinfo.cpp</label>
+        <link refid="netinfo_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/netinfo.h</label>
+        <link refid="netinfo_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>kwin/src/rootinfo_filter.cpp</label>
+        <link refid="rootinfo__filter_8cpp"/>
+      </node>
+      <node id="5">
+        <label>kwin/src/x11window.cpp</label>
+        <link refid="x11window_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_root_info" prot="public">KWin::RootInfo</innerclass>
+    <innerclass refid="class_k_win_1_1_win_info" prot="public">KWin::WinInfo</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>1999,<sp/>2000<sp/>Matthias<sp/>Ettrich<sp/>&lt;ettrich@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2003<sp/>Lubos<sp/>Lunak<sp/>&lt;l.lunak@kde.org&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2009<sp/>Lucas<sp/>Murray<sp/>&lt;lmurray@undefinedfire.com&gt;</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2013<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;config-kwin.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!KWIN_BUILD_X11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#error<sp/>Do<sp/>not<sp/>include<sp/>on<sp/>non-X11<sp/>builds</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;NETWM&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;xcb/xcb.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_root_info_filter" kindref="compound">RootInfoFilter</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_x11_window" kindref="compound">X11Window</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="class_k_win_1_1_root_info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_root_info_1a2836096f943edf10ca0034aebbb28149" kindref="member">RootInfo</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>NETRootInfo</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_root_info_1a2836096f943edf10ca0034aebbb28149" kindref="member">RootInfo</ref><sp/>*<ref refid="class_k_win_1_1_root_info_1a9093471990f7cd8d061665bd046dc55d" kindref="member">create</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_root_info_1ae7c76e89042c78049a2fdd1c16e079a7" kindref="member">destroy</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_root_info_1a2836096f943edf10ca0034aebbb28149" kindref="member">RootInfo</ref>(xcb_window_t<sp/>w,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,<sp/>NET::Properties<sp/>properties,<sp/>NET::WindowTypes<sp/>types,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NET::States<sp/>states,<sp/>NET::Properties2<sp/>properties2,<sp/>NET::Actions<sp/>actions,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scr<sp/>=<sp/>-1);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_root_info_1a9ce022886a0076e633d1474039c7a76b" kindref="member">setActiveClient</ref>(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*client);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_root_info_1ad2e02422550938b34f698def9bb0acbe" kindref="member">changeNumberOfDesktops</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_root_info_1a84cfbb6f3627cc378968467f0fda97f0" kindref="member">changeCurrentDesktop</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>d)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_root_info_1ae57fab2884ebe9c02c9882d8c2bae797" kindref="member">changeActiveWindow</ref>(xcb_window_t<sp/>w,<sp/>NET::RequestSource<sp/>src,<sp/>xcb_timestamp_t<sp/>timestamp,<sp/>xcb_window_t<sp/>active_window)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_root_info_1ad9dd84c152911e1632c7e6f6a5bc0600" kindref="member">closeWindow</ref>(xcb_window_t<sp/>w)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_root_info_1ac9e139c1815a5e1f41fca9cb87d8585e" kindref="member">moveResize</ref>(xcb_window_t<sp/>w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x_root,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y_root,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>direction,<sp/>xcb_button_t<sp/>button,<sp/>RequestSource<sp/>source)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_root_info_1a73c518f040c0e5563e9788d27cbddf27" kindref="member">moveResizeWindow</ref>(xcb_window_t<sp/>w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_root_info_1a63f57546e79c258f0f24778affb52f7a" kindref="member">showWindowMenu</ref>(xcb_window_t<sp/>w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>device_id,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x_root,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y_root)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_root_info_1ac1d9d3b94d815536db0894b8a50e68fd" kindref="member">gotPing</ref>(xcb_window_t<sp/>w,<sp/>xcb_timestamp_t<sp/>timestamp)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_root_info_1a0f8af07c34370f7e3257b1760478a919" kindref="member">restackWindow</ref>(xcb_window_t<sp/>w,<sp/>RequestSource<sp/>source,<sp/>xcb_window_t<sp/>above,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>detail,<sp/>xcb_timestamp_t<sp/>timestamp)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_root_info_1ad7af8124920113ae0c17a765be5a7ed6" kindref="member">changeShowingDesktop</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>showing)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;RootInfo&gt;<sp/>s_self;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_root_info_1a2836096f943edf10ca0034aebbb28149" kindref="member">RootInfo</ref><sp/>*<ref refid="class_k_win_1_1_root_info_1a3b669ad23f71afc0013bdd0abdf2b629" kindref="member">rootInfo</ref>();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>xcb_window_t<sp/>m_activeWindow;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;RootInfoFilter&gt;<sp/>m_eventFilter;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="class_k_win_1_1_root_info_1a3b669ad23f71afc0013bdd0abdf2b629" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_root_info_1a2836096f943edf10ca0034aebbb28149" kindref="member">RootInfo</ref><sp/>*<ref refid="namespace_k_win_1a00237bcdba9aaa1c88184bbf87712ae8" kindref="member">rootInfo</ref>()</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>RootInfo::s_self.get();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="class_k_win_1_1_win_info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_win_info_1a7b89591d252858ac3faf19c2ccfd25ea" kindref="member">WinInfo</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>NETWinInfo</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_win_info_1a7b89591d252858ac3faf19c2ccfd25ea" kindref="member">WinInfo</ref>(<ref refid="class_k_win_1_1_x11_window" kindref="compound">X11Window</ref><sp/>*c,<sp/>xcb_window_t<sp/>window,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xcb_window_t<sp/>rwin,<sp/>NET::Properties<sp/>properties,<sp/>NET::Properties2<sp/>properties2);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_win_info_1acee9ed4ef9e41b96fef89899c41e43fd" kindref="member">changeDesktop</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desktop)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_win_info_1a73bf33e3f2f0cd03a088330eda74d856" kindref="member">changeFullscreenMonitors</ref>(NETFullscreenMonitors<sp/>topology)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_win_info_1acca4cea82de0126c387eee8a91f0f7df" kindref="member">changeState</ref>(NET::States<sp/>state,<sp/>NET::States<sp/>mask)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_win_info_1ae50ce82c547b4ea590d20b576af40014" kindref="member">disable</ref>();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_x11_window" kindref="compound">X11Window</ref><sp/>*m_client;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/netinfo.h"/>
+  </compounddef>
+</doxygen>

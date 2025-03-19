@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="nightlightmanager_8h" kind="file" language="C++">
+    <compoundname>nightlightmanager.h</compoundname>
+    <includes refid="constants_8h" local="yes">constants.h</includes>
+    <includes local="yes">plugin.h</includes>
+    <includes local="no">KConfigWatcher</includes>
+    <includes local="no">QDateTime</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">QPair</includes>
+    <includedby refid="plugins_2nightlight_2main_8cpp" local="yes">kwin/src/plugins/nightlight/main.cpp</includedby>
+    <includedby refid="nightlightdbusinterface_8cpp" local="yes">kwin/src/plugins/nightlight/nightlightdbusinterface.cpp</includedby>
+    <includedby refid="nightlightmanager_8cpp" local="yes">kwin/src/plugins/nightlight/nightlightmanager.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>constants.h</label>
+        <link refid="constants_8h"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/plugins/nightlight/nightlightmanager.h</label>
+        <link refid="nightlightmanager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>KConfigWatcher</label>
+      </node>
+      <node id="5">
+        <label>QDateTime</label>
+      </node>
+      <node id="6">
+        <label>QObject</label>
+      </node>
+      <node id="7">
+        <label>QPair</label>
+      </node>
+      <node id="3">
+        <label>plugin.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/plugins/nightlight/main.cpp</label>
+        <link refid="plugins_2nightlight_2main_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/plugins/nightlight/nightlightdbusinterface.cpp</label>
+        <link refid="nightlightdbusinterface_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/plugins/nightlight/nightlightmanager.cpp</label>
+        <link refid="nightlightmanager_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/plugins/nightlight/nightlightmanager.h</label>
+        <link refid="nightlightmanager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_night_light_manager" prot="public">KWin::NightLightManager</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2017<sp/>Roman<sp/>Gilg<sp/>&lt;subdiff@gmail.com&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2024<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="constants_8h" kindref="compound">constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;plugin.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KConfigWatcher&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDateTime&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QPair&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QTimer;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_clock_skew_notifier" kindref="compound">ClockSkewNotifier</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_night_light_d_bus_interface" kindref="compound">NightLightDBusInterface</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="namespace_k_win_1aaaba2bdf110fc3e77668340b9e5a4ff4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>QPair&lt;QDateTime,<sp/>QDateTime&gt;<sp/><ref refid="namespace_k_win_1aaaba2bdf110fc3e77668340b9e5a4ff4" kindref="member">DateTimes</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="namespace_k_win_1a69cc04b93ce22742c7032b5c5faf3334" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a69cc04b93ce22742c7032b5c5faf3334" kindref="member">NightLightMode</ref><sp/>{</highlight></codeline>
+<codeline lineno="41" refid="namespace_k_win_1a69cc04b93ce22742c7032b5c5faf3334a0c17304e816c442d4a1a8c59e63b5958" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a69cc04b93ce22742c7032b5c5faf3334a0c17304e816c442d4a1a8c59e63b5958" kindref="member">Automatic</ref>,</highlight></codeline>
+<codeline lineno="47" refid="namespace_k_win_1a69cc04b93ce22742c7032b5c5faf3334a84eff8931e8bf8535d09d938c2a53c6b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a69cc04b93ce22742c7032b5c5faf3334a84eff8931e8bf8535d09d938c2a53c6b" kindref="member">Location</ref>,</highlight></codeline>
+<codeline lineno="53" refid="namespace_k_win_1a69cc04b93ce22742c7032b5c5faf3334a2975b26eb0d87f196ed31f8434b983d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a69cc04b93ce22742c7032b5c5faf3334a2975b26eb0d87f196ed31f8434b983d7" kindref="member">Timings</ref>,</highlight></codeline>
+<codeline lineno="57" refid="namespace_k_win_1a69cc04b93ce22742c7032b5c5faf3334aae22f7bbd5a84c4c3c83abf57f00bedc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a69cc04b93ce22742c7032b5c5faf3334aae22f7bbd5a84c4c3c83abf57f00bedc" kindref="member">Constant</ref>,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="class_k_win_1_1_night_light_manager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_night_light_manager_1aee973c19bc0a4db2010f20dfaf054e3c" kindref="member">NightLightManager</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_plugin_1a17653213e000526c40339ca1f03af1d4" kindref="member">Plugin</ref></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1aee973c19bc0a4db2010f20dfaf054e3c" kindref="member">NightLightManager</ref>();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_night_light_manager_1aee973c19bc0a4db2010f20dfaf054e3c" kindref="member">~NightLightManager</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1ad3110d65f1339f8347de686ff6439add" kindref="member">autoLocationUpdate</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>latitude,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>longitude);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1a4155dbadb98fc9aedc235f299ef4a21d" kindref="member">toggle</ref>();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1a90eaa7bdb6c3f8015eaee09674479b06" kindref="member">isInhibited</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1abc9519cf0de6712fecc0b6fb1b8ee47c" kindref="member">inhibit</ref>();</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1aa343bf28eda8bd4bb91c7ade5b2060ff" kindref="member">uninhibit</ref>();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1ad806f0a86c8e4b7e9949ce7b08164d44" kindref="member">isEnabled</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1a412a1612907d9e8116b43a67a9030e7e" kindref="member">isRunning</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1a3fd4c7a95e29e094d6739986b7f1cea6" kindref="member">currentTemperature</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1a40cbe83b1712416a263f18650389525b" kindref="member">targetTemperature</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a69cc04b93ce22742c7032b5c5faf3334" kindref="member">NightLightMode</ref><sp/><ref refid="class_k_win_1_1_night_light_manager_1a7e623e4425e812f0e008bc525e6adb5e" kindref="member">mode</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1a22998ee5cef812c156a4a2d7285a066b" kindref="member">daylight</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>QDateTime<sp/><ref refid="class_k_win_1_1_night_light_manager_1a647ca876e3e0e63bbd64671e533f34b3" kindref="member">previousTransitionDateTime</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>qint64<sp/><ref refid="class_k_win_1_1_night_light_manager_1a3a6780bbb2bcbec69977a67ac2d3387a" kindref="member">previousTransitionDuration</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>QDateTime<sp/><ref refid="class_k_win_1_1_night_light_manager_1a281e1103b37e49e2950f021c545840c6" kindref="member">scheduledTransitionDateTime</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>qint64<sp/><ref refid="class_k_win_1_1_night_light_manager_1a4ca3c3931def9ae1e44986b60ccff77f" kindref="member">scheduledTransitionDuration</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1ac0ecb32ba75d690d58e3f697d16d26cb" kindref="member">reconfigure</ref>();</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1adbe2f1f6dea939e57683f8f35c4971a6" kindref="member">preview</ref>(uint<sp/>previewTemperature);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1aa8d87cc1709a30790fec9f45167ecb0c" kindref="member">stopPreview</ref>();</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1a1ede4e2de78731c1115c79ba6e6b916d" kindref="member">quickAdjust</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1a40cbe83b1712416a263f18650389525b" kindref="member">targetTemperature</ref>);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="199" refid="class_k_win_1_1_night_light_manager_1a461b018e1fb0eaa979d5be9be7af95b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1a461b018e1fb0eaa979d5be9be7af95b3" kindref="member">inhibitedChanged</ref>();</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204" refid="class_k_win_1_1_night_light_manager_1af1eedee4b20958fc168435f923cadf8b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1af1eedee4b20958fc168435f923cadf8b" kindref="member">enabledChanged</ref>();</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209" refid="class_k_win_1_1_night_light_manager_1a899ba42a5432ca780c9f6e68276bcbdb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1a899ba42a5432ca780c9f6e68276bcbdb" kindref="member">runningChanged</ref>();</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214" refid="class_k_win_1_1_night_light_manager_1a211bc99661cd8bf7ae4a720a204aea78" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1a211bc99661cd8bf7ae4a720a204aea78" kindref="member">currentTemperatureChanged</ref>();</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219" refid="class_k_win_1_1_night_light_manager_1af0ef72af4723ea643143eaed4f20e32a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1af0ef72af4723ea643143eaed4f20e32a" kindref="member">targetTemperatureChanged</ref>();</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224" refid="class_k_win_1_1_night_light_manager_1a15b1418137af500e2b7751bd3f815466" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1a15b1418137af500e2b7751bd3f815466" kindref="member">modeChanged</ref>();</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229" refid="class_k_win_1_1_night_light_manager_1a0f1ccd5180027a23842ef1a95f583861" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1a0f1ccd5180027a23842ef1a95f583861" kindref="member">daylightChanged</ref>();</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234" refid="class_k_win_1_1_night_light_manager_1a9f70e2f6d5b0e18906c0f2bf8ca7a055" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1a9f70e2f6d5b0e18906c0f2bf8ca7a055" kindref="member">previousTransitionTimingsChanged</ref>();</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239" refid="class_k_win_1_1_night_light_manager_1a556f82d4809c267a0055ee0849085bd2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1a556f82d4809c267a0055ee0849085bd2" kindref="member">scheduledTransitionTimingsChanged</ref>();</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>readConfig();</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>hardReset();</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>slowUpdate(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1a40cbe83b1712416a263f18650389525b" kindref="member">targetTemperature</ref>);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>resetAllTimers();</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>currentTargetTemperature()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>cancelAllTimers();</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>resetQuickAdjustTimer(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1a40cbe83b1712416a263f18650389525b" kindref="member">targetTemperature</ref>);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>resetSlowUpdateTimers();</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateTargetTemperature();</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateTransitionTimings(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QDateTime<sp/>&amp;dateTime);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1aaaba2bdf110fc3e77668340b9e5a4ff4" kindref="member">DateTimes</ref><sp/>getSunTimings(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QDateTime<sp/>&amp;dateTime,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>latitude,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>longitude,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>morning)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>commitGammaRamps(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>temperature);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setEnabled(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setRunning(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>running);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setCurrentTemperature(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>temperature);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setMode(<ref refid="namespace_k_win_1a69cc04b93ce22742c7032b5c5faf3334" kindref="member">NightLightMode</ref><sp/><ref refid="class_k_win_1_1_night_light_manager_1a7e623e4425e812f0e008bc525e6adb5e" kindref="member">mode</ref>);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setDaylight(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_night_light_manager_1a22998ee5cef812c156a4a2d7285a066b" kindref="member">daylight</ref>);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_night_light_d_bus_interface" kindref="compound">NightLightDBusInterface</ref><sp/>*m_iface;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_clock_skew_notifier" kindref="compound">ClockSkewNotifier</ref><sp/>*m_skewNotifier;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Specifies<sp/>whether<sp/>Night<sp/>Light<sp/>is<sp/>enabled.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_active<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Specifies<sp/>whether<sp/>Night<sp/>Light<sp/>is<sp/>currently<sp/>running.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_running<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Specifies<sp/>whether<sp/>Night<sp/>Light<sp/>is<sp/>inhibited<sp/>globally.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_isGloballyInhibited<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a69cc04b93ce22742c7032b5c5faf3334" kindref="member">NightLightMode</ref><sp/>m_mode<sp/>=<sp/><ref refid="namespace_k_win_1a69cc04b93ce22742c7032b5c5faf3334a0c17304e816c442d4a1a8c59e63b5958" kindref="member">NightLightMode::Automatic</ref>;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>previous<sp/>and<sp/>next<sp/>sunrise/sunset<sp/>intervals<sp/>-<sp/>in<sp/>UTC<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1aaaba2bdf110fc3e77668340b9e5a4ff4" kindref="member">DateTimes</ref><sp/>m_prev<sp/>=<sp/><ref refid="namespace_k_win_1aaaba2bdf110fc3e77668340b9e5a4ff4" kindref="member">DateTimes</ref>();</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1aaaba2bdf110fc3e77668340b9e5a4ff4" kindref="member">DateTimes</ref><sp/>m_next<sp/>=<sp/><ref refid="namespace_k_win_1aaaba2bdf110fc3e77668340b9e5a4ff4" kindref="member">DateTimes</ref>();</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>whether<sp/>it<sp/>is<sp/>currently<sp/>day<sp/>or<sp/>night</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_daylight<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>manual<sp/>times<sp/>from<sp/>config</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/>QTime<sp/>m_morning<sp/>=<sp/>QTime(6,<sp/>0);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>QTime<sp/>m_evening<sp/>=<sp/>QTime(18,<sp/>0);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_transitionDuration<sp/>=<sp/>DEFAULT_TRANSITION_DURATION;<sp/></highlight><highlight class="comment">//<sp/>in<sp/>milliseconds</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>auto<sp/>location<sp/>provided<sp/>by<sp/>work<sp/>space</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_latitudeAuto;</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_longitudeAuto;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>manual<sp/>location<sp/>from<sp/>config</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_latitudeFixed;</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>m_longitudeFixed;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;QTimer&gt;<sp/>m_slowUpdateStartTimer;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;QTimer&gt;<sp/>m_slowUpdateTimer;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;QTimer&gt;<sp/>m_quickAdjustTimer;</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;QTimer&gt;<sp/>m_previewTimer;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_currentTemperature<sp/>=<sp/>DEFAULT_DAY_TEMPERATURE;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_targetTemperature<sp/>=<sp/>DEFAULT_DAY_TEMPERATURE;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_dayTargetTemperature<sp/>=<sp/>DEFAULT_DAY_TEMPERATURE;</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_nightTargetTemperature<sp/>=<sp/>DEFAULT_NIGHT_TEMPERATURE;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_inhibitReferenceCount<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/>KConfigWatcher::Ptr<sp/>m_configWatcher;</highlight></codeline>
+<codeline lineno="314"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/plugins/nightlight/nightlightmanager.h"/>
+  </compounddef>
+</doxygen>

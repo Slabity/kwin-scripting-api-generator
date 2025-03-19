@@ -1,0 +1,379 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="previewsettings_8cpp" kind="file" language="C++">
+    <compoundname>previewsettings.cpp</compoundname>
+    <includes refid="previewsettings_8h" local="yes">previewsettings.h</includes>
+    <includes refid="buttonsmodel_8h" local="yes">buttonsmodel.h</includes>
+    <includes refid="previewbridge_8h" local="yes">previewbridge.h</includes>
+    <includes local="no">KLocalizedString</includes>
+    <includes local="no">QFontDatabase</includes>
+    <includes local="yes">moc_previewsettings.cpp</includes>
+    <incdepgraph>
+      <node id="9">
+        <label>buttonsmodel.h</label>
+        <link refid="buttonsmodel_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>previewbridge.h</label>
+        <link refid="previewbridge_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/kcms/decoration/declarative-plugin/previewsettings.cpp</label>
+        <link refid="previewsettings_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>previewsettings.h</label>
+        <link refid="previewsettings_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>KDecoration3/DecorationButton</label>
+      </node>
+      <node id="3">
+        <label>KDecoration3/DecorationSettings</label>
+      </node>
+      <node id="12">
+        <label>KDecoration3/Private/DecorationBridge</label>
+      </node>
+      <node id="4">
+        <label>KDecoration3/Private/DecorationSettingsPrivate</label>
+      </node>
+      <node id="14">
+        <label>KLocalizedString</label>
+      </node>
+      <node id="5">
+        <label>QAbstractListModel</label>
+      </node>
+      <node id="15">
+        <label>QFontDatabase</label>
+      </node>
+      <node id="13">
+        <label>QList</label>
+      </node>
+      <node id="6">
+        <label>QObject</label>
+      </node>
+      <node id="7">
+        <label>QPointer</label>
+      </node>
+      <node id="8">
+        <label>QQmlEngine</label>
+      </node>
+      <node id="16">
+        <label>moc_previewsettings.cpp</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_k_decoration3">KDecoration3</innernamespace>
+    <innernamespace refid="namespace_k_decoration3_1_1_preview">KDecoration3::Preview</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2014<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-only<sp/>OR<sp/>GPL-3.0-only<sp/>OR<sp/>LicenseRef-KDE-Accepted-GPL</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="previewsettings_8h" kindref="compound">previewsettings.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="buttonsmodel_8h" kindref="compound">buttonsmodel.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="previewbridge_8h" kindref="compound">previewbridge.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KLocalizedString&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QFontDatabase&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_decoration3" kindref="compound">KDecoration3</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_decoration3_1_1_preview" kindref="compound">Preview</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="class_k_decoration3_1_1_preview_1_1_border_sizes_model_1a1482b8cbfc3fb86d4c83f7fa4ca68446" refkind="member"><highlight class="normal"><ref refid="class_k_decoration3_1_1_preview_1_1_border_sizes_model_1a1482b8cbfc3fb86d4c83f7fa4ca68446" kindref="member">BorderSizesModel::BorderSizesModel</ref>(QObject<sp/>*parent)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QAbstractListModel(parent)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><ref refid="class_k_decoration3_1_1_preview_1_1_border_sizes_model_1a6068dc61abdcd5072a38074d405a8dd3" kindref="member">BorderSizesModel::~BorderSizesModel</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="class_k_decoration3_1_1_preview_1_1_border_sizes_model_1a7875b74122f45e388d0954f1faaad778" refkind="member"><highlight class="normal">QVariant<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_border_sizes_model_1a7875b74122f45e388d0954f1faaad778" kindref="member">BorderSizesModel::data</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>role)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="28"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!index.isValid()<sp/>||<sp/>index.row()<sp/>&lt;<sp/>0<sp/>||<sp/>index.row()<sp/>&gt;=<sp/>m_borders.count()<sp/>||<sp/>index.column()<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QVariant();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(role<sp/>!=<sp/>Qt::DisplayRole<sp/>&amp;&amp;<sp/>role<sp/>!=<sp/>Qt::UserRole)<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QVariant();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QVariant::fromValue&lt;BorderSize&gt;(m_borders.at(index.row()));</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="class_k_decoration3_1_1_preview_1_1_border_sizes_model_1a575bc124f12b38c318eb62b18b8db3ce" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_border_sizes_model_1a575bc124f12b38c318eb62b18b8db3ce" kindref="member">BorderSizesModel::rowCount</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;parent)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="39"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(parent.isValid())<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_borders.count();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="class_k_decoration3_1_1_preview_1_1_border_sizes_model_1a6a0237f8732fffc795a77cc334cf44df" refkind="member"><highlight class="normal">QHash&lt;int,<sp/>QByteArray&gt;<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_border_sizes_model_1a6a0237f8732fffc795a77cc334cf44df" kindref="member">BorderSizesModel::roleNames</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="47"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>QHash&lt;int,<sp/>QByteArray&gt;<sp/>roles;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>roles.insert(Qt::DisplayRole,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;display&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>roles;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a5afb0e82e1e5ef84f3730ef749914194" refkind="member"><highlight class="normal"><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a5afb0e82e1e5ef84f3730ef749914194" kindref="member">PreviewSettings::PreviewSettings</ref>(DecorationSettings<sp/>*parent)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QObject()</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>DecorationSettingsPrivate(parent)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_alphaChannelSupported(true)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_onAllDesktopsAvailable(true)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_closeOnDoubleClick(false)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_leftButtons(new<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_buttons_model" kindref="compound">ButtonsModel</ref>(QList&lt;DecorationButtonType&gt;({DecorationButtonType::Menu,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DecorationButtonType::ApplicationMenu,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DecorationButtonType::OnAllDesktops}),</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_rightButtons(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_buttons_model" kindref="compound">ButtonsModel</ref>(QList&lt;DecorationButtonType&gt;({DecorationButtonType::ContextHelp,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DecorationButtonType::Minimize,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DecorationButtonType::Maximize,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DecorationButtonType::Close}),</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_availableButtons(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>ButtonsModel(QList&lt;DecorationButtonType&gt;({DecorationButtonType::Menu,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DecorationButtonType::ApplicationMenu,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DecorationButtonType::OnAllDesktops,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DecorationButtonType::Minimize,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DecorationButtonType::Maximize,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DecorationButtonType::Close,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DecorationButtonType::ContextHelp,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DecorationButtonType::Shade,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DecorationButtonType::KeepBelow,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DecorationButtonType::KeepAbove}),</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_borderSizes(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>BorderSizesModel(</highlight><highlight class="keyword">this</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_borderSize(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">(BorderSize::Normal))</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_font(QFontDatabase::systemFont(QFontDatabase::TitleFont))</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a3081f4d79c75817bd31acc81182de16e" kindref="member">PreviewSettings::alphaChannelSupportedChanged</ref>,<sp/>parent,<sp/>&amp;DecorationSettings::alphaChannelSupportedChanged);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1af8520b96688872dee333a46acaeedc76" kindref="member">PreviewSettings::onAllDesktopsAvailableChanged</ref>,<sp/>parent,<sp/>&amp;DecorationSettings::onAllDesktopsAvailableChanged);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1ac9cafac8c8405756d11e1f74cc7a6178" kindref="member">PreviewSettings::closeOnDoubleClickOnMenuChanged</ref>,<sp/>parent,<sp/>&amp;DecorationSettings::closeOnDoubleClickOnMenuChanged);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a14b2a490d920b6e852a34f77b66bbd07" kindref="member">PreviewSettings::fontChanged</ref>,<sp/>parent,<sp/>&amp;DecorationSettings::fontChanged);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>updateLeft<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>parent]()<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Q_EMIT<sp/>parent-&gt;decorationButtonsLeftChanged(decorationButtonsLeft());</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>updateRight<sp/>=<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>parent]()<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Q_EMIT<sp/>parent-&gt;decorationButtonsRightChanged(decorationButtonsRight());</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(m_leftButtons,<sp/>&amp;QAbstractItemModel::rowsRemoved,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>updateLeft);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(m_leftButtons,<sp/>&amp;QAbstractItemModel::rowsMoved,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>updateLeft);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(m_leftButtons,<sp/>&amp;QAbstractItemModel::rowsInserted,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>updateLeft);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(m_rightButtons,<sp/>&amp;QAbstractItemModel::rowsRemoved,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>updateRight);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(m_rightButtons,<sp/>&amp;QAbstractItemModel::rowsMoved,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>updateRight);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(m_rightButtons,<sp/>&amp;QAbstractItemModel::rowsInserted,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>updateRight);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a666fc51616cfcc570fa2484bdfba32ca" kindref="member">PreviewSettings::~PreviewSettings</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a290e96ab6b053c082d3406d3e2017751" refkind="member"><highlight class="normal">QAbstractItemModel<sp/>*<ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a6b42ea0423abda49e356148758d0a0d7" kindref="member">PreviewSettings::availableButtonsModel</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="104"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_availableButtons;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a7ace95eda1a231dfc10c405c9a498435" refkind="member"><highlight class="normal">QAbstractItemModel<sp/>*<ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a5e9a4c7a7f3209414871b2904c5f084f" kindref="member">PreviewSettings::leftButtonsModel</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="109"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_leftButtons;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1adae87dd9d10a432e389f588da045b443" refkind="member"><highlight class="normal">QAbstractItemModel<sp/>*<ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a9d63efaef4b046039f698c2009335378" kindref="member">PreviewSettings::rightButtonsModel</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="114"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_rightButtons;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1abf406f279f45dd2166bcabb401f35cd5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1abf406f279f45dd2166bcabb401f35cd5" kindref="member">PreviewSettings::isAlphaChannelSupported</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="119"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_alphaChannelSupported;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a05df800647200e8465d36b396853feb4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a05df800647200e8465d36b396853feb4" kindref="member">PreviewSettings::isOnAllDesktopsAvailable</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="124"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_onAllDesktopsAvailable;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1af0e90fd43e71b13a7efc223151420293" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1af0e90fd43e71b13a7efc223151420293" kindref="member">PreviewSettings::setAlphaChannelSupported</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>supported)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_alphaChannelSupported<sp/>==<sp/>supported)<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>m_alphaChannelSupported<sp/>=<sp/>supported;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a3081f4d79c75817bd31acc81182de16e" kindref="member">alphaChannelSupportedChanged</ref>(m_alphaChannelSupported);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a86376ca99a11e0b98523e6117eef2b34" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a86376ca99a11e0b98523e6117eef2b34" kindref="member">PreviewSettings::setOnAllDesktopsAvailable</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>available)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_onAllDesktopsAvailable<sp/>==<sp/>available)<sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>m_onAllDesktopsAvailable<sp/>=<sp/>available;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1af8520b96688872dee333a46acaeedc76" kindref="member">onAllDesktopsAvailableChanged</ref>(m_onAllDesktopsAvailable);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a4dea9ebfe99941804057b8d5df1346c2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a4dea9ebfe99941804057b8d5df1346c2" kindref="member">PreviewSettings::setCloseOnDoubleClickOnMenu</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_closeOnDoubleClick<sp/>==<sp/>enabled)<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>m_closeOnDoubleClick<sp/>=<sp/>enabled;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1ac9cafac8c8405756d11e1f74cc7a6178" kindref="member">closeOnDoubleClickOnMenuChanged</ref>(enabled);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155" refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1ae5f33ec61fa1b56810ac0049028d51dc" refkind="member"><highlight class="normal">QList&lt;DecorationButtonType&gt;<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1ae5f33ec61fa1b56810ac0049028d51dc" kindref="member">PreviewSettings::decorationButtonsLeft</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="156"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_leftButtons-&gt;buttons();</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160" refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a7a7ac8f355709f1e6b041b26231bb017" refkind="member"><highlight class="normal">QList&lt;DecorationButtonType&gt;<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a7a7ac8f355709f1e6b041b26231bb017" kindref="member">PreviewSettings::decorationButtonsRight</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="161"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_rightButtons-&gt;buttons();</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a17e5d2d3d3a5e70d65fdedc11848cc66" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a17e5d2d3d3a5e70d65fdedc11848cc66" kindref="member">PreviewSettings::addButtonToLeft</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row)</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>QModelIndex<sp/>index<sp/>=<sp/>m_availableButtons-&gt;index(row);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!index.isValid())<sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>m_leftButtons-&gt;add(index.data(Qt::UserRole).value&lt;DecorationButtonType&gt;());</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174" refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1aed42ab1f463fb3188fd98014af8fab4d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1aed42ab1f463fb3188fd98014af8fab4d" kindref="member">PreviewSettings::addButtonToRight</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row)</highlight></codeline>
+<codeline lineno="175"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>QModelIndex<sp/>index<sp/>=<sp/>m_availableButtons-&gt;index(row);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!index.isValid())<sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>m_rightButtons-&gt;add(index.data(Qt::UserRole).value&lt;DecorationButtonType&gt;());</highlight></codeline>
+<codeline lineno="181"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a275795e5a97c22665e0f50b6afbb926a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a275795e5a97c22665e0f50b6afbb926a" kindref="member">PreviewSettings::setBorderSizesIndex</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)</highlight></codeline>
+<codeline lineno="184"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_borderSize<sp/>==<sp/>index)<sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>m_borderSize<sp/>=<sp/>index;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1aeac17062e5c38ec6cf255c2744660291" kindref="member">borderSizesIndexChanged</ref>(index);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/>decorationSettings()-&gt;borderSizeChanged(<ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1aecd45349595da8a5ac2b19f469c88a78" kindref="member">borderSize</ref>());</highlight></codeline>
+<codeline lineno="191"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193" refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1aecd45349595da8a5ac2b19f469c88a78" refkind="member"><highlight class="normal">BorderSize<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1aecd45349595da8a5ac2b19f469c88a78" kindref="member">PreviewSettings::borderSize</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="194"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_borderSizes-&gt;index(m_borderSize).data(Qt::UserRole).value&lt;BorderSize&gt;();</highlight></codeline>
+<codeline lineno="196"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198" refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1ad1f8ab6664217e2d1f6b3ea64480353d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1ad1f8ab6664217e2d1f6b3ea64480353d" kindref="member">PreviewSettings::setFont</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QFont<sp/>&amp;<ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a57a167e0738b9680f700b458629a843d" kindref="member">font</ref>)</highlight></codeline>
+<codeline lineno="199"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_font<sp/>==<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a57a167e0738b9680f700b458629a843d" kindref="member">font</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>m_font<sp/>=<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a57a167e0738b9680f700b458629a843d" kindref="member">font</ref>;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a14b2a490d920b6e852a34f77b66bbd07" kindref="member">fontChanged</ref>(m_font);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207" refid="class_k_decoration3_1_1_preview_1_1_settings_1a75246976bc9d6e7ec46eb3697a0b61f8" refkind="member"><highlight class="normal"><ref refid="class_k_decoration3_1_1_preview_1_1_settings_1a75246976bc9d6e7ec46eb3697a0b61f8" kindref="member">Settings::Settings</ref>(QObject<sp/>*parent)</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QObject(parent)</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_k_decoration3_1_1_preview_1_1_settings_1ab160d9c789585d35e8fcc2d70c65a6a3" kindref="member">Settings::bridgeChanged</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;Settings::createSettings);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><ref refid="class_k_decoration3_1_1_preview_1_1_settings_1a6ff04773952afae0eedf9f8845418b56" kindref="member">Settings::~Settings</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215" refid="class_k_decoration3_1_1_preview_1_1_settings_1ad6555f22a896b9412ffe0467db897429" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_settings_1ad6555f22a896b9412ffe0467db897429" kindref="member">Settings::setBridge</ref>(<ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge" kindref="compound">PreviewBridge</ref><sp/>*<ref refid="class_k_decoration3_1_1_preview_1_1_settings_1aeda23d2a981f814f7486d0dcb388198b" kindref="member">bridge</ref>)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bridge<sp/>==<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_settings_1aeda23d2a981f814f7486d0dcb388198b" kindref="member">bridge</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>m_bridge<sp/>=<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_settings_1aeda23d2a981f814f7486d0dcb388198b" kindref="member">bridge</ref>;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_settings_1ab160d9c789585d35e8fcc2d70c65a6a3" kindref="member">bridgeChanged</ref>();</highlight></codeline>
+<codeline lineno="222"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224" refid="class_k_decoration3_1_1_preview_1_1_settings_1ae1a0edabd068e1e971060a616c6e8bb3" refkind="member"><highlight class="normal"><ref refid="class_k_decoration3_1_1_preview_1_1_preview_bridge" kindref="compound">PreviewBridge</ref><sp/>*<ref refid="class_k_decoration3_1_1_preview_1_1_settings_1aeda23d2a981f814f7486d0dcb388198b" kindref="member">Settings::bridge</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="225"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_bridge.data();</highlight></codeline>
+<codeline lineno="227"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Settings::createSettings()</highlight></codeline>
+<codeline lineno="230"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bridge.isNull())<sp/>{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_settings.reset();</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_settings<sp/>=<sp/>std::make_shared&lt;KDecoration3::DecorationSettings&gt;(m_bridge.get());</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_previewSettings<sp/>=<sp/>m_bridge-&gt;lastCreatedSettings();</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_previewSettings-&gt;<ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a275795e5a97c22665e0f50b6afbb926a" kindref="member">setBorderSizesIndex</ref>(m_borderSize);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_k_decoration3_1_1_preview_1_1_settings_1a8d47df21a1d0e38bc4c0d4c5ed46db33" kindref="member">Settings::borderSizesIndexChanged</ref>,<sp/>m_previewSettings,<sp/>&amp;<ref refid="class_k_decoration3_1_1_preview_1_1_preview_settings_1a275795e5a97c22665e0f50b6afbb926a" kindref="member">PreviewSettings::setBorderSizesIndex</ref>);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_settings_1a52dc94d92081777dc81d9b23bf511c84" kindref="member">settingsChanged</ref>();</highlight></codeline>
+<codeline lineno="240"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242" refid="class_k_decoration3_1_1_preview_1_1_settings_1a69a7224e620e6a62c428c0db28fd726b" refkind="member"><highlight class="normal">std::shared_ptr&lt;DecorationSettings&gt;<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_settings_1abe228817acc49d7d3c37a0c0c479e47c" kindref="member">Settings::settings</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="243"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_settings;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247" refid="class_k_decoration3_1_1_preview_1_1_settings_1a8cd3f7955c0cf800daa2c8a638796a2e" refkind="member"><highlight class="normal">DecorationSettings<sp/>*<ref refid="class_k_decoration3_1_1_preview_1_1_settings_1a8cd3f7955c0cf800daa2c8a638796a2e" kindref="member">Settings::settingsPointer</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="248"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_settings.get();</highlight></codeline>
+<codeline lineno="250"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252" refid="class_k_decoration3_1_1_preview_1_1_settings_1a05898f6b5fb69d76ab88a59719cac8ec" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_decoration3_1_1_preview_1_1_settings_1a05898f6b5fb69d76ab88a59719cac8ec" kindref="member">Settings::setBorderSizesIndex</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)</highlight></codeline>
+<codeline lineno="253"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_borderSize<sp/>==<sp/>index)<sp/>{</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>m_borderSize<sp/>=<sp/>index;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_decoration3_1_1_preview_1_1_settings_1a8d47df21a1d0e38bc4c0d4c5ed46db33" kindref="member">borderSizesIndexChanged</ref>(m_borderSize);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;moc_previewsettings.cpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/kcms/decoration/declarative-plugin/previewsettings.cpp"/>
+  </compounddef>
+</doxygen>

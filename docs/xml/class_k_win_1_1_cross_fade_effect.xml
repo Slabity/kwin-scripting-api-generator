@@ -1,0 +1,346 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_cross_fade_effect" kind="class" language="C++" prot="public">
+    <compoundname>KWin::CrossFadeEffect</compoundname>
+    <basecompoundref refid="class_k_win_1_1_effect" prot="public" virt="non-virtual">KWin::Effect</basecompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_animation_effect" prot="public" virt="non-virtual">KWin::AnimationEffect</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_blend_changes" prot="public" virt="non-virtual">KWin::BlendChanges</derivedcompoundref>
+    <includes refid="offscreeneffect_8h" local="no">offscreeneffect.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_cross_fade_effect_1a62899b8291577e3339c4f6da27440368" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_cross_fade_effect_private" kindref="compound">CrossFadeEffectPrivate</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;CrossFadeEffectPrivate&gt; KWin::CrossFadeEffect::d</definition>
+        <argsstring></argsstring>
+        <name>d</name>
+        <qualifiedname>KWin::CrossFadeEffect::d</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/offscreeneffect.h" line="132" column="21" bodyfile="kwin/src/effect/offscreeneffect.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_cross_fade_effect_1ae701f741988327905e85e0cd0312de8d" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::CrossFadeEffect::CrossFadeEffect</definition>
+        <argsstring>(QObject *parent=nullptr)</argsstring>
+        <name>CrossFadeEffect</name>
+        <qualifiedname>KWin::CrossFadeEffect::CrossFadeEffect</qualifiedname>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/offscreeneffect.h" line="103" column="14" bodyfile="kwin/src/effect/offscreeneffect.cpp" bodystart="307" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_cross_fade_effect_1a5c1a9467b3f91d67b6485e4fd859f7eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::CrossFadeEffect::~CrossFadeEffect</definition>
+        <argsstring>() override</argsstring>
+        <name>~CrossFadeEffect</name>
+        <qualifiedname>KWin::CrossFadeEffect::~CrossFadeEffect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/offscreeneffect.h" line="104" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_cross_fade_effect_1af425332f0e69817a60019b5a64a18746" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::CrossFadeEffect::drawWindow</definition>
+        <argsstring>(const RenderTarget &amp;renderTarget, const RenderViewport &amp;viewport, EffectWindow *window, int mask, const QRegion &amp;region, WindowPaintData &amp;data) override</argsstring>
+        <name>drawWindow</name>
+        <qualifiedname>KWin::CrossFadeEffect::drawWindow</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga254b1a3e8bb8b9b671e9b000ca027b7c">drawWindow</reimplements>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref> &amp;</type>
+          <declname>renderTarget</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref> &amp;</type>
+          <declname>viewport</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Can be called to draw multiple copies (e.g. thumbnails) of a window. You can change window&apos;s opacity/brightness/etc here, but you can&apos;t do any transformations.</para>
+<para>In OpenGL based compositing, the frameworks ensures that the context is current when this method is invoked. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/offscreeneffect.h" line="106" column="10" bodyfile="kwin/src/effect/offscreeneffect.cpp" bodystart="315" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_cross_fade_effect_1a9b11480b3e53305cb64217ce477555d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::CrossFadeEffect::redirect</definition>
+        <argsstring>(EffectWindow *window)</argsstring>
+        <name>redirect</name>
+        <qualifiedname>KWin::CrossFadeEffect::redirect</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function must be called when the effect wants to animate the specified <emphasis>window</emphasis>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/offscreeneffect.h" line="112" column="10" bodyfile="kwin/src/effect/offscreeneffect.cpp" bodystart="365" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_cross_fade_effect_1a54887120fb87e713e90c0f3e6fe1ed02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::CrossFadeEffect::unredirect</definition>
+        <argsstring>(EffectWindow *window)</argsstring>
+        <name>unredirect</name>
+        <qualifiedname>KWin::CrossFadeEffect::unredirect</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function must be called when the effect is done animating the specified <emphasis>window</emphasis>. The window will be automatically unredirected if it&apos;s deleted. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/offscreeneffect.h" line="117" column="10" bodyfile="kwin/src/effect/offscreeneffect.cpp" bodystart="394" bodyend="409"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_cross_fade_effect_1a76f2c8834b93c008b25aca2040473fb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::CrossFadeEffect::setShader</definition>
+        <argsstring>(EffectWindow *window, GLShader *shader)</argsstring>
+        <name>setShader</name>
+        <qualifiedname>KWin::CrossFadeEffect::setShader</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_g_l_shader" kindref="compound">GLShader</ref> *</type>
+          <declname>shader</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows to specify a <computeroutput>shader</computeroutput> to draw the redirected texture for <computeroutput>window</computeroutput>. Can only be called once the window is redirected. <simplesect kind="since"><para>5.25 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/offscreeneffect.h" line="124" column="10" bodyfile="kwin/src/effect/offscreeneffect.cpp" bodystart="416" bodyend="421"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_cross_fade_effect_1a07422c4fb7d5c983a07ffffc677c5ec2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::CrossFadeEffect::blocksDirectScanout</definition>
+        <argsstring>() const override</argsstring>
+        <name>blocksDirectScanout</name>
+        <qualifiedname>KWin::CrossFadeEffect::blocksDirectScanout</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga7cf8035c970fcde177e3038d79015289">blocksDirectScanout</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>overwrite this method to return false if your effect does not need to be drawn over opaque fullscreen windows </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/offscreeneffect.h" line="126" column="10" bodyfile="kwin/src/effect/offscreeneffect.cpp" bodystart="423" bodyend="426"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_cross_fade_effect_1a0b3d634f2f8ee8edd9c316ac062c2477" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool KWin::CrossFadeEffect::supported</definition>
+        <argsstring>()</argsstring>
+        <name>supported</name>
+        <qualifiedname>KWin::CrossFadeEffect::supported</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/offscreeneffect.h" line="128" column="17"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_cross_fade_effect_1a9e78179748bcb1dd3066785bf73eb7b0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::CrossFadeEffect::handleWindowDeleted</definition>
+        <argsstring>(EffectWindow *window)</argsstring>
+        <name>handleWindowDeleted</name>
+        <qualifiedname>KWin::CrossFadeEffect::handleWindowDeleted</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/effect/offscreeneffect.h" line="131" column="10" bodyfile="kwin/src/effect/offscreeneffect.cpp" bodystart="411" bodyend="414"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="class_k_win_1_1_cross_fade_effect" kindref="compound">CrossFadeEffect</ref> class is the base class for effects that paints crossfades</para>
+<para>Windows are snapshotted at the time we want to start crossfading from. Hereafter we draw both the new contents and the old pixmap at the ratio defined by <ref refid="group__kwineffects_1ga1dac14ebb3addc453cd32df7f99e0d4c" kindref="member">WindowPaintData::crossFadeProgress</ref></para>
+<para>Subclasses are responsible for driving the animation and calling unredirect after animation completes.</para>
+<para>If window geometry changes shape after this point our &quot;old&quot; pixmap is resized to fit approximately matching frame geometry </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>KWin::AnimationEffect</label>
+        <link refid="class_k_win_1_1_animation_effect"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>KWin::BlendChanges</label>
+        <link refid="class_k_win_1_1_blend_changes"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::CrossFadeEffect</label>
+        <link refid="class_k_win_1_1_cross_fade_effect"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::Effect</label>
+        <link refid="class_k_win_1_1_effect"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>KWin::HighlightWindowEffect</label>
+        <link refid="class_k_win_1_1_highlight_window_effect"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>KWin::ScriptedEffect</label>
+        <link refid="class_k_win_1_1_scripted_effect"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::CrossFadeEffect</label>
+        <link refid="class_k_win_1_1_cross_fade_effect"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::Effect</label>
+        <link refid="class_k_win_1_1_effect"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/effect/offscreeneffect.h" line="99" column="1" bodyfile="kwin/src/effect/offscreeneffect.h" bodystart="100" bodyend="133"/>
+    <listofallmembers>
+      <member refid="group__kwineffects_1gab9bcf52072fe74567496b0a894d1d873" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>animationTime</name></member>
+      <member refid="group__kwineffects_1ga3a167fe6d9c46376ed46db13caf2d135" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>animationTime</name></member>
+      <member refid="group__kwineffects_1ga0ba05f1463195d0f92ea1dd3396a5d16" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>animationTime</name></member>
+      <member refid="class_k_win_1_1_cross_fade_effect_1a07422c4fb7d5c983a07ffffc677c5ec2" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>blocksDirectScanout</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea67d120ab5ce1dc424476e63c132af6c1" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>Blur</name></member>
+      <member refid="group__kwineffects_1gab8a94f591b743b59b7285911e641e7d5" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>borderActivated</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aead805f717a48c23959a1e9ecd7722d15d" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>Contrast</name></member>
+      <member refid="class_k_win_1_1_cross_fade_effect_1ae701f741988327905e85e0cd0312de8d" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>CrossFadeEffect</name></member>
+      <member refid="group__kwineffects_1ga4da344d8b8f2cb9eecd6e64a9b758740" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>cursorPos</name></member>
+      <member refid="class_k_win_1_1_cross_fade_effect_1a62899b8291577e3339c4f6da27440368" prot="private" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>d</name></member>
+      <member refid="group__kwineffects_1ga0c159e00c3a51ca733bea49cf8d52691" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>debug</name></member>
+      <member refid="class_k_win_1_1_cross_fade_effect_1af425332f0e69817a60019b5a64a18746" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>drawWindow</name></member>
+      <member refid="group__kwineffects_1ga7bd8262f4cb2c5c3090c748eb388ad7e" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>Effect</name></member>
+      <member refid="group__kwineffects_1ga6337b2a9b5aadfbb6b696119144b56ae" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>Feature</name></member>
+      <member refid="group__kwineffects_1gab5e0581ae4b2dffe8014ff5cf6c21158" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>grabbedKeyboardEvent</name></member>
+      <member refid="class_k_win_1_1_cross_fade_effect_1a9e78179748bcb1dd3066785bf73eb7b0" prot="private" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>handleWindowDeleted</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aeaecbb77ad241419970ece3d45296c4838" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>HighlightWindows</name></member>
+      <member refid="group__kwineffects_1ga7b0ecb57667179e95c188f0ee7416d00" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>interpolate</name></member>
+      <member refid="group__kwineffects_1ga596b6c0ed146b97b293f5db5f27fc40f" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>isActive</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea170229312ed2ec0e446ee89ba7f6b6ca" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>Nothing</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dab0de2932c45bde6df3de10d00dbd6fcd" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>PAINT_SCREEN_BACKGROUND_FIRST</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da43acbfc913cae9eb3c363aeb0524f18f" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>PAINT_SCREEN_REGION</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da3e731594d83c3e92742bff7c420fb7f8" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>PAINT_SCREEN_TRANSFORMED</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da124dd798e5f793087e81da77e11a9b1e" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>PAINT_SCREEN_WITH_TRANSFORMED_WINDOWS</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dac606d3dcf2dd150234f71c4c39083c7d" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>PAINT_WINDOW_OPAQUE</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da684bb6c6c278b900b6d0c889e79233b8" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>PAINT_WINDOW_TRANSFORMED</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dac7237bf4bb4d6ea6d6fb1215db19b45e" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>PAINT_WINDOW_TRANSLUCENT</name></member>
+      <member refid="group__kwineffects_1ga44ee94161446ce6fb2502376af6515a8" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>paintScreen</name></member>
+      <member refid="group__kwineffects_1ga0f0292db2bf016a0843ef7cc06219378" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>paintWindow</name></member>
+      <member refid="group__kwineffects_1ga5fb1bc87ff54dcc2cfe87b070816ab00" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>perform</name></member>
+      <member refid="group__kwineffects_1ga10021cf9704c00d60beae284d53846e2" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>postPaintScreen</name></member>
+      <member refid="group__kwineffects_1ga9b7cf82c6f74331cffabb06c63ef914c" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>postPaintWindow</name></member>
+      <member refid="group__kwineffects_1ga2edc1b757e36bb6bcbbacde454dfc05c" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>prePaintScreen</name></member>
+      <member refid="group__kwineffects_1ga2832c7831c0f49f9f5cf0267ffc53672" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>prePaintWindow</name></member>
+      <member refid="group__kwineffects_1ga30fc2cbbdd90f95568a9e350f34bf2b7" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>provides</name></member>
+      <member refid="group__kwineffects_1ga737c6d80eb8f8b24fdc6398209c38e3d" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>reconfigure</name></member>
+      <member refid="group__kwineffects_1gga4aebd7d0f695e37678debaa118fa92dca19d3e23e53788c8d9cc9c18fbf75fc7d" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>ReconfigureAll</name></member>
+      <member refid="group__kwineffects_1ga4aebd7d0f695e37678debaa118fa92dc" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>ReconfigureFlag</name></member>
+      <member refid="class_k_win_1_1_cross_fade_effect_1a9b11480b3e53305cb64217ce477555d3" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>redirect</name></member>
+      <member refid="group__kwineffects_1ga120531588e58691a5a18028158d2947a" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>requestedEffectChainPosition</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea592ea0de7a4d658a1ef9bbb48b18e15a" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>ScreenInversion</name></member>
+      <member refid="group__kwineffects_1ga1efc42cd9be15e8200c6e55f6bf47cb8" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>setPositionTransformations</name></member>
+      <member refid="class_k_win_1_1_cross_fade_effect_1a76f2c8834b93c008b25aca2040473fb4" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>setShader</name></member>
+      <member refid="class_k_win_1_1_cross_fade_effect_1a0b3d634f2f8ee8edd9c316ac062c2477" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>supported</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea19036d413806c53978a3234e7eb197c4" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>SystemBell</name></member>
+      <member refid="group__kwineffects_1ga2d22a8f0b8a4d81615dff67dc1ef970f" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>tabletPadButtonEvent</name></member>
+      <member refid="group__kwineffects_1gaa084e5a45597f5775213715eb5506f63" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>tabletPadRingEvent</name></member>
+      <member refid="group__kwineffects_1ga4998fb0983bd97163935cad2c4dedd76" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>tabletPadStripEvent</name></member>
+      <member refid="group__kwineffects_1ga1d4ae01f5935ea887a12018d59191cbf" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>tabletToolAxis</name></member>
+      <member refid="group__kwineffects_1ga7a984d7d83dfa97962b8404301c6aba9" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>tabletToolButtonEvent</name></member>
+      <member refid="group__kwineffects_1ga4ed77506be381680bf664dbc8c20e036" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>tabletToolProximity</name></member>
+      <member refid="group__kwineffects_1gaf16e9ca42cceb738fb859d1a1a462548" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>tabletToolTip</name></member>
+      <member refid="group__kwineffects_1gaa31554949bc00085e6380b50be16138e" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>touchCancel</name></member>
+      <member refid="group__kwineffects_1ga315fd305e7570f41e7bce7db6812381f" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>touchDown</name></member>
+      <member refid="group__kwineffects_1ga54d00a9e05b5d4597db40c2f5b1d36de" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>touchMotion</name></member>
+      <member refid="group__kwineffects_1gaf3871967d6199eb7c87621bc75b925bb" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>touchUp</name></member>
+      <member refid="class_k_win_1_1_cross_fade_effect_1a54887120fb87e713e90c0f3e6fe1ed02" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>unredirect</name></member>
+      <member refid="group__kwineffects_1ga7b142933c38cb9b4a433b768b266e7cb" prot="public" virt="virtual"><scope>KWin::CrossFadeEffect</scope><name>windowInputMouseEvent</name></member>
+      <member refid="class_k_win_1_1_cross_fade_effect_1a5c1a9467b3f91d67b6485e4fd859f7eb" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>~CrossFadeEffect</name></member>
+      <member refid="group__kwineffects_1ga50174eb0169aebceb78ebd5aff71c481" prot="public" virt="non-virtual"><scope>KWin::CrossFadeEffect</scope><name>~Effect</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

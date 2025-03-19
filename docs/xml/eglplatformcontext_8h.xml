@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="eglplatformcontext_8h" kind="file" language="C++">
+    <compoundname>eglplatformcontext.h</compoundname>
+    <includes local="no">epoxy/egl.h</includes>
+    <includes local="no">qpa/qplatformopenglcontext.h</includes>
+    <includes local="no">unordered_map</includes>
+    <includedby refid="eglplatformcontext_8cpp" local="yes">kwin/src/plugins/qpa/eglplatformcontext.cpp</includedby>
+    <includedby refid="integration_8cpp" local="yes">kwin/src/plugins/qpa/integration.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/plugins/qpa/eglplatformcontext.h</label>
+        <link refid="eglplatformcontext_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>epoxy/egl.h</label>
+      </node>
+      <node id="3">
+        <label>qpa/qplatformopenglcontext.h</label>
+      </node>
+      <node id="4">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/plugins/qpa/eglplatformcontext.cpp</label>
+        <link refid="eglplatformcontext_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/plugins/qpa/eglplatformcontext.h</label>
+        <link refid="eglplatformcontext_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>kwin/src/plugins/qpa/integration.cpp</label>
+        <link refid="integration_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_q_p_a_1_1_e_g_l_render_target" prot="public">KWin::QPA::EGLRenderTarget</innerclass>
+    <innerclass refid="class_k_win_1_1_q_p_a_1_1_e_g_l_platform_context" prot="public">KWin::QPA::EGLPlatformContext</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <innernamespace refid="namespace_k_win_1_1_q_p_a">KWin::QPA</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2015<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2020<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;epoxy/egl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;qpa/qplatformopenglcontext.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_g_l_framebuffer" kindref="compound">GLFramebuffer</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_g_l_texture" kindref="compound">GLTexture</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_egl_display" kindref="compound">EglDisplay</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_egl_context" kindref="compound">EglContext</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win_1_1_q_p_a" kindref="compound">QPA</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_q_p_a_1_1_window" kindref="compound">Window</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="class_k_win_1_1_q_p_a_1_1_e_g_l_render_target" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_render_target_1a86847a8b4925da911c2b08769b7fee2b" kindref="member">EGLRenderTarget</ref></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_render_target_1a86847a8b4925da911c2b08769b7fee2b" kindref="member">EGLRenderTarget</ref>(<ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref><sp/>*<ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_render_target_1aed29308ffea9fbb4b7f944ddfce37f0d" kindref="member">buffer</ref>,<sp/>std::unique_ptr&lt;GLFramebuffer&gt;<sp/><ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_render_target_1a6a588ecfcd4ea289369290f5bef6e261" kindref="member">fbo</ref>,<sp/>std::shared_ptr&lt;GLTexture&gt;<sp/><ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_render_target_1adc40a64a257c1b64144edd2c54ca60c9" kindref="member">texture</ref>);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_render_target_1a5635c6115a30875ff03c7b23f9d16315" kindref="member">~EGLRenderTarget</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="class_k_win_1_1_q_p_a_1_1_e_g_l_render_target_1aed29308ffea9fbb4b7f944ddfce37f0d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref><sp/>*<ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_render_target_1aed29308ffea9fbb4b7f944ddfce37f0d" kindref="member">buffer</ref>;</highlight></codeline>
+<codeline lineno="40" refid="class_k_win_1_1_q_p_a_1_1_e_g_l_render_target_1a6a588ecfcd4ea289369290f5bef6e261" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;GLFramebuffer&gt;<sp/><ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_render_target_1a6a588ecfcd4ea289369290f5bef6e261" kindref="member">fbo</ref>;</highlight></codeline>
+<codeline lineno="41" refid="class_k_win_1_1_q_p_a_1_1_e_g_l_render_target_1adc40a64a257c1b64144edd2c54ca60c9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;GLTexture&gt;<sp/><ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_render_target_1adc40a64a257c1b64144edd2c54ca60c9" kindref="member">texture</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="class_k_win_1_1_q_p_a_1_1_e_g_l_platform_context" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_platform_context_1aa02d9baed5e070265356abc227072d73" kindref="member">EGLPlatformContext</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QPlatformOpenGLContext</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_platform_context_1aa02d9baed5e070265356abc227072d73" kindref="member">EGLPlatformContext</ref>(QOpenGLContext<sp/>*context,<sp/><ref refid="class_k_win_1_1_egl_display" kindref="compound">EglDisplay</ref><sp/>*display);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_platform_context_1a5dddf00d9e1a4b3e9a9a9583e9487f66" kindref="member">~EGLPlatformContext</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_platform_context_1affaada309033f2e1695891520c2516cd" kindref="member">makeCurrent</ref>(QPlatformSurface<sp/>*surface)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_platform_context_1aa174bc169173ea7424c5743f85061c5e" kindref="member">doneCurrent</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>QSurfaceFormat<sp/><ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_platform_context_1afffddff2507a7ef4b4b058bab6de1bae" kindref="member">format</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_platform_context_1a0d1f32ebf9e9d3fe156776097cb01c96" kindref="member">isValid</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_platform_context_1ab8902a33df3f5b68a0c61447da9d94ff" kindref="member">isSharing</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>GLuint<sp/><ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_platform_context_1a6d0ab56e501ae193210787879925ce15" kindref="member">defaultFramebufferObject</ref>(QPlatformSurface<sp/>*surface)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>QFunctionPointer<sp/><ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_platform_context_1aad831d7f6c9ee3d8508063047c40f590" kindref="member">getProcAddress</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*procName)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_platform_context_1af85f6c46ee9112e499efcabb48e72174" kindref="member">swapBuffers</ref>(QPlatformSurface<sp/>*surface)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>create(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QSurfaceFormat<sp/>&amp;<ref refid="class_k_win_1_1_q_p_a_1_1_e_g_l_platform_context_1afffddff2507a7ef4b4b058bab6de1bae" kindref="member">format</ref>,<sp/>::EGLContext<sp/>shareContext);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateFormatFromContext();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_egl_display" kindref="compound">EglDisplay</ref><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>m_eglDisplay;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>QSurfaceFormat<sp/>m_format;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>EGLConfig<sp/>m_config<sp/>=<sp/>EGL_NO_CONFIG_KHR;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;EglContext&gt;<sp/>m_eglContext;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;GraphicsBuffer<sp/>*,<sp/>std::shared_ptr&lt;EGLRenderTarget&gt;&gt;<sp/>m_renderTargets;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;EGLRenderTarget&gt;&gt;<sp/>m_zombieRenderTargets;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;EGLRenderTarget&gt;<sp/>m_current;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>QPA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/plugins/qpa/eglplatformcontext.h"/>
+  </compounddef>
+</doxygen>

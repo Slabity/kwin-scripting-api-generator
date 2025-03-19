@@ -1,0 +1,270 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="globalshortcuts_8h" kind="file" language="C++">
+    <compoundname>globalshortcuts.h</compoundname>
+    <includes refid="globals_8h" local="yes">effect/globals.h</includes>
+    <includes local="no">QKeySequence</includes>
+    <includes local="no">memory</includes>
+    <includedby refid="globalshortcuts_8cpp" local="yes">kwin/src/globalshortcuts.cpp</includedby>
+    <includedby refid="input_8cpp" local="yes">kwin/src/input.cpp</includedby>
+    <includedby refid="gesturehandler_8cpp" local="yes">kwin/src/scripting/gesturehandler.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/globalshortcuts.h</label>
+        <link refid="globalshortcuts_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="5">
+        <label>QImage</label>
+      </node>
+      <node id="10">
+        <label>QKeySequence</label>
+      </node>
+      <node id="6">
+        <label>QPoint</label>
+      </node>
+      <node id="7">
+        <label>QVariant</label>
+      </node>
+      <node id="8">
+        <label>QVector2D</label>
+      </node>
+      <node id="3">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="9">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="11">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/globalshortcuts.cpp</label>
+        <link refid="globalshortcuts_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/globalshortcuts.h</label>
+        <link refid="globalshortcuts_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>kwin/src/input.cpp</label>
+        <link refid="input_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/scripting/gesturehandler.cpp</label>
+        <link refid="gesturehandler_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_global_shortcuts_manager" prot="public">KWin::GlobalShortcutsManager</innerclass>
+    <innerclass refid="struct_k_win_1_1_keyboard_shortcut" prot="public">KWin::KeyboardShortcut</innerclass>
+    <innerclass refid="struct_k_win_1_1_pointer_button_shortcut" prot="public">KWin::PointerButtonShortcut</innerclass>
+    <innerclass refid="struct_k_win_1_1_pointer_axis_shortcut" prot="public">KWin::PointerAxisShortcut</innerclass>
+    <innerclass refid="struct_k_win_1_1_realtime_feedback_swipe_shortcut" prot="public">KWin::RealtimeFeedbackSwipeShortcut</innerclass>
+    <innerclass refid="struct_k_win_1_1_realtime_feedback_pinch_shortcut" prot="public">KWin::RealtimeFeedbackPinchShortcut</innerclass>
+    <innerclass refid="class_k_win_1_1_global_shortcut" prot="public">KWin::GlobalShortcut</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2013<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="globals_8h" kindref="compound">effect/globals.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Qt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QKeySequence&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QAction;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>KWIN_BUILD_GLOBALSHORTCUTS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KGlobalAccelD;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KGlobalAccelInterface;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_global_shortcut" kindref="compound">GlobalShortcut</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_swipe_gesture" kindref="compound">SwipeGesture</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_pinch_gesture" kindref="compound">PinchGesture</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_gesture_recognizer" kindref="compound">GestureRecognizer</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="namespace_k_win_1a68ed0f17440d1c1d38ac1ebcf5ad5361" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a68ed0f17440d1c1d38ac1ebcf5ad5361" kindref="member">DeviceType</ref><sp/>{</highlight></codeline>
+<codeline lineno="30" refid="namespace_k_win_1a68ed0f17440d1c1d38ac1ebcf5ad5361a8229bf08d472e129beff22e3984afdbd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a68ed0f17440d1c1d38ac1ebcf5ad5361a8229bf08d472e129beff22e3984afdbd" kindref="member">Touchpad</ref>,</highlight></codeline>
+<codeline lineno="31" refid="namespace_k_win_1a68ed0f17440d1c1d38ac1ebcf5ad5361a588711541a203a16bbc517f3f73ef7c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a68ed0f17440d1c1d38ac1ebcf5ad5361a588711541a203a16bbc517f3f73ef7c8" kindref="member">Touchscreen</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="class_k_win_1_1_global_shortcuts_manager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_global_shortcuts_manager_1a45e62ec58be9a05477bbd93263f1cb4d" kindref="member">GlobalShortcutsManager</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1a45e62ec58be9a05477bbd93263f1cb4d" kindref="member">GlobalShortcutsManager</ref>(QObject<sp/>*parent<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1aa8caa1ded9ed4b74a2fef2ac0d50d378" kindref="member">~GlobalShortcutsManager</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1aca03045576c4e63bfa2a27ea02e7351b" kindref="member">init</ref>();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1a5803f520b4579bdd8416ecb9ad61b86c" kindref="member">registerPointerShortcut</ref>(QAction<sp/>*action,<sp/>Qt::KeyboardModifiers<sp/>modifiers,<sp/>Qt::MouseButtons<sp/>pointerButtons);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1ae5d6064880e1e29c5b5e273f774efc34" kindref="member">registerAxisShortcut</ref>(QAction<sp/>*action,<sp/>Qt::KeyboardModifiers<sp/>modifiers,<sp/><ref refid="namespace_k_win_1a0b8440dc0ffe9aa219e0c0e5fa1137a0" kindref="member">PointerAxisDirection</ref><sp/>axis);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1aaa8f0e85a7bac44fce984b39c6b0a14a" kindref="member">registerTouchpadSwipe</ref>(<ref refid="namespace_k_win_1ab2206ebabcc9101a43b58473495efd03" kindref="member">SwipeDirection</ref><sp/>direction,<sp/>uint32_t<sp/>fingerCount,<sp/>QAction<sp/>*action,<sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(qreal)&gt;<sp/>progressCallback<sp/>=<sp/>{});</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1aaa8f0e85a7bac44fce984b39c6b0a14a" kindref="member">registerTouchpadSwipe</ref>(<ref refid="class_k_win_1_1_swipe_gesture" kindref="compound">SwipeGesture</ref><sp/>*swipeGesture);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1a1d38be2d448744f9b6eed0c81a72e649" kindref="member">registerTouchpadPinch</ref>(<ref refid="namespace_k_win_1a8852f83038eda36bc255d8f5f3baae05" kindref="member">PinchDirection</ref><sp/>direction,<sp/>uint32_t<sp/>fingerCount,<sp/>QAction<sp/>*action,<sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(qreal)&gt;<sp/>progressCallback<sp/>=<sp/>{});</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1a1d38be2d448744f9b6eed0c81a72e649" kindref="member">registerTouchpadPinch</ref>(<ref refid="class_k_win_1_1_pinch_gesture" kindref="compound">PinchGesture</ref><sp/>*pinchGesture);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1ae56f16c7556f74432b39c8740887aee4" kindref="member">registerTouchscreenSwipe</ref>(<ref refid="namespace_k_win_1ab2206ebabcc9101a43b58473495efd03" kindref="member">SwipeDirection</ref><sp/>direction,<sp/>uint32_t<sp/>fingerCount,<sp/>QAction<sp/>*action,<sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(qreal)&gt;<sp/>progressCallback<sp/>=<sp/>{});</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1ae56f16c7556f74432b39c8740887aee4" kindref="member">registerTouchscreenSwipe</ref>(<ref refid="class_k_win_1_1_swipe_gesture" kindref="compound">SwipeGesture</ref><sp/>*swipeGesture);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1aa4ef90ccce2f7f0a02e422302bede6c9" kindref="member">forceRegisterTouchscreenSwipe</ref>(<ref refid="namespace_k_win_1ab2206ebabcc9101a43b58473495efd03" kindref="member">SwipeDirection</ref><sp/>direction,<sp/>uint32_t<sp/>fingerCount,<sp/>QAction<sp/>*action,<sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(qreal)&gt;<sp/>progressCallback<sp/>=<sp/>{});</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1aa6bea5b7e62b83c894f2bdd3ef3ae61d" kindref="member">processKey</ref>(Qt::KeyboardModifiers<sp/>modifiers,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyQt);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1a8e8edd37d14e38efc87b4fcfa968a382" kindref="member">processKeyRelease</ref>(Qt::KeyboardModifiers<sp/>modifiers,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyQt);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1ac3afb03da16c3da359c9b0c2bf4f77b1" kindref="member">processPointerPressed</ref>(Qt::KeyboardModifiers<sp/>modifiers,<sp/>Qt::MouseButtons<sp/>pointerButtons);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1abf361109d96dd04fa4f0e87206325a8a" kindref="member">processAxis</ref>(Qt::KeyboardModifiers<sp/>modifiers,<sp/><ref refid="namespace_k_win_1a0b8440dc0ffe9aa219e0c0e5fa1137a0" kindref="member">PointerAxisDirection</ref><sp/>axis);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1ad6898ab3876ae494f4331923668c11a8" kindref="member">processSwipeStart</ref>(<ref refid="namespace_k_win_1a68ed0f17440d1c1d38ac1ebcf5ad5361" kindref="member">DeviceType</ref><sp/>device,<sp/>uint<sp/>fingerCount);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1a468b3ce8db10bb1b43cbbb8e1e4ce68f" kindref="member">processSwipeUpdate</ref>(<ref refid="namespace_k_win_1a68ed0f17440d1c1d38ac1ebcf5ad5361" kindref="member">DeviceType</ref><sp/>device,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>&amp;delta);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1a7dea2c49329b455a3bad063afaae9e54" kindref="member">processSwipeCancel</ref>(<ref refid="namespace_k_win_1a68ed0f17440d1c1d38ac1ebcf5ad5361" kindref="member">DeviceType</ref><sp/>device);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1a20e88eb63efa280055fd0bb52a03847d" kindref="member">processSwipeEnd</ref>(<ref refid="namespace_k_win_1a68ed0f17440d1c1d38ac1ebcf5ad5361" kindref="member">DeviceType</ref><sp/>device);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1ac9d26e78fa0edb7d6c4e88cda4ad4ba3" kindref="member">processPinchStart</ref>(uint<sp/>fingerCount);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1a288ff55a87f02a05b7115d5cc1c7ef4c" kindref="member">processPinchUpdate</ref>(qreal<sp/>scale,<sp/>qreal<sp/>angleDelta,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>&amp;delta);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1a47cdf8f490ec82374cfd18c3a47a615a" kindref="member">processPinchCancel</ref>();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcuts_manager_1a3bfc59a1daa21eb6ffd28366f86e521d" kindref="member">processPinchEnd</ref>();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>KWIN_BUILD_GLOBALSHORTCUTS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setKGlobalAccelInterface(KGlobalAccelInterface<sp/>*interface)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_kglobalAccelInterface<sp/>=<sp/>interface;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>objectDeleted(QObject<sp/>*</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>add(<ref refid="class_k_win_1_1_global_shortcut" kindref="compound">GlobalShortcut</ref><sp/>sc,<sp/><ref refid="namespace_k_win_1a68ed0f17440d1c1d38ac1ebcf5ad5361" kindref="member">DeviceType</ref><sp/>device<sp/>=<sp/><ref refid="namespace_k_win_1a68ed0f17440d1c1d38ac1ebcf5ad5361a8229bf08d472e129beff22e3984afdbd" kindref="member">DeviceType::Touchpad</ref>);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;GlobalShortcut&gt;<sp/>m_shortcuts;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>KWIN_BUILD_GLOBALSHORTCUTS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;KGlobalAccelD&gt;<sp/>m_kglobalAccel;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>KGlobalAccelInterface<sp/>*m_kglobalAccelInterface<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;GestureRecognizer&gt;<sp/>m_touchpadGestureRecognizer;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;GestureRecognizer&gt;<sp/>m_touchscreenGestureRecognizer;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="struct_k_win_1_1_keyboard_shortcut" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_k_win_1_1_keyboard_shortcut" kindref="compound">KeyboardShortcut</ref></highlight></codeline>
+<codeline lineno="135"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="136" refid="struct_k_win_1_1_keyboard_shortcut_1a8b59a2b8a67603618ffb5a62d74c4a70" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QKeySequence<sp/><ref refid="struct_k_win_1_1_keyboard_shortcut_1a8b59a2b8a67603618ffb5a62d74c4a70" kindref="member">sequence</ref>;</highlight></codeline>
+<codeline lineno="137" refid="struct_k_win_1_1_keyboard_shortcut_1a9331c107bd85003150c144f5b2d5e980" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_keyboard_shortcut_1a9331c107bd85003150c144f5b2d5e980" kindref="member">operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_keyboard_shortcut" kindref="compound">KeyboardShortcut</ref><sp/>&amp;rhs)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="138"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_keyboard_shortcut_1a8b59a2b8a67603618ffb5a62d74c4a70" kindref="member">sequence</ref><sp/>==<sp/>rhs.<ref refid="struct_k_win_1_1_keyboard_shortcut_1a8b59a2b8a67603618ffb5a62d74c4a70" kindref="member">sequence</ref>;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="142" refid="struct_k_win_1_1_pointer_button_shortcut" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_k_win_1_1_pointer_button_shortcut" kindref="compound">PointerButtonShortcut</ref></highlight></codeline>
+<codeline lineno="143"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="144" refid="struct_k_win_1_1_pointer_button_shortcut_1a4c6e901d6b3786105cc2fa26b1b944de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Qt::KeyboardModifiers<sp/><ref refid="struct_k_win_1_1_pointer_button_shortcut_1a4c6e901d6b3786105cc2fa26b1b944de" kindref="member">pointerModifiers</ref>;</highlight></codeline>
+<codeline lineno="145" refid="struct_k_win_1_1_pointer_button_shortcut_1ad8f9b0dd42b25c2eb39b6e1e828d728d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Qt::MouseButtons<sp/><ref refid="struct_k_win_1_1_pointer_button_shortcut_1ad8f9b0dd42b25c2eb39b6e1e828d728d" kindref="member">pointerButtons</ref>;</highlight></codeline>
+<codeline lineno="146" refid="struct_k_win_1_1_pointer_button_shortcut_1af9f0fa77d9881d385d5fa2f2f59b0858" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_pointer_button_shortcut_1af9f0fa77d9881d385d5fa2f2f59b0858" kindref="member">operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_pointer_button_shortcut" kindref="compound">PointerButtonShortcut</ref><sp/>&amp;rhs)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="147"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_pointer_button_shortcut_1a4c6e901d6b3786105cc2fa26b1b944de" kindref="member">pointerModifiers</ref><sp/>==<sp/>rhs.<ref refid="struct_k_win_1_1_pointer_button_shortcut_1a4c6e901d6b3786105cc2fa26b1b944de" kindref="member">pointerModifiers</ref><sp/>&amp;&amp;<sp/><ref refid="struct_k_win_1_1_pointer_button_shortcut_1ad8f9b0dd42b25c2eb39b6e1e828d728d" kindref="member">pointerButtons</ref><sp/>==<sp/>rhs.<ref refid="struct_k_win_1_1_pointer_button_shortcut_1ad8f9b0dd42b25c2eb39b6e1e828d728d" kindref="member">pointerButtons</ref>;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="151" refid="struct_k_win_1_1_pointer_axis_shortcut" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_k_win_1_1_pointer_axis_shortcut" kindref="compound">PointerAxisShortcut</ref></highlight></codeline>
+<codeline lineno="152"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="153" refid="struct_k_win_1_1_pointer_axis_shortcut_1a253c963fb36024c65fa3f86ecfadf2d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Qt::KeyboardModifiers<sp/><ref refid="struct_k_win_1_1_pointer_axis_shortcut_1a253c963fb36024c65fa3f86ecfadf2d2" kindref="member">axisModifiers</ref>;</highlight></codeline>
+<codeline lineno="154" refid="struct_k_win_1_1_pointer_axis_shortcut_1ae389c1f0024dc3a09852538fd12a6d95" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a0b8440dc0ffe9aa219e0c0e5fa1137a0" kindref="member">PointerAxisDirection</ref><sp/><ref refid="struct_k_win_1_1_pointer_axis_shortcut_1ae389c1f0024dc3a09852538fd12a6d95" kindref="member">axisDirection</ref>;</highlight></codeline>
+<codeline lineno="155" refid="struct_k_win_1_1_pointer_axis_shortcut_1a627f23ceb8d7906b347f318318e46a28" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_pointer_axis_shortcut_1a627f23ceb8d7906b347f318318e46a28" kindref="member">operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_pointer_axis_shortcut" kindref="compound">PointerAxisShortcut</ref><sp/>&amp;rhs)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="156"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_pointer_axis_shortcut_1a253c963fb36024c65fa3f86ecfadf2d2" kindref="member">axisModifiers</ref><sp/>==<sp/>rhs.<ref refid="struct_k_win_1_1_pointer_axis_shortcut_1a253c963fb36024c65fa3f86ecfadf2d2" kindref="member">axisModifiers</ref><sp/>&amp;&amp;<sp/><ref refid="struct_k_win_1_1_pointer_axis_shortcut_1ae389c1f0024dc3a09852538fd12a6d95" kindref="member">axisDirection</ref><sp/>==<sp/>rhs.<ref refid="struct_k_win_1_1_pointer_axis_shortcut_1ae389c1f0024dc3a09852538fd12a6d95" kindref="member">axisDirection</ref>;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="160" refid="struct_k_win_1_1_realtime_feedback_swipe_shortcut" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_k_win_1_1_realtime_feedback_swipe_shortcut" kindref="compound">RealtimeFeedbackSwipeShortcut</ref></highlight></codeline>
+<codeline lineno="161"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="162" refid="struct_k_win_1_1_realtime_feedback_swipe_shortcut_1a1e266fed8527a4d3df941630581c6af5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a68ed0f17440d1c1d38ac1ebcf5ad5361" kindref="member">DeviceType</ref><sp/><ref refid="struct_k_win_1_1_realtime_feedback_swipe_shortcut_1a1e266fed8527a4d3df941630581c6af5" kindref="member">device</ref>;</highlight></codeline>
+<codeline lineno="163" refid="struct_k_win_1_1_realtime_feedback_swipe_shortcut_1a27f70eb7d11b327a70cc5fbf204352c2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1ab2206ebabcc9101a43b58473495efd03" kindref="member">SwipeDirection</ref><sp/><ref refid="struct_k_win_1_1_realtime_feedback_swipe_shortcut_1a27f70eb7d11b327a70cc5fbf204352c2" kindref="member">direction</ref>;</highlight></codeline>
+<codeline lineno="164" refid="struct_k_win_1_1_realtime_feedback_swipe_shortcut_1afb3a0dbbf5d526a9a2f2c3a9a5b0b81a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;void(qreal)&gt;<sp/><ref refid="struct_k_win_1_1_realtime_feedback_swipe_shortcut_1afb3a0dbbf5d526a9a2f2c3a9a5b0b81a" kindref="member">progressCallback</ref>;</highlight></codeline>
+<codeline lineno="165" refid="struct_k_win_1_1_realtime_feedback_swipe_shortcut_1a2586f5812087474853918d216f5646e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint<sp/><ref refid="struct_k_win_1_1_realtime_feedback_swipe_shortcut_1a2586f5812087474853918d216f5646e3" kindref="member">fingerCount</ref>;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="168" refid="struct_k_win_1_1_realtime_feedback_swipe_shortcut_1a93ce613472e071c6c319789d9bb4994c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_realtime_feedback_swipe_shortcut_1a93ce613472e071c6c319789d9bb4994c" kindref="member">operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;rhs)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="169"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_realtime_feedback_swipe_shortcut_1a27f70eb7d11b327a70cc5fbf204352c2" kindref="member">direction</ref><sp/>==<sp/>rhs.direction<sp/>&amp;&amp;<sp/><ref refid="struct_k_win_1_1_realtime_feedback_swipe_shortcut_1a2586f5812087474853918d216f5646e3" kindref="member">fingerCount</ref><sp/>==<sp/>rhs.fingerCount<sp/>&amp;&amp;<sp/><ref refid="struct_k_win_1_1_realtime_feedback_swipe_shortcut_1a1e266fed8527a4d3df941630581c6af5" kindref="member">device</ref><sp/>==<sp/>rhs.device;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="173" refid="struct_k_win_1_1_realtime_feedback_pinch_shortcut" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_k_win_1_1_realtime_feedback_pinch_shortcut" kindref="compound">RealtimeFeedbackPinchShortcut</ref></highlight></codeline>
+<codeline lineno="174"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="175" refid="struct_k_win_1_1_realtime_feedback_pinch_shortcut_1ae371346ea2b88044e064c8a079d4cca7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a8852f83038eda36bc255d8f5f3baae05" kindref="member">PinchDirection</ref><sp/><ref refid="struct_k_win_1_1_realtime_feedback_pinch_shortcut_1ae371346ea2b88044e064c8a079d4cca7" kindref="member">direction</ref>;</highlight></codeline>
+<codeline lineno="176" refid="struct_k_win_1_1_realtime_feedback_pinch_shortcut_1a2660f95458d5e5f8c017858c08ed8f3b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::function&lt;void(qreal)&gt;<sp/><ref refid="struct_k_win_1_1_realtime_feedback_pinch_shortcut_1a2660f95458d5e5f8c017858c08ed8f3b" kindref="member">scaleCallback</ref>;</highlight></codeline>
+<codeline lineno="177" refid="struct_k_win_1_1_realtime_feedback_pinch_shortcut_1a99ed8a7d21bc4bc35f852fb2a146d4c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint<sp/><ref refid="struct_k_win_1_1_realtime_feedback_pinch_shortcut_1a99ed8a7d21bc4bc35f852fb2a146d4c0" kindref="member">fingerCount</ref>;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="180" refid="struct_k_win_1_1_realtime_feedback_pinch_shortcut_1a83865055cbd965e54cec8aa99ef7eec4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_realtime_feedback_pinch_shortcut_1a83865055cbd965e54cec8aa99ef7eec4" kindref="member">operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;rhs)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="181"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_realtime_feedback_pinch_shortcut_1ae371346ea2b88044e064c8a079d4cca7" kindref="member">direction</ref><sp/>==<sp/>rhs.direction<sp/>&amp;&amp;<sp/><ref refid="struct_k_win_1_1_realtime_feedback_pinch_shortcut_1a99ed8a7d21bc4bc35f852fb2a146d4c0" kindref="member">fingerCount</ref><sp/>==<sp/>rhs.fingerCount;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186" refid="namespace_k_win_1a011701c82e8ff839a436db15db058f8b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win_1a011701c82e8ff839a436db15db058f8b" kindref="member">Shortcut</ref><sp/>=<sp/>std::variant&lt;KeyboardShortcut,<sp/>PointerButtonShortcut,<sp/>PointerAxisShortcut,<sp/>RealtimeFeedbackSwipeShortcut,<sp/>RealtimeFeedbackPinchShortcut&gt;;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="class_k_win_1_1_global_shortcut" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_global_shortcut_1aac164a81d197a285e233df0478c15728" kindref="member">GlobalShortcut</ref></highlight></codeline>
+<codeline lineno="189"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_global_shortcut_1aac164a81d197a285e233df0478c15728" kindref="member">GlobalShortcut</ref>(<ref refid="namespace_k_win_1a011701c82e8ff839a436db15db058f8b" kindref="member">Shortcut</ref><sp/>&amp;&amp;<ref refid="class_k_win_1_1_global_shortcut_1a58ea6d475f7cbf3683b16e9d47d890fd" kindref="member">shortcut</ref>,<sp/>QAction<sp/>*<ref refid="class_k_win_1_1_global_shortcut_1aa5897ba0322e1210416a0398fd92a94f" kindref="member">action</ref>);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_global_shortcut_1a305e5cd02f75eb78e12ae231b12ee8f0" kindref="member">~GlobalShortcut</ref>();</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_global_shortcut_1a571123f6d7ba9dd46ae498372f265660" kindref="member">invoke</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>QAction<sp/>*<ref refid="class_k_win_1_1_global_shortcut_1aa5897ba0322e1210416a0398fd92a94f" kindref="member">action</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a011701c82e8ff839a436db15db058f8b" kindref="member">Shortcut</ref><sp/>&amp;<ref refid="class_k_win_1_1_global_shortcut_1a58ea6d475f7cbf3683b16e9d47d890fd" kindref="member">shortcut</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_swipe_gesture" kindref="compound">SwipeGesture</ref><sp/>*<ref refid="class_k_win_1_1_global_shortcut_1aee595686535d687c349da07341bdd9a5" kindref="member">swipeGesture</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_pinch_gesture" kindref="compound">PinchGesture</ref><sp/>*<ref refid="class_k_win_1_1_global_shortcut_1ad7fccbe04543f169785dbb082ebfd143" kindref="member">pinchGesture</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;SwipeGesture&gt;<sp/>m_swipeGesture;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;PinchGesture&gt;<sp/>m_pinchGesture;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a011701c82e8ff839a436db15db058f8b" kindref="member">Shortcut</ref><sp/>m_shortcut<sp/>=<sp/>{};</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>QAction<sp/>*m_action<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/globalshortcuts.h"/>
+  </compounddef>
+</doxygen>

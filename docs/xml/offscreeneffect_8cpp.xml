@@ -1,0 +1,966 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="offscreeneffect_8cpp" kind="file" language="C++">
+    <compoundname>offscreeneffect.cpp</compoundname>
+    <includes refid="offscreeneffect_8h" local="yes">effect/offscreeneffect.h</includes>
+    <includes refid="core_2output_8h" local="yes">core/output.h</includes>
+    <includes refid="pixelgrid_8h" local="yes">core/pixelgrid.h</includes>
+    <includes refid="rendertarget_8h" local="yes">core/rendertarget.h</includes>
+    <includes refid="renderviewport_8h" local="yes">core/renderviewport.h</includes>
+    <includes refid="effecthandler_8h" local="yes">effect/effecthandler.h</includes>
+    <includes refid="eglcontext_8h" local="yes">opengl/eglcontext.h</includes>
+    <includes refid="gltexture_8h" local="yes">opengl/gltexture.h</includes>
+    <includes refid="glutils_8h" local="yes">opengl/glutils.h</includes>
+    <includes refid="windowitem_8h" local="yes">scene/windowitem.h</includes>
+    <includes local="yes">moc_offscreeneffect.cpp</includes>
+    <incdepgraph>
+      <node id="26">
+        <label>core/colorspace.h</label>
+        <link refid="colorspace_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>core/output.h</label>
+        <link refid="core_2output_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>core/pixelgrid.h</label>
+        <link refid="pixelgrid_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>renderloop.h</label>
+        <link refid="renderloop_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>core/rendertarget.h</label>
+        <link refid="rendertarget_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>core/renderviewport.h</label>
+        <link refid="renderviewport_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>effect/effect.h</label>
+        <link refid="effect_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>effect/effecthandler.h</label>
+        <link refid="effecthandler_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>effect/effectwindow.h</label>
+        <link refid="effectwindow_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/effect/offscreeneffect.cpp</label>
+        <link refid="offscreeneffect_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>effect/offscreeneffect.h</label>
+        <link refid="offscreeneffect_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>opengl/eglcontext.h</label>
+        <link refid="eglcontext_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>opengl/glframebuffer.h</label>
+        <link refid="glframebuffer_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>opengl/glshader.h</label>
+        <link refid="glshader_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>opengl/glshadermanager.h</label>
+        <link refid="glshadermanager_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>opengl/gltexture.h</label>
+        <link refid="gltexture_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>opengl/glutils.h</label>
+        <link refid="glutils_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>opengl/glvertexbuffer.h</label>
+        <link refid="glvertexbuffer_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>scene/item.h</label>
+        <link refid="item_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>scene/itemgeometry.h</label>
+        <link refid="itemgeometry_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>scene/windowitem.h</label>
+        <link refid="windowitem_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>utils/edid.h</label>
+        <link refid="edid_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>utils/version.h</label>
+        <link refid="version_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>KPluginFactory</label>
+      </node>
+      <node id="14">
+        <label>KSharedConfig</label>
+      </node>
+      <node id="28">
+        <label>QByteArray</label>
+      </node>
+      <node id="17">
+        <label>QColor</label>
+      </node>
+      <node id="6">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="31">
+        <label>QDebug</label>
+      </node>
+      <node id="42">
+        <label>QEasingCurve</label>
+      </node>
+      <node id="52">
+        <label>QExplicitlySharedDataPointer</label>
+      </node>
+      <node id="62">
+        <label>QFlags</label>
+      </node>
+      <node id="46">
+        <label>QHash</label>
+      </node>
+      <node id="43">
+        <label>QIcon</label>
+      </node>
+      <node id="7">
+        <label>QImage</label>
+      </node>
+      <node id="29">
+        <label>QList</label>
+      </node>
+      <node id="47">
+        <label>QLoggingCategory</label>
+      </node>
+      <node id="59">
+        <label>QMatrix3x3</label>
+      </node>
+      <node id="27">
+        <label>QMatrix4x4</label>
+      </node>
+      <node id="24">
+        <label>QObject</label>
+      </node>
+      <node id="44">
+        <label>QPair</label>
+      </node>
+      <node id="8">
+        <label>QPoint</label>
+      </node>
+      <node id="35">
+        <label>QPointF</label>
+      </node>
+      <node id="67">
+        <label>QPointer</label>
+      </node>
+      <node id="32">
+        <label>QRect</label>
+      </node>
+      <node id="38">
+        <label>QRectF</label>
+      </node>
+      <node id="12">
+        <label>QRegion</label>
+      </node>
+      <node id="45">
+        <label>QSet</label>
+      </node>
+      <node id="30">
+        <label>QSize</label>
+      </node>
+      <node id="48">
+        <label>QStack</label>
+      </node>
+      <node id="54">
+        <label>QString</label>
+      </node>
+      <node id="68">
+        <label>QTransform</label>
+      </node>
+      <node id="33">
+        <label>QUuid</label>
+      </node>
+      <node id="9">
+        <label>QVariant</label>
+      </node>
+      <node id="10">
+        <label>QVector2D</label>
+      </node>
+      <node id="60">
+        <label>QVector3D</label>
+      </node>
+      <node id="41">
+        <label>QWindow</label>
+      </node>
+      <node id="5">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="55">
+        <label>epoxy/egl.h</label>
+      </node>
+      <node id="18">
+        <label>epoxy/gl.h</label>
+      </node>
+      <node id="49">
+        <label>functional</label>
+      </node>
+      <node id="11">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="63">
+        <label>map</label>
+      </node>
+      <node id="64">
+        <label>memory</label>
+      </node>
+      <node id="69">
+        <label>moc_offscreeneffect.cpp</label>
+      </node>
+      <node id="19">
+        <label>optional</label>
+      </node>
+      <node id="20">
+        <label>ranges</label>
+      </node>
+      <node id="21">
+        <label>span</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_k_win_1_1_offscreen_data" prot="public">KWin::OffscreenData</innerclass>
+    <innerclass refid="class_k_win_1_1_offscreen_effect_private" prot="public">KWin::OffscreenEffectPrivate</innerclass>
+    <innerclass refid="class_k_win_1_1_cross_fade_window_data" prot="public">KWin::CrossFadeWindowData</innerclass>
+    <innerclass refid="class_k_win_1_1_cross_fade_effect_private" prot="public">KWin::CrossFadeEffectPrivate</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2021<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="offscreeneffect_8h" kindref="compound">effect/offscreeneffect.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="core_2output_8h" kindref="compound">core/output.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pixelgrid_8h" kindref="compound">core/pixelgrid.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="rendertarget_8h" kindref="compound">core/rendertarget.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="renderviewport_8h" kindref="compound">core/renderviewport.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="effecthandler_8h" kindref="compound">effect/effecthandler.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="eglcontext_8h" kindref="compound">opengl/eglcontext.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="gltexture_8h" kindref="compound">opengl/gltexture.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="glutils_8h" kindref="compound">opengl/glutils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="windowitem_8h" kindref="compound">scene/windowitem.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="struct_k_win_1_1_offscreen_data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_k_win_1_1_offscreen_data" kindref="compound">OffscreenData</ref></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_offscreen_data_1a1ce1420eb876cb7053e9a6b85f44c75e" kindref="member">~OffscreenData</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_offscreen_data_1abccab9f4db6f516f0ea02adf688da9c1" kindref="member">setDirty</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_offscreen_data_1a2e7fc003ca42238ee783915350b81f58" kindref="member">setShader</ref>(<ref refid="class_k_win_1_1_g_l_shader" kindref="compound">GLShader</ref><sp/>*newShader);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_offscreen_data_1a1cd63ba227aabe8998c77a68e12068a3" kindref="member">setVertexSnappingMode</ref>(<ref refid="class_k_win_1_1_render_geometry_1a7bc1c02ecb839871aadec8895abda2e4" kindref="member">RenderGeometry::VertexSnappingMode</ref><sp/>mode);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_offscreen_data_1ae8d8c6463b818cef59ad5753e2dc1c79" kindref="member">paint</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref><sp/>&amp;renderTarget,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref><sp/>&amp;viewport,<sp/><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*window,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegion<sp/>&amp;region,</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref><sp/>&amp;data,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_quad_list" kindref="compound">WindowQuadList</ref><sp/>&amp;quads);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_offscreen_data_1ad6cb59925f21ddacfdccdd83fec1797e" kindref="member">maybeRender</ref>(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*window);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="struct_k_win_1_1_offscreen_data_1afe9299bb6d78876d79c03469931317f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;GLTexture&gt;<sp/><ref refid="struct_k_win_1_1_offscreen_data_1afe9299bb6d78876d79c03469931317f6" kindref="member">m_texture</ref>;</highlight></codeline>
+<codeline lineno="35" refid="struct_k_win_1_1_offscreen_data_1ad319d1999e7582dd2a182bf1a8b629ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;GLFramebuffer&gt;<sp/><ref refid="struct_k_win_1_1_offscreen_data_1ad319d1999e7582dd2a182bf1a8b629ed" kindref="member">m_fbo</ref>;</highlight></codeline>
+<codeline lineno="36" refid="struct_k_win_1_1_offscreen_data_1ac01f0a9190225262b80b48de638681c9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_offscreen_data_1ac01f0a9190225262b80b48de638681c9" kindref="member">m_isDirty</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37" refid="struct_k_win_1_1_offscreen_data_1a6006be4af1966b8e459eed97f13b0909" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_g_l_shader" kindref="compound">GLShader</ref><sp/>*<ref refid="struct_k_win_1_1_offscreen_data_1a6006be4af1966b8e459eed97f13b0909" kindref="member">m_shader</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38" refid="struct_k_win_1_1_offscreen_data_1af213ea007d89f803cee90430cb792fc2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_render_geometry_1a7bc1c02ecb839871aadec8895abda2e4" kindref="member">RenderGeometry::VertexSnappingMode</ref><sp/><ref refid="struct_k_win_1_1_offscreen_data_1af213ea007d89f803cee90430cb792fc2" kindref="member">m_vertexSnappingMode</ref><sp/>=<sp/><ref refid="class_k_win_1_1_render_geometry_1a7bc1c02ecb839871aadec8895abda2e4ab7f41fc1412ad2ee75e9b2635d3b9d5c" kindref="member">RenderGeometry::VertexSnappingMode::Round</ref>;</highlight></codeline>
+<codeline lineno="39" refid="struct_k_win_1_1_offscreen_data_1a85d97e4b369bcb2d21d3125ae99031c4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QMetaObject::Connection<sp/><ref refid="struct_k_win_1_1_offscreen_data_1a85d97e4b369bcb2d21d3125ae99031c4" kindref="member">m_windowDamagedConnection</ref>;</highlight></codeline>
+<codeline lineno="40" refid="struct_k_win_1_1_offscreen_data_1ae7cff6df25cae028c44b6fd75bb13115" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_item_effect" kindref="compound">ItemEffect</ref><sp/><ref refid="struct_k_win_1_1_offscreen_data_1ae7cff6df25cae028c44b6fd75bb13115" kindref="member">m_windowEffect</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="class_k_win_1_1_offscreen_effect_private" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_offscreen_effect_private" kindref="compound">OffscreenEffectPrivate</ref></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="46" refid="class_k_win_1_1_offscreen_effect_private_1a4202d293125b6d78cc13ad1a8c8ca02d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;EffectWindow<sp/>*,<sp/>std::unique_ptr&lt;OffscreenData&gt;&gt;<sp/><ref refid="class_k_win_1_1_offscreen_effect_private_1a4202d293125b6d78cc13ad1a8c8ca02d" kindref="member">windows</ref>;</highlight></codeline>
+<codeline lineno="47" refid="class_k_win_1_1_offscreen_effect_private_1a83a1148cd97d0f43702df56df0332981" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QMetaObject::Connection<sp/><ref refid="class_k_win_1_1_offscreen_effect_private_1a83a1148cd97d0f43702df56df0332981" kindref="member">windowDeletedConnection</ref>;</highlight></codeline>
+<codeline lineno="48" refid="class_k_win_1_1_offscreen_effect_private_1a5ce2207d78034b4bdeb7271625a8ebd9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_render_geometry_1a7bc1c02ecb839871aadec8895abda2e4" kindref="member">RenderGeometry::VertexSnappingMode</ref><sp/><ref refid="class_k_win_1_1_offscreen_effect_private_1a5ce2207d78034b4bdeb7271625a8ebd9" kindref="member">vertexSnappingMode</ref><sp/>=<sp/><ref refid="class_k_win_1_1_render_geometry_1a7bc1c02ecb839871aadec8895abda2e4ab7f41fc1412ad2ee75e9b2635d3b9d5c" kindref="member">RenderGeometry::VertexSnappingMode::Round</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="class_k_win_1_1_offscreen_effect_1ac2af5bb9d718ff03474cdd2d6715a055" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_offscreen_effect_1ac2af5bb9d718ff03474cdd2d6715a055" kindref="member">OffscreenEffect::OffscreenEffect</ref>(QObject<sp/>*parent)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="group__kwineffects_1ga7bd8262f4cb2c5c3090c748eb388ad7e" kindref="member">Effect</ref>(parent)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>d(std::make_unique&lt;<ref refid="class_k_win_1_1_offscreen_effect_private" kindref="compound">OffscreenEffectPrivate</ref>&gt;())</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><ref refid="class_k_win_1_1_offscreen_effect_1ac913e0092c54576890821b0bcb3e7033" kindref="member">OffscreenEffect::~OffscreenEffect</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="class_k_win_1_1_offscreen_effect_1adad3bef365b5939d04c257e0731e5013" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_offscreen_effect_1adad3bef365b5939d04c257e0731e5013" kindref="member">OffscreenEffect::supported</ref>()</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1ad780e509c41727e08e1cc641d4cad7b5" kindref="member">effects</ref>-&gt;isOpenGLCompositing();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="class_k_win_1_1_offscreen_effect_1a6f9911e49dbaf73975c2f238937930be" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_offscreen_effect_1a6f9911e49dbaf73975c2f238937930be" kindref="member">OffscreenEffect::redirect</ref>(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*window)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;OffscreenData&gt;<sp/>&amp;offscreenData<sp/>=<sp/>d-&gt;windows[window];</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(offscreenData)<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>offscreenData<sp/>=<sp/>std::make_unique&lt;OffscreenData&gt;();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>offscreenData-&gt;setVertexSnappingMode(d-&gt;vertexSnappingMode);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>offscreenData-&gt;m_windowEffect<sp/>=<sp/><ref refid="class_k_win_1_1_item_effect" kindref="compound">ItemEffect</ref>(window-&gt;<ref refid="class_k_win_1_1_effect_window_1a4ea826c4e0ce5b195e428ec9766bc2f1" kindref="member">windowItem</ref>());</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>offscreenData-&gt;m_windowDamagedConnection<sp/>=</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>connect(window,<sp/>&amp;<ref refid="class_k_win_1_1_effect_window_1a14d82213bbcf4280fc5a1061858370ba" kindref="member">EffectWindow::windowDamaged</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;OffscreenEffect::handleWindowDamaged);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d-&gt;windows.size()<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setupConnections();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="class_k_win_1_1_offscreen_effect_1a503d5105f32353e6a0046b8a0ea91b22" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_offscreen_effect_1a503d5105f32353e6a0046b8a0ea91b22" kindref="member">OffscreenEffect::unredirect</ref>(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*window)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>d-&gt;windows.find(window);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>==<sp/>d-&gt;windows.end())<sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="class_k_win_1_1_egl_context_1a62c2db828c863aa0e37b7568df85154f" kindref="member">EglContext::currentContext</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1ad780e509c41727e08e1cc641d4cad7b5" kindref="member">effects</ref>-&gt;openglContext()-&gt;makeCurrent();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;windows.erase(it);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d-&gt;windows.empty())<sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>destroyConnections();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="class_k_win_1_1_offscreen_effect_1ae98f808ad3750003d4a1f7f24fa284a5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_offscreen_effect_1ae98f808ad3750003d4a1f7f24fa284a5" kindref="member">OffscreenEffect::setShader</ref>(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*window,<sp/><ref refid="class_k_win_1_1_g_l_shader" kindref="compound">GLShader</ref><sp/>*shader)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>d-&gt;windows.find(window);<sp/>it<sp/>!=<sp/>d-&gt;windows.end())<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;second-&gt;setShader(shader);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="class_k_win_1_1_offscreen_effect_1a770fb27f108f87402051ca3f320092b2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_offscreen_effect_1a770fb27f108f87402051ca3f320092b2" kindref="member">OffscreenEffect::apply</ref>(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*window,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask,<sp/><ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref><sp/>&amp;data,<sp/><ref refid="class_k_win_1_1_window_quad_list" kindref="compound">WindowQuadList</ref><sp/>&amp;quads)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="struct_k_win_1_1_offscreen_data_1ad6cb59925f21ddacfdccdd83fec1797e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_offscreen_data_1ad6cb59925f21ddacfdccdd83fec1797e" kindref="member">OffscreenData::maybeRender</ref>(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*window)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>qreal<sp/>scale<sp/>=<sp/>window-&gt;<ref refid="class_k_win_1_1_effect_window_1acc4498cfe046b04cd40649fd2f2ea15d" kindref="member">screen</ref>()-&gt;<ref refid="class_k_win_1_1_output_1a26b1c3dcc612487192f4f23d11bc72b0" kindref="member">scale</ref>();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRectF<sp/>logicalGeometry<sp/>=<sp/><ref refid="namespace_k_win_1ac5cdb84fe1860d1071de1403b965e667" kindref="member">snapToPixels</ref>(window-&gt;<ref refid="class_k_win_1_1_effect_window_1a82134568757e14380d6002c6fad5da9c" kindref="member">expandedGeometry</ref>(),<sp/>scale);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QSize<sp/>textureSize<sp/>=<sp/>(logicalGeometry.size()<sp/>*<sp/>scale).toSize();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="struct_k_win_1_1_offscreen_data_1afe9299bb6d78876d79c03469931317f6" kindref="member">m_texture</ref><sp/>||<sp/><ref refid="struct_k_win_1_1_offscreen_data_1afe9299bb6d78876d79c03469931317f6" kindref="member">m_texture</ref>-&gt;size()<sp/>!=<sp/>textureSize)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_k_win_1_1_offscreen_data_1afe9299bb6d78876d79c03469931317f6" kindref="member">m_texture</ref><sp/>=<sp/><ref refid="class_k_win_1_1_g_l_texture_1a22b5bb33ada7c4b53f73c57f5405289f" kindref="member">GLTexture::allocate</ref>(GL_RGBA8,<sp/>textureSize);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="struct_k_win_1_1_offscreen_data_1afe9299bb6d78876d79c03469931317f6" kindref="member">m_texture</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_k_win_1_1_offscreen_data_1afe9299bb6d78876d79c03469931317f6" kindref="member">m_texture</ref>-&gt;setFilter(GL_LINEAR);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_k_win_1_1_offscreen_data_1afe9299bb6d78876d79c03469931317f6" kindref="member">m_texture</ref>-&gt;setWrapMode(GL_CLAMP_TO_EDGE);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_k_win_1_1_offscreen_data_1ad319d1999e7582dd2a182bf1a8b629ed" kindref="member">m_fbo</ref><sp/>=<sp/>std::make_unique&lt;GLFramebuffer&gt;(<ref refid="struct_k_win_1_1_offscreen_data_1afe9299bb6d78876d79c03469931317f6" kindref="member">m_texture</ref>.get());</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_k_win_1_1_offscreen_data_1ac01f0a9190225262b80b48de638681c9" kindref="member">m_isDirty</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="struct_k_win_1_1_offscreen_data_1ac01f0a9190225262b80b48de638681c9" kindref="member">m_isDirty</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref><sp/>renderTarget(<ref refid="struct_k_win_1_1_offscreen_data_1ad319d1999e7582dd2a182bf1a8b629ed" kindref="member">m_fbo</ref>.get());</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref><sp/>viewport(logicalGeometry,<sp/>scale,<sp/>renderTarget);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_g_l_framebuffer_1a7eb3049da73a065dcf8ff137fd9b5e3f" kindref="member">GLFramebuffer::pushFramebuffer</ref>(<ref refid="struct_k_win_1_1_offscreen_data_1ad319d1999e7582dd2a182bf1a8b629ed" kindref="member">m_fbo</ref>.get());</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glClearColor(0.0,<sp/>0.0,<sp/>0.0,<sp/>0.0);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glClear(GL_COLOR_BUFFER_BIT);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref><sp/>data;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data.<ref refid="group__kwineffects_1ga60ace1f0ae9acfbfc67723a1e77337dd" kindref="member">setOpacity</ref>(1.0);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask<sp/>=<sp/><ref refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da684bb6c6c278b900b6d0c889e79233b8" kindref="member">Effect::PAINT_WINDOW_TRANSFORMED</ref><sp/>|<sp/><ref refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dac7237bf4bb4d6ea6d6fb1215db19b45e" kindref="member">Effect::PAINT_WINDOW_TRANSLUCENT</ref>;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1ad780e509c41727e08e1cc641d4cad7b5" kindref="member">effects</ref>-&gt;drawWindow(renderTarget,<sp/>viewport,<sp/>window,<sp/>mask,<sp/><ref refid="namespace_k_win_1a0655524c1f1ba8dbb2cf16a1e4b9bb97" kindref="member">infiniteRegion</ref>(),<sp/>data);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_g_l_framebuffer_1a3f7265ef927c8b0ab82728c5118c7bed" kindref="member">GLFramebuffer::popFramebuffer</ref>();</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_k_win_1_1_offscreen_data_1ac01f0a9190225262b80b48de638681c9" kindref="member">m_isDirty</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="struct_k_win_1_1_offscreen_data_1a1ce1420eb876cb7053e9a6b85f44c75e" refkind="member"><highlight class="normal"><ref refid="struct_k_win_1_1_offscreen_data_1a1ce1420eb876cb7053e9a6b85f44c75e" kindref="member">OffscreenData::~OffscreenData</ref>()</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>QObject::disconnect(<ref refid="struct_k_win_1_1_offscreen_data_1a85d97e4b369bcb2d21d3125ae99031c4" kindref="member">m_windowDamagedConnection</ref>);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="struct_k_win_1_1_offscreen_data_1abccab9f4db6f516f0ea02adf688da9c1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_offscreen_data_1abccab9f4db6f516f0ea02adf688da9c1" kindref="member">OffscreenData::setDirty</ref>()</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_k_win_1_1_offscreen_data_1ac01f0a9190225262b80b48de638681c9" kindref="member">m_isDirty</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="struct_k_win_1_1_offscreen_data_1a2e7fc003ca42238ee783915350b81f58" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_offscreen_data_1a2e7fc003ca42238ee783915350b81f58" kindref="member">OffscreenData::setShader</ref>(<ref refid="class_k_win_1_1_g_l_shader" kindref="compound">GLShader</ref><sp/>*newShader)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_k_win_1_1_offscreen_data_1a6006be4af1966b8e459eed97f13b0909" kindref="member">m_shader</ref><sp/>=<sp/>newShader;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159" refid="struct_k_win_1_1_offscreen_data_1a1cd63ba227aabe8998c77a68e12068a3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_offscreen_data_1a1cd63ba227aabe8998c77a68e12068a3" kindref="member">OffscreenData::setVertexSnappingMode</ref>(<ref refid="class_k_win_1_1_render_geometry_1a7bc1c02ecb839871aadec8895abda2e4" kindref="member">RenderGeometry::VertexSnappingMode</ref><sp/>mode)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_k_win_1_1_offscreen_data_1af213ea007d89f803cee90430cb792fc2" kindref="member">m_vertexSnappingMode</ref><sp/>=<sp/>mode;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="struct_k_win_1_1_offscreen_data_1ae8d8c6463b818cef59ad5753e2dc1c79" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_offscreen_data_1ae8d8c6463b818cef59ad5753e2dc1c79" kindref="member">OffscreenData::paint</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref><sp/>&amp;renderTarget,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref><sp/>&amp;viewport,<sp/><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*window,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegion<sp/>&amp;region,</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref><sp/>&amp;data,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_quad_list" kindref="compound">WindowQuadList</ref><sp/>&amp;quads)</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_g_l_shader" kindref="compound">GLShader</ref><sp/>*shader<sp/>=<sp/><ref refid="struct_k_win_1_1_offscreen_data_1a6006be4af1966b8e459eed97f13b0909" kindref="member">m_shader</ref><sp/>?<sp/><ref refid="struct_k_win_1_1_offscreen_data_1a6006be4af1966b8e459eed97f13b0909" kindref="member">m_shader</ref><sp/>:<sp/><ref refid="class_k_win_1_1_shader_manager_1aaf9c40a0a4f2e72ad6e30fa967dd073c" kindref="member">ShaderManager::instance</ref>()-&gt;<ref refid="class_k_win_1_1_shader_manager_1a50a3b6c752c3165cb35f42c1810782a6" kindref="member">shader</ref>(<ref refid="namespace_k_win_1a5ea35b6d898ef92e1904522c66efa184a85736ea5bc8da56c443818dfff6ef91f" kindref="member">ShaderTrait::MapTexture</ref><sp/>|<sp/><ref refid="namespace_k_win_1a5ea35b6d898ef92e1904522c66efa184ac870e2fca2609e8077de9470fbb9ab43" kindref="member">ShaderTrait::Modulate</ref><sp/>|<sp/><ref refid="namespace_k_win_1a5ea35b6d898ef92e1904522c66efa184a21b19a78d7fe5620d542c70f4e1ad07e" kindref="member">ShaderTrait::AdjustSaturation</ref><sp/>|<sp/><ref refid="namespace_k_win_1a5ea35b6d898ef92e1904522c66efa184aa8f7aca3a49bf1645d089a470202154e" kindref="member">ShaderTrait::TransformColorspace</ref>);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_shader_binder" kindref="compound">ShaderBinder</ref><sp/>binder(shader);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>scale<sp/>=<sp/>viewport.<ref refid="class_k_win_1_1_render_viewport_1aa06db1277771d5021b3e7be43de747f3" kindref="member">scale</ref>();</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_g_l_vertex_buffer" kindref="compound">GLVertexBuffer</ref><sp/>*vbo<sp/>=<sp/><ref refid="class_k_win_1_1_g_l_vertex_buffer_1a4f61e01fc150ca4d947bbf78ba2a9ab8" kindref="member">GLVertexBuffer::streamingBuffer</ref>();</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>vbo-&gt;<ref refid="class_k_win_1_1_g_l_vertex_buffer_1a2e51e925e06dac9fc80941f0febda075" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>vbo-&gt;<ref refid="class_k_win_1_1_g_l_vertex_buffer_1a4550f562287163e1e64f76c32cb280c8" kindref="member">setAttribLayout</ref>(std::span(<ref refid="class_k_win_1_1_g_l_vertex_buffer_1a468d8172e772fc08346fbe15b7db2e33" kindref="member">GLVertexBuffer::GLVertex2DLayout</ref>),<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="struct_k_win_1_1_g_l_vertex2_d" kindref="compound">GLVertex2D</ref>));</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_render_geometry" kindref="compound">RenderGeometry</ref><sp/>geometry;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>geometry.<ref refid="class_k_win_1_1_render_geometry_1a831970848983731dc5ed787dfc7d591f" kindref="member">setVertexSnappingMode</ref>(<ref refid="struct_k_win_1_1_offscreen_data_1af213ea007d89f803cee90430cb792fc2" kindref="member">m_vertexSnappingMode</ref>);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;quad<sp/>:<sp/>quads)<sp/>{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>geometry.<ref refid="class_k_win_1_1_render_geometry_1a5cf9bbadd32a2608ea784d4dacc72b89" kindref="member">appendWindowQuad</ref>(quad,<sp/>scale);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>geometry.<ref refid="class_k_win_1_1_render_geometry_1a475c78cc940615e7d37a8f7fd78978db" kindref="member">postProcessTextureCoordinates</ref>(<ref refid="struct_k_win_1_1_offscreen_data_1afe9299bb6d78876d79c03469931317f6" kindref="member">m_texture</ref>-&gt;matrix(<ref refid="namespace_k_win_1ad6098fc293bb371948ad74f841c6a7b7a1cef6155ea1454d32a602b5627a1bf2a" kindref="member">NormalizedCoordinates</ref>));</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>map<sp/>=<sp/>vbo-&gt;<ref refid="class_k_win_1_1_g_l_vertex_buffer_1a943919aab590f879966a2737ac6aec47" kindref="member">map</ref>&lt;<ref refid="struct_k_win_1_1_g_l_vertex2_d" kindref="compound">GLVertex2D</ref>&gt;(geometry.size());</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!map)<sp/>{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>geometry.<ref refid="class_k_win_1_1_render_geometry_1a60e0c419486a2418a05719b9440f19d2" kindref="member">copy</ref>(*map);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>vbo-&gt;<ref refid="class_k_win_1_1_g_l_vertex_buffer_1a31338f49e5f7bcb61b8b733fd8cfb8f0" kindref="member">unmap</ref>();</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>vbo-&gt;<ref refid="class_k_win_1_1_g_l_vertex_buffer_1ac10ee171fa414f4af92501946f147ed6" kindref="member">bindArrays</ref>();</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>qreal<sp/>rgb<sp/>=<sp/>data.<ref refid="group__kwineffects_1ga9193084e08528baecd524d2a3fe64315" kindref="member">brightness</ref>()<sp/>*<sp/>data.<ref refid="group__kwineffects_1gad0f1f0aca1042097e8cfecc97bef02f4" kindref="member">opacity</ref>();</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>qreal<sp/>a<sp/>=<sp/>data.<ref refid="group__kwineffects_1gad0f1f0aca1042097e8cfecc97bef02f4" kindref="member">opacity</ref>();</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>QMatrix4x4<sp/>mvp<sp/>=<sp/>viewport.<ref refid="class_k_win_1_1_render_viewport_1a57942b073324499fae7848baf801d9a5" kindref="member">projectionMatrix</ref>();</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>mvp.translate(std::round(window-&gt;<ref refid="class_k_win_1_1_effect_window_1aac1f4a263e23a9ddcbb6e14f325923b9" kindref="member">x</ref>()<sp/>*<sp/>scale),<sp/>std::round(window-&gt;<ref refid="class_k_win_1_1_effect_window_1aca622a1be68a6c6e02290b6b3e8d2f54" kindref="member">y</ref>()<sp/>*<sp/>scale));</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>toXYZ<sp/>=<sp/>renderTarget.<ref refid="class_k_win_1_1_render_target_1abaa872511189a9e21f351c6a423a362d" kindref="member">colorDescription</ref>().<ref refid="class_k_win_1_1_color_description_1a078edcae56e57ca288e047c38d6a1b0d" kindref="member">containerColorimetry</ref>().<ref refid="class_k_win_1_1_colorimetry_1aaede1d30151de5781d5854246895b7b2" kindref="member">toXYZ</ref>();</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>shader-&gt;<ref refid="class_k_win_1_1_g_l_shader_1af1856d3aa2773faf2a63a23cea07db9a" kindref="member">setUniform</ref>(<ref refid="class_k_win_1_1_g_l_shader_1a443460f633e0d74e8303f45aefaa3691a45f966892aa9712b434b27ea5513b63a" kindref="member">GLShader::Mat4Uniform::ModelViewProjectionMatrix</ref>,<sp/>mvp<sp/>*<sp/>data.<ref refid="group__kwineffects_1ga60a1cbe0f048945c45cc843d79ae2104" kindref="member">toMatrix</ref>(scale));</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>shader-&gt;<ref refid="class_k_win_1_1_g_l_shader_1af1856d3aa2773faf2a63a23cea07db9a" kindref="member">setUniform</ref>(<ref refid="class_k_win_1_1_g_l_shader_1a6d59cea8f85957921c86729db6a84b9bac15ccc71e5767ba4f8614983965a26aa" kindref="member">GLShader::Vec4Uniform::ModulationConstant</ref>,<sp/>QVector4D(rgb,<sp/>rgb,<sp/>rgb,<sp/>a));</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>shader-&gt;<ref refid="class_k_win_1_1_g_l_shader_1af1856d3aa2773faf2a63a23cea07db9a" kindref="member">setUniform</ref>(<ref refid="class_k_win_1_1_g_l_shader_1a4ca07b55f39418655f237df9b679faf8a2e3307b9b1a2cc64b48f1cd6977a4b29" kindref="member">GLShader::FloatUniform::Saturation</ref>,<sp/>data.<ref refid="group__kwineffects_1ga32dfa2fc9fc75375a52c0baba1d1b95c" kindref="member">saturation</ref>());</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>shader-&gt;<ref refid="class_k_win_1_1_g_l_shader_1af1856d3aa2773faf2a63a23cea07db9a" kindref="member">setUniform</ref>(<ref refid="class_k_win_1_1_g_l_shader_1ab814086d2863ee6b89b55cc30285418ea4a298409892e447ea0614795f5944b63" kindref="member">GLShader::Vec3Uniform::PrimaryBrightness</ref>,<sp/>QVector3D(toXYZ(1,<sp/>0),<sp/>toXYZ(1,<sp/>1),<sp/>toXYZ(1,<sp/>2)));</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>shader-&gt;<ref refid="class_k_win_1_1_g_l_shader_1af1856d3aa2773faf2a63a23cea07db9a" kindref="member">setUniform</ref>(<ref refid="class_k_win_1_1_g_l_shader_1a722159dac6e0dc4c4dab9a7efaa59617a5f05f274b3c333df5ba14546a742fc2c" kindref="member">GLShader::IntUniform::TextureWidth</ref>,<sp/><ref refid="struct_k_win_1_1_offscreen_data_1afe9299bb6d78876d79c03469931317f6" kindref="member">m_texture</ref>-&gt;width());</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>shader-&gt;<ref refid="class_k_win_1_1_g_l_shader_1af1856d3aa2773faf2a63a23cea07db9a" kindref="member">setUniform</ref>(<ref refid="class_k_win_1_1_g_l_shader_1a722159dac6e0dc4c4dab9a7efaa59617ab5bf654ae145a164cb6adc6195ca1e51" kindref="member">GLShader::IntUniform::TextureHeight</ref>,<sp/><ref refid="struct_k_win_1_1_offscreen_data_1afe9299bb6d78876d79c03469931317f6" kindref="member">m_texture</ref>-&gt;height());</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>shader-&gt;<ref refid="class_k_win_1_1_g_l_shader_1a2b37e53875c769255092205692d85ea6" kindref="member">setColorspaceUniforms</ref>(<ref refid="class_k_win_1_1_color_description_1a329e58d9b909836414261f4f1857ccf6" kindref="member">ColorDescription::sRGB</ref>,<sp/>renderTarget.<ref refid="class_k_win_1_1_render_target_1abaa872511189a9e21f351c6a423a362d" kindref="member">colorDescription</ref>(),<sp/><ref refid="namespace_k_win_1a72b8a93022757874f9e6f85fcf9bc4e9a09ab3095e9b2d0a7773cc3d2f0f879cd" kindref="member">RenderingIntent::Perceptual</ref>);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>clipping<sp/>=<sp/>region<sp/>!=<sp/><ref refid="namespace_k_win_1a0655524c1f1ba8dbb2cf16a1e4b9bb97" kindref="member">infiniteRegion</ref>();</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegion<sp/>clipRegion<sp/>=<sp/>clipping<sp/>?<sp/>viewport.<ref refid="class_k_win_1_1_render_viewport_1adb90b7fe02d43db769e9aa33dcb110eb" kindref="member">mapToRenderTarget</ref>(region)<sp/>:<sp/><ref refid="namespace_k_win_1a0655524c1f1ba8dbb2cf16a1e4b9bb97" kindref="member">infiniteRegion</ref>();</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(clipping)<sp/>{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glEnable(GL_SCISSOR_TEST);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>glEnable(GL_BLEND);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>glBlendFunc(GL_ONE,<sp/>GL_ONE_MINUS_SRC_ALPHA);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_k_win_1_1_offscreen_data_1afe9299bb6d78876d79c03469931317f6" kindref="member">m_texture</ref>-&gt;bind();</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>vbo-&gt;<ref refid="class_k_win_1_1_g_l_vertex_buffer_1a1bdaa52f784a0ba2cb195f524f9d1902" kindref="member">draw</ref>(clipRegion,<sp/>GL_TRIANGLES,<sp/>0,<sp/>geometry.count(),<sp/>clipping);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_k_win_1_1_offscreen_data_1afe9299bb6d78876d79c03469931317f6" kindref="member">m_texture</ref>-&gt;unbind();</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>glDisable(GL_BLEND);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(clipping)<sp/>{</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glDisable(GL_SCISSOR_TEST);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>vbo-&gt;<ref refid="class_k_win_1_1_g_l_vertex_buffer_1aef97e5890dc7aaedde08cbdc7c862a07" kindref="member">unbindArrays</ref>();</highlight></codeline>
+<codeline lineno="226"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228" refid="class_k_win_1_1_offscreen_effect_1a0a6ba121aa03a17457d3080054ef1615" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_offscreen_effect_1a0a6ba121aa03a17457d3080054ef1615" kindref="member">OffscreenEffect::drawWindow</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref><sp/>&amp;renderTarget,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref><sp/>&amp;viewport,<sp/><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*window,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegion<sp/>&amp;region,<sp/><ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref><sp/>&amp;data)</highlight></codeline>
+<codeline lineno="229"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>d-&gt;windows.find(window);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>==<sp/>d-&gt;windows.end())<sp/>{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1ad780e509c41727e08e1cc641d4cad7b5" kindref="member">effects</ref>-&gt;drawWindow(renderTarget,<sp/>viewport,<sp/>window,<sp/>mask,<sp/>region,<sp/>data);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_k_win_1_1_offscreen_data" kindref="compound">OffscreenData</ref><sp/>*offscreenData<sp/>=<sp/>it-&gt;second.get();</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRectF<sp/>expandedGeometry<sp/>=<sp/><ref refid="namespace_k_win_1ac5cdb84fe1860d1071de1403b965e667" kindref="member">snapToPixels</ref>(window-&gt;<ref refid="class_k_win_1_1_effect_window_1a82134568757e14380d6002c6fad5da9c" kindref="member">expandedGeometry</ref>(),<sp/>viewport.<ref refid="class_k_win_1_1_render_viewport_1aa06db1277771d5021b3e7be43de747f3" kindref="member">scale</ref>());</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRectF<sp/>frameGeometry<sp/>=<sp/><ref refid="namespace_k_win_1ac5cdb84fe1860d1071de1403b965e667" kindref="member">snapToPixels</ref>(window-&gt;<ref refid="class_k_win_1_1_effect_window_1afb22c0e0ccd57d4ab03cf2c2a21d6196" kindref="member">frameGeometry</ref>(),<sp/>viewport.<ref refid="class_k_win_1_1_render_viewport_1aa06db1277771d5021b3e7be43de747f3" kindref="member">scale</ref>());</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>QRectF<sp/>visibleRect<sp/>=<sp/>expandedGeometry;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>visibleRect.moveTopLeft(expandedGeometry.topLeft()<sp/>-<sp/>frameGeometry.topLeft());</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_quad" kindref="compound">WindowQuad</ref><sp/>quad;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>quad[0]<sp/>=<sp/><ref refid="class_k_win_1_1_window_vertex" kindref="compound">WindowVertex</ref>(visibleRect.topLeft(),<sp/>QPointF(0,<sp/>0));</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>quad[1]<sp/>=<sp/><ref refid="class_k_win_1_1_window_vertex" kindref="compound">WindowVertex</ref>(visibleRect.topRight(),<sp/>QPointF(1,<sp/>0));</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>quad[2]<sp/>=<sp/><ref refid="class_k_win_1_1_window_vertex" kindref="compound">WindowVertex</ref>(visibleRect.bottomRight(),<sp/>QPointF(1,<sp/>1));</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>quad[3]<sp/>=<sp/><ref refid="class_k_win_1_1_window_vertex" kindref="compound">WindowVertex</ref>(visibleRect.bottomLeft(),<sp/>QPointF(0,<sp/>1));</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_quad_list" kindref="compound">WindowQuadList</ref><sp/>quads;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>quads.append(quad);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_offscreen_effect_1a770fb27f108f87402051ca3f320092b2" kindref="member">apply</ref>(window,<sp/>mask,<sp/>data,<sp/>quads);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/>offscreenData-&gt;<ref refid="struct_k_win_1_1_offscreen_data_1ad6cb59925f21ddacfdccdd83fec1797e" kindref="member">maybeRender</ref>(window);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>offscreenData-&gt;<ref refid="struct_k_win_1_1_offscreen_data_1ae8d8c6463b818cef59ad5753e2dc1c79" kindref="member">paint</ref>(renderTarget,<sp/>viewport,<sp/>window,<sp/>region,<sp/>data,<sp/>quads);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>OffscreenEffect::handleWindowDamaged(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*window)</highlight></codeline>
+<codeline lineno="257"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>d-&gt;windows.find(window);<sp/>it<sp/>!=<sp/>d-&gt;windows.end())<sp/>{</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;second-&gt;setDirty();</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>OffscreenEffect::handleWindowDeleted(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*window)</highlight></codeline>
+<codeline lineno="264"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_offscreen_effect_1a503d5105f32353e6a0046b8a0ea91b22" kindref="member">unredirect</ref>(window);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>OffscreenEffect::setupConnections()</highlight></codeline>
+<codeline lineno="269"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;windowDeletedConnection<sp/>=</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>connect(<ref refid="namespace_k_win_1ad780e509c41727e08e1cc641d4cad7b5" kindref="member">effects</ref>,<sp/>&amp;<ref refid="class_k_win_1_1_effects_handler_1a13c385b70a4984545ba1f8ed8204871c" kindref="member">EffectsHandler::windowDeleted</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;OffscreenEffect::handleWindowDeleted);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>OffscreenEffect::destroyConnections()</highlight></codeline>
+<codeline lineno="275"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>disconnect(d-&gt;windowDeletedConnection);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;windowDeletedConnection<sp/>=<sp/>{};</highlight></codeline>
+<codeline lineno="279"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281" refid="class_k_win_1_1_offscreen_effect_1ae390a8c07620d899b467b6c919901649" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_offscreen_effect_1ae390a8c07620d899b467b6c919901649" kindref="member">OffscreenEffect::setVertexSnappingMode</ref>(<ref refid="class_k_win_1_1_render_geometry_1a7bc1c02ecb839871aadec8895abda2e4" kindref="member">RenderGeometry::VertexSnappingMode</ref><sp/>mode)</highlight></codeline>
+<codeline lineno="282"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;vertexSnappingMode<sp/>=<sp/>mode;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;window<sp/>:<sp/>std::as_const(d-&gt;windows))<sp/>{</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>window.second-&gt;setVertexSnappingMode(mode);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="287"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289" refid="class_k_win_1_1_offscreen_effect_1a112119e708233a1ddcfac249089f2fee" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_offscreen_effect_1a112119e708233a1ddcfac249089f2fee" kindref="member">OffscreenEffect::blocksDirectScanout</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="290"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="292"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294" refid="class_k_win_1_1_cross_fade_window_data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_cross_fade_window_data" kindref="compound">CrossFadeWindowData</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_offscreen_data" kindref="compound">OffscreenData</ref></highlight></codeline>
+<codeline lineno="295"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="297" refid="class_k_win_1_1_cross_fade_window_data_1a1eaa7475fb9d4714262ebb645ae9d828" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QRectF<sp/><ref refid="class_k_win_1_1_cross_fade_window_data_1a1eaa7475fb9d4714262ebb645ae9d828" kindref="member">frameGeometryAtCapture</ref>;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300" refid="class_k_win_1_1_cross_fade_effect_private" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_cross_fade_effect_private" kindref="compound">CrossFadeEffectPrivate</ref></highlight></codeline>
+<codeline lineno="301"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="303" refid="class_k_win_1_1_cross_fade_effect_private_1af3f69108be8dd2c7ad5c631bc8364712" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;EffectWindow<sp/>*,<sp/>std::unique_ptr&lt;CrossFadeWindowData&gt;&gt;<sp/><ref refid="class_k_win_1_1_cross_fade_effect_private_1af3f69108be8dd2c7ad5c631bc8364712" kindref="member">windows</ref>;</highlight></codeline>
+<codeline lineno="304" refid="class_k_win_1_1_cross_fade_effect_private_1a80b43fc4beda4de895acbf09c4d7b344" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>qreal<sp/><ref refid="class_k_win_1_1_cross_fade_effect_private_1a80b43fc4beda4de895acbf09c4d7b344" kindref="member">progress</ref>;</highlight></codeline>
+<codeline lineno="305"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307" refid="class_k_win_1_1_cross_fade_effect_1ae701f741988327905e85e0cd0312de8d" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_cross_fade_effect_1ae701f741988327905e85e0cd0312de8d" kindref="member">CrossFadeEffect::CrossFadeEffect</ref>(QObject<sp/>*parent)</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="group__kwineffects_1ga7bd8262f4cb2c5c3090c748eb388ad7e" kindref="member">Effect</ref>(parent)</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>d(std::make_unique&lt;<ref refid="class_k_win_1_1_cross_fade_effect_private" kindref="compound">CrossFadeEffectPrivate</ref>&gt;())</highlight></codeline>
+<codeline lineno="310"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="311"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><ref refid="class_k_win_1_1_cross_fade_effect_1a5c1a9467b3f91d67b6485e4fd859f7eb" kindref="member">CrossFadeEffect::~CrossFadeEffect</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315" refid="class_k_win_1_1_cross_fade_effect_1af425332f0e69817a60019b5a64a18746" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cross_fade_effect_1af425332f0e69817a60019b5a64a18746" kindref="member">CrossFadeEffect::drawWindow</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref><sp/>&amp;renderTarget,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref><sp/>&amp;viewport,<sp/><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*window,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegion<sp/>&amp;region,<sp/><ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref><sp/>&amp;data)</highlight></codeline>
+<codeline lineno="316"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>d-&gt;windows.find(window);</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>paint<sp/>the<sp/>new<sp/>window<sp/>(if<sp/>applicable)<sp/>underneath</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data.<ref refid="group__kwineffects_1ga1dac14ebb3addc453cd32df7f99e0d4c" kindref="member">crossFadeProgress</ref>()<sp/>&gt;<sp/>0<sp/>||<sp/>it<sp/>==<sp/>d-&gt;windows.end())<sp/>{</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__kwineffects_1ga254b1a3e8bb8b9b671e9b000ca027b7c" kindref="member">Effect::drawWindow</ref>(renderTarget,<sp/>viewport,<sp/>window,<sp/>mask,<sp/>region,<sp/>data);</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>==<sp/>d-&gt;windows.end())<sp/>{</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_cross_fade_window_data" kindref="compound">CrossFadeWindowData</ref><sp/>*offscreenData<sp/>=<sp/>it-&gt;second.get();</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>paint<sp/>old<sp/>snapshot<sp/>on<sp/>top</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref><sp/>previousWindowData<sp/>=<sp/>data;</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/>previousWindowData.<ref refid="group__kwineffects_1ga60ace1f0ae9acfbfc67723a1e77337dd" kindref="member">setOpacity</ref>((1.0<sp/>-<sp/>data.<ref refid="group__kwineffects_1ga1dac14ebb3addc453cd32df7f99e0d4c" kindref="member">crossFadeProgress</ref>())<sp/>*<sp/>data.<ref refid="group__kwineffects_1gad0f1f0aca1042097e8cfecc97bef02f4" kindref="member">opacity</ref>());</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRectF<sp/>expandedGeometry<sp/>=<sp/><ref refid="namespace_k_win_1ac5cdb84fe1860d1071de1403b965e667" kindref="member">snapToPixels</ref>(window-&gt;<ref refid="class_k_win_1_1_effect_window_1a82134568757e14380d6002c6fad5da9c" kindref="member">expandedGeometry</ref>(),<sp/>viewport.<ref refid="class_k_win_1_1_render_viewport_1aa06db1277771d5021b3e7be43de747f3" kindref="member">scale</ref>());</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRectF<sp/>frameGeometry<sp/>=<sp/><ref refid="namespace_k_win_1ac5cdb84fe1860d1071de1403b965e667" kindref="member">snapToPixels</ref>(window-&gt;<ref refid="class_k_win_1_1_effect_window_1afb22c0e0ccd57d4ab03cf2c2a21d6196" kindref="member">frameGeometry</ref>(),<sp/>viewport.<ref refid="class_k_win_1_1_render_viewport_1aa06db1277771d5021b3e7be43de747f3" kindref="member">scale</ref>());</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>for<sp/>the<sp/>case<sp/>of<sp/>*non*<sp/>live<sp/>effect,<sp/>when<sp/>the<sp/>window<sp/>buffer<sp/>we<sp/>saved<sp/>has<sp/>a<sp/>different<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>compared<sp/>to<sp/>the<sp/>size<sp/>the<sp/>window<sp/>has<sp/>now.<sp/>The<sp/>&quot;old&quot;<sp/>window<sp/>will<sp/>be<sp/>rendered<sp/>scaled<sp/>to<sp/>the<sp/>current</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>window<sp/>geometry,<sp/>but<sp/>everything<sp/>will<sp/>be<sp/>scaled,<sp/>also<sp/>the<sp/>shadow<sp/>if<sp/>there<sp/>is<sp/>any,<sp/>making<sp/>the<sp/>window</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>frame<sp/>not<sp/>line<sp/>up<sp/>anymore<sp/>with<sp/>window-&gt;frameGeometry()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>fix<sp/>that,<sp/>we<sp/>consider<sp/>how<sp/>much<sp/>the<sp/>shadow<sp/>will<sp/>have<sp/>scaled,<sp/>and<sp/>use<sp/>that<sp/>as<sp/>margins<sp/>to<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>current<sp/>frame<sp/>geometry.<sp/>this<sp/>causes<sp/>the<sp/>scaled<sp/>window<sp/>to<sp/>visually<sp/>line<sp/>up<sp/>perfectly<sp/>with<sp/>frameGeometry,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>having<sp/>the<sp/>scaled<sp/>shadow<sp/>all<sp/>outside<sp/>of<sp/>it.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>qreal<sp/>widthRatio<sp/>=<sp/>offscreenData-&gt;<ref refid="class_k_win_1_1_cross_fade_window_data_1a1eaa7475fb9d4714262ebb645ae9d828" kindref="member">frameGeometryAtCapture</ref>.width()<sp/>/<sp/>frameGeometry.width();</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>qreal<sp/>heightRatio<sp/>=<sp/>offscreenData-&gt;<ref refid="class_k_win_1_1_cross_fade_window_data_1a1eaa7475fb9d4714262ebb645ae9d828" kindref="member">frameGeometryAtCapture</ref>.height()<sp/>/<sp/>frameGeometry.height();</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QMarginsF<sp/>margins(</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(expandedGeometry.x()<sp/>-<sp/>frameGeometry.x())<sp/>/<sp/>widthRatio,</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(expandedGeometry.y()<sp/>-<sp/>frameGeometry.y())<sp/>/<sp/>heightRatio,</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(frameGeometry.right()<sp/>-<sp/>expandedGeometry.right())<sp/>/<sp/>widthRatio,</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(frameGeometry.bottom()<sp/>-<sp/>expandedGeometry.bottom())<sp/>/<sp/>heightRatio);</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/>QRectF<sp/>visibleRect<sp/>=<sp/>QRectF(QPointF(0,<sp/>0),<sp/>frameGeometry.size())<sp/>-<sp/>margins;</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_quad" kindref="compound">WindowQuad</ref><sp/>quad;</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/>quad[0]<sp/>=<sp/><ref refid="class_k_win_1_1_window_vertex" kindref="compound">WindowVertex</ref>(visibleRect.topLeft(),<sp/>QPointF(0,<sp/>0));</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/>quad[1]<sp/>=<sp/><ref refid="class_k_win_1_1_window_vertex" kindref="compound">WindowVertex</ref>(visibleRect.topRight(),<sp/>QPointF(1,<sp/>0));</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/>quad[2]<sp/>=<sp/><ref refid="class_k_win_1_1_window_vertex" kindref="compound">WindowVertex</ref>(visibleRect.bottomRight(),<sp/>QPointF(1,<sp/>1));</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/>quad[3]<sp/>=<sp/><ref refid="class_k_win_1_1_window_vertex" kindref="compound">WindowVertex</ref>(visibleRect.bottomLeft(),<sp/>QPointF(0,<sp/>1));</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_quad_list" kindref="compound">WindowQuadList</ref><sp/>quads;</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/>quads.append(quad);</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/>offscreenData-&gt;<ref refid="struct_k_win_1_1_offscreen_data_1ae8d8c6463b818cef59ad5753e2dc1c79" kindref="member">paint</ref>(renderTarget,<sp/>viewport,<sp/>window,<sp/>region,<sp/>previousWindowData,<sp/>quads);</highlight></codeline>
+<codeline lineno="363"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight></codeline>
+<codeline lineno="365" refid="class_k_win_1_1_cross_fade_effect_1a9b11480b3e53305cb64217ce477555d3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cross_fade_effect_1a9b11480b3e53305cb64217ce477555d3" kindref="member">CrossFadeEffect::redirect</ref>(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*window)</highlight></codeline>
+<codeline lineno="366"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d-&gt;windows.empty())<sp/>{</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>connect(<ref refid="namespace_k_win_1ad780e509c41727e08e1cc641d4cad7b5" kindref="member">effects</ref>,<sp/>&amp;<ref refid="class_k_win_1_1_effects_handler_1a13c385b70a4984545ba1f8ed8204871c" kindref="member">EffectsHandler::windowDeleted</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;CrossFadeEffect::handleWindowDeleted);</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;CrossFadeWindowData&gt;<sp/>&amp;offscreenData<sp/>=<sp/>d-&gt;windows[window];</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(offscreenData)<sp/>{</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/>offscreenData<sp/>=<sp/>std::make_unique&lt;CrossFadeWindowData&gt;();</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/>offscreenData-&gt;m_windowEffect<sp/>=<sp/><ref refid="class_k_win_1_1_item_effect" kindref="compound">ItemEffect</ref>(window-&gt;<ref refid="class_k_win_1_1_effect_window_1a4ea826c4e0ce5b195e428ec9766bc2f1" kindref="member">windowItem</ref>());</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Avoid<sp/>including<sp/>blur<sp/>and<sp/>contrast<sp/>effects.<sp/>During<sp/>a<sp/>normal<sp/>painting<sp/>cycle<sp/>they</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>won&apos;t<sp/>be<sp/>included,<sp/>but<sp/>since<sp/>we<sp/>call<sp/>effects-&gt;drawWindow()<sp/>outside<sp/>usual<sp/>compositing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>cycle,<sp/>we<sp/>have<sp/>to<sp/>prevent<sp/>backdrop<sp/>effects<sp/>kicking<sp/>in.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QVariant<sp/>blurRole<sp/>=<sp/>window-&gt;<ref refid="class_k_win_1_1_effect_window_1a6a82d876206aec3c767d8ea8ca1dc1fe" kindref="member">data</ref>(<ref refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6ab200085702f8619c5810dc1cb1576b2a" kindref="member">WindowForceBlurRole</ref>);</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/>window-&gt;<ref refid="class_k_win_1_1_effect_window_1a69d83e8d2e0e9c5630c054ce31210ce8" kindref="member">setData</ref>(<ref refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6ab200085702f8619c5810dc1cb1576b2a" kindref="member">WindowForceBlurRole</ref>,<sp/>QVariant());</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QVariant<sp/>contrastRole<sp/>=<sp/>window-&gt;<ref refid="class_k_win_1_1_effect_window_1a6a82d876206aec3c767d8ea8ca1dc1fe" kindref="member">data</ref>(<ref refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6a78ab8b50a33987a88962bfe8ac6878c3" kindref="member">WindowForceBackgroundContrastRole</ref>);</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/>window-&gt;<ref refid="class_k_win_1_1_effect_window_1a69d83e8d2e0e9c5630c054ce31210ce8" kindref="member">setData</ref>(<ref refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6a78ab8b50a33987a88962bfe8ac6878c3" kindref="member">WindowForceBackgroundContrastRole</ref>,<sp/>QVariant());</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1ad780e509c41727e08e1cc641d4cad7b5" kindref="member">effects</ref>-&gt;makeOpenGLContextCurrent();</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/>offscreenData-&gt;maybeRender(window);</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/>offscreenData-&gt;frameGeometryAtCapture<sp/>=<sp/>window-&gt;<ref refid="class_k_win_1_1_effect_window_1afb22c0e0ccd57d4ab03cf2c2a21d6196" kindref="member">frameGeometry</ref>();</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/>window-&gt;<ref refid="class_k_win_1_1_effect_window_1a69d83e8d2e0e9c5630c054ce31210ce8" kindref="member">setData</ref>(<ref refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6ab200085702f8619c5810dc1cb1576b2a" kindref="member">WindowForceBlurRole</ref>,<sp/>blurRole);</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/>window-&gt;<ref refid="class_k_win_1_1_effect_window_1a69d83e8d2e0e9c5630c054ce31210ce8" kindref="member">setData</ref>(<ref refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6a78ab8b50a33987a88962bfe8ac6878c3" kindref="member">WindowForceBackgroundContrastRole</ref>,<sp/>contrastRole);</highlight></codeline>
+<codeline lineno="392"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight></codeline>
+<codeline lineno="394" refid="class_k_win_1_1_cross_fade_effect_1a54887120fb87e713e90c0f3e6fe1ed02" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cross_fade_effect_1a54887120fb87e713e90c0f3e6fe1ed02" kindref="member">CrossFadeEffect::unredirect</ref>(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*window)</highlight></codeline>
+<codeline lineno="395"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>d-&gt;windows.find(window);</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>==<sp/>d-&gt;windows.end())<sp/>{</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="class_k_win_1_1_egl_context_1a62c2db828c863aa0e37b7568df85154f" kindref="member">EglContext::currentContext</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1ad780e509c41727e08e1cc641d4cad7b5" kindref="member">effects</ref>-&gt;openglContext()-&gt;makeCurrent();</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"></highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/>d-&gt;windows.erase(it);</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d-&gt;windows.empty())<sp/>{</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>disconnect(<ref refid="namespace_k_win_1ad780e509c41727e08e1cc641d4cad7b5" kindref="member">effects</ref>,<sp/>&amp;<ref refid="class_k_win_1_1_effects_handler_1a13c385b70a4984545ba1f8ed8204871c" kindref="member">EffectsHandler::windowDeleted</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;CrossFadeEffect::handleWindowDeleted);</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="409"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CrossFadeEffect::handleWindowDeleted(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*window)</highlight></codeline>
+<codeline lineno="412"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_cross_fade_effect_1a54887120fb87e713e90c0f3e6fe1ed02" kindref="member">unredirect</ref>(window);</highlight></codeline>
+<codeline lineno="414"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"></highlight></codeline>
+<codeline lineno="416" refid="class_k_win_1_1_cross_fade_effect_1a76f2c8834b93c008b25aca2040473fb4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cross_fade_effect_1a76f2c8834b93c008b25aca2040473fb4" kindref="member">CrossFadeEffect::setShader</ref>(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*window,<sp/><ref refid="class_k_win_1_1_g_l_shader" kindref="compound">GLShader</ref><sp/>*shader)</highlight></codeline>
+<codeline lineno="417"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>d-&gt;windows.find(window);<sp/>it<sp/>!=<sp/>d-&gt;windows.end())<sp/>{</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;second-&gt;setShader(shader);</highlight></codeline>
+<codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="421"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"></highlight></codeline>
+<codeline lineno="423" refid="class_k_win_1_1_cross_fade_effect_1a07422c4fb7d5c983a07ffffc677c5ec2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_cross_fade_effect_1a07422c4fb7d5c983a07ffffc677c5ec2" kindref="member">CrossFadeEffect::blocksDirectScanout</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="424"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="426"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="427"><highlight class="normal"></highlight></codeline>
+<codeline lineno="428"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="429"><highlight class="normal"></highlight></codeline>
+<codeline lineno="430"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;moc_offscreeneffect.cpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/effect/offscreeneffect.cpp"/>
+  </compounddef>
+</doxygen>

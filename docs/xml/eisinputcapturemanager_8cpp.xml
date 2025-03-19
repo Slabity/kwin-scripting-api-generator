@@ -1,0 +1,808 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="eisinputcapturemanager_8cpp" kind="file" language="C++">
+    <compoundname>eisinputcapturemanager.cpp</compoundname>
+    <includes refid="eisinputcapturemanager_8h" local="yes">eisinputcapturemanager.h</includes>
+    <includes refid="eisinputcapture_8h" local="yes">eisinputcapture.h</includes>
+    <includes refid="eisinputcapturefilter_8h" local="yes">eisinputcapturefilter.h</includes>
+    <includes local="yes">inputcapture_logging.h</includes>
+    <includes refid="core_2output_8h" local="yes">core/output.h</includes>
+    <includes refid="cursor_8h" local="yes">cursor.h</includes>
+    <includes refid="input__event_8h" local="yes">input_event.h</includes>
+    <includes refid="input__event__spy_8h" local="yes">input_event_spy.h</includes>
+    <includes refid="keyboard__input_8h" local="yes">keyboard_input.h</includes>
+    <includes refid="keyboard__layout_8h" local="yes">keyboard_layout.h</includes>
+    <includes refid="workspace_8h" local="yes">workspace.h</includes>
+    <includes refid="xkb_8h" local="yes">xkb.h</includes>
+    <includes local="no">KGlobalAccel</includes>
+    <includes local="no">KLocalizedString</includes>
+    <includes local="no">QAction</includes>
+    <includes local="no">QDBusConnection</includes>
+    <includes local="no">QDBusMessage</includes>
+    <includes local="no">QDBusMetaType</includes>
+    <includes local="no">QDBusServiceWatcher</includes>
+    <includes local="no">libeis.h</includes>
+    <incdepgraph>
+      <node id="37">
+        <label>core/colorspace.h</label>
+        <link refid="colorspace_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>core/inputdevice.h</label>
+        <link refid="inputdevice_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>core/output.h</label>
+        <link refid="core_2output_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>renderloop.h</label>
+        <link refid="renderloop_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>cursor.h</label>
+        <link refid="cursor_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>input.h</label>
+        <link refid="input_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>input_event.h</label>
+        <link refid="input__event_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>input_event_spy.h</label>
+        <link refid="input__event__spy_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>keyboard_input.h</label>
+        <link refid="keyboard__input_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>keyboard_layout.h</label>
+        <link refid="keyboard__layout_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>options.h</label>
+        <link refid="options_8h"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>eisinputcapture.h</label>
+        <link refid="eisinputcapture_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>eisinputcapturefilter.h</label>
+        <link refid="eisinputcapturefilter_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/plugins/eis/eisinputcapturemanager.cpp</label>
+        <link refid="eisinputcapturemanager_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>eisinputcapturemanager.h</label>
+        <link refid="eisinputcapturemanager_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>sm.h</label>
+        <link refid="sm_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>utils/common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>utils/edid.h</label>
+        <link refid="edid_8h"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>utils/ramfile.h</label>
+        <link refid="ramfile_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>utils/version.h</label>
+        <link refid="version_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>workspace.h</label>
+        <link refid="workspace_8h"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>xkb.h</label>
+        <link refid="xkb_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>KConfigGroup</label>
+      </node>
+      <node id="29">
+        <label>KConfigWatcher</label>
+      </node>
+      <node id="72">
+        <label>KGlobalAccel</label>
+      </node>
+      <node id="73">
+        <label>KLocalizedString</label>
+      </node>
+      <node id="30">
+        <label>KSharedConfig</label>
+      </node>
+      <node id="57">
+        <label>QAbstractNativeEventFilter</label>
+      </node>
+      <node id="74">
+        <label>QAction</label>
+      </node>
+      <node id="58">
+        <label>QApplication</label>
+      </node>
+      <node id="40">
+        <label>QByteArray</label>
+      </node>
+      <node id="23">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="75">
+        <label>QDBusConnection</label>
+      </node>
+      <node id="9">
+        <label>QDBusContext</label>
+      </node>
+      <node id="76">
+        <label>QDBusMessage</label>
+      </node>
+      <node id="77">
+        <label>QDBusMetaType</label>
+      </node>
+      <node id="10">
+        <label>QDBusObjectPath</label>
+      </node>
+      <node id="78">
+        <label>QDBusServiceWatcher</label>
+      </node>
+      <node id="11">
+        <label>QDBusUnixFileDescriptor</label>
+      </node>
+      <node id="61">
+        <label>QDataStream</label>
+      </node>
+      <node id="43">
+        <label>QDebug</label>
+      </node>
+      <node id="8">
+        <label>QFlag</label>
+      </node>
+      <node id="47">
+        <label>QHash</label>
+      </node>
+      <node id="24">
+        <label>QImage</label>
+      </node>
+      <node id="41">
+        <label>QList</label>
+      </node>
+      <node id="67">
+        <label>QLoggingCategory</label>
+      </node>
+      <node id="39">
+        <label>QMatrix4x4</label>
+      </node>
+      <node id="12">
+        <label>QObject</label>
+      </node>
+      <node id="25">
+        <label>QPoint</label>
+      </node>
+      <node id="51">
+        <label>QPointF</label>
+      </node>
+      <node id="28">
+        <label>QPointer</label>
+      </node>
+      <node id="59">
+        <label>QProcessEnvironment</label>
+      </node>
+      <node id="44">
+        <label>QRect</label>
+      </node>
+      <node id="31">
+        <label>QSet</label>
+      </node>
+      <node id="42">
+        <label>QSize</label>
+      </node>
+      <node id="14">
+        <label>QSocketNotifier</label>
+      </node>
+      <node id="66">
+        <label>QString</label>
+      </node>
+      <node id="62">
+        <label>QStringList</label>
+      </node>
+      <node id="6">
+        <label>QTemporaryFile</label>
+      </node>
+      <node id="63">
+        <label>QTimer</label>
+      </node>
+      <node id="45">
+        <label>QUuid</label>
+      </node>
+      <node id="26">
+        <label>QVariant</label>
+      </node>
+      <node id="27">
+        <label>QVector2D</label>
+      </node>
+      <node id="16">
+        <label>QtGlobal</label>
+      </node>
+      <node id="17">
+        <label>chrono</label>
+      </node>
+      <node id="68">
+        <label>climits</label>
+      </node>
+      <node id="4">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="32">
+        <label>functional</label>
+      </node>
+      <node id="33">
+        <label>inputcapture_logging.h</label>
+      </node>
+      <node id="5">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="18">
+        <label>libeis.h</label>
+      </node>
+      <node id="7">
+        <label>memory</label>
+      </node>
+      <node id="69">
+        <label>netwm_def.h</label>
+      </node>
+      <node id="38">
+        <label>optional</label>
+      </node>
+      <node id="48">
+        <label>xcb/xcb.h</label>
+      </node>
+      <node id="71">
+        <label>xkbcommon/xkbcommon.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_k_win_1_1_barrier_spy" prot="public">KWin::BarrierSpy</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2024<sp/>David<sp/>Redondo<sp/>&lt;kde@david-redondo&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-only<sp/>OR<sp/>GPL-3.0-only<sp/>OR<sp/>LicenseRef-KDE-Accepted-GPL</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="eisinputcapturemanager_8h" kindref="compound">eisinputcapturemanager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="eisinputcapture_8h" kindref="compound">eisinputcapture.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="eisinputcapturefilter_8h" kindref="compound">eisinputcapturefilter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;inputcapture_logging.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="core_2output_8h" kindref="compound">core/output.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="cursor_8h" kindref="compound">cursor.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="input__event_8h" kindref="compound">input_event.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="input__event__spy_8h" kindref="compound">input_event_spy.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="keyboard__input_8h" kindref="compound">keyboard_input.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="keyboard__layout_8h" kindref="compound">keyboard_layout.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="workspace_8h" kindref="compound">workspace.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="xkb_8h" kindref="compound">xkb.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KGlobalAccel&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;KLocalizedString&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QAction&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDBusConnection&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDBusMessage&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDBusMetaType&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDBusServiceWatcher&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;libeis.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="namespace_k_win_1a0c5aa021015fae5a9590fef459a5baaf" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>QKeyCombination<sp/><ref refid="namespace_k_win_1a0c5aa021015fae5a9590fef459a5baaf" kindref="member">defaultDisableKeys</ref>{Qt::META<sp/>|<sp/>Qt::SHIFT,<sp/>Qt::Key_Escape};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="class_k_win_1_1_barrier_spy" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_barrier_spy_1ae83fc3ce00c03c24d30458f383260c5c" kindref="member">BarrierSpy</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_input_event_spy_1a57ca2c40b812786fd52212bab1b2ec1c" kindref="member">InputEventSpy</ref></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41" refid="class_k_win_1_1_barrier_spy_1ae83fc3ce00c03c24d30458f383260c5c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_barrier_spy_1ae83fc3ce00c03c24d30458f383260c5c" kindref="member">BarrierSpy</ref>(<ref refid="class_k_win_1_1_eis_input_capture_manager" kindref="compound">EisInputCaptureManager</ref><sp/>*manager)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>manager(manager)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45" refid="class_k_win_1_1_barrier_spy_1a9e2ec5ebc6e6f9bc736ce7bdd3b24842" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_barrier_spy_1a9e2ec5ebc6e6f9bc736ce7bdd3b24842" kindref="member">pointerMotion</ref>(<ref refid="struct_k_win_1_1_pointer_motion_event" kindref="compound">KWin::PointerMotionEvent</ref><sp/>*event)</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline lineno="46"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(manager-&gt;activeCapture())<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;capture<sp/>:<sp/>manager-&gt;m_inputCaptures)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;barrier<sp/>:<sp/>capture-&gt;barriers())<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Detect<sp/>the<sp/>user<sp/>trying<sp/>to<sp/>move<sp/>out<sp/>of<sp/>the<sp/>workArea<sp/>and<sp/>across<sp/>the<sp/>barrier:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Both<sp/>current<sp/>and<sp/>previous<sp/>positions<sp/>are<sp/>on<sp/>the<sp/>barrier<sp/>but<sp/>there<sp/>was<sp/>an<sp/>orthogonal<sp/>delta</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(barrier.hitTest(event-&gt;<ref refid="struct_k_win_1_1_pointer_motion_event_1acba1e285b4ecfaa62f1aee65474282aa" kindref="member">position</ref>)<sp/>&amp;&amp;<sp/>barrier.hitTest(previousPos)<sp/>&amp;&amp;<sp/>((barrier.orientation<sp/>==<sp/>Qt::Vertical<sp/>&amp;&amp;<sp/>event-&gt;<ref refid="struct_k_win_1_1_pointer_motion_event_1a2d3efce51f17753d3ba85b595dc4ee02" kindref="member">delta</ref>.x()<sp/>!=<sp/>0)<sp/>||<sp/>(barrier.orientation<sp/>==<sp/>Qt::Horizontal<sp/>&amp;&amp;<sp/>event-&gt;<ref refid="struct_k_win_1_1_pointer_motion_event_1a2d3efce51f17753d3ba85b595dc4ee02" kindref="member">delta</ref>.y()<sp/>!=<sp/>0)))<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qCDebug(KWIN_INPUTCAPTURE)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Activating<sp/>input<sp/>capture,<sp/>crossing&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;barrier(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>barrier.orientation<sp/>&lt;&lt;<sp/>barrier.position<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>barrier.start<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>barrier.end<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;])&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;at&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">-&gt;position<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;with&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">-&gt;delta;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manager-&gt;barrierHit(capture.get(),<sp/>event-&gt;<ref refid="struct_k_win_1_1_pointer_motion_event_1acba1e285b4ecfaa62f1aee65474282aa" kindref="member">position</ref><sp/>+<sp/>event-&gt;<ref refid="struct_k_win_1_1_pointer_motion_event_1a2d3efce51f17753d3ba85b595dc4ee02" kindref="member">delta</ref>);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>previousPos<sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">-&gt;position;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65" refid="class_k_win_1_1_barrier_spy_1af70287204e33f7420499898696121440" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_barrier_spy_1af70287204e33f7420499898696121440" kindref="member">keyboardKey</ref>(<ref refid="struct_k_win_1_1_keyboard_key_event" kindref="compound">KWin::KeyboardKeyEvent</ref><sp/>*event)</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline lineno="66"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!manager-&gt;activeCapture())<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(event-&gt;<ref refid="struct_k_win_1_1_keyboard_key_event_1a9a3f8bbb9b2bb84fbb3a0833d11a2baa" kindref="member">state</ref><sp/>!=<sp/><ref refid="namespace_k_win_1a01355afe201da93e2da84b64923a02f1ad78a68f6a85421ae121c2cb5b73a1040" kindref="member">KeyboardKeyState::Pressed</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Even<sp/>if<sp/>the<sp/>user<sp/>removed<sp/>all<sp/>sequences<sp/>for<sp/>this,<sp/>we<sp/>use<sp/>the<sp/>default<sp/>one<sp/>to<sp/>have<sp/>an<sp/>escape<sp/>hatch</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>disableKeySequence<sp/>=<sp/>KGlobalAccel::self()-&gt;shortcut(manager-&gt;m_disableCaptureAction).value(0,<sp/><ref refid="namespace_k_win_1a0c5aa021015fae5a9590fef459a5baaf" kindref="member">defaultDisableKeys</ref>)[0];</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(event-&gt;<ref refid="struct_k_win_1_1_keyboard_key_event_1a5f81ba6145bce999f32aec0b97da7548" kindref="member">key</ref><sp/>==<sp/>disableKeySequence.key()<sp/>&amp;&amp;<sp/>event-&gt;<ref refid="struct_k_win_1_1_keyboard_key_event_1af66b823fbd8679868cf21411aa589941" kindref="member">modifiers</ref><sp/>==<sp/>disableKeySequence.keyboardModifiers())<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>manager-&gt;activeCapture()-&gt;disable();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>QKeyCombination<sp/>currentCombination;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_eis_input_capture_manager" kindref="compound">EisInputCaptureManager</ref><sp/>*manager;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>QPointF<sp/>previousPos;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="struct_k_win_1_1_eis_input_capture_barrier_1adee19cc75fd48851dd973af336edfb8f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_k_win_1_1_eis_input_capture_barrier_1adee19cc75fd48851dd973af336edfb8f" kindref="member">EisInputCaptureBarrier::hitTest</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>&amp;point)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="87"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="struct_k_win_1_1_eis_input_capture_barrier_1a29b4c1e3b47787ffcd1d5cdb4accea56" kindref="member">orientation</ref><sp/>==<sp/>Qt::Vertical)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>point.x()<sp/>==<sp/><ref refid="struct_k_win_1_1_eis_input_capture_barrier_1a8a61a4808b8dc865d229c7a5214ba779" kindref="member">position</ref><sp/>&amp;&amp;<sp/><ref refid="struct_k_win_1_1_eis_input_capture_barrier_1a5eb3ecb29b126e7b04b024fc2256fbb2" kindref="member">start</ref><sp/>&lt;=<sp/>point.y()<sp/>&amp;&amp;<sp/>point.y()<sp/>&lt;=<sp/><ref refid="struct_k_win_1_1_eis_input_capture_barrier_1a2b89a864ad7faf07ad4363e026aa5870" kindref="member">end</ref>;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>point.y()<sp/>==<sp/><ref refid="struct_k_win_1_1_eis_input_capture_barrier_1a8a61a4808b8dc865d229c7a5214ba779" kindref="member">position</ref><sp/>&amp;&amp;<sp/><ref refid="struct_k_win_1_1_eis_input_capture_barrier_1a5eb3ecb29b126e7b04b024fc2256fbb2" kindref="member">start</ref><sp/>&lt;=<sp/>point.x()<sp/>&amp;&amp;<sp/>point.x()<sp/>&lt;=<sp/><ref refid="struct_k_win_1_1_eis_input_capture_barrier_1a2b89a864ad7faf07ad4363e026aa5870" kindref="member">end</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="class_k_win_1_1_eis_input_capture_manager_1a229eab34f55bb4bed39ed6e01436802c" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_eis_input_capture_manager_1a229eab34f55bb4bed39ed6e01436802c" kindref="member">EisInputCaptureManager::EisInputCaptureManager</ref>()</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>m_serviceWatcher(new<sp/>QDBusServiceWatcher(this))</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_barrierSpy(std::make_unique&lt;<ref refid="class_k_win_1_1_eis_input_capture_manager_1ac4fb004e589f71e074b51c8b234da251" kindref="member">BarrierSpy</ref>&gt;(this))</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>m_inputFilter(std::make_unique&lt;<ref refid="class_k_win_1_1_eis_input_capture_filter" kindref="compound">EisInputCaptureFilter</ref>&gt;(this))</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>qDBusRegisterMetaType&lt;QPair&lt;QPoint,<sp/>QPoint&gt;&gt;();</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>qDBusRegisterMetaType&lt;QList&lt;QPair&lt;QPoint,<sp/>QPoint&gt;&gt;&gt;();</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>keymap<sp/>=<sp/><ref refid="namespace_k_win_1abe2e249447d344f266998fdcef93fde0" kindref="member">input</ref>()-&gt;<ref refid="class_k_win_1_1_input_redirection_1a246b282229b36fc27552487cdd3329d7" kindref="member">keyboard</ref>()-&gt;<ref refid="class_k_win_1_1_keyboard_input_redirection_1a830fc6a1e6dc36cfd3436e43023c11a2" kindref="member">xkb</ref>()-&gt;<ref refid="class_k_win_1_1_xkb_1acafb0a885d20eb79587631f70f3bbd2a" kindref="member">keymapContents</ref>();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>m_keymapFile<sp/>=<sp/><ref refid="class_k_win_1_1_ram_file" kindref="compound">RamFile</ref>(</highlight><highlight class="stringliteral">&quot;input<sp/>capture<sp/>keymap&quot;</highlight><highlight class="normal">,<sp/>keymap.data(),<sp/>keymap.size(),<sp/><ref refid="class_k_win_1_1_ram_file_1aa6220723e82ce49c7cf06248f28caf5aa131f7a8057d8bfd6b4e8e52694e36412" kindref="member">RamFile::Flag::SealWrite</ref>);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(<ref refid="namespace_k_win_1abe2e249447d344f266998fdcef93fde0" kindref="member">input</ref>()-&gt;keyboard()-&gt;keyboardLayout(),<sp/>&amp;<ref refid="class_k_win_1_1_keyboard_layout_1a4d5dfe4d053b14e0e19ca1a251b376da" kindref="member">KeyboardLayout::layoutChanged</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">]<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>keymap<sp/>=<sp/><ref refid="namespace_k_win_1abe2e249447d344f266998fdcef93fde0" kindref="member">input</ref>()-&gt;<ref refid="class_k_win_1_1_input_redirection_1a246b282229b36fc27552487cdd3329d7" kindref="member">keyboard</ref>()-&gt;<ref refid="class_k_win_1_1_keyboard_input_redirection_1a830fc6a1e6dc36cfd3436e43023c11a2" kindref="member">xkb</ref>()-&gt;<ref refid="class_k_win_1_1_xkb_1acafb0a885d20eb79587631f70f3bbd2a" kindref="member">keymapContents</ref>();</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_keymapFile<sp/>=<sp/><ref refid="class_k_win_1_1_ram_file" kindref="compound">RamFile</ref>(</highlight><highlight class="stringliteral">&quot;input<sp/>capture<sp/>keymap&quot;</highlight><highlight class="normal">,<sp/>keymap.data(),<sp/>keymap.size(),<sp/><ref refid="class_k_win_1_1_ram_file_1aa6220723e82ce49c7cf06248f28caf5aa131f7a8057d8bfd6b4e8e52694e36412" kindref="member">RamFile::Flag::SealWrite</ref>);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>m_serviceWatcher-&gt;setConnection(QDBusConnection::sessionBus());</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>m_serviceWatcher-&gt;setWatchMode(QDBusServiceWatcher::WatchForUnregistration);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(m_serviceWatcher,<sp/>&amp;QDBusServiceWatcher::serviceUnregistered,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;service)<sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_activeCapture<sp/>&amp;&amp;<sp/>m_activeCapture-&gt;dbusService<sp/>==<sp/>service)<sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_eis_input_capture_manager_1a1924dad4ad63ff2251e12cb3a06290f8" kindref="member">deactivate</ref>();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::erase_if(m_inputCaptures,<sp/>[&amp;service](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;EisInputCapture&gt;<sp/>&amp;capture)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>capture-&gt;dbusService<sp/>==<sp/>service;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_serviceWatcher-&gt;removeWatchedService(service);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>m_disableCaptureAction<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QAction(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>m_disableCaptureAction-&gt;setProperty(</highlight><highlight class="stringliteral">&quot;componentName&quot;</highlight><highlight class="normal">,<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;kwin&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>m_disableCaptureAction-&gt;setObjectName(QStringLiteral(</highlight><highlight class="stringliteral">&quot;disableInputCapture&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>m_disableCaptureAction-&gt;setText(i18nc(</highlight><highlight class="stringliteral">&quot;@action<sp/>shortcut&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Disable<sp/>Active<sp/>Input<sp/>Capture&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>KGlobalAccel::setGlobalShortcut(m_disableCaptureAction,<sp/>QKeySequence(<ref refid="namespace_k_win_1a0c5aa021015fae5a9590fef459a5baaf" kindref="member">defaultDisableKeys</ref>));</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>QDBusConnection::sessionBus().registerObject(</highlight><highlight class="stringliteral">&quot;/org/kde/KWin/EIS/InputCapture&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;org.kde.KWin.EIS.InputCaptureManager&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QDBusConnection::ExportAllInvokables<sp/>|<sp/>QDBusConnection::ExportAllSignals);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="class_k_win_1_1_eis_input_capture_manager_1a88d44f45a614d12fa1239675056242bb" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_eis_input_capture_manager_1a88d44f45a614d12fa1239675056242bb" kindref="member">EisInputCaptureManager::~EisInputCaptureManager</ref>()</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_k_win_1abe2e249447d344f266998fdcef93fde0" kindref="member">input</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1abe2e249447d344f266998fdcef93fde0" kindref="member">input</ref>()-&gt;<ref refid="class_k_win_1_1_input_redirection_1a702b94b4e3746a0ee81c3989a219d891" kindref="member">uninstallInputEventFilter</ref>(m_inputFilter.get());</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1abe2e249447d344f266998fdcef93fde0" kindref="member">input</ref>()-&gt;<ref refid="class_k_win_1_1_input_redirection_1ab671ac5694d6b546af8715e047ef3647" kindref="member">uninstallInputEventSpy</ref>(m_barrierSpy.get());</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="class_k_win_1_1_eis_input_capture_manager_1a540a087a79c44c51450c7635b0703f65" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_ram_file" kindref="compound">RamFile</ref><sp/>&amp;<ref refid="class_k_win_1_1_eis_input_capture_manager_1a540a087a79c44c51450c7635b0703f65" kindref="member">EisInputCaptureManager::keyMap</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="139"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_keymapFile;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="class_k_win_1_1_eis_input_capture_manager_1af3bc75d8d90c6aa07ecbeb38d593e9e4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_eis_input_capture_manager_1af3bc75d8d90c6aa07ecbeb38d593e9e4" kindref="member">EisInputCaptureManager::removeInputCapture</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QDBusObjectPath<sp/>&amp;capture)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>std::ranges::find(m_inputCaptures,<sp/>capture.path(),<sp/>&amp;<ref refid="class_k_win_1_1_eis_input_capture_1acbb72666dbc8dc2c5afdfba385e21eee" kindref="member">EisInputCapture::dbusPath</ref>);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>==<sp/>std::ranges::end(m_inputCaptures))<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_activeCapture<sp/>==<sp/>it-&gt;get())<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_eis_input_capture_manager_1a1924dad4ad63ff2251e12cb3a06290f8" kindref="member">deactivate</ref>();</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>m_inputCaptures.erase(it);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_inputCaptures.empty())<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1abe2e249447d344f266998fdcef93fde0" kindref="member">input</ref>()-&gt;<ref refid="class_k_win_1_1_input_redirection_1ab671ac5694d6b546af8715e047ef3647" kindref="member">uninstallInputEventSpy</ref>(m_barrierSpy.get());</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="class_k_win_1_1_eis_input_capture_manager_1a03137815eba602a3d3db6d119f4fc8f4" refkind="member"><highlight class="normal">QDBusObjectPath<sp/><ref refid="class_k_win_1_1_eis_input_capture_manager_1a03137815eba602a3d3db6d119f4fc8f4" kindref="member">EisInputCaptureManager::addInputCapture</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>capabilities)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyboardPortal<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pointerPortal<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>touchPortal<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>QFlags&lt;eis_device_capability&gt;<sp/>eisCapabilities;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(capabilities<sp/>&amp;<sp/>keyboardPortal)<sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eisCapabilities<sp/>|=<sp/>EIS_DEVICE_CAP_KEYBOARD;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(capabilities<sp/>&amp;<sp/>pointerPortal)<sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eisCapabilities<sp/>|=<sp/>EIS_DEVICE_CAP_POINTER;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eisCapabilities<sp/>|=<sp/>EIS_DEVICE_CAP_POINTER_ABSOLUTE;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eisCapabilities<sp/>|=<sp/>EIS_DEVICE_CAP_BUTTON;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eisCapabilities<sp/>|=<sp/>EIS_DEVICE_CAP_SCROLL;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(capabilities<sp/>&amp;<sp/>touchPortal)<sp/>{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eisCapabilities<sp/>|=<sp/>EIS_DEVICE_CAP_TOUCH;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>dbusService<sp/>=<sp/>message().service();</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>m_serviceWatcher-&gt;addWatchedService(dbusService);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_inputCaptures.empty())<sp/>{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1abe2e249447d344f266998fdcef93fde0" kindref="member">input</ref>()-&gt;<ref refid="class_k_win_1_1_input_redirection_1a120eae6615da47a1bc5b86b7387ababd" kindref="member">installInputEventSpy</ref>(m_barrierSpy.get());</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;capture<sp/>=<sp/>m_inputCaptures.emplace_back(std::make_unique&lt;EisInputCapture&gt;(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>dbusService,<sp/>eisCapabilities));</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(capture.get(),<sp/>&amp;<ref refid="class_k_win_1_1_eis_input_capture_1a8d90d3ce4e43d95e89f92299938c56c4" kindref="member">EisInputCapture::deactivated</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">]<sp/>{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>deactivate();</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QDBusObjectPath(capture-&gt;dbusPath());</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190" refid="class_k_win_1_1_eis_input_capture_manager_1a655f6a927f886fee1cc582fd50ea3e10" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_eis_input_capture_manager_1a655f6a927f886fee1cc582fd50ea3e10" kindref="member">EisInputCaptureManager::barrierHit</ref>(<ref refid="class_k_win_1_1_eis_input_capture" kindref="compound">KWin::EisInputCapture</ref><sp/>*capture,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>&amp;position)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_activeCapture)<sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>m_activeCapture<sp/>=<sp/>capture;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>capture-&gt;<ref refid="class_k_win_1_1_eis_input_capture_1ae79b52c1fea2eb33dfc26015e6fae7d1" kindref="member">activate</ref>(position);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1abe2e249447d344f266998fdcef93fde0" kindref="member">input</ref>()-&gt;<ref refid="class_k_win_1_1_input_redirection_1a6e75ac6a40098fee11de022d507b6169" kindref="member">installInputEventFilter</ref>(m_inputFilter.get());</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Even<sp/>though<sp/>the<sp/>input<sp/>events<sp/>are<sp/>filtered<sp/>out<sp/>the<sp/>cursor<sp/>is<sp/>updated<sp/>on<sp/>screen<sp/>which<sp/>looks<sp/>weird</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_cursors_1a5e43427047cf7663b4d9723fac4c1408" kindref="member">Cursors::self</ref>()-&gt;<ref refid="class_k_win_1_1_cursors_1a2f867432b592ef942f77542db7e3eeed" kindref="member">hideCursor</ref>();</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202" refid="class_k_win_1_1_eis_input_capture_manager_1a1924dad4ad63ff2251e12cb3a06290f8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_eis_input_capture_manager_1a1924dad4ad63ff2251e12cb3a06290f8" kindref="member">EisInputCaptureManager::deactivate</ref>()</highlight></codeline>
+<codeline lineno="203"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>m_activeCapture<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>m_inputFilter-&gt;clearTouches();</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1abe2e249447d344f266998fdcef93fde0" kindref="member">input</ref>()-&gt;<ref refid="class_k_win_1_1_input_redirection_1a702b94b4e3746a0ee81c3989a219d891" kindref="member">uninstallInputEventFilter</ref>(m_inputFilter.get());</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_cursors_1a5e43427047cf7663b4d9723fac4c1408" kindref="member">Cursors::self</ref>()-&gt;<ref refid="class_k_win_1_1_cursors_1a9995b6bf176267db832300bd602c979f" kindref="member">showCursor</ref>();</highlight></codeline>
+<codeline lineno="208"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210" refid="class_k_win_1_1_eis_input_capture_manager_1a8d3ba6374916ac9dd7a95db959409107" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_eis_input_capture" kindref="compound">EisInputCapture</ref><sp/>*<ref refid="class_k_win_1_1_eis_input_capture_manager_1a8d3ba6374916ac9dd7a95db959409107" kindref="member">EisInputCaptureManager::activeCapture</ref>()</highlight></codeline>
+<codeline lineno="211"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_activeCapture;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/plugins/eis/eisinputcapturemanager.cpp"/>
+  </compounddef>
+</doxygen>

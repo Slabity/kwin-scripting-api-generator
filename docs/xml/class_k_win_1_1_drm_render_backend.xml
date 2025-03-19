@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_drm_render_backend" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>KWin::DrmRenderBackend</compoundname>
+    <derivedcompoundref refid="class_k_win_1_1_drm_q_painter_backend" prot="public" virt="non-virtual">KWin::DrmQPainterBackend</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_egl_gbm_backend" prot="public" virt="non-virtual">KWin::EglGbmBackend</derivedcompoundref>
+    <includes refid="drm__render__backend_8h" local="no">drm_render_backend.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_drm_render_backend_1a7c1b7ff145ec2fef105454425cbc93dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual KWin::DrmRenderBackend::~DrmRenderBackend</definition>
+        <argsstring>()=default</argsstring>
+        <name>~DrmRenderBackend</name>
+        <qualifiedname>KWin::DrmRenderBackend::~DrmRenderBackend</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_render_backend.h" line="26" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_render_backend_1a113497a09f7daaa28ce0c736ee15ce48" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_pipeline_layer" kindref="compound">DrmPipelineLayer</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt; DrmPipelineLayer &gt; KWin::DrmRenderBackend::createDrmPlaneLayer</definition>
+        <argsstring>(DrmPipeline *pipeline, DrmPlane::TypeIndex type)=0</argsstring>
+        <name>createDrmPlaneLayer</name>
+        <qualifiedname>KWin::DrmRenderBackend::createDrmPlaneLayer</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_drm_q_painter_backend_1aff0ef8434410d904f7430f9f84cc3585">createDrmPlaneLayer</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_egl_gbm_backend_1a1fbcfc318b754f226d8857fb4b6c5520">createDrmPlaneLayer</reimplementedby>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_pipeline" kindref="compound">DrmPipeline</ref> *</type>
+          <declname>pipeline</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_plane_1a3cf72c069e4b10ac10646deba960d050" kindref="member">DrmPlane::TypeIndex</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_render_backend.h" line="28" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_render_backend_1a4a3047fc800b159589ef7a24245b2301" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="class_k_win_1_1_drm_output_layer" kindref="compound">DrmOutputLayer</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt; DrmOutputLayer &gt; KWin::DrmRenderBackend::createLayer</definition>
+        <argsstring>(DrmVirtualOutput *output)=0</argsstring>
+        <name>createLayer</name>
+        <qualifiedname>KWin::DrmRenderBackend::createLayer</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_drm_q_painter_backend_1ab60436610da8911ddef9c59ffadc0c6e">createLayer</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_egl_gbm_backend_1a17d9fea69dc32f6dbb91e62d3e9787ed">createLayer</reimplementedby>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_virtual_output" kindref="compound">DrmVirtualOutput</ref> *</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_render_backend.h" line="29" column="29"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>KWin::DrmQPainterBackend</label>
+        <link refid="class_k_win_1_1_drm_q_painter_backend"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::DrmRenderBackend</label>
+        <link refid="class_k_win_1_1_drm_render_backend"/>
+      </node>
+      <node id="3">
+        <label>KWin::EglGbmBackend</label>
+        <link refid="class_k_win_1_1_egl_gbm_backend"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="kwin/src/backends/drm/drm_render_backend.h" line="23" column="1" bodyfile="kwin/src/backends/drm/drm_render_backend.h" bodystart="24" bodyend="30"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_drm_render_backend_1a113497a09f7daaa28ce0c736ee15ce48" prot="public" virt="pure-virtual"><scope>KWin::DrmRenderBackend</scope><name>createDrmPlaneLayer</name></member>
+      <member refid="class_k_win_1_1_drm_render_backend_1a4a3047fc800b159589ef7a24245b2301" prot="public" virt="pure-virtual"><scope>KWin::DrmRenderBackend</scope><name>createLayer</name></member>
+      <member refid="class_k_win_1_1_drm_render_backend_1a7c1b7ff145ec2fef105454425cbc93dc" prot="public" virt="virtual"><scope>KWin::DrmRenderBackend</scope><name>~DrmRenderBackend</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

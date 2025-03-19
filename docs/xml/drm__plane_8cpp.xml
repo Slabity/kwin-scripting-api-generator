@@ -1,0 +1,832 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="drm__plane_8cpp" kind="file" language="C++">
+    <compoundname>drm_plane.cpp</compoundname>
+    <includes refid="drm__plane_8h" local="yes">drm_plane.h</includes>
+    <includes local="yes">config-kwin.h</includes>
+    <includes refid="drm__buffer_8h" local="yes">drm_buffer.h</includes>
+    <includes refid="drm__commit_8h" local="yes">drm_commit.h</includes>
+    <includes refid="drm__gpu_8h" local="yes">drm_gpu.h</includes>
+    <includes refid="drm__logging_8h" local="yes">drm_logging.h</includes>
+    <includes refid="drm__pointer_8h" local="yes">drm_pointer.h</includes>
+    <includes local="no">drm_fourcc.h</includes>
+    <includes local="no">ranges</includes>
+    <includes local="no">span</includes>
+    <includes local="yes">moc_drm_plane.cpp</includes>
+    <incdepgraph>
+      <node id="63">
+        <label>drm_blob.h</label>
+        <link refid="drm__blob_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>drm_buffer.h</label>
+        <link refid="drm__buffer_8h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>drm_commit.h</label>
+        <link refid="drm__commit_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>drm_connector.h</label>
+        <link refid="drm__connector_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>drm_gpu.h</label>
+        <link refid="drm__gpu_8h"/>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>drm_logging.h</label>
+        <link refid="drm__logging_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>drm_object.h</label>
+        <link refid="drm__object_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>drm_pipeline.h</label>
+        <link refid="drm__pipeline_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/backends/drm/drm_plane.cpp</label>
+        <link refid="drm__plane_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>drm_plane.h</label>
+        <link refid="drm__plane_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>drm_pointer.h</label>
+        <link refid="drm__pointer_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>drm_property.h</label>
+        <link refid="drm__property_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>colorlut3d.h</label>
+        <link refid="colorlut3d_8h"/>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>core/colorpipeline.h</label>
+        <link refid="colorpipeline_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>core/colorspace.h</label>
+        <link refid="colorspace_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>colortransformation.h</label>
+        <link refid="colortransformation_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>core/drmdevice.h</label>
+        <link refid="drmdevice_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>core/graphicsbuffer.h</label>
+        <link refid="graphicsbuffer_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>graphicsbufferallocator.h</label>
+        <link refid="graphicsbufferallocator_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>core/output.h</label>
+        <link refid="core_2output_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>renderbackend.h</label>
+        <link refid="renderbackend_8h"/>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>renderjournal.h</label>
+        <link refid="renderjournal_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>renderloop.h</label>
+        <link refid="renderloop_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>core/renderloop_p.h</label>
+        <link refid="renderloop__p_8h"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>core/rendertarget.h</label>
+        <link refid="rendertarget_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>utils/edid.h</label>
+        <link refid="edid_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>utils/filedescriptor.h</label>
+        <link refid="filedescriptor_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>utils/version.h</label>
+        <link refid="version_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>QByteArray</label>
+      </node>
+      <node id="8">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="21">
+        <label>QDebug</label>
+      </node>
+      <node id="41">
+        <label>QHash</label>
+      </node>
+      <node id="9">
+        <label>QImage</label>
+      </node>
+      <node id="19">
+        <label>QList</label>
+      </node>
+      <node id="33">
+        <label>QLoggingCategory</label>
+      </node>
+      <node id="25">
+        <label>QMap</label>
+      </node>
+      <node id="17">
+        <label>QMatrix4x4</label>
+      </node>
+      <node id="13">
+        <label>QObject</label>
+      </node>
+      <node id="10">
+        <label>QPoint</label>
+      </node>
+      <node id="59">
+        <label>QPointer</label>
+      </node>
+      <node id="22">
+        <label>QRect</label>
+      </node>
+      <node id="20">
+        <label>QSize</label>
+      </node>
+      <node id="66">
+        <label>QSocketNotifier</label>
+      </node>
+      <node id="46">
+        <label>QString</label>
+      </node>
+      <node id="61">
+        <label>QTimer</label>
+      </node>
+      <node id="23">
+        <label>QUuid</label>
+      </node>
+      <node id="11">
+        <label>QVariant</label>
+      </node>
+      <node id="52">
+        <label>QVector</label>
+      </node>
+      <node id="12">
+        <label>QVector2D</label>
+      </node>
+      <node id="39">
+        <label>chrono</label>
+      </node>
+      <node id="7">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="69">
+        <label>drm_fourcc.h</label>
+      </node>
+      <node id="68">
+        <label>epoxy/egl.h</label>
+      </node>
+      <node id="62">
+        <label>fstream</label>
+      </node>
+      <node id="4">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="29">
+        <label>memory</label>
+      </node>
+      <node id="72">
+        <label>moc_drm_plane.cpp</label>
+      </node>
+      <node id="16">
+        <label>optional</label>
+      </node>
+      <node id="67">
+        <label>qobject.h</label>
+      </node>
+      <node id="34">
+        <label>qobjectdefs.h</label>
+      </node>
+      <node id="70">
+        <label>ranges</label>
+      </node>
+      <node id="71">
+        <label>span</label>
+      </node>
+      <node id="54">
+        <label>stdint.h</label>
+      </node>
+      <node id="47">
+        <label>sys/types.h</label>
+      </node>
+      <node id="55">
+        <label>tuple</label>
+      </node>
+      <node id="42">
+        <label>unordered_map</label>
+      </node>
+      <node id="43">
+        <label>unordered_set</label>
+      </node>
+      <node id="38">
+        <label>utility</label>
+      </node>
+      <node id="26">
+        <label>vector</label>
+      </node>
+      <node id="30">
+        <label>xf86drm.h</label>
+      </node>
+      <node id="27">
+        <label>xf86drmMode.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2016<sp/>Roman<sp/>Gilg<sp/>&lt;subdiff@gmail.com&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2022<sp/>Xaver<sp/>Hugl<sp/>&lt;xaver.hugl@gmail.com&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="drm__plane_8h" kindref="compound">drm_plane.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;config-kwin.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="drm__buffer_8h" kindref="compound">drm_buffer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="drm__commit_8h" kindref="compound">drm_commit.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="drm__gpu_8h" kindref="compound">drm_gpu.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="drm__logging_8h" kindref="compound">drm_logging.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="drm__pointer_8h" kindref="compound">drm_pointer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;drm_fourcc.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ranges&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;span&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="class_k_win_1_1_drm_plane_1adc7602990a293fa18243afef346c8d07" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_drm_plane_1adc7602990a293fa18243afef346c8d07" kindref="member">DrmPlane::DrmPlane</ref>(<ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref><sp/>*<ref refid="class_k_win_1_1_drm_object_1a8093fc529b574d5dd01bbfd5e39530a8" kindref="member">gpu</ref>,<sp/>uint32_t<sp/>planeId)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="class_k_win_1_1_drm_object_1a70a401c444ac69c534744e9b11f93b66" kindref="member">DrmObject</ref>(<ref refid="class_k_win_1_1_drm_object_1a8093fc529b574d5dd01bbfd5e39530a8" kindref="member">gpu</ref>,<sp/>planeId,<sp/>DRM_MODE_OBJECT_PLANE)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_k_win_1_1_drm_plane_1a008eab562bd7f060b9adb51151ff8ca5" kindref="member">type</ref>(this,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;type&quot;</highlight><highlight class="normal">),<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;Overlay&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;Primary&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;Cursor&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>})</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>srcX(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;SRC_X&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>srcY(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;SRC_Y&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>srcW(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;SRC_W&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>srcH(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;SRC_H&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>crtcX(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;CRTC_X&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>crtcY(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;CRTC_Y&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>crtcW(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;CRTC_W&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>crtcH(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;CRTC_H&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>fbId(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;FB_ID&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>crtcId(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;CRTC_ID&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>rotation(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;rotation&quot;</highlight><highlight class="normal">),<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;rotate-0&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;rotate-90&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;rotate-180&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;rotate-270&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;reflect-x&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;reflect-y&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>})</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>inFormats(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;IN_FORMATS&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>alpha(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;alpha&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>pixelBlendMode(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;pixel<sp/>blend<sp/>mode&quot;</highlight><highlight class="normal">),<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;None&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;Pre-multiplied&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;Coverage&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>})</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>colorEncoding(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;COLOR_ENCODING&quot;</highlight><highlight class="normal">),<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;ITU-R<sp/>BT.601<sp/>YCbCr&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;ITU-R<sp/>BT.709<sp/>YCbCr&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;ITU-R<sp/>BT.2020<sp/>YCbCr&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>})</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>colorRange(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;COLOR_RANGE&quot;</highlight><highlight class="normal">),<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;YCbCr<sp/>limited<sp/>range&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;YCbCr<sp/>full<sp/>range&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>})</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>vmHotspotX(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;HOTSPOT_X&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>vmHotspotY(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;HOTSPOT_Y&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>inFenceFd(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;IN_FENCE_FD&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>sizeHints(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>QByteArrayLiteral(</highlight><highlight class="stringliteral">&quot;SIZE_HINTS&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="class_k_win_1_1_drm_plane_1a6635546fac4fd82c31d6c345b24c7378" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_plane_1a6635546fac4fd82c31d6c345b24c7378" kindref="member">DrmPlane::init</ref>()</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_plane_1aa8a1ed3e2714bed2be35dc0250882071" kindref="member">updateProperties</ref>();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="class_k_win_1_1_drm_plane_1aa8a1ed3e2714bed2be35dc0250882071" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_plane_1aa8a1ed3e2714bed2be35dc0250882071" kindref="member">DrmPlane::updateProperties</ref>()</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a3992f7fd81bca2bffb0f9c4d68d5eb01" kindref="member">DrmUniquePtr&lt;drmModePlane&gt;</ref><sp/>p(drmModeGetPlane(<ref refid="class_k_win_1_1_drm_object_1a8093fc529b574d5dd01bbfd5e39530a8" kindref="member">gpu</ref>()-&gt;fd(),<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">()));</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!p)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qCWarning(KWIN_DRM)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>get<sp/>kernel<sp/>plane&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="class_k_win_1_1_drm_object_1a2474d06d22464f17cd51d440232cd249" kindref="member">id</ref>();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_property_list" kindref="compound">DrmPropertyList</ref><sp/>props<sp/>=<sp/><ref refid="class_k_win_1_1_drm_object_1a0a7f7c63ff4ed6c9a7e790048ddcb22c" kindref="member">queryProperties</ref>();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1a008eab562bd7f060b9adb51151ff8ca5" kindref="member">type</ref>.update(props);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1a9a32df6f23c511438a5593eadca1d32e" kindref="member">srcX</ref>.update(props);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1a4220fdac4f6e34dedf2b2a0a28c11eb5" kindref="member">srcY</ref>.update(props);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1a6708a231c00d77f6f01a75d03141de0a" kindref="member">srcW</ref>.update(props);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1a905e83160a393d0b3d3f20514dec603c" kindref="member">srcH</ref>.update(props);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1a49b53c8f1ecbdefabd45b23538ee6bb5" kindref="member">crtcX</ref>.update(props);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1af4eca2e519745ff4588ffbed9f15df2c" kindref="member">crtcY</ref>.update(props);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1a5a4a3b5cf83476b21b03dd8318a19ab2" kindref="member">crtcW</ref>.update(props);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1aecf5d68ffc03554eab5df2f995d75a70" kindref="member">crtcH</ref>.update(props);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1a7af89f91521a45f2db46cf9d826bdf5c" kindref="member">fbId</ref>.update(props);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1ace0f0f2fbd7b6467efc3051d82af3221" kindref="member">crtcId</ref>.update(props);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1a1e2e912dee18c6e9f08e335548dcf923" kindref="member">rotation</ref>.update(props);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1a3f47e0aaa037a01c15cce83023cc4990" kindref="member">inFormats</ref>.update(props);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1a57aedbc0a0bf9e91513533879ec083c0" kindref="member">alpha</ref>.update(props);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1a8f82574d6ae7100515cb015bb56c6174" kindref="member">pixelBlendMode</ref>.update(props);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1ab6b29a13448a965fa0c785f1e790d08f" kindref="member">colorEncoding</ref>.update(props);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1a6c3bbf88e6beca0609f71ec013e9861e" kindref="member">colorRange</ref>.update(props);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1a1266608c1ad7fee89c893b6938989c3a" kindref="member">vmHotspotX</ref>.update(props);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1ac6edd59092eefc8247cb829501ac5954" kindref="member">vmHotspotY</ref>.update(props);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1a2ed5ecf233ee36a11d945d88cec68434" kindref="member">inFenceFd</ref>.update(props);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_drm_plane_1a27d5be8daa175cf3ed541082937da31a" kindref="member">sizeHints</ref>.update(props);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="class_k_win_1_1_drm_plane_1a008eab562bd7f060b9adb51151ff8ca5" kindref="member">type</ref>.isValid()<sp/>||<sp/>!<ref refid="class_k_win_1_1_drm_plane_1a9a32df6f23c511438a5593eadca1d32e" kindref="member">srcX</ref>.isValid()<sp/>||<sp/>!<ref refid="class_k_win_1_1_drm_plane_1a4220fdac4f6e34dedf2b2a0a28c11eb5" kindref="member">srcY</ref>.isValid()<sp/>||<sp/>!<ref refid="class_k_win_1_1_drm_plane_1a6708a231c00d77f6f01a75d03141de0a" kindref="member">srcW</ref>.isValid()<sp/>||<sp/>!<ref refid="class_k_win_1_1_drm_plane_1a905e83160a393d0b3d3f20514dec603c" kindref="member">srcH</ref>.isValid()</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>!<ref refid="class_k_win_1_1_drm_plane_1a49b53c8f1ecbdefabd45b23538ee6bb5" kindref="member">crtcX</ref>.isValid()<sp/>||<sp/>!<ref refid="class_k_win_1_1_drm_plane_1af4eca2e519745ff4588ffbed9f15df2c" kindref="member">crtcY</ref>.isValid()<sp/>||<sp/>!<ref refid="class_k_win_1_1_drm_plane_1a5a4a3b5cf83476b21b03dd8318a19ab2" kindref="member">crtcW</ref>.isValid()<sp/>||<sp/>!<ref refid="class_k_win_1_1_drm_plane_1aecf5d68ffc03554eab5df2f995d75a70" kindref="member">crtcH</ref>.isValid()<sp/>||<sp/>!<ref refid="class_k_win_1_1_drm_plane_1a7af89f91521a45f2db46cf9d826bdf5c" kindref="member">fbId</ref>.isValid())<sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qCWarning(KWIN_DRM)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>update<sp/>the<sp/>basic<sp/>plane<sp/>properties&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>m_possibleCrtcs<sp/>=<sp/>p-&gt;possible_crtcs;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>read<sp/>formats<sp/>from<sp/>blob<sp/>if<sp/>available<sp/>and<sp/>if<sp/>modifiers<sp/>are<sp/>supported,<sp/>and<sp/>from<sp/>the<sp/>plane<sp/>object<sp/>if<sp/>not</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>m_supportedFormats.clear();</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_k_win_1_1_drm_plane_1a3f47e0aaa037a01c15cce83023cc4990" kindref="member">inFormats</ref>.isValid()<sp/>&amp;&amp;<sp/><ref refid="class_k_win_1_1_drm_plane_1a3f47e0aaa037a01c15cce83023cc4990" kindref="member">inFormats</ref>.immutableBlob()<sp/>&amp;&amp;<sp/><ref refid="class_k_win_1_1_drm_object_1a8093fc529b574d5dd01bbfd5e39530a8" kindref="member">gpu</ref>()-&gt;addFB2ModifiersSupported())<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>drmModeFormatModifierIterator<sp/>iterator{};</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(drmModeFormatModifierBlobIterNext(<ref refid="class_k_win_1_1_drm_plane_1a3f47e0aaa037a01c15cce83023cc4990" kindref="member">inFormats</ref>.immutableBlob(),<sp/>&amp;iterator))<sp/>{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_supportedFormats[iterator.fmt].push_back(iterator.mod);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>we<sp/>don&apos;t<sp/>have<sp/>modifier<sp/>support,<sp/>assume<sp/>the<sp/>cursor<sp/>needs<sp/>a<sp/>linear<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;uint64_t&gt;<sp/>modifiers<sp/>=<sp/>{<ref refid="class_k_win_1_1_drm_plane_1a008eab562bd7f060b9adb51151ff8ca5" kindref="member">type</ref>.enumValue()<sp/>==<sp/><ref refid="class_k_win_1_1_drm_plane_1a3cf72c069e4b10ac10646deba960d050a9abdae4fa5d93330363a88ed8a5e7946" kindref="member">TypeIndex::Cursor</ref><sp/>?<sp/>DRM_FORMAT_MOD_LINEAR<sp/>:<sp/>DRM_FORMAT_MOD_INVALID};</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint32_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>p-&gt;count_formats;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_supportedFormats.insert(p-&gt;formats[i],<sp/>modifiers);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_supportedFormats.isEmpty())<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qCWarning(KWIN_DRM)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Driver<sp/>doesn&apos;t<sp/>advertise<sp/>any<sp/>formats<sp/>for<sp/>this<sp/>plane.<sp/>Falling<sp/>back<sp/>to<sp/>XRGB8888<sp/>without<sp/>explicit<sp/>modifiers&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_supportedFormats.insert(DRM_FORMAT_XRGB8888,<sp/>modifiers);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>m_sizeHints.clear();</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_k_win_1_1_drm_plane_1a27d5be8daa175cf3ed541082937da31a" kindref="member">sizeHints</ref>.isValid()<sp/>&amp;&amp;<sp/><ref refid="class_k_win_1_1_drm_plane_1a27d5be8daa175cf3ed541082937da31a" kindref="member">sizeHints</ref>.immutableBlob())<sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>switch<sp/>to<sp/>drm_plane_size_hint<sp/>once<sp/>we<sp/>require<sp/>libdrm<sp/>2.4.122</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SizeHint</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>width;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>height;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::span&lt;SizeHint&gt;<sp/>hints(</highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">SizeHint<sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="class_k_win_1_1_drm_plane_1a27d5be8daa175cf3ed541082937da31a" kindref="member">sizeHints</ref>.immutableBlob()-&gt;data),<sp/><ref refid="class_k_win_1_1_drm_plane_1a27d5be8daa175cf3ed541082937da31a" kindref="member">sizeHints</ref>.immutableBlob()-&gt;length<sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(SizeHint));</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ranges::transform(hints,<sp/>std::back_inserter(m_sizeHints),<sp/>[](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>SizeHint<sp/>&amp;hint)<sp/>{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QSize(hint.width,<sp/>hint.height);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_sizeHints.empty()<sp/>&amp;&amp;<sp/><ref refid="class_k_win_1_1_drm_plane_1a008eab562bd7f060b9adb51151ff8ca5" kindref="member">type</ref>.enumValue()<sp/>==<sp/><ref refid="class_k_win_1_1_drm_plane_1a3cf72c069e4b10ac10646deba960d050a9abdae4fa5d93330363a88ed8a5e7946" kindref="member">TypeIndex::Cursor</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_sizeHints<sp/>=<sp/>{<ref refid="class_k_win_1_1_drm_object_1a8093fc529b574d5dd01bbfd5e39530a8" kindref="member">gpu</ref>()-&gt;<ref refid="class_k_win_1_1_drm_gpu_1a7d1826fb6863bee6abdf7450e3ed340f" kindref="member">cursorSize</ref>()};</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155" refid="class_k_win_1_1_drm_plane_1a8e85f7c85f2a80f061baf802480a9526" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_plane_1a8e85f7c85f2a80f061baf802480a9526" kindref="member">DrmPlane::set</ref>(<ref refid="class_k_win_1_1_drm_atomic_commit" kindref="compound">DrmAtomicCommit</ref><sp/>*commit,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRect<sp/>&amp;src,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRect<sp/>&amp;dst)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Src*<sp/>are<sp/>in<sp/>16.16<sp/>fixed<sp/>point<sp/>format</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>commit-&gt;<ref refid="class_k_win_1_1_drm_atomic_commit_1a315e293fdf6386f1b730a2532544d7f3" kindref="member">addProperty</ref>(<ref refid="class_k_win_1_1_drm_plane_1a9a32df6f23c511438a5593eadca1d32e" kindref="member">srcX</ref>,<sp/>src.x()<sp/>&lt;&lt;<sp/>16);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>commit-&gt;<ref refid="class_k_win_1_1_drm_atomic_commit_1a315e293fdf6386f1b730a2532544d7f3" kindref="member">addProperty</ref>(<ref refid="class_k_win_1_1_drm_plane_1a4220fdac4f6e34dedf2b2a0a28c11eb5" kindref="member">srcY</ref>,<sp/>src.y()<sp/>&lt;&lt;<sp/>16);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>commit-&gt;<ref refid="class_k_win_1_1_drm_atomic_commit_1a315e293fdf6386f1b730a2532544d7f3" kindref="member">addProperty</ref>(<ref refid="class_k_win_1_1_drm_plane_1a6708a231c00d77f6f01a75d03141de0a" kindref="member">srcW</ref>,<sp/>src.width()<sp/>&lt;&lt;<sp/>16);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>commit-&gt;<ref refid="class_k_win_1_1_drm_atomic_commit_1a315e293fdf6386f1b730a2532544d7f3" kindref="member">addProperty</ref>(<ref refid="class_k_win_1_1_drm_plane_1a905e83160a393d0b3d3f20514dec603c" kindref="member">srcH</ref>,<sp/>src.height()<sp/>&lt;&lt;<sp/>16);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>commit-&gt;<ref refid="class_k_win_1_1_drm_atomic_commit_1a315e293fdf6386f1b730a2532544d7f3" kindref="member">addProperty</ref>(<ref refid="class_k_win_1_1_drm_plane_1a49b53c8f1ecbdefabd45b23538ee6bb5" kindref="member">crtcX</ref>,<sp/>dst.x());</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>commit-&gt;<ref refid="class_k_win_1_1_drm_atomic_commit_1a315e293fdf6386f1b730a2532544d7f3" kindref="member">addProperty</ref>(<ref refid="class_k_win_1_1_drm_plane_1af4eca2e519745ff4588ffbed9f15df2c" kindref="member">crtcY</ref>,<sp/>dst.y());</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>commit-&gt;<ref refid="class_k_win_1_1_drm_atomic_commit_1a315e293fdf6386f1b730a2532544d7f3" kindref="member">addProperty</ref>(<ref refid="class_k_win_1_1_drm_plane_1a5a4a3b5cf83476b21b03dd8318a19ab2" kindref="member">crtcW</ref>,<sp/>dst.width());</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>commit-&gt;<ref refid="class_k_win_1_1_drm_atomic_commit_1a315e293fdf6386f1b730a2532544d7f3" kindref="member">addProperty</ref>(<ref refid="class_k_win_1_1_drm_plane_1aecf5d68ffc03554eab5df2f995d75a70" kindref="member">crtcH</ref>,<sp/>dst.height());</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="class_k_win_1_1_drm_plane_1af30b89f399587d62b659fa6e8a4fa002" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_plane_1af30b89f399587d62b659fa6e8a4fa002" kindref="member">DrmPlane::isCrtcSupported</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pipeIndex)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="169"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(m_possibleCrtcs<sp/>&amp;<sp/>(1<sp/>&lt;&lt;<sp/>pipeIndex));</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173" refid="class_k_win_1_1_drm_plane_1a16923884fd73ab481d114da2914f769e" refkind="member"><highlight class="normal">QHash&lt;uint32_t,<sp/>QList&lt;uint64_t&gt;&gt;<sp/><ref refid="class_k_win_1_1_drm_plane_1a16923884fd73ab481d114da2914f769e" kindref="member">DrmPlane::formats</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="174"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_supportedFormats;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178" refid="class_k_win_1_1_drm_plane_1aa81e6b2f4988d609d48085184820166b" refkind="member"><highlight class="normal">std::shared_ptr&lt;DrmFramebuffer&gt;<sp/><ref refid="class_k_win_1_1_drm_plane_1aa81e6b2f4988d609d48085184820166b" kindref="member">DrmPlane::currentBuffer</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="179"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_current;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="class_k_win_1_1_drm_plane_1a39fbfcade76c6eb9b7cef72e1b0d1195" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_plane_1a39fbfcade76c6eb9b7cef72e1b0d1195" kindref="member">DrmPlane::setCurrentBuffer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;DrmFramebuffer&gt;<sp/>&amp;b)</highlight></codeline>
+<codeline lineno="184"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_current<sp/>==<sp/>b)<sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>m_current<sp/>=<sp/>b;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(b)<sp/>{</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_lastBuffers.prepend(b-&gt;data());</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_lastBuffers.resize(4);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196" refid="class_k_win_1_1_drm_plane_1a43be44b926edb7a2e6b9fd83de4885d4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_plane_1a43be44b926edb7a2e6b9fd83de4885d4" kindref="member">DrmPlane::disable</ref>(<ref refid="class_k_win_1_1_drm_atomic_commit" kindref="compound">DrmAtomicCommit</ref><sp/>*commit)</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>commit-&gt;<ref refid="class_k_win_1_1_drm_atomic_commit_1a315e293fdf6386f1b730a2532544d7f3" kindref="member">addProperty</ref>(<ref refid="class_k_win_1_1_drm_plane_1ace0f0f2fbd7b6467efc3051d82af3221" kindref="member">crtcId</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>commit-&gt;<ref refid="class_k_win_1_1_drm_atomic_commit_1ac46995b92e4d282261978f97afcbd672" kindref="member">addBuffer</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202" refid="class_k_win_1_1_drm_plane_1aef21c860a1c1e281a7f52ce9528d615e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_plane_1aef21c860a1c1e281a7f52ce9528d615e" kindref="member">DrmPlane::releaseCurrentBuffer</ref>()</highlight></codeline>
+<codeline lineno="203"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_current)<sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_current-&gt;releaseBuffer();</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209" refid="class_k_win_1_1_drm_plane_1a7a55a0ad950e614879c867277fb1389e" refkind="member"><highlight class="normal">DrmPlane::Transformations<sp/><ref refid="class_k_win_1_1_drm_plane_1a7a55a0ad950e614879c867277fb1389e" kindref="member">DrmPlane::outputTransformToPlaneTransform</ref>(<ref refid="class_k_win_1_1_output_transform" kindref="compound">OutputTransform</ref><sp/>transform)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>note<sp/>that<sp/>drm<sp/>transformations<sp/>are<sp/>counter<sp/>clockwise</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(transform.<ref refid="class_k_win_1_1_output_transform_1a616973bbf05f161040b6cfbaec44f0a7" kindref="member">kind</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_output_transform_1af879a0d47e8ecd9c35f994252a7e7fd7a3973587033abbbbbaaddeb37d12f6700" kindref="member">OutputTransform::Kind::Normal</ref>:</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eba291b44223b90e70be1fade1eff8a55e0" kindref="member">Transformation::Rotate0</ref>;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_output_transform_1af879a0d47e8ecd9c35f994252a7e7fd7a1457e6800a3c966efe2e352858ce1814" kindref="member">OutputTransform::Kind::Rotate90</ref>:</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eba59c609399b2fb3956ecac7df34a76c2f" kindref="member">Transformation::Rotate270</ref>;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_output_transform_1af879a0d47e8ecd9c35f994252a7e7fd7a81855b733eee5226c36b414b06c62d0d" kindref="member">OutputTransform::Kind::Rotate180</ref>:</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eba371980c5d153a94cf022d6b4daa4d34c" kindref="member">Transformation::Rotate180</ref>;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_output_transform_1af879a0d47e8ecd9c35f994252a7e7fd7a9516f7c7bb3dd6677e50c6bc4bb18722" kindref="member">OutputTransform::Kind::Rotate270</ref>:</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eba1d20b3969ea74725dd1a5b7669d60a98" kindref="member">Transformation::Rotate90</ref>;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_output_transform_1af879a0d47e8ecd9c35f994252a7e7fd7a16cbb90948f3bcab5a9ea45724e0ca17" kindref="member">OutputTransform::Kind::FlipY</ref>:</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eba291b44223b90e70be1fade1eff8a55e0" kindref="member">Transformation::Rotate0</ref><sp/>|<sp/><ref refid="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eba8ca1ef5a4e5696c848001ce3a9a03f27" kindref="member">Transformation::ReflectY</ref>;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_output_transform_1af879a0d47e8ecd9c35f994252a7e7fd7abbcaf45fa486aaeb326528fe6d310649" kindref="member">OutputTransform::Kind::FlipY90</ref>:</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eba59c609399b2fb3956ecac7df34a76c2f" kindref="member">Transformation::Rotate270</ref><sp/>|<sp/><ref refid="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eba8ca1ef5a4e5696c848001ce3a9a03f27" kindref="member">Transformation::ReflectY</ref>;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_output_transform_1af879a0d47e8ecd9c35f994252a7e7fd7a8cdd419a0fa17732930874ec67e2f355" kindref="member">OutputTransform::Kind::FlipY180</ref>:</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eba371980c5d153a94cf022d6b4daa4d34c" kindref="member">Transformation::Rotate180</ref><sp/>|<sp/><ref refid="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eba8ca1ef5a4e5696c848001ce3a9a03f27" kindref="member">Transformation::ReflectY</ref>;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_output_transform_1af879a0d47e8ecd9c35f994252a7e7fd7ad52d9dff30c4fa4fc346a1f88d162264" kindref="member">OutputTransform::Kind::FlipY270</ref>:</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eba1d20b3969ea74725dd1a5b7669d60a98" kindref="member">Transformation::Rotate90</ref><sp/>|<sp/><ref refid="class_k_win_1_1_drm_plane_1acac567f6431e9bfcabfe8d309166c9eba8ca1ef5a4e5696c848001ce3a9a03f27" kindref="member">Transformation::ReflectY</ref>;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_UNREACHABLE();</highlight></codeline>
+<codeline lineno="231"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233" refid="class_k_win_1_1_drm_plane_1a3e48adfa3a7fa0e5198c06817514365b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_plane_1a3e48adfa3a7fa0e5198c06817514365b" kindref="member">DrmPlane::supportsTransformation</ref>(<ref refid="class_k_win_1_1_output_transform" kindref="compound">OutputTransform</ref><sp/>transform)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="234"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_drm_plane_1a1e2e912dee18c6e9f08e335548dcf923" kindref="member">rotation</ref>.isValid()<sp/>&amp;&amp;<sp/><ref refid="class_k_win_1_1_drm_plane_1a1e2e912dee18c6e9f08e335548dcf923" kindref="member">rotation</ref>.hasEnum(<ref refid="class_k_win_1_1_drm_plane_1a7a55a0ad950e614879c867277fb1389e" kindref="member">outputTransformToPlaneTransform</ref>(transform));</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238" refid="class_k_win_1_1_drm_plane_1a9cf8fd2eb153589d5b162e1afaf4f915" refkind="member"><highlight class="normal">QList&lt;QSize&gt;<sp/><ref refid="class_k_win_1_1_drm_plane_1a9cf8fd2eb153589d5b162e1afaf4f915" kindref="member">DrmPlane::recommendedSizes</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="239"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_sizeHints;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;moc_drm_plane.cpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/backends/drm/drm_plane.cpp"/>
+  </compounddef>
+</doxygen>

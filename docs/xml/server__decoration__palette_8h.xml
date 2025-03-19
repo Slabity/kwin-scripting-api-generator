@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="server__decoration__palette_8h" kind="file" language="C++">
+    <compoundname>server_decoration_palette.h</compoundname>
+    <includes local="yes">kwin_export.h</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">memory</includes>
+    <includedby refid="server__decoration__palette_8cpp" local="yes">kwin/src/wayland/server_decoration_palette.cpp</includedby>
+    <includedby refid="wayland__server_8cpp" local="yes">kwin/src/wayland_server.cpp</includedby>
+    <includedby refid="xdgshellwindow_8cpp" local="yes">kwin/src/xdgshellwindow.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/wayland/server_decoration_palette.h</label>
+        <link refid="server__decoration__palette_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+      <node id="2">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/wayland/server_decoration_palette.cpp</label>
+        <link refid="server__decoration__palette_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/wayland/server_decoration_palette.h</label>
+        <link refid="server__decoration__palette_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>kwin/src/wayland_server.cpp</label>
+        <link refid="wayland__server_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/xdgshellwindow.cpp</label>
+        <link refid="xdgshellwindow_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_server_side_decoration_palette_manager_interface" prot="public">KWin::ServerSideDecorationPaletteManagerInterface</innerclass>
+    <innerclass refid="class_k_win_1_1_server_side_decoration_palette_interface" prot="public">KWin::ServerSideDecorationPaletteInterface</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2017<sp/>David<sp/>Edmundson<sp/>&lt;kde@davidedmundson.co.uk&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>LGPL-2.1-only<sp/>OR<sp/>LGPL-3.0-only<sp/>OR<sp/>LicenseRef-KDE-Accepted-LGPL</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;kwin_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">wl_resource;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_server_side_decoration_palette_interface" kindref="compound">ServerSideDecorationPaletteInterface</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_server_side_decoration_palette_manager_interface_private" kindref="compound">ServerSideDecorationPaletteManagerInterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_server_side_decoration_palette_interface_private" kindref="compound">ServerSideDecorationPaletteInterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="class_k_win_1_1_server_side_decoration_palette_manager_interface" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_server_side_decoration_palette_manager_interface_1a39fdb7ed9ee359da20d7b9e19ae5a35e" kindref="member">ServerSideDecorationPaletteManagerInterface</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_server_side_decoration_palette_manager_interface_1a39fdb7ed9ee359da20d7b9e19ae5a35e" kindref="member">ServerSideDecorationPaletteManagerInterface</ref>(<ref refid="class_k_win_1_1_display" kindref="compound">Display</ref><sp/>*display,<sp/>QObject<sp/>*parent<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="35" refid="class_k_win_1_1_server_side_decoration_palette_manager_interface_1aefa93afee674ee53ed96872f50528243" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_server_side_decoration_palette_manager_interface_1aefa93afee674ee53ed96872f50528243" kindref="member">~ServerSideDecorationPaletteManagerInterface</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_server_side_decoration_palette_interface" kindref="compound">ServerSideDecorationPaletteInterface</ref><sp/>*<ref refid="class_k_win_1_1_server_side_decoration_palette_manager_interface_1a8d1463ffa5ae14de3e08a7cb36f5e5f3" kindref="member">paletteForSurface</ref>(<ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref><sp/>*);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="46" refid="class_k_win_1_1_server_side_decoration_palette_manager_interface_1a289abf5c3c504083ea54685dde248fda" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_server_side_decoration_palette_manager_interface_1a289abf5c3c504083ea54685dde248fda" kindref="member">paletteCreated</ref>(<ref refid="class_k_win_1_1_server_side_decoration_palette_interface" kindref="compound">KWin::ServerSideDecorationPaletteInterface</ref><sp/>*);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;ServerSideDecorationPaletteManagerInterfacePrivate&gt;<sp/>d;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="class_k_win_1_1_server_side_decoration_palette_interface" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/>ServerSideDecorationPaletteInterface<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="60" refid="class_k_win_1_1_server_side_decoration_palette_interface_1a5823dcf5ac4c9bc808d13ca6f5fba5a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_server_side_decoration_palette_interface_1a5823dcf5ac4c9bc808d13ca6f5fba5a5" kindref="member">~ServerSideDecorationPaletteInterface</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_server_side_decoration_palette_interface_1adb391869f67faf50b41cc14d1f3d10a8" kindref="member">palette</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref><sp/>*<ref refid="class_k_win_1_1_server_side_decoration_palette_interface_1aad2d911ce4392d6f46fe82f9f6d82a06" kindref="member">surface</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="76" refid="class_k_win_1_1_server_side_decoration_palette_interface_1a920bcd354f5cd2f5af2c455136acce0a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_server_side_decoration_palette_interface_1a920bcd354f5cd2f5af2c455136acce0a" kindref="member">paletteChanged</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;<ref refid="class_k_win_1_1_server_side_decoration_palette_interface_1adb391869f67faf50b41cc14d1f3d10a8" kindref="member">palette</ref>);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/>ServerSideDecorationPaletteInterface(<ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref><sp/>*<ref refid="class_k_win_1_1_server_side_decoration_palette_interface_1aad2d911ce4392d6f46fe82f9f6d82a06" kindref="member">surface</ref>,<sp/>wl_resource<sp/>*resource);</highlight></codeline>
+<codeline lineno="80" refid="class_k_win_1_1_server_side_decoration_palette_interface_1a40c692a62f6916ce7096f614cdff3c76" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_server_side_decoration_palette_interface_1a40c692a62f6916ce7096f614cdff3c76" kindref="member">ServerSideDecorationPaletteManagerInterfacePrivate</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;ServerSideDecorationPaletteInterfacePrivate&gt;<sp/>d;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/wayland/server_decoration_palette.h"/>
+  </compounddef>
+</doxygen>

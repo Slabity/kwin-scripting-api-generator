@@ -1,0 +1,313 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_rule_book" kind="class" language="C++" prot="public">
+    <compoundname>KWin::RuleBook</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="rules_8h" local="no">rules.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_rule_book_1ada3dd11f43bf47d6ea3bf2cb24e9c499" prot="private" static="no" mutable="no">
+        <type>QTimer *</type>
+        <definition>QTimer* KWin::RuleBook::m_updateTimer</definition>
+        <argsstring></argsstring>
+        <name>m_updateTimer</name>
+        <qualifiedname>KWin::RuleBook::m_updateTimer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/rules.h" line="327" column="12" bodyfile="kwin/src/rules.h" bodystart="327" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_rule_book_1a00f12def551fd8b003fcfe4f23469513" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::RuleBook::m_updatesDisabled</definition>
+        <argsstring></argsstring>
+        <name>m_updatesDisabled</name>
+        <qualifiedname>KWin::RuleBook::m_updatesDisabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/rules.h" line="328" column="10" bodyfile="kwin/src/rules.h" bodystart="328" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_rule_book_1a915502aa91cef0c01625c802eee06969" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_rules" kindref="compound">Rules</ref> * &gt;</type>
+        <definition>QList&lt;Rules *&gt; KWin::RuleBook::m_rules</definition>
+        <argsstring></argsstring>
+        <name>m_rules</name>
+        <qualifiedname>KWin::RuleBook::m_rules</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/rules.h" line="329" column="11" bodyfile="kwin/src/rules.h" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_rule_book_1a06b910ad9ff9a0181d36c0dfd6438ff4" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_rule_book_settings" kindref="compound">RuleBookSettings</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;RuleBookSettings&gt; KWin::RuleBook::m_book</definition>
+        <argsstring></argsstring>
+        <name>m_book</name>
+        <qualifiedname>KWin::RuleBook::m_book</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/rules.h" line="330" column="21" bodyfile="kwin/src/rules.h" bodystart="330" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_rule_book_1afb13f768d35fa4e2eb7bbc298b438426" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::RuleBook::RuleBook</definition>
+        <argsstring>()</argsstring>
+        <name>RuleBook</name>
+        <qualifiedname>KWin::RuleBook::RuleBook</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/rules.h" line="311" column="14" bodyfile="kwin/src/rules.cpp" bodystart="911" bodyend="918"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_rule_book_1a3ccc6e8e9787074282bc61d57a7e1069" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::RuleBook::~RuleBook</definition>
+        <argsstring>() override</argsstring>
+        <name>~RuleBook</name>
+        <qualifiedname>KWin::RuleBook::~RuleBook</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/rules.h" line="312" column="5" bodyfile="kwin/src/rules.cpp" bodystart="920" bodyend="924"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_rule_book_1af699b225f8bb59b911da402f2c8de15c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_window_rules" kindref="compound">WindowRules</ref></type>
+        <definition>WindowRules KWin::RuleBook::find</definition>
+        <argsstring>(const Window *window) const</argsstring>
+        <name>find</name>
+        <qualifiedname>KWin::RuleBook::find</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/rules.h" line="313" column="17" bodyfile="kwin/src/rules.cpp" bodystart="932" bodyend="942"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_rule_book_1af5755f35e3f0dc90f304cb162510ec03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::RuleBook::discardUsed</definition>
+        <argsstring>(Window *c, bool withdraw)</argsstring>
+        <name>discardUsed</name>
+        <qualifiedname>KWin::RuleBook::discardUsed</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>withdraw</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/rules.h" line="314" column="10" bodyfile="kwin/src/rules.cpp" bodystart="993" bodyend="1021"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_rule_book_1aa1aee23b1042c645ddd9fc6623429646" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::RuleBook::setUpdatesDisabled</definition>
+        <argsstring>(bool disable)</argsstring>
+        <name>setUpdatesDisabled</name>
+        <qualifiedname>KWin::RuleBook::setUpdatesDisabled</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>disable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/rules.h" line="315" column="10" bodyfile="kwin/src/rules.cpp" bodystart="1028" bodyend="1039"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_rule_book_1a2ea2bd1948c8ef6bd355a92167966a43" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::RuleBook::areUpdatesDisabled</definition>
+        <argsstring>() const</argsstring>
+        <name>areUpdatesDisabled</name>
+        <qualifiedname>KWin::RuleBook::areUpdatesDisabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/rules.h" line="316" column="10" bodyfile="kwin/src/rules.h" bodystart="333" bodyend="336"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_rule_book_1acb852dbdfdd864b85f9fff7e49ed1bbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::RuleBook::load</definition>
+        <argsstring>()</argsstring>
+        <name>load</name>
+        <qualifiedname>KWin::RuleBook::load</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/rules.h" line="317" column="10" bodyfile="kwin/src/rules.cpp" bodystart="971" bodyend="981"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_rule_book_1aedfee1c9d448e169d72e28fdc44b5d2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::RuleBook::edit</definition>
+        <argsstring>(Window *c, bool whole_app)</argsstring>
+        <name>edit</name>
+        <qualifiedname>KWin::RuleBook::edit</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>whole_app</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/rules.h" line="318" column="10" bodyfile="kwin/src/rules.cpp" bodystart="944" bodyend="964"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_rule_book_1a952fe3c82fb51e8a32f6355700914bb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::RuleBook::requestDiskStorage</definition>
+        <argsstring>()</argsstring>
+        <name>requestDiskStorage</name>
+        <qualifiedname>KWin::RuleBook::requestDiskStorage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/rules.h" line="319" column="10" bodyfile="kwin/src/rules.cpp" bodystart="1023" bodyend="1026"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_rule_book_1aeddc17ac693dbd48a9f5a127625961cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::RuleBook::setConfig</definition>
+        <argsstring>(const KSharedConfig::Ptr &amp;config)</argsstring>
+        <name>setConfig</name>
+        <qualifiedname>KWin::RuleBook::setConfig</qualifiedname>
+        <param>
+          <type>const KSharedConfig::Ptr &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/rules.h" line="320" column="10" bodyfile="kwin/src/rules.cpp" bodystart="966" bodyend="969"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_k_win_1_1_rule_book_1a75ea848d0f9192fc902c4ea4b120e33f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::RuleBook::save</definition>
+        <argsstring>()</argsstring>
+        <name>save</name>
+        <qualifiedname>KWin::RuleBook::save</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/rules.h" line="323" column="10" bodyfile="kwin/src/rules.cpp" bodystart="983" bodyend="991"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_rule_book_1a6a6179c52c5298aa09bf2da18a19c2c4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::RuleBook::deleteAll</definition>
+        <argsstring>()</argsstring>
+        <name>deleteAll</name>
+        <qualifiedname>KWin::RuleBook::deleteAll</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/rules.h" line="326" column="10" bodyfile="kwin/src/rules.cpp" bodystart="926" bodyend="930"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::RuleBook</label>
+        <link refid="class_k_win_1_1_rule_book"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::RuleBook</label>
+        <link refid="class_k_win_1_1_rule_book"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/rules.h" line="307" column="1" bodyfile="kwin/src/rules.h" bodystart="308" bodyend="331"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_rule_book_1a2ea2bd1948c8ef6bd355a92167966a43" prot="public" virt="non-virtual"><scope>KWin::RuleBook</scope><name>areUpdatesDisabled</name></member>
+      <member refid="class_k_win_1_1_rule_book_1a6a6179c52c5298aa09bf2da18a19c2c4" prot="private" virt="non-virtual"><scope>KWin::RuleBook</scope><name>deleteAll</name></member>
+      <member refid="class_k_win_1_1_rule_book_1af5755f35e3f0dc90f304cb162510ec03" prot="public" virt="non-virtual"><scope>KWin::RuleBook</scope><name>discardUsed</name></member>
+      <member refid="class_k_win_1_1_rule_book_1aedfee1c9d448e169d72e28fdc44b5d2b" prot="public" virt="non-virtual"><scope>KWin::RuleBook</scope><name>edit</name></member>
+      <member refid="class_k_win_1_1_rule_book_1af699b225f8bb59b911da402f2c8de15c" prot="public" virt="non-virtual"><scope>KWin::RuleBook</scope><name>find</name></member>
+      <member refid="class_k_win_1_1_rule_book_1acb852dbdfdd864b85f9fff7e49ed1bbf" prot="public" virt="non-virtual"><scope>KWin::RuleBook</scope><name>load</name></member>
+      <member refid="class_k_win_1_1_rule_book_1a06b910ad9ff9a0181d36c0dfd6438ff4" prot="private" virt="non-virtual"><scope>KWin::RuleBook</scope><name>m_book</name></member>
+      <member refid="class_k_win_1_1_rule_book_1a915502aa91cef0c01625c802eee06969" prot="private" virt="non-virtual"><scope>KWin::RuleBook</scope><name>m_rules</name></member>
+      <member refid="class_k_win_1_1_rule_book_1a00f12def551fd8b003fcfe4f23469513" prot="private" virt="non-virtual"><scope>KWin::RuleBook</scope><name>m_updatesDisabled</name></member>
+      <member refid="class_k_win_1_1_rule_book_1ada3dd11f43bf47d6ea3bf2cb24e9c499" prot="private" virt="non-virtual"><scope>KWin::RuleBook</scope><name>m_updateTimer</name></member>
+      <member refid="class_k_win_1_1_rule_book_1a952fe3c82fb51e8a32f6355700914bb5" prot="public" virt="non-virtual"><scope>KWin::RuleBook</scope><name>requestDiskStorage</name></member>
+      <member refid="class_k_win_1_1_rule_book_1afb13f768d35fa4e2eb7bbc298b438426" prot="public" virt="non-virtual"><scope>KWin::RuleBook</scope><name>RuleBook</name></member>
+      <member refid="class_k_win_1_1_rule_book_1a75ea848d0f9192fc902c4ea4b120e33f" prot="private" virt="non-virtual"><scope>KWin::RuleBook</scope><name>save</name></member>
+      <member refid="class_k_win_1_1_rule_book_1aeddc17ac693dbd48a9f5a127625961cc" prot="public" virt="non-virtual"><scope>KWin::RuleBook</scope><name>setConfig</name></member>
+      <member refid="class_k_win_1_1_rule_book_1aa1aee23b1042c645ddd9fc6623429646" prot="public" virt="non-virtual"><scope>KWin::RuleBook</scope><name>setUpdatesDisabled</name></member>
+      <member refid="class_k_win_1_1_rule_book_1a3ccc6e8e9787074282bc61d57a7e1069" prot="public" virt="non-virtual"><scope>KWin::RuleBook</scope><name>~RuleBook</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

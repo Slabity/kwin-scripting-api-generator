@@ -1,0 +1,536 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_open_g_l_backend" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>KWin::OpenGLBackend</compoundname>
+    <basecompoundref refid="class_k_win_1_1_render_backend" prot="public" virt="non-virtual">KWin::RenderBackend</basecompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_abstract_egl_backend" prot="public" virt="non-virtual">KWin::AbstractEglBackend</derivedcompoundref>
+    <includes refid="openglbackend_8h" local="no">openglbackend.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_open_g_l_backend_1aae2d93b0c6c8355205f20e6c5bfd972f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::OpenGLBackend::m_haveBufferAge</definition>
+        <argsstring></argsstring>
+        <name>m_haveBufferAge</name>
+        <qualifiedname>KWin::OpenGLBackend::m_haveBufferAge</qualifiedname>
+        <briefdescription>
+<para>Whether the backend supports GLX_EXT_buffer_age / EGL_EXT_buffer_age. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="140" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_open_g_l_backend_1aeb8ada633a2bcb72cbc761e7f50a99d8" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::OpenGLBackend::m_haveNativeFence</definition>
+        <argsstring></argsstring>
+        <name>m_haveNativeFence</name>
+        <qualifiedname>KWin::OpenGLBackend::m_haveNativeFence</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Whether the backend supports EGL_ANDROID_native_fence_sync. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="144" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_open_g_l_backend_1a6144a253a3b9e59ade61914fdce30739" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::OpenGLBackend::m_failed</definition>
+        <argsstring></argsstring>
+        <name>m_failed</name>
+        <qualifiedname>KWin::OpenGLBackend::m_failed</qualifiedname>
+        <briefdescription>
+<para>Whether the initialization failed, of course default to <computeroutput>false</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="148" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_open_g_l_backend_1a6889f081e080629c479eae35fcea6a0a" prot="private" static="no" mutable="no">
+        <type>QList&lt; QByteArray &gt;</type>
+        <definition>QList&lt;QByteArray&gt; KWin::OpenGLBackend::m_extensions</definition>
+        <argsstring></argsstring>
+        <name>m_extensions</name>
+        <qualifiedname>KWin::OpenGLBackend::m_extensions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="149" column="11" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1acd3db9f68fc0bdd2b778b8d8905a7d32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::OpenGLBackend::OpenGLBackend</definition>
+        <argsstring>()</argsstring>
+        <name>OpenGLBackend</name>
+        <qualifiedname>KWin::OpenGLBackend::OpenGLBackend</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="44" column="5" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.cpp" bodystart="22" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1a0e1f2fd9fc0b1321b11a611b1cab37bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>KWin::OpenGLBackend::~OpenGLBackend</definition>
+        <argsstring>()</argsstring>
+        <name>~OpenGLBackend</name>
+        <qualifiedname>KWin::OpenGLBackend::~OpenGLBackend</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="45" column="13" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.cpp" bodystart="28" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1aa2bb44d4bb6e8fcb630552cc5d06b036" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void KWin::OpenGLBackend::init</definition>
+        <argsstring>()=0</argsstring>
+        <name>init</name>
+        <qualifiedname>KWin::OpenGLBackend::init</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_egl_gbm_backend_1ad9d747a245b04f837b39dc29c57f33df">init</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_virtual_egl_backend_1a3e321eaa21a2430bb33fd7ce8db58d9e">init</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_wayland_1_1_wayland_egl_backend_1afa8e7a87e66aa33665aadf7f6e8c17fc">init</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_x11_windowed_egl_backend_1a4a80805ed420c6bfe1dd59336ab07278">init</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="47" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1a068a4aa41e2476b9d25fdbd32e7f8e4a" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
+        <type><ref refid="namespace_k_win_1aa1e33474a7077a13169f350a5949a79a" kindref="member">CompositingType</ref></type>
+        <definition>CompositingType KWin::OpenGLBackend::compositingType</definition>
+        <argsstring>() const override final</argsstring>
+        <name>compositingType</name>
+        <qualifiedname>KWin::OpenGLBackend::compositingType</qualifiedname>
+        <reimplements refid="class_k_win_1_1_render_backend_1a84af4f818dd7b805d02ce523b8a5e7bc">compositingType</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="48" column="21" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.cpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1a237ff28011d49332970f9dc347f8608a" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::OpenGLBackend::checkGraphicsReset</definition>
+        <argsstring>() override final</argsstring>
+        <name>checkGraphicsReset</name>
+        <qualifiedname>KWin::OpenGLBackend::checkGraphicsReset</qualifiedname>
+        <reimplements refid="class_k_win_1_1_render_backend_1a995e6152b42f76691d296e99780ef707">checkGraphicsReset</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="49" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.cpp" bodystart="61" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1ab01c91581e915d58c69e66be864405f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool KWin::OpenGLBackend::makeCurrent</definition>
+        <argsstring>()=0</argsstring>
+        <name>makeCurrent</name>
+        <qualifiedname>KWin::OpenGLBackend::makeCurrent</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_abstract_egl_backend_1a139917a79035d3f5d755332773642fc7">makeCurrent</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="51" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1a6970050d37582d69b9ebccb564695bbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void KWin::OpenGLBackend::doneCurrent</definition>
+        <argsstring>()=0</argsstring>
+        <name>doneCurrent</name>
+        <qualifiedname>KWin::OpenGLBackend::doneCurrent</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_abstract_egl_backend_1a818e5dd07cae51bbab8232b0a106cfa8">doneCurrent</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="52" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1a1224cf38a9d5445a6a1871dd058d03a3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="class_k_win_1_1_egl_context" kindref="compound">EglContext</ref> *</type>
+        <definition>virtual EglContext * KWin::OpenGLBackend::openglContext</definition>
+        <argsstring>() const =0</argsstring>
+        <name>openglContext</name>
+        <qualifiedname>KWin::OpenGLBackend::openglContext</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_abstract_egl_backend_1abd1a853f77f0374ea89a68fded26c61b">openglContext</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="53" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1a1528840fc1ef6bfe43a68b8db496e060" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::OpenGLBackend::isFailed</definition>
+        <argsstring>() const</argsstring>
+        <name>isFailed</name>
+        <qualifiedname>KWin::OpenGLBackend::isFailed</qualifiedname>
+        <briefdescription>
+<para>Whether the creation of the Backend failed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The SceneOpenGL should test whether the Backend got constructed correctly. If this method returns <computeroutput>true</computeroutput>, the SceneOpenGL should not try to start the rendering.</para>
+<para><simplesect kind="return"><para>bool <computeroutput>true</computeroutput> if the creation of the Backend failed, <computeroutput>false</computeroutput> otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="63" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.h" bodystart="63" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1adb44469a10be59741ca090c0e4141ac9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::OpenGLBackend::supportsBufferAge</definition>
+        <argsstring>() const</argsstring>
+        <name>supportsBufferAge</name>
+        <qualifiedname>KWin::OpenGLBackend::supportsBufferAge</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="68" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.h" bodystart="68" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1aa6da121c522e644b768f2522cb3c1578" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::OpenGLBackend::supportsNativeFence</definition>
+        <argsstring>() const</argsstring>
+        <name>supportsNativeFence</name>
+        <qualifiedname>KWin::OpenGLBackend::supportsNativeFence</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="73" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.h" bodystart="73" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1a6d81c83b244e8f05405e6df277934a66" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QList&lt; QByteArray &gt;</type>
+        <definition>QList&lt; QByteArray &gt; KWin::OpenGLBackend::extensions</definition>
+        <argsstring>() const</argsstring>
+        <name>extensions</name>
+        <qualifiedname>KWin::OpenGLBackend::extensions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The backend specific extensions (e.g. EGL/GLX extensions).</para>
+<para>Not the OpenGL (ES) extension! </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="83" column="11" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.h" bodystart="83" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1ac4cb45de1fc2bf18e0af9f3efb64ce02" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::OpenGLBackend::hasExtension</definition>
+        <argsstring>(const QByteArray &amp;extension) const</argsstring>
+        <name>hasExtension</name>
+        <qualifiedname>KWin::OpenGLBackend::hasExtension</qualifiedname>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>extension</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>whether the backend specific extensions contains <computeroutput>extension</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="91" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.h" bodystart="91" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1a9899fa006dcf2fcd960dd4f236af080f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::OpenGLBackend::copyPixels</definition>
+        <argsstring>(const QRegion &amp;region, const QSize &amp;screenSize)</argsstring>
+        <name>copyPixels</name>
+        <qualifiedname>KWin::OpenGLBackend::copyPixels</qualifiedname>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>screenSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Copy a region of pixels from the current read to the current draw buffer </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="99" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.cpp" bodystart="43" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1a65640228a4a3f4907c64dadb7d077f83" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::pair&lt; std::shared_ptr&lt; <ref refid="class_k_win_1_1_g_l_texture" kindref="compound">GLTexture</ref> &gt;, <ref refid="class_k_win_1_1_color_description" kindref="compound">ColorDescription</ref> &gt;</type>
+        <definition>std::pair&lt; std::shared_ptr&lt; KWin::GLTexture &gt;, ColorDescription &gt; KWin::OpenGLBackend::textureForOutput</definition>
+        <argsstring>(Output *output) const</argsstring>
+        <name>textureForOutput</name>
+        <qualifiedname>KWin::OpenGLBackend::textureForOutput</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_egl_gbm_backend_1a39ccd3104bf3c93e5dc15dc7e00b8c12">textureForOutput</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_virtual_egl_backend_1afcc5c3eb09743716cee7e439f2f48bcc">textureForOutput</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_wayland_1_1_wayland_egl_backend_1a821d4c7187631aba74e4d7c956ffd7e2">textureForOutput</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_x11_windowed_egl_backend_1a2208dfc77fa43898b947fd46718d8d14">textureForOutput</reimplementedby>
+        <param>
+          <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="101" column="23" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.cpp" bodystart="56" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1ae7965460fb4cc68029be11334a0eea0c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_k_win_1_1_egl_display" kindref="compound">EglDisplay</ref> *</type>
+        <definition>EglDisplay * KWin::OpenGLBackend::eglDisplayObject</definition>
+        <argsstring>() const</argsstring>
+        <name>eglDisplayObject</name>
+        <qualifiedname>KWin::OpenGLBackend::eglDisplayObject</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_abstract_egl_backend_1a2183747e21f79419844e2fd9eb4ec40e">eglDisplayObject</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="103" column="24" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.cpp" bodystart="97" bodyend="100"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1a680916d9d3de7bcf5c1c3ad6338fde5b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::OpenGLBackend::setFailed</definition>
+        <argsstring>(const QString &amp;reason)</argsstring>
+        <name>setFailed</name>
+        <qualifiedname>KWin::OpenGLBackend::setFailed</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>reason</declname>
+        </param>
+        <briefdescription>
+<para>Sets the backend initialization to failed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method should be called by the concrete subclass in case the initialization failed. The given <computeroutput>reason</computeroutput> is logged as a warning.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reason why the initialization failed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="114" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.cpp" bodystart="37" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1a11bcb8552fa007ee192a0c036afa9051" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::OpenGLBackend::setSupportsBufferAge</definition>
+        <argsstring>(bool value)</argsstring>
+        <name>setSupportsBufferAge</name>
+        <qualifiedname>KWin::OpenGLBackend::setSupportsBufferAge</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="116" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.h" bodystart="116" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1a15bebb46135c0337136ef9aee262f6f6" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::OpenGLBackend::setSupportsNativeFence</definition>
+        <argsstring>(bool value)</argsstring>
+        <name>setSupportsNativeFence</name>
+        <qualifiedname>KWin::OpenGLBackend::setSupportsNativeFence</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="121" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.h" bodystart="121" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_open_g_l_backend_1aaffb8a9ea4bc06515bece7d7563dab21" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::OpenGLBackend::setExtensions</definition>
+        <argsstring>(const QList&lt; QByteArray &gt; &amp;extensions)</argsstring>
+        <name>setExtensions</name>
+        <qualifiedname>KWin::OpenGLBackend::setExtensions</qualifiedname>
+        <param>
+          <type>const QList&lt; QByteArray &gt; &amp;</type>
+          <declname>extensions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the platform-specific <computeroutput>extensions</computeroutput>.</para>
+<para>These are the EGL/GLX extensions, not the OpenGL extensions </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="131" column="10" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.h" bodystart="131" bodyend="134"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_k_win_1_1_open_g_l_backend" kindref="compound">OpenGLBackend</ref> creates and holds the OpenGL context and is responsible for Texture from Pixmap. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="class_k_win_1_1_open_g_l_backend" kindref="compound">OpenGLBackend</ref> is an abstract base class used by the SceneOpenGL to abstract away the differences between various OpenGL windowing systems such as GLX and EGL.</para>
+<para>A concrete implementation has to create and release the OpenGL context in a way so that the SceneOpenGL does not have to care about it.</para>
+<para>In addition a major task for this class is to generate the SceneOpenGLTexturePrivate which is able to perform the texture from pixmap operation in the given backend.</para>
+<para><simplesect kind="author"><para>Martin Gräßlin <ulink url="mailto:mgraesslin@kde.org">mgraesslin@kde.org</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>KWin::AbstractEglBackend</label>
+        <link refid="class_k_win_1_1_abstract_egl_backend"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>KWin::EglGbmBackend</label>
+        <link refid="class_k_win_1_1_egl_gbm_backend"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::OpenGLBackend</label>
+        <link refid="class_k_win_1_1_open_g_l_backend"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::RenderBackend</label>
+        <link refid="class_k_win_1_1_render_backend"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>KWin::VirtualEglBackend</label>
+        <link refid="class_k_win_1_1_virtual_egl_backend"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>KWin::Wayland::WaylandEglBackend</label>
+        <link refid="class_k_win_1_1_wayland_1_1_wayland_egl_backend"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>KWin::X11WindowedEglBackend</label>
+        <link refid="class_k_win_1_1_x11_windowed_egl_backend"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::OpenGLBackend</label>
+        <link refid="class_k_win_1_1_open_g_l_backend"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::RenderBackend</label>
+        <link refid="class_k_win_1_1_render_backend"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/platformsupport/scenes/opengl/openglbackend.h" line="39" column="1" bodyfile="kwin/src/platformsupport/scenes/opengl/openglbackend.h" bodystart="40" bodyend="150"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a237ff28011d49332970f9dc347f8608a" prot="public" virt="virtual"><scope>KWin::OpenGLBackend</scope><name>checkGraphicsReset</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a068a4aa41e2476b9d25fdbd32e7f8e4a" prot="public" virt="virtual"><scope>KWin::OpenGLBackend</scope><name>compositingType</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a9899fa006dcf2fcd960dd4f236af080f" prot="public" virt="non-virtual"><scope>KWin::OpenGLBackend</scope><name>copyPixels</name></member>
+      <member refid="class_k_win_1_1_render_backend_1ae04af70cc6faab27ad41086935c2601c" prot="public" virt="virtual"><scope>KWin::OpenGLBackend</scope><name>createSurfaceTextureWayland</name></member>
+      <member refid="class_k_win_1_1_render_backend_1abe178a184592ff07e972f4971de5f964" prot="public" virt="virtual"><scope>KWin::OpenGLBackend</scope><name>cursorLayer</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a6970050d37582d69b9ebccb564695bbb" prot="public" virt="pure-virtual"><scope>KWin::OpenGLBackend</scope><name>doneCurrent</name></member>
+      <member refid="class_k_win_1_1_render_backend_1a9135e39ee4f8aed8dcfd2771fe0a7773" prot="public" virt="virtual"><scope>KWin::OpenGLBackend</scope><name>drmDevice</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1ae7965460fb4cc68029be11334a0eea0c" prot="public" virt="virtual"><scope>KWin::OpenGLBackend</scope><name>eglDisplayObject</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a6d81c83b244e8f05405e6df277934a66" prot="public" virt="non-virtual"><scope>KWin::OpenGLBackend</scope><name>extensions</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1ac4cb45de1fc2bf18e0af9f3efb64ce02" prot="public" virt="non-virtual"><scope>KWin::OpenGLBackend</scope><name>hasExtension</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1aa2bb44d4bb6e8fcb630552cc5d06b036" prot="public" virt="pure-virtual"><scope>KWin::OpenGLBackend</scope><name>init</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a1528840fc1ef6bfe43a68b8db496e060" prot="public" virt="non-virtual"><scope>KWin::OpenGLBackend</scope><name>isFailed</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a6889f081e080629c479eae35fcea6a0a" prot="private" virt="non-virtual"><scope>KWin::OpenGLBackend</scope><name>m_extensions</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a6144a253a3b9e59ade61914fdce30739" prot="private" virt="non-virtual"><scope>KWin::OpenGLBackend</scope><name>m_failed</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1aae2d93b0c6c8355205f20e6c5bfd972f" prot="private" virt="non-virtual"><scope>KWin::OpenGLBackend</scope><name>m_haveBufferAge</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1aeb8ada633a2bcb72cbc761e7f50a99d8" prot="private" virt="non-virtual"><scope>KWin::OpenGLBackend</scope><name>m_haveNativeFence</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1ab01c91581e915d58c69e66be864405f4" prot="public" virt="pure-virtual"><scope>KWin::OpenGLBackend</scope><name>makeCurrent</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1acd3db9f68fc0bdd2b778b8d8905a7d32" prot="public" virt="non-virtual"><scope>KWin::OpenGLBackend</scope><name>OpenGLBackend</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a1224cf38a9d5445a6a1871dd058d03a3" prot="public" virt="pure-virtual"><scope>KWin::OpenGLBackend</scope><name>openglContext</name></member>
+      <member refid="class_k_win_1_1_render_backend_1ad9736308199d71cdd97755a111f5abbe" prot="public" virt="pure-virtual"><scope>KWin::OpenGLBackend</scope><name>present</name></member>
+      <member refid="class_k_win_1_1_render_backend_1a0862ffb5aba97ee2d82e6488e4d1471d" prot="public" virt="pure-virtual"><scope>KWin::OpenGLBackend</scope><name>primaryLayer</name></member>
+      <member refid="class_k_win_1_1_render_backend_1a64651d2ee05d39d5e1df7391036198d8" prot="public" virt="virtual"><scope>KWin::OpenGLBackend</scope><name>repairPresentation</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1aaffb8a9ea4bc06515bece7d7563dab21" prot="protected" virt="non-virtual"><scope>KWin::OpenGLBackend</scope><name>setExtensions</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a680916d9d3de7bcf5c1c3ad6338fde5b" prot="protected" virt="non-virtual"><scope>KWin::OpenGLBackend</scope><name>setFailed</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a11bcb8552fa007ee192a0c036afa9051" prot="protected" virt="non-virtual"><scope>KWin::OpenGLBackend</scope><name>setSupportsBufferAge</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a15bebb46135c0337136ef9aee262f6f6" prot="protected" virt="non-virtual"><scope>KWin::OpenGLBackend</scope><name>setSupportsNativeFence</name></member>
+      <member refid="class_k_win_1_1_render_backend_1aca3c178c2ab62c1b5f1074200b066c53" prot="public" virt="virtual"><scope>KWin::OpenGLBackend</scope><name>supportedFormats</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1adb44469a10be59741ca090c0e4141ac9" prot="public" virt="non-virtual"><scope>KWin::OpenGLBackend</scope><name>supportsBufferAge</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1aa6da121c522e644b768f2522cb3c1578" prot="public" virt="non-virtual"><scope>KWin::OpenGLBackend</scope><name>supportsNativeFence</name></member>
+      <member refid="class_k_win_1_1_render_backend_1a19fb9a934538fe684e8fe9725f253904" prot="public" virt="virtual"><scope>KWin::OpenGLBackend</scope><name>testImportBuffer</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a65640228a4a3f4907c64dadb7d077f83" prot="public" virt="virtual"><scope>KWin::OpenGLBackend</scope><name>textureForOutput</name></member>
+      <member refid="class_k_win_1_1_open_g_l_backend_1a0e1f2fd9fc0b1321b11a611b1cab37bd" prot="public" virt="virtual"><scope>KWin::OpenGLBackend</scope><name>~OpenGLBackend</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

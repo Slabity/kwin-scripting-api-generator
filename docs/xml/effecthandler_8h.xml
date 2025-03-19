@@ -1,0 +1,1267 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="effecthandler_8h" kind="file" language="C++">
+    <compoundname>effecthandler.h</compoundname>
+    <includes local="yes">config-kwin.h</includes>
+    <includes refid="effect_8h" local="yes">effect/effect.h</includes>
+    <includes refid="effectwindow_8h" local="yes">effect/effectwindow.h</includes>
+    <includes local="no">QEasingCurve</includes>
+    <includes local="no">QIcon</includes>
+    <includes local="no">QPair</includes>
+    <includes local="no">QRect</includes>
+    <includes local="no">QRegion</includes>
+    <includes local="no">QSet</includes>
+    <includes local="no">QHash</includes>
+    <includes local="no">QList</includes>
+    <includes local="no">QLoggingCategory</includes>
+    <includes local="no">QStack</includes>
+    <includes local="no">functional</includes>
+    <includedby refid="compositor_8cpp" local="yes">kwin/src/compositor.cpp</includedby>
+    <includedby refid="debug__console_8cpp" local="yes">kwin/src/debug_console.cpp</includedby>
+    <includedby refid="anidata_8cpp" local="yes">kwin/src/effect/anidata.cpp</includedby>
+    <includedby refid="animationeffect_8cpp" local="yes">kwin/src/effect/animationeffect.cpp</includedby>
+    <includedby refid="effect_2effect_8cpp" local="yes">kwin/src/effect/effect.cpp</includedby>
+    <includedby refid="effectframe_8cpp" local="yes">kwin/src/effect/effectframe.cpp</includedby>
+    <includedby refid="effecthandler_8cpp" local="yes">kwin/src/effect/effecthandler.cpp</includedby>
+    <includedby refid="effectloader_8cpp" local="yes">kwin/src/effect/effectloader.cpp</includedby>
+    <includedby refid="effecttogglablestate_8cpp" local="yes">kwin/src/effect/effecttogglablestate.cpp</includedby>
+    <includedby refid="effectwindow_8cpp" local="yes">kwin/src/effect/effectwindow.cpp</includedby>
+    <includedby refid="offscreeneffect_8cpp" local="yes">kwin/src/effect/offscreeneffect.cpp</includedby>
+    <includedby refid="offscreenquickview_8cpp" local="yes">kwin/src/effect/offscreenquickview.cpp</includedby>
+    <includedby refid="quickeffect_8cpp" local="yes">kwin/src/effect/quickeffect.cpp</includedby>
+    <includedby refid="group_8cpp" local="yes">kwin/src/group.cpp</includedby>
+    <includedby refid="input_8cpp" local="yes">kwin/src/input.cpp</includedby>
+    <includedby refid="inputmethod_8cpp" local="yes">kwin/src/inputmethod.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">kwin/src/main.cpp</includedby>
+    <includedby refid="main__wayland_8cpp" local="yes">kwin/src/main_wayland.cpp</includedby>
+    <includedby refid="plugins_2backgroundcontrast_2contrast_8cpp" local="yes">kwin/src/plugins/backgroundcontrast/contrast.cpp</includedby>
+    <includedby refid="contrastshader_8cpp" local="yes">kwin/src/plugins/backgroundcontrast/contrastshader.cpp</includedby>
+    <includedby refid="blendchanges_8cpp" local="yes">kwin/src/plugins/blendchanges/blendchanges.cpp</includedby>
+    <includedby refid="plugins_2blur_2blur_8cpp" local="yes">kwin/src/plugins/blur/blur.cpp</includedby>
+    <includedby refid="colorblindnesscorrection_8cpp" local="yes">kwin/src/plugins/colorblindnesscorrection/colorblindnesscorrection.cpp</includedby>
+    <includedby refid="colorpicker_8cpp" local="yes">kwin/src/plugins/colorpicker/colorpicker.cpp</includedby>
+    <includedby refid="diminactive_8cpp" local="yes">kwin/src/plugins/diminactive/diminactive.cpp</includedby>
+    <includedby refid="fallapart_8cpp" local="yes">kwin/src/plugins/fallapart/fallapart.cpp</includedby>
+    <includedby refid="glide_8cpp" local="yes">kwin/src/plugins/glide/glide.cpp</includedby>
+    <includedby refid="hidecursor_8cpp" local="yes">kwin/src/plugins/hidecursor/hidecursor.cpp</includedby>
+    <includedby refid="highlightwindow_8cpp" local="yes">kwin/src/plugins/highlightwindow/highlightwindow.cpp</includedby>
+    <includedby refid="invert_8cpp" local="yes">kwin/src/plugins/invert/invert.cpp</includedby>
+    <includedby refid="keynotification_8cpp" local="yes">kwin/src/plugins/keynotification/keynotification.cpp</includedby>
+    <includedby refid="kscreen_8cpp" local="yes">kwin/src/plugins/kscreen/kscreen.cpp</includedby>
+    <includedby refid="magiclamp_8cpp" local="yes">kwin/src/plugins/magiclamp/magiclamp.cpp</includedby>
+    <includedby refid="magnifier_8cpp" local="yes">kwin/src/plugins/magnifier/magnifier.cpp</includedby>
+    <includedby refid="mouseclick_8cpp" local="yes">kwin/src/plugins/mouseclick/mouseclick.cpp</includedby>
+    <includedby refid="mousemark_8cpp" local="yes">kwin/src/plugins/mousemark/mousemark.cpp</includedby>
+    <includedby refid="outputlocator_8cpp" local="yes">kwin/src/plugins/outputlocator/outputlocator.cpp</includedby>
+    <includedby refid="overvieweffect_8cpp" local="yes">kwin/src/plugins/overview/overvieweffect.cpp</includedby>
+    <includedby refid="screenedgeeffect_8cpp" local="yes">kwin/src/plugins/screenedge/screenedgeeffect.cpp</includedby>
+    <includedby refid="screenshot_8cpp" local="yes">kwin/src/plugins/screenshot/screenshot.cpp</includedby>
+    <includedby refid="screenshotdbusinterface2_8cpp" local="yes">kwin/src/plugins/screenshot/screenshotdbusinterface2.cpp</includedby>
+    <includedby refid="screentransform_8cpp" local="yes">kwin/src/plugins/screentransform/screentransform.cpp</includedby>
+    <includedby refid="shakecursor_8cpp" local="yes">kwin/src/plugins/shakecursor/shakecursor.cpp</includedby>
+    <includedby refid="sheet_8cpp" local="yes">kwin/src/plugins/sheet/sheet.cpp</includedby>
+    <includedby refid="showcompositing_8cpp" local="yes">kwin/src/plugins/showcompositing/showcompositing.cpp</includedby>
+    <includedby refid="showfpseffect_8cpp" local="yes">kwin/src/plugins/showfps/showfpseffect.cpp</includedby>
+    <includedby refid="showpaint_8cpp" local="yes">kwin/src/plugins/showpaint/showpaint.cpp</includedby>
+    <includedby refid="plugins_2slide_2slide_8cpp" local="yes">kwin/src/plugins/slide/slide.cpp</includedby>
+    <includedby refid="motionmanager_8h" local="yes">kwin/src/plugins/slideback/motionmanager.h</includedby>
+    <includedby refid="slideback_8cpp" local="yes">kwin/src/plugins/slideback/slideback.cpp</includedby>
+    <includedby refid="slidingpopups_8cpp" local="yes">kwin/src/plugins/slidingpopups/slidingpopups.cpp</includedby>
+    <includedby refid="snaphelper_8cpp" local="yes">kwin/src/plugins/snaphelper/snaphelper.cpp</includedby>
+    <includedby refid="startupfeedback_8cpp" local="yes">kwin/src/plugins/startupfeedback/startupfeedback.cpp</includedby>
+    <includedby refid="stickykeys_8cpp" local="yes">kwin/src/plugins/stickykeys/stickykeys.cpp</includedby>
+    <includedby refid="systembell_8cpp" local="yes">kwin/src/plugins/systembell/systembell.cpp</includedby>
+    <includedby refid="thumbnailaside_8cpp" local="yes">kwin/src/plugins/thumbnailaside/thumbnailaside.cpp</includedby>
+    <includedby refid="tileseditoreffect_8cpp" local="yes">kwin/src/plugins/tileseditor/tileseditoreffect.cpp</includedby>
+    <includedby refid="touchpoints_8cpp" local="yes">kwin/src/plugins/touchpoints/touchpoints.cpp</includedby>
+    <includedby refid="trackmouse_8cpp" local="yes">kwin/src/plugins/trackmouse/trackmouse.cpp</includedby>
+    <includedby refid="windoweffects_8cpp" local="yes">kwin/src/plugins/windowsystem/windoweffects.cpp</includedby>
+    <includedby refid="windowvieweffect_8cpp" local="yes">kwin/src/plugins/windowview/windowvieweffect.cpp</includedby>
+    <includedby refid="wobblywindows_8cpp" local="yes">kwin/src/plugins/wobblywindows/wobblywindows.cpp</includedby>
+    <includedby refid="zoom_8cpp" local="yes">kwin/src/plugins/zoom/zoom.cpp</includedby>
+    <includedby refid="pointer__input_8cpp" local="yes">kwin/src/pointer_input.cpp</includedby>
+    <includedby refid="windowitem_8cpp" local="yes">kwin/src/scene/windowitem.cpp</includedby>
+    <includedby refid="workspacescene_8cpp" local="yes">kwin/src/scene/workspacescene.cpp</includedby>
+    <includedby refid="screenedge_8cpp" local="yes">kwin/src/screenedge.cpp</includedby>
+    <includedby refid="scriptedeffect_8cpp" local="yes">kwin/src/scripting/scriptedeffect.cpp</includedby>
+    <includedby refid="workspace__wrapper_8cpp" local="yes">kwin/src/scripting/workspace_wrapper.cpp</includedby>
+    <includedby refid="tabbox_8cpp" local="yes">kwin/src/tabbox/tabbox.cpp</includedby>
+    <includedby refid="window__property__notify__x11__filter_8cpp" local="yes">kwin/src/window_property_notify_x11_filter.cpp</includedby>
+    <includedby refid="workspace_8cpp" local="yes">kwin/src/workspace.cpp</includedby>
+    <includedby refid="xdgactivationv1_8cpp" local="yes">kwin/src/xdgactivationv1.cpp</includedby>
+    <incdepgraph>
+      <node id="19">
+        <label>core/colorspace.h</label>
+        <link refid="colorspace_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>core/output.h</label>
+        <link refid="core_2output_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>renderloop.h</label>
+        <link refid="renderloop_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>effect/effect.h</label>
+        <link refid="effect_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/effect/effecthandler.h</label>
+        <link refid="effecthandler_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>effect/effectwindow.h</label>
+        <link refid="effectwindow_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>utils/edid.h</label>
+        <link refid="edid_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>KPluginFactory</label>
+      </node>
+      <node id="13">
+        <label>KSharedConfig</label>
+      </node>
+      <node id="22">
+        <label>QByteArray</label>
+      </node>
+      <node id="5">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="25">
+        <label>QDebug</label>
+      </node>
+      <node id="29">
+        <label>QEasingCurve</label>
+      </node>
+      <node id="33">
+        <label>QHash</label>
+      </node>
+      <node id="30">
+        <label>QIcon</label>
+      </node>
+      <node id="6">
+        <label>QImage</label>
+      </node>
+      <node id="23">
+        <label>QList</label>
+      </node>
+      <node id="34">
+        <label>QLoggingCategory</label>
+      </node>
+      <node id="21">
+        <label>QMatrix4x4</label>
+      </node>
+      <node id="17">
+        <label>QObject</label>
+      </node>
+      <node id="31">
+        <label>QPair</label>
+      </node>
+      <node id="7">
+        <label>QPoint</label>
+      </node>
+      <node id="26">
+        <label>QRect</label>
+      </node>
+      <node id="11">
+        <label>QRegion</label>
+      </node>
+      <node id="32">
+        <label>QSet</label>
+      </node>
+      <node id="24">
+        <label>QSize</label>
+      </node>
+      <node id="35">
+        <label>QStack</label>
+      </node>
+      <node id="27">
+        <label>QUuid</label>
+      </node>
+      <node id="8">
+        <label>QVariant</label>
+      </node>
+      <node id="9">
+        <label>QVector2D</label>
+      </node>
+      <node id="28">
+        <label>QWindow</label>
+      </node>
+      <node id="2">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="36">
+        <label>functional</label>
+      </node>
+      <node id="10">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="20">
+        <label>optional</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/compositor.cpp</label>
+        <link refid="compositor_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/debug_console.cpp</label>
+        <link refid="debug__console_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/effect/anidata.cpp</label>
+        <link refid="anidata_8cpp"/>
+      </node>
+      <node id="5">
+        <label>kwin/src/effect/animationeffect.cpp</label>
+        <link refid="animationeffect_8cpp"/>
+      </node>
+      <node id="6">
+        <label>kwin/src/effect/effect.cpp</label>
+        <link refid="effect_2effect_8cpp"/>
+      </node>
+      <node id="7">
+        <label>kwin/src/effect/effectframe.cpp</label>
+        <link refid="effectframe_8cpp"/>
+      </node>
+      <node id="8">
+        <label>kwin/src/effect/effecthandler.cpp</label>
+        <link refid="effecthandler_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/effect/effecthandler.h</label>
+        <link refid="effecthandler_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>kwin/src/effect/effectloader.cpp</label>
+        <link refid="effectloader_8cpp"/>
+      </node>
+      <node id="10">
+        <label>kwin/src/effect/effecttogglablestate.cpp</label>
+        <link refid="effecttogglablestate_8cpp"/>
+      </node>
+      <node id="11">
+        <label>kwin/src/effect/effectwindow.cpp</label>
+        <link refid="effectwindow_8cpp"/>
+      </node>
+      <node id="12">
+        <label>kwin/src/effect/offscreeneffect.cpp</label>
+        <link refid="offscreeneffect_8cpp"/>
+      </node>
+      <node id="13">
+        <label>kwin/src/effect/offscreenquickview.cpp</label>
+        <link refid="offscreenquickview_8cpp"/>
+      </node>
+      <node id="14">
+        <label>kwin/src/effect/quickeffect.cpp</label>
+        <link refid="quickeffect_8cpp"/>
+      </node>
+      <node id="15">
+        <label>kwin/src/group.cpp</label>
+        <link refid="group_8cpp"/>
+      </node>
+      <node id="16">
+        <label>kwin/src/input.cpp</label>
+        <link refid="input_8cpp"/>
+      </node>
+      <node id="17">
+        <label>kwin/src/inputmethod.cpp</label>
+        <link refid="inputmethod_8cpp"/>
+      </node>
+      <node id="18">
+        <label>kwin/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="19">
+        <label>kwin/src/main_wayland.cpp</label>
+        <link refid="main__wayland_8cpp"/>
+      </node>
+      <node id="20">
+        <label>kwin/src/plugins/backgroundcontrast/contrast.cpp</label>
+        <link refid="plugins_2backgroundcontrast_2contrast_8cpp"/>
+      </node>
+      <node id="21">
+        <label>kwin/src/plugins/backgroundcontrast/contrastshader.cpp</label>
+        <link refid="contrastshader_8cpp"/>
+      </node>
+      <node id="22">
+        <label>kwin/src/plugins/blendchanges/blendchanges.cpp</label>
+        <link refid="blendchanges_8cpp"/>
+      </node>
+      <node id="23">
+        <label>kwin/src/plugins/blur/blur.cpp</label>
+        <link refid="plugins_2blur_2blur_8cpp"/>
+      </node>
+      <node id="24">
+        <label>kwin/src/plugins/colorblindnesscorrection/colorblindnesscorrection.cpp</label>
+        <link refid="colorblindnesscorrection_8cpp"/>
+      </node>
+      <node id="25">
+        <label>kwin/src/plugins/colorpicker/colorpicker.cpp</label>
+        <link refid="colorpicker_8cpp"/>
+      </node>
+      <node id="26">
+        <label>kwin/src/plugins/diminactive/diminactive.cpp</label>
+        <link refid="diminactive_8cpp"/>
+      </node>
+      <node id="27">
+        <label>kwin/src/plugins/fallapart/fallapart.cpp</label>
+        <link refid="fallapart_8cpp"/>
+      </node>
+      <node id="28">
+        <label>kwin/src/plugins/glide/glide.cpp</label>
+        <link refid="glide_8cpp"/>
+      </node>
+      <node id="29">
+        <label>kwin/src/plugins/hidecursor/hidecursor.cpp</label>
+        <link refid="hidecursor_8cpp"/>
+      </node>
+      <node id="30">
+        <label>kwin/src/plugins/highlightwindow/highlightwindow.cpp</label>
+        <link refid="highlightwindow_8cpp"/>
+      </node>
+      <node id="31">
+        <label>kwin/src/plugins/invert/invert.cpp</label>
+        <link refid="invert_8cpp"/>
+      </node>
+      <node id="32">
+        <label>kwin/src/plugins/keynotification/keynotification.cpp</label>
+        <link refid="keynotification_8cpp"/>
+      </node>
+      <node id="33">
+        <label>kwin/src/plugins/kscreen/kscreen.cpp</label>
+        <link refid="kscreen_8cpp"/>
+      </node>
+      <node id="34">
+        <label>kwin/src/plugins/magiclamp/magiclamp.cpp</label>
+        <link refid="magiclamp_8cpp"/>
+      </node>
+      <node id="35">
+        <label>kwin/src/plugins/magnifier/magnifier.cpp</label>
+        <link refid="magnifier_8cpp"/>
+      </node>
+      <node id="36">
+        <label>kwin/src/plugins/mouseclick/mouseclick.cpp</label>
+        <link refid="mouseclick_8cpp"/>
+      </node>
+      <node id="37">
+        <label>kwin/src/plugins/mousemark/mousemark.cpp</label>
+        <link refid="mousemark_8cpp"/>
+      </node>
+      <node id="38">
+        <label>kwin/src/plugins/outputlocator/outputlocator.cpp</label>
+        <link refid="outputlocator_8cpp"/>
+      </node>
+      <node id="39">
+        <label>kwin/src/plugins/overview/overvieweffect.cpp</label>
+        <link refid="overvieweffect_8cpp"/>
+      </node>
+      <node id="40">
+        <label>kwin/src/plugins/screenedge/screenedgeeffect.cpp</label>
+        <link refid="screenedgeeffect_8cpp"/>
+      </node>
+      <node id="41">
+        <label>kwin/src/plugins/screenshot/screenshot.cpp</label>
+        <link refid="screenshot_8cpp"/>
+      </node>
+      <node id="42">
+        <label>kwin/src/plugins/screenshot/screenshotdbusinterface2.cpp</label>
+        <link refid="screenshotdbusinterface2_8cpp"/>
+      </node>
+      <node id="43">
+        <label>kwin/src/plugins/screentransform/screentransform.cpp</label>
+        <link refid="screentransform_8cpp"/>
+      </node>
+      <node id="44">
+        <label>kwin/src/plugins/shakecursor/shakecursor.cpp</label>
+        <link refid="shakecursor_8cpp"/>
+      </node>
+      <node id="45">
+        <label>kwin/src/plugins/sheet/sheet.cpp</label>
+        <link refid="sheet_8cpp"/>
+      </node>
+      <node id="46">
+        <label>kwin/src/plugins/showcompositing/showcompositing.cpp</label>
+        <link refid="showcompositing_8cpp"/>
+      </node>
+      <node id="47">
+        <label>kwin/src/plugins/showfps/showfpseffect.cpp</label>
+        <link refid="showfpseffect_8cpp"/>
+      </node>
+      <node id="48">
+        <label>kwin/src/plugins/showpaint/showpaint.cpp</label>
+        <link refid="showpaint_8cpp"/>
+      </node>
+      <node id="49">
+        <label>kwin/src/plugins/slide/slide.cpp</label>
+        <link refid="plugins_2slide_2slide_8cpp"/>
+      </node>
+      <node id="53">
+        <label>kwin/src/plugins/slideback/main.cpp</label>
+        <link refid="plugins_2slideback_2main_8cpp"/>
+      </node>
+      <node id="51">
+        <label>kwin/src/plugins/slideback/motionmanager.cpp</label>
+        <link refid="motionmanager_8cpp"/>
+      </node>
+      <node id="50">
+        <label>kwin/src/plugins/slideback/motionmanager.h</label>
+        <link refid="motionmanager_8h"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>kwin/src/plugins/slideback/slideback.cpp</label>
+        <link refid="slideback_8cpp"/>
+      </node>
+      <node id="52">
+        <label>kwin/src/plugins/slideback/slideback.h</label>
+        <link refid="slideback_8h"/>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>kwin/src/plugins/slidingpopups/slidingpopups.cpp</label>
+        <link refid="slidingpopups_8cpp"/>
+      </node>
+      <node id="56">
+        <label>kwin/src/plugins/snaphelper/snaphelper.cpp</label>
+        <link refid="snaphelper_8cpp"/>
+      </node>
+      <node id="57">
+        <label>kwin/src/plugins/startupfeedback/startupfeedback.cpp</label>
+        <link refid="startupfeedback_8cpp"/>
+      </node>
+      <node id="58">
+        <label>kwin/src/plugins/stickykeys/stickykeys.cpp</label>
+        <link refid="stickykeys_8cpp"/>
+      </node>
+      <node id="59">
+        <label>kwin/src/plugins/systembell/systembell.cpp</label>
+        <link refid="systembell_8cpp"/>
+      </node>
+      <node id="60">
+        <label>kwin/src/plugins/thumbnailaside/thumbnailaside.cpp</label>
+        <link refid="thumbnailaside_8cpp"/>
+      </node>
+      <node id="61">
+        <label>kwin/src/plugins/tileseditor/tileseditoreffect.cpp</label>
+        <link refid="tileseditoreffect_8cpp"/>
+      </node>
+      <node id="62">
+        <label>kwin/src/plugins/touchpoints/touchpoints.cpp</label>
+        <link refid="touchpoints_8cpp"/>
+      </node>
+      <node id="63">
+        <label>kwin/src/plugins/trackmouse/trackmouse.cpp</label>
+        <link refid="trackmouse_8cpp"/>
+      </node>
+      <node id="64">
+        <label>kwin/src/plugins/windowsystem/windoweffects.cpp</label>
+        <link refid="windoweffects_8cpp"/>
+      </node>
+      <node id="65">
+        <label>kwin/src/plugins/windowview/windowvieweffect.cpp</label>
+        <link refid="windowvieweffect_8cpp"/>
+      </node>
+      <node id="66">
+        <label>kwin/src/plugins/wobblywindows/wobblywindows.cpp</label>
+        <link refid="wobblywindows_8cpp"/>
+      </node>
+      <node id="67">
+        <label>kwin/src/plugins/zoom/zoom.cpp</label>
+        <link refid="zoom_8cpp"/>
+      </node>
+      <node id="68">
+        <label>kwin/src/pointer_input.cpp</label>
+        <link refid="pointer__input_8cpp"/>
+      </node>
+      <node id="69">
+        <label>kwin/src/scene/windowitem.cpp</label>
+        <link refid="windowitem_8cpp"/>
+      </node>
+      <node id="70">
+        <label>kwin/src/scene/workspacescene.cpp</label>
+        <link refid="workspacescene_8cpp"/>
+      </node>
+      <node id="71">
+        <label>kwin/src/screenedge.cpp</label>
+        <link refid="screenedge_8cpp"/>
+      </node>
+      <node id="72">
+        <label>kwin/src/scripting/scriptedeffect.cpp</label>
+        <link refid="scriptedeffect_8cpp"/>
+      </node>
+      <node id="73">
+        <label>kwin/src/scripting/workspace_wrapper.cpp</label>
+        <link refid="workspace__wrapper_8cpp"/>
+      </node>
+      <node id="74">
+        <label>kwin/src/tabbox/tabbox.cpp</label>
+        <link refid="tabbox_8cpp"/>
+      </node>
+      <node id="75">
+        <label>kwin/src/window_property_notify_x11_filter.cpp</label>
+        <link refid="window__property__notify__x11__filter_8cpp"/>
+      </node>
+      <node id="76">
+        <label>kwin/src/workspace.cpp</label>
+        <link refid="workspace_8cpp"/>
+      </node>
+      <node id="77">
+        <label>kwin/src/xdgactivationv1.cpp</label>
+        <link refid="xdgactivationv1_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_effects_handler" prot="public">KWin::EffectsHandler</innerclass>
+    <innernamespace refid="namespace_k_decoration3">KDecoration3</innernamespace>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2006<sp/>Lubos<sp/>Lunak<sp/>&lt;l.lunak@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2009<sp/>Lucas<sp/>Murray<sp/>&lt;lmurray@undefinedfire.com&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2010,<sp/>2011<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2018<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;config-kwin.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="effect_8h" kindref="compound">effect/effect.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="effectwindow_8h" kindref="compound">effect/effectwindow.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QEasingCurve&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QIcon&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QPair&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QRect&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QRegion&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QSet&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QHash&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QLoggingCategory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QStack&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>KWIN_BUILD_X11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;xcb/xcb.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KConfigGroup;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QFont;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QKeyEvent;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QMatrix4x4;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QMouseEvent;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QWheelEvent;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QAction;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QQmlEngine;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">Q_DECLARE_LOGGING_CATEGORY(KWINEFFECTS)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_decoration3" kindref="compound">KDecoration3</ref></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win_1_1_input_filter_order_1a756edc4ece066f390b6c187c3cd970b1ab8983009ed80be967cfccaa8bbefd1a7" kindref="member">Decoration</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_surface_interface" kindref="compound">SurfaceInterface</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_display" kindref="compound">Display</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_paint_data_private" kindref="compound">PaintDataPrivate</ref>;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_window_paint_data_private" kindref="compound">WindowPaintDataPrivate</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_compositor" kindref="compound">Compositor</ref>;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_effect_loader" kindref="compound">EffectLoader</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_effect_window_group" kindref="compound">EffectWindowGroup</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_offscreen_quick_view" kindref="compound">OffscreenQuickView</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_group" kindref="compound">Group</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref>;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_k_win_1_1_tablet_tool_proximity_event" kindref="compound">TabletToolProximityEvent</ref>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_k_win_1_1_tablet_tool_axis_event" kindref="compound">TabletToolAxisEvent</ref>;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_k_win_1_1_tablet_tool_tip_event" kindref="compound">TabletToolTipEvent</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_window_item" kindref="compound">WindowItem</ref>;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_window_property_notify_x11_filter" kindref="compound">WindowPropertyNotifyX11Filter</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_workspace_scene" kindref="compound">WorkspaceScene</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_egl_context" kindref="compound">EglContext</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_input_device" kindref="compound">InputDevice</ref>;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_input_device_tablet_tool" kindref="compound">InputDeviceTabletTool</ref>;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="namespace_k_win_1ace229504290a828dece325a748e290c9" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>QPair&lt;QString,<sp/>Effect<sp/>*&gt;<sp/><ref refid="namespace_k_win_1ace229504290a828dece325a748e290c9" kindref="member">EffectPair</ref>;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6" kindref="member">DataRole</ref><sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Grab<sp/>roles<sp/>are<sp/>used<sp/>to<sp/>force<sp/>all<sp/>other<sp/>animations<sp/>to<sp/>ignore<sp/>the<sp/>window.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>value<sp/>of<sp/>the<sp/>data<sp/>is<sp/>set<sp/>to<sp/>the<sp/>Effect&apos;s<sp/>`this`<sp/>value.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6a414a600bb8f3c2630ad05f13db849b42" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6a414a600bb8f3c2630ad05f13db849b42" kindref="member">WindowAddedGrabRole</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="95" refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6aa952e874ad9d4625bd84d4de4f648471" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6aa952e874ad9d4625bd84d4de4f648471" kindref="member">WindowClosedGrabRole</ref>,</highlight></codeline>
+<codeline lineno="96" refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6ad52a690adbb3829c9fa543cc84fbac98" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6ad52a690adbb3829c9fa543cc84fbac98" kindref="member">WindowMinimizedGrabRole</ref>,</highlight></codeline>
+<codeline lineno="97" refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6ac875eac9d38cba70985253a3085bb70f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6ac875eac9d38cba70985253a3085bb70f" kindref="member">WindowUnminimizedGrabRole</ref>,</highlight></codeline>
+<codeline lineno="98" refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6ab200085702f8619c5810dc1cb1576b2a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6ab200085702f8619c5810dc1cb1576b2a" kindref="member">WindowForceBlurRole</ref>,<sp/></highlight></codeline>
+<codeline lineno="99" refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6a78ab8b50a33987a88962bfe8ac6878c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a18fd9ac5b065f286f5484b33f46cbda6a78ab8b50a33987a88962bfe8ac6878c3" kindref="member">WindowForceBackgroundContrastRole</ref>,<sp/></highlight></codeline>
+<codeline lineno="100"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="class_k_win_1_1_effects_handler" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_effects_handler_1abbeccbfc8813c73f1915fdd164969a28" kindref="member">EffectsHandler</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_CLASSINFO(</highlight><highlight class="stringliteral">&quot;D-Bus<sp/>Interface&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;org.kde.kwin.Effects&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="class_k_win_1_1_effects_handler_1ae776ded0800eff674090c7502486605f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QStringList<sp/><ref refid="class_k_win_1_1_effects_handler_1ae776ded0800eff674090c7502486605f" kindref="member">activeEffects</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1ae776ded0800eff674090c7502486605f" kindref="member">activeEffects</ref>)</highlight></codeline>
+<codeline lineno="118" refid="class_k_win_1_1_effects_handler_1a3f48b5529766947c2342cf3f5f1899dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QStringList<sp/><ref refid="class_k_win_1_1_effects_handler_1a3f48b5529766947c2342cf3f5f1899dc" kindref="member">loadedEffects</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1a3f48b5529766947c2342cf3f5f1899dc" kindref="member">loadedEffects</ref>)</highlight></codeline>
+<codeline lineno="119" refid="class_k_win_1_1_effects_handler_1aa845c78cd710dadd98da204a3d935fab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QStringList<sp/><ref refid="class_k_win_1_1_effects_handler_1aa845c78cd710dadd98da204a3d935fab" kindref="member">listOfEffects</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1aa845c78cd710dadd98da204a3d935fab" kindref="member">listOfEffects</ref>)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="class_k_win_1_1_effects_handler_1a722658571850786bb4516ae98247479f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(<ref refid="namespace_k_win" kindref="compound">KWin</ref>::<ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref><sp/>*<ref refid="class_k_win_1_1_effects_handler_1a722658571850786bb4516ae98247479f" kindref="member">currentDesktop</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1a722658571850786bb4516ae98247479f" kindref="member">currentDesktop</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_effects_handler_1a9edefda57a6a4f7548985ee40403cc2c" kindref="member">setCurrentDesktop</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_effects_handler_1ac71df72597202eed23f6211d8fa80c50" kindref="member">desktopChanged</ref>)</highlight></codeline>
+<codeline lineno="122" refid="class_k_win_1_1_effects_handler_1aab5633ab9152a3514d8c443f3c52e3f4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QString<sp/><ref refid="class_k_win_1_1_effects_handler_1aab5633ab9152a3514d8c443f3c52e3f4" kindref="member">currentActivity</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1aab5633ab9152a3514d8c443f3c52e3f4" kindref="member">currentActivity</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_effects_handler_1a2a62645ebf6d5fc075be76e5545da8f2" kindref="member">currentActivityChanged</ref>)</highlight></codeline>
+<codeline lineno="123" refid="class_k_win_1_1_effects_handler_1a73aa722f6c5ffec5e50555109dee09ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(<ref refid="namespace_k_win" kindref="compound">KWin</ref>::<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*<ref refid="class_k_win_1_1_effects_handler_1a73aa722f6c5ffec5e50555109dee09ab" kindref="member">activeWindow</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1a73aa722f6c5ffec5e50555109dee09ab" kindref="member">activeWindow</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_effects_handler_1a3bfb75fe1af69602acddcbf07044875b" kindref="member">activateWindow</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_effects_handler_1a3ea23595f9c9f41f2ea0a63072e80852" kindref="member">windowActivated</ref>)</highlight></codeline>
+<codeline lineno="124" refid="class_k_win_1_1_effects_handler_1aa97258a5b11d2ca1443d57a42e17ee1f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QSize<sp/><ref refid="class_k_win_1_1_effects_handler_1aa97258a5b11d2ca1443d57a42e17ee1f" kindref="member">desktopGridSize</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1aa97258a5b11d2ca1443d57a42e17ee1f" kindref="member">desktopGridSize</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_effects_handler_1a0e612c2b8c76eb5c101ab888b374640d" kindref="member">desktopGridSizeChanged</ref>)</highlight></codeline>
+<codeline lineno="125" refid="class_k_win_1_1_effects_handler_1aa0a072eb188008f628b533b2db26f670" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1aa0a072eb188008f628b533b2db26f670" kindref="member">desktopGridWidth</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1aa0a072eb188008f628b533b2db26f670" kindref="member">desktopGridWidth</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_effects_handler_1a99ce8955558745618a24aad250b7861a" kindref="member">desktopGridWidthChanged</ref>)</highlight></codeline>
+<codeline lineno="126" refid="class_k_win_1_1_effects_handler_1a5db11d2431e86ba3d2bbd29656dc2a92" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a5db11d2431e86ba3d2bbd29656dc2a92" kindref="member">desktopGridHeight</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1a5db11d2431e86ba3d2bbd29656dc2a92" kindref="member">desktopGridHeight</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_effects_handler_1acd265f3c8b9f78c6291e6c2f73ea95a0" kindref="member">desktopGridHeightChanged</ref>)</highlight></codeline>
+<codeline lineno="127" refid="class_k_win_1_1_effects_handler_1a23954c6a5181bfc401a3a916841a26b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a23954c6a5181bfc401a3a916841a26b9" kindref="member">workspaceWidth</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1a23954c6a5181bfc401a3a916841a26b9" kindref="member">workspaceWidth</ref>)</highlight></codeline>
+<codeline lineno="128" refid="class_k_win_1_1_effects_handler_1a400258bd3928481b30db16866914f249" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a400258bd3928481b30db16866914f249" kindref="member">workspaceHeight</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1a400258bd3928481b30db16866914f249" kindref="member">workspaceHeight</ref>)</highlight></codeline>
+<codeline lineno="129" refid="class_k_win_1_1_effects_handler_1ae2c39f07cf91ab8c1e6fc7ec7528ed38" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QList&lt;<ref refid="namespace_k_win" kindref="compound">KWin</ref>::<ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref><sp/>*&gt;<sp/><ref refid="class_k_win_1_1_effects_handler_1ae2c39f07cf91ab8c1e6fc7ec7528ed38" kindref="member">desktops</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1ae2c39f07cf91ab8c1e6fc7ec7528ed38" kindref="member">desktops</ref>)</highlight></codeline>
+<codeline lineno="130" refid="class_k_win_1_1_effects_handler_1a840615298f9f98325cd73661e5ca4abc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a840615298f9f98325cd73661e5ca4abc" kindref="member">optionRollOverDesktops</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1a840615298f9f98325cd73661e5ca4abc" kindref="member">optionRollOverDesktops</ref>)</highlight></codeline>
+<codeline lineno="131" refid="class_k_win_1_1_effects_handler_1aebd988f34fb170c9b1c5a6752ee695c1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(<ref refid="namespace_k_win" kindref="compound">KWin</ref>::<ref refid="class_k_win_1_1_output" kindref="compound">Output</ref><sp/>*<ref refid="class_k_win_1_1_effects_handler_1aebd988f34fb170c9b1c5a6752ee695c1" kindref="member">activeScreen</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1aebd988f34fb170c9b1c5a6752ee695c1" kindref="member">activeScreen</ref>)</highlight></codeline>
+<codeline lineno="139" refid="class_k_win_1_1_effects_handler_1aec06e259fdd169f6fca3f531d742cdaa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(qreal<sp/><ref refid="class_k_win_1_1_effects_handler_1aec06e259fdd169f6fca3f531d742cdaa" kindref="member">animationTimeFactor</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1aec06e259fdd169f6fca3f531d742cdaa" kindref="member">animationTimeFactor</ref>)</highlight></codeline>
+<codeline lineno="140" refid="class_k_win_1_1_effects_handler_1a3eeaa4210c5eb168ded7ba0198fa0d32" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QList&lt;<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*&gt;<sp/><ref refid="class_k_win_1_1_effects_handler_1a3eeaa4210c5eb168ded7ba0198fa0d32" kindref="member">stackingOrder</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1a3eeaa4210c5eb168ded7ba0198fa0d32" kindref="member">stackingOrder</ref>)</highlight></codeline>
+<codeline lineno="144" refid="class_k_win_1_1_effects_handler_1ad0affb062069cceead6205efe6a4f49c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1ad0affb062069cceead6205efe6a4f49c" kindref="member">decorationsHaveAlpha</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1ad0affb062069cceead6205efe6a4f49c" kindref="member">decorationsHaveAlpha</ref>)</highlight></codeline>
+<codeline lineno="145" refid="class_k_win_1_1_effects_handler_1a53ad442150183d254eca227ddd5571e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(<ref refid="namespace_k_win_1aa1e33474a7077a13169f350a5949a79a" kindref="member">CompositingType</ref><sp/><ref refid="class_k_win_1_1_effects_handler_1a53ad442150183d254eca227ddd5571e1" kindref="member">compositingType</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1a53ad442150183d254eca227ddd5571e1" kindref="member">compositingType</ref><sp/>CONSTANT)</highlight></codeline>
+<codeline lineno="146" refid="class_k_win_1_1_effects_handler_1af20aeb5fb6f87bf9bbaa52a97fd80478" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QPointF<sp/><ref refid="class_k_win_1_1_effects_handler_1af20aeb5fb6f87bf9bbaa52a97fd80478" kindref="member">cursorPos</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1af20aeb5fb6f87bf9bbaa52a97fd80478" kindref="member">cursorPos</ref>)</highlight></codeline>
+<codeline lineno="147" refid="class_k_win_1_1_effects_handler_1aebb65bfab7dca8095ded3906b1bca282" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QSize<sp/><ref refid="class_k_win_1_1_effects_handler_1aebb65bfab7dca8095ded3906b1bca282" kindref="member">virtualScreenSize</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1aebb65bfab7dca8095ded3906b1bca282" kindref="member">virtualScreenSize</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_effects_handler_1afe0cedc1f3130eba803aa1ff8474c0da" kindref="member">virtualScreenSizeChanged</ref>)</highlight></codeline>
+<codeline lineno="148" refid="class_k_win_1_1_effects_handler_1a7f34a25364c7923d76eb5ad42a8c898f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QRect<sp/><ref refid="class_k_win_1_1_effects_handler_1a7f34a25364c7923d76eb5ad42a8c898f" kindref="member">virtualScreenGeometry</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1a7f34a25364c7923d76eb5ad42a8c898f" kindref="member">virtualScreenGeometry</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_effects_handler_1a7c1de7dad6da165bee9963bb8ea79765" kindref="member">virtualScreenGeometryChanged</ref>)</highlight></codeline>
+<codeline lineno="149" refid="class_k_win_1_1_effects_handler_1a3aa7ef6f0231387000df1204e4db9ec4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a3aa7ef6f0231387000df1204e4db9ec4" kindref="member">hasActiveFullScreenEffect</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1a3aa7ef6f0231387000df1204e4db9ec4" kindref="member">hasActiveFullScreenEffect</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_effects_handler_1ae45c8d2112db0ed5c84ba4b9cf66fd4b" kindref="member">hasActiveFullScreenEffectChanged</ref>)</highlight></codeline>
+<codeline lineno="150" refid="class_k_win_1_1_effects_handler_1a28610f54dfc904ebf6628a2e8cb6ca2d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a28610f54dfc904ebf6628a2e8cb6ca2d" kindref="member">colorPickerActive</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1ace89088efcad8c8ad356f9ba1fc63f3d" kindref="member">isColorPickerActive</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_effects_handler_1a261c926494b810a5d8bbfce225c54827" kindref="member">colorPickerActiveChanged</ref>)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="class_k_win_1_1_effects_handler_1ab1027be6b6a2700ab61c62086b5e1a37" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(<ref refid="namespace_k_win" kindref="compound">KWin</ref>::<ref refid="namespace_k_win_1a416cef954a72080ddb0d040111f008dc" kindref="member">SessionState</ref><sp/><ref refid="class_k_win_1_1_effects_handler_1ab1027be6b6a2700ab61c62086b5e1a37" kindref="member">sessionState</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1ab1027be6b6a2700ab61c62086b5e1a37" kindref="member">sessionState</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_effects_handler_1a42c5a8a1ef62297efe3dac1db56eae27" kindref="member">sessionStateChanged</ref>)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="class_k_win_1_1_effects_handler_1a781ac041fcb37f38a48a2c8aae0efb60" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(<ref refid="namespace_k_win" kindref="compound">KWin</ref>::<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*<ref refid="class_k_win_1_1_effects_handler_1a781ac041fcb37f38a48a2c8aae0efb60" kindref="member">inputPanel</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effects_handler_1a781ac041fcb37f38a48a2c8aae0efb60" kindref="member">inputPanel</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_effects_handler_1ab5a661fdaf15efce0dd0d268cdb6441b" kindref="member">inputPanelChanged</ref>)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160" refid="class_k_win_1_1_effects_handler_1ac8649272bb0576cc72f2486439664efe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>friend<sp/>class<sp/><ref refid="class_k_win_1_1_effects_handler_1ac8649272bb0576cc72f2486439664efe" kindref="member">Effect</ref>;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="163" refid="class_k_win_1_1_effects_handler_1ad4c025e3c2d3c8b5da25e6d16ba6257f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>using<sp/><ref refid="class_k_win_1_1_effects_handler_1ad4c025e3c2d3c8b5da25e6d16ba6257f" kindref="member">TouchBorderCallback</ref><sp/>=<sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5" kindref="member">ElectricBorder</ref><sp/>border,<sp/>const<sp/>QPointF<sp/>&amp;,<sp/><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref><sp/>*screen)&gt;;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_effects_handler_1abbeccbfc8813c73f1915fdd164969a28" kindref="member">EffectsHandler</ref>(<ref refid="class_k_win_1_1_compositor" kindref="compound">Compositor</ref><sp/>*compositor,<sp/><ref refid="class_k_win_1_1_workspace_scene" kindref="compound">WorkspaceScene</ref><sp/>*<ref refid="class_k_win_1_1_effects_handler_1ae9387e5aced8ad8a45d661e7137ed4ce" kindref="member">scene</ref>);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="class_k_win_1_1_effects_handler_1abbeccbfc8813c73f1915fdd164969a28" kindref="member">EffectsHandler</ref>()<sp/>override;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>internal<sp/>(used<sp/>by<sp/>kwin<sp/>core<sp/>or<sp/>compositing<sp/>code)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a723d140619af3ed4e4fcded38d610340" kindref="member">startPaint</ref>();</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>for<sp/>use<sp/>by<sp/>effects</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a8cf7297931ee6fa6c957eb3f464a2368" kindref="member">prePaintScreen</ref>(<ref refid="class_k_win_1_1_screen_pre_paint_data" kindref="compound">ScreenPrePaintData</ref><sp/>&amp;data,<sp/>std::chrono::milliseconds<sp/>presentTime);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a26fc71e0f799df4a72349d62a633f74d" kindref="member">paintScreen</ref>(const<sp/><ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref><sp/>&amp;renderTarget,<sp/>const<sp/><ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref><sp/>&amp;viewport,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask,<sp/>const<sp/>QRegion<sp/>&amp;region,<sp/><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref><sp/>*screen);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a72ed97f0e53631a0820417c90e22766d" kindref="member">postPaintScreen</ref>();</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1ab302687d5b4e485443ac69334645ebae" kindref="member">prePaintWindow</ref>(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*w,<sp/><ref refid="class_k_win_1_1_window_pre_paint_data" kindref="compound">WindowPrePaintData</ref><sp/>&amp;data,<sp/>std::chrono::milliseconds<sp/>presentTime);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a70ffbe2f01d2265699d8043728059e53" kindref="member">paintWindow</ref>(const<sp/><ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref><sp/>&amp;renderTarget,<sp/>const<sp/><ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref><sp/>&amp;viewport,<sp/><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask,<sp/>const<sp/>QRegion<sp/>&amp;region,<sp/><ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref><sp/>&amp;data);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1afb838563295d5c9726feec2b283c676a" kindref="member">postPaintWindow</ref>(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*w);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a0e7042451513fdb2fa98c3f2b0caa473" kindref="member">drawWindow</ref>(const<sp/><ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref><sp/>&amp;renderTarget,<sp/>const<sp/><ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref><sp/>&amp;viewport,<sp/><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask,<sp/>const<sp/>QRegion<sp/>&amp;region,<sp/><ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref><sp/>&amp;data);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1af2aa9519f7c6cd192b2168cbf60a46f6" kindref="member">renderWindow</ref>(const<sp/><ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref><sp/>&amp;renderTarget,<sp/>const<sp/><ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref><sp/>&amp;viewport,<sp/><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask,<sp/>const<sp/>QRegion<sp/>&amp;region,<sp/><ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref><sp/>&amp;data);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>QVariant<sp/><ref refid="class_k_win_1_1_effects_handler_1a76ace5389ceeafea8b0c55f62b0c67f6" kindref="member">kwinOption</ref>(<ref refid="namespace_k_win_1a54093b7df57905a541686cce26a8f67b" kindref="member">KWinOption</ref><sp/>kwopt);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a5c0e09968cdaed9974cfa062f9db2bec" kindref="member">defineCursor</ref>(Qt::<ref refid="class_k_win_1_1_cursor_shape" kindref="compound">CursorShape</ref><sp/>shape);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>QPointF<sp/><ref refid="class_k_win_1_1_effects_handler_1af20aeb5fb6f87bf9bbaa52a97fd80478" kindref="member">cursorPos</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a71144931a2568c69935180b2ec096758" kindref="member">grabKeyboard</ref>(<ref refid="class_k_win_1_1_effects_handler_1ac8649272bb0576cc72f2486439664efe" kindref="member">Effect</ref><sp/>*effect);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a35bf262b8ab11f42ae6b2b1987142d70" kindref="member">ungrabKeyboard</ref>();</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a63a4e07ddffc088ca8f96b354ca8f172" kindref="member">startMouseInterception</ref>(<ref refid="class_k_win_1_1_effects_handler_1ac8649272bb0576cc72f2486439664efe" kindref="member">Effect</ref><sp/>*effect,<sp/>Qt::<ref refid="class_k_win_1_1_cursor_shape" kindref="compound">CursorShape</ref><sp/>shape);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a1516352991da7784110135a5119c602f" kindref="member">stopMouseInterception</ref>(<ref refid="class_k_win_1_1_effects_handler_1ac8649272bb0576cc72f2486439664efe" kindref="member">Effect</ref><sp/>*effect);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a3b898a3f49f8720832df74c20e98abbe" kindref="member">isMouseInterception</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a79cc3c1ebfb23df5acb8233357b1ad8b" kindref="member">checkInputWindowEvent</ref>(QMouseEvent<sp/>*e);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a79cc3c1ebfb23df5acb8233357b1ad8b" kindref="member">checkInputWindowEvent</ref>(QWheelEvent<sp/>*e);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a45004bb7f62e19a70efa112cd82f0e27" kindref="member">grabbedKeyboardEvent</ref>(QKeyEvent<sp/>*e);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a0a54647ffaaae7f98e91acfda2159098" kindref="member">hasKeyboardGrab</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a56187bf9d8edc1aaaa72580f8de30fa5" kindref="member">registerPointerShortcut</ref>(Qt::KeyboardModifiers<sp/><ref refid="class_k_win_1_1_effects_handler_1aee134f5a82234293371ed3c7c73b1a4c" kindref="member">modifiers</ref>,<sp/>Qt::<ref refid="class_k_win_1_1_mouse_button" kindref="compound">MouseButton</ref><sp/>pointerButtons,<sp/>QAction<sp/>*action);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a76a6b1b8e36d38a65552259e2d8562d6" kindref="member">registerAxisShortcut</ref>(Qt::KeyboardModifiers<sp/><ref refid="class_k_win_1_1_effects_handler_1aee134f5a82234293371ed3c7c73b1a4c" kindref="member">modifiers</ref>,<sp/><ref refid="namespace_k_win_1a0b8440dc0ffe9aa219e0c0e5fa1137a0" kindref="member">PointerAxisDirection</ref><sp/>axis,<sp/>QAction<sp/>*action);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a9060b42c8a30efae7e2036088604aa4e" kindref="member">registerTouchpadSwipeShortcut</ref>(<ref refid="namespace_k_win_1ab2206ebabcc9101a43b58473495efd03" kindref="member">SwipeDirection</ref><sp/>dir,<sp/>uint<sp/>fingerCount,<sp/>QAction<sp/>*onUp,<sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(qreal)&gt;<sp/>progressCallback<sp/>=<sp/>{});</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>registerTouchpadPinchShortcut(<ref refid="namespace_k_win_1a8852f83038eda36bc255d8f5f3baae05" kindref="member">PinchDirection</ref><sp/>dir,<sp/>uint<sp/>fingerCount,<sp/>QAction<sp/>*onUp,<sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(qreal)&gt;<sp/>progressCallback<sp/>=<sp/>{});</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>registerTouchscreenSwipeShortcut(SwipeDirection<sp/>direction,<sp/>uint<sp/>fingerCount,<sp/>QAction<sp/>*action,<sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(qreal)&gt;<sp/>progressCallback);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>reserveElectricBorder(ElectricBorder<sp/>border,<sp/>Effect<sp/>*effect);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>unreserveElectricBorder(ElectricBorder<sp/>border,<sp/>Effect<sp/>*effect);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>registerTouchBorder(ElectricBorder<sp/>border,<sp/>QAction<sp/>*action);</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>registerRealtimeTouchBorder(ElectricBorder<sp/>border,<sp/>QAction<sp/>*action,<sp/>TouchBorderCallback<sp/>progressCallback);</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>unregisterTouchBorder(ElectricBorder<sp/>border,<sp/>QAction<sp/>*action);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>functions<sp/>that<sp/>allow<sp/>controlling<sp/>windows/desktop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>activateWindow(<ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*c);</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*activeWindow()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>moveWindow(<ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*w,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPoint<sp/>&amp;pos,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>snap<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>snapAdjust<sp/>=<sp/>1.0);</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>windowToDesktops(<ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*w,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;KWin::VirtualDesktop<sp/>*&gt;<sp/>&amp;desktops);</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>windowToScreen(<ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*w,<sp/>Output<sp/>*screen);</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setShowingDesktop(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>showing);</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Activities</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>currentActivity()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Desktops</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/>VirtualDesktop<sp/>*currentDesktop()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;VirtualDesktop<sp/>*&gt;<sp/>desktops()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setCurrentDesktop(<ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">KWin::VirtualDesktop</ref><sp/>*desktop);</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/>QSize<sp/>desktopGridSize()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desktopGridWidth()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desktopGridHeight()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>workspaceWidth()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>workspaceHeight()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/>VirtualDesktop<sp/>*desktopAtCoords(QPoint<sp/>coords)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/>QPoint<sp/>desktopGridCoords(VirtualDesktop<sp/>*desktop)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/>QPoint<sp/>desktopCoords(VirtualDesktop<sp/>*desktop)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/><ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">KWin::VirtualDesktop</ref><sp/>*desktopAbove(<ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">KWin::VirtualDesktop</ref><sp/>*desktop<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>wrap<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/><ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">KWin::VirtualDesktop</ref><sp/>*desktopToRight(<ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">KWin::VirtualDesktop</ref><sp/>*desktop<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>wrap<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/><ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">KWin::VirtualDesktop</ref><sp/>*desktopBelow(<ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">KWin::VirtualDesktop</ref><sp/>*desktop<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>wrap<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/><ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">KWin::VirtualDesktop</ref><sp/>*desktopToLeft(<ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">KWin::VirtualDesktop</ref><sp/>*desktop<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>wrap<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/>QString<sp/>desktopName(<ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">KWin::VirtualDesktop</ref><sp/>*desktop)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>optionRollOverDesktops()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/>Output<sp/>*activeScreen()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>Xinerama</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/>QRectF<sp/>clientArea(clientAreaOption,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Output<sp/>*screen,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>VirtualDesktop<sp/>*desktop)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/>QRectF<sp/>clientArea(clientAreaOption,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>EffectWindow<sp/>*c)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/>QRectF<sp/>clientArea(clientAreaOption,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPoint<sp/>&amp;p,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>VirtualDesktop<sp/>*desktop)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/>QSize<sp/>virtualScreenSize()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/>QRect<sp/>virtualScreenGeometry()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>animationTimeFactor()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="420"><highlight class="normal"></highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/><ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*findWindow(WId<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/><ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*findWindow(SurfaceInterface<sp/>*surf)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/><ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*findWindow(QWindow<sp/>*w)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/><ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*findWindow(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QUuid<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;EffectWindow<sp/>*&gt;<sp/>stackingOrder()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>window<sp/>will<sp/>be<sp/>temporarily<sp/>painted<sp/>as<sp/>if<sp/>being<sp/>at<sp/>the<sp/>top<sp/>of<sp/>the<sp/>stack</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setElevatedWindow(<ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*w,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>set);</highlight></codeline>
+<codeline lineno="443"><highlight class="normal"></highlight></codeline>
+<codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setTabBoxWindow(EffectWindow<sp/>*);</highlight></codeline>
+<codeline lineno="445"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;EffectWindow<sp/>*&gt;<sp/>currentTabBoxWindowList()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>refTabBox();</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>unrefTabBox();</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>closeTabBox();</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/>EffectWindow<sp/>*currentTabBoxWindow()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"></highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setActiveFullScreenEffect(Effect<sp/>*e);</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/>Effect<sp/>*activeFullScreenEffect()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"></highlight></codeline>
+<codeline lineno="459"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addRepaintFull();</highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addRepaint(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRectF<sp/>&amp;r);</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addRepaint(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRect<sp/>&amp;r);</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addRepaint(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegion<sp/>&amp;r);</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addRepaint(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>h);</highlight></codeline>
+<codeline lineno="464"><highlight class="normal"></highlight></codeline>
+<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/>CompositingType<sp/>compositingType()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isOpenGLCompositing()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/>EglContext<sp/>*openglContext()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/>QPainter<sp/>*scenePainter();</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>reconfigure();</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"></highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/>QByteArray<sp/>readRootProperty(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>atom,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>format)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"></highlight></codeline>
+<codeline lineno="486"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>KWIN_BUILD_X11</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/>xcb_atom_t<sp/>announceSupportProperty(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray<sp/>&amp;propertyName,<sp/>Effect<sp/>*effect);</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>removeSupportProperty(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray<sp/>&amp;propertyName,<sp/>Effect<sp/>*effect);</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="519"><highlight class="normal"></highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hasDecorationShadows()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="524"><highlight class="normal"></highlight></codeline>
+<codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>decorationsHaveAlpha()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"></highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>reloadEffect(Effect<sp/>*effect);</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/>Effect<sp/>*provides(Effect::Feature<sp/>ef);</highlight></codeline>
+<codeline lineno="541"><highlight class="normal"><sp/><sp/><sp/><sp/>Effect<sp/>*findEffect(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="542"><highlight class="normal"><sp/><sp/><sp/><sp/>QStringList<sp/>loadedEffects()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/>QStringList<sp/>listOfEffects()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>unloadAllEffects();</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/>QStringList<sp/>activeEffects()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isEffectActive(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;pluginId)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="547"><highlight class="normal"></highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isScreenLocked()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="559"><highlight class="normal"></highlight></codeline>
+<codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>makeOpenGLContextCurrent();</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>doneOpenGLContextCurrent();</highlight></codeline>
+<codeline lineno="577"><highlight class="normal"></highlight></codeline>
+<codeline lineno="578"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>KWIN_BUILD_X11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/>xcb_connection_t<sp/>*xcbConnection()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/>xcb_window_t<sp/>x11RootWindow()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="581"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="582"><highlight class="normal"></highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/>Display<sp/>*waylandDisplay()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="589"><highlight class="normal"></highlight></codeline>
+<codeline lineno="598"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>animationsSupported()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="599"><highlight class="normal"></highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/>PlatformCursorImage<sp/>cursorImage()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="606"><highlight class="normal"></highlight></codeline>
+<codeline lineno="612"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>hideCursor();</highlight></codeline>
+<codeline lineno="613"><highlight class="normal"></highlight></codeline>
+<codeline lineno="619"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>showCursor();</highlight></codeline>
+<codeline lineno="620"><highlight class="normal"></highlight></codeline>
+<codeline lineno="624"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isCursorHidden()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="625"><highlight class="normal"></highlight></codeline>
+<codeline lineno="638"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>startInteractiveWindowSelection(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(<ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*)&gt;<sp/>callback);</highlight></codeline>
+<codeline lineno="639"><highlight class="normal"></highlight></codeline>
+<codeline lineno="653"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>startInteractivePositionSelection(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>&amp;)&gt;<sp/>callback);</highlight></codeline>
+<codeline lineno="654"><highlight class="normal"></highlight></codeline>
+<codeline lineno="663"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>showOnScreenMessage(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;message,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;iconName<sp/>=<sp/>QString());</highlight></codeline>
+<codeline lineno="664"><highlight class="normal"></highlight></codeline>
+<codeline lineno="670" refid="class_k_win_1_1_effects_handler_1a0eea36dec1b6beb304b1fb55ccdd1e47" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a0eea36dec1b6beb304b1fb55ccdd1e47" kindref="member">OnScreenMessageHideFlag</ref><sp/>{</highlight></codeline>
+<codeline lineno="675" refid="class_k_win_1_1_effects_handler_1a0eea36dec1b6beb304b1fb55ccdd1e47aacb12f9fb80caca46d68870e9d904d19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_effects_handler_1a0eea36dec1b6beb304b1fb55ccdd1e47aacb12f9fb80caca46d68870e9d904d19" kindref="member">SkipsCloseAnimation</ref><sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="676"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="677"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_DECLARE_FLAGS(OnScreenMessageHideFlags,<sp/>OnScreenMessageHideFlag)</highlight></codeline>
+<codeline lineno="684"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>hideOnScreenMessage(OnScreenMessageHideFlags<sp/>flags<sp/>=<sp/>OnScreenMessageHideFlags());</highlight></codeline>
+<codeline lineno="685"><highlight class="normal"></highlight></codeline>
+<codeline lineno="686"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="687"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@returns<sp/>The<sp/>configuration<sp/>used<sp/>by<sp/>the<sp/>EffectsHandler.</highlight></codeline>
+<codeline lineno="688"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@since<sp/>5.10</highlight></codeline>
+<codeline lineno="689"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="690"><highlight class="normal"><sp/><sp/><sp/><sp/>KSharedConfigPtr<sp/>config()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="691"><highlight class="normal"></highlight></codeline>
+<codeline lineno="696"><highlight class="normal"><sp/><sp/><sp/><sp/>KSharedConfigPtr<sp/>inputConfig()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="697"><highlight class="normal"></highlight></codeline>
+<codeline lineno="701"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hasActiveFullScreenEffect()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="702"><highlight class="normal"></highlight></codeline>
+<codeline lineno="706"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isColorPickerActive()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="707"><highlight class="normal"></highlight></codeline>
+<codeline lineno="713"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>renderOffscreenQuickView(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref><sp/>&amp;renderTarget,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref><sp/>&amp;viewport,<sp/><ref refid="class_k_win_1_1_offscreen_quick_view" kindref="compound">OffscreenQuickView</ref><sp/>*effectQuickView)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="714"><highlight class="normal"></highlight></codeline>
+<codeline lineno="719"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a416cef954a72080ddb0d040111f008dc" kindref="member">SessionState</ref><sp/>sessionState()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="720"><highlight class="normal"></highlight></codeline>
+<codeline lineno="724"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;Output<sp/>*&gt;<sp/>screens()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="725"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref><sp/>*screenAt(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPoint<sp/>&amp;point)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="726"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref><sp/>*findScreen(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="727"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref><sp/>*findScreen(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>screenId)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="728"><highlight class="normal"></highlight></codeline>
+<codeline lineno="729"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*inputPanel()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="730"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isInputPanelOverlay()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="731"><highlight class="normal"></highlight></codeline>
+<codeline lineno="732"><highlight class="normal"><sp/><sp/><sp/><sp/>QQmlEngine<sp/>*qmlEngine()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="733"><highlight class="normal"></highlight></codeline>
+<codeline lineno="737"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>blocksDirectScanout()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="738"><highlight class="normal"></highlight></codeline>
+<codeline lineno="739" refid="class_k_win_1_1_effects_handler_1ae9387e5aced8ad8a45d661e7137ed4ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_workspace_scene" kindref="compound">WorkspaceScene</ref><sp/>*<ref refid="class_k_win_1_1_effects_handler_1ae9387e5aced8ad8a45d661e7137ed4ce" kindref="member">scene</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="740"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="741"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1ab85de72d7501ab7654b5f702441c5814" kindref="member">m_scene</ref>;</highlight></codeline>
+<codeline lineno="742"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="743"><highlight class="normal"></highlight></codeline>
+<codeline lineno="744"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>touchDown(qint32<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>&amp;pos,<sp/>std::chrono::microseconds<sp/>time);</highlight></codeline>
+<codeline lineno="745"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>touchMotion(qint32<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>&amp;pos,<sp/>std::chrono::microseconds<sp/>time);</highlight></codeline>
+<codeline lineno="746"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>touchUp(qint32<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>std::chrono::microseconds<sp/>time);</highlight></codeline>
+<codeline lineno="747"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>touchCancel();</highlight></codeline>
+<codeline lineno="748"><highlight class="normal"></highlight></codeline>
+<codeline lineno="749"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>tabletToolProximityEvent(<ref refid="struct_k_win_1_1_tablet_tool_proximity_event" kindref="compound">KWin::TabletToolProximityEvent</ref><sp/>*event);</highlight></codeline>
+<codeline lineno="750"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>tabletToolAxisEvent(<ref refid="struct_k_win_1_1_tablet_tool_axis_event" kindref="compound">KWin::TabletToolAxisEvent</ref><sp/>*event);</highlight></codeline>
+<codeline lineno="751"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>tabletToolTipEvent(<ref refid="struct_k_win_1_1_tablet_tool_tip_event" kindref="compound">KWin::TabletToolTipEvent</ref><sp/>*event);</highlight></codeline>
+<codeline lineno="752"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>tabletToolButtonEvent(uint<sp/>button,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>pressed,<sp/><ref refid="class_k_win_1_1_input_device_tablet_tool" kindref="compound">InputDeviceTabletTool</ref><sp/>*tool,<sp/>std::chrono::microseconds<sp/>time);</highlight></codeline>
+<codeline lineno="753"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>tabletPadButtonEvent(uint<sp/>button,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>pressed,<sp/>std::chrono::microseconds<sp/>time,<sp/><ref refid="class_k_win_1_1_input_device" kindref="compound">InputDevice</ref><sp/>*device);</highlight></codeline>
+<codeline lineno="754"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>tabletPadStripEvent(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>number,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>position,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isFinger,<sp/>std::chrono::microseconds<sp/>time,<sp/><ref refid="class_k_win_1_1_input_device" kindref="compound">InputDevice</ref><sp/>*device);</highlight></codeline>
+<codeline lineno="755"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>tabletPadRingEvent(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>number,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>position,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isFinger,<sp/>std::chrono::microseconds<sp/>time,<sp/><ref refid="class_k_win_1_1_input_device" kindref="compound">InputDevice</ref><sp/>*device);</highlight></codeline>
+<codeline lineno="756"><highlight class="normal"></highlight></codeline>
+<codeline lineno="757"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>highlightWindows(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;EffectWindow<sp/>*&gt;<sp/>&amp;windows);</highlight></codeline>
+<codeline lineno="758"><highlight class="normal"></highlight></codeline>
+<codeline lineno="759"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>KWIN_BUILD_X11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="760"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isPropertyTypeRegistered(xcb_atom_t<sp/>atom)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="761"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="762"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>registered_atoms.contains(atom);</highlight></codeline>
+<codeline lineno="763"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="764"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="765"><highlight class="normal"></highlight></codeline>
+<codeline lineno="766"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="770" refid="class_k_win_1_1_effects_handler_1a03c9bd1b03408dd71463f1bcc4c4ec82" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a03c9bd1b03408dd71463f1bcc4c4ec82" kindref="member">screenAdded</ref>(<ref refid="class_k_win_1_1_output" kindref="compound">KWin::Output</ref><sp/>*screen);</highlight></codeline>
+<codeline lineno="774" refid="class_k_win_1_1_effects_handler_1a2aaa46342fafd4d0b09fb7497a0a7401" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a2aaa46342fafd4d0b09fb7497a0a7401" kindref="member">screenRemoved</ref>(<ref refid="class_k_win_1_1_output" kindref="compound">KWin::Output</ref><sp/>*screen);</highlight></codeline>
+<codeline lineno="782" refid="class_k_win_1_1_effects_handler_1ac71df72597202eed23f6211d8fa80c50" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1ac71df72597202eed23f6211d8fa80c50" kindref="member">desktopChanged</ref>(<ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">KWin::VirtualDesktop</ref><sp/>*oldDesktop,<sp/><ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">KWin::VirtualDesktop</ref><sp/>*newDesktop,<sp/><ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*with);</highlight></codeline>
+<codeline lineno="783"><highlight class="normal"></highlight></codeline>
+<codeline lineno="791" refid="class_k_win_1_1_effects_handler_1a2c7e78f36bc49937eb4de56521fcda5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a2c7e78f36bc49937eb4de56521fcda5b" kindref="member">desktopChanging</ref>(<ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">KWin::VirtualDesktop</ref><sp/>*<ref refid="class_k_win_1_1_effects_handler_1a722658571850786bb4516ae98247479f" kindref="member">currentDesktop</ref>,<sp/>QPointF<sp/>offset,<sp/><ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*with);</highlight></codeline>
+<codeline lineno="792" refid="class_k_win_1_1_effects_handler_1ade940098c549fce05980843a04d30414" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1ade940098c549fce05980843a04d30414" kindref="member">desktopChangingCancelled</ref>();</highlight></codeline>
+<codeline lineno="793" refid="class_k_win_1_1_effects_handler_1a766f0b484b03e847d42bbe6513b65211" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a766f0b484b03e847d42bbe6513b65211" kindref="member">desktopAdded</ref>(<ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">KWin::VirtualDesktop</ref><sp/>*desktop);</highlight></codeline>
+<codeline lineno="794" refid="class_k_win_1_1_effects_handler_1a649beb5237e8e56d972bec153ee5099d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a649beb5237e8e56d972bec153ee5099d" kindref="member">desktopRemoved</ref>(<ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">KWin::VirtualDesktop</ref><sp/>*desktop);</highlight></codeline>
+<codeline lineno="795"><highlight class="normal"></highlight></codeline>
+<codeline lineno="801" refid="class_k_win_1_1_effects_handler_1a0e612c2b8c76eb5c101ab888b374640d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a0e612c2b8c76eb5c101ab888b374640d" kindref="member">desktopGridSizeChanged</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QSize<sp/>&amp;size);</highlight></codeline>
+<codeline lineno="807" refid="class_k_win_1_1_effects_handler_1a99ce8955558745618a24aad250b7861a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a99ce8955558745618a24aad250b7861a" kindref="member">desktopGridWidthChanged</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width);</highlight></codeline>
+<codeline lineno="813" refid="class_k_win_1_1_effects_handler_1acd265f3c8b9f78c6291e6c2f73ea95a0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1acd265f3c8b9f78c6291e6c2f73ea95a0" kindref="member">desktopGridHeightChanged</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+<codeline lineno="820" refid="class_k_win_1_1_effects_handler_1a001c56813196665854334eb774d765ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a001c56813196665854334eb774d765ad" kindref="member">showingDesktopChanged</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="826" refid="class_k_win_1_1_effects_handler_1af265803a52b130d505ab9f8f66a30eb0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1af265803a52b130d505ab9f8f66a30eb0" kindref="member">windowAdded</ref>(<ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*w);</highlight></codeline>
+<codeline lineno="835" refid="class_k_win_1_1_effects_handler_1a25652fb190ebfb2d9c95b67eb9a3291d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a25652fb190ebfb2d9c95b67eb9a3291d" kindref="member">windowClosed</ref>(<ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*w);</highlight></codeline>
+<codeline lineno="841" refid="class_k_win_1_1_effects_handler_1a3ea23595f9c9f41f2ea0a63072e80852" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a3ea23595f9c9f41f2ea0a63072e80852" kindref="member">windowActivated</ref>(<ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*w);</highlight></codeline>
+<codeline lineno="853" refid="class_k_win_1_1_effects_handler_1a13c385b70a4984545ba1f8ed8204871c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a13c385b70a4984545ba1f8ed8204871c" kindref="member">windowDeleted</ref>(<ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*w);</highlight></codeline>
+<codeline lineno="864" refid="class_k_win_1_1_effects_handler_1afdd37c120cdf7956a779085df023df32" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1afdd37c120cdf7956a779085df023df32" kindref="member">tabBoxAdded</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mode);</highlight></codeline>
+<codeline lineno="872" refid="class_k_win_1_1_effects_handler_1aa237f092ce7ff9a89d9894f0f4a6a2e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1aa237f092ce7ff9a89d9894f0f4a6a2e1" kindref="member">tabBoxClosed</ref>();</highlight></codeline>
+<codeline lineno="883" refid="class_k_win_1_1_effects_handler_1a4523d2f45730341547249aca8d60756e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a4523d2f45730341547249aca8d60756e" kindref="member">tabBoxUpdated</ref>();</highlight></codeline>
+<codeline lineno="892" refid="class_k_win_1_1_effects_handler_1a509a05a602542a209519076059e50b40" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a509a05a602542a209519076059e50b40" kindref="member">tabBoxKeyEvent</ref>(QKeyEvent<sp/>*event);</highlight></codeline>
+<codeline lineno="906" refid="class_k_win_1_1_effects_handler_1ace7df1c309d2c4a64e324d6a52c680ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1ace7df1c309d2c4a64e324d6a52c680ca" kindref="member">mouseChanged</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>&amp;pos,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPointF<sp/>&amp;oldpos,</highlight></codeline>
+<codeline lineno="907"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Qt::MouseButtons<sp/><ref refid="class_k_win_1_1_effects_handler_1af01ffad1f759c16e90fb35516964b5c5" kindref="member">buttons</ref>,<sp/>Qt::MouseButtons<sp/>oldbuttons,</highlight></codeline>
+<codeline lineno="908"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Qt::KeyboardModifiers<sp/><ref refid="class_k_win_1_1_effects_handler_1aee134f5a82234293371ed3c7c73b1a4c" kindref="member">modifiers</ref>,<sp/>Qt::KeyboardModifiers<sp/>oldmodifiers);</highlight></codeline>
+<codeline lineno="914" refid="class_k_win_1_1_effects_handler_1aa92530fc11fbd4b12f8d3791b1ffb92c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1aa92530fc11fbd4b12f8d3791b1ffb92c" kindref="member">cursorShapeChanged</ref>();</highlight></codeline>
+<codeline lineno="925" refid="class_k_win_1_1_effects_handler_1a0f841f03b6d16457e2ee08c7def285d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a0f841f03b6d16457e2ee08c7def285d4" kindref="member">propertyNotify</ref>(<ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*w,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>atom);</highlight></codeline>
+<codeline lineno="926"><highlight class="normal"></highlight></codeline>
+<codeline lineno="931" refid="class_k_win_1_1_effects_handler_1ae74f59704706fe4ae364853a466513d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1ae74f59704706fe4ae364853a466513d3" kindref="member">currentActivityAboutToChange</ref>();</highlight></codeline>
+<codeline lineno="938" refid="class_k_win_1_1_effects_handler_1a2a62645ebf6d5fc075be76e5545da8f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a2a62645ebf6d5fc075be76e5545da8f2" kindref="member">currentActivityChanged</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="944" refid="class_k_win_1_1_effects_handler_1af8d871c87ed14f414499776ee6f8cfc6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1af8d871c87ed14f414499776ee6f8cfc6" kindref="member">activityAdded</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="951" refid="class_k_win_1_1_effects_handler_1abcffea0410b087f0fc63b611495b4966" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1abcffea0410b087f0fc63b611495b4966" kindref="member">activityRemoved</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="957" refid="class_k_win_1_1_effects_handler_1a1222f73b36c35bb0c3145a0f579aa8a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a1222f73b36c35bb0c3145a0f579aa8a7" kindref="member">screenLockingChanged</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>locked);</highlight></codeline>
+<codeline lineno="958"><highlight class="normal"></highlight></codeline>
+<codeline lineno="964" refid="class_k_win_1_1_effects_handler_1ac89554f16ab6a7eb23b4fcaf7ce3de84" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1ac89554f16ab6a7eb23b4fcaf7ce3de84" kindref="member">screenAboutToLock</ref>();</highlight></codeline>
+<codeline lineno="965"><highlight class="normal"></highlight></codeline>
+<codeline lineno="971" refid="class_k_win_1_1_effects_handler_1a6c05d0ac5ccfd76b8832cc77fb9085ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a6c05d0ac5ccfd76b8832cc77fb9085ac" kindref="member">stackingOrderChanged</ref>();</highlight></codeline>
+<codeline lineno="983" refid="class_k_win_1_1_effects_handler_1acadff1f45281ea7be68317114e653097" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1acadff1f45281ea7be68317114e653097" kindref="member">screenEdgeApproaching</ref>(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5" kindref="member">ElectricBorder</ref><sp/>border,<sp/>qreal<sp/>factor,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRect<sp/>&amp;geometry);</highlight></codeline>
+<codeline lineno="989" refid="class_k_win_1_1_effects_handler_1afe0cedc1f3130eba803aa1ff8474c0da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1afe0cedc1f3130eba803aa1ff8474c0da" kindref="member">virtualScreenSizeChanged</ref>();</highlight></codeline>
+<codeline lineno="995" refid="class_k_win_1_1_effects_handler_1a7c1de7dad6da165bee9963bb8ea79765" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a7c1de7dad6da165bee9963bb8ea79765" kindref="member">virtualScreenGeometryChanged</ref>();</highlight></codeline>
+<codeline lineno="996"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1010" refid="class_k_win_1_1_effects_handler_1af69a4db9f51dc3d75f03d108009dc07e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1af69a4db9f51dc3d75f03d108009dc07e" kindref="member">windowDataChanged</ref>(<ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref><sp/>*w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>role);</highlight></codeline>
+<codeline lineno="1011"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1012"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>KWIN_BUILD_X11</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1023"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>xcbConnectionChanged();</highlight></codeline>
+<codeline lineno="1024"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1025"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1033" refid="class_k_win_1_1_effects_handler_1af7e6be37b43602e76272b671cec0bb1b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1af7e6be37b43602e76272b671cec0bb1b" kindref="member">activeFullScreenEffectChanged</ref>();</highlight></codeline>
+<codeline lineno="1034"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1043" refid="class_k_win_1_1_effects_handler_1ae45c8d2112db0ed5c84ba4b9cf66fd4b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1ae45c8d2112db0ed5c84ba4b9cf66fd4b" kindref="member">hasActiveFullScreenEffectChanged</ref>();</highlight></codeline>
+<codeline lineno="1044"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1045" refid="class_k_win_1_1_effects_handler_1a261c926494b810a5d8bbfce225c54827" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a261c926494b810a5d8bbfce225c54827" kindref="member">colorPickerActiveChanged</ref>();</highlight></codeline>
+<codeline lineno="1046"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1051" refid="class_k_win_1_1_effects_handler_1a42c5a8a1ef62297efe3dac1db56eae27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a42c5a8a1ef62297efe3dac1db56eae27" kindref="member">sessionStateChanged</ref>();</highlight></codeline>
+<codeline lineno="1052"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1053" refid="class_k_win_1_1_effects_handler_1a3359485e3cc84cf6c1db8016fe8e76c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a3359485e3cc84cf6c1db8016fe8e76c0" kindref="member">startupAdded</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QIcon<sp/>&amp;icon);</highlight></codeline>
+<codeline lineno="1054" refid="class_k_win_1_1_effects_handler_1af1a1064cff5b438b6cd3879bd36d8ca2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1af1a1064cff5b438b6cd3879bd36d8ca2" kindref="member">startupChanged</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QIcon<sp/>&amp;icon);</highlight></codeline>
+<codeline lineno="1055" refid="class_k_win_1_1_effects_handler_1a19b2c5561d7d3407d13fe4a675938e5c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a19b2c5561d7d3407d13fe4a675938e5c" kindref="member">startupRemoved</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1056"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1057" refid="class_k_win_1_1_effects_handler_1ab5a661fdaf15efce0dd0d268cdb6441b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1ab5a661fdaf15efce0dd0d268cdb6441b" kindref="member">inputPanelChanged</ref>();</highlight></codeline>
+<codeline lineno="1058"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1059"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="1060"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>slots<sp/>for<sp/>D-Bus<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1061"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a71c9adc5dae2250dffdfb19ee06656dc" kindref="member">reconfigureEffect</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;name);</highlight></codeline>
+<codeline lineno="1062"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a4ecab9172fb71c47df1e2beaa66ace9d" kindref="member">loadEffect</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;name);</highlight></codeline>
+<codeline lineno="1063"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a7cb6e8fe52d7163de7ee50bd0a61caf4" kindref="member">toggleEffect</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;name);</highlight></codeline>
+<codeline lineno="1064"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a11e5d52fc3a6ca59ff571f20d219bad2" kindref="member">unloadEffect</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;name);</highlight></codeline>
+<codeline lineno="1065"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a9c0910a356943c986b07e4b0cfea4e59" kindref="member">isEffectLoaded</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1066"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a0cf2cca491f1e6a8180a917d59d36b96" kindref="member">isEffectSupported</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;name);</highlight></codeline>
+<codeline lineno="1067"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/>QList&lt;bool&gt;<sp/><ref refid="class_k_win_1_1_effects_handler_1a8c590c5d30d4251519fffd228ca251a5" kindref="member">areEffectsSupported</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;names);</highlight></codeline>
+<codeline lineno="1068"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/>QString<sp/><ref refid="class_k_win_1_1_effects_handler_1a83ea4fb438c2cbbbde040e8cb03bf705" kindref="member">supportInformation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1069"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SCRIPTABLE<sp/>QString<sp/><ref refid="class_k_win_1_1_effects_handler_1a557d7f7af833946dfb8cb2770ded8541" kindref="member">debug</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;parameter<sp/>=<sp/>QString())<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1070"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1071"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="1072"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a9917d33d0b1bcf131b7fd6bac9e85d3f" kindref="member">effectsChanged</ref>();</highlight></codeline>
+<codeline lineno="1073"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a0949e36da2f02fdb23c37185cdbe3a5f" kindref="member">setupWindowConnections</ref>(<ref refid="class_k_win_1_1_window" kindref="compound">KWin::Window</ref><sp/>*window);</highlight></codeline>
+<codeline lineno="1074"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1075" refid="class_k_win_1_1_effects_handler_1ad8300908e943ff0bb7163230617f68d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1ad8300908e943ff0bb7163230617f68d2" kindref="member">registerPropertyType</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>atom,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>reg);</highlight></codeline>
+<codeline lineno="1076"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a36b0efbbbf0c50633286eb22f0759c0d" kindref="member">destroyEffect</ref>(<ref refid="class_k_win_1_1_effects_handler_1ac8649272bb0576cc72f2486439664efe" kindref="member">Effect</ref><sp/>*effect);</highlight></codeline>
+<codeline lineno="1077"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effects_handler_1a54ff1538e8794a6f81f271a7ff0d75f6" kindref="member">reconfigureEffects</ref>();</highlight></codeline>
+<codeline lineno="1078"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1079" refid="class_k_win_1_1_effects_handler_1aa0761c03f3ceaab19268930cb3b12ffb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>QList&lt;Effect<sp/>*&gt;<sp/><ref refid="class_k_win_1_1_effects_handler_1aa0761c03f3ceaab19268930cb3b12ffb" kindref="member">EffectsList</ref>;</highlight></codeline>
+<codeline lineno="1080" refid="class_k_win_1_1_effects_handler_1a1ef2138edc42fc77ec999f4ce147c52c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>EffectsList::const_iterator<sp/><ref refid="class_k_win_1_1_effects_handler_1a1ef2138edc42fc77ec999f4ce147c52c" kindref="member">EffectsIterator</ref>;</highlight></codeline>
+<codeline lineno="1081"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1082"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1083"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1084" refid="class_k_win_1_1_effects_handler_1a47055a9e0d3d0c4798dbd946a2f90615" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QPointF<sp/><ref refid="class_k_win_1_1_effects_handler_1a47055a9e0d3d0c4798dbd946a2f90615" kindref="member">position</ref>;</highlight></codeline>
+<codeline lineno="1085" refid="class_k_win_1_1_effects_handler_1af01ffad1f759c16e90fb35516964b5c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Qt::MouseButtons<sp/><ref refid="class_k_win_1_1_effects_handler_1af01ffad1f759c16e90fb35516964b5c5" kindref="member">buttons</ref>;</highlight></codeline>
+<codeline lineno="1086" refid="class_k_win_1_1_effects_handler_1aee134f5a82234293371ed3c7c73b1a4c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Qt::KeyboardModifiers<sp/><ref refid="class_k_win_1_1_effects_handler_1aee134f5a82234293371ed3c7c73b1a4c" kindref="member">modifiers</ref>;</highlight></codeline>
+<codeline lineno="1087" refid="class_k_win_1_1_effects_handler_1a4c4d65f746ac05b1e127af82df42941e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>m_cursor;</highlight></codeline>
+<codeline lineno="1088"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1089" refid="class_k_win_1_1_effects_handler_1ae1e1f59c67718d9a7ec2c97540d83568" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_effects_handler_1ac8649272bb0576cc72f2486439664efe" kindref="member">Effect</ref><sp/>*<ref refid="class_k_win_1_1_effects_handler_1ae1e1f59c67718d9a7ec2c97540d83568" kindref="member">keyboard_grab_effect</ref>;</highlight></codeline>
+<codeline lineno="1090" refid="class_k_win_1_1_effects_handler_1a3eaef43498d3d1008491ed2716347576" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_effects_handler_1ac8649272bb0576cc72f2486439664efe" kindref="member">Effect</ref><sp/>*<ref refid="class_k_win_1_1_effects_handler_1a3eaef43498d3d1008491ed2716347576" kindref="member">fullscreen_effect</ref>;</highlight></codeline>
+<codeline lineno="1091" refid="class_k_win_1_1_effects_handler_1abf08ae922efe0dea4102c158cebece79" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QMultiMap&lt;int,<sp/>EffectPair&gt;<sp/><ref refid="class_k_win_1_1_effects_handler_1abf08ae922efe0dea4102c158cebece79" kindref="member">effect_order</ref>;</highlight></codeline>
+<codeline lineno="1092"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>KWIN_BUILD_X11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1093"><highlight class="normal"><sp/><sp/><sp/><sp/>QHash&lt;long,<sp/>int&gt;<sp/>registered_atoms;</highlight></codeline>
+<codeline lineno="1094"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1095" refid="class_k_win_1_1_effects_handler_1a8c68577f9c9a9ad8b169dae1b77582ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;EffectPair&gt;<sp/><ref refid="class_k_win_1_1_effects_handler_1a8c68577f9c9a9ad8b169dae1b77582ad" kindref="member">loaded_effects</ref>;</highlight></codeline>
+<codeline lineno="1096" refid="class_k_win_1_1_effects_handler_1a1517b585d33791a3e46492ae6d659584" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1aa1e33474a7077a13169f350a5949a79a" kindref="member">CompositingType</ref><sp/><ref refid="class_k_win_1_1_effects_handler_1a1517b585d33791a3e46492ae6d659584" kindref="member">compositing_type</ref>;</highlight></codeline>
+<codeline lineno="1097" refid="class_k_win_1_1_effects_handler_1a991cd17b9a365d9db4d68ddf3f36da0d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_effects_handler_1aa0761c03f3ceaab19268930cb3b12ffb" kindref="member">EffectsList</ref><sp/><ref refid="class_k_win_1_1_effects_handler_1a991cd17b9a365d9db4d68ddf3f36da0d" kindref="member">m_activeEffects</ref>;</highlight></codeline>
+<codeline lineno="1098" refid="class_k_win_1_1_effects_handler_1a8f19e1636e6b98a6ab42c1d290fae672" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_effects_handler_1a1ef2138edc42fc77ec999f4ce147c52c" kindref="member">EffectsIterator</ref><sp/><ref refid="class_k_win_1_1_effects_handler_1a8f19e1636e6b98a6ab42c1d290fae672" kindref="member">m_currentDrawWindowIterator</ref>;</highlight></codeline>
+<codeline lineno="1099" refid="class_k_win_1_1_effects_handler_1a0ec7dd727c793c6e0e394070959e3058" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_effects_handler_1a1ef2138edc42fc77ec999f4ce147c52c" kindref="member">EffectsIterator</ref><sp/><ref refid="class_k_win_1_1_effects_handler_1a0ec7dd727c793c6e0e394070959e3058" kindref="member">m_currentPaintWindowIterator</ref>;</highlight></codeline>
+<codeline lineno="1100" refid="class_k_win_1_1_effects_handler_1a33ef50504479d7de0455c75b8863006f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_effects_handler_1a1ef2138edc42fc77ec999f4ce147c52c" kindref="member">EffectsIterator</ref><sp/><ref refid="class_k_win_1_1_effects_handler_1a33ef50504479d7de0455c75b8863006f" kindref="member">m_currentPaintScreenIterator</ref>;</highlight></codeline>
+<codeline lineno="1101" refid="class_k_win_1_1_effects_handler_1a229a83c757b3f0a6237cf88fef717a83" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>QHash&lt;QByteArray,<sp/>QList&lt;Effect<sp/>*&gt;&gt;<sp/><ref refid="class_k_win_1_1_effects_handler_1a229a83c757b3f0a6237cf88fef717a83" kindref="member">PropertyEffectMap</ref>;</highlight></codeline>
+<codeline lineno="1102"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>KWIN_BUILD_X11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_effects_handler_1a229a83c757b3f0a6237cf88fef717a83" kindref="member">PropertyEffectMap</ref><sp/>m_propertiesForEffects;</highlight></codeline>
+<codeline lineno="1104"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1105" refid="class_k_win_1_1_effects_handler_1a8977f4e67c8cea40eb0d5a56431db5e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QHash&lt;QByteArray,<sp/>qulonglong&gt;<sp/><ref refid="class_k_win_1_1_effects_handler_1a8977f4e67c8cea40eb0d5a56431db5e1" kindref="member">m_managedProperties</ref>;</highlight></codeline>
+<codeline lineno="1106" refid="class_k_win_1_1_effects_handler_1a4291b830d7c09b02ed712c3d22fd6aa4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_compositor" kindref="compound">Compositor</ref><sp/>*<ref refid="class_k_win_1_1_effects_handler_1a4291b830d7c09b02ed712c3d22fd6aa4" kindref="member">m_compositor</ref>;</highlight></codeline>
+<codeline lineno="1107" refid="class_k_win_1_1_effects_handler_1ab85de72d7501ab7654b5f702441c5814" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_workspace_scene" kindref="compound">WorkspaceScene</ref><sp/>*<ref refid="class_k_win_1_1_effects_handler_1ab85de72d7501ab7654b5f702441c5814" kindref="member">m_scene</ref>;</highlight></codeline>
+<codeline lineno="1108" refid="class_k_win_1_1_effects_handler_1a316d3ca024679a2bf76dbdb5c39aabd8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;Effect<sp/>*&gt;<sp/><ref refid="class_k_win_1_1_effects_handler_1a316d3ca024679a2bf76dbdb5c39aabd8" kindref="member">m_grabbedMouseEffects</ref>;</highlight></codeline>
+<codeline lineno="1109" refid="class_k_win_1_1_effects_handler_1a423b07a48fa38374dda8a22e827185af" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_effect_loader" kindref="compound">EffectLoader</ref><sp/>*<ref refid="class_k_win_1_1_effects_handler_1a423b07a48fa38374dda8a22e827185af" kindref="member">m_effectLoader</ref>;</highlight></codeline>
+<codeline lineno="1110" refid="class_k_win_1_1_effects_handler_1a0326732b7509687116673d3ea6c761b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;WindowPropertyNotifyX11Filter&gt;<sp/><ref refid="class_k_win_1_1_effects_handler_1a0326732b7509687116673d3ea6c761b4" kindref="member">m_x11WindowPropertyNotify</ref>;</highlight></codeline>
+<codeline lineno="1111"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="1112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1116"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_effects_handler" kindref="compound">EffectsHandler</ref><sp/>*<ref refid="namespace_k_win_1ad780e509c41727e08e1cc641d4cad7b5" kindref="member">effects</ref>;</highlight></codeline>
+<codeline lineno="1117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1118"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1119"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/effect/effecthandler.h"/>
+  </compounddef>
+</doxygen>

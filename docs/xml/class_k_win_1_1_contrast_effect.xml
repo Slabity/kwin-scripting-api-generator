@@ -1,0 +1,630 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_contrast_effect" kind="class" language="C++" prot="public">
+    <compoundname>KWin::ContrastEffect</compoundname>
+    <basecompoundref refid="class_k_win_1_1_effect" prot="public" virt="non-virtual">KWin::Effect</basecompoundref>
+    <includes refid="plugins_2backgroundcontrast_2contrast_8h" local="no">contrast.h</includes>
+    <innerclass refid="struct_k_win_1_1_contrast_effect_1_1_data" prot="private">KWin::ContrastEffect::Data</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_contrast_effect_1af957d8d1a4d65334105406437fba5c27" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_contrast_shader" kindref="compound">ContrastShader</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;ContrastShader&gt; KWin::ContrastEffect::m_shader</definition>
+        <argsstring></argsstring>
+        <name>m_shader</name>
+        <qualifiedname>KWin::ContrastEffect::m_shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="67" column="21" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_contrast_effect_1acd271046f9d5c2a05f7b1bf3399b270f" prot="private" static="no" mutable="no">
+        <type>QHash&lt; const <ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *, QMetaObject::Connection &gt;</type>
+        <definition>QHash&lt;const EffectWindow *, QMetaObject::Connection&gt; KWin::ContrastEffect::m_contrastChangedConnections</definition>
+        <argsstring></argsstring>
+        <name>m_contrastChangedConnections</name>
+        <qualifiedname>KWin::ContrastEffect::m_contrastChangedConnections</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="72" column="11" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_contrast_effect_1aa9b620361cc62742a428b0b415cd15e9" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; const <ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *, Data &gt;</type>
+        <definition>std::unordered_map&lt;const EffectWindow *, Data&gt; KWin::ContrastEffect::m_windowData</definition>
+        <argsstring></argsstring>
+        <name>m_windowData</name>
+        <qualifiedname>KWin::ContrastEffect::m_windowData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="81" column="24" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_contrast_effect_1a1ee38656d584df7cb679b6cf17d59be2" prot="private" static="yes" mutable="no">
+        <type><ref refid="class_k_win_1_1_contrast_manager_interface" kindref="compound">ContrastManagerInterface</ref> *</type>
+        <definition>ContrastManagerInterface * KWin::ContrastEffect::s_contrastManager</definition>
+        <argsstring></argsstring>
+        <name>s_contrastManager</name>
+        <qualifiedname>KWin::ContrastEffect::s_contrastManager</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="82" column="37" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_contrast_effect_1a7c58998501ba723d73aec36fd3d8033a" prot="private" static="yes" mutable="no">
+        <type>QTimer *</type>
+        <definition>QTimer * KWin::ContrastEffect::s_contrastManagerRemoveTimer</definition>
+        <argsstring></argsstring>
+        <name>s_contrastManagerRemoveTimer</name>
+        <qualifiedname>KWin::ContrastEffect::s_contrastManagerRemoveTimer</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="83" column="19" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_contrast_effect_1ad5f2aff92eec24cc2a22f5ecae557aa7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::ContrastEffect::ContrastEffect</definition>
+        <argsstring>()</argsstring>
+        <name>ContrastEffect</name>
+        <qualifiedname>KWin::ContrastEffect::ContrastEffect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="29" column="5" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.cpp" bodystart="40" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_contrast_effect_1acea3af0df0dea3abfc792ef2b6200d82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::ContrastEffect::~ContrastEffect</definition>
+        <argsstring>() override</argsstring>
+        <name>~ContrastEffect</name>
+        <qualifiedname>KWin::ContrastEffect::~ContrastEffect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="30" column="5" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.cpp" bodystart="87" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_contrast_effect_1a118354adfc091cf77afb55ef4332bf8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::ContrastEffect::drawWindow</definition>
+        <argsstring>(const RenderTarget &amp;renderTarget, const RenderViewport &amp;viewport, EffectWindow *w, int mask, const QRegion &amp;region, WindowPaintData &amp;data) override</argsstring>
+        <name>drawWindow</name>
+        <qualifiedname>KWin::ContrastEffect::drawWindow</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga254b1a3e8bb8b9b671e9b000ca027b7c">drawWindow</reimplements>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref> &amp;</type>
+          <declname>renderTarget</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref> &amp;</type>
+          <declname>viewport</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Can be called to draw multiple copies (e.g. thumbnails) of a window. You can change window&apos;s opacity/brightness/etc here, but you can&apos;t do any transformations.</para>
+<para>In OpenGL based compositing, the frameworks ensures that the context is current when this method is invoked. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="36" column="10" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.cpp" bodystart="398" bodyend="432"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_contrast_effect_1ac75adc75bb74068052707369e510f256" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::ContrastEffect::provides</definition>
+        <argsstring>(Feature feature) override</argsstring>
+        <name>provides</name>
+        <qualifiedname>KWin::ContrastEffect::provides</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga30fc2cbbdd90f95568a9e350f34bf2b7">provides</reimplements>
+        <param>
+          <type><ref refid="group__kwineffects_1ga6337b2a9b5aadfbb6b696119144b56ae" kindref="member">Feature</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Called on Transparent resizes. return true if your effect substitutes questioned feature </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="38" column="10" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.h" bodystart="86" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_contrast_effect_1a5833f4f81307c568049d59cd98660b11" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::ContrastEffect::isActive</definition>
+        <argsstring>() const override</argsstring>
+        <name>isActive</name>
+        <qualifiedname>KWin::ContrastEffect::isActive</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga596b6c0ed146b97b293f5db5f27fc40f">isActive</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Overwrite this method to indicate whether your effect will be doing something in the next frame to be rendered. If the method returns <computeroutput>false</computeroutput> the effect will be excluded from the chained methods in the next rendered frame.</para>
+<para>This method is called always directly before the paint loop begins. So it is totally fine to e.g. react on a window event, issue a repaint to trigger an animation and change a flag to indicate that this method returns <computeroutput>true</computeroutput>.</para>
+<para>As the method is called each frame, you should not perform complex calculations. Best use just a boolean flag.</para>
+<para>The default implementation of this method returns <computeroutput>true</computeroutput>. <simplesect kind="since"><para>4.8 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="39" column="10" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.cpp" bodystart="498" bodyend="501"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_contrast_effect_1ab17d5f90a4e02b84ade103a7f5ae6176" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>int KWin::ContrastEffect::requestedEffectChainPosition</definition>
+        <argsstring>() const override</argsstring>
+        <name>requestedEffectChainPosition</name>
+        <qualifiedname>KWin::ContrastEffect::requestedEffectChainPosition</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga120531588e58691a5a18028158d2947a">requestedEffectChainPosition</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reimplement this method to indicate where in the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> chain the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref> should be placed.</para>
+<para>A low number indicates early chain position, thus before other Effects got called, a high number indicates a late position. The returned number should be in the interval [0, 100]. The default value is 0.</para>
+<para>In KWin4 this information was provided in the <ref refid="class_k_win_1_1_effect" kindref="compound">Effect</ref>&apos;s desktop file as property X-KDE-Ordering. In the case of Scripted Effects this property is still used.</para>
+<para><simplesect kind="since"><para>5.0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="41" column="9" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.h" bodystart="41" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_contrast_effect_1a10bf38c9910609a49bf5015dd5399791" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::ContrastEffect::eventFilter</definition>
+        <argsstring>(QObject *watched, QEvent *event) override</argsstring>
+        <name>eventFilter</name>
+        <qualifiedname>KWin::ContrastEffect::eventFilter</qualifiedname>
+        <param>
+          <type>QObject *</type>
+          <declname>watched</declname>
+        </param>
+        <param>
+          <type>QEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="46" column="10" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.cpp" bodystart="205" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_contrast_effect_1a17ee36d3be19cfccd03c9fed8db1d2c0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::ContrastEffect::blocksDirectScanout</definition>
+        <argsstring>() const override</argsstring>
+        <name>blocksDirectScanout</name>
+        <qualifiedname>KWin::ContrastEffect::blocksDirectScanout</qualifiedname>
+        <reimplements refid="group__kwineffects_1ga7cf8035c970fcde177e3038d79015289">blocksDirectScanout</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>overwrite this method to return false if your effect does not need to be drawn over opaque fullscreen windows </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="48" column="10" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.cpp" bodystart="503" bodyend="506"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_contrast_effect_1a39c9b987338b2ecf78dcb855d0149c25" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::ContrastEffect::supported</definition>
+        <argsstring>()</argsstring>
+        <name>supported</name>
+        <qualifiedname>KWin::ContrastEffect::supported</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="32" column="17" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.cpp" bodystart="298" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_contrast_effect_1a6a0a4d3342ee54fd9cbecc0a14400b8e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::ContrastEffect::enabledByDefault</definition>
+        <argsstring>()</argsstring>
+        <name>enabledByDefault</name>
+        <qualifiedname>KWin::ContrastEffect::enabledByDefault</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="33" column="17" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.cpp" bodystart="279" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_contrast_effect_1aa20eda5fca67defaa20edf71f4d08b35" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QMatrix4x4</type>
+        <definition>QMatrix4x4 KWin::ContrastEffect::colorMatrix</definition>
+        <argsstring>(qreal contrast, qreal intensity, qreal saturation)</argsstring>
+        <name>colorMatrix</name>
+        <qualifiedname>KWin::ContrastEffect::colorMatrix</qualifiedname>
+        <param>
+          <type>qreal</type>
+          <declname>contrast</declname>
+        </param>
+        <param>
+          <type>qreal</type>
+          <declname>intensity</declname>
+        </param>
+        <param>
+          <type>qreal</type>
+          <declname>saturation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="35" column="23" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.cpp" bodystart="240" bodyend="277"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_k_win_1_1_contrast_effect_1a23ea6b04a44b3000c50fb91a49684b88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ContrastEffect::slotWindowAdded</definition>
+        <argsstring>(KWin::EffectWindow *w)</argsstring>
+        <name>slotWindowAdded</name>
+        <qualifiedname>KWin::ContrastEffect::slotWindowAdded</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="51" column="10" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.cpp" bodystart="186" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_contrast_effect_1af35beb34f0f0ba2e7f7ffdb351cea90e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ContrastEffect::slotWindowDeleted</definition>
+        <argsstring>(KWin::EffectWindow *w)</argsstring>
+        <name>slotWindowDeleted</name>
+        <qualifiedname>KWin::ContrastEffect::slotWindowDeleted</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">KWin::EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="52" column="10" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.cpp" bodystart="219" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_contrast_effect_1a44095c096f1dcb4670c29c128c1372ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ContrastEffect::slotScreenGeometryChanged</definition>
+        <argsstring>()</argsstring>
+        <name>slotScreenGeometryChanged</name>
+        <qualifiedname>KWin::ContrastEffect::slotScreenGeometryChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="56" column="10" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.cpp" bodystart="95" bodyend="107"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_contrast_effect_1a401f9e8c001fea9d82b70e5d3dfadb59" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QRegion</type>
+        <definition>QRegion KWin::ContrastEffect::contrastRegion</definition>
+        <argsstring>(const EffectWindow *w) const</argsstring>
+        <name>contrastRegion</name>
+        <qualifiedname>KWin::ContrastEffect::contrastRegion</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="59" column="13" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.cpp" bodystart="303" bodyend="318"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_contrast_effect_1a9ac4d947fc4a958a6cea7779f2f8fe7e" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::ContrastEffect::shouldContrast</definition>
+        <argsstring>(const EffectWindow *w, int mask, const WindowPaintData &amp;data) const</argsstring>
+        <name>shouldContrast</name>
+        <qualifiedname>KWin::ContrastEffect::shouldContrast</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="60" column="10" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.cpp" bodystart="374" bodyend="396"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_contrast_effect_1a3f3824714cbc0b0edbe47f7bc6cb65de" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ContrastEffect::updateContrastRegion</definition>
+        <argsstring>(EffectWindow *w)</argsstring>
+        <name>updateContrastRegion</name>
+        <qualifiedname>KWin::ContrastEffect::updateContrastRegion</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="61" column="10" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.cpp" bodystart="109" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_contrast_effect_1ac82862f47514eaccca2a5e66d8f7d4c5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ContrastEffect::doContrast</definition>
+        <argsstring>(const RenderTarget &amp;renderTarget, const RenderViewport &amp;viewport, EffectWindow *w, const QRegion &amp;shape, const float opacity, const QMatrix4x4 &amp;screenProjection)</argsstring>
+        <name>doContrast</name>
+        <qualifiedname>KWin::ContrastEffect::doContrast</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref> &amp;</type>
+          <declname>renderTarget</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref> &amp;</type>
+          <declname>viewport</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>shape</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>opacity</declname>
+        </param>
+        <param>
+          <type>const QMatrix4x4 &amp;</type>
+          <declname>screenProjection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="62" column="10" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.cpp" bodystart="434" bodyend="496"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_contrast_effect_1a12f4ca16480f5a4b90dca3f3c29a942b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::ContrastEffect::uploadRegion</definition>
+        <argsstring>(std::span&lt; QVector2D &gt; map, const QRegion &amp;region, qreal scale)</argsstring>
+        <name>uploadRegion</name>
+        <qualifiedname>KWin::ContrastEffect::uploadRegion</qualifiedname>
+        <param>
+          <type>std::span&lt; QVector2D &gt;</type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type>qreal</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="63" column="10" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.cpp" bodystart="320" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_contrast_effect_1a4241475f4960db8141830685e1a8aafa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_REQUIRED_RESULT bool</type>
+        <definition>bool KWin::ContrastEffect::uploadGeometry</definition>
+        <argsstring>(GLVertexBuffer *vbo, const QRegion &amp;region, qreal scale)</argsstring>
+        <name>uploadGeometry</name>
+        <qualifiedname>KWin::ContrastEffect::uploadGeometry</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_g_l_vertex_buffer" kindref="compound">GLVertexBuffer</ref> *</type>
+          <declname>vbo</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type>qreal</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="64" column="28" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.cpp" bodystart="342" bodyend="372"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::ContrastEffect</label>
+        <link refid="class_k_win_1_1_contrast_effect"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::Effect</label>
+        <link refid="class_k_win_1_1_effect"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::ContrastEffect</label>
+        <link refid="class_k_win_1_1_contrast_effect"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::Effect</label>
+        <link refid="class_k_win_1_1_effect"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/plugins/backgroundcontrast/contrast.h" line="25" column="1" bodyfile="kwin/src/plugins/backgroundcontrast/contrast.h" bodystart="26" bodyend="84"/>
+    <listofallmembers>
+      <member refid="group__kwineffects_1gab9bcf52072fe74567496b0a894d1d873" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>animationTime</name></member>
+      <member refid="group__kwineffects_1ga3a167fe6d9c46376ed46db13caf2d135" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>animationTime</name></member>
+      <member refid="group__kwineffects_1ga0ba05f1463195d0f92ea1dd3396a5d16" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>animationTime</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1a17ee36d3be19cfccd03c9fed8db1d2c0" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>blocksDirectScanout</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea67d120ab5ce1dc424476e63c132af6c1" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>Blur</name></member>
+      <member refid="group__kwineffects_1gab8a94f591b743b59b7285911e641e7d5" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>borderActivated</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1aa20eda5fca67defaa20edf71f4d08b35" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>colorMatrix</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aead805f717a48c23959a1e9ecd7722d15d" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>Contrast</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1ad5f2aff92eec24cc2a22f5ecae557aa7" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>ContrastEffect</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1a401f9e8c001fea9d82b70e5d3dfadb59" prot="private" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>contrastRegion</name></member>
+      <member refid="group__kwineffects_1ga4da344d8b8f2cb9eecd6e64a9b758740" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>cursorPos</name></member>
+      <member refid="group__kwineffects_1ga0c159e00c3a51ca733bea49cf8d52691" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>debug</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1ac82862f47514eaccca2a5e66d8f7d4c5" prot="private" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>doContrast</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1a118354adfc091cf77afb55ef4332bf8b" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>drawWindow</name></member>
+      <member refid="group__kwineffects_1ga7bd8262f4cb2c5c3090c748eb388ad7e" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>Effect</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1a6a0a4d3342ee54fd9cbecc0a14400b8e" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>enabledByDefault</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1a10bf38c9910609a49bf5015dd5399791" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>eventFilter</name></member>
+      <member refid="group__kwineffects_1ga6337b2a9b5aadfbb6b696119144b56ae" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>Feature</name></member>
+      <member refid="group__kwineffects_1gab5e0581ae4b2dffe8014ff5cf6c21158" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>grabbedKeyboardEvent</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aeaecbb77ad241419970ece3d45296c4838" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>HighlightWindows</name></member>
+      <member refid="group__kwineffects_1ga7b0ecb57667179e95c188f0ee7416d00" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>interpolate</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1a5833f4f81307c568049d59cd98660b11" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>isActive</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1acd271046f9d5c2a05f7b1bf3399b270f" prot="private" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>m_contrastChangedConnections</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1af957d8d1a4d65334105406437fba5c27" prot="private" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>m_shader</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1aa9b620361cc62742a428b0b415cd15e9" prot="private" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>m_windowData</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea170229312ed2ec0e446ee89ba7f6b6ca" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>Nothing</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dab0de2932c45bde6df3de10d00dbd6fcd" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>PAINT_SCREEN_BACKGROUND_FIRST</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da43acbfc913cae9eb3c363aeb0524f18f" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>PAINT_SCREEN_REGION</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da3e731594d83c3e92742bff7c420fb7f8" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>PAINT_SCREEN_TRANSFORMED</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da124dd798e5f793087e81da77e11a9b1e" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>PAINT_SCREEN_WITH_TRANSFORMED_WINDOWS</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dac606d3dcf2dd150234f71c4c39083c7d" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>PAINT_WINDOW_OPAQUE</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378da684bb6c6c278b900b6d0c889e79233b8" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>PAINT_WINDOW_TRANSFORMED</name></member>
+      <member refid="group__kwineffects_1gga26b3491296f952420a75b4a0ab33378dac7237bf4bb4d6ea6d6fb1215db19b45e" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>PAINT_WINDOW_TRANSLUCENT</name></member>
+      <member refid="group__kwineffects_1ga44ee94161446ce6fb2502376af6515a8" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>paintScreen</name></member>
+      <member refid="group__kwineffects_1ga0f0292db2bf016a0843ef7cc06219378" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>paintWindow</name></member>
+      <member refid="group__kwineffects_1ga5fb1bc87ff54dcc2cfe87b070816ab00" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>perform</name></member>
+      <member refid="group__kwineffects_1ga10021cf9704c00d60beae284d53846e2" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>postPaintScreen</name></member>
+      <member refid="group__kwineffects_1ga9b7cf82c6f74331cffabb06c63ef914c" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>postPaintWindow</name></member>
+      <member refid="group__kwineffects_1ga2edc1b757e36bb6bcbbacde454dfc05c" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>prePaintScreen</name></member>
+      <member refid="group__kwineffects_1ga2832c7831c0f49f9f5cf0267ffc53672" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>prePaintWindow</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1ac75adc75bb74068052707369e510f256" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>provides</name></member>
+      <member refid="group__kwineffects_1ga737c6d80eb8f8b24fdc6398209c38e3d" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>reconfigure</name></member>
+      <member refid="group__kwineffects_1gga4aebd7d0f695e37678debaa118fa92dca19d3e23e53788c8d9cc9c18fbf75fc7d" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>ReconfigureAll</name></member>
+      <member refid="group__kwineffects_1ga4aebd7d0f695e37678debaa118fa92dc" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>ReconfigureFlag</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1ab17d5f90a4e02b84ade103a7f5ae6176" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>requestedEffectChainPosition</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1a1ee38656d584df7cb679b6cf17d59be2" prot="private" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>s_contrastManager</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1a7c58998501ba723d73aec36fd3d8033a" prot="private" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>s_contrastManagerRemoveTimer</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea592ea0de7a4d658a1ef9bbb48b18e15a" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>ScreenInversion</name></member>
+      <member refid="group__kwineffects_1ga1efc42cd9be15e8200c6e55f6bf47cb8" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>setPositionTransformations</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1a9ac4d947fc4a958a6cea7779f2f8fe7e" prot="private" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>shouldContrast</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1a44095c096f1dcb4670c29c128c1372ad" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>slotScreenGeometryChanged</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1a23ea6b04a44b3000c50fb91a49684b88" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>slotWindowAdded</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1af35beb34f0f0ba2e7f7ffdb351cea90e" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>slotWindowDeleted</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1a39c9b987338b2ecf78dcb855d0149c25" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>supported</name></member>
+      <member refid="group__kwineffects_1gga6337b2a9b5aadfbb6b696119144b56aea19036d413806c53978a3234e7eb197c4" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>SystemBell</name></member>
+      <member refid="group__kwineffects_1ga2d22a8f0b8a4d81615dff67dc1ef970f" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>tabletPadButtonEvent</name></member>
+      <member refid="group__kwineffects_1gaa084e5a45597f5775213715eb5506f63" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>tabletPadRingEvent</name></member>
+      <member refid="group__kwineffects_1ga4998fb0983bd97163935cad2c4dedd76" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>tabletPadStripEvent</name></member>
+      <member refid="group__kwineffects_1ga1d4ae01f5935ea887a12018d59191cbf" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>tabletToolAxis</name></member>
+      <member refid="group__kwineffects_1ga7a984d7d83dfa97962b8404301c6aba9" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>tabletToolButtonEvent</name></member>
+      <member refid="group__kwineffects_1ga4ed77506be381680bf664dbc8c20e036" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>tabletToolProximity</name></member>
+      <member refid="group__kwineffects_1gaf16e9ca42cceb738fb859d1a1a462548" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>tabletToolTip</name></member>
+      <member refid="group__kwineffects_1gaa31554949bc00085e6380b50be16138e" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>touchCancel</name></member>
+      <member refid="group__kwineffects_1ga315fd305e7570f41e7bce7db6812381f" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>touchDown</name></member>
+      <member refid="group__kwineffects_1ga54d00a9e05b5d4597db40c2f5b1d36de" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>touchMotion</name></member>
+      <member refid="group__kwineffects_1gaf3871967d6199eb7c87621bc75b925bb" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>touchUp</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1a3f3824714cbc0b0edbe47f7bc6cb65de" prot="private" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>updateContrastRegion</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1a4241475f4960db8141830685e1a8aafa" prot="private" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>uploadGeometry</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1a12f4ca16480f5a4b90dca3f3c29a942b" prot="private" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>uploadRegion</name></member>
+      <member refid="group__kwineffects_1ga7b142933c38cb9b4a433b768b266e7cb" prot="public" virt="virtual"><scope>KWin::ContrastEffect</scope><name>windowInputMouseEvent</name></member>
+      <member refid="class_k_win_1_1_contrast_effect_1acea3af0df0dea3abfc792ef2b6200d82" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>~ContrastEffect</name></member>
+      <member refid="group__kwineffects_1ga50174eb0169aebceb78ebd5aff71c481" prot="public" virt="non-virtual"><scope>KWin::ContrastEffect</scope><name>~Effect</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

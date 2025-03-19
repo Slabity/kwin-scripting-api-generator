@@ -1,0 +1,1646 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_g_l_shader" kind="class" language="C++" prot="public">
+    <compoundname>KWin::GLShader</compoundname>
+    <includes refid="glshader_8h" local="no">glshader.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_k_win_1_1_g_l_shader_1a3dc6432fcd49e25ad4342a01f2ed15e6" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Flags</name>
+        <qualifiedname>KWin::GLShader::Flags</qualifiedname>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a3dc6432fcd49e25ad4342a01f2ed15e6af8ebb2e8764e2046fe1aa826a0e9f01f" prot="public">
+          <name>NoFlags</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a3dc6432fcd49e25ad4342a01f2ed15e6ab059d1622f2548b5c7e0f5c8580ab8a2" prot="public">
+          <name>ExplicitLinking</name>
+          <initializer>= (1 &lt;&lt; 0)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="28" column="5" bodyfile="kwin/src/opengl/glshader.h" bodystart="28" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_g_l_shader_1a454ff44f40b261412cb8ad3892106bfa" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Mat3Uniform</name>
+        <qualifiedname>KWin::GLShader::Mat3Uniform</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="77" column="5" bodyfile="kwin/src/opengl/glshader.h" bodystart="77" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_g_l_shader_1a443460f633e0d74e8303f45aefaa3691" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Mat4Uniform</name>
+        <qualifiedname>KWin::GLShader::Mat4Uniform</qualifiedname>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a443460f633e0d74e8303f45aefaa3691a564a5d93991a252df798213e5b179eb8" prot="public">
+          <name>TextureMatrix</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a443460f633e0d74e8303f45aefaa3691a5c79d4241e5a2978c699473b01f82fe9" prot="public">
+          <name>ProjectionMatrix</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a443460f633e0d74e8303f45aefaa3691aa5f6f5560bfb195748b692c47b3d4379" prot="public">
+          <name>ModelViewMatrix</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a443460f633e0d74e8303f45aefaa3691a45f966892aa9712b434b27ea5513b63a" prot="public">
+          <name>ModelViewProjectionMatrix</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a443460f633e0d74e8303f45aefaa3691a712e256e9b659fdf78e39e87a22c153e" prot="public">
+          <name>WindowTransformation</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a443460f633e0d74e8303f45aefaa3691a2be2f1d5bfeaf60b6b2a594c26ec98f6" prot="public">
+          <name>ScreenTransformation</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a443460f633e0d74e8303f45aefaa3691a9eec7502d71fbfdee9bfa5a61cff61b5" prot="public">
+          <name>ColorimetryTransformation</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a443460f633e0d74e8303f45aefaa3691a47a24b8cf2e9cf4ed90b0fa4152eeaeb" prot="public">
+          <name>DestinationToLMS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a443460f633e0d74e8303f45aefaa3691a5f6b03f3e017cc2c31a6a0e1b3c39a61" prot="public">
+          <name>LMSToDestination</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a443460f633e0d74e8303f45aefaa3691acfb83bc53dbfc148b8238084c8b2bbbd" prot="public">
+          <name>YuvToRgb</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a443460f633e0d74e8303f45aefaa3691a5473bf8d3ffe11e6974c50cde0a50603" prot="public">
+          <name>MatrixCount</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="80" column="5" bodyfile="kwin/src/opengl/glshader.h" bodystart="80" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_g_l_shader_1a9c9d1d6b08c0bd51be06a3f4e4b75d2d" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Vec2Uniform</name>
+        <qualifiedname>KWin::GLShader::Vec2Uniform</qualifiedname>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a9c9d1d6b08c0bd51be06a3f4e4b75d2dadfd0a82c4bf37b1e90b690a22a20692e" prot="public">
+          <name>Offset</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a9c9d1d6b08c0bd51be06a3f4e4b75d2da218ca75efb190fc863f743803c0fb225" prot="public">
+          <name>SourceTransferFunctionParams</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a9c9d1d6b08c0bd51be06a3f4e4b75d2da6ec6f4b95a8cc6b1dd595dee3e9434c8" prot="public">
+          <name>DestinationTransferFunctionParams</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a9c9d1d6b08c0bd51be06a3f4e4b75d2daf139e0658de36987c2d9c99c3b723a33" prot="public">
+          <name>Vec2UniformCount</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="94" column="5" bodyfile="kwin/src/opengl/glshader.h" bodystart="94" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_g_l_shader_1ab814086d2863ee6b89b55cc30285418e" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Vec3Uniform</name>
+        <qualifiedname>KWin::GLShader::Vec3Uniform</qualifiedname>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1ab814086d2863ee6b89b55cc30285418ea4a298409892e447ea0614795f5944b63" prot="public">
+          <name>PrimaryBrightness</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="101" column="5" bodyfile="kwin/src/opengl/glshader.h" bodystart="101" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_g_l_shader_1a6d59cea8f85957921c86729db6a84b9b" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Vec4Uniform</name>
+        <qualifiedname>KWin::GLShader::Vec4Uniform</qualifiedname>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a6d59cea8f85957921c86729db6a84b9bac15ccc71e5767ba4f8614983965a26aa" prot="public">
+          <name>ModulationConstant</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a6d59cea8f85957921c86729db6a84b9ba07afedccf7c3d71aa041674853ed4582" prot="public">
+          <name>Vec4UniformCount</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="105" column="5" bodyfile="kwin/src/opengl/glshader.h" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_g_l_shader_1a4ca07b55f39418655f237df9b679faf8" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>FloatUniform</name>
+        <qualifiedname>KWin::GLShader::FloatUniform</qualifiedname>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a4ca07b55f39418655f237df9b679faf8a2e3307b9b1a2cc64b48f1cd6977a4b29" prot="public">
+          <name>Saturation</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a4ca07b55f39418655f237df9b679faf8a5acf7048aabb92bfacbeec966a044872" prot="public">
+          <name>MaxDestinationLuminance</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a4ca07b55f39418655f237df9b679faf8a7c79f727e74c1f9b33fd1c676b370b67" prot="public">
+          <name>SourceReferenceLuminance</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a4ca07b55f39418655f237df9b679faf8ae5d7fd62ebe7e64d4924f8436ed5c368" prot="public">
+          <name>DestinationReferenceLuminance</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a4ca07b55f39418655f237df9b679faf8a7a6879900ce85b7a815e8f35459c11a9" prot="public">
+          <name>MaxTonemappingLuminance</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a4ca07b55f39418655f237df9b679faf8ad93d4dd34145b87c69eae7ee3e8b9e65" prot="public">
+          <name>FloatUniformCount</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="110" column="5" bodyfile="kwin/src/opengl/glshader.h" bodystart="110" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_g_l_shader_1a722159dac6e0dc4c4dab9a7efaa59617" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>IntUniform</name>
+        <qualifiedname>KWin::GLShader::IntUniform</qualifiedname>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a722159dac6e0dc4c4dab9a7efaa59617aa0ecbfa213b63667407eadeb3f475ce3" prot="public">
+          <name>AlphaToOne</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><xrefsect id="deprecated_1_deprecated000002"><xreftitle>Deprecated</xreftitle><xrefdescription><para>no longer used </para>
+</xrefdescription></xrefsect></para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a722159dac6e0dc4c4dab9a7efaa59617a5f05f274b3c333df5ba14546a742fc2c" prot="public">
+          <name>TextureWidth</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a722159dac6e0dc4c4dab9a7efaa59617ab5bf654ae145a164cb6adc6195ca1e51" prot="public">
+          <name>TextureHeight</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a722159dac6e0dc4c4dab9a7efaa59617acb853e8113dcf49497f9248a64c37268" prot="public">
+          <name>SourceNamedTransferFunction</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a722159dac6e0dc4c4dab9a7efaa59617a8f1ad4433f80925de5bb70c622b91102" prot="public">
+          <name>DestinationNamedTransferFunction</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a722159dac6e0dc4c4dab9a7efaa59617a5bca2f066df1fe641b2b779db2a63c0a" prot="public">
+          <name>Sampler</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a722159dac6e0dc4c4dab9a7efaa59617a403cfec8cd54bf91fb1f77dc88d1406f" prot="public">
+          <name>Sampler1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a722159dac6e0dc4c4dab9a7efaa59617a6697640e91356c86ef4f9e1e0701aef3" prot="public">
+          <name>IntUniformCount</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="119" column="5" bodyfile="kwin/src/opengl/glshader.h" bodystart="119" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_k_win_1_1_g_l_shader_1a5cd975ed881a6c02777c28ff85e3bf9b" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ColorUniform</name>
+        <qualifiedname>KWin::GLShader::ColorUniform</qualifiedname>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a5cd975ed881a6c02777c28ff85e3bf9bacb5feb1b7314637725a2e73bdc9f7295" prot="public">
+          <name>Color</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_k_win_1_1_g_l_shader_1a5cd975ed881a6c02777c28ff85e3bf9ba26cbfefca3957f5c21e2c6525c4122ef" prot="public">
+          <name>ColorUniformCount</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="130" column="5" bodyfile="kwin/src/opengl/glshader.h" bodystart="130" bodyend="133"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_g_l_shader_1a2478c0a5a4b2aefe63016afe3b2cb2b3" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int KWin::GLShader::m_program</definition>
+        <argsstring></argsstring>
+        <name>m_program</name>
+        <qualifiedname>KWin::GLShader::m_program</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="158" column="18" bodyfile="kwin/src/opengl/glshader.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_g_l_shader_1a339a78e3e57c0e59f02cdce18d52c887" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::m_valid</definition>
+        <argsstring></argsstring>
+        <name>m_valid</name>
+        <qualifiedname>KWin::GLShader::m_valid</qualifiedname>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="159" column="10" bodyfile="kwin/src/opengl/glshader.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_g_l_shader_1aaae6ca0bb5d44eb48c40cbcbd6a065a7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::m_locationsResolved</definition>
+        <argsstring></argsstring>
+        <name>m_locationsResolved</name>
+        <qualifiedname>KWin::GLShader::m_locationsResolved</qualifiedname>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="160" column="10" bodyfile="kwin/src/opengl/glshader.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_g_l_shader_1a548c80a4d4f8bc85b26c60a1482e07e2" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::m_explicitLinking</definition>
+        <argsstring></argsstring>
+        <name>m_explicitLinking</name>
+        <qualifiedname>KWin::GLShader::m_explicitLinking</qualifiedname>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="161" column="10" bodyfile="kwin/src/opengl/glshader.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_g_l_shader_1a8224ea8f07d234a5d13b2d505fffa591" prot="private" static="no" mutable="no">
+        <type>QHash&lt; <ref refid="class_k_win_1_1_g_l_shader_1a454ff44f40b261412cb8ad3892106bfa" kindref="member">Mat3Uniform</ref>, int &gt;</type>
+        <definition>QHash&lt;Mat3Uniform, int&gt; KWin::GLShader::m_matrix3Locations</definition>
+        <argsstring></argsstring>
+        <name>m_matrix3Locations</name>
+        <qualifiedname>KWin::GLShader::m_matrix3Locations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="162" column="11" bodyfile="kwin/src/opengl/glshader.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_g_l_shader_1aef31654a2971cb424944c3916eb50a2a" prot="private" static="no" mutable="no">
+        <type>QHash&lt; <ref refid="class_k_win_1_1_g_l_shader_1a443460f633e0d74e8303f45aefaa3691" kindref="member">Mat4Uniform</ref>, int &gt;</type>
+        <definition>QHash&lt;Mat4Uniform, int&gt; KWin::GLShader::m_matrix4Locations</definition>
+        <argsstring></argsstring>
+        <name>m_matrix4Locations</name>
+        <qualifiedname>KWin::GLShader::m_matrix4Locations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="163" column="11" bodyfile="kwin/src/opengl/glshader.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_g_l_shader_1a6ff34cbc53b59f713bdebb56788a43af" prot="private" static="no" mutable="no">
+        <type>QHash&lt; <ref refid="class_k_win_1_1_g_l_shader_1a9c9d1d6b08c0bd51be06a3f4e4b75d2d" kindref="member">Vec2Uniform</ref>, int &gt;</type>
+        <definition>QHash&lt;Vec2Uniform, int&gt; KWin::GLShader::m_vec2Locations</definition>
+        <argsstring></argsstring>
+        <name>m_vec2Locations</name>
+        <qualifiedname>KWin::GLShader::m_vec2Locations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="164" column="11" bodyfile="kwin/src/opengl/glshader.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_g_l_shader_1ad4a1d4ed244fac313a7283ec862cdfcc" prot="private" static="no" mutable="no">
+        <type>QHash&lt; <ref refid="class_k_win_1_1_g_l_shader_1ab814086d2863ee6b89b55cc30285418e" kindref="member">Vec3Uniform</ref>, int &gt;</type>
+        <definition>QHash&lt;Vec3Uniform, int&gt; KWin::GLShader::m_vec3Locations</definition>
+        <argsstring></argsstring>
+        <name>m_vec3Locations</name>
+        <qualifiedname>KWin::GLShader::m_vec3Locations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="165" column="11" bodyfile="kwin/src/opengl/glshader.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_g_l_shader_1acd231dc1fe54978f06035d5bd0e27945" prot="private" static="no" mutable="no">
+        <type>QHash&lt; <ref refid="class_k_win_1_1_g_l_shader_1a6d59cea8f85957921c86729db6a84b9b" kindref="member">Vec4Uniform</ref>, int &gt;</type>
+        <definition>QHash&lt;Vec4Uniform, int&gt; KWin::GLShader::m_vec4Locations</definition>
+        <argsstring></argsstring>
+        <name>m_vec4Locations</name>
+        <qualifiedname>KWin::GLShader::m_vec4Locations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="166" column="11" bodyfile="kwin/src/opengl/glshader.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_g_l_shader_1a5fd7efff1ffd695fb94d6d84601c54ff" prot="private" static="no" mutable="no">
+        <type>QHash&lt; <ref refid="class_k_win_1_1_g_l_shader_1a4ca07b55f39418655f237df9b679faf8" kindref="member">FloatUniform</ref>, int &gt;</type>
+        <definition>QHash&lt;FloatUniform, int&gt; KWin::GLShader::m_floatLocations</definition>
+        <argsstring></argsstring>
+        <name>m_floatLocations</name>
+        <qualifiedname>KWin::GLShader::m_floatLocations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="167" column="11" bodyfile="kwin/src/opengl/glshader.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_g_l_shader_1a373a2e1aec7fc425441c3a34d5b0e39a" prot="private" static="no" mutable="no">
+        <type>QHash&lt; <ref refid="class_k_win_1_1_g_l_shader_1a722159dac6e0dc4c4dab9a7efaa59617" kindref="member">IntUniform</ref>, int &gt;</type>
+        <definition>QHash&lt;IntUniform, int&gt; KWin::GLShader::m_intLocations</definition>
+        <argsstring></argsstring>
+        <name>m_intLocations</name>
+        <qualifiedname>KWin::GLShader::m_intLocations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="168" column="11" bodyfile="kwin/src/opengl/glshader.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_g_l_shader_1a00fc14fe3eebc79590a4bb0b1b2f78c6" prot="private" static="no" mutable="no">
+        <type>QHash&lt; <ref refid="class_k_win_1_1_g_l_shader_1a5cd975ed881a6c02777c28ff85e3bf9b" kindref="member">ColorUniform</ref>, int &gt;</type>
+        <definition>QHash&lt;ColorUniform, int&gt; KWin::GLShader::m_colorLocations</definition>
+        <argsstring></argsstring>
+        <name>m_colorLocations</name>
+        <qualifiedname>KWin::GLShader::m_colorLocations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="169" column="11" bodyfile="kwin/src/opengl/glshader.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_k_win_1_1_g_l_shader_1ab6133bdad6d5735bb88b3263b9e4b513" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class ShaderManager</definition>
+        <argsstring></argsstring>
+        <name>ShaderManager</name>
+        <qualifiedname>KWin::GLShader::ShaderManager</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_shader_manager" kindref="compound">ShaderManager</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="171" column="18" bodyfile="kwin/src/opengl/glshader.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1ab84b9566c32bfcfd2f4ad9f00523865e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::GLShader::GLShader</definition>
+        <argsstring>(const QString &amp;vertexfile, const QString &amp;fragmentfile, unsigned int flags=NoFlags)</argsstring>
+        <name>GLShader</name>
+        <qualifiedname>KWin::GLShader::GLShader</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>vertexfile</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>fragmentfile</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>flags</declname>
+          <defval><ref refid="class_k_win_1_1_g_l_shader_1a3dc6432fcd49e25ad4342a01f2ed15e6af8ebb2e8764e2046fe1aa826a0e9f01f" kindref="member">NoFlags</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="33" column="5" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="29" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a4859aa0497a1f22647f79e4edf50916f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::GLShader::~GLShader</definition>
+        <argsstring>()</argsstring>
+        <name>~GLShader</name>
+        <qualifiedname>KWin::GLShader::~GLShader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="34" column="5" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="38" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1af0c632b003951311f0255221a4b18ea4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::isValid</definition>
+        <argsstring>() const</argsstring>
+        <name>isValid</name>
+        <qualifiedname>KWin::GLShader::isValid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="36" column="10" bodyfile="kwin/src/opengl/glshader.h" bodystart="36" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a96bad8743855d33a234b3564319baf05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLShader::bindAttributeLocation</definition>
+        <argsstring>(const char *name, int index)</argsstring>
+        <name>bindAttributeLocation</name>
+        <qualifiedname>KWin::GLShader::bindAttributeLocation</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="41" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="188" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a9d22d9f09c2693766f08e4a93c8d4b16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLShader::bindFragDataLocation</definition>
+        <argsstring>(const char *name, int index)</argsstring>
+        <name>bindFragDataLocation</name>
+        <qualifiedname>KWin::GLShader::bindFragDataLocation</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="42" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="193" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a887095b409a8fc8a3fc0080fbc5f4282" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::link</definition>
+        <argsstring>()</argsstring>
+        <name>link</name>
+        <qualifiedname>KWin::GLShader::link</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="44" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="68" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a660c0baf00684b1942f923ba7e310635" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int KWin::GLShader::uniformLocation</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>uniformLocation</name>
+        <qualifiedname>KWin::GLShader::uniformLocation</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="46" column="9" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="254" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1af1856d3aa2773faf2a63a23cea07db9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(const char *name, float value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="48" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="314" bodyend="318"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a3148b8c11fb1f58870957d6ae59351b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(const char *name, double value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="49" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="320" bodyend="324"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a3ebb9912280954764058e55f36c2ae4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(const char *name, int value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="50" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="326" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a4ac5bd3d5a3ce07ff78fe99fe94cde77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(const char *name, const QVector2D &amp;value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const QVector2D &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="51" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="332" bodyend="336"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a6daf28b2fe3ea03645a5fafb1674f4e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(const char *name, const QVector3D &amp;value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const QVector3D &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="52" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="338" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1ae29176e7073ba318f6c05a0e39c1d273" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(const char *name, const QVector4D &amp;value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const QVector4D &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="53" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="344" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1ae1a1157538756f485e1cb8ac9b758e1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(const char *name, const QMatrix3x3 &amp;value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const QMatrix3x3 &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="54" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="350" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a6429d862d7b9f9151e1b2d8feef8357a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(const char *name, const QMatrix4x4 &amp;value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const QMatrix4x4 &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="55" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="356" bodyend="360"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a465b485fd7a19541f757b2402093fbd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(const char *name, const QColor &amp;color)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const QColor &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="56" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="362" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a2d14a593b2f856cd2ce07a6fad10c113" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(int location, float value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>location</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="58" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="368" bodyend="374"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a494c51f1990441f25430d4fa38477a6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(int location, double value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>location</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="59" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="376" bodyend="382"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a254087bf1041071ee0a24645c7203c44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(int location, int value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>location</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="60" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="384" bodyend="390"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a5d30195c16d653ddf3559725aedfc3cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(int location, int xValue, int yValue, int zValue)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>location</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>xValue</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>yValue</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>zValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="61" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="392" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a14818977dd81415b06e2f3db4478acf5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(int location, const QVector2D &amp;value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>location</declname>
+        </param>
+        <param>
+          <type>const QVector2D &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="62" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="400" bodyend="406"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1afbf4a1cc8c7f4bf51cb2a491a79f2653" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(int location, const QVector3D &amp;value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>location</declname>
+        </param>
+        <param>
+          <type>const QVector3D &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="63" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="408" bodyend="414"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a205934d06cfa0086a36546dff6baaa4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(int location, const QVector4D &amp;value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>location</declname>
+        </param>
+        <param>
+          <type>const QVector4D &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="64" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="416" bodyend="422"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a7b58e517809878311db3013cf981d079" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(int location, const QMatrix3x3 &amp;value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>location</declname>
+        </param>
+        <param>
+          <type>const QMatrix3x3 &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="65" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="424" bodyend="430"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a242c7914a77602cfd192bff1d58d1b29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(int location, const QMatrix4x4 &amp;value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>location</declname>
+        </param>
+        <param>
+          <type>const QMatrix4x4 &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="66" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="432" bodyend="438"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a36f4fdef0ba8047beab2c233330115bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(int location, const QColor &amp;value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>location</declname>
+        </param>
+        <param>
+          <type>const QColor &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="67" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="440" bodyend="446"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1ad4cb92cd93a384c74a0e69609f142dbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int KWin::GLShader::attributeLocation</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>attributeLocation</name>
+        <qualifiedname>KWin::GLShader::attributeLocation</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="69" column="9" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="448" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a85be9c40fcc29294d994b7f320f31d39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setAttribute</definition>
+        <argsstring>(const char *name, float value)</argsstring>
+        <name>setAttribute</name>
+        <qualifiedname>KWin::GLShader::setAttribute</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="70" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="454" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a5d2a9e7f60fb0e5080c7a6777656632c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QMatrix4x4</type>
+        <definition>QMatrix4x4 KWin::GLShader::getUniformMatrix4x4</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>getUniformMatrix4x4</name>
+        <qualifiedname>KWin::GLShader::getUniformMatrix4x4</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The value of the uniform as a matrix </para>
+</simplesect>
+<simplesect kind="since"><para>4.7 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="75" column="16" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="463" bodyend="478"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1ad00256a2b188416dd8e2489f36abb68c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(Mat3Uniform uniform, const QMatrix3x3 &amp;value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_g_l_shader_1a454ff44f40b261412cb8ad3892106bfa" kindref="member">Mat3Uniform</ref></type>
+          <declname>uniform</declname>
+        </param>
+        <param>
+          <type>const QMatrix3x3 &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="135" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="260" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a4e0e6a2721c4073a98a8bf07ea943c9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(Mat4Uniform uniform, const QMatrix4x4 &amp;matrix)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_g_l_shader_1a443460f633e0d74e8303f45aefaa3691" kindref="member">Mat4Uniform</ref></type>
+          <declname>uniform</declname>
+        </param>
+        <param>
+          <type>const QMatrix4x4 &amp;</type>
+          <declname>matrix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="136" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="266" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a846281833c8628463437fe058764bcff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(Vec2Uniform uniform, const QVector2D &amp;value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_g_l_shader_1a9c9d1d6b08c0bd51be06a3f4e4b75d2d" kindref="member">Vec2Uniform</ref></type>
+          <declname>uniform</declname>
+        </param>
+        <param>
+          <type>const QVector2D &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="137" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="272" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a2e781768b85afc31b2b9716b4a602989" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(Vec3Uniform uniform, const QVector3D &amp;value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_g_l_shader_1ab814086d2863ee6b89b55cc30285418e" kindref="member">Vec3Uniform</ref></type>
+          <declname>uniform</declname>
+        </param>
+        <param>
+          <type>const QVector3D &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="138" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="278" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a4db07c5fadbcc3dfd12634d63b4855f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(Vec4Uniform uniform, const QVector4D &amp;value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_g_l_shader_1a6d59cea8f85957921c86729db6a84b9b" kindref="member">Vec4Uniform</ref></type>
+          <declname>uniform</declname>
+        </param>
+        <param>
+          <type>const QVector4D &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="139" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="284" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1aa7a9f8a2771ecf84eab4310ede97c71b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(FloatUniform uniform, float value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_g_l_shader_1a4ca07b55f39418655f237df9b679faf8" kindref="member">FloatUniform</ref></type>
+          <declname>uniform</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="140" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="290" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a8eaa6a79b44302446fa34dbbb63619dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(IntUniform uniform, int value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_g_l_shader_1a722159dac6e0dc4c4dab9a7efaa59617" kindref="member">IntUniform</ref></type>
+          <declname>uniform</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="141" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="296" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a841ebf6ccbb0c9e0051c7c4971955f3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(ColorUniform uniform, const QVector4D &amp;value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_g_l_shader_1a5cd975ed881a6c02777c28ff85e3bf9b" kindref="member">ColorUniform</ref></type>
+          <declname>uniform</declname>
+        </param>
+        <param>
+          <type>const QVector4D &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="142" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="302" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a9b025de07a16a1be01cd6b5808a8955d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::setUniform</definition>
+        <argsstring>(ColorUniform uniform, const QColor &amp;value)</argsstring>
+        <name>setUniform</name>
+        <qualifiedname>KWin::GLShader::setUniform</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_g_l_shader_1a5cd975ed881a6c02777c28ff85e3bf9b" kindref="member">ColorUniform</ref></type>
+          <declname>uniform</declname>
+        </param>
+        <param>
+          <type>const QColor &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="143" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="308" bodyend="312"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a2b37e53875c769255092205692d85ea6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLShader::setColorspaceUniforms</definition>
+        <argsstring>(const ColorDescription &amp;src, const ColorDescription &amp;dst, RenderingIntent intent)</argsstring>
+        <name>setColorspaceUniforms</name>
+        <qualifiedname>KWin::GLShader::setColorspaceUniforms</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_color_description" kindref="compound">ColorDescription</ref> &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_color_description" kindref="compound">ColorDescription</ref> &amp;</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type><ref refid="namespace_k_win_1a72b8a93022757874f9e6f85fcf9bc4e9" kindref="member">RenderingIntent</ref></type>
+          <declname>intent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="145" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="482" bodyend="499"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1ad541f1e0686f484edb51277df0ae164f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::GLShader::GLShader</definition>
+        <argsstring>(unsigned int flags=NoFlags)</argsstring>
+        <name>GLShader</name>
+        <qualifiedname>KWin::GLShader::GLShader</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>flags</declname>
+          <defval><ref refid="class_k_win_1_1_g_l_shader_1a3dc6432fcd49e25ad4342a01f2ed15e6af8ebb2e8764e2046fe1aa826a0e9f01f" kindref="member">NoFlags</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="148" column="5" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="21" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a5392a2d740b8025a9488c38e30fe4b92" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::loadFromFiles</definition>
+        <argsstring>(const QString &amp;vertexfile, const QString &amp;fragmentfile)</argsstring>
+        <name>loadFromFiles</name>
+        <qualifiedname>KWin::GLShader::loadFromFiles</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>vertexfile</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>fragmentfile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="149" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="49" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a0c91ed04128048e79e58fc0342c4b0cc" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::load</definition>
+        <argsstring>(const QByteArray &amp;vertexSource, const QByteArray &amp;fragmentSource)</argsstring>
+        <name>load</name>
+        <qualifiedname>KWin::GLShader::load</qualifiedname>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>vertexSource</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>fragmentSource</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="150" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="158" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a53b3632c48af302767cc369a7a964563" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const QByteArray</type>
+        <definition>const QByteArray KWin::GLShader::prepareSource</definition>
+        <argsstring>(GLenum shaderType, const QByteArray &amp;sourceCode) const</argsstring>
+        <name>prepareSource</name>
+        <qualifiedname>KWin::GLShader::prepareSource</qualifiedname>
+        <param>
+          <type>GLenum</type>
+          <declname>shaderType</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>sourceCode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="151" column="22" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="98" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1aa603e1dfe0d238f5e3e49cb21a58527e" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::GLShader::compile</definition>
+        <argsstring>(GLuint program, GLenum shaderType, const QByteArray &amp;sourceCode) const</argsstring>
+        <name>compile</name>
+        <qualifiedname>KWin::GLShader::compile</qualifiedname>
+        <param>
+          <type>GLuint</type>
+          <declname>program</declname>
+        </param>
+        <param>
+          <type>GLenum</type>
+          <declname>shaderType</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>sourceCode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="152" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="114" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1ae87d13e503040008ccf350ff9002186a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLShader::bind</definition>
+        <argsstring>()</argsstring>
+        <name>bind</name>
+        <qualifiedname>KWin::GLShader::bind</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="153" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="201" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1aad72b9ce7cfb9f76cad3ed605072c30c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLShader::unbind</definition>
+        <argsstring>()</argsstring>
+        <name>unbind</name>
+        <qualifiedname>KWin::GLShader::unbind</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="154" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="206" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_g_l_shader_1a8ada3016c868b5b2c48ff2c15940c17a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::GLShader::resolveLocations</definition>
+        <argsstring>()</argsstring>
+        <name>resolveLocations</name>
+        <qualifiedname>KWin::GLShader::resolveLocations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/opengl/glshader.h" line="155" column="10" bodyfile="kwin/src/opengl/glshader.cpp" bodystart="211" bodyend="252"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="kwin/src/opengl/glshader.h" line="25" column="1" bodyfile="kwin/src/opengl/glshader.h" bodystart="26" bodyend="172"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_g_l_shader_1ad4cb92cd93a384c74a0e69609f142dbe" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>attributeLocation</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1ae87d13e503040008ccf350ff9002186a" prot="protected" virt="non-virtual"><scope>KWin::GLShader</scope><name>bind</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a96bad8743855d33a234b3564319baf05" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>bindAttributeLocation</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a9d22d9f09c2693766f08e4a93c8d4b16" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>bindFragDataLocation</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a5cd975ed881a6c02777c28ff85e3bf9b" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>ColorUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1aa603e1dfe0d238f5e3e49cb21a58527e" prot="protected" virt="non-virtual"><scope>KWin::GLShader</scope><name>compile</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a3dc6432fcd49e25ad4342a01f2ed15e6ab059d1622f2548b5c7e0f5c8580ab8a2" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>ExplicitLinking</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a3dc6432fcd49e25ad4342a01f2ed15e6" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>Flags</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a4ca07b55f39418655f237df9b679faf8" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>FloatUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a5d2a9e7f60fb0e5080c7a6777656632c" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>getUniformMatrix4x4</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1ab84b9566c32bfcfd2f4ad9f00523865e" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>GLShader</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1ad541f1e0686f484edb51277df0ae164f" prot="protected" virt="non-virtual"><scope>KWin::GLShader</scope><name>GLShader</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a722159dac6e0dc4c4dab9a7efaa59617" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>IntUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1af0c632b003951311f0255221a4b18ea4" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>isValid</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a887095b409a8fc8a3fc0080fbc5f4282" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>link</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a0c91ed04128048e79e58fc0342c4b0cc" prot="protected" virt="non-virtual"><scope>KWin::GLShader</scope><name>load</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a5392a2d740b8025a9488c38e30fe4b92" prot="protected" virt="non-virtual"><scope>KWin::GLShader</scope><name>loadFromFiles</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a00fc14fe3eebc79590a4bb0b1b2f78c6" prot="private" virt="non-virtual"><scope>KWin::GLShader</scope><name>m_colorLocations</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a548c80a4d4f8bc85b26c60a1482e07e2" prot="private" virt="non-virtual"><scope>KWin::GLShader</scope><name>m_explicitLinking</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a5fd7efff1ffd695fb94d6d84601c54ff" prot="private" virt="non-virtual"><scope>KWin::GLShader</scope><name>m_floatLocations</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a373a2e1aec7fc425441c3a34d5b0e39a" prot="private" virt="non-virtual"><scope>KWin::GLShader</scope><name>m_intLocations</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1aaae6ca0bb5d44eb48c40cbcbd6a065a7" prot="private" virt="non-virtual"><scope>KWin::GLShader</scope><name>m_locationsResolved</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a8224ea8f07d234a5d13b2d505fffa591" prot="private" virt="non-virtual"><scope>KWin::GLShader</scope><name>m_matrix3Locations</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1aef31654a2971cb424944c3916eb50a2a" prot="private" virt="non-virtual"><scope>KWin::GLShader</scope><name>m_matrix4Locations</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a2478c0a5a4b2aefe63016afe3b2cb2b3" prot="private" virt="non-virtual"><scope>KWin::GLShader</scope><name>m_program</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a339a78e3e57c0e59f02cdce18d52c887" prot="private" virt="non-virtual"><scope>KWin::GLShader</scope><name>m_valid</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a6ff34cbc53b59f713bdebb56788a43af" prot="private" virt="non-virtual"><scope>KWin::GLShader</scope><name>m_vec2Locations</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1ad4a1d4ed244fac313a7283ec862cdfcc" prot="private" virt="non-virtual"><scope>KWin::GLShader</scope><name>m_vec3Locations</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1acd231dc1fe54978f06035d5bd0e27945" prot="private" virt="non-virtual"><scope>KWin::GLShader</scope><name>m_vec4Locations</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a454ff44f40b261412cb8ad3892106bfa" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>Mat3Uniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a443460f633e0d74e8303f45aefaa3691" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>Mat4Uniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a3dc6432fcd49e25ad4342a01f2ed15e6af8ebb2e8764e2046fe1aa826a0e9f01f" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>NoFlags</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a53b3632c48af302767cc369a7a964563" prot="protected" virt="non-virtual"><scope>KWin::GLShader</scope><name>prepareSource</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a8ada3016c868b5b2c48ff2c15940c17a" prot="protected" virt="non-virtual"><scope>KWin::GLShader</scope><name>resolveLocations</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a85be9c40fcc29294d994b7f320f31d39" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setAttribute</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a2b37e53875c769255092205692d85ea6" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setColorspaceUniforms</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1af1856d3aa2773faf2a63a23cea07db9a" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a3148b8c11fb1f58870957d6ae59351b0" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a3ebb9912280954764058e55f36c2ae4b" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a4ac5bd3d5a3ce07ff78fe99fe94cde77" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a6daf28b2fe3ea03645a5fafb1674f4e6" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1ae29176e7073ba318f6c05a0e39c1d273" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1ae1a1157538756f485e1cb8ac9b758e1d" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a6429d862d7b9f9151e1b2d8feef8357a" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a465b485fd7a19541f757b2402093fbd3" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a2d14a593b2f856cd2ce07a6fad10c113" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a494c51f1990441f25430d4fa38477a6b" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a254087bf1041071ee0a24645c7203c44" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a5d30195c16d653ddf3559725aedfc3cf" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a14818977dd81415b06e2f3db4478acf5" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1afbf4a1cc8c7f4bf51cb2a491a79f2653" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a205934d06cfa0086a36546dff6baaa4e" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a7b58e517809878311db3013cf981d079" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a242c7914a77602cfd192bff1d58d1b29" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a36f4fdef0ba8047beab2c233330115bf" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1ad00256a2b188416dd8e2489f36abb68c" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a4e0e6a2721c4073a98a8bf07ea943c9d" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a846281833c8628463437fe058764bcff" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a2e781768b85afc31b2b9716b4a602989" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a4db07c5fadbcc3dfd12634d63b4855f8" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1aa7a9f8a2771ecf84eab4310ede97c71b" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a8eaa6a79b44302446fa34dbbb63619dc" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a841ebf6ccbb0c9e0051c7c4971955f3a" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a9b025de07a16a1be01cd6b5808a8955d" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>setUniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1ab6133bdad6d5735bb88b3263b9e4b513" prot="private" virt="non-virtual"><scope>KWin::GLShader</scope><name>ShaderManager</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1aad72b9ce7cfb9f76cad3ed605072c30c" prot="protected" virt="non-virtual"><scope>KWin::GLShader</scope><name>unbind</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a660c0baf00684b1942f923ba7e310635" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>uniformLocation</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a9c9d1d6b08c0bd51be06a3f4e4b75d2d" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>Vec2Uniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1ab814086d2863ee6b89b55cc30285418e" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>Vec3Uniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a6d59cea8f85957921c86729db6a84b9b" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>Vec4Uniform</name></member>
+      <member refid="class_k_win_1_1_g_l_shader_1a4859aa0497a1f22647f79e4edf50916f" prot="public" virt="non-virtual"><scope>KWin::GLShader</scope><name>~GLShader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

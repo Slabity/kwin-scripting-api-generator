@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_popup_input_filter" kind="class" language="C++" prot="public">
+    <compoundname>KWin::PopupInputFilter</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <basecompoundref refid="class_k_win_1_1_input_event_filter" prot="public" virt="non-virtual">KWin::InputEventFilter</basecompoundref>
+    <includes refid="popup__input__filter_8h" local="no">popup_input_filter.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_popup_input_filter_1a841c8ebbec15c7aaddff5e4a489ca767" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> * &gt;</type>
+        <definition>QList&lt;Window *&gt; KWin::PopupInputFilter::m_popupWindows</definition>
+        <argsstring></argsstring>
+        <name>m_popupWindows</name>
+        <qualifiedname>KWin::PopupInputFilter::m_popupWindows</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/popup_input_filter.h" line="34" column="11" bodyfile="kwin/src/popup_input_filter.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_popup_input_filter_1a4d6badaf2293bca67f1ad48c6b6584e1" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::PopupInputFilter::PopupInputFilter</definition>
+        <argsstring>()</argsstring>
+        <name>PopupInputFilter</name>
+        <qualifiedname>KWin::PopupInputFilter::PopupInputFilter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/popup_input_filter.h" line="22" column="14" bodyfile="kwin/src/popup_input_filter.cpp" bodystart="22" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_popup_input_filter_1aafcda8bb50be86eda4cd0324a684b1bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::PopupInputFilter::pointerButton</definition>
+        <argsstring>(PointerButtonEvent *event) override</argsstring>
+        <name>pointerButton</name>
+        <qualifiedname>KWin::PopupInputFilter::pointerButton</qualifiedname>
+        <reimplements refid="class_k_win_1_1_input_event_filter_1a42d5cd1beabe79a9f0f47c7984a63e03">pointerButton</reimplements>
+        <param>
+          <type><ref refid="struct_k_win_1_1_pointer_button_event" kindref="compound">PointerButtonEvent</ref> *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/popup_input_filter.h" line="23" column="10" bodyfile="kwin/src/popup_input_filter.cpp" bodystart="51" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_popup_input_filter_1aa9ec95fb661dbc99892dae50a93bb1d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::PopupInputFilter::keyboardKey</definition>
+        <argsstring>(KeyboardKeyEvent *event) override</argsstring>
+        <name>keyboardKey</name>
+        <qualifiedname>KWin::PopupInputFilter::keyboardKey</qualifiedname>
+        <reimplements refid="class_k_win_1_1_input_event_filter_1accb90817b0fb12456022cb3e1d89fd24">keyboardKey</reimplements>
+        <param>
+          <type><ref refid="struct_k_win_1_1_keyboard_key_event" kindref="compound">KeyboardKeyEvent</ref> *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Event filter for keyboard events.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event information about the key event </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> to stop further event processing, <computeroutput>false</computeroutput> to pass to next filter. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/popup_input_filter.h" line="24" column="10" bodyfile="kwin/src/popup_input_filter.cpp" bodystart="75" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_popup_input_filter_1a370af6a26e7edbb5a82380fee45df76b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::PopupInputFilter::touchDown</definition>
+        <argsstring>(qint32 id, const QPointF &amp;pos, std::chrono::microseconds time) override</argsstring>
+        <name>touchDown</name>
+        <qualifiedname>KWin::PopupInputFilter::touchDown</qualifiedname>
+        <reimplements refid="class_k_win_1_1_input_event_filter_1a9d918ff67523d7f036943c9aa56a2e1b">touchDown</reimplements>
+        <param>
+          <type>qint32</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>std::chrono::microseconds</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/popup_input_filter.h" line="25" column="10" bodyfile="kwin/src/popup_input_filter.cpp" bodystart="108" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_popup_input_filter_1a36247c29454315ceabff3f01dc1d9b85" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::PopupInputFilter::tabletToolTipEvent</definition>
+        <argsstring>(TabletToolTipEvent *event) override</argsstring>
+        <name>tabletToolTipEvent</name>
+        <qualifiedname>KWin::PopupInputFilter::tabletToolTipEvent</qualifiedname>
+        <reimplements refid="class_k_win_1_1_input_event_filter_1af1d39642578227a239b2aa8e55405367">tabletToolTipEvent</reimplements>
+        <param>
+          <type><ref refid="struct_k_win_1_1_tablet_tool_tip_event" kindref="compound">TabletToolTipEvent</ref> *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/popup_input_filter.h" line="26" column="10" bodyfile="kwin/src/popup_input_filter.cpp" bodystart="130" bodyend="152"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_popup_input_filter_1a9945a2fa11276066b09f23147c52e009" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PopupInputFilter::handleWindowAdded</definition>
+        <argsstring>(Window *client)</argsstring>
+        <name>handleWindowAdded</name>
+        <qualifiedname>KWin::PopupInputFilter::handleWindowAdded</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>client</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/popup_input_filter.h" line="29" column="10" bodyfile="kwin/src/popup_input_filter.cpp" bodystart="29" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_popup_input_filter_1aacd8754bd64199d1b143122ea7d58334" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PopupInputFilter::focus</definition>
+        <argsstring>(Window *popup)</argsstring>
+        <name>focus</name>
+        <qualifiedname>KWin::PopupInputFilter::focus</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>popup</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/popup_input_filter.h" line="31" column="10" bodyfile="kwin/src/popup_input_filter.cpp" bodystart="154" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_popup_input_filter_1a4ab4978593856105e63db7fbac04d58e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::PopupInputFilter::cancelPopups</definition>
+        <argsstring>()</argsstring>
+        <name>cancelPopups</name>
+        <qualifiedname>KWin::PopupInputFilter::cancelPopups</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/popup_input_filter.h" line="32" column="10" bodyfile="kwin/src/popup_input_filter.cpp" bodystart="169" bodyend="175"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>KWin::InputEventFilter</label>
+        <link refid="class_k_win_1_1_input_event_filter"/>
+      </node>
+      <node id="1">
+        <label>KWin::PopupInputFilter</label>
+        <link refid="class_k_win_1_1_popup_input_filter"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>KWin::InputEventFilter</label>
+        <link refid="class_k_win_1_1_input_event_filter"/>
+      </node>
+      <node id="1">
+        <label>KWin::PopupInputFilter</label>
+        <link refid="class_k_win_1_1_popup_input_filter"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/popup_input_filter.h" line="18" column="1" bodyfile="kwin/src/popup_input_filter.h" bodystart="19" bodyend="35"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_popup_input_filter_1a4ab4978593856105e63db7fbac04d58e" prot="private" virt="non-virtual"><scope>KWin::PopupInputFilter</scope><name>cancelPopups</name></member>
+      <member refid="class_k_win_1_1_popup_input_filter_1aacd8754bd64199d1b143122ea7d58334" prot="private" virt="non-virtual"><scope>KWin::PopupInputFilter</scope><name>focus</name></member>
+      <member refid="class_k_win_1_1_popup_input_filter_1a9945a2fa11276066b09f23147c52e009" prot="private" virt="non-virtual"><scope>KWin::PopupInputFilter</scope><name>handleWindowAdded</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ac0990f77bd702079fc24ef1b85b6027a" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>holdGestureBegin</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ae0d852136e0039a753ffed5feb537f1c" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>holdGestureCancelled</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1aaf03914c307f1f6e300ac28e7dfd8bbc" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>holdGestureEnd</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a0dacba9bb1bca5bd8462518d8ae07694" prot="public" virt="non-virtual"><scope>KWin::PopupInputFilter</scope><name>InputEventFilter</name></member>
+      <member refid="class_k_win_1_1_popup_input_filter_1aa9ec95fb661dbc99892dae50a93bb1d9" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>keyboardKey</name></member>
+      <member refid="class_k_win_1_1_popup_input_filter_1a841c8ebbec15c7aaddff5e4a489ca767" prot="private" virt="non-virtual"><scope>KWin::PopupInputFilter</scope><name>m_popupWindows</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ae72e537c14e9de14f0720c8f25c6c4cd" prot="protected" virt="non-virtual"><scope>KWin::PopupInputFilter</scope><name>passToInputMethod</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ad56a554ea3b7f767e31d332c4c5e055c" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>pinchGestureBegin</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ab613d6168ad5c579aa19af90b88e87b1" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>pinchGestureCancelled</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a10658e9f1c58a685940eb12b435fe146" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>pinchGestureEnd</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a598c8b3e5fe665b14a3e67a375832d08" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>pinchGestureUpdate</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a34fb678aeaece81927f9ffd95bb418a6" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>pointerAxis</name></member>
+      <member refid="class_k_win_1_1_popup_input_filter_1aafcda8bb50be86eda4cd0324a684b1bb" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>pointerButton</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a8aedcd4f0130e1c00d08b87213f123c1" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>pointerFrame</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a0e8cf7f7d0816fa15dbfef65300bdf74" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>pointerMotion</name></member>
+      <member refid="class_k_win_1_1_popup_input_filter_1a4d6badaf2293bca67f1ad48c6b6584e1" prot="public" virt="non-virtual"><scope>KWin::PopupInputFilter</scope><name>PopupInputFilter</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1aef58de63781487e47b4137c43a8d2c44" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>swipeGestureBegin</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a6d1ec0e92bdcd24e12a11a68483f9517" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>swipeGestureCancelled</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ab5b578ec73f882e2830f2fefe1f4775e" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>swipeGestureEnd</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a9a1557bd23c9ea3965a7130edc7462c5" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>swipeGestureUpdate</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1aed8b92865343626379d8ac71f4bd2ea4" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>switchEvent</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a4ef1fabdd3f77b942ee0596f400f32fc" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>tabletPadButtonEvent</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1aeab73b0dbcd57d4b3f678a81de7489b4" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>tabletPadRingEvent</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a02286f0b50679ecea3e1b231cb27861a" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>tabletPadStripEvent</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1aff68194291337061cc9785d66c3043ce" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>tabletToolAxisEvent</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a7a56441182925d5c0fd6876bc0414c8e" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>tabletToolButtonEvent</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a02802b4a5bef840c2c077f7271755858" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>tabletToolProximityEvent</name></member>
+      <member refid="class_k_win_1_1_popup_input_filter_1a36247c29454315ceabff3f01dc1d9b85" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>tabletToolTipEvent</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ae760899fce671a183fbc540b8beaeea8" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>touchCancel</name></member>
+      <member refid="class_k_win_1_1_popup_input_filter_1a370af6a26e7edbb5a82380fee45df76b" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>touchDown</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ae7e591c6e196c1c8929934c69da523b9" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>touchFrame</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ab8d0440bac50eda28cba2ac9ed7548e1" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>touchMotion</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a608cb067e83ad4ed842476cc16ac0800" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>touchUp</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a52a11556fd89cea278b3fcb79d4f6a78" prot="public" virt="non-virtual"><scope>KWin::PopupInputFilter</scope><name>weight</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ab87db3c27248ac5074cf84ee87d94c9c" prot="public" virt="virtual"><scope>KWin::PopupInputFilter</scope><name>~InputEventFilter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

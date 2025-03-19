@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="diminactive_8h" kind="file" language="C++">
+    <compoundname>diminactive.h</compoundname>
+    <includes refid="effect_8h" local="yes">effect/effect.h</includes>
+    <includes refid="timeline_8h" local="yes">effect/timeline.h</includes>
+    <includedby refid="diminactive_8cpp" local="yes">kwin/src/plugins/diminactive/diminactive.cpp</includedby>
+    <includedby refid="plugins_2diminactive_2main_8cpp" local="yes">kwin/src/plugins/diminactive/main.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>effect/effect.h</label>
+        <link refid="effect_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>effect/timeline.h</label>
+        <link refid="timeline_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/plugins/diminactive/diminactive.h</label>
+        <link refid="diminactive_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>KPluginFactory</label>
+      </node>
+      <node id="13">
+        <label>KSharedConfig</label>
+      </node>
+      <node id="5">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="15">
+        <label>QEasingCurve</label>
+      </node>
+      <node id="6">
+        <label>QImage</label>
+      </node>
+      <node id="7">
+        <label>QPoint</label>
+      </node>
+      <node id="11">
+        <label>QRegion</label>
+      </node>
+      <node id="16">
+        <label>QSharedDataPointer</label>
+      </node>
+      <node id="8">
+        <label>QVariant</label>
+      </node>
+      <node id="9">
+        <label>QVector2D</label>
+      </node>
+      <node id="17">
+        <label>chrono</label>
+      </node>
+      <node id="4">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="10">
+        <label>kwin_export.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/plugins/diminactive/diminactive.cpp</label>
+        <link refid="diminactive_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/plugins/diminactive/diminactive.h</label>
+        <link refid="diminactive_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>kwin/src/plugins/diminactive/main.cpp</label>
+        <link refid="plugins_2diminactive_2main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_dim_inactive_effect" prot="public">KWin::DimInactiveEffect</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2007<sp/>Lubos<sp/>Lunak<sp/>&lt;l.lunak@kde.org&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2007<sp/>Christian<sp/>Nitschkowski<sp/>&lt;christian.nitschkowski@kdemail.net&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2018<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>kwineffects</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="effect_8h" kindref="compound">effect/effect.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="timeline_8h" kindref="compound">effect/timeline.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_effect_window_group" kindref="compound">EffectWindowGroup</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="class_k_win_1_1_dim_inactive_effect" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_dim_inactive_effect_1a552409f94452001065cdf73a2de760a4" kindref="member">DimInactiveEffect</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="group__kwineffects_1ga7bd8262f4cb2c5c3090c748eb388ad7e" kindref="member">Effect</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="26" refid="class_k_win_1_1_dim_inactive_effect_1abca37d663b37dac249861bd8d77cb571" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1abca37d663b37dac249861bd8d77cb571" kindref="member">dimStrength</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1abca37d663b37dac249861bd8d77cb571" kindref="member">dimStrength</ref>)</highlight></codeline>
+<codeline lineno="27" refid="class_k_win_1_1_dim_inactive_effect_1aac5248b0bb427fd65c06957f28ac6199" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1aac5248b0bb427fd65c06957f28ac6199" kindref="member">dimPanels</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1aac5248b0bb427fd65c06957f28ac6199" kindref="member">dimPanels</ref>)</highlight></codeline>
+<codeline lineno="28" refid="class_k_win_1_1_dim_inactive_effect_1ac118f606a71de56df603b3f0d46efe0f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1ac118f606a71de56df603b3f0d46efe0f" kindref="member">dimDesktop</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1ac118f606a71de56df603b3f0d46efe0f" kindref="member">dimDesktop</ref>)</highlight></codeline>
+<codeline lineno="29" refid="class_k_win_1_1_dim_inactive_effect_1a97e2c883a3daa2a4fda87cc5940cd8dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a97e2c883a3daa2a4fda87cc5940cd8dc" kindref="member">dimKeepAbove</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a97e2c883a3daa2a4fda87cc5940cd8dc" kindref="member">dimKeepAbove</ref>)</highlight></codeline>
+<codeline lineno="30" refid="class_k_win_1_1_dim_inactive_effect_1a5802e00d4b08c8e63ef15dfbd4f5eb58" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a5802e00d4b08c8e63ef15dfbd4f5eb58" kindref="member">dimByGroup</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a5802e00d4b08c8e63ef15dfbd4f5eb58" kindref="member">dimByGroup</ref>)</highlight></codeline>
+<codeline lineno="31" refid="class_k_win_1_1_dim_inactive_effect_1a75122c6830b17289ad200758a4afcb76" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a75122c6830b17289ad200758a4afcb76" kindref="member">dimFullScreen</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a75122c6830b17289ad200758a4afcb76" kindref="member">dimFullScreen</ref>)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a552409f94452001065cdf73a2de760a4" kindref="member">DimInactiveEffect</ref>();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="class_k_win_1_1_dim_inactive_effect_1a552409f94452001065cdf73a2de760a4" kindref="member">DimInactiveEffect</ref>()<sp/>override;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a49377f1565ce51cf1fdd11da28e20735" kindref="member">reconfigure</ref>(ReconfigureFlags<sp/>flags)<sp/>override;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a3cfe9ebcbc40f1e8c560932beb83e1b1" kindref="member">prePaintScreen</ref>(<ref refid="class_k_win_1_1_screen_pre_paint_data" kindref="compound">ScreenPrePaintData</ref><sp/>&amp;data,<sp/>std::chrono::milliseconds<sp/>presentTime)<sp/>override;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1ac4c437997c50d48c4ab623cbddedc67f" kindref="member">paintWindow</ref>(const<sp/><ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref><sp/>&amp;renderTarget,<sp/>const<sp/><ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref><sp/>&amp;viewport,<sp/><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask,<sp/>QRegion<sp/>region,<sp/><ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref><sp/>&amp;data)<sp/>override;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a7a7b3121090b8d76500973fba49a325a" kindref="member">postPaintScreen</ref>()<sp/>override;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a3071acd9931f8daae3b2343b7136a3da" kindref="member">requestedEffectChainPosition</ref>()<sp/>const<sp/>override;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a7de5a83cd18feba308803d0f22d231c2" kindref="member">isActive</ref>()<sp/>const<sp/>override;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1abca37d663b37dac249861bd8d77cb571" kindref="member">dimStrength</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1aac5248b0bb427fd65c06957f28ac6199" kindref="member">dimPanels</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1ac118f606a71de56df603b3f0d46efe0f" kindref="member">dimDesktop</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a97e2c883a3daa2a4fda87cc5940cd8dc" kindref="member">dimKeepAbove</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a5802e00d4b08c8e63ef15dfbd4f5eb58" kindref="member">dimByGroup</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a75122c6830b17289ad200758a4afcb76" kindref="member">dimFullScreen</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">private<sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>windowActivated(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*w);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>windowAdded(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*w);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>windowClosed(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*w);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>windowDeleted(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*w);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>activeFullScreenEffectChanged();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateActiveWindow(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*w);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">private:</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>dimWindow(<ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref><sp/>&amp;data,<sp/>qreal<sp/>strength);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>canDimWindow(const<sp/><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*w)<sp/>const;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>scheduleInTransition(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*w);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>scheduleGroupInTransition(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*w);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>scheduleOutTransition(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*w);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>scheduleGroupOutTransition(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*w);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>scheduleRepaint(<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*w);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">private:</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>qreal<sp/>m_dimStrength;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_dimPanels;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_dimDesktop;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_dimKeepAbove;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_dimByGroup;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_dimFullScreen;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*m_activeWindow<sp/>=<sp/></highlight><highlight class="keywordtype">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/><ref refid="class_k_win_1_1_effect_window_group" kindref="compound">EffectWindowGroup</ref><sp/>*m_activeWindowGroup;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>QHash&lt;<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*,<sp/><ref refid="class_k_win_1_1_time_line" kindref="compound">TimeLine</ref>&gt;<sp/>m_transitions;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>QHash&lt;<ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref><sp/>*,<sp/>qreal&gt;<sp/>m_forceDim;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>struct</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="86" refid="class_k_win_1_1_dim_inactive_effect_1ab5de4c0c68ecaeeecf1afbabc712f0ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1ab5de4c0c68ecaeeecf1afbabc712f0ef" kindref="member">active</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87" refid="class_k_win_1_1_dim_inactive_effect_1aeb4873950f0b5748c328325652140e0a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_time_line" kindref="compound">TimeLine</ref><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1aeb4873950f0b5748c328325652140e0a" kindref="member">timeLine</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>m_fullScreenTransition;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="class_k_win_1_1_dim_inactive_effect_1a3071acd9931f8daae3b2343b7136a3da" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a3071acd9931f8daae3b2343b7136a3da" kindref="member">DimInactiveEffect::requestedEffectChainPosition</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="92"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>50;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="class_k_win_1_1_dim_inactive_effect_1a7de5a83cd18feba308803d0f22d231c2" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a7de5a83cd18feba308803d0f22d231c2" kindref="member">DimInactiveEffect::isActive</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="97"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="class_k_win_1_1_dim_inactive_effect_1a11c43c8d4e808cd7ab5479828f09ce16" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1abca37d663b37dac249861bd8d77cb571" kindref="member">DimInactiveEffect::dimStrength</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="102"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>qRound(m_dimStrength<sp/>*<sp/>100.0);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="class_k_win_1_1_dim_inactive_effect_1a6dea4dcb7ac90188eaf740f47d24b8cb" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1aac5248b0bb427fd65c06957f28ac6199" kindref="member">DimInactiveEffect::dimPanels</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="107"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_dimPanels;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="class_k_win_1_1_dim_inactive_effect_1ac7d1040f93e8f1d9f559722bf24bff4b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1ac118f606a71de56df603b3f0d46efe0f" kindref="member">DimInactiveEffect::dimDesktop</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="112"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_dimDesktop;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="class_k_win_1_1_dim_inactive_effect_1a9f46bf362c4ae2aa869f94960a24f0ea" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a97e2c883a3daa2a4fda87cc5940cd8dc" kindref="member">DimInactiveEffect::dimKeepAbove</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="117"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_dimKeepAbove;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="class_k_win_1_1_dim_inactive_effect_1af03ff574870b3fe943245d13f4eddddf" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a5802e00d4b08c8e63ef15dfbd4f5eb58" kindref="member">DimInactiveEffect::dimByGroup</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="122"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_dimByGroup;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="class_k_win_1_1_dim_inactive_effect_1ad4c47b39d882aef3b45437eff05bcb97" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_dim_inactive_effect_1a75122c6830b17289ad200758a4afcb76" kindref="member">DimInactiveEffect::dimFullScreen</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="127"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_dimFullScreen;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/plugins/diminactive/diminactive.h"/>
+  </compounddef>
+</doxygen>

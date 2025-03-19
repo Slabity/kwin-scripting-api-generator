@@ -1,0 +1,343 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="kwinscreenedge_8cpp" kind="file" language="C++">
+    <compoundname>kwinscreenedge.cpp</compoundname>
+    <includes refid="kwinscreenedge_8h" local="yes">kwinscreenedge.h</includes>
+    <includes refid="monitor_8h" local="yes">monitor.h</includes>
+    <includes local="yes">moc_kwinscreenedge.cpp</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/kcms/screenedges/kwinscreenedge.cpp</label>
+        <link refid="kwinscreenedge_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>kwinscreenedge.h</label>
+        <link refid="kwinscreenedge_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>monitor.h</label>
+        <link refid="monitor_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>screenpreviewwidget.h</label>
+        <link refid="screenpreviewwidget_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>QActionGroup</label>
+      </node>
+      <node id="6">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="15">
+        <label>QGraphicsItem</label>
+      </node>
+      <node id="7">
+        <label>QImage</label>
+      </node>
+      <node id="16">
+        <label>QList</label>
+      </node>
+      <node id="8">
+        <label>QPoint</label>
+      </node>
+      <node id="9">
+        <label>QVariant</label>
+      </node>
+      <node id="10">
+        <label>QVector2D</label>
+      </node>
+      <node id="3">
+        <label>QWidget</label>
+      </node>
+      <node id="17">
+        <label>array</label>
+      </node>
+      <node id="5">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="11">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="18">
+        <label>memory</label>
+      </node>
+      <node id="19">
+        <label>moc_kwinscreenedge.cpp</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2009<sp/>Lucas<sp/>Murray<sp/>&lt;lmurray@undefinedfire.com&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2020<sp/>Cyril<sp/>Rossi<sp/>&lt;cyril.rossi@enioka.com&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="kwinscreenedge_8h" kindref="compound">kwinscreenedge.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="monitor_8h" kindref="compound">monitor.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="class_k_win_1_1_k_win_screen_edge_1a822a1e16d5c04626cd970b84394ba55a" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_k_win_screen_edge_1a822a1e16d5c04626cd970b84394ba55a" kindref="member">KWinScreenEdge::KWinScreenEdge</ref>(QWidget<sp/>*parent)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QWidget(parent)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>QMetaObject::invokeMethod(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_k_win_1_1_k_win_screen_edge_1a37bfde6f443cb2010ddce30907827ffa" kindref="member">KWinScreenEdge::createConnection</ref>,<sp/>Qt::QueuedConnection);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="class_k_win_1_1_k_win_screen_edge_1a0ca12808431358d007239b0e06bb2cdc" refkind="member"><highlight class="normal"><ref refid="class_k_win_1_1_k_win_screen_edge_1a0ca12808431358d007239b0e06bb2cdc" kindref="member">KWinScreenEdge::~KWinScreenEdge</ref>()</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="class_k_win_1_1_k_win_screen_edge_1ae9672cf2c8303247ddd43b7357081171" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1ae9672cf2c8303247ddd43b7357081171" kindref="member">KWinScreenEdge::monitorHideEdge</ref>(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5" kindref="member">ElectricBorder</ref><sp/>border,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hidden)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>edge<sp/>=<sp/>KWinScreenEdge::electricBorderToMonitorEdge(border);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>monitor()-&gt;setEdgeHidden(edge,<sp/>hidden);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="class_k_win_1_1_k_win_screen_edge_1af81091893c6465c73244dc18f1c1dde8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1af81091893c6465c73244dc18f1c1dde8" kindref="member">KWinScreenEdge::monitorEnableEdge</ref>(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5" kindref="member">ElectricBorder</ref><sp/>border,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>edge<sp/>=<sp/>KWinScreenEdge::electricBorderToMonitorEdge(border);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>monitor()-&gt;setEdgeEnabled(edge,<sp/>enabled);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="class_k_win_1_1_k_win_screen_edge_1abd37eb60ecaad61a70b43bd86b8bd7cf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1abd37eb60ecaad61a70b43bd86b8bd7cf" kindref="member">KWinScreenEdge::monitorAddItem</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;item)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>8;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>monitor()-&gt;addEdgeItem(i,<sp/>item);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="class_k_win_1_1_k_win_screen_edge_1a489564deff1e5d54ede6ad930467ee42" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1a489564deff1e5d54ede6ad930467ee42" kindref="member">KWinScreenEdge::monitorItemSetEnabled</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>8;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>monitor()-&gt;setEdgeItemEnabled(i,<sp/>index,<sp/>enabled);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="class_k_win_1_1_k_win_screen_edge_1ad489455ac14fea2d5d2e424727b9294e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1ad59d3958ca01321287adb903c431b3d9" kindref="member">KWinScreenEdge::monitorChangeEdge</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;int&gt;<sp/>&amp;borderList,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>border<sp/>:<sp/>borderList)<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1ad59d3958ca01321287adb903c431b3d9" kindref="member">monitorChangeEdge</ref>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5" kindref="member">ElectricBorder</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(border),<sp/>index);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="class_k_win_1_1_k_win_screen_edge_1ad59d3958ca01321287adb903c431b3d9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1ad59d3958ca01321287adb903c431b3d9" kindref="member">KWinScreenEdge::monitorChangeEdge</ref>(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5" kindref="member">ElectricBorder</ref><sp/>border,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5aed0baa759adc26fb2041e3a60412bf17" kindref="member">ELECTRIC_COUNT</ref><sp/>==<sp/>border<sp/>||<sp/><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a0400ba008d8d9f0d019ec7b76d6efb29" kindref="member">ElectricNone</ref><sp/>==<sp/>border)<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>m_reference[border]<sp/>=<sp/>index;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>monitor()-&gt;selectEdgeItem(KWinScreenEdge::electricBorderToMonitorEdge(border),<sp/>index);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="class_k_win_1_1_k_win_screen_edge_1af7794ab7e7744b22415496df9f6b0d0a" refkind="member"><highlight class="normal">QList&lt;int&gt;<sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1af7794ab7e7744b22415496df9f6b0d0a" kindref="member">KWinScreenEdge::monitorCheckEffectHasEdge</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="71"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;int&gt;<sp/>list;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(monitor()-&gt;<ref refid="class_k_win_1_1_k_win_screen_edge_1a8a00b72273e697f322cbf5e5a3d5fe1e" kindref="member">selectedEdgeItem</ref>(<ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521ac313afd2b3c3e393d9b0096ff341bb76" kindref="member">Monitor::Top</ref>)<sp/>==<sp/>index)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list.append(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a929278994e070e1f867508f07e3258b8" kindref="member">ElectricTop</ref>);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(monitor()-&gt;<ref refid="class_k_win_1_1_k_win_screen_edge_1a8a00b72273e697f322cbf5e5a3d5fe1e" kindref="member">selectedEdgeItem</ref>(<ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521a7f66522a0039dcfe44b0451d45182629" kindref="member">Monitor::TopRight</ref>)<sp/>==<sp/>index)<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list.append(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a6d7ab73bac857b678bb92c281e2d3572" kindref="member">ElectricTopRight</ref>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(monitor()-&gt;<ref refid="class_k_win_1_1_k_win_screen_edge_1a8a00b72273e697f322cbf5e5a3d5fe1e" kindref="member">selectedEdgeItem</ref>(<ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521a3ee4c4df304f9d932725ff667c6fa90b" kindref="member">Monitor::Right</ref>)<sp/>==<sp/>index)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list.append(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a93cc1ac713156a4b4de68018f01f30cf" kindref="member">ElectricRight</ref>);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(monitor()-&gt;<ref refid="class_k_win_1_1_k_win_screen_edge_1a8a00b72273e697f322cbf5e5a3d5fe1e" kindref="member">selectedEdgeItem</ref>(<ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521affcf7605c95bbf1c12665359b1b847bc" kindref="member">Monitor::BottomRight</ref>)<sp/>==<sp/>index)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list.append(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5acb8c8f58e5e51ecdebbcc5bb68c157b1" kindref="member">ElectricBottomRight</ref>);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(monitor()-&gt;<ref refid="class_k_win_1_1_k_win_screen_edge_1a8a00b72273e697f322cbf5e5a3d5fe1e" kindref="member">selectedEdgeItem</ref>(<ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521aa9a8d4834ef6de19218bba9a2c770578" kindref="member">Monitor::Bottom</ref>)<sp/>==<sp/>index)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list.append(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a370207e11a2d2e90ec64262effae4953" kindref="member">ElectricBottom</ref>);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(monitor()-&gt;<ref refid="class_k_win_1_1_k_win_screen_edge_1a8a00b72273e697f322cbf5e5a3d5fe1e" kindref="member">selectedEdgeItem</ref>(<ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521afbf47a7f87e65ec7d94d0f95983e7bb5" kindref="member">Monitor::BottomLeft</ref>)<sp/>==<sp/>index)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list.append(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a201c4b00d53ee2f73816e59198df9c59" kindref="member">ElectricBottomLeft</ref>);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(monitor()-&gt;<ref refid="class_k_win_1_1_k_win_screen_edge_1a8a00b72273e697f322cbf5e5a3d5fe1e" kindref="member">selectedEdgeItem</ref>(<ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521a1a29dfd7fa2dd67b53899599271e0120" kindref="member">Monitor::Left</ref>)<sp/>==<sp/>index)<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list.append(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5ae5facf4c47b5ddcfc937c8f9974a2b30" kindref="member">ElectricLeft</ref>);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(monitor()-&gt;<ref refid="class_k_win_1_1_k_win_screen_edge_1a8a00b72273e697f322cbf5e5a3d5fe1e" kindref="member">selectedEdgeItem</ref>(<ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521ad0c7415499aee1de9c63e207d16eec5f" kindref="member">Monitor::TopLeft</ref>)<sp/>==<sp/>index)<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list.append(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a183f33faf88c2cfa027443ec7ba28823" kindref="member">ElectricTopLeft</ref>);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(list.isEmpty())<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list.append(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a0400ba008d8d9f0d019ec7b76d6efb29" kindref="member">ElectricNone</ref>);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>list;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="class_k_win_1_1_k_win_screen_edge_1a8a00b72273e697f322cbf5e5a3d5fe1e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1a8a00b72273e697f322cbf5e5a3d5fe1e" kindref="member">KWinScreenEdge::selectedEdgeItem</ref>(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5" kindref="member">ElectricBorder</ref><sp/>border)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="105"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>monitor()-&gt;selectedEdgeItem(KWinScreenEdge::electricBorderToMonitorEdge(border));</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="class_k_win_1_1_k_win_screen_edge_1ad84a6e316615bde04395f8f4d2405b7f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1ad84a6e316615bde04395f8f4d2405b7f" kindref="member">KWinScreenEdge::monitorChangeDefaultEdge</ref>(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5" kindref="member">ElectricBorder</ref><sp/>border,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5aed0baa759adc26fb2041e3a60412bf17" kindref="member">ELECTRIC_COUNT</ref><sp/>==<sp/>border<sp/>||<sp/><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a0400ba008d8d9f0d019ec7b76d6efb29" kindref="member">ElectricNone</ref><sp/>==<sp/>border)<sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>m_default[border]<sp/>=<sp/>index;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="class_k_win_1_1_k_win_screen_edge_1a1b9a87719b4f5bbdeccc23b2cc9a429c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1ad84a6e316615bde04395f8f4d2405b7f" kindref="member">KWinScreenEdge::monitorChangeDefaultEdge</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;int&gt;<sp/>&amp;borderList,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>border<sp/>:<sp/>borderList)<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1ad84a6e316615bde04395f8f4d2405b7f" kindref="member">monitorChangeDefaultEdge</ref>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5" kindref="member">ElectricBorder</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(border),<sp/>index);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="class_k_win_1_1_k_win_screen_edge_1a4dd0980b1244b4965c4c4c1b39c82ff2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1a4dd0980b1244b4965c4c4c1b39c82ff2" kindref="member">KWinScreenEdge::reload</ref>()</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>m_reference.cbegin();<sp/>it<sp/>!=<sp/>m_reference.cend();<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>monitor()-&gt;selectEdgeItem(KWinScreenEdge::electricBorderToMonitorEdge(it.key()),<sp/>it.value());</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1ac1598b4d2d0a776d1575bdcf6894d4af" kindref="member">onChanged</ref>();</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="class_k_win_1_1_k_win_screen_edge_1a2507216cf8f719827bbf9cfa0568c598" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1a2507216cf8f719827bbf9cfa0568c598" kindref="member">KWinScreenEdge::setDefaults</ref>()</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>m_default.cbegin();<sp/>it<sp/>!=<sp/>m_default.cend();<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>monitor()-&gt;selectEdgeItem(KWinScreenEdge::electricBorderToMonitorEdge(it.key()),<sp/>it.value());</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1ac1598b4d2d0a776d1575bdcf6894d4af" kindref="member">onChanged</ref>();</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>KWinScreenEdge::electricBorderToMonitorEdge(<ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5" kindref="member">ElectricBorder</ref><sp/>border)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(border)<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a929278994e070e1f867508f07e3258b8" kindref="member">ElectricTop</ref>:</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521ac313afd2b3c3e393d9b0096ff341bb76" kindref="member">Monitor::Top</ref>;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a6d7ab73bac857b678bb92c281e2d3572" kindref="member">ElectricTopRight</ref>:</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521a7f66522a0039dcfe44b0451d45182629" kindref="member">Monitor::TopRight</ref>;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a93cc1ac713156a4b4de68018f01f30cf" kindref="member">ElectricRight</ref>:</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521a3ee4c4df304f9d932725ff667c6fa90b" kindref="member">Monitor::Right</ref>;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5acb8c8f58e5e51ecdebbcc5bb68c157b1" kindref="member">ElectricBottomRight</ref>:</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521affcf7605c95bbf1c12665359b1b847bc" kindref="member">Monitor::BottomRight</ref>;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a370207e11a2d2e90ec64262effae4953" kindref="member">ElectricBottom</ref>:</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521aa9a8d4834ef6de19218bba9a2c770578" kindref="member">Monitor::Bottom</ref>;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a201c4b00d53ee2f73816e59198df9c59" kindref="member">ElectricBottomLeft</ref>:</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521afbf47a7f87e65ec7d94d0f95983e7bb5" kindref="member">Monitor::BottomLeft</ref>;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5ae5facf4c47b5ddcfc937c8f9974a2b30" kindref="member">ElectricLeft</ref>:</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521a1a29dfd7fa2dd67b53899599271e0120" kindref="member">Monitor::Left</ref>;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a183f33faf88c2cfa027443ec7ba28823" kindref="member">ElectricTopLeft</ref>:</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521ad0c7415499aee1de9c63e207d16eec5f" kindref="member">Monitor::TopLeft</ref>;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>ELECTRIC_COUNT<sp/>and<sp/>ElectricNone</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521a7b31dd95475509c7da55e8b8c397db7e" kindref="member">Monitor::None</ref>;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5" kindref="member">ElectricBorder</ref><sp/>KWinScreenEdge::monitorEdgeToElectricBorder(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>edge)</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521" kindref="member">Monitor::Edges</ref><sp/>monitorEdge<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521" kindref="member">Monitor::Edges</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(edge);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(monitorEdge)<sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521a1a29dfd7fa2dd67b53899599271e0120" kindref="member">Monitor::Left</ref>:</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5ae5facf4c47b5ddcfc937c8f9974a2b30" kindref="member">ElectricLeft</ref>;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521a3ee4c4df304f9d932725ff667c6fa90b" kindref="member">Monitor::Right</ref>:</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a93cc1ac713156a4b4de68018f01f30cf" kindref="member">ElectricRight</ref>;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521ac313afd2b3c3e393d9b0096ff341bb76" kindref="member">Monitor::Top</ref>:</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a929278994e070e1f867508f07e3258b8" kindref="member">ElectricTop</ref>;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521aa9a8d4834ef6de19218bba9a2c770578" kindref="member">Monitor::Bottom</ref>:</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a370207e11a2d2e90ec64262effae4953" kindref="member">ElectricBottom</ref>;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521ad0c7415499aee1de9c63e207d16eec5f" kindref="member">Monitor::TopLeft</ref>:</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a183f33faf88c2cfa027443ec7ba28823" kindref="member">ElectricTopLeft</ref>;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521a7f66522a0039dcfe44b0451d45182629" kindref="member">Monitor::TopRight</ref>:</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a6d7ab73bac857b678bb92c281e2d3572" kindref="member">ElectricTopRight</ref>;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521afbf47a7f87e65ec7d94d0f95983e7bb5" kindref="member">Monitor::BottomLeft</ref>:</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a201c4b00d53ee2f73816e59198df9c59" kindref="member">ElectricBottomLeft</ref>;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_monitor_1ab775d1cc465b82b0c72a69b0e05f8521affcf7605c95bbf1c12665359b1b847bc" kindref="member">Monitor::BottomRight</ref>:</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5acb8c8f58e5e51ecdebbcc5bb68c157b1" kindref="member">ElectricBottomRight</ref>;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a7eda12963fb07e3df0c1f337e8526bc5a0400ba008d8d9f0d019ec7b76d6efb29" kindref="member">ElectricNone</ref>;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189" refid="class_k_win_1_1_k_win_screen_edge_1ac1598b4d2d0a776d1575bdcf6894d4af" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1ac1598b4d2d0a776d1575bdcf6894d4af" kindref="member">KWinScreenEdge::onChanged</ref>()</highlight></codeline>
+<codeline lineno="190"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>needSave<sp/>=<sp/>isSaveNeeded();</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>m_reference.cbegin();<sp/>it<sp/>!=<sp/>m_reference.cend();<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>needSave<sp/>|=<sp/>it.value()<sp/>!=<sp/>monitor()-&gt;selectedEdgeItem(KWinScreenEdge::electricBorderToMonitorEdge(it.key()));</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1aaaca54b5b365ae8ef8e329a49378db07" kindref="member">saveNeededChanged</ref>(needSave);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>defaults<sp/>=<sp/>isDefault();</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>m_default.cbegin();<sp/>it<sp/>!=<sp/>m_default.cend();<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>defaults<sp/>&amp;=<sp/>it.value()<sp/>==<sp/>monitor()-&gt;selectedEdgeItem(KWinScreenEdge::electricBorderToMonitorEdge(it.key()));</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_EMIT<sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1a82a2fa64f5320d69563648e4b2834574" kindref="member">defaultChanged</ref>(defaults);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204" refid="class_k_win_1_1_k_win_screen_edge_1a37bfde6f443cb2010ddce30907827ffa" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_k_win_screen_edge_1a37bfde6f443cb2010ddce30907827ffa" kindref="member">KWinScreenEdge::createConnection</ref>()</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(monitor(),</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<ref refid="class_k_win_1_1_monitor_1a83e541351f09f19652233c8016e2dbef" kindref="member">Monitor::changed</ref>,</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<ref refid="class_k_win_1_1_k_win_screen_edge_1ac1598b4d2d0a776d1575bdcf6894d4af" kindref="member">KWinScreenEdge::onChanged</ref>);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>KWinScreenEdge::isSaveNeeded()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="213"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>KWinScreenEdge::isDefault()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="218"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;moc_kwinscreenedge.cpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/kcms/screenedges/kwinscreenedge.cpp"/>
+  </compounddef>
+</doxygen>

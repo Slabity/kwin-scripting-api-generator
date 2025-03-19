@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="selection__source_8h" kind="file" language="C++">
+    <compoundname>selection_source.h</compoundname>
+    <includes local="no">QList</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">xcb/xcb.h</includes>
+    <includedby refid="xwayland_2clipboard_8cpp" local="yes">kwin/src/xwayland/clipboard.cpp</includedby>
+    <includedby refid="dnd_8cpp" local="yes">kwin/src/xwayland/dnd.cpp</includedby>
+    <includedby refid="drag__x_8cpp" local="yes">kwin/src/xwayland/drag_x.cpp</includedby>
+    <includedby refid="primary_8cpp" local="yes">kwin/src/xwayland/primary.cpp</includedby>
+    <includedby refid="selection_8cpp" local="yes">kwin/src/xwayland/selection.cpp</includedby>
+    <includedby refid="selection__source_8cpp" local="yes">kwin/src/xwayland/selection_source.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/xwayland/selection_source.h</label>
+        <link refid="selection__source_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QList</label>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+      <node id="4">
+        <label>xcb/xcb.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/xwayland/clipboard.cpp</label>
+        <link refid="xwayland_2clipboard_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/xwayland/dnd.cpp</label>
+        <link refid="dnd_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/xwayland/drag_x.cpp</label>
+        <link refid="drag__x_8cpp"/>
+      </node>
+      <node id="5">
+        <label>kwin/src/xwayland/primary.cpp</label>
+        <link refid="primary_8cpp"/>
+      </node>
+      <node id="6">
+        <label>kwin/src/xwayland/selection.cpp</label>
+        <link refid="selection_8cpp"/>
+      </node>
+      <node id="7">
+        <label>kwin/src/xwayland/selection_source.cpp</label>
+        <link refid="selection__source_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/xwayland/selection_source.h</label>
+        <link refid="selection__source_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_xwl_1_1_selection_source" prot="public">KWin::Xwl::SelectionSource</innerclass>
+    <innerclass refid="class_k_win_1_1_xwl_1_1_wl_source" prot="public">KWin::Xwl::WlSource</innerclass>
+    <innerclass refid="class_k_win_1_1_xwl_1_1_x11_source" prot="public">KWin::Xwl::X11Source</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <innernamespace refid="namespace_k_win_1_1_xwl">KWin::Xwl</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2019<sp/>Roman<sp/>Gilg<sp/>&lt;subdiff@gmail.com&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;xcb/xcb.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QSocketNotifier;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xcb_selection_request_event_t;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xcb_xfixes_selection_notify_event_t;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_data_device_interface" kindref="compound">DataDeviceInterface</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_data_source_interface" kindref="compound">DataSourceInterface</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_abstract_data_source" kindref="compound">AbstractDataSource</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win_1_1_xwl" kindref="compound">Xwl</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_xwl_1_1_selection" kindref="compound">Selection</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_xwl_1_1_xwl_data_source" kindref="compound">XwlDataSource</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="class_k_win_1_1_xwl_1_1_selection_source" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_xwl_1_1_selection_source_1a463f2c076ab2cb003846363bd284e724" kindref="member">SelectionSource</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xwl_1_1_selection_source_1a463f2c076ab2cb003846363bd284e724" kindref="member">SelectionSource</ref>(<ref refid="class_k_win_1_1_xwl_1_1_selection" kindref="compound">Selection</ref><sp/>*<ref refid="class_k_win_1_1_xwl_1_1_selection_source_1aabdc6d744a1249e3b3de667c082faeb4" kindref="member">selection</ref>);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="class_k_win_1_1_xwl_1_1_selection_source_1a2a44ee07ac1d3aaec6cbd1b14b76e8db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>xcb_timestamp_t<sp/><ref refid="class_k_win_1_1_xwl_1_1_selection_source_1a2a44ee07ac1d3aaec6cbd1b14b76e8db" kindref="member">timestamp</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="43"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_timestamp;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46" refid="class_k_win_1_1_xwl_1_1_selection_source_1a79d77ecc29a6ba816bf87e1c57514420" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_selection_source_1a79d77ecc29a6ba816bf87e1c57514420" kindref="member">setTimestamp</ref>(xcb_timestamp_t<sp/>time)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_timestamp<sp/>=<sp/>time;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="52" refid="class_k_win_1_1_xwl_1_1_selection_source_1aabdc6d744a1249e3b3de667c082faeb4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xwl_1_1_selection" kindref="compound">Selection</ref><sp/>*<ref refid="class_k_win_1_1_xwl_1_1_selection_source_1aabdc6d744a1249e3b3de667c082faeb4" kindref="member">selection</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="53"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_selection;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56" refid="class_k_win_1_1_xwl_1_1_selection_source_1a46ee96e3133a0b5a0e5421932e42f75e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_selection_source_1a46ee96e3133a0b5a0e5421932e42f75e" kindref="member">setWindow</ref>(xcb_window_t<sp/><ref refid="class_k_win_1_1_xwl_1_1_selection_source_1a8c884fc25541df5874d1f8dc027df04d" kindref="member">window</ref>)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_window<sp/>=<sp/><ref refid="class_k_win_1_1_xwl_1_1_selection_source_1a8c884fc25541df5874d1f8dc027df04d" kindref="member">window</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60" refid="class_k_win_1_1_xwl_1_1_selection_source_1a8c884fc25541df5874d1f8dc027df04d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>xcb_window_t<sp/><ref refid="class_k_win_1_1_xwl_1_1_selection_source_1a8c884fc25541df5874d1f8dc027df04d" kindref="member">window</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="61"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_window;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>xcb_timestamp_t<sp/>m_timestamp<sp/>=<sp/>XCB_CURRENT_TIME;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xwl_1_1_selection" kindref="compound">Selection</ref><sp/>*m_selection;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>xcb_window_t<sp/>m_window;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_DISABLE_COPY(<ref refid="class_k_win_1_1_xwl_1_1_selection_source" kindref="compound">SelectionSource</ref>)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="class_k_win_1_1_xwl_1_1_wl_source" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_xwl_1_1_wl_source_1a278740b82bd0251ab374814444b49efa" kindref="member">WlSource</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_selection_source_1a463f2c076ab2cb003846363bd284e724" kindref="member">SelectionSource</ref></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xwl_1_1_wl_source_1a278740b82bd0251ab374814444b49efa" kindref="member">WlSource</ref>(<ref refid="class_k_win_1_1_xwl_1_1_selection" kindref="compound">Selection</ref><sp/>*<ref refid="class_k_win_1_1_xwl_1_1_selection_source_1aabdc6d744a1249e3b3de667c082faeb4" kindref="member">selection</ref>);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_wl_source_1af16de40363cf112130e83e478db49486" kindref="member">setDataSourceIface</ref>(<ref refid="class_k_win_1_1_abstract_data_source" kindref="compound">AbstractDataSource</ref><sp/>*dsi);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_wl_source_1a593cccabeddf78660d9806a9c1e51d1e" kindref="member">handleSelectionRequest</ref>(xcb_selection_request_event_t<sp/>*event);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_wl_source_1a8511c6dbe8f97f0156d31e1ac986aafa" kindref="member">sendTargets</ref>(xcb_selection_request_event_t<sp/>*event);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_wl_source_1ae223fb212a03b7c9f0bf032f72d79424" kindref="member">sendTimestamp</ref>(xcb_selection_request_event_t<sp/>*event);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_wl_source_1ad5688d02268161d67d5ff4e755e962a5" kindref="member">receiveOffer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;mime);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_wl_source_1abdda43c53da7b683bd5115dd391f14a6" kindref="member">sendSelectionNotify</ref>(xcb_selection_request_event_t<sp/>*event,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>success);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="92" refid="class_k_win_1_1_xwl_1_1_wl_source_1a8b82632cf55f26f4c610158c24f8e900" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_wl_source_1a8b82632cf55f26f4c610158c24f8e900" kindref="member">transferReady</ref>(xcb_selection_request_event_t<sp/>*event,<sp/>qint32<sp/>fd);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>checkStartTransfer(xcb_selection_request_event_t<sp/>*event);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_abstract_data_source" kindref="compound">AbstractDataSource</ref><sp/>*m_dsi<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;QString&gt;<sp/>m_offers;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>QMetaObject::Connection<sp/>m_offerConnection;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_DISABLE_COPY(<ref refid="class_k_win_1_1_xwl_1_1_wl_source_1a278740b82bd0251ab374814444b49efa" kindref="member">WlSource</ref>)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win_1_1_xwl_1a7c4df38d14fd473ab75d05f2357258ee" kindref="member">Mimes</ref><sp/>=<sp/>QList&lt;QPair&lt;QString,<sp/>xcb_atom_t&gt;&gt;;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="class_k_win_1_1_xwl_1_1_x11_source" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_xwl_1_1_x11_source_1a63ce04dbaf757863b527718dcc7dcd3e" kindref="member">X11Source</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_selection_source_1a463f2c076ab2cb003846363bd284e724" kindref="member">SelectionSource</ref></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xwl_1_1_x11_source_1a63ce04dbaf757863b527718dcc7dcd3e" kindref="member">X11Source</ref>(<ref refid="class_k_win_1_1_xwl_1_1_selection" kindref="compound">Selection</ref><sp/>*<ref refid="class_k_win_1_1_xwl_1_1_selection_source_1aabdc6d744a1249e3b3de667c082faeb4" kindref="member">selection</ref>,<sp/>xcb_xfixes_selection_notify_event_t<sp/>*event);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xwl_1_1_x11_source_1a4dbcdb1f4a5283f62f16154ac6ee3f02" kindref="member">~X11Source</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_x11_source_1a6837e03aae7d28a8b7662cc9c9bcd82e" kindref="member">getTargets</ref>();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="class_k_win_1_1_xwl_1_1_x11_source_1afe1d717b11d2088b8c31b85f96eb9d04" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1_1_xwl_1a7c4df38d14fd473ab75d05f2357258ee" kindref="member">Mimes</ref><sp/><ref refid="class_k_win_1_1_xwl_1_1_x11_source_1afe1d717b11d2088b8c31b85f96eb9d04" kindref="member">offers</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="121"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_offers;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_x11_source_1aec9b44d3e4c20ae9835e8a00b19a6bba" kindref="member">setOffers</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1_1_xwl_1a7c4df38d14fd473ab75d05f2357258ee" kindref="member">Mimes</ref><sp/>&amp;<ref refid="class_k_win_1_1_xwl_1_1_x11_source_1afe1d717b11d2088b8c31b85f96eb9d04" kindref="member">offers</ref>);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="class_k_win_1_1_xwl_1_1_x11_source_1a2933f3cfdb051ae2f09fd3dcbca4d63a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xwl_1_1_xwl_data_source" kindref="compound">XwlDataSource</ref><sp/>*<ref refid="class_k_win_1_1_xwl_1_1_x11_source_1a2933f3cfdb051ae2f09fd3dcbca4d63a" kindref="member">dataSource</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="127"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_dataSource.get();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_x11_source_1a0ba77d7532b50566a15c613d9a386fe5" kindref="member">handleSelectionNotify</ref>(xcb_selection_notify_event_t<sp/>*event);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="class_k_win_1_1_xwl_1_1_x11_source_1ad55d0304aa09a1804d1a7de35566470c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_x11_source_1ad55d0304aa09a1804d1a7de35566470c" kindref="member">setRequestor</ref>(xcb_window_t<sp/><ref refid="class_k_win_1_1_xwl_1_1_selection_source_1a8c884fc25541df5874d1f8dc027df04d" kindref="member">window</ref>)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_xwl_1_1_selection_source_1a46ee96e3133a0b5a0e5421932e42f75e" kindref="member">setWindow</ref>(<ref refid="class_k_win_1_1_xwl_1_1_selection_source_1a8c884fc25541df5874d1f8dc027df04d" kindref="member">window</ref>);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_x11_source_1a9964437ffe0c3faa48cbedf48793868d" kindref="member">startTransfer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;mimeName,<sp/>qint32<sp/>fd);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="140" refid="class_k_win_1_1_xwl_1_1_x11_source_1a23be2e1f5944cb349f0b92f03c35b0a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_x11_source_1a23be2e1f5944cb349f0b92f03c35b0a4" kindref="member">offersChanged</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;added,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;removed);</highlight></codeline>
+<codeline lineno="141" refid="class_k_win_1_1_xwl_1_1_x11_source_1a6c9805f487bb79a8cfdf0e2831aba190" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_xwl_1_1_x11_source_1a6c9805f487bb79a8cfdf0e2831aba190" kindref="member">transferReady</ref>(xcb_atom_t<sp/>target,<sp/>qint32<sp/>fd);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handleTargets();</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1_1_xwl_1a7c4df38d14fd473ab75d05f2357258ee" kindref="member">Mimes</ref><sp/>m_offers;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;XwlDataSource&gt;<sp/>m_dataSource;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_DISABLE_COPY(<ref refid="class_k_win_1_1_xwl_1_1_x11_source_1a63ce04dbaf757863b527718dcc7dcd3e" kindref="member">X11Source</ref>)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Xwl</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/xwayland/selection_source.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,347 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_sticky_keys_filter" kind="class" language="C++" prot="public">
+    <compoundname>StickyKeysFilter</compoundname>
+    <basecompoundref refid="class_k_win_1_1_plugin" prot="public" virt="non-virtual">KWin::Plugin</basecompoundref>
+    <basecompoundref refid="class_k_win_1_1_input_event_filter" prot="public" virt="non-virtual">KWin::InputEventFilter</basecompoundref>
+    <includes refid="stickykeys_8h" local="no">stickykeys.h</includes>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_sticky_keys_filter_1a27867ad498fcd858b490b5c59de8e4cb" prot="public" static="no" strong="no">
+        <type></type>
+        <name>KeyState</name>
+        <qualifiedname>StickyKeysFilter::KeyState</qualifiedname>
+        <enumvalue id="class_sticky_keys_filter_1a27867ad498fcd858b490b5c59de8e4cbabc4936704aa4ea016642701f20281000" prot="public">
+          <name>None</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_sticky_keys_filter_1a27867ad498fcd858b490b5c59de8e4cba885d00957764dac45329877baf275791" prot="public">
+          <name>Latched</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_sticky_keys_filter_1a27867ad498fcd858b490b5c59de8e4cba407b3bdbd8411c993e986e66744a2a97" prot="public">
+          <name>Locked</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/stickykeys/stickykeys.h" line="22" column="5" bodyfile="kwin/src/plugins/stickykeys/stickykeys.h" bodystart="22" bodyend="26"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_sticky_keys_filter_1ab0de5be9d065368e9af67dbee6ef3ed1" prot="private" static="no" mutable="no">
+        <type>KConfigWatcher::Ptr</type>
+        <definition>KConfigWatcher::Ptr StickyKeysFilter::m_configWatcher</definition>
+        <argsstring></argsstring>
+        <name>m_configWatcher</name>
+        <qualifiedname>StickyKeysFilter::m_configWatcher</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/stickykeys/stickykeys.h" line="32" column="25" bodyfile="kwin/src/plugins/stickykeys/stickykeys.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sticky_keys_filter_1a22969ac4b9a11949d48add721521ce9c" prot="private" static="no" mutable="no">
+        <type>QMap&lt; int, <ref refid="class_sticky_keys_filter_1a27867ad498fcd858b490b5c59de8e4cb" kindref="member">KeyState</ref> &gt;</type>
+        <definition>QMap&lt;int, KeyState&gt; StickyKeysFilter::m_keyStates</definition>
+        <argsstring></argsstring>
+        <name>m_keyStates</name>
+        <qualifiedname>StickyKeysFilter::m_keyStates</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/stickykeys/stickykeys.h" line="33" column="10" bodyfile="kwin/src/plugins/stickykeys/stickykeys.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sticky_keys_filter_1a777496ee2dcd31c5e7b5480c7117e6b2" prot="private" static="no" mutable="no">
+        <type>QList&lt; int &gt;</type>
+        <definition>QList&lt;int&gt; StickyKeysFilter::m_modifiers</definition>
+        <argsstring></argsstring>
+        <name>m_modifiers</name>
+        <qualifiedname>StickyKeysFilter::m_modifiers</qualifiedname>
+        <initializer>= {Qt::Key_Shift, Qt::Key_Control, Qt::Key_Alt, Qt::Key_AltGr, Qt::Key_Meta}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/stickykeys/stickykeys.h" line="34" column="11" bodyfile="kwin/src/plugins/stickykeys/stickykeys.h" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sticky_keys_filter_1acd62a1f1c215e970afae2d0ccf5da297" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool StickyKeysFilter::m_lockKeys</definition>
+        <argsstring></argsstring>
+        <name>m_lockKeys</name>
+        <qualifiedname>StickyKeysFilter::m_lockKeys</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/stickykeys/stickykeys.h" line="35" column="10" bodyfile="kwin/src/plugins/stickykeys/stickykeys.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sticky_keys_filter_1a2ece9bccfe7ce5af8b6a2826a1224a6f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool StickyKeysFilter::m_showNotificationForLockedKeys</definition>
+        <argsstring></argsstring>
+        <name>m_showNotificationForLockedKeys</name>
+        <qualifiedname>StickyKeysFilter::m_showNotificationForLockedKeys</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/stickykeys/stickykeys.h" line="36" column="10" bodyfile="kwin/src/plugins/stickykeys/stickykeys.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sticky_keys_filter_1adc7dfc38ef5161e6674d291b12567a2c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool StickyKeysFilter::m_disableOnTwoKeys</definition>
+        <argsstring></argsstring>
+        <name>m_disableOnTwoKeys</name>
+        <qualifiedname>StickyKeysFilter::m_disableOnTwoKeys</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/stickykeys/stickykeys.h" line="37" column="10" bodyfile="kwin/src/plugins/stickykeys/stickykeys.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sticky_keys_filter_1a083c494c6c1339830279d708d25c6b25" prot="private" static="no" mutable="no">
+        <type>QSet&lt; int &gt;</type>
+        <definition>QSet&lt;int&gt; StickyKeysFilter::m_pressedModifiers</definition>
+        <argsstring></argsstring>
+        <name>m_pressedModifiers</name>
+        <qualifiedname>StickyKeysFilter::m_pressedModifiers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/stickykeys/stickykeys.h" line="38" column="10" bodyfile="kwin/src/plugins/stickykeys/stickykeys.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sticky_keys_filter_1a63c227c13c93931f8cb4929568f3e1e2" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool StickyKeysFilter::m_ringBell</definition>
+        <argsstring></argsstring>
+        <name>m_ringBell</name>
+        <qualifiedname>StickyKeysFilter::m_ringBell</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/stickykeys/stickykeys.h" line="39" column="10" bodyfile="kwin/src/plugins/stickykeys/stickykeys.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_sticky_keys_filter_1ab73f0dd10f0099b414c01e942a3229c8" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>StickyKeysFilter::StickyKeysFilter</definition>
+        <argsstring>()</argsstring>
+        <name>StickyKeysFilter</name>
+        <qualifiedname>StickyKeysFilter::StickyKeysFilter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/stickykeys/stickykeys.h" line="18" column="14" bodyfile="kwin/src/plugins/stickykeys/stickykeys.cpp" bodystart="31" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sticky_keys_filter_1a027afe49ba151061b50028f8dab29780" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool StickyKeysFilter::keyboardKey</definition>
+        <argsstring>(KWin::KeyboardKeyEvent *event) override</argsstring>
+        <name>keyboardKey</name>
+        <qualifiedname>StickyKeysFilter::keyboardKey</qualifiedname>
+        <reimplements refid="class_k_win_1_1_input_event_filter_1accb90817b0fb12456022cb3e1d89fd24">keyboardKey</reimplements>
+        <param>
+          <type><ref refid="struct_k_win_1_1_keyboard_key_event" kindref="compound">KWin::KeyboardKeyEvent</ref> *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Event filter for keyboard events.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event information about the key event </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> to stop further event processing, <computeroutput>false</computeroutput> to pass to next filter. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/stickykeys/stickykeys.h" line="20" column="10" bodyfile="kwin/src/plugins/stickykeys/stickykeys.cpp" bodystart="99" bodyend="173"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_sticky_keys_filter_1a7e58298ec5b8e9fbbdc07371399abb5e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StickyKeysFilter::loadConfig</definition>
+        <argsstring>(const KConfigGroup &amp;group)</argsstring>
+        <name>loadConfig</name>
+        <qualifiedname>StickyKeysFilter::loadConfig</qualifiedname>
+        <param>
+          <type>const KConfigGroup &amp;</type>
+          <declname>group</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/stickykeys/stickykeys.h" line="29" column="10" bodyfile="kwin/src/plugins/stickykeys/stickykeys.cpp" bodystart="65" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sticky_keys_filter_1a54c16010ce187aa8b2a5a8aae2527442" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StickyKeysFilter::disableStickyKeys</definition>
+        <argsstring>()</argsstring>
+        <name>disableStickyKeys</name>
+        <qualifiedname>StickyKeysFilter::disableStickyKeys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/plugins/stickykeys/stickykeys.h" line="30" column="10" bodyfile="kwin/src/plugins/stickykeys/stickykeys.cpp" bodystart="175" bodyend="184"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>KWin::InputEventFilter</label>
+        <link refid="class_k_win_1_1_input_event_filter"/>
+      </node>
+      <node id="2">
+        <label>KWin::Plugin</label>
+        <link refid="class_k_win_1_1_plugin"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+      <node id="1">
+        <label>StickyKeysFilter</label>
+        <link refid="class_sticky_keys_filter"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>KWin::InputEventFilter</label>
+        <link refid="class_k_win_1_1_input_event_filter"/>
+      </node>
+      <node id="2">
+        <label>KWin::Plugin</label>
+        <link refid="class_k_win_1_1_plugin"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+      <node id="1">
+        <label>StickyKeysFilter</label>
+        <link refid="class_sticky_keys_filter"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/plugins/stickykeys/stickykeys.h" line="14" column="1" bodyfile="kwin/src/plugins/stickykeys/stickykeys.h" bodystart="15" bodyend="40"/>
+    <listofallmembers>
+      <member refid="class_sticky_keys_filter_1a54c16010ce187aa8b2a5a8aae2527442" prot="private" virt="non-virtual"><scope>StickyKeysFilter</scope><name>disableStickyKeys</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ac0990f77bd702079fc24ef1b85b6027a" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>holdGestureBegin</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ae0d852136e0039a753ffed5feb537f1c" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>holdGestureCancelled</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1aaf03914c307f1f6e300ac28e7dfd8bbc" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>holdGestureEnd</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a0dacba9bb1bca5bd8462518d8ae07694" prot="public" virt="non-virtual"><scope>StickyKeysFilter</scope><name>InputEventFilter</name></member>
+      <member refid="class_sticky_keys_filter_1a027afe49ba151061b50028f8dab29780" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>keyboardKey</name></member>
+      <member refid="class_sticky_keys_filter_1a27867ad498fcd858b490b5c59de8e4cb" prot="public" virt="non-virtual"><scope>StickyKeysFilter</scope><name>KeyState</name></member>
+      <member refid="class_sticky_keys_filter_1a27867ad498fcd858b490b5c59de8e4cba885d00957764dac45329877baf275791" prot="public" virt="non-virtual"><scope>StickyKeysFilter</scope><name>Latched</name></member>
+      <member refid="class_sticky_keys_filter_1a7e58298ec5b8e9fbbdc07371399abb5e" prot="private" virt="non-virtual"><scope>StickyKeysFilter</scope><name>loadConfig</name></member>
+      <member refid="class_sticky_keys_filter_1a27867ad498fcd858b490b5c59de8e4cba407b3bdbd8411c993e986e66744a2a97" prot="public" virt="non-virtual"><scope>StickyKeysFilter</scope><name>Locked</name></member>
+      <member refid="class_sticky_keys_filter_1ab0de5be9d065368e9af67dbee6ef3ed1" prot="private" virt="non-virtual"><scope>StickyKeysFilter</scope><name>m_configWatcher</name></member>
+      <member refid="class_sticky_keys_filter_1adc7dfc38ef5161e6674d291b12567a2c" prot="private" virt="non-virtual"><scope>StickyKeysFilter</scope><name>m_disableOnTwoKeys</name></member>
+      <member refid="class_sticky_keys_filter_1a22969ac4b9a11949d48add721521ce9c" prot="private" virt="non-virtual"><scope>StickyKeysFilter</scope><name>m_keyStates</name></member>
+      <member refid="class_sticky_keys_filter_1acd62a1f1c215e970afae2d0ccf5da297" prot="private" virt="non-virtual"><scope>StickyKeysFilter</scope><name>m_lockKeys</name></member>
+      <member refid="class_sticky_keys_filter_1a777496ee2dcd31c5e7b5480c7117e6b2" prot="private" virt="non-virtual"><scope>StickyKeysFilter</scope><name>m_modifiers</name></member>
+      <member refid="class_sticky_keys_filter_1a083c494c6c1339830279d708d25c6b25" prot="private" virt="non-virtual"><scope>StickyKeysFilter</scope><name>m_pressedModifiers</name></member>
+      <member refid="class_sticky_keys_filter_1a63c227c13c93931f8cb4929568f3e1e2" prot="private" virt="non-virtual"><scope>StickyKeysFilter</scope><name>m_ringBell</name></member>
+      <member refid="class_sticky_keys_filter_1a2ece9bccfe7ce5af8b6a2826a1224a6f" prot="private" virt="non-virtual"><scope>StickyKeysFilter</scope><name>m_showNotificationForLockedKeys</name></member>
+      <member refid="class_sticky_keys_filter_1a27867ad498fcd858b490b5c59de8e4cbabc4936704aa4ea016642701f20281000" prot="public" virt="non-virtual"><scope>StickyKeysFilter</scope><name>None</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ae72e537c14e9de14f0720c8f25c6c4cd" prot="protected" virt="non-virtual"><scope>StickyKeysFilter</scope><name>passToInputMethod</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ad56a554ea3b7f767e31d332c4c5e055c" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>pinchGestureBegin</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ab613d6168ad5c579aa19af90b88e87b1" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>pinchGestureCancelled</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a10658e9f1c58a685940eb12b435fe146" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>pinchGestureEnd</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a598c8b3e5fe665b14a3e67a375832d08" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>pinchGestureUpdate</name></member>
+      <member refid="class_k_win_1_1_plugin_1a17653213e000526c40339ca1f03af1d4" prot="public" virt="non-virtual"><scope>StickyKeysFilter</scope><name>Plugin</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a34fb678aeaece81927f9ffd95bb418a6" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>pointerAxis</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a42d5cd1beabe79a9f0f47c7984a63e03" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>pointerButton</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a8aedcd4f0130e1c00d08b87213f123c1" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>pointerFrame</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a0e8cf7f7d0816fa15dbfef65300bdf74" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>pointerMotion</name></member>
+      <member refid="class_sticky_keys_filter_1ab73f0dd10f0099b414c01e942a3229c8" prot="public" virt="non-virtual"><scope>StickyKeysFilter</scope><name>StickyKeysFilter</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1aef58de63781487e47b4137c43a8d2c44" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>swipeGestureBegin</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a6d1ec0e92bdcd24e12a11a68483f9517" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>swipeGestureCancelled</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ab5b578ec73f882e2830f2fefe1f4775e" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>swipeGestureEnd</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a9a1557bd23c9ea3965a7130edc7462c5" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>swipeGestureUpdate</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1aed8b92865343626379d8ac71f4bd2ea4" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>switchEvent</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a4ef1fabdd3f77b942ee0596f400f32fc" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>tabletPadButtonEvent</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1aeab73b0dbcd57d4b3f678a81de7489b4" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>tabletPadRingEvent</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a02286f0b50679ecea3e1b231cb27861a" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>tabletPadStripEvent</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1aff68194291337061cc9785d66c3043ce" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>tabletToolAxisEvent</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a7a56441182925d5c0fd6876bc0414c8e" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>tabletToolButtonEvent</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a02802b4a5bef840c2c077f7271755858" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>tabletToolProximityEvent</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1af1d39642578227a239b2aa8e55405367" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>tabletToolTipEvent</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ae760899fce671a183fbc540b8beaeea8" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>touchCancel</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a9d918ff67523d7f036943c9aa56a2e1b" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>touchDown</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ae7e591c6e196c1c8929934c69da523b9" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>touchFrame</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ab8d0440bac50eda28cba2ac9ed7548e1" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>touchMotion</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a608cb067e83ad4ed842476cc16ac0800" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>touchUp</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1a52a11556fd89cea278b3fcb79d4f6a78" prot="public" virt="non-virtual"><scope>StickyKeysFilter</scope><name>weight</name></member>
+      <member refid="class_k_win_1_1_input_event_filter_1ab87db3c27248ac5074cf84ee87d94c9c" prot="public" virt="virtual"><scope>StickyKeysFilter</scope><name>~InputEventFilter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,656 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_wayland_1_1_wayland_backend" kind="class" language="C++" prot="public">
+    <compoundname>KWin::Wayland::WaylandBackend</compoundname>
+    <basecompoundref refid="class_k_win_1_1_output_backend" prot="public" virt="non-virtual">KWin::OutputBackend</basecompoundref>
+    <includes refid="wayland__backend_8h" local="no">wayland_backend.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a4a9a3ae1a9eca9cdbdcadd5f440826f0" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_k_win_1_1_wayland_1_1_wayland_backend_options" kindref="compound">WaylandBackendOptions</ref></type>
+        <definition>WaylandBackendOptions KWin::Wayland::WaylandBackend::m_options</definition>
+        <argsstring></argsstring>
+        <name>m_options</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::m_options</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="257" column="27" bodyfile="kwin/src/backends/wayland/wayland_backend.h" bodystart="257" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_1_1_wayland_backend_1af1cc37df881e7b7418608abb87479069" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_wayland_1_1_wayland_display" kindref="compound">WaylandDisplay</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;WaylandDisplay&gt; KWin::Wayland::WaylandBackend::m_display</definition>
+        <argsstring></argsstring>
+        <name>m_display</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::m_display</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="258" column="21" bodyfile="kwin/src/backends/wayland/wayland_backend.h" bodystart="258" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a9137a93fccd99214ccafdb2cc0ecaa82" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_wayland_1_1_wayland_seat" kindref="compound">WaylandSeat</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;WaylandSeat&gt; KWin::Wayland::WaylandBackend::m_seat</definition>
+        <argsstring></argsstring>
+        <name>m_seat</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::m_seat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="259" column="21" bodyfile="kwin/src/backends/wayland/wayland_backend.h" bodystart="259" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a6d07f567bc81ae88874f4ee2934112ea" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_wayland_1_1_wayland_egl_backend" kindref="compound">WaylandEglBackend</ref> *</type>
+        <definition>WaylandEglBackend* KWin::Wayland::WaylandBackend::m_eglBackend</definition>
+        <argsstring></argsstring>
+        <name>m_eglBackend</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::m_eglBackend</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="260" column="23" bodyfile="kwin/src/backends/wayland/wayland_backend.h" bodystart="260" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a16a5dda93f663cd53cc5baf8a034c51c" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_wayland_1_1_wayland_output" kindref="compound">WaylandOutput</ref> * &gt;</type>
+        <definition>QList&lt;WaylandOutput *&gt; KWin::Wayland::WaylandBackend::m_outputs</definition>
+        <argsstring></argsstring>
+        <name>m_outputs</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::m_outputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="261" column="11" bodyfile="kwin/src/backends/wayland/wayland_backend.h" bodystart="261" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_1_1_wayland_backend_1ac0ba9c710d9c1b5e622293a31cc9695b" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KWin::Wayland::WaylandBackend::m_pointerLockRequested</definition>
+        <argsstring></argsstring>
+        <name>m_pointerLockRequested</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::m_pointerLockRequested</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="262" column="10" bodyfile="kwin/src/backends/wayland/wayland_backend.h" bodystart="262" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_1_1_wayland_backend_1ae597abdb177ac3cac919297749a60f87" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_drm_device" kindref="compound">DrmDevice</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;DrmDevice&gt; KWin::Wayland::WaylandBackend::m_drmDevice</definition>
+        <argsstring></argsstring>
+        <name>m_drmDevice</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::m_drmDevice</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="263" column="21" bodyfile="kwin/src/backends/wayland/wayland_backend.h" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a90980954a4a35ba8c1a35f2d9631a0ee" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_egl_display" kindref="compound">EglDisplay</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;EglDisplay&gt; KWin::Wayland::WaylandBackend::m_eglDisplay</definition>
+        <argsstring></argsstring>
+        <name>m_eglDisplay</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::m_eglDisplay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="264" column="21" bodyfile="kwin/src/backends/wayland/wayland_backend.h" bodystart="264" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_wayland_1_1_wayland_backend_1afefc835946f049bcdd9d8c29b4936314" prot="private" static="no" mutable="no">
+        <type>std::map&lt; <ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref> *, std::unique_ptr&lt; <ref refid="class_k_win_1_1_wayland_1_1_wayland_buffer" kindref="compound">WaylandBuffer</ref> &gt; &gt;</type>
+        <definition>std::map&lt;GraphicsBuffer *, std::unique_ptr&lt;WaylandBuffer&gt; &gt; KWin::Wayland::WaylandBackend::m_buffers</definition>
+        <argsstring></argsstring>
+        <name>m_buffers</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::m_buffers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="265" column="14" bodyfile="kwin/src/backends/wayland/wayland_backend.h" bodystart="265" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a9e606a1e44ed57433e766441716aa59b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::Wayland::WaylandBackend::WaylandBackend</definition>
+        <argsstring>(const WaylandBackendOptions &amp;options, QObject *parent=nullptr)</argsstring>
+        <name>WaylandBackend</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::WaylandBackend</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_k_win_1_1_wayland_1_1_wayland_backend_options" kindref="compound">WaylandBackendOptions</ref> &amp;</type>
+          <declname>options</declname>
+        </param>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="206" column="14" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="409" bodyend="413"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a2f617e9c9597c40a2cb6cf5f278fe165" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::Wayland::WaylandBackend::~WaylandBackend</definition>
+        <argsstring>() override</argsstring>
+        <name>~WaylandBackend</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::~WaylandBackend</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="207" column="5" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="415" bodyend="425"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1afb220be111798a941e34f1edf62d638c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::Wayland::WaylandBackend::initialize</definition>
+        <argsstring>() override</argsstring>
+        <name>initialize</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::initialize</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1a2cc7635583833c9858b0e33251fd4710">initialize</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="208" column="10" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="427" bodyend="458"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1ae42f167dda4d156ce9471f57fee6df34" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_input_backend" kindref="compound">InputBackend</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; InputBackend &gt; KWin::Wayland::WaylandBackend::createInputBackend</definition>
+        <argsstring>() override</argsstring>
+        <name>createInputBackend</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::createInputBackend</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1a4fbebf8e332a240bd6dd6fe1757caebf">createInputBackend</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="210" column="21" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="498" bodyend="501"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a80241e87de209b2bdc2431e4621e411a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_open_g_l_backend" kindref="compound">OpenGLBackend</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; OpenGLBackend &gt; KWin::Wayland::WaylandBackend::createOpenGLBackend</definition>
+        <argsstring>() override</argsstring>
+        <name>createOpenGLBackend</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::createOpenGLBackend</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1ac98a70547423f4f0b7058356ea2a6a70">createOpenGLBackend</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="211" column="21" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="503" bodyend="506"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a7de5fdf50c919c082d91bb060c3a605d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_q_painter_backend" kindref="compound">QPainterBackend</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; QPainterBackend &gt; KWin::Wayland::WaylandBackend::createQPainterBackend</definition>
+        <argsstring>() override</argsstring>
+        <name>createQPainterBackend</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::createQPainterBackend</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1a648ea286530873e660802d80ba47013b">createQPainterBackend</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="212" column="21" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="508" bodyend="511"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a4d5629ba1cb355c342ccc4ffd3e59c22" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_wayland_1_1_wayland_display" kindref="compound">WaylandDisplay</ref> *</type>
+        <definition>WaylandDisplay * KWin::Wayland::WaylandBackend::display</definition>
+        <argsstring>() const</argsstring>
+        <name>display</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::display</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="214" column="20" bodyfile="kwin/src/backends/wayland/wayland_backend.h" bodystart="214" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1af598c680e37addecbf70f245c8fc1970" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_wayland_1_1_wayland_seat" kindref="compound">WaylandSeat</ref> *</type>
+        <definition>WaylandSeat * KWin::Wayland::WaylandBackend::seat</definition>
+        <argsstring>() const</argsstring>
+        <name>seat</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::seat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="218" column="17" bodyfile="kwin/src/backends/wayland/wayland_backend.h" bodystart="218" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a270a14b9fbb031bf904551d5cff420fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KWin::Wayland::WaylandBackend::supportsPointerLock</definition>
+        <argsstring>()</argsstring>
+        <name>supportsPointerLock</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::supportsPointerLock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="223" column="10" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="523" bodyend="526"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a3fc1e9d991291ea5a7f4f58db543a3af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Wayland::WaylandBackend::togglePointerLock</definition>
+        <argsstring>()</argsstring>
+        <name>togglePointerLock</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::togglePointerLock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="224" column="10" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="528" bodyend="548"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a2283dab5e07bca3dfe4efb72ac5674dc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QList&lt; <ref refid="namespace_k_win_1aa1e33474a7077a13169f350a5949a79a" kindref="member">CompositingType</ref> &gt;</type>
+        <definition>QList&lt; CompositingType &gt; KWin::Wayland::WaylandBackend::supportedCompositors</definition>
+        <argsstring>() const override</argsstring>
+        <name>supportedCompositors</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::supportedCompositors</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1aaf8ec2edaa0d9bf4cec1e67c7de49d9e">supportedCompositors</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The CompositingTypes supported by the Platform. The first item should be the most preferred one. <simplesect kind="since"><para>5.11 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="226" column="11" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="550" bodyend="558"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1acbbd15e9885128194b5c909456d00d30" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_wayland_1_1_wayland_output" kindref="compound">WaylandOutput</ref> *</type>
+        <definition>WaylandOutput * KWin::Wayland::WaylandBackend::findOutput</definition>
+        <argsstring>(KWayland::Client::Surface *nativeSurface) const</argsstring>
+        <name>findOutput</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::findOutput</qualifiedname>
+        <param>
+          <type>KWayland::Client::Surface *</type>
+          <declname>nativeSurface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="228" column="19" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="513" bodyend="521"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a5827b7ee7811da0de7821a2cce4bdb2f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_k_win_1_1_outputs" kindref="compound">Outputs</ref></type>
+        <definition>Outputs KWin::Wayland::WaylandBackend::outputs</definition>
+        <argsstring>() const override</argsstring>
+        <name>outputs</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::outputs</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1a78aad78cefc0f83edfc0f3b96e2e5b19">outputs</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="229" column="13" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="560" bodyend="563"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a87d6c520d7c7e5264dcf4e333b84b716" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QList&lt; <ref refid="class_k_win_1_1_wayland_1_1_wayland_output" kindref="compound">WaylandOutput</ref> * &gt;</type>
+        <definition>QList&lt; WaylandOutput * &gt; KWin::Wayland::WaylandBackend::waylandOutputs</definition>
+        <argsstring>() const</argsstring>
+        <name>waylandOutputs</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::waylandOutputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="230" column="11" bodyfile="kwin/src/backends/wayland/wayland_backend.h" bodystart="230" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a178d5330cb4009f0da377e761983828c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+        <definition>Output * KWin::Wayland::WaylandBackend::createVirtualOutput</definition>
+        <argsstring>(const QString &amp;name, const QString &amp;description, const QSize &amp;size, double scale) override</argsstring>
+        <name>createVirtualOutput</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::createVirtualOutput</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>description</declname>
+        </param>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="235" column="12" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="565" bodyend="568"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1accd9781af2586af61d002ac8ac9144f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::Wayland::WaylandBackend::removeVirtualOutput</definition>
+        <argsstring>(Output *output) override</argsstring>
+        <name>removeVirtualOutput</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::removeVirtualOutput</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1ab89950b51e886fc63c04e6d214aef07d">removeVirtualOutput</reimplements>
+        <param>
+          <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="236" column="10" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="570" bodyend="579"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a8066421a886a8a91080ef8fa773f0bf3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>wl_buffer *</type>
+        <definition>wl_buffer * KWin::Wayland::WaylandBackend::importBuffer</definition>
+        <argsstring>(GraphicsBuffer *graphicsBuffer)</argsstring>
+        <name>importBuffer</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::importBuffer</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_graphics_buffer" kindref="compound">GraphicsBuffer</ref> *</type>
+          <declname>graphicsBuffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="238" column="15" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="627" bodyend="657"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1ae8563f057a30cb195c62267af6f03a8c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_drm_device" kindref="compound">DrmDevice</ref> *</type>
+        <definition>DrmDevice * KWin::Wayland::WaylandBackend::drmDevice</definition>
+        <argsstring>() const</argsstring>
+        <name>drmDevice</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::drmDevice</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="240" column="15" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="669" bodyend="672"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a142c92662147d3a18beb2423a98b180e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Wayland::WaylandBackend::setEglBackend</definition>
+        <argsstring>(WaylandEglBackend *eglBackend)</argsstring>
+        <name>setEglBackend</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::setEglBackend</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_wayland_1_1_wayland_egl_backend" kindref="compound">WaylandEglBackend</ref> *</type>
+          <declname>eglBackend</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="242" column="10" bodyfile="kwin/src/backends/wayland/wayland_backend.h" bodystart="242" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a2fd6cf1946004744b4b33066943a2e85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Wayland::WaylandBackend::setEglDisplay</definition>
+        <argsstring>(std::unique_ptr&lt; EglDisplay &gt; &amp;&amp;display)</argsstring>
+        <name>setEglDisplay</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::setEglDisplay</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_egl_display" kindref="compound">EglDisplay</ref> &gt; &amp;&amp;</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="246" column="10" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="659" bodyend="662"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1a00bfe1b4ded49ab5acc3c9cb25a959d0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_k_win_1_1_egl_display" kindref="compound">EglDisplay</ref> *</type>
+        <definition>EglDisplay * KWin::Wayland::WaylandBackend::sceneEglDisplayObject</definition>
+        <argsstring>() const override</argsstring>
+        <name>sceneEglDisplayObject</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::sceneEglDisplayObject</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_backend_1a5a3a23d6249e363c3c3358c7b9b4304f">sceneEglDisplayObject</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="247" column="16" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="664" bodyend="667"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_wayland_1_1_wayland_backend_1aa373f32d8247201e7a1fb1e8197de4f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Wayland::WaylandBackend::pointerLockChanged</definition>
+        <argsstring>(bool locked)</argsstring>
+        <name>pointerLockChanged</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::pointerLockChanged</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>locked</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="250" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1ad6c2487e577369e2284cce0abe2fd561" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Wayland::WaylandBackend::createOutputs</definition>
+        <argsstring>()</argsstring>
+        <name>createOutputs</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::createOutputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="253" column="10" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="460" bodyend="473"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1adc633f68942e1759373e7fd34837496b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Wayland::WaylandBackend::destroyOutputs</definition>
+        <argsstring>()</argsstring>
+        <name>destroyOutputs</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::destroyOutputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="254" column="10" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="488" bodyend="496"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_wayland_1_1_wayland_backend_1ade6779bb7770092263d2ee06bad10d42" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_wayland_1_1_wayland_output" kindref="compound">WaylandOutput</ref> *</type>
+        <definition>WaylandOutput * KWin::Wayland::WaylandBackend::createOutput</definition>
+        <argsstring>(const QString &amp;name, const QSize &amp;size, qreal scale)</argsstring>
+        <name>createOutput</name>
+        <qualifiedname>KWin::Wayland::WaylandBackend::createOutput</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>qreal</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/wayland/wayland_backend.h" line="255" column="19" bodyfile="kwin/src/backends/wayland/wayland_backend.cpp" bodystart="475" bodyend="486"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Class encapsulating all <ref refid="namespace_k_win_1_1_wayland" kindref="compound">Wayland</ref> data structures needed by the Egl backend. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>It creates the connection to the <ref refid="namespace_k_win_1_1_wayland" kindref="compound">Wayland</ref> <ref refid="class_k_win_1_1_compositor" kindref="compound">Compositor</ref>, sets up the registry and creates the <ref refid="namespace_k_win_1_1_wayland" kindref="compound">Wayland</ref> output surfaces and its shell mappings. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>KWin::OutputBackend</label>
+        <link refid="class_k_win_1_1_output_backend"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::Wayland::WaylandBackend</label>
+        <link refid="class_k_win_1_1_wayland_1_1_wayland_backend"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>KWin::OutputBackend</label>
+        <link refid="class_k_win_1_1_output_backend"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::Wayland::WaylandBackend</label>
+        <link refid="class_k_win_1_1_wayland_1_1_wayland_backend"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/backends/wayland/wayland_backend.h" line="201" column="1" bodyfile="kwin/src/backends/wayland/wayland_backend.h" bodystart="202" bodyend="266"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_output_backend_1a0727928eeef6a3bee1dd80c6fdaedee9" prot="public" virt="virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>applyOutputChanges</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1ae42f167dda4d156ce9471f57fee6df34" prot="public" virt="virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>createInputBackend</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a80241e87de209b2bdc2431e4621e411a" prot="public" virt="virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>createOpenGLBackend</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1ade6779bb7770092263d2ee06bad10d42" prot="private" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>createOutput</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1ad6c2487e577369e2284cce0abe2fd561" prot="private" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>createOutputs</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a7de5fdf50c919c082d91bb060c3a605d" prot="public" virt="virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>createQPainterBackend</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a178d5330cb4009f0da377e761983828c" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>createVirtualOutput</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a2f8b74a51f8d8509ac3adfd8291b8a1f" prot="public" virt="virtual" ambiguityscope="KWin::OutputBackend::"><scope>KWin::Wayland::WaylandBackend</scope><name>createVirtualOutput</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1adc633f68942e1759373e7fd34837496b" prot="private" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>destroyOutputs</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a4d5629ba1cb355c342ccc4ffd3e59c22" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>display</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1ae8563f057a30cb195c62267af6f03a8c" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>drmDevice</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1acbbd15e9885128194b5c909456d00d30" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>findOutput</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a116d54df69c60208e360179f42c17b16" prot="public" virt="non-virtual" ambiguityscope="KWin::OutputBackend::"><scope>KWin::Wayland::WaylandBackend</scope><name>findOutput</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a8066421a886a8a91080ef8fa773f0bf3" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>importBuffer</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1afb220be111798a941e34f1edf62d638c" prot="public" virt="virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>initialize</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1afefc835946f049bcdd9d8c29b4936314" prot="private" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>m_buffers</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1af1cc37df881e7b7418608abb87479069" prot="private" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>m_display</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1ae597abdb177ac3cac919297749a60f87" prot="private" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>m_drmDevice</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a6d07f567bc81ae88874f4ee2934112ea" prot="private" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>m_eglBackend</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a90980954a4a35ba8c1a35f2d9631a0ee" prot="private" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>m_eglDisplay</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a75fb78ae0c8c311aa92d4ef1d27685ea" prot="protected" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>m_globalShareContext</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a4a9a3ae1a9eca9cdbdcadd5f440826f0" prot="private" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>m_options</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a16a5dda93f663cd53cc5baf8a034c51c" prot="private" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>m_outputs</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1ac0ba9c710d9c1b5e622293a31cc9695b" prot="private" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>m_pointerLockRequested</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a9137a93fccd99214ccafdb2cc0ecaa82" prot="private" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>m_seat</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a220e64d9c811434825b3c3bf1b28f947" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>outputAdded</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a3059152d8eda13eaedd7eecad43e2470" prot="protected" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>OutputBackend</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a8f804420de03806fd046f99e80ee8332" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>outputRemoved</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a5827b7ee7811da0de7821a2cce4bdb2f" prot="public" virt="virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>outputs</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a1e1afd1a11ca71d300b7229d03d54be9" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>outputsQueried</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1aa373f32d8247201e7a1fb1e8197de4f6" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>pointerLockChanged</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1accd9781af2586af61d002ac8ac9144f5" prot="public" virt="virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>removeVirtualOutput</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a00bfe1b4ded49ab5acc3c9cb25a959d0" prot="public" virt="virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>sceneEglDisplayObject</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a2edfea4626e01c8468bfaad1ad20ae62" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>sceneEglGlobalShareContext</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1af598c680e37addecbf70f245c8fc1970" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>seat</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a92867a26811e91d369c72b877595bdb6" prot="public" virt="virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>session</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a142c92662147d3a18beb2423a98b180e" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>setEglBackend</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a2fd6cf1946004744b4b33066943a2e85" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>setEglDisplay</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a420a62518578de2ed53ebfc7343f589d" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>setSceneEglGlobalShareContext</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a2283dab5e07bca3dfe4efb72ac5674dc" prot="public" virt="virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>supportedCompositors</name></member>
+      <member refid="class_k_win_1_1_output_backend_1ab144cfcc01aa623dd9e1139092619ec0" prot="public" virt="virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>supportInformation</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a270a14b9fbb031bf904551d5cff420fd" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>supportsPointerLock</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a3fc1e9d991291ea5a7f4f58db543a3af" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>togglePointerLock</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a9e606a1e44ed57433e766441716aa59b" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>WaylandBackend</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a87d6c520d7c7e5264dcf4e333b84b716" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>waylandOutputs</name></member>
+      <member refid="class_k_win_1_1_output_backend_1a5959251a4cfffdafeb509b40c9a29a3d" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>~OutputBackend</name></member>
+      <member refid="class_k_win_1_1_wayland_1_1_wayland_backend_1a2f617e9c9597c40a2cb6cf5f278fe165" prot="public" virt="non-virtual"><scope>KWin::Wayland::WaylandBackend</scope><name>~WaylandBackend</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

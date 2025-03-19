@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_software_vsync_monitor" kind="class" language="C++" prot="public">
+    <compoundname>KWin::SoftwareVsyncMonitor</compoundname>
+    <basecompoundref refid="class_k_win_1_1_vsync_monitor" prot="public" virt="non-virtual">KWin::VsyncMonitor</basecompoundref>
+    <includes refid="softwarevsyncmonitor_8h" local="no">softwarevsyncmonitor.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_software_vsync_monitor_1a63541b815c0fa9a72ece57e0bbb9ebda" prot="private" static="no" mutable="no">
+        <type>QTimer</type>
+        <definition>QTimer KWin::SoftwareVsyncMonitor::m_softwareClock</definition>
+        <argsstring></argsstring>
+        <name>m_softwareClock</name>
+        <qualifiedname>KWin::SoftwareVsyncMonitor::m_softwareClock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/utils/softwarevsyncmonitor.h" line="42" column="12" bodyfile="kwin/src/utils/softwarevsyncmonitor.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_software_vsync_monitor_1a7c3d655ba87e19a6a310e5931bc37281" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KWin::SoftwareVsyncMonitor::m_refreshRate</definition>
+        <argsstring></argsstring>
+        <name>m_refreshRate</name>
+        <qualifiedname>KWin::SoftwareVsyncMonitor::m_refreshRate</qualifiedname>
+        <initializer>= 60000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/utils/softwarevsyncmonitor.h" line="43" column="9" bodyfile="kwin/src/utils/softwarevsyncmonitor.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_software_vsync_monitor_1aa29bde703b41960dd833da68227d63b6" prot="private" static="no" mutable="no">
+        <type>std::chrono::nanoseconds</type>
+        <definition>std::chrono::nanoseconds KWin::SoftwareVsyncMonitor::m_vblankTimestamp</definition>
+        <argsstring></argsstring>
+        <name>m_vblankTimestamp</name>
+        <qualifiedname>KWin::SoftwareVsyncMonitor::m_vblankTimestamp</qualifiedname>
+        <initializer>= std::chrono::nanoseconds::zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/utils/softwarevsyncmonitor.h" line="44" column="30" bodyfile="kwin/src/utils/softwarevsyncmonitor.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_software_vsync_monitor_1a3f5b8cf2329a8e7ac843aff72e2cbbc0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_software_vsync_monitor" kindref="compound">SoftwareVsyncMonitor</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; SoftwareVsyncMonitor &gt; KWin::SoftwareVsyncMonitor::create</definition>
+        <argsstring>()</argsstring>
+        <name>create</name>
+        <qualifiedname>KWin::SoftwareVsyncMonitor::create</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/utils/softwarevsyncmonitor.h" line="30" column="28" bodyfile="kwin/src/utils/softwarevsyncmonitor.cpp" bodystart="12" bodyend="15"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_software_vsync_monitor_1ad5afe40bfcd5f764a75fb3b0147ef0c0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int KWin::SoftwareVsyncMonitor::refreshRate</definition>
+        <argsstring>() const</argsstring>
+        <name>refreshRate</name>
+        <qualifiedname>KWin::SoftwareVsyncMonitor::refreshRate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/utils/softwarevsyncmonitor.h" line="32" column="9" bodyfile="kwin/src/utils/softwarevsyncmonitor.cpp" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_software_vsync_monitor_1a5fcff310e39991b2f71f6fbd410e4120" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SoftwareVsyncMonitor::setRefreshRate</definition>
+        <argsstring>(int refreshRate)</argsstring>
+        <name>setRefreshRate</name>
+        <qualifiedname>KWin::SoftwareVsyncMonitor::setRefreshRate</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>refreshRate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/utils/softwarevsyncmonitor.h" line="33" column="10" bodyfile="kwin/src/utils/softwarevsyncmonitor.cpp" bodystart="28" bodyend="31"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_k_win_1_1_software_vsync_monitor_1ace6cb94cb299481c23d0ecc3fd9fd888" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SoftwareVsyncMonitor::arm</definition>
+        <argsstring>() override</argsstring>
+        <name>arm</name>
+        <qualifiedname>KWin::SoftwareVsyncMonitor::arm</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/utils/softwarevsyncmonitor.h" line="36" column="10" bodyfile="kwin/src/utils/softwarevsyncmonitor.cpp" bodystart="44" bodyend="56"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_software_vsync_monitor_1a69892a16740569a5b12d2881776a89d4" prot="private" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::SoftwareVsyncMonitor::SoftwareVsyncMonitor</definition>
+        <argsstring>()</argsstring>
+        <name>SoftwareVsyncMonitor</name>
+        <qualifiedname>KWin::SoftwareVsyncMonitor::SoftwareVsyncMonitor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/utils/softwarevsyncmonitor.h" line="39" column="14" bodyfile="kwin/src/utils/softwarevsyncmonitor.cpp" bodystart="17" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_software_vsync_monitor_1a315181bb11bf15ce66aaa6aae34915b2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::SoftwareVsyncMonitor::handleSyntheticVsync</definition>
+        <argsstring>()</argsstring>
+        <name>handleSyntheticVsync</name>
+        <qualifiedname>KWin::SoftwareVsyncMonitor::handleSyntheticVsync</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/utils/softwarevsyncmonitor.h" line="40" column="10" bodyfile="kwin/src/utils/softwarevsyncmonitor.cpp" bodystart="33" bodyend="36"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="class_k_win_1_1_software_vsync_monitor" kindref="compound">SoftwareVsyncMonitor</ref> class provides synthetic vblank events with constant interval.</para>
+<para>The software vsync monitor can never fail and it is always available. It can be used as fallback if hardware based approaches to monitor vsync events are unavailable.</para>
+<para>The vblank interval can be changed by calling the <ref refid="class_k_win_1_1_software_vsync_monitor_1a5fcff310e39991b2f71f6fbd410e4120" kindref="member">setRefreshRate()</ref> function. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::SoftwareVsyncMonitor</label>
+        <link refid="class_k_win_1_1_software_vsync_monitor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::VsyncMonitor</label>
+        <link refid="class_k_win_1_1_vsync_monitor"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::SoftwareVsyncMonitor</label>
+        <link refid="class_k_win_1_1_software_vsync_monitor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::VsyncMonitor</label>
+        <link refid="class_k_win_1_1_vsync_monitor"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/utils/softwarevsyncmonitor.h" line="25" column="1" bodyfile="kwin/src/utils/softwarevsyncmonitor.h" bodystart="26" bodyend="45"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_software_vsync_monitor_1ace6cb94cb299481c23d0ecc3fd9fd888" prot="public" virt="non-virtual"><scope>KWin::SoftwareVsyncMonitor</scope><name>arm</name></member>
+      <member refid="class_k_win_1_1_software_vsync_monitor_1a3f5b8cf2329a8e7ac843aff72e2cbbc0" prot="public" virt="non-virtual"><scope>KWin::SoftwareVsyncMonitor</scope><name>create</name></member>
+      <member refid="class_k_win_1_1_vsync_monitor_1ad73f85d2c9605ae85ec15c22d66aba2c" prot="public" virt="non-virtual"><scope>KWin::SoftwareVsyncMonitor</scope><name>errorOccurred</name></member>
+      <member refid="class_k_win_1_1_software_vsync_monitor_1a315181bb11bf15ce66aaa6aae34915b2" prot="private" virt="non-virtual"><scope>KWin::SoftwareVsyncMonitor</scope><name>handleSyntheticVsync</name></member>
+      <member refid="class_k_win_1_1_software_vsync_monitor_1a7c3d655ba87e19a6a310e5931bc37281" prot="private" virt="non-virtual"><scope>KWin::SoftwareVsyncMonitor</scope><name>m_refreshRate</name></member>
+      <member refid="class_k_win_1_1_software_vsync_monitor_1a63541b815c0fa9a72ece57e0bbb9ebda" prot="private" virt="non-virtual"><scope>KWin::SoftwareVsyncMonitor</scope><name>m_softwareClock</name></member>
+      <member refid="class_k_win_1_1_software_vsync_monitor_1aa29bde703b41960dd833da68227d63b6" prot="private" virt="non-virtual"><scope>KWin::SoftwareVsyncMonitor</scope><name>m_vblankTimestamp</name></member>
+      <member refid="class_k_win_1_1_software_vsync_monitor_1ad5afe40bfcd5f764a75fb3b0147ef0c0" prot="public" virt="non-virtual"><scope>KWin::SoftwareVsyncMonitor</scope><name>refreshRate</name></member>
+      <member refid="class_k_win_1_1_software_vsync_monitor_1a5fcff310e39991b2f71f6fbd410e4120" prot="public" virt="non-virtual"><scope>KWin::SoftwareVsyncMonitor</scope><name>setRefreshRate</name></member>
+      <member refid="class_k_win_1_1_software_vsync_monitor_1a69892a16740569a5b12d2881776a89d4" prot="private" virt="non-virtual"><scope>KWin::SoftwareVsyncMonitor</scope><name>SoftwareVsyncMonitor</name></member>
+      <member refid="class_k_win_1_1_vsync_monitor_1acb9396eda80f592fb7dd07e7a344397a" prot="public" virt="non-virtual"><scope>KWin::SoftwareVsyncMonitor</scope><name>vblankOccurred</name></member>
+      <member refid="class_k_win_1_1_vsync_monitor_1a02033ba6016450c540cd16542d9f35c7" prot="public" virt="non-virtual"><scope>KWin::SoftwareVsyncMonitor</scope><name>VsyncMonitor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

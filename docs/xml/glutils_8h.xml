@@ -1,0 +1,835 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="glutils_8h" kind="file" language="C++">
+    <compoundname>glutils.h</compoundname>
+    <includes refid="colorspace_8h" local="yes">core/colorspace.h</includes>
+    <includes refid="eglcontext_8h" local="yes">opengl/eglcontext.h</includes>
+    <includes refid="glframebuffer_8h" local="yes">opengl/glframebuffer.h</includes>
+    <includes refid="glshader_8h" local="yes">opengl/glshader.h</includes>
+    <includes refid="glshadermanager_8h" local="yes">opengl/glshadermanager.h</includes>
+    <includes refid="gltexture_8h" local="yes">opengl/gltexture.h</includes>
+    <includes refid="glvertexbuffer_8h" local="yes">opengl/glvertexbuffer.h</includes>
+    <includes local="no">QByteArray</includes>
+    <includes local="no">QList</includes>
+    <includes local="no">functional</includes>
+    <includedby refid="drm__egl__backend_8h" local="yes">kwin/src/backends/drm/drm_egl_backend.h</includedby>
+    <includedby refid="virtual__egl__backend_8cpp" local="yes">kwin/src/backends/virtual/virtual_egl_backend.cpp</includedby>
+    <includedby refid="wayland__egl__backend_8cpp" local="yes">kwin/src/backends/wayland/wayland_egl_backend.cpp</includedby>
+    <includedby refid="x11__windowed__egl__backend_8h" local="yes">kwin/src/backends/x11/x11_windowed_egl_backend.h</includedby>
+    <includedby refid="rendertarget_8cpp" local="yes">kwin/src/core/rendertarget.cpp</includedby>
+    <includedby refid="debug__console_8cpp" local="yes">kwin/src/debug_console.cpp</includedby>
+    <includedby refid="offscreeneffect_8cpp" local="yes">kwin/src/effect/offscreeneffect.cpp</includedby>
+    <includedby refid="offscreenquickview_8cpp" local="yes">kwin/src/effect/offscreenquickview.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">kwin/src/main.cpp</includedby>
+    <includedby refid="eglcontext_8cpp" local="yes">kwin/src/opengl/eglcontext.cpp</includedby>
+    <includedby refid="egldisplay_8cpp" local="yes">kwin/src/opengl/egldisplay.cpp</includedby>
+    <includedby refid="eglswapchain_8cpp" local="yes">kwin/src/opengl/eglswapchain.cpp</includedby>
+    <includedby refid="glframebuffer_8cpp" local="yes">kwin/src/opengl/glframebuffer.cpp</includedby>
+    <includedby refid="glshader_8cpp" local="yes">kwin/src/opengl/glshader.cpp</includedby>
+    <includedby refid="gltexture_8cpp" local="yes">kwin/src/opengl/gltexture.cpp</includedby>
+    <includedby refid="gltexture__p_8h" local="yes">kwin/src/opengl/gltexture_p.h</includedby>
+    <includedby refid="glutils_8cpp" local="yes">kwin/src/opengl/glutils.cpp</includedby>
+    <includedby refid="glvertexbuffer_8cpp" local="yes">kwin/src/opengl/glvertexbuffer.cpp</includedby>
+    <includedby refid="abstract__egl__backend_8cpp" local="yes">kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp</includedby>
+    <includedby refid="plugins_2backgroundcontrast_2contrast_8h" local="yes">kwin/src/plugins/backgroundcontrast/contrast.h</includedby>
+    <includedby refid="contrastshader_8h" local="yes">kwin/src/plugins/backgroundcontrast/contrastshader.h</includedby>
+    <includedby refid="blendchanges_8cpp" local="yes">kwin/src/plugins/blendchanges/blendchanges.cpp</includedby>
+    <includedby refid="plugins_2blur_2blur_8h" local="yes">kwin/src/plugins/blur/blur.h</includedby>
+    <includedby refid="invert_8cpp" local="yes">kwin/src/plugins/invert/invert.cpp</includedby>
+    <includedby refid="magnifier_8cpp" local="yes">kwin/src/plugins/magnifier/magnifier.cpp</includedby>
+    <includedby refid="mouseclick_8h" local="yes">kwin/src/plugins/mouseclick/mouseclick.h</includedby>
+    <includedby refid="mousemark_8h" local="yes">kwin/src/plugins/mousemark/mousemark.h</includedby>
+    <includedby refid="eglplatformcontext_8cpp" local="yes">kwin/src/plugins/qpa/eglplatformcontext.cpp</includedby>
+    <includedby refid="outputscreencastsource_8cpp" local="yes">kwin/src/plugins/screencast/outputscreencastsource.cpp</includedby>
+    <includedby refid="regionscreencastsource_8cpp" local="yes">kwin/src/plugins/screencast/regionscreencastsource.cpp</includedby>
+    <includedby refid="regionscreencastsource_8h" local="yes">kwin/src/plugins/screencast/regionscreencastsource.h</includedby>
+    <includedby refid="screencaststream_8cpp" local="yes">kwin/src/plugins/screencast/screencaststream.cpp</includedby>
+    <includedby refid="screencastutils_8h" local="yes">kwin/src/plugins/screencast/screencastutils.h</includedby>
+    <includedby refid="windowscreencastsource_8cpp" local="yes">kwin/src/plugins/screencast/windowscreencastsource.cpp</includedby>
+    <includedby refid="screenshot_8cpp" local="yes">kwin/src/plugins/screenshot/screenshot.cpp</includedby>
+    <includedby refid="screentransform_8cpp" local="yes">kwin/src/plugins/screentransform/screentransform.cpp</includedby>
+    <includedby refid="showpaint_8cpp" local="yes">kwin/src/plugins/showpaint/showpaint.cpp</includedby>
+    <includedby refid="snaphelper_8cpp" local="yes">kwin/src/plugins/snaphelper/snaphelper.cpp</includedby>
+    <includedby refid="startupfeedback_8cpp" local="yes">kwin/src/plugins/startupfeedback/startupfeedback.cpp</includedby>
+    <includedby refid="touchpoints_8cpp" local="yes">kwin/src/plugins/touchpoints/touchpoints.cpp</includedby>
+    <includedby refid="zoom_8cpp" local="yes">kwin/src/plugins/zoom/zoom.cpp</includedby>
+    <includedby refid="cursordelegate__opengl_8cpp" local="yes">kwin/src/scene/cursordelegate_opengl.cpp</includedby>
+    <includedby refid="itemrenderer__opengl_8h" local="yes">kwin/src/scene/itemrenderer_opengl.h</includedby>
+    <includedby refid="workspacescene__opengl_8h" local="yes">kwin/src/scene/workspacescene_opengl.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>core/colorspace.h</label>
+        <link refid="colorspace_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>core/output.h</label>
+        <link refid="core_2output_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>renderloop.h</label>
+        <link refid="renderloop_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>opengl/eglcontext.h</label>
+        <link refid="eglcontext_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>opengl/glframebuffer.h</label>
+        <link refid="glframebuffer_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>opengl/glshader.h</label>
+        <link refid="glshader_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>opengl/glshadermanager.h</label>
+        <link refid="glshadermanager_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>opengl/gltexture.h</label>
+        <link refid="gltexture_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>kwin/src/opengl/glutils.h</label>
+        <link refid="glutils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>opengl/glvertexbuffer.h</label>
+        <link refid="glvertexbuffer_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>utils/edid.h</label>
+        <link refid="edid_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>utils/version.h</label>
+        <link refid="version_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>QByteArray</label>
+      </node>
+      <node id="34">
+        <label>QColor</label>
+      </node>
+      <node id="13">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="22">
+        <label>QDebug</label>
+      </node>
+      <node id="25">
+        <label>QExplicitlySharedDataPointer</label>
+      </node>
+      <node id="38">
+        <label>QFlags</label>
+      </node>
+      <node id="14">
+        <label>QImage</label>
+      </node>
+      <node id="20">
+        <label>QList</label>
+      </node>
+      <node id="35">
+        <label>QMatrix3x3</label>
+      </node>
+      <node id="4">
+        <label>QMatrix4x4</label>
+      </node>
+      <node id="17">
+        <label>QObject</label>
+      </node>
+      <node id="15">
+        <label>QPoint</label>
+      </node>
+      <node id="23">
+        <label>QRect</label>
+      </node>
+      <node id="26">
+        <label>QRegion</label>
+      </node>
+      <node id="21">
+        <label>QSize</label>
+      </node>
+      <node id="30">
+        <label>QStack</label>
+      </node>
+      <node id="29">
+        <label>QString</label>
+      </node>
+      <node id="24">
+        <label>QUuid</label>
+      </node>
+      <node id="16">
+        <label>QVariant</label>
+      </node>
+      <node id="5">
+        <label>QVector2D</label>
+      </node>
+      <node id="36">
+        <label>QVector3D</label>
+      </node>
+      <node id="12">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="31">
+        <label>epoxy/egl.h</label>
+      </node>
+      <node id="27">
+        <label>epoxy/gl.h</label>
+      </node>
+      <node id="44">
+        <label>functional</label>
+      </node>
+      <node id="6">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="39">
+        <label>map</label>
+      </node>
+      <node id="40">
+        <label>memory</label>
+      </node>
+      <node id="3">
+        <label>optional</label>
+      </node>
+      <node id="42">
+        <label>ranges</label>
+      </node>
+      <node id="43">
+        <label>span</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>kwin/src/backends/drm/drm_backend.cpp</label>
+        <link refid="drm__backend_8cpp"/>
+      </node>
+      <node id="4">
+        <label>kwin/src/backends/drm/drm_egl_backend.cpp</label>
+        <link refid="drm__egl__backend_8cpp"/>
+      </node>
+      <node id="2">
+        <label>kwin/src/backends/drm/drm_egl_backend.h</label>
+        <link refid="drm__egl__backend_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>kwin/src/backends/drm/drm_egl_layer.cpp</label>
+        <link refid="drm__egl__layer_8cpp"/>
+      </node>
+      <node id="6">
+        <label>kwin/src/backends/drm/drm_egl_layer_surface.cpp</label>
+        <link refid="drm__egl__layer__surface_8cpp"/>
+      </node>
+      <node id="7">
+        <label>kwin/src/backends/drm/drm_gpu.cpp</label>
+        <link refid="drm__gpu_8cpp"/>
+      </node>
+      <node id="8">
+        <label>kwin/src/backends/drm/drm_pipeline.cpp</label>
+        <link refid="drm__pipeline_8cpp"/>
+      </node>
+      <node id="9">
+        <label>kwin/src/backends/drm/drm_virtual_egl_layer.cpp</label>
+        <link refid="drm__virtual__egl__layer_8cpp"/>
+      </node>
+      <node id="10">
+        <label>kwin/src/backends/virtual/virtual_egl_backend.cpp</label>
+        <link refid="virtual__egl__backend_8cpp"/>
+      </node>
+      <node id="11">
+        <label>kwin/src/backends/wayland/wayland_egl_backend.cpp</label>
+        <link refid="wayland__egl__backend_8cpp"/>
+      </node>
+      <node id="13">
+        <label>kwin/src/backends/x11/x11_windowed_backend.cpp</label>
+        <link refid="x11__windowed__backend_8cpp"/>
+      </node>
+      <node id="14">
+        <label>kwin/src/backends/x11/x11_windowed_egl_backend.cpp</label>
+        <link refid="x11__windowed__egl__backend_8cpp"/>
+      </node>
+      <node id="12">
+        <label>kwin/src/backends/x11/x11_windowed_egl_backend.h</label>
+        <link refid="x11__windowed__egl__backend_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>kwin/src/compositor.cpp</label>
+        <link refid="compositor_8cpp"/>
+      </node>
+      <node id="15">
+        <label>kwin/src/core/rendertarget.cpp</label>
+        <link refid="rendertarget_8cpp"/>
+      </node>
+      <node id="16">
+        <label>kwin/src/debug_console.cpp</label>
+        <link refid="debug__console_8cpp"/>
+      </node>
+      <node id="17">
+        <label>kwin/src/effect/offscreeneffect.cpp</label>
+        <link refid="offscreeneffect_8cpp"/>
+      </node>
+      <node id="18">
+        <label>kwin/src/effect/offscreenquickview.cpp</label>
+        <link refid="offscreenquickview_8cpp"/>
+      </node>
+      <node id="19">
+        <label>kwin/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="20">
+        <label>kwin/src/opengl/eglcontext.cpp</label>
+        <link refid="eglcontext_8cpp"/>
+      </node>
+      <node id="21">
+        <label>kwin/src/opengl/egldisplay.cpp</label>
+        <link refid="egldisplay_8cpp"/>
+      </node>
+      <node id="27">
+        <label>kwin/src/opengl/eglimagetexture.cpp</label>
+        <link refid="eglimagetexture_8cpp"/>
+      </node>
+      <node id="22">
+        <label>kwin/src/opengl/eglswapchain.cpp</label>
+        <link refid="eglswapchain_8cpp"/>
+      </node>
+      <node id="23">
+        <label>kwin/src/opengl/glframebuffer.cpp</label>
+        <link refid="glframebuffer_8cpp"/>
+      </node>
+      <node id="24">
+        <label>kwin/src/opengl/glshader.cpp</label>
+        <link refid="glshader_8cpp"/>
+      </node>
+      <node id="25">
+        <label>kwin/src/opengl/gltexture.cpp</label>
+        <link refid="gltexture_8cpp"/>
+      </node>
+      <node id="26">
+        <label>kwin/src/opengl/gltexture_p.h</label>
+        <link refid="gltexture__p_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>kwin/src/opengl/glutils.cpp</label>
+        <link refid="glutils_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/opengl/glutils.h</label>
+        <link refid="glutils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>kwin/src/opengl/glvertexbuffer.cpp</label>
+        <link refid="glvertexbuffer_8cpp"/>
+      </node>
+      <node id="30">
+        <label>kwin/src/platformsupport/scenes/opengl/abstract_egl_backend.cpp</label>
+        <link refid="abstract__egl__backend_8cpp"/>
+      </node>
+      <node id="32">
+        <label>kwin/src/plugins/backgroundcontrast/contrast.cpp</label>
+        <link refid="plugins_2backgroundcontrast_2contrast_8cpp"/>
+      </node>
+      <node id="31">
+        <label>kwin/src/plugins/backgroundcontrast/contrast.h</label>
+        <link refid="plugins_2backgroundcontrast_2contrast_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>kwin/src/plugins/backgroundcontrast/contrastshader.cpp</label>
+        <link refid="contrastshader_8cpp"/>
+      </node>
+      <node id="34">
+        <label>kwin/src/plugins/backgroundcontrast/contrastshader.h</label>
+        <link refid="contrastshader_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>kwin/src/plugins/backgroundcontrast/main.cpp</label>
+        <link refid="plugins_2backgroundcontrast_2main_8cpp"/>
+      </node>
+      <node id="36">
+        <label>kwin/src/plugins/blendchanges/blendchanges.cpp</label>
+        <link refid="blendchanges_8cpp"/>
+      </node>
+      <node id="38">
+        <label>kwin/src/plugins/blur/blur.cpp</label>
+        <link refid="plugins_2blur_2blur_8cpp"/>
+      </node>
+      <node id="37">
+        <label>kwin/src/plugins/blur/blur.h</label>
+        <link refid="plugins_2blur_2blur_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>kwin/src/plugins/blur/main.cpp</label>
+        <link refid="plugins_2blur_2main_8cpp"/>
+      </node>
+      <node id="40">
+        <label>kwin/src/plugins/invert/invert.cpp</label>
+        <link refid="invert_8cpp"/>
+      </node>
+      <node id="41">
+        <label>kwin/src/plugins/magnifier/magnifier.cpp</label>
+        <link refid="magnifier_8cpp"/>
+      </node>
+      <node id="43">
+        <label>kwin/src/plugins/mouseclick/main.cpp</label>
+        <link refid="plugins_2mouseclick_2main_8cpp"/>
+      </node>
+      <node id="44">
+        <label>kwin/src/plugins/mouseclick/mouseclick.cpp</label>
+        <link refid="mouseclick_8cpp"/>
+      </node>
+      <node id="42">
+        <label>kwin/src/plugins/mouseclick/mouseclick.h</label>
+        <link refid="mouseclick_8h"/>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>kwin/src/plugins/mousemark/main.cpp</label>
+        <link refid="plugins_2mousemark_2main_8cpp"/>
+      </node>
+      <node id="47">
+        <label>kwin/src/plugins/mousemark/mousemark.cpp</label>
+        <link refid="mousemark_8cpp"/>
+      </node>
+      <node id="45">
+        <label>kwin/src/plugins/mousemark/mousemark.h</label>
+        <link refid="mousemark_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>kwin/src/plugins/qpa/eglplatformcontext.cpp</label>
+        <link refid="eglplatformcontext_8cpp"/>
+      </node>
+      <node id="49">
+        <label>kwin/src/plugins/screencast/outputscreencastsource.cpp</label>
+        <link refid="outputscreencastsource_8cpp"/>
+      </node>
+      <node id="50">
+        <label>kwin/src/plugins/screencast/regionscreencastsource.cpp</label>
+        <link refid="regionscreencastsource_8cpp"/>
+      </node>
+      <node id="51">
+        <label>kwin/src/plugins/screencast/regionscreencastsource.h</label>
+        <link refid="regionscreencastsource_8h"/>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>kwin/src/plugins/screencast/screencastmanager.cpp</label>
+        <link refid="screencastmanager_8cpp"/>
+      </node>
+      <node id="53">
+        <label>kwin/src/plugins/screencast/screencaststream.cpp</label>
+        <link refid="screencaststream_8cpp"/>
+      </node>
+      <node id="54">
+        <label>kwin/src/plugins/screencast/screencastutils.h</label>
+        <link refid="screencastutils_8h"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>kwin/src/plugins/screencast/windowscreencastsource.cpp</label>
+        <link refid="windowscreencastsource_8cpp"/>
+      </node>
+      <node id="56">
+        <label>kwin/src/plugins/screenshot/screenshot.cpp</label>
+        <link refid="screenshot_8cpp"/>
+      </node>
+      <node id="57">
+        <label>kwin/src/plugins/screentransform/screentransform.cpp</label>
+        <link refid="screentransform_8cpp"/>
+      </node>
+      <node id="58">
+        <label>kwin/src/plugins/showpaint/showpaint.cpp</label>
+        <link refid="showpaint_8cpp"/>
+      </node>
+      <node id="59">
+        <label>kwin/src/plugins/snaphelper/snaphelper.cpp</label>
+        <link refid="snaphelper_8cpp"/>
+      </node>
+      <node id="60">
+        <label>kwin/src/plugins/startupfeedback/startupfeedback.cpp</label>
+        <link refid="startupfeedback_8cpp"/>
+      </node>
+      <node id="61">
+        <label>kwin/src/plugins/touchpoints/touchpoints.cpp</label>
+        <link refid="touchpoints_8cpp"/>
+      </node>
+      <node id="62">
+        <label>kwin/src/plugins/zoom/zoom.cpp</label>
+        <link refid="zoom_8cpp"/>
+      </node>
+      <node id="63">
+        <label>kwin/src/scene/cursordelegate_opengl.cpp</label>
+        <link refid="cursordelegate__opengl_8cpp"/>
+      </node>
+      <node id="66">
+        <label>kwin/src/scene/itemrenderer_opengl.cpp</label>
+        <link refid="itemrenderer__opengl_8cpp"/>
+      </node>
+      <node id="64">
+        <label>kwin/src/scene/itemrenderer_opengl.h</label>
+        <link refid="itemrenderer__opengl_8h"/>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>kwin/src/scene/workspacescene_opengl.cpp</label>
+        <link refid="workspacescene__opengl_8cpp"/>
+      </node>
+      <node id="68">
+        <label>kwin/src/scene/workspacescene_opengl.h</label>
+        <link refid="workspacescene__opengl_8h"/>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>KWin<sp/>-<sp/>the<sp/>KDE<sp/>window<sp/>manager</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>KDE<sp/>project.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2006-2007<sp/>Rivo<sp/>Laks<sp/>&lt;rivolaks@hot.ee&gt;</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2010,<sp/>2011<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2023<sp/>Xaver<sp/>Hugl<sp/>&lt;xaver.hugl@kde.org&gt;</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="colorspace_8h" kindref="compound">core/colorspace.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="eglcontext_8h" kindref="compound">opengl/eglcontext.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="glframebuffer_8h" kindref="compound">opengl/glframebuffer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="glshader_8h" kindref="compound">opengl/glshader.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="glshadermanager_8h" kindref="compound">opengl/glshadermanager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="gltexture_8h" kindref="compound">opengl/gltexture.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="glvertexbuffer_8h" kindref="compound">opengl/glvertexbuffer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QByteArray&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//<sp/>detect<sp/>OpenGL<sp/>error<sp/>(add<sp/>to<sp/>various<sp/>places<sp/>in<sp/>code<sp/>to<sp/>pinpoint<sp/>the<sp/>place)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>KWIN_EXPORT<sp/><ref refid="namespace_k_win_1a3116e9a54e9b33f8f0128d15920d6049" kindref="member">checkGLError</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*txt);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/opengl/glutils.h"/>
+  </compounddef>
+</doxygen>

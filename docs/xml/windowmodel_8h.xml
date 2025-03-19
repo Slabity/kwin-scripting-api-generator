@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="windowmodel_8h" kind="file" language="C++">
+    <compoundname>windowmodel.h</compoundname>
+    <includes local="yes">virtualdesktops.h</includes>
+    <includes local="no">QAbstractListModel</includes>
+    <includes local="no">QPointer</includes>
+    <includes local="no">QSortFilterProxyModel</includes>
+    <includes local="no">optional</includes>
+    <includedby refid="scripting_8cpp" local="yes">kwin/src/scripting/scripting.cpp</includedby>
+    <includedby refid="windowmodel_8cpp" local="yes">kwin/src/scripting/windowmodel.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/scripting/windowmodel.h</label>
+        <link refid="windowmodel_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QAbstractListModel</label>
+      </node>
+      <node id="4">
+        <label>QPointer</label>
+      </node>
+      <node id="5">
+        <label>QSortFilterProxyModel</label>
+      </node>
+      <node id="6">
+        <label>optional</label>
+      </node>
+      <node id="2">
+        <label>virtualdesktops.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/scripting/scripting.cpp</label>
+        <link refid="scripting_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/scripting/windowmodel.cpp</label>
+        <link refid="windowmodel_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/scripting/windowmodel.h</label>
+        <link refid="windowmodel_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_window_model" prot="public">KWin::WindowModel</innerclass>
+    <innerclass refid="class_k_win_1_1_window_filter_model" prot="public">KWin::WindowFilterModel</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2021<sp/>Vlad<sp/>Zahorodnii<sp/>&lt;vlad.zahorodnii@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;virtualdesktops.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QAbstractListModel&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QPointer&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QSortFilterProxyModel&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="class_k_win_1_1_window_model" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_window_model_1a225240c67acb2bd53e411807b1d72997" kindref="member">WindowModel</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QAbstractListModel</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27" refid="class_k_win_1_1_window_model_1adeae6d2807df9208ad755610b6e8a27f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_model_1adeae6d2807df9208ad755610b6e8a27f" kindref="member">Roles</ref><sp/>{</highlight></codeline>
+<codeline lineno="28" refid="class_k_win_1_1_window_model_1adeae6d2807df9208ad755610b6e8a27faea01fc19a78d639979f0e5197aab4e02" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_model_1adeae6d2807df9208ad755610b6e8a27faea01fc19a78d639979f0e5197aab4e02" kindref="member">WindowRole</ref><sp/>=<sp/>Qt::UserRole<sp/>+<sp/>1,</highlight></codeline>
+<codeline lineno="29" refid="class_k_win_1_1_window_model_1adeae6d2807df9208ad755610b6e8a27faa2d7bd42eef639f14750aa5f2d991e70" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_model_1adeae6d2807df9208ad755610b6e8a27faa2d7bd42eef639f14750aa5f2d991e70" kindref="member">OutputRole</ref>,</highlight></codeline>
+<codeline lineno="30" refid="class_k_win_1_1_window_model_1adeae6d2807df9208ad755610b6e8a27fadeaa6bd13e0d94a93e93b3004e270305" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_model_1adeae6d2807df9208ad755610b6e8a27fadeaa6bd13e0d94a93e93b3004e270305" kindref="member">DesktopRole</ref>,</highlight></codeline>
+<codeline lineno="31" refid="class_k_win_1_1_window_model_1adeae6d2807df9208ad755610b6e8a27fa45ed3fd4f216fd36c69e8d75f02a33a0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_model_1adeae6d2807df9208ad755610b6e8a27fa45ed3fd4f216fd36c69e8d75f02a33a0" kindref="member">ActivityRole</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_model_1a225240c67acb2bd53e411807b1d72997" kindref="member">WindowModel</ref>(QObject<sp/>*parent<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>QHash&lt;int,<sp/>QByteArray&gt;<sp/><ref refid="class_k_win_1_1_window_model_1ad4cf5ef260973ad9a74aa984c657ee97" kindref="member">roleNames</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>QVariant<sp/><ref refid="class_k_win_1_1_window_model_1a97aefabe2508c30b8ebb610cb39d8c13" kindref="member">data</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>role<sp/>=<sp/>Qt::DisplayRole)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_model_1a6f62db169637b5e08ab6f78a3ceb8216" kindref="member">rowCount</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;parent<sp/>=<sp/>QModelIndex())<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>markRoleChanged(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*window,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>role);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handleWindowAdded(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*window);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handleWindowRemoved(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*window);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setupWindowConnections(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*window);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;Window<sp/>*&gt;<sp/>m_windows;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="class_k_win_1_1_window_filter_model" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_window_filter_model_1aae91bc09733d16a239e8d1089290b966" kindref="member">WindowFilterModel</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QSortFilterProxyModel</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="53" refid="class_k_win_1_1_window_filter_model_1a7e1533bc9147e3d3efa4a5c6db3e6dfd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(<ref refid="class_k_win_1_1_window_model" kindref="compound">WindowModel</ref><sp/>*<ref refid="class_k_win_1_1_window_filter_model_1a7e1533bc9147e3d3efa4a5c6db3e6dfd" kindref="member">windowModel</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_window_filter_model_1a7e1533bc9147e3d3efa4a5c6db3e6dfd" kindref="member">windowModel</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_window_filter_model_1aa5da093d9f2eb4187722a7e5e220c1fc" kindref="member">setWindowModel</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_window_filter_model_1a6e40b3a8b7256e9efb90ed16a1192087" kindref="member">windowModelChanged</ref>)</highlight></codeline>
+<codeline lineno="54" refid="class_k_win_1_1_window_filter_model_1afee40a18abe95aabe4ecac8ece3b5ef2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QString<sp/><ref refid="class_k_win_1_1_window_filter_model_1afee40a18abe95aabe4ecac8ece3b5ef2" kindref="member">activity</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_window_filter_model_1afee40a18abe95aabe4ecac8ece3b5ef2" kindref="member">activity</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_window_filter_model_1af75cc9a7512ca9dab7e457d3d76f9737" kindref="member">setActivity</ref><sp/>RESET<sp/><ref refid="class_k_win_1_1_window_filter_model_1a424afa33a56d2ca394bdb21106c65385" kindref="member">resetActivity</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_window_filter_model_1aecf7f848d80b2331e2e992b2e1fed2f9" kindref="member">activityChanged</ref>)</highlight></codeline>
+<codeline lineno="55" refid="class_k_win_1_1_window_filter_model_1a119e35aa3110eb4bd23d4a0582f12ce5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(<ref refid="namespace_k_win" kindref="compound">KWin</ref>::<ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref><sp/>*<ref refid="class_k_win_1_1_window_filter_model_1a119e35aa3110eb4bd23d4a0582f12ce5" kindref="member">desktop</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_window_filter_model_1a119e35aa3110eb4bd23d4a0582f12ce5" kindref="member">desktop</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_window_filter_model_1a271b2bfe92b51ad1b31c20d3b1054669" kindref="member">setDesktop</ref><sp/>RESET<sp/><ref refid="class_k_win_1_1_window_filter_model_1aa8ea03e1b2facad0c7970787c0d0a658" kindref="member">resetDesktop</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_window_filter_model_1a33617ab78e295fc58dba679e5c0be7a5" kindref="member">desktopChanged</ref>)</highlight></codeline>
+<codeline lineno="56" refid="class_k_win_1_1_window_filter_model_1ac564c89d539a1fb7c66ee4083e7e1d27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QString<sp/><ref refid="class_k_win_1_1_window_filter_model_1ac564c89d539a1fb7c66ee4083e7e1d27" kindref="member">filter</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_window_filter_model_1ac564c89d539a1fb7c66ee4083e7e1d27" kindref="member">filter</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_window_filter_model_1a20183afd8617892128402db74b50f3cb" kindref="member">setFilter</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_window_filter_model_1ab8b3662ba2820b955d78cd17c7d21ae0" kindref="member">filterChanged</ref>)</highlight></codeline>
+<codeline lineno="57" refid="class_k_win_1_1_window_filter_model_1aa9196924ccccb284af020f3772a4d927" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QString<sp/><ref refid="class_k_win_1_1_window_filter_model_1aa9196924ccccb284af020f3772a4d927" kindref="member">screenName</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_window_filter_model_1aa9196924ccccb284af020f3772a4d927" kindref="member">screenName</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_window_filter_model_1aeea4029ca288812442966fc3bf2b2c72" kindref="member">setScreenName</ref><sp/>RESET<sp/><ref refid="class_k_win_1_1_window_filter_model_1a5547a0a9d00ace2f85da7024afb7aa3f" kindref="member">resetScreenName</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_window_filter_model_1ae4b7b9f30968a7f802737231d55d2432" kindref="member">screenNameChanged</ref>)</highlight></codeline>
+<codeline lineno="58" refid="class_k_win_1_1_window_filter_model_1af1479dc5ba714855f26b239bd77da57c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(WindowTypes<sp/><ref refid="class_k_win_1_1_window_filter_model_1af1479dc5ba714855f26b239bd77da57c" kindref="member">windowType</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_window_filter_model_1af1479dc5ba714855f26b239bd77da57c" kindref="member">windowType</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_window_filter_model_1afc38d733bad25206881f876d9b63588f" kindref="member">setWindowType</ref><sp/>RESET<sp/><ref refid="class_k_win_1_1_window_filter_model_1a3c5aba8126f0f7c630c6d86313ad8e77" kindref="member">resetWindowType</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_window_filter_model_1ab5b4808c9bb60fe597014f5f3e9c2d66" kindref="member">windowTypeChanged</ref>)</highlight></codeline>
+<codeline lineno="59" refid="class_k_win_1_1_window_filter_model_1a8772eab6531008cfacd226ff8c550954" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1a8772eab6531008cfacd226ff8c550954" kindref="member">minimizedWindows</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_window_filter_model_1a8772eab6531008cfacd226ff8c550954" kindref="member">minimizedWindows</ref><sp/>WRITE<sp/><ref refid="class_k_win_1_1_window_filter_model_1a95a68c8b4f909f8c14f674d35551a601" kindref="member">setMinimizedWindows</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_window_filter_model_1a96c32017f96829551932219975d83af2" kindref="member">minimizedWindowsChanged</ref>)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="62" refid="class_k_win_1_1_window_filter_model_1aa401013c081bfcafc5cda87148a2d6f4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>enum<sp/><ref refid="class_k_win_1_1_window_filter_model_1aa401013c081bfcafc5cda87148a2d6f4" kindref="member">WindowType</ref><sp/>{</highlight></codeline>
+<codeline lineno="63" refid="class_k_win_1_1_window_filter_model_1aa401013c081bfcafc5cda87148a2d6f4a4bf3913100724c50fa1eb9067f97b30d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_filter_model_1aa401013c081bfcafc5cda87148a2d6f4a4bf3913100724c50fa1eb9067f97b30d" kindref="member">Normal</ref><sp/>=<sp/>0x1,</highlight></codeline>
+<codeline lineno="64" refid="class_k_win_1_1_window_filter_model_1aa401013c081bfcafc5cda87148a2d6f4a78d59669644dbc19e9d23e459b22619f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_filter_model_1aa401013c081bfcafc5cda87148a2d6f4a78d59669644dbc19e9d23e459b22619f" kindref="member">Dialog</ref><sp/>=<sp/>0x2,</highlight></codeline>
+<codeline lineno="65" refid="class_k_win_1_1_window_filter_model_1aa401013c081bfcafc5cda87148a2d6f4a0f5bd8fccc042b1b3a95d90225f73b8d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_filter_model_1aa401013c081bfcafc5cda87148a2d6f4a0f5bd8fccc042b1b3a95d90225f73b8d" kindref="member">Dock</ref><sp/>=<sp/>0x4,</highlight></codeline>
+<codeline lineno="66" refid="class_k_win_1_1_window_filter_model_1aa401013c081bfcafc5cda87148a2d6f4a691d61ea161d0debcf538a934c322169" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_filter_model_1aa401013c081bfcafc5cda87148a2d6f4a691d61ea161d0debcf538a934c322169" kindref="member">Desktop</ref><sp/>=<sp/>0x8,</highlight></codeline>
+<codeline lineno="67" refid="class_k_win_1_1_window_filter_model_1aa401013c081bfcafc5cda87148a2d6f4aa9106d9e544c2a1f29b0b4258ebac10b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_filter_model_1aa401013c081bfcafc5cda87148a2d6f4aa9106d9e544c2a1f29b0b4258ebac10b" kindref="member">Notification</ref><sp/>=<sp/>0x10,</highlight></codeline>
+<codeline lineno="68" refid="class_k_win_1_1_window_filter_model_1aa401013c081bfcafc5cda87148a2d6f4ad5df6fda75e2ec61affa3aa6014d4080" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_filter_model_1aa401013c081bfcafc5cda87148a2d6f4ad5df6fda75e2ec61affa3aa6014d4080" kindref="member">CriticalNotification</ref><sp/>=<sp/>0x20,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_DECLARE_FLAGS(WindowTypes,<sp/><ref refid="namespace_k_win_1ad892545facf36d334d4558298117fbc7" kindref="member">WindowType</ref>)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_FLAG(WindowTypes)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1aae91bc09733d16a239e8d1089290b966" kindref="member">WindowFilterModel</ref>(QObject<sp/>*parent<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_model" kindref="compound">WindowModel</ref><sp/>*<ref refid="class_k_win_1_1_window_filter_model_1a7e1533bc9147e3d3efa4a5c6db3e6dfd" kindref="member">windowModel</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1aa5da093d9f2eb4187722a7e5e220c1fc" kindref="member">setWindowModel</ref>(<ref refid="class_k_win_1_1_window_model" kindref="compound">WindowModel</ref><sp/>*<ref refid="class_k_win_1_1_window_filter_model_1a7e1533bc9147e3d3efa4a5c6db3e6dfd" kindref="member">windowModel</ref>);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_window_filter_model_1afee40a18abe95aabe4ecac8ece3b5ef2" kindref="member">activity</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1af75cc9a7512ca9dab7e457d3d76f9737" kindref="member">setActivity</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;<ref refid="class_k_win_1_1_window_filter_model_1afee40a18abe95aabe4ecac8ece3b5ef2" kindref="member">activity</ref>);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1a424afa33a56d2ca394bdb21106c65385" kindref="member">resetActivity</ref>();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref><sp/>*<ref refid="class_k_win_1_1_window_filter_model_1a119e35aa3110eb4bd23d4a0582f12ce5" kindref="member">desktop</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1a271b2bfe92b51ad1b31c20d3b1054669" kindref="member">setDesktop</ref>(<ref refid="class_k_win_1_1_virtual_desktop" kindref="compound">VirtualDesktop</ref><sp/>*<ref refid="class_k_win_1_1_window_filter_model_1a119e35aa3110eb4bd23d4a0582f12ce5" kindref="member">desktop</ref>);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1aa8ea03e1b2facad0c7970787c0d0a658" kindref="member">resetDesktop</ref>();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_window_filter_model_1ac564c89d539a1fb7c66ee4083e7e1d27" kindref="member">filter</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1a20183afd8617892128402db74b50f3cb" kindref="member">setFilter</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;<ref refid="class_k_win_1_1_window_filter_model_1ac564c89d539a1fb7c66ee4083e7e1d27" kindref="member">filter</ref>);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_window_filter_model_1aa9196924ccccb284af020f3772a4d927" kindref="member">screenName</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1aeea4029ca288812442966fc3bf2b2c72" kindref="member">setScreenName</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;<ref refid="class_k_win_1_1_window_filter_model_1aa9196924ccccb284af020f3772a4d927" kindref="member">screenName</ref>);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1a5547a0a9d00ace2f85da7024afb7aa3f" kindref="member">resetScreenName</ref>();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>WindowTypes<sp/><ref refid="class_k_win_1_1_window_filter_model_1af1479dc5ba714855f26b239bd77da57c" kindref="member">windowType</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1afc38d733bad25206881f876d9b63588f" kindref="member">setWindowType</ref>(WindowTypes<sp/><ref refid="class_k_win_1_1_window_filter_model_1af1479dc5ba714855f26b239bd77da57c" kindref="member">windowType</ref>);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1a3c5aba8126f0f7c630c6d86313ad8e77" kindref="member">resetWindowType</ref>();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1a95a68c8b4f909f8c14f674d35551a601" kindref="member">setMinimizedWindows</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>show);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1a8772eab6531008cfacd226ff8c550954" kindref="member">minimizedWindows</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1ac53c21c369800dc482a6a8e92a1860ff" kindref="member">filterAcceptsRow</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>source_row,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;source_parent)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="104" refid="class_k_win_1_1_window_filter_model_1aecf7f848d80b2331e2e992b2e1fed2f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1aecf7f848d80b2331e2e992b2e1fed2f9" kindref="member">activityChanged</ref>();</highlight></codeline>
+<codeline lineno="105" refid="class_k_win_1_1_window_filter_model_1a33617ab78e295fc58dba679e5c0be7a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1a33617ab78e295fc58dba679e5c0be7a5" kindref="member">desktopChanged</ref>();</highlight></codeline>
+<codeline lineno="106" refid="class_k_win_1_1_window_filter_model_1ae4b7b9f30968a7f802737231d55d2432" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1ae4b7b9f30968a7f802737231d55d2432" kindref="member">screenNameChanged</ref>();</highlight></codeline>
+<codeline lineno="107" refid="class_k_win_1_1_window_filter_model_1a6e40b3a8b7256e9efb90ed16a1192087" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1a6e40b3a8b7256e9efb90ed16a1192087" kindref="member">windowModelChanged</ref>();</highlight></codeline>
+<codeline lineno="108" refid="class_k_win_1_1_window_filter_model_1ab8b3662ba2820b955d78cd17c7d21ae0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1ab8b3662ba2820b955d78cd17c7d21ae0" kindref="member">filterChanged</ref>();</highlight></codeline>
+<codeline lineno="109" refid="class_k_win_1_1_window_filter_model_1ab5b4808c9bb60fe597014f5f3e9c2d66" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1ab5b4808c9bb60fe597014f5f3e9c2d66" kindref="member">windowTypeChanged</ref>();</highlight></codeline>
+<codeline lineno="110" refid="class_k_win_1_1_window_filter_model_1a96c32017f96829551932219975d83af2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_window_filter_model_1a96c32017f96829551932219975d83af2" kindref="member">minimizedWindowsChanged</ref>();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>WindowTypes<sp/>windowTypeMask(<ref refid="class_k_win_1_1_window" kindref="compound">Window</ref><sp/>*window)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_window_model" kindref="compound">WindowModel</ref><sp/>*m_windowModel<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;QString&gt;<sp/>m_activity;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>QPointer&lt;Output&gt;<sp/>m_output;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>QPointer&lt;VirtualDesktop&gt;<sp/>m_desktop;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>m_filter;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>std::optional&lt;WindowTypes&gt;<sp/>m_windowType;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_showMinimizedWindows<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/scripting/windowmodel.h"/>
+  </compounddef>
+</doxygen>

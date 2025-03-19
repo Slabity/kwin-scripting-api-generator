@@ -1,0 +1,1004 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_workspace_scene" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>KWin::WorkspaceScene</compoundname>
+    <basecompoundref refid="class_k_win_1_1_scene" prot="public" virt="non-virtual">KWin::Scene</basecompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_workspace_scene_open_g_l" prot="public" virt="non-virtual">KWin::WorkspaceSceneOpenGL</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_workspace_scene_q_painter" prot="public" virt="non-virtual">KWin::WorkspaceSceneQPainter</derivedcompoundref>
+    <includes refid="workspacescene_8h" local="no">workspacescene.h</includes>
+    <innerclass refid="struct_k_win_1_1_workspace_scene_1_1_paint_context" prot="protected">KWin::WorkspaceScene::PaintContext</innerclass>
+    <innerclass refid="struct_k_win_1_1_workspace_scene_1_1_phase2_data" prot="protected">KWin::WorkspaceScene::Phase2Data</innerclass>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_k_win_1_1_workspace_scene_1aae587abd8f62130493bf20281740508d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class EffectsHandler</definition>
+        <argsstring></argsstring>
+        <name>EffectsHandler</name>
+        <qualifiedname>KWin::WorkspaceScene::EffectsHandler</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_effects_handler" kindref="compound">EffectsHandler</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="87" column="18" bodyfile="kwin/src/scene/workspacescene.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_workspace_scene_1a85064bff7e2052de99fd5a09cec66b93" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+        <definition>Output* KWin::WorkspaceScene::painted_screen</definition>
+        <argsstring></argsstring>
+        <name>painted_screen</name>
+        <qualifiedname>KWin::WorkspaceScene::painted_screen</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="121" column="12" bodyfile="kwin/src/scene/workspacescene.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_workspace_scene_1acc0f1d9839e57d19120b7e351a1ee542" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_scene_delegate" kindref="compound">SceneDelegate</ref> *</type>
+        <definition>SceneDelegate* KWin::WorkspaceScene::painted_delegate</definition>
+        <argsstring></argsstring>
+        <name>painted_delegate</name>
+        <qualifiedname>KWin::WorkspaceScene::painted_delegate</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="122" column="19" bodyfile="kwin/src/scene/workspacescene.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_workspace_scene_1a2ad6b5c78a83037f3c6b3c31afe83a0b" prot="protected" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_window_item" kindref="compound">WindowItem</ref> * &gt;</type>
+        <definition>QList&lt;WindowItem *&gt; KWin::WorkspaceScene::stacking_order</definition>
+        <argsstring></argsstring>
+        <name>stacking_order</name>
+        <qualifiedname>KWin::WorkspaceScene::stacking_order</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="125" column="11" bodyfile="kwin/src/scene/workspacescene.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_workspace_scene_1ad8288264f32b95557aaf8a27d344cf2b" prot="private" static="no" mutable="no">
+        <type>std::chrono::milliseconds</type>
+        <definition>std::chrono::milliseconds KWin::WorkspaceScene::m_expectedPresentTimestamp</definition>
+        <argsstring></argsstring>
+        <name>m_expectedPresentTimestamp</name>
+        <qualifiedname>KWin::WorkspaceScene::m_expectedPresentTimestamp</qualifiedname>
+        <initializer>= std::chrono::milliseconds::zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="131" column="31" bodyfile="kwin/src/scene/workspacescene.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_workspace_scene_1a835046f8e176e77cff889741b8d9a606" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KWin::WorkspaceScene::m_paintScreenCount</definition>
+        <argsstring></argsstring>
+        <name>m_paintScreenCount</name>
+        <qualifiedname>KWin::WorkspaceScene::m_paintScreenCount</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="133" column="9" bodyfile="kwin/src/scene/workspacescene.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_workspace_scene_1a9d399d5b43714107f8c85d20eebb40b2" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_k_win_1_1_workspace_scene_1_1_paint_context" kindref="compound">PaintContext</ref></type>
+        <definition>PaintContext KWin::WorkspaceScene::m_paintContext</definition>
+        <argsstring></argsstring>
+        <name>m_paintContext</name>
+        <qualifiedname>KWin::WorkspaceScene::m_paintContext</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="134" column="18" bodyfile="kwin/src/scene/workspacescene.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_workspace_scene_1ad4b8189f2e1948738aa8cec5ba1be720" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Item&gt; KWin::WorkspaceScene::m_containerItem</definition>
+        <argsstring></argsstring>
+        <name>m_containerItem</name>
+        <qualifiedname>KWin::WorkspaceScene::m_containerItem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="135" column="21" bodyfile="kwin/src/scene/workspacescene.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_workspace_scene_1aa4bfb24f9743717b44354a2dc40e33e3" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Item&gt; KWin::WorkspaceScene::m_overlayItem</definition>
+        <argsstring></argsstring>
+        <name>m_overlayItem</name>
+        <qualifiedname>KWin::WorkspaceScene::m_overlayItem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="136" column="21" bodyfile="kwin/src/scene/workspacescene.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_workspace_scene_1a83823e0ca6873cc0876a7ed15bb9f88d" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_drag_and_drop_icon_item" kindref="compound">DragAndDropIconItem</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;DragAndDropIconItem&gt; KWin::WorkspaceScene::m_dndIcon</definition>
+        <argsstring></argsstring>
+        <name>m_dndIcon</name>
+        <qualifiedname>KWin::WorkspaceScene::m_dndIcon</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="137" column="21" bodyfile="kwin/src/scene/workspacescene.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1ab9ce9437870a461d6de8f0340dff0e3c" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::WorkspaceScene::WorkspaceScene</definition>
+        <argsstring>(std::unique_ptr&lt; ItemRenderer &gt; renderer)</argsstring>
+        <name>WorkspaceScene</name>
+        <qualifiedname>KWin::WorkspaceScene::WorkspaceScene</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_item_renderer" kindref="compound">ItemRenderer</ref> &gt;</type>
+          <declname>renderer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="44" column="14" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="91" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1ad9e0d1439d963c730aaefbe40e93f4a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::WorkspaceScene::~WorkspaceScene</definition>
+        <argsstring>() override</argsstring>
+        <name>~WorkspaceScene</name>
+        <qualifiedname>KWin::WorkspaceScene::~WorkspaceScene</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="45" column="5" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="107" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1ae8f0343687df98dbedf68751b49fdc5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WorkspaceScene::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <qualifiedname>KWin::WorkspaceScene::initialize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="47" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a667f69f314ea925c2b4d9b7735d22e03" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> *</type>
+        <definition>Item * KWin::WorkspaceScene::containerItem</definition>
+        <argsstring>() const</argsstring>
+        <name>containerItem</name>
+        <qualifiedname>KWin::WorkspaceScene::containerItem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="49" column="10" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="145" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a686b4f5c27e83639d051ab00cd23d6a8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_item" kindref="compound">Item</ref> *</type>
+        <definition>Item * KWin::WorkspaceScene::overlayItem</definition>
+        <argsstring>() const</argsstring>
+        <name>overlayItem</name>
+        <qualifiedname>KWin::WorkspaceScene::overlayItem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="50" column="10" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="150" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a7105ad6073368abfafbdb49e9c104fd7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QList&lt; <ref refid="class_k_win_1_1_surface_item" kindref="compound">SurfaceItem</ref> * &gt;</type>
+        <definition>QList&lt; SurfaceItem * &gt; KWin::WorkspaceScene::scanoutCandidates</definition>
+        <argsstring>(ssize_t maxCount) const override</argsstring>
+        <name>scanoutCandidates</name>
+        <qualifiedname>KWin::WorkspaceScene::scanoutCandidates</qualifiedname>
+        <reimplements refid="class_k_win_1_1_scene_1ad17c06c2e20ae88a2efa3709a6d82cb0">scanoutCandidates</reimplements>
+        <param>
+          <type>ssize_t</type>
+          <declname>maxCount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="52" column="11" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="196" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a13a50f0913c5f6add3ad3fc0e83fe8fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QRegion</type>
+        <definition>QRegion KWin::WorkspaceScene::prePaint</definition>
+        <argsstring>(SceneDelegate *delegate) override</argsstring>
+        <name>prePaint</name>
+        <qualifiedname>KWin::WorkspaceScene::prePaint</qualifiedname>
+        <reimplements refid="class_k_win_1_1_scene_1ae1aa8bb080d36109f4fbe2013d329a9f">prePaint</reimplements>
+        <param>
+          <type><ref refid="class_k_win_1_1_scene_delegate" kindref="compound">SceneDelegate</ref> *</type>
+          <declname>delegate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="53" column="13" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="298" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1af9843892fe339b2dd2d8f7b8752e1e11" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::WorkspaceScene::postPaint</definition>
+        <argsstring>() override</argsstring>
+        <name>postPaint</name>
+        <qualifiedname>KWin::WorkspaceScene::postPaint</qualifiedname>
+        <reimplements refid="class_k_win_1_1_scene_1a98feafc7a1a0c452ad36a2a0675001ee">postPaint</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="54" column="10" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="422" bodyend="431"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1ae848be1aaba91ef1d6671a3b44f88927" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::WorkspaceScene::paint</definition>
+        <argsstring>(const RenderTarget &amp;renderTarget, const QRegion &amp;region) override</argsstring>
+        <name>paint</name>
+        <qualifiedname>KWin::WorkspaceScene::paint</qualifiedname>
+        <reimplements refid="class_k_win_1_1_scene_1a3f5536c5ed3df47813734bd149b9564f">paint</reimplements>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref> &amp;</type>
+          <declname>renderTarget</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="55" column="10" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="433" bodyend="451"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a0b5ae2267b03670e84be04aa5c33272f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::WorkspaceScene::frame</definition>
+        <argsstring>(SceneDelegate *delegate, OutputFrame *frame) override</argsstring>
+        <name>frame</name>
+        <qualifiedname>KWin::WorkspaceScene::frame</qualifiedname>
+        <reimplements refid="class_k_win_1_1_scene_1a09d934c2142b4f195028ba1b74be9def">frame</reimplements>
+        <param>
+          <type><ref refid="class_k_win_1_1_scene_delegate" kindref="compound">SceneDelegate</ref> *</type>
+          <declname>delegate</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_output_frame" kindref="compound">OutputFrame</ref> *</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="56" column="10" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="259" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a5c2d9d39ad6106d65050e87d8ac2ea93" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double KWin::WorkspaceScene::desiredHdrHeadroom</definition>
+        <argsstring>() const override</argsstring>
+        <name>desiredHdrHeadroom</name>
+        <qualifiedname>KWin::WorkspaceScene::desiredHdrHeadroom</qualifiedname>
+        <reimplements refid="class_k_win_1_1_scene_1a6d67985cf9a7cbdaaa3b698a39b70929">desiredHdrHeadroom</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="57" column="12" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="247" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a2f1a696b3c4f2a1bc4a73611f828491b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::WorkspaceScene::makeOpenGLContextCurrent</definition>
+        <argsstring>()</argsstring>
+        <name>makeOpenGLContextCurrent</name>
+        <qualifiedname>KWin::WorkspaceScene::makeOpenGLContextCurrent</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_workspace_scene_open_g_l_1a4be1eb5fa2bdb69b5fe088063375303b">makeOpenGLContextCurrent</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="59" column="18" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="546" bodyend="549"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a99cf4db6e58466d1f313562d70139ed2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void KWin::WorkspaceScene::doneOpenGLContextCurrent</definition>
+        <argsstring>()</argsstring>
+        <name>doneOpenGLContextCurrent</name>
+        <qualifiedname>KWin::WorkspaceScene::doneOpenGLContextCurrent</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_workspace_scene_open_g_l_1ab8d7b83fd309b929ce689a325239f887">doneOpenGLContextCurrent</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="60" column="18" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="551" bodyend="553"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a5034a824ec33adeeeb4dd9575461db9f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool KWin::WorkspaceScene::supportsNativeFence</definition>
+        <argsstring>() const</argsstring>
+        <name>supportsNativeFence</name>
+        <qualifiedname>KWin::WorkspaceScene::supportsNativeFence</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_workspace_scene_open_g_l_1afe3d0e5560eb41218cd87b6bbce24ff8">supportsNativeFence</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="61" column="18" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="555" bodyend="558"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1ae14a2c8916fd295aeec40c41aecf812d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_k_win_1_1_egl_context" kindref="compound">EglContext</ref> *</type>
+        <definition>EglContext * KWin::WorkspaceScene::openglContext</definition>
+        <argsstring>() const</argsstring>
+        <name>openglContext</name>
+        <qualifiedname>KWin::WorkspaceScene::openglContext</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_workspace_scene_open_g_l_1adf785ada6c9b3436308f403d350cf85b">openglContext</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="62" column="24" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="560" bodyend="563"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a7c308e69d81944a8e69e695b1375472e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_decoration_renderer" kindref="compound">DecorationRenderer</ref> &gt;</type>
+        <definition>virtual std::unique_ptr&lt; DecorationRenderer &gt; KWin::WorkspaceScene::createDecorationRenderer</definition>
+        <argsstring>(Decoration::DecoratedWindowImpl *)=0</argsstring>
+        <name>createDecorationRenderer</name>
+        <qualifiedname>KWin::WorkspaceScene::createDecorationRenderer</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_workspace_scene_open_g_l_1ac7586d90d81440ae9046e86d084f95bb">createDecorationRenderer</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_workspace_scene_q_painter_1a6f15f5b76aa47aebe38d4749ba758033">createDecorationRenderer</reimplementedby>
+        <param>
+          <type><ref refid="class_k_win_1_1_decoration_1_1_decorated_window_impl" kindref="compound">Decoration::DecoratedWindowImpl</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="64" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a42edd4ac3bc03e74ef2914f9b8743874" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_shadow_texture_provider" kindref="compound">ShadowTextureProvider</ref> &gt;</type>
+        <definition>virtual std::unique_ptr&lt; ShadowTextureProvider &gt; KWin::WorkspaceScene::createShadowTextureProvider</definition>
+        <argsstring>(Shadow *shadow)=0</argsstring>
+        <name>createShadowTextureProvider</name>
+        <qualifiedname>KWin::WorkspaceScene::createShadowTextureProvider</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_workspace_scene_open_g_l_1a54ed19787439c722ec5489a9cc6afe45">createShadowTextureProvider</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_workspace_scene_q_painter_1af90d461dfa43d25fd0bd659ea3bb2b13">createShadowTextureProvider</reimplementedby>
+        <param>
+          <type><ref refid="class_k_win_1_1_shadow" kindref="compound">Shadow</ref> *</type>
+          <declname>shadow</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="65" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1aae5fcf40f5e923747ce34e5e9c71441f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool KWin::WorkspaceScene::animationsSupported</definition>
+        <argsstring>() const =0</argsstring>
+        <name>animationsSupported</name>
+        <qualifiedname>KWin::WorkspaceScene::animationsSupported</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_workspace_scene_open_g_l_1ac815fe710e5c5006ad19ca6bab4cbd04">animationsSupported</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_workspace_scene_q_painter_1ac7b411890bf08b92e4a5e3f444a3de33">animationsSupported</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether the <ref refid="class_k_win_1_1_scene" kindref="compound">Scene</ref> is able to drive animations. This is used as a hint to the effects system which effects can be supported. If the <ref refid="class_k_win_1_1_scene" kindref="compound">Scene</ref> performs software rendering it is supposed to return <computeroutput>false</computeroutput>, if rendering is hardware accelerated it should return <computeroutput>true</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="73" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1ae5bacf0ab952e6d86f441513224360c2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::pair&lt; std::shared_ptr&lt; <ref refid="class_k_win_1_1_g_l_texture" kindref="compound">GLTexture</ref> &gt;, <ref refid="class_k_win_1_1_color_description" kindref="compound">ColorDescription</ref> &gt;</type>
+        <definition>virtual std::pair&lt; std::shared_ptr&lt; GLTexture &gt;, ColorDescription &gt; KWin::WorkspaceScene::textureForOutput</definition>
+        <argsstring>(Output *output) const</argsstring>
+        <name>textureForOutput</name>
+        <qualifiedname>KWin::WorkspaceScene::textureForOutput</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_workspace_scene_open_g_l_1a8c95ca1b7e56cf56401da468578394a2">textureForOutput</reimplementedby>
+        <param>
+          <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="75" column="23" bodyfile="kwin/src/scene/workspacescene.h" bodystart="75" bodyend="78"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_k_win_1_1_workspace_scene_1ab48d5722a8b0b12c32d006791dbc15aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WorkspaceScene::preFrameRender</definition>
+        <argsstring>()</argsstring>
+        <name>preFrameRender</name>
+        <qualifiedname>KWin::WorkspaceScene::preFrameRender</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="81" column="10"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_k_win_1_1_workspace_scene_1a92cd6407bbe5bfd8961ba6891023ef18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WorkspaceScene::frameRendered</definition>
+        <argsstring>()</argsstring>
+        <name>frameRendered</name>
+        <qualifiedname>KWin::WorkspaceScene::frameRendered</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="82" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1ab0a0b25f7940b3dd3c3f6e67321d12ae" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WorkspaceScene::createStackingOrder</definition>
+        <argsstring>()</argsstring>
+        <name>createStackingOrder</name>
+        <qualifiedname>KWin::WorkspaceScene::createStackingOrder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="85" column="10" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="508" bodyend="517"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a56c321586056a856fb7cfac079d41163" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WorkspaceScene::clearStackingOrder</definition>
+        <argsstring>()</argsstring>
+        <name>clearStackingOrder</name>
+        <qualifiedname>KWin::WorkspaceScene::clearStackingOrder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="86" column="10" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="519" bodyend="522"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a69c71b782bb76247acde1f0c8fa64dc1" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WorkspaceScene::finalPaintScreen</definition>
+        <argsstring>(const RenderTarget &amp;renderTarget, const RenderViewport &amp;viewport, int mask, const QRegion &amp;region, Output *screen)</argsstring>
+        <name>finalPaintScreen</name>
+        <qualifiedname>KWin::WorkspaceScene::finalPaintScreen</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref> &amp;</type>
+          <declname>renderTarget</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref> &amp;</type>
+          <declname>viewport</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+          <declname>screen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="89" column="10" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="454" bodyend="462"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a667c76c84d3266f86e63836383a0b666" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WorkspaceScene::preparePaintGenericScreen</definition>
+        <argsstring>()</argsstring>
+        <name>preparePaintGenericScreen</name>
+        <qualifiedname>KWin::WorkspaceScene::preparePaintGenericScreen</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="92" column="10" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="357" bodyend="377"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a76ac4bfbffe680e75b260464eb748d90" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WorkspaceScene::paintGenericScreen</definition>
+        <argsstring>(const RenderTarget &amp;renderTarget, const RenderViewport &amp;viewport, int mask, Output *screen)</argsstring>
+        <name>paintGenericScreen</name>
+        <qualifiedname>KWin::WorkspaceScene::paintGenericScreen</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref> &amp;</type>
+          <declname>renderTarget</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref> &amp;</type>
+          <declname>viewport</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> *</type>
+          <declname>screen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="93" column="10" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="466" bodyend="479"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1ad8e7e918877f3d907d64ef96ddeac92b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WorkspaceScene::preparePaintSimpleScreen</definition>
+        <argsstring>()</argsstring>
+        <name>preparePaintSimpleScreen</name>
+        <qualifiedname>KWin::WorkspaceScene::preparePaintSimpleScreen</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="95" column="10" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="379" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a78b8a06ca313fbfc5c6e8e2eaba40efe" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WorkspaceScene::paintSimpleScreen</definition>
+        <argsstring>(const RenderTarget &amp;renderTarget, const RenderViewport &amp;viewport, int mask, const QRegion &amp;region)</argsstring>
+        <name>paintSimpleScreen</name>
+        <qualifiedname>KWin::WorkspaceScene::paintSimpleScreen</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref> &amp;</type>
+          <declname>renderTarget</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref> &amp;</type>
+          <declname>viewport</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="96" column="10" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="484" bodyend="506"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1aa8c29d54a07ca2065e731a9ef24ffa67" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WorkspaceScene::finalPaintWindow</definition>
+        <argsstring>(const RenderTarget &amp;renderTarget, const RenderViewport &amp;viewport, EffectWindow *w, int mask, const QRegion &amp;region, WindowPaintData &amp;data)</argsstring>
+        <name>finalPaintWindow</name>
+        <qualifiedname>KWin::WorkspaceScene::finalPaintWindow</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref> &amp;</type>
+          <declname>renderTarget</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref> &amp;</type>
+          <declname>viewport</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="98" column="10" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="535" bodyend="538"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a3e5ccb425cad4f11190dcf968861dd12" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WorkspaceScene::paintWindow</definition>
+        <argsstring>(const RenderTarget &amp;renderTarget, const RenderViewport &amp;viewport, WindowItem *w, int mask, const QRegion &amp;region)</argsstring>
+        <name>paintWindow</name>
+        <qualifiedname>KWin::WorkspaceScene::paintWindow</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref> &amp;</type>
+          <declname>renderTarget</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref> &amp;</type>
+          <declname>viewport</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_window_item" kindref="compound">WindowItem</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="100" column="10" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="524" bodyend="532"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a92dc2b0eb57f6f1305d5425f87538d34" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WorkspaceScene::finalDrawWindow</definition>
+        <argsstring>(const RenderTarget &amp;renderTarget, const RenderViewport &amp;viewport, EffectWindow *w, int mask, const QRegion &amp;region, WindowPaintData &amp;data)</argsstring>
+        <name>finalDrawWindow</name>
+        <qualifiedname>KWin::WorkspaceScene::finalDrawWindow</qualifiedname>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref> &amp;</type>
+          <declname>renderTarget</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref> &amp;</type>
+          <declname>viewport</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_effect_window" kindref="compound">EffectWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>const QRegion &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type><ref refid="class_k_win_1_1_window_paint_data" kindref="compound">WindowPaintData</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="102" column="10" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="541" bodyend="544"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a2c943043581a5a67ea15ea97c15453e2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WorkspaceScene::createDndIconItem</definition>
+        <argsstring>()</argsstring>
+        <name>createDndIconItem</name>
+        <qualifiedname>KWin::WorkspaceScene::createDndIconItem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="128" column="10" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="111" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_workspace_scene_1a541059d56e3bf1e337c4ef717604652b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::WorkspaceScene::destroyDndIconItem</definition>
+        <argsstring>()</argsstring>
+        <name>destroyDndIconItem</name>
+        <qualifiedname>KWin::WorkspaceScene::destroyDndIconItem</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scene/workspacescene.h" line="129" column="10" bodyfile="kwin/src/scene/workspacescene.cpp" bodystart="140" bodyend="143"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>KWin::Scene</label>
+        <link refid="class_k_win_1_1_scene"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::WorkspaceScene</label>
+        <link refid="class_k_win_1_1_workspace_scene"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>KWin::WorkspaceSceneOpenGL</label>
+        <link refid="class_k_win_1_1_workspace_scene_open_g_l"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>KWin::WorkspaceSceneQPainter</label>
+        <link refid="class_k_win_1_1_workspace_scene_q_painter"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="10">
+        <label>KWin::BrightnessDevice</label>
+        <link refid="class_k_win_1_1_brightness_device"/>
+      </node>
+      <node id="7">
+        <label>KWin::ColorDescription</label>
+        <link refid="class_k_win_1_1_color_description"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>sRGB</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>KWin::Edid</label>
+        <link refid="class_k_win_1_1_edid"/>
+      </node>
+      <node id="4">
+        <label>KWin::Output</label>
+        <link refid="class_k_win_1_1_output"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_state</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_information</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_brightnessDevice</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>KWin::Output::Information</label>
+        <link refid="struct_k_win_1_1_output_1_1_information"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>edid</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>panelOrientation</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>KWin::Output::State</label>
+        <link refid="struct_k_win_1_1_output_1_1_state"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>manualTransform</edgelabel>
+          <edgelabel>transform</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>colorDescription</edgelabel>
+          <edgelabel>originalColorDescription</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>KWin::OutputTransform</label>
+        <link refid="class_k_win_1_1_output_transform"/>
+      </node>
+      <node id="12">
+        <label>KWin::RenderLayerDelegate</label>
+        <link refid="class_k_win_1_1_render_layer_delegate"/>
+      </node>
+      <node id="2">
+        <label>KWin::Scene</label>
+        <link refid="class_k_win_1_1_scene"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>KWin::SceneDelegate</label>
+        <link refid="class_k_win_1_1_scene_delegate"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::WorkspaceScene</label>
+        <link refid="class_k_win_1_1_workspace_scene"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>painted_screen</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>painted_delegate</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/scene/workspacescene.h" line="39" column="1" bodyfile="kwin/src/scene/workspacescene.h" bodystart="40" bodyend="138"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_scene_1aa25b876081a20f0bec8ae04f0575945b" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>addDelegate</name></member>
+      <member refid="class_k_win_1_1_scene_1acf54c87ac95c3aec6ec4b967a4215a40" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>addRepaint</name></member>
+      <member refid="class_k_win_1_1_scene_1a0616265a88e92b0f37e79b4aa1f5562d" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>addRepaint</name></member>
+      <member refid="class_k_win_1_1_scene_1a2fce99b6bca5ed4d682012cae6c3b658" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>addRepaint</name></member>
+      <member refid="class_k_win_1_1_scene_1a4be6a7157fceae2e27684fb19dad256b" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>addRepaintFull</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1aae5fcf40f5e923747ce34e5e9c71441f" prot="public" virt="pure-virtual"><scope>KWin::WorkspaceScene</scope><name>animationsSupported</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a56c321586056a856fb7cfac079d41163" prot="protected" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>clearStackingOrder</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a667f69f314ea925c2b4d9b7735d22e03" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>containerItem</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a7c308e69d81944a8e69e695b1375472e" prot="public" virt="pure-virtual"><scope>KWin::WorkspaceScene</scope><name>createDecorationRenderer</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a2c943043581a5a67ea15ea97c15453e2" prot="private" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>createDndIconItem</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a42edd4ac3bc03e74ef2914f9b8743874" prot="public" virt="pure-virtual"><scope>KWin::WorkspaceScene</scope><name>createShadowTextureProvider</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1ab0a0b25f7940b3dd3c3f6e67321d12ae" prot="protected" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>createStackingOrder</name></member>
+      <member refid="class_k_win_1_1_scene_1a8c39595aae2b74edf88533ac723f04d8" prot="public" virt="virtual"><scope>KWin::WorkspaceScene</scope><name>damage</name></member>
+      <member refid="class_k_win_1_1_scene_1ae276d0131ac795049fb6301cdc61dde7" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>delegateRemoved</name></member>
+      <member refid="class_k_win_1_1_scene_1a30c973d5e62122626f05fee739968614" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>delegates</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a5c2d9d39ad6106d65050e87d8ac2ea93" prot="public" virt="virtual"><scope>KWin::WorkspaceScene</scope><name>desiredHdrHeadroom</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a541059d56e3bf1e337c4ef717604652b" prot="private" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>destroyDndIconItem</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a99cf4db6e58466d1f313562d70139ed2" prot="public" virt="virtual"><scope>KWin::WorkspaceScene</scope><name>doneOpenGLContextCurrent</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1aae587abd8f62130493bf20281740508d" prot="protected" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>EffectsHandler</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a92dc2b0eb57f6f1305d5425f87538d34" prot="protected" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>finalDrawWindow</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a69c71b782bb76247acde1f0c8fa64dc1" prot="protected" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>finalPaintScreen</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1aa8c29d54a07ca2065e731a9ef24ffa67" prot="protected" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>finalPaintWindow</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a0b5ae2267b03670e84be04aa5c33272f" prot="public" virt="virtual"><scope>KWin::WorkspaceScene</scope><name>frame</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a92cd6407bbe5bfd8961ba6891023ef18" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>frameRendered</name></member>
+      <member refid="class_k_win_1_1_scene_1abfaa7b36bb4841507abd2628e4650065" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>geometry</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1ae8f0343687df98dbedf68751b49fdc5c" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>initialize</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1ad4b8189f2e1948738aa8cec5ba1be720" prot="private" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>m_containerItem</name></member>
+      <member refid="class_k_win_1_1_scene_1ac3c62f9d5a1a95b6967e13a207c26012" prot="protected" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>m_delegates</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a83823e0ca6873cc0876a7ed15bb9f88d" prot="private" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>m_dndIcon</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1ad8288264f32b95557aaf8a27d344cf2b" prot="private" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>m_expectedPresentTimestamp</name></member>
+      <member refid="class_k_win_1_1_scene_1a63fd1f53f0ed4b9d1638fb9c49d34fa9" prot="protected" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>m_geometry</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1aa4bfb24f9743717b44354a2dc40e33e3" prot="private" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>m_overlayItem</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a9d399d5b43714107f8c85d20eebb40b2" prot="private" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>m_paintContext</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a835046f8e176e77cff889741b8d9a606" prot="private" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>m_paintScreenCount</name></member>
+      <member refid="class_k_win_1_1_scene_1ac5f0deef84a1b89464a0e32f3a9489af" prot="protected" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>m_renderer</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a2f1a696b3c4f2a1bc4a73611f828491b" prot="public" virt="virtual"><scope>KWin::WorkspaceScene</scope><name>makeOpenGLContextCurrent</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1ae14a2c8916fd295aeec40c41aecf812d" prot="public" virt="virtual"><scope>KWin::WorkspaceScene</scope><name>openglContext</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a686b4f5c27e83639d051ab00cd23d6a8" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>overlayItem</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1ae848be1aaba91ef1d6671a3b44f88927" prot="public" virt="virtual"><scope>KWin::WorkspaceScene</scope><name>paint</name></member>
+      <member refid="class_k_win_1_1_scene_1a3a01125b0e9a25abdd13bb4a4ab1287ea49304f0364b4092d756e0f592b6b744d" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>PAINT_SCREEN_BACKGROUND_FIRST</name></member>
+      <member refid="class_k_win_1_1_scene_1a3a01125b0e9a25abdd13bb4a4ab1287ead03f92d06d21fbde10bc0ba4cdefab97" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>PAINT_SCREEN_REGION</name></member>
+      <member refid="class_k_win_1_1_scene_1a3a01125b0e9a25abdd13bb4a4ab1287ea3262c470843390ef57968c5a851df037" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>PAINT_SCREEN_TRANSFORMED</name></member>
+      <member refid="class_k_win_1_1_scene_1a3a01125b0e9a25abdd13bb4a4ab1287ea398bc4c8442e505f33269673ee39acb3" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>PAINT_SCREEN_WITH_TRANSFORMED_WINDOWS</name></member>
+      <member refid="class_k_win_1_1_scene_1a3a01125b0e9a25abdd13bb4a4ab1287ea4e8950ede8da1012dbaea480385be02a" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>PAINT_WINDOW_OPAQUE</name></member>
+      <member refid="class_k_win_1_1_scene_1a3a01125b0e9a25abdd13bb4a4ab1287eaff3757651aac719a5d50361799c21750" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>PAINT_WINDOW_TRANSFORMED</name></member>
+      <member refid="class_k_win_1_1_scene_1a3a01125b0e9a25abdd13bb4a4ab1287ea315647e6cd3128d04214a22d1163be7a" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>PAINT_WINDOW_TRANSLUCENT</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1acc0f1d9839e57d19120b7e351a1ee542" prot="protected" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>painted_delegate</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a85064bff7e2052de99fd5a09cec66b93" prot="protected" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>painted_screen</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a76ac4bfbffe680e75b260464eb748d90" prot="protected" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>paintGenericScreen</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a78b8a06ca313fbfc5c6e8e2eaba40efe" prot="protected" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>paintSimpleScreen</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a3e5ccb425cad4f11190dcf968861dd12" prot="protected" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>paintWindow</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1af9843892fe339b2dd2d8f7b8752e1e11" prot="public" virt="virtual"><scope>KWin::WorkspaceScene</scope><name>postPaint</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1ab48d5722a8b0b12c32d006791dbc15aa" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>preFrameRender</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a13a50f0913c5f6add3ad3fc0e83fe8fb" prot="public" virt="virtual"><scope>KWin::WorkspaceScene</scope><name>prePaint</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a667c76c84d3266f86e63836383a0b666" prot="protected" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>preparePaintGenericScreen</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1ad8e7e918877f3d907d64ef96ddeac92b" prot="protected" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>preparePaintSimpleScreen</name></member>
+      <member refid="class_k_win_1_1_scene_1ac9b9d03d06ac9c95c6c60773719ac9ba" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>removeDelegate</name></member>
+      <member refid="class_k_win_1_1_scene_1acfa97f94e5f1b3a91f94f813d437388c" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>renderer</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a7105ad6073368abfafbdb49e9c104fd7" prot="public" virt="virtual"><scope>KWin::WorkspaceScene</scope><name>scanoutCandidates</name></member>
+      <member refid="class_k_win_1_1_scene_1a2a4b8d72fe643d9c288a2be968e6b2a3" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>Scene</name></member>
+      <member refid="class_k_win_1_1_scene_1a10de8f0b589c77752a800e64a540ccb7" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>setGeometry</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a2ad6b5c78a83037f3c6b3c31afe83a0b" prot="protected" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>stacking_order</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1a5034a824ec33adeeeb4dd9575461db9f" prot="public" virt="virtual"><scope>KWin::WorkspaceScene</scope><name>supportsNativeFence</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1ae5bacf0ab952e6d86f441513224360c2" prot="public" virt="virtual"><scope>KWin::WorkspaceScene</scope><name>textureForOutput</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1ab9ce9437870a461d6de8f0340dff0e3c" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>WorkspaceScene</name></member>
+      <member refid="class_k_win_1_1_scene_1a2f52f4ccb6f7865f19d04ff76fe7d94c" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>~Scene</name></member>
+      <member refid="class_k_win_1_1_workspace_scene_1ad9e0d1439d963c730aaefbe40e93f4a2" prot="public" virt="non-virtual"><scope>KWin::WorkspaceScene</scope><name>~WorkspaceScene</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

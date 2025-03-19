@@ -1,0 +1,382 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_drm_abstract_output" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>KWin::DrmAbstractOutput</compoundname>
+    <basecompoundref refid="class_k_win_1_1_output" prot="public" virt="non-virtual">KWin::Output</basecompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_drm_output" prot="public" virt="non-virtual">KWin::DrmOutput</derivedcompoundref>
+    <derivedcompoundref refid="class_k_win_1_1_drm_virtual_output" prot="public" virt="non-virtual">KWin::DrmVirtualOutput</derivedcompoundref>
+    <includes refid="drm__abstract__output_8h" local="no">drm_abstract_output.h</includes>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_k_win_1_1_drm_abstract_output_1a72cc752423a4e77af52caaa1c039d3df" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class DrmGpu</definition>
+        <argsstring></argsstring>
+        <name>DrmGpu</name>
+        <qualifiedname>KWin::DrmAbstractOutput::DrmGpu</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_drm_gpu" kindref="compound">DrmGpu</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_abstract_output.h" line="35" column="18" bodyfile="kwin/src/backends/drm/drm_abstract_output.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_drm_abstract_output_1acac3691c1006e96118e7e061176321cd" prot="protected" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_k_win_1_1_render_loop" kindref="compound">RenderLoop</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;RenderLoop&gt; KWin::DrmAbstractOutput::m_renderLoop</definition>
+        <argsstring></argsstring>
+        <name>m_renderLoop</name>
+        <qualifiedname>KWin::DrmAbstractOutput::m_renderLoop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_abstract_output.h" line="37" column="21" bodyfile="kwin/src/backends/drm/drm_abstract_output.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_drm_abstract_output_1ab16d932c63e6d88a5d60960863b29d1d" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::DrmAbstractOutput::DrmAbstractOutput</definition>
+        <argsstring>()</argsstring>
+        <name>DrmAbstractOutput</name>
+        <qualifiedname>KWin::DrmAbstractOutput::DrmAbstractOutput</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_abstract_output.h" line="24" column="14" bodyfile="kwin/src/backends/drm/drm_abstract_output.cpp" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_abstract_output_1ae92f4b12869021b84a68eb373f75922e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_k_win_1_1_render_loop" kindref="compound">RenderLoop</ref> *</type>
+        <definition>RenderLoop * KWin::DrmAbstractOutput::renderLoop</definition>
+        <argsstring>() const override</argsstring>
+        <name>renderLoop</name>
+        <qualifiedname>KWin::DrmAbstractOutput::renderLoop</qualifiedname>
+        <reimplements refid="class_k_win_1_1_output_1a7369afc9566e97e778f7364ad699dee3">renderLoop</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the <ref refid="class_k_win_1_1_render_loop" kindref="compound">RenderLoop</ref> for this output. If the platform does not support per screen rendering, all outputs will share the same render loop. FIXME: remove this and decouple <ref refid="class_k_win_1_1_render_loop" kindref="compound">RenderLoop</ref> from <ref refid="class_k_win_1_1_output" kindref="compound">Output</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_abstract_output.h" line="26" column="16" bodyfile="kwin/src/backends/drm/drm_abstract_output.cpp" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_abstract_output_1a11f3d20f496d6bf22bce33b83d83a2c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool KWin::DrmAbstractOutput::present</definition>
+        <argsstring>(const std::shared_ptr&lt; OutputFrame &gt; &amp;frame)=0</argsstring>
+        <name>present</name>
+        <qualifiedname>KWin::DrmAbstractOutput::present</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_drm_output_1a29e4f0c3251b4bbc3f84584c4172e483">present</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_drm_virtual_output_1a313e60218e20e263faed52a8e34a9b71">present</reimplementedby>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_k_win_1_1_output_frame" kindref="compound">OutputFrame</ref> &gt; &amp;</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_abstract_output.h" line="28" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_abstract_output_1ad30515b25d69d4893480ee64eb3ded56" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="class_k_win_1_1_drm_output_layer" kindref="compound">DrmOutputLayer</ref> *</type>
+        <definition>virtual DrmOutputLayer * KWin::DrmAbstractOutput::primaryLayer</definition>
+        <argsstring>() const =0</argsstring>
+        <name>primaryLayer</name>
+        <qualifiedname>KWin::DrmAbstractOutput::primaryLayer</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_drm_output_1a2178f29dcb0317e91115d312c515a5a5">primaryLayer</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_drm_virtual_output_1a37513638b78b31a118e903e50516cac1">primaryLayer</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_abstract_output.h" line="29" column="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_abstract_output_1add4f2927deda44261ffdb8572b8611b2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="class_k_win_1_1_drm_output_layer" kindref="compound">DrmOutputLayer</ref> *</type>
+        <definition>virtual DrmOutputLayer * KWin::DrmAbstractOutput::cursorLayer</definition>
+        <argsstring>() const =0</argsstring>
+        <name>cursorLayer</name>
+        <qualifiedname>KWin::DrmAbstractOutput::cursorLayer</qualifiedname>
+        <reimplementedby refid="class_k_win_1_1_drm_output_1ac5341791d1a0a7e9e07cead78d42ef50">cursorLayer</reimplementedby>
+        <reimplementedby refid="class_k_win_1_1_drm_virtual_output_1a5a770cdd5d9081a71caae5c5457415d3">cursorLayer</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_abstract_output.h" line="30" column="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_drm_abstract_output_1acf3c9625d691f99606e1a48c3f8dec81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::DrmAbstractOutput::updateEnabled</definition>
+        <argsstring>(bool enabled)</argsstring>
+        <name>updateEnabled</name>
+        <qualifiedname>KWin::DrmAbstractOutput::updateEnabled</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/backends/drm/drm_abstract_output.h" line="32" column="10" bodyfile="kwin/src/backends/drm/drm_abstract_output.cpp" bodystart="28" bodyend="33"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::DrmAbstractOutput</label>
+        <link refid="class_k_win_1_1_drm_abstract_output"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>KWin::DrmOutput</label>
+        <link refid="class_k_win_1_1_drm_output"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>KWin::DrmVirtualOutput</label>
+        <link refid="class_k_win_1_1_drm_virtual_output"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>KWin::Output</label>
+        <link refid="class_k_win_1_1_output"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="9">
+        <label>KWin::BrightnessDevice</label>
+        <link refid="class_k_win_1_1_brightness_device"/>
+      </node>
+      <node id="6">
+        <label>KWin::ColorDescription</label>
+        <link refid="class_k_win_1_1_color_description"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>sRGB</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>KWin::DrmAbstractOutput</label>
+        <link refid="class_k_win_1_1_drm_abstract_output"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>KWin::Edid</label>
+        <link refid="class_k_win_1_1_edid"/>
+      </node>
+      <node id="2">
+        <label>KWin::Output</label>
+        <link refid="class_k_win_1_1_output"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_state</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_information</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_brightnessDevice</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>KWin::Output::Information</label>
+        <link refid="struct_k_win_1_1_output_1_1_information"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>edid</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>panelOrientation</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>KWin::Output::State</label>
+        <link refid="struct_k_win_1_1_output_1_1_state"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>manualTransform</edgelabel>
+          <edgelabel>transform</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>colorDescription</edgelabel>
+          <edgelabel>originalColorDescription</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>KWin::OutputTransform</label>
+        <link refid="class_k_win_1_1_output_transform"/>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/backends/drm/drm_abstract_output.h" line="20" column="1" bodyfile="kwin/src/backends/drm/drm_abstract_output.h" bodystart="21" bodyend="38"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_output_1a8c730a9077f5d0a5e34a5d4a167ab2ae" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>aboutToChange</name></member>
+      <member refid="class_k_win_1_1_output_1ac3b7a29fe56366ce6b96f3e6609ca455" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>aboutToTurnOff</name></member>
+      <member refid="class_k_win_1_1_output_1aab165586f8dd37ca8f53de7898b51e03" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>allowSdrSoftwareBrightness</name></member>
+      <member refid="class_k_win_1_1_output_1aa9c2f0eb47a4de8c08f1998056a7ca4f" prot="public" virt="virtual"><scope>KWin::DrmAbstractOutput</scope><name>applyChanges</name></member>
+      <member refid="class_k_win_1_1_output_1a8295e1b73fde3b2ca60ef94bcdbc77a4" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>artificialHdrHeadroom</name></member>
+      <member refid="class_k_win_1_1_output_1ac33fe80a4384201645790e9706b8582b" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>AutoRotationPolicy</name></member>
+      <member refid="class_k_win_1_1_output_1a78a9933dbd65ade310d22742867af5c1" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>autoRotationPolicy</name></member>
+      <member refid="class_k_win_1_1_output_1a66ecc7bfb723f3702693af17fe1d67a3" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>autoRotationPolicyChanged</name></member>
+      <member refid="class_k_win_1_1_output_1af9df7fcd498a5281398095aec310ffc4" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>brightnessChanged</name></member>
+      <member refid="class_k_win_1_1_output_1abb89bb68cd6857ddde801f16528b6580" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>brightnessDevice</name></member>
+      <member refid="class_k_win_1_1_output_1aba799d2210ca65c7eb826267f970dcbd" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>brightnessMetadataChanged</name></member>
+      <member refid="class_k_win_1_1_output_1ac218b9693b36abc3381fd851633c6eee" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>brightnessSetting</name></member>
+      <member refid="class_k_win_1_1_output_1ae3afdc2a498853b6f295ea29b53b418c" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>capabilities</name></member>
+      <member refid="class_k_win_1_1_output_1a77b1653dbbbf75f5dca80ec649eb0929" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>capabilitiesChanged</name></member>
+      <member refid="class_k_win_1_1_output_1aaeae09997005463c688f15423069f1ab" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>Capability</name></member>
+      <member refid="class_k_win_1_1_output_1ac335ddfb48aa5f028a80cca1c07a3aad" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>changed</name></member>
+      <member refid="class_k_win_1_1_output_1a649d342c77e276a2af243919c8f24fed" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>colorDescription</name></member>
+      <member refid="class_k_win_1_1_output_1a28b08e9f87c706f7bef73a9d437823b6" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>colorDescriptionChanged</name></member>
+      <member refid="class_k_win_1_1_output_1a63a50e5f54e2c42409e8e275f673f198" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>ColorPowerTradeoff</name></member>
+      <member refid="class_k_win_1_1_output_1ae6e9082834c517e3df5509cb82217ac9" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>colorPowerTradeoff</name></member>
+      <member refid="class_k_win_1_1_output_1ad161558acc4cb7f921800e0942cd4733" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>colorPowerTradeoffChanged</name></member>
+      <member refid="class_k_win_1_1_output_1a4bb17a5ecd4c681e90bcbb9e9a084e94" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>ColorProfileSource</name></member>
+      <member refid="class_k_win_1_1_output_1a4fac789216029b4362ef31480b1e49b8" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>colorProfileSource</name></member>
+      <member refid="class_k_win_1_1_output_1afaab79a918ccf0b37d99a38f4ce59a87" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>colorProfileSourceChanged</name></member>
+      <member refid="class_k_win_1_1_output_1a3d6f4cb8a9ea656aa00a8137d4c5c325" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>currentBrightness</name></member>
+      <member refid="class_k_win_1_1_output_1a04418b1957d886a4a01ccc73eb5c8fca" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>currentMode</name></member>
+      <member refid="class_k_win_1_1_output_1a534780e6e116defcd72a1b6f58a3dcc8" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>currentModeChanged</name></member>
+      <member refid="class_k_win_1_1_drm_abstract_output_1add4f2927deda44261ffdb8572b8611b2" prot="public" virt="pure-virtual"><scope>KWin::DrmAbstractOutput</scope><name>cursorLayer</name></member>
+      <member refid="class_k_win_1_1_output_1a20fea699e81a6dc5c6b5429d2778f7fd" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>description</name></member>
+      <member refid="class_k_win_1_1_output_1a9f775051738a68891d6e76f18a4c40d3" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>desiredModeRefreshRate</name></member>
+      <member refid="class_k_win_1_1_output_1a901d35b02d284ab6406f2fea25b84841" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>desiredModeSize</name></member>
+      <member refid="class_k_win_1_1_output_1a101934f190d844ffc5ee29d716067ffd" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>devicePixelRatio</name></member>
+      <member refid="class_k_win_1_1_output_1a7f6c9d10afb24eb2bb5183cb5dcbe61c" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>dimAnimationTime</name></member>
+      <member refid="class_k_win_1_1_output_1a309f06b3854f4c634ce1ebffbae96771" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>dimming</name></member>
+      <member refid="class_k_win_1_1_output_1a3fd2d05ae6a721bf258bd36fb7cbf758" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>dimmingChanged</name></member>
+      <member refid="class_k_win_1_1_output_1a4c33fb5b1f01c8358c76a57a238336d1" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>DpmsMode</name></member>
+      <member refid="class_k_win_1_1_output_1af206c9aa8a7591fbcfe7e9aaeb9ce57e" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>dpmsMode</name></member>
+      <member refid="class_k_win_1_1_output_1ae52011ce61ae5b1b4bab46947044c7f0" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>dpmsModeChanged</name></member>
+      <member refid="class_k_win_1_1_drm_abstract_output_1ab16d932c63e6d88a5d60960863b29d1d" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>DrmAbstractOutput</name></member>
+      <member refid="class_k_win_1_1_drm_abstract_output_1a72cc752423a4e77af52caaa1c039d3df" prot="protected" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>DrmGpu</name></member>
+      <member refid="class_k_win_1_1_output_1a8fda3239a47336ba92df2cdda1039478" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>edid</name></member>
+      <member refid="class_k_win_1_1_output_1a07af862f480a8f505dddba57cc22eca4" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>eisaId</name></member>
+      <member refid="class_k_win_1_1_output_1a0c0e1118b0f333539e1a185edfdbd9cf" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>enabledChanged</name></member>
+      <member refid="class_k_win_1_1_output_1acf46dad2b0990591fdebe45b4877ab16" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>geometry</name></member>
+      <member refid="class_k_win_1_1_output_1ab68ba2a0470a4836649a67328946c2a4" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>geometry</name></member>
+      <member refid="class_k_win_1_1_output_1a645e6097f705c5d42e2a40ab13489e04" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>geometryChanged</name></member>
+      <member refid="class_k_win_1_1_output_1a2b8bf63ca113d1cded5922033efbb5c1" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>geometryF</name></member>
+      <member refid="class_k_win_1_1_output_1a5532e60228ba83969c15f1f6f42a991d" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>highDynamicRange</name></member>
+      <member refid="class_k_win_1_1_output_1a5c6908a304e917cf489d525a1e5c9a64" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>highDynamicRangeChanged</name></member>
+      <member refid="class_k_win_1_1_output_1ac9b10f45492af10851edba805f3d9768" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>iccProfile</name></member>
+      <member refid="class_k_win_1_1_output_1aaf09a31e0b0f9b98607789c3ce801c96" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>iccProfileChanged</name></member>
+      <member refid="class_k_win_1_1_output_1a8557248992fcdeb3baf1de29113a7e08" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>iccProfilePath</name></member>
+      <member refid="class_k_win_1_1_output_1a7efde201f9ba470622b0f5e28a207eb1" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>iccProfilePathChanged</name></member>
+      <member refid="class_k_win_1_1_output_1ae3ba33a8ace198be4ba398ca4c691689" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>isEnabled</name></member>
+      <member refid="class_k_win_1_1_output_1aa3c5635645acf9d5f9b969111896f538" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>isInternal</name></member>
+      <member refid="class_k_win_1_1_output_1af0a3accd0bee2ac11439e2ddad2b45e6" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>isNonDesktop</name></member>
+      <member refid="class_k_win_1_1_output_1a080fb0689b3cb06ab20f94c936d01890" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>isPlaceholder</name></member>
+      <member refid="class_k_win_1_1_output_1ac236c1f3abd3fd913682c0ae7ca10ef0" prot="protected" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>m_brightnessDevice</name></member>
+      <member refid="class_k_win_1_1_output_1ad75806b23fa7bd8bfacd2bb667d8d542" prot="protected" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>m_information</name></member>
+      <member refid="class_k_win_1_1_output_1a59f8b108a1b1c7ab65a1980e72c51aa9" prot="protected" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>m_refCount</name></member>
+      <member refid="class_k_win_1_1_drm_abstract_output_1acac3691c1006e96118e7e061176321cd" prot="protected" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>m_renderLoop</name></member>
+      <member refid="class_k_win_1_1_output_1ac0b78b1a9f612d7ae52d99c77af9a45d" prot="protected" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>m_state</name></member>
+      <member refid="class_k_win_1_1_output_1aed972ddf4a99912856a09f1bb766ee5a" prot="protected" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>m_uuid</name></member>
+      <member refid="class_k_win_1_1_output_1aac98b9756aa3f948ad8a1ae008d6bb37" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>manualTransform</name></member>
+      <member refid="class_k_win_1_1_output_1a18af9cd1a90948e0375eac86b7665368" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>manufacturer</name></member>
+      <member refid="class_k_win_1_1_output_1abadfe01c1c6b6db9b68a9d196438df4d" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>manufacturer</name></member>
+      <member refid="class_k_win_1_1_output_1a6f3bab77f17faa59e5a2e0ce351cdccb" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>mapFromGlobal</name></member>
+      <member refid="class_k_win_1_1_output_1ae5dccce3a13141e5b8021d9d6edbd8e2" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>mapFromGlobal</name></member>
+      <member refid="class_k_win_1_1_output_1a9464dfd54e8cc02de4e15592ead5191f" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>mapFromGlobal</name></member>
+      <member refid="class_k_win_1_1_output_1a745437a3dd637542df3a504b5c9df630" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>mapToGlobal</name></member>
+      <member refid="class_k_win_1_1_output_1a43cc3da5f707a25eab10f5f9941bae30" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>mapToGlobal</name></member>
+      <member refid="class_k_win_1_1_output_1a8550a6db203735694a816476d3c2f330" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>maxAverageBrightness</name></member>
+      <member refid="class_k_win_1_1_output_1a5c5a4900d2f5508aa2bcf6cbb721d4fe" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>maxAverageBrightnessOverride</name></member>
+      <member refid="class_k_win_1_1_output_1a904f72b9faedcf2df3319d94a3ec5840" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>maxPeakBrightness</name></member>
+      <member refid="class_k_win_1_1_output_1af1969aa25faeccee6ac4ebfbdeeafb3a" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>maxPeakBrightnessOverride</name></member>
+      <member refid="class_k_win_1_1_output_1a41b6d37e945be6ad810c211003b31104" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>minBrightness</name></member>
+      <member refid="class_k_win_1_1_output_1abc0bf990016a50f5093d721674f40a50" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>minBrightnessOverride</name></member>
+      <member refid="class_k_win_1_1_output_1a41f6de69b05a8be304049fdee6917eb9" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>model</name></member>
+      <member refid="class_k_win_1_1_output_1a7ee07be9ca9d43874bf4b7eb52412c00" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>model</name></member>
+      <member refid="class_k_win_1_1_output_1a31492dff27d452f0b062cfcb85de835e" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>modes</name></member>
+      <member refid="class_k_win_1_1_output_1a79573114196ef06b923699de2bc30fe0" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>modesChanged</name></member>
+      <member refid="class_k_win_1_1_output_1a6429302a9498ad18c919a2c035021c61" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>modeSize</name></member>
+      <member refid="class_k_win_1_1_output_1a8907b0474db09efb719deb5dbcdbf73d" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>mstPath</name></member>
+      <member refid="class_k_win_1_1_output_1ad56a9a779a9bbe7149428a1aa42abeee" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>name</name></member>
+      <member refid="class_k_win_1_1_output_1a653c5bcf40098e30f26105f6b884dba9" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>name</name></member>
+      <member refid="class_k_win_1_1_output_1a0d05f9630e7411b0485d09cfc3f252ec" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>orientateSize</name></member>
+      <member refid="class_k_win_1_1_output_1adb8f18f47c547aad3325e08e1f3617f4" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>Output</name></member>
+      <member refid="class_k_win_1_1_output_1a1a63ecbdeebcded91a913d212ed61c37" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>outputChange</name></member>
+      <member refid="class_k_win_1_1_output_1a33eda9c57a6d7834424c3165cc9207bd" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>overscan</name></member>
+      <member refid="class_k_win_1_1_output_1a4aec1909dc862d143884013214682494" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>overscanChanged</name></member>
+      <member refid="class_k_win_1_1_output_1a3ad0802ad51c27b4c8881a374cd1a4ea" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>panelOrientation</name></member>
+      <member refid="class_k_win_1_1_output_1af4b1a3e66823aa1e9c6b9522ee7c2f6f" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>physicalSize</name></member>
+      <member refid="class_k_win_1_1_output_1aedc965facd9be832eb827ab0fe5a6fd9" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>pixelSize</name></member>
+      <member refid="class_k_win_1_1_drm_abstract_output_1a11f3d20f496d6bf22bce33b83d83a2c4" prot="public" virt="pure-virtual"><scope>KWin::DrmAbstractOutput</scope><name>present</name></member>
+      <member refid="class_k_win_1_1_drm_abstract_output_1ad30515b25d69d4893480ee64eb3ded56" prot="public" virt="pure-virtual"><scope>KWin::DrmAbstractOutput</scope><name>primaryLayer</name></member>
+      <member refid="class_k_win_1_1_output_1a36334461e8e8bf435629389fbf50a8a3" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>Q_ENUM</name></member>
+      <member refid="class_k_win_1_1_output_1a31f049ca6ddfc03620193a9c63a6b791" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>Q_ENUM</name></member>
+      <member refid="class_k_win_1_1_output_1a0fa72e536bfcf0b8fbe60333eb5a15ad" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>rect</name></member>
+      <member refid="class_k_win_1_1_output_1a96175d3a3c98a1c9f216f95470a2f5b2" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>rectF</name></member>
+      <member refid="class_k_win_1_1_output_1a898e164f3e5af7e88855a563410646f3" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>ref</name></member>
+      <member refid="class_k_win_1_1_output_1a3618863de6836ef810b3429b89095977" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>referenceLuminance</name></member>
+      <member refid="class_k_win_1_1_output_1a2f77d224b57226b799c863f4d2909fc5" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>referenceLuminanceChanged</name></member>
+      <member refid="class_k_win_1_1_output_1a3e1d2698295c7897ca32593d1022449d" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>refreshRate</name></member>
+      <member refid="class_k_win_1_1_drm_abstract_output_1ae92f4b12869021b84a68eb373f75922e" prot="public" virt="virtual"><scope>KWin::DrmAbstractOutput</scope><name>renderLoop</name></member>
+      <member refid="class_k_win_1_1_output_1a091c0b392d5241b7208e2a63d0f89a83" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>RgbRange</name></member>
+      <member refid="class_k_win_1_1_output_1a653742c03f688e0e0a1cb4d52355d5ad" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>rgbRange</name></member>
+      <member refid="class_k_win_1_1_output_1a12d7fe30ce08fb961d038af680e73f7e" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>rgbRangeChanged</name></member>
+      <member refid="class_k_win_1_1_output_1a26b1c3dcc612487192f4f23d11bc72b0" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>scale</name></member>
+      <member refid="class_k_win_1_1_output_1a6d784164a30461f60488d1ef7a47d787" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>scaleChanged</name></member>
+      <member refid="class_k_win_1_1_output_1a1d05286dd7119bb3d2cf4d1497d08a4e" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>sdrGamutWideness</name></member>
+      <member refid="class_k_win_1_1_output_1ab49ae70df864b8939d4a012e4b4d8660" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>sdrGamutWidenessChanged</name></member>
+      <member refid="class_k_win_1_1_output_1acb9b277fb8f5a5a533d5c21d93682b7a" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>serialNumber</name></member>
+      <member refid="class_k_win_1_1_output_1ae67f67696d9b6edc6ae9f0d600a7c6dd" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>serialNumber</name></member>
+      <member refid="class_k_win_1_1_output_1a0f89221e8f4fa1f7edbdc7d873e687b7" prot="public" virt="virtual"><scope>KWin::DrmAbstractOutput</scope><name>setBrightnessDevice</name></member>
+      <member refid="class_k_win_1_1_output_1acdc1a2c8833b9b635bf8f2c6addf181f" prot="public" virt="virtual"><scope>KWin::DrmAbstractOutput</scope><name>setChannelFactors</name></member>
+      <member refid="class_k_win_1_1_output_1a049f33519b2aa31e8e17f6f52e35151f" prot="public" virt="virtual"><scope>KWin::DrmAbstractOutput</scope><name>setDpmsMode</name></member>
+      <member refid="class_k_win_1_1_output_1a3eaae023a36256775eedb537eacce803" prot="protected" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>setInformation</name></member>
+      <member refid="class_k_win_1_1_output_1a4dae6cf7d261659286357d999263640c" prot="protected" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>setState</name></member>
+      <member refid="class_k_win_1_1_output_1ab37109b7ceca7fe10292bb19a3cbc925" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>SubPixel</name></member>
+      <member refid="class_k_win_1_1_output_1a80f4870d37e9b765e2c56091d1844ee1" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>subPixel</name></member>
+      <member refid="class_k_win_1_1_output_1a66b40f1d46629cf20190d6f23224966f" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>transform</name></member>
+      <member refid="class_k_win_1_1_output_1ac1e24bed156ab39494dfd360e277635d" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>transformChanged</name></member>
+      <member refid="class_k_win_1_1_output_1a036f0372f9a864df2bbb535b02b9a4c5" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>unref</name></member>
+      <member refid="class_k_win_1_1_output_1ad0db444631ca9bd660c2c1c81bda8693" prot="public" virt="virtual"><scope>KWin::DrmAbstractOutput</scope><name>updateCursorLayer</name></member>
+      <member refid="class_k_win_1_1_drm_abstract_output_1acf3c9625d691f99606e1a48c3f8dec81" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>updateEnabled</name></member>
+      <member refid="class_k_win_1_1_output_1a57a16eb2ce011666fc8f7fa5704923f8" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>uuid</name></member>
+      <member refid="class_k_win_1_1_output_1a02c8558a99a92cda53b522eeb51e7e0f" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>vrrPolicy</name></member>
+      <member refid="class_k_win_1_1_output_1a84bac9b4da1f8af82041ee2c375eaa3b" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>vrrPolicyChanged</name></member>
+      <member refid="class_k_win_1_1_output_1ade80d75bdff0b3a8d98dc9b63f2ad179" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>wakeUp</name></member>
+      <member refid="class_k_win_1_1_output_1ab09055ab4b113efe20d9ae0f6ef5b07d" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>wideColorGamut</name></member>
+      <member refid="class_k_win_1_1_output_1ace4d1451150371d0726e7c89f69fd8eb" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>wideColorGamutChanged</name></member>
+      <member refid="class_k_win_1_1_output_1a28905c591239cd30358a9a1a33eed602" prot="public" virt="non-virtual"><scope>KWin::DrmAbstractOutput</scope><name>~Output</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

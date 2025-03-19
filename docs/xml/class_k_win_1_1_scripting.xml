@@ -1,0 +1,545 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_k_win_1_1_scripting" kind="class" language="C++" prot="public">
+    <compoundname>KWin::Scripting</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="scripting_8h" local="no">scripting.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_scripting_1a7d2b93575a24423f755bfcf9fa2296b9" prot="private" static="no" mutable="no">
+        <type>QStringList</type>
+        <definition>QStringList KWin::Scripting::scriptList</definition>
+        <argsstring></argsstring>
+        <name>scriptList</name>
+        <qualifiedname>KWin::Scripting::scriptList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="315" column="17" bodyfile="kwin/src/scripting/scripting.h" bodystart="315" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_scripting_1a5c7f6b2f34a41ff66e212d5adb424584" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_k_win_1_1_abstract_script" kindref="compound">KWin::AbstractScript</ref> * &gt;</type>
+        <definition>QList&lt;KWin::AbstractScript *&gt; KWin::Scripting::scripts</definition>
+        <argsstring></argsstring>
+        <name>scripts</name>
+        <qualifiedname>KWin::Scripting::scripts</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="316" column="11" bodyfile="kwin/src/scripting/scripting.h" bodystart="316" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_scripting_1a63d24aeb35af085a5d43fdd15e658533" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; QRecursiveMutex &gt;</type>
+        <definition>std::unique_ptr&lt;QRecursiveMutex&gt; KWin::Scripting::m_scriptsLock</definition>
+        <argsstring></argsstring>
+        <name>m_scriptsLock</name>
+        <qualifiedname>KWin::Scripting::m_scriptsLock</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Lock to protect the scripts member variable. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="320" column="21" bodyfile="kwin/src/scripting/scripting.h" bodystart="320" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_scripting_1a7a66809dab2f306f3b5026e0169089c9" prot="private" static="no" mutable="no">
+        <type>QQmlEngine *</type>
+        <definition>QQmlEngine* KWin::Scripting::m_qmlEngine</definition>
+        <argsstring></argsstring>
+        <name>m_qmlEngine</name>
+        <qualifiedname>KWin::Scripting::m_qmlEngine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="363" column="16" bodyfile="kwin/src/scripting/scripting.h" bodystart="363" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_scripting_1aaaff706dc6fa60da500aebcaeb5c32d6" prot="private" static="no" mutable="no">
+        <type>QQmlContext *</type>
+        <definition>QQmlContext* KWin::Scripting::m_declarativeScriptSharedContext</definition>
+        <argsstring></argsstring>
+        <name>m_declarativeScriptSharedContext</name>
+        <qualifiedname>KWin::Scripting::m_declarativeScriptSharedContext</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="364" column="17" bodyfile="kwin/src/scripting/scripting.h" bodystart="364" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_win_1_1_scripting_1a64e6ad1b2f97d06649025e77e1707e67" prot="private" static="no" mutable="no">
+        <type><ref refid="class_k_win_1_1_qt_script_workspace_wrapper" kindref="compound">QtScriptWorkspaceWrapper</ref> *</type>
+        <definition>QtScriptWorkspaceWrapper* KWin::Scripting::m_workspaceWrapper</definition>
+        <argsstring></argsstring>
+        <name>m_workspaceWrapper</name>
+        <qualifiedname>KWin::Scripting::m_workspaceWrapper</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="365" column="30" bodyfile="kwin/src/scripting/scripting.h" bodystart="365" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_k_win_1_1_scripting_1af133e17b92c7e210d6b4beb7e0834ed5" prot="private" static="yes" mutable="no">
+        <type><ref refid="class_k_win_1_1_scripting" kindref="compound">Scripting</ref> *</type>
+        <definition>KWin::Scripting * KWin::Scripting::s_self</definition>
+        <argsstring></argsstring>
+        <name>s_self</name>
+        <qualifiedname>KWin::Scripting::s_self</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="362" column="22" bodyfile="kwin/src/scripting/scripting.h" bodystart="362" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_win_1_1_scripting_1a12d75a549c7e54f586549c6616e73d0d" prot="private" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::Scripting::Scripting</definition>
+        <argsstring>(QObject *parent)</argsstring>
+        <name>Scripting</name>
+        <qualifiedname>KWin::Scripting::Scripting</qualifiedname>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="314" column="14" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="626" bodyend="639"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripting_1ad9252deb91194f48045b7a965254eefd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Scripting::runScripts</definition>
+        <argsstring>()</argsstring>
+        <name>runScripts</name>
+        <qualifiedname>KWin::Scripting::runScripts</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="323" column="10" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="801" bodyend="807"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripting_1a58afaa5788a128d73a24aa4b591dedac" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Scripting::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <qualifiedname>KWin::Scripting::init</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="360" column="10" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="641" bodyend="674"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripting_1acdff1c8d8742acd24361532798c3f952" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="scripting_8h_1afb5c13d7e637b8983a9e532a0b6dcbfe" kindref="member">LoadScriptList</ref></type>
+        <definition>LoadScriptList KWin::Scripting::queryScriptsToLoad</definition>
+        <argsstring>()</argsstring>
+        <name>queryScriptsToLoad</name>
+        <qualifiedname>KWin::Scripting::queryScriptsToLoad</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="361" column="20" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="700" bodyend="748"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_win_1_1_scripting_1a82be76e174d5f13e24ee8751ef17fc56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KWin::Scripting::~Scripting</definition>
+        <argsstring>() override</argsstring>
+        <name>~Scripting</name>
+        <qualifiedname>KWin::Scripting::~Scripting</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="326" column="5" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="841" bodyend="845"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripting_1adb86674cfb829b7b89bc88556db9a29f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE Q_INVOKABLE int</type>
+        <definition>int KWin::Scripting::loadScript</definition>
+        <argsstring>(const QString &amp;filePath, const QString &amp;pluginName=QString())</argsstring>
+        <name>loadScript</name>
+        <qualifiedname>KWin::Scripting::loadScript</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>filePath</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>pluginName</declname>
+          <defval>QString()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="327" column="34" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="815" bodyend="826"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripting_1acb0eac88b1d79c1718eb83d301493d7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE Q_INVOKABLE int</type>
+        <definition>int KWin::Scripting::loadDeclarativeScript</definition>
+        <argsstring>(const QString &amp;filePath, const QString &amp;pluginName=QString())</argsstring>
+        <name>loadDeclarativeScript</name>
+        <qualifiedname>KWin::Scripting::loadDeclarativeScript</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>filePath</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>pluginName</declname>
+          <defval>QString()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="328" column="34" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="828" bodyend="839"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripting_1a4e2286c762b2e3294fed7cbcfc46453b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE Q_INVOKABLE bool</type>
+        <definition>bool KWin::Scripting::isScriptLoaded</definition>
+        <argsstring>(const QString &amp;pluginName) const</argsstring>
+        <name>isScriptLoaded</name>
+        <qualifiedname>KWin::Scripting::isScriptLoaded</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="329" column="35" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="773" bodyend="776"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripting_1a86614b2061d94f0aa87c28ffc9f790da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE Q_INVOKABLE bool</type>
+        <definition>bool KWin::Scripting::unloadScript</definition>
+        <argsstring>(const QString &amp;pluginName)</argsstring>
+        <name>unloadScript</name>
+        <qualifiedname>KWin::Scripting::unloadScript</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="330" column="35" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="789" bodyend="799"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripting_1aac1399c98e9a5912716fedbe711eaca4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; QAction * &gt;</type>
+        <definition>QList&lt; QAction * &gt; KWin::Scripting::actionsForUserActionMenu</definition>
+        <argsstring>(Window *c, QMenu *parent)</argsstring>
+        <name>actionsForUserActionMenu</name>
+        <qualifiedname>KWin::Scripting::actionsForUserActionMenu</qualifiedname>
+        <param>
+          <type><ref refid="class_k_win_1_1_window" kindref="compound">Window</ref> *</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>QMenu *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+<para>Invokes all registered callbacks to add actions to the <ref refid="class_k_win_1_1_user_actions_menu" kindref="compound">UserActionsMenu</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="class_client" kindref="compound">Client</ref> for which the <ref refid="class_k_win_1_1_user_actions_menu" kindref="compound">UserActionsMenu</ref> is about to be shown </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parent menu to which to add created child menus and items </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>QList&lt; QAction* &gt; List of all actions aggregated from all scripts. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="339" column="11" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="847" bodyend="857"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripting_1af0aae189e407eacc5c0d56961817444a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QQmlEngine *</type>
+        <definition>QQmlEngine * KWin::Scripting::qmlEngine</definition>
+        <argsstring>() const</argsstring>
+        <name>qmlEngine</name>
+        <qualifiedname>KWin::Scripting::qmlEngine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="341" column="16" bodyfile="kwin/src/scripting/scripting.h" bodystart="368" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripting_1a4332cf8ea9a51a202da662b1dd018669" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>QQmlEngine *</type>
+        <definition>QQmlEngine * KWin::Scripting::qmlEngine</definition>
+        <argsstring>()</argsstring>
+        <name>qmlEngine</name>
+        <qualifiedname>KWin::Scripting::qmlEngine</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="342" column="16" bodyfile="kwin/src/scripting/scripting.h" bodystart="373" bodyend="376"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripting_1aaa3f1bb62dac467af53d9a2ccef1eb16" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QQmlContext *</type>
+        <definition>QQmlContext * KWin::Scripting::declarativeScriptSharedContext</definition>
+        <argsstring>() const</argsstring>
+        <name>declarativeScriptSharedContext</name>
+        <qualifiedname>KWin::Scripting::declarativeScriptSharedContext</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="343" column="17" bodyfile="kwin/src/scripting/scripting.h" bodystart="378" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripting_1a3fe35079986fb232a8a9ef7d28d243fe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>QQmlContext *</type>
+        <definition>QQmlContext * KWin::Scripting::declarativeScriptSharedContext</definition>
+        <argsstring>()</argsstring>
+        <name>declarativeScriptSharedContext</name>
+        <qualifiedname>KWin::Scripting::declarativeScriptSharedContext</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="344" column="17" bodyfile="kwin/src/scripting/scripting.h" bodystart="383" bodyend="386"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripting_1acbac19c7a7b999812080bc7bfb3ddb9b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_qt_script_workspace_wrapper" kindref="compound">QtScriptWorkspaceWrapper</ref> *</type>
+        <definition>QtScriptWorkspaceWrapper * KWin::Scripting::workspaceWrapper</definition>
+        <argsstring>() const</argsstring>
+        <name>workspaceWrapper</name>
+        <qualifiedname>KWin::Scripting::workspaceWrapper</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="345" column="30" bodyfile="kwin/src/scripting/scripting.h" bodystart="388" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripting_1a157a8abdd6f6b334e80f9cd2ba697494" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_abstract_script" kindref="compound">AbstractScript</ref> *</type>
+        <definition>KWin::AbstractScript * KWin::Scripting::findScript</definition>
+        <argsstring>(const QString &amp;pluginName) const</argsstring>
+        <name>findScript</name>
+        <qualifiedname>KWin::Scripting::findScript</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>pluginName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="347" column="20" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="778" bodyend="787"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_k_win_1_1_scripting_1ae42e35c69eacf6822dccda0b351fdc84" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_scripting" kindref="compound">Scripting</ref> *</type>
+        <definition>Scripting * KWin::Scripting::self</definition>
+        <argsstring>()</argsstring>
+        <name>self</name>
+        <qualifiedname>KWin::Scripting::self</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="349" column="22" bodyfile="kwin/src/scripting/scripting.h" bodystart="393" bodyend="396"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_win_1_1_scripting_1a435da48783defd7960eaf079e772459a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_k_win_1_1_scripting" kindref="compound">Scripting</ref> *</type>
+        <definition>KWin::Scripting * KWin::Scripting::create</definition>
+        <argsstring>(QObject *parent)</argsstring>
+        <name>create</name>
+        <qualifiedname>KWin::Scripting::create</qualifiedname>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="350" column="22" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="619" bodyend="624"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_k_win_1_1_scripting_1ae71adccb69f6bedc04645d52245b869a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Scripting::scriptDestroyed</definition>
+        <argsstring>(QObject *object)</argsstring>
+        <name>scriptDestroyed</name>
+        <qualifiedname>KWin::Scripting::scriptDestroyed</qualifiedname>
+        <param>
+          <type>QObject *</type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="353" column="10" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="809" bodyend="813"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_k_win_1_1_scripting_1afd37e1362c714de166990156ddf62e8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Q_SCRIPTABLE void</type>
+        <definition>void KWin::Scripting::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <qualifiedname>KWin::Scripting::start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="354" column="23" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="676" bodyend="698"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_k_win_1_1_scripting_1aa31516fbd26411f747579d7cd9ad8d65" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KWin::Scripting::slotScriptsQueried</definition>
+        <argsstring>()</argsstring>
+        <name>slotScriptsQueried</name>
+        <qualifiedname>KWin::Scripting::slotScriptsQueried</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="kwin/src/scripting/scripting.h" line="357" column="10" bodyfile="kwin/src/scripting/scripting.cpp" bodystart="750" bodyend="771"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The heart of <ref refid="class_k_win_1_1_scripting" kindref="compound">KWin::Scripting</ref>. Infinite power lies beyond </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KWin::Scripting</label>
+        <link refid="class_k_win_1_1_scripting"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KWin::Scripting</label>
+        <link refid="class_k_win_1_1_scripting"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="kwin/src/scripting/scripting.h" line="309" column="1" bodyfile="kwin/src/scripting/scripting.h" bodystart="310" bodyend="366"/>
+    <listofallmembers>
+      <member refid="class_k_win_1_1_scripting_1aac1399c98e9a5912716fedbe711eaca4" prot="public" virt="non-virtual"><scope>KWin::Scripting</scope><name>actionsForUserActionMenu</name></member>
+      <member refid="class_k_win_1_1_scripting_1a435da48783defd7960eaf079e772459a" prot="public" virt="non-virtual"><scope>KWin::Scripting</scope><name>create</name></member>
+      <member refid="class_k_win_1_1_scripting_1aaa3f1bb62dac467af53d9a2ccef1eb16" prot="public" virt="non-virtual"><scope>KWin::Scripting</scope><name>declarativeScriptSharedContext</name></member>
+      <member refid="class_k_win_1_1_scripting_1a3fe35079986fb232a8a9ef7d28d243fe" prot="public" virt="non-virtual"><scope>KWin::Scripting</scope><name>declarativeScriptSharedContext</name></member>
+      <member refid="class_k_win_1_1_scripting_1a157a8abdd6f6b334e80f9cd2ba697494" prot="public" virt="non-virtual"><scope>KWin::Scripting</scope><name>findScript</name></member>
+      <member refid="class_k_win_1_1_scripting_1a58afaa5788a128d73a24aa4b591dedac" prot="private" virt="non-virtual"><scope>KWin::Scripting</scope><name>init</name></member>
+      <member refid="class_k_win_1_1_scripting_1a4e2286c762b2e3294fed7cbcfc46453b" prot="public" virt="non-virtual"><scope>KWin::Scripting</scope><name>isScriptLoaded</name></member>
+      <member refid="class_k_win_1_1_scripting_1acb0eac88b1d79c1718eb83d301493d7a" prot="public" virt="non-virtual"><scope>KWin::Scripting</scope><name>loadDeclarativeScript</name></member>
+      <member refid="class_k_win_1_1_scripting_1adb86674cfb829b7b89bc88556db9a29f" prot="public" virt="non-virtual"><scope>KWin::Scripting</scope><name>loadScript</name></member>
+      <member refid="class_k_win_1_1_scripting_1aaaff706dc6fa60da500aebcaeb5c32d6" prot="private" virt="non-virtual"><scope>KWin::Scripting</scope><name>m_declarativeScriptSharedContext</name></member>
+      <member refid="class_k_win_1_1_scripting_1a7a66809dab2f306f3b5026e0169089c9" prot="private" virt="non-virtual"><scope>KWin::Scripting</scope><name>m_qmlEngine</name></member>
+      <member refid="class_k_win_1_1_scripting_1a63d24aeb35af085a5d43fdd15e658533" prot="private" virt="non-virtual"><scope>KWin::Scripting</scope><name>m_scriptsLock</name></member>
+      <member refid="class_k_win_1_1_scripting_1a64e6ad1b2f97d06649025e77e1707e67" prot="private" virt="non-virtual"><scope>KWin::Scripting</scope><name>m_workspaceWrapper</name></member>
+      <member refid="class_k_win_1_1_scripting_1af0aae189e407eacc5c0d56961817444a" prot="public" virt="non-virtual"><scope>KWin::Scripting</scope><name>qmlEngine</name></member>
+      <member refid="class_k_win_1_1_scripting_1a4332cf8ea9a51a202da662b1dd018669" prot="public" virt="non-virtual"><scope>KWin::Scripting</scope><name>qmlEngine</name></member>
+      <member refid="class_k_win_1_1_scripting_1acdff1c8d8742acd24361532798c3f952" prot="private" virt="non-virtual"><scope>KWin::Scripting</scope><name>queryScriptsToLoad</name></member>
+      <member refid="class_k_win_1_1_scripting_1ad9252deb91194f48045b7a965254eefd" prot="private" virt="non-virtual"><scope>KWin::Scripting</scope><name>runScripts</name></member>
+      <member refid="class_k_win_1_1_scripting_1af133e17b92c7e210d6b4beb7e0834ed5" prot="private" virt="non-virtual"><scope>KWin::Scripting</scope><name>s_self</name></member>
+      <member refid="class_k_win_1_1_scripting_1ae71adccb69f6bedc04645d52245b869a" prot="public" virt="non-virtual"><scope>KWin::Scripting</scope><name>scriptDestroyed</name></member>
+      <member refid="class_k_win_1_1_scripting_1a12d75a549c7e54f586549c6616e73d0d" prot="private" virt="non-virtual"><scope>KWin::Scripting</scope><name>Scripting</name></member>
+      <member refid="class_k_win_1_1_scripting_1a7d2b93575a24423f755bfcf9fa2296b9" prot="private" virt="non-virtual"><scope>KWin::Scripting</scope><name>scriptList</name></member>
+      <member refid="class_k_win_1_1_scripting_1a5c7f6b2f34a41ff66e212d5adb424584" prot="private" virt="non-virtual"><scope>KWin::Scripting</scope><name>scripts</name></member>
+      <member refid="class_k_win_1_1_scripting_1ae42e35c69eacf6822dccda0b351fdc84" prot="public" virt="non-virtual"><scope>KWin::Scripting</scope><name>self</name></member>
+      <member refid="class_k_win_1_1_scripting_1aa31516fbd26411f747579d7cd9ad8d65" prot="private" virt="non-virtual"><scope>KWin::Scripting</scope><name>slotScriptsQueried</name></member>
+      <member refid="class_k_win_1_1_scripting_1afd37e1362c714de166990156ddf62e8a" prot="public" virt="non-virtual"><scope>KWin::Scripting</scope><name>start</name></member>
+      <member refid="class_k_win_1_1_scripting_1a86614b2061d94f0aa87c28ffc9f790da" prot="public" virt="non-virtual"><scope>KWin::Scripting</scope><name>unloadScript</name></member>
+      <member refid="class_k_win_1_1_scripting_1acbac19c7a7b999812080bc7bfb3ddb9b" prot="public" virt="non-virtual"><scope>KWin::Scripting</scope><name>workspaceWrapper</name></member>
+      <member refid="class_k_win_1_1_scripting_1a82be76e174d5f13e24ee8751ef17fc56" prot="public" virt="non-virtual"><scope>KWin::Scripting</scope><name>~Scripting</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

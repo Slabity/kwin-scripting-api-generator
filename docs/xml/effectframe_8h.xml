@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="effectframe_8h" kind="file" language="C++">
+    <compoundname>effectframe.h</compoundname>
+    <includes refid="globals_8h" local="yes">effect/globals.h</includes>
+    <includes refid="offscreenquickview_8h" local="yes">effect/offscreenquickview.h</includes>
+    <includes local="no">QFont</includes>
+    <includes local="no">QIcon</includes>
+    <includedby refid="effectframe_8cpp" local="yes">kwin/src/effect/effectframe.cpp</includedby>
+    <includedby refid="mouseclick_8h" local="yes">kwin/src/plugins/mouseclick/mouseclick.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>kwin/src/effect/effectframe.h</label>
+        <link refid="effectframe_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>effect/globals.h</label>
+        <link refid="globals_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>effect/offscreenquickview.h</label>
+        <link refid="offscreenquickview_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QCoreApplication</label>
+      </node>
+      <node id="15">
+        <label>QFont</label>
+      </node>
+      <node id="16">
+        <label>QIcon</label>
+      </node>
+      <node id="5">
+        <label>QImage</label>
+      </node>
+      <node id="11">
+        <label>QObject</label>
+      </node>
+      <node id="6">
+        <label>QPoint</label>
+      </node>
+      <node id="12">
+        <label>QRect</label>
+      </node>
+      <node id="13">
+        <label>QUrl</label>
+      </node>
+      <node id="7">
+        <label>QVariant</label>
+      </node>
+      <node id="8">
+        <label>QVector2D</label>
+      </node>
+      <node id="3">
+        <label>config-kwin.h</label>
+      </node>
+      <node id="9">
+        <label>kwin_export.h</label>
+      </node>
+      <node id="14">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>kwin/src/effect/effectframe.cpp</label>
+        <link refid="effectframe_8cpp"/>
+      </node>
+      <node id="1">
+        <label>kwin/src/effect/effectframe.h</label>
+        <link refid="effectframe_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>kwin/src/plugins/mouseclick/main.cpp</label>
+        <link refid="plugins_2mouseclick_2main_8cpp"/>
+      </node>
+      <node id="5">
+        <label>kwin/src/plugins/mouseclick/mouseclick.cpp</label>
+        <link refid="mouseclick_8cpp"/>
+      </node>
+      <node id="3">
+        <label>kwin/src/plugins/mouseclick/mouseclick.h</label>
+        <link refid="mouseclick_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_win_1_1_effect_frame_quick_scene" prot="public">KWin::EffectFrameQuickScene</innerclass>
+    <innerclass refid="class_k_win_1_1_effect_frame" prot="public">KWin::EffectFrame</innerclass>
+    <innernamespace refid="namespace_k_win">KWin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2006<sp/>Lubos<sp/>Lunak<sp/>&lt;l.lunak@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-FileCopyrightText:<sp/>2010,<sp/>2011<sp/>Martin<sp/>Gräßlin<sp/>&lt;mgraesslin@kde.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>SPDX-License-Identifier:<sp/>GPL-2.0-or-later</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="globals_8h" kindref="compound">effect/globals.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="offscreenquickview_8h" kindref="compound">effect/offscreenquickview.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QFont&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QIcon&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_k_win" kindref="compound">KWin</ref></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="namespace_k_win_1a92e14232c9fc6ccaccf6ba1db6cbc7a7" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespace_k_win_1a92e14232c9fc6ccaccf6ba1db6cbc7a7" kindref="member">EffectFrameStyle</ref><sp/>{</highlight></codeline>
+<codeline lineno="27" refid="namespace_k_win_1a92e14232c9fc6ccaccf6ba1db6cbc7a7a599bd693da314df47c43a2a7c373b1fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a92e14232c9fc6ccaccf6ba1db6cbc7a7a599bd693da314df47c43a2a7c373b1fa" kindref="member">EffectFrameNone</ref>,<sp/></highlight></codeline>
+<codeline lineno="28" refid="namespace_k_win_1a92e14232c9fc6ccaccf6ba1db6cbc7a7a52ec6ddf26c03beb59de4332117e0151" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a92e14232c9fc6ccaccf6ba1db6cbc7a7a52ec6ddf26c03beb59de4332117e0151" kindref="member">EffectFrameUnstyled</ref>,<sp/></highlight></codeline>
+<codeline lineno="29" refid="namespace_k_win_1a92e14232c9fc6ccaccf6ba1db6cbc7a7a0831890d61e31cb64ae2640e9039b0bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a92e14232c9fc6ccaccf6ba1db6cbc7a7a0831890d61e31cb64ae2640e9039b0bb" kindref="member">EffectFrameStyled</ref><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="class_k_win_1_1_effect_frame_quick_scene" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a39046b11fc5a11813a94a91218226033" kindref="member">EffectFrameQuickScene</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_offscreen_quick_scene_1ae4c215fe61d47249ccc17481e6dc42a0" kindref="member">OffscreenQuickScene</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="class_k_win_1_1_effect_frame_quick_scene_1a593813f264ce500563489c68ddf3c3f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QFont<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a593813f264ce500563489c68ddf3c3f0" kindref="member">font</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a593813f264ce500563489c68ddf3c3f0" kindref="member">font</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a69ac3ecb2e406eb7b65ca5371ed9c5c7" kindref="member">fontChanged</ref>)</highlight></codeline>
+<codeline lineno="37" refid="class_k_win_1_1_effect_frame_quick_scene_1ac742463dedaf553a700b580598adfebc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QIcon<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1ac742463dedaf553a700b580598adfebc" kindref="member">icon</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1ac742463dedaf553a700b580598adfebc" kindref="member">icon</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1abafe7d7556b8b2e7b737499cc5f95c75" kindref="member">iconChanged</ref>)</highlight></codeline>
+<codeline lineno="38" refid="class_k_win_1_1_effect_frame_quick_scene_1a3f51ed1a54b45f473cec39a70293fd4c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QSize<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a3f51ed1a54b45f473cec39a70293fd4c" kindref="member">iconSize</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a3f51ed1a54b45f473cec39a70293fd4c" kindref="member">iconSize</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a7359504c121aaa47792ba546e0e1cfe3" kindref="member">iconSizeChanged</ref>)</highlight></codeline>
+<codeline lineno="39" refid="class_k_win_1_1_effect_frame_quick_scene_1a21d5b5b93c5f83ff1b774e58c1fd21d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(QString<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a21d5b5b93c5f83ff1b774e58c1fd21d3" kindref="member">text</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a21d5b5b93c5f83ff1b774e58c1fd21d3" kindref="member">text</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a417abdb295ca075d070ff14b0ef01c25" kindref="member">textChanged</ref>)</highlight></codeline>
+<codeline lineno="40" refid="class_k_win_1_1_effect_frame_quick_scene_1ae57b179b6bb4712573a0cc97004ba78d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(qreal<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1ae57b179b6bb4712573a0cc97004ba78d" kindref="member">frameOpacity</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1ae57b179b6bb4712573a0cc97004ba78d" kindref="member">frameOpacity</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1ad16ab242b1b9aa183d0187bdca5cb0b9" kindref="member">frameOpacityChanged</ref>)</highlight></codeline>
+<codeline lineno="41" refid="class_k_win_1_1_effect_frame_quick_scene_1ad7a593cfbe87ac42b5399195db2e73f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1ad7a593cfbe87ac42b5399195db2e73f7" kindref="member">crossFadeEnabled</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1ad7a593cfbe87ac42b5399195db2e73f7" kindref="member">crossFadeEnabled</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1af78dc46586eebd8edec4826bccb5635c" kindref="member">crossFadeEnabledChanged</ref>)</highlight></codeline>
+<codeline lineno="42" refid="class_k_win_1_1_effect_frame_quick_scene_1a9f60e2959fb3609ff461492db9987b8c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_PROPERTY(qreal<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a9f60e2959fb3609ff461492db9987b8c" kindref="member">crossFadeProgress</ref><sp/>READ<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a9f60e2959fb3609ff461492db9987b8c" kindref="member">crossFadeProgress</ref><sp/>NOTIFY<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1ae10f39e92bdd3d913bc6457d2e89cc93" kindref="member">crossFadeProgressChanged</ref>)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">public:</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a39046b11fc5a11813a94a91218226033" kindref="member">EffectFrameQuickScene</ref>(<ref refid="namespace_k_win_1a92e14232c9fc6ccaccf6ba1db6cbc7a7" kindref="member">EffectFrameStyle</ref><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a06843b1ff9f4b79e0bd8be576538fb09" kindref="member">style</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>staticSize,<sp/>QPoint<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a555ff38e5f1179cf7fa28cbb3943b89f" kindref="member">position</ref>,<sp/>Qt::Alignment<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a37455410f0e5052fbd9f8740d238c2bb" kindref="member">alignment</ref>);</highlight></codeline>
+<codeline lineno="46" refid="class_k_win_1_1_effect_frame_quick_scene_1abd8feecfa077f142c68e30de0a037365" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="class_k_win_1_1_effect_frame_quick_scene_1a39046b11fc5a11813a94a91218226033" kindref="member">EffectFrameQuickScene</ref>()<sp/>override;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a92e14232c9fc6ccaccf6ba1db6cbc7a7" kindref="member">EffectFrameStyle</ref><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a06843b1ff9f4b79e0bd8be576538fb09" kindref="member">style</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1abec06a863aa87ea5d363a1081a5c1835" kindref="member">isStatic</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>QFont<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a593813f264ce500563489c68ddf3c3f0" kindref="member">font</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a9beb0a57785a3215eff0c37666770a31" kindref="member">setFont</ref>(const<sp/>QFont<sp/>&amp;<ref refid="class_k_win_1_1_effect_frame_quick_scene_1a593813f264ce500563489c68ddf3c3f0" kindref="member">font</ref>);</highlight></codeline>
+<codeline lineno="53" refid="class_k_win_1_1_effect_frame_quick_scene_1a69ac3ecb2e406eb7b65ca5371ed9c5c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SIGNAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a69ac3ecb2e406eb7b65ca5371ed9c5c7" kindref="member">fontChanged</ref>(const<sp/>QFont<sp/>&amp;<ref refid="class_k_win_1_1_effect_frame_quick_scene_1a593813f264ce500563489c68ddf3c3f0" kindref="member">font</ref>);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>QIcon<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1ac742463dedaf553a700b580598adfebc" kindref="member">icon</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1adbe18b1cc1cab479e5caf0a77acd3f9c" kindref="member">setIcon</ref>(const<sp/>QIcon<sp/>&amp;<ref refid="class_k_win_1_1_effect_frame_quick_scene_1ac742463dedaf553a700b580598adfebc" kindref="member">icon</ref>);</highlight></codeline>
+<codeline lineno="57" refid="class_k_win_1_1_effect_frame_quick_scene_1abafe7d7556b8b2e7b737499cc5f95c75" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SIGNAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1abafe7d7556b8b2e7b737499cc5f95c75" kindref="member">iconChanged</ref>(const<sp/>QIcon<sp/>&amp;<ref refid="class_k_win_1_1_effect_frame_quick_scene_1ac742463dedaf553a700b580598adfebc" kindref="member">icon</ref>);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>QSize<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a3f51ed1a54b45f473cec39a70293fd4c" kindref="member">iconSize</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1aa1ce4b9b7f8f970d86a12c98d9bfb9a5" kindref="member">setIconSize</ref>(const<sp/>QSize<sp/>&amp;<ref refid="class_k_win_1_1_effect_frame_quick_scene_1a3f51ed1a54b45f473cec39a70293fd4c" kindref="member">iconSize</ref>);</highlight></codeline>
+<codeline lineno="61" refid="class_k_win_1_1_effect_frame_quick_scene_1a7359504c121aaa47792ba546e0e1cfe3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SIGNAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a7359504c121aaa47792ba546e0e1cfe3" kindref="member">iconSizeChanged</ref>(const<sp/>QSize<sp/>&amp;<ref refid="class_k_win_1_1_effect_frame_quick_scene_1a3f51ed1a54b45f473cec39a70293fd4c" kindref="member">iconSize</ref>);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a21d5b5b93c5f83ff1b774e58c1fd21d3" kindref="member">text</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a80fb5ed38c2dad2f0786c2f2ec16d5a6" kindref="member">setText</ref>(const<sp/>QString<sp/>&amp;<ref refid="class_k_win_1_1_effect_frame_quick_scene_1a21d5b5b93c5f83ff1b774e58c1fd21d3" kindref="member">text</ref>);</highlight></codeline>
+<codeline lineno="65" refid="class_k_win_1_1_effect_frame_quick_scene_1a417abdb295ca075d070ff14b0ef01c25" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SIGNAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a417abdb295ca075d070ff14b0ef01c25" kindref="member">textChanged</ref>(const<sp/>QString<sp/>&amp;<ref refid="class_k_win_1_1_effect_frame_quick_scene_1a21d5b5b93c5f83ff1b774e58c1fd21d3" kindref="member">text</ref>);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>qreal<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1ae57b179b6bb4712573a0cc97004ba78d" kindref="member">frameOpacity</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a3d562f824d1eb14314db8270ab2eb6c5" kindref="member">setFrameOpacity</ref>(qreal<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1ae57b179b6bb4712573a0cc97004ba78d" kindref="member">frameOpacity</ref>);</highlight></codeline>
+<codeline lineno="69" refid="class_k_win_1_1_effect_frame_quick_scene_1ad16ab242b1b9aa183d0187bdca5cb0b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SIGNAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1ad16ab242b1b9aa183d0187bdca5cb0b9" kindref="member">frameOpacityChanged</ref>(qreal<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1ae57b179b6bb4712573a0cc97004ba78d" kindref="member">frameOpacity</ref>);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1ad7a593cfbe87ac42b5399195db2e73f7" kindref="member">crossFadeEnabled</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1abac5499f24d252d3557e27633478d6e0" kindref="member">setCrossFadeEnabled</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled);</highlight></codeline>
+<codeline lineno="73" refid="class_k_win_1_1_effect_frame_quick_scene_1af78dc46586eebd8edec4826bccb5635c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SIGNAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1af78dc46586eebd8edec4826bccb5635c" kindref="member">crossFadeEnabledChanged</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>qreal<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a9f60e2959fb3609ff461492db9987b8c" kindref="member">crossFadeProgress</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1afb41023ff5946c08ab783397ddd7dc52" kindref="member">setCrossFadeProgress</ref>(qreal<sp/>progress);</highlight></codeline>
+<codeline lineno="77" refid="class_k_win_1_1_effect_frame_quick_scene_1ae10f39e92bdd3d913bc6457d2e89cc93" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_SIGNAL<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1ae10f39e92bdd3d913bc6457d2e89cc93" kindref="member">crossFadeProgressChanged</ref>(qreal<sp/>progress);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>Qt::Alignment<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a37455410f0e5052fbd9f8740d238c2bb" kindref="member">alignment</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a6aac1414686caedf3eadfaace16ffb07" kindref="member">setAlignment</ref>(Qt::Alignment<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a37455410f0e5052fbd9f8740d238c2bb" kindref="member">alignment</ref>);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>QPoint<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a555ff38e5f1179cf7fa28cbb3943b89f" kindref="member">position</ref>()<sp/>const;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1aa954403448c6b580ddc79e4324d5f2fa" kindref="member">setPosition</ref>(const<sp/>QPoint<sp/>&amp;point);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">private:</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>reposition();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a92e14232c9fc6ccaccf6ba1db6cbc7a7" kindref="member">EffectFrameStyle</ref><sp/>m_style;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_static;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>QPoint<sp/>m_point;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>Qt::Alignment<sp/>m_alignment;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Contents</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>QFont<sp/>m_font;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>QIcon<sp/>m_icon;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>QSize<sp/>m_iconSize;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>m_text;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>qreal<sp/>m_frameOpacity<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_crossFadeEnabled<sp/>=<sp/>false;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>qreal<sp/>m_crossFadeProgress<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="class_k_win_1_1_effect_frame" refkind="compound"><highlight class="normal">class<sp/>KWIN_EXPORT<sp/><ref refid="class_k_win_1_1_effect_frame_1a3035f6fdddeb98c9edb9f3f781a36864" kindref="member">EffectFrame</ref><sp/>:<sp/>public<sp/>QObject</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_1a3035f6fdddeb98c9edb9f3f781a36864" kindref="member">EffectFrame</ref>(<ref refid="namespace_k_win_1a92e14232c9fc6ccaccf6ba1db6cbc7a7" kindref="member">EffectFrameStyle</ref><sp/><ref refid="class_k_win_1_1_effect_frame_1a7bd0020d60b122fe53a5397d2ce1b72e" kindref="member">style</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>staticSize<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>QPoint<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a555ff38e5f1179cf7fa28cbb3943b89f" kindref="member">position</ref><sp/>=<sp/>QPoint(-1,<sp/>-1),</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Qt::Alignment<sp/><ref refid="class_k_win_1_1_effect_frame_1a4b33c98ae004c0ff9110b16d14c2af46" kindref="member">alignment</ref><sp/>=<sp/>Qt::AlignCenter);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_effect_frame_1a3035f6fdddeb98c9edb9f3f781a36864" kindref="member">~EffectFrame</ref>();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_1ae1e7684a30ff9af4522ff6fc8abe4c9b" kindref="member">free</ref>();</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_1a34232993d888d81b6d1fde83a4b7056a" kindref="member">render</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_render_target" kindref="compound">RenderTarget</ref><sp/>&amp;renderTarget,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_render_viewport" kindref="compound">RenderViewport</ref><sp/>&amp;viewport,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegion<sp/>&amp;region<sp/>=<sp/><ref refid="namespace_k_win_1a0655524c1f1ba8dbb2cf16a1e4b9bb97" kindref="member">infiniteRegion</ref>(),<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_offscreen_quick_view_1a55acfd2892f1a821d0df4937e8ad610c" kindref="member">opacity</ref><sp/>=<sp/>1.0,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1ae57b179b6bb4712573a0cc97004ba78d" kindref="member">frameOpacity</ref><sp/>=<sp/>1.0);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1aa954403448c6b580ddc79e4324d5f2fa" kindref="member">setPosition</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPoint<sp/>&amp;point);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a6aac1414686caedf3eadfaace16ffb07" kindref="member">setAlignment</ref>(Qt::Alignment<sp/><ref refid="class_k_win_1_1_effect_frame_1a4b33c98ae004c0ff9110b16d14c2af46" kindref="member">alignment</ref>);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>Qt::Alignment<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a37455410f0e5052fbd9f8740d238c2bb" kindref="member">alignment</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_offscreen_quick_view_1a8de1f30a497d840c9a2805a0188bee56" kindref="member">setGeometry</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRect<sp/>&amp;<ref refid="class_k_win_1_1_effect_frame_1a45032c65f4b01746e4b7718fea2b4c3b" kindref="member">geometry</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>force<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>QRect<sp/><ref refid="class_k_win_1_1_offscreen_quick_view_1a2ced237198e9291262f52aec4e656f6b" kindref="member">geometry</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a80fb5ed38c2dad2f0786c2f2ec16d5a6" kindref="member">setText</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;<ref refid="class_k_win_1_1_effect_frame_1a8f2458fb6a78010193a1076895f81072" kindref="member">text</ref>);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a21d5b5b93c5f83ff1b774e58c1fd21d3" kindref="member">text</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a9beb0a57785a3215eff0c37666770a31" kindref="member">setFont</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QFont<sp/>&amp;<ref refid="class_k_win_1_1_effect_frame_1ac570fd7b9912983b91724e6f8ff07805" kindref="member">font</ref>);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>QFont<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a593813f264ce500563489c68ddf3c3f0" kindref="member">font</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1adbe18b1cc1cab479e5caf0a77acd3f9c" kindref="member">setIcon</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QIcon<sp/>&amp;<ref refid="class_k_win_1_1_effect_frame_1a19877ff0864dd99153cb3114548b6f1c" kindref="member">icon</ref>);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>QIcon<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1ac742463dedaf553a700b580598adfebc" kindref="member">icon</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1aa1ce4b9b7f8f970d86a12c98d9bfb9a5" kindref="member">setIconSize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QSize<sp/>&amp;<ref refid="class_k_win_1_1_offscreen_quick_view_1a822c4a6dfc79e5c8742b334c49e36055" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>QSize<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a3f51ed1a54b45f473cec39a70293fd4c" kindref="member">iconSize</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_k_win_1a92e14232c9fc6ccaccf6ba1db6cbc7a7" kindref="member">EffectFrameStyle</ref><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a06843b1ff9f4b79e0bd8be576538fb09" kindref="member">style</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_1a9c1ba2dc867b218fb09b3814009545c3" kindref="member">enableCrossFade</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_1abba9d241b391b65f949f8eafe42fde77" kindref="member">isCrossFade</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1afb41023ff5946c08ab783397ddd7dc52" kindref="member">setCrossFadeProgress</ref>(qreal<sp/>progress);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>qreal<sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene_1a9f60e2959fb3609ff461492db9987b8c" kindref="member">crossFadeProgress</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_win_1_1_effect_frame_quick_scene" kindref="compound">EffectFrameQuickScene</ref><sp/>*m_view;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>KWin</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="kwin/src/effect/effectframe.h"/>
+  </compounddef>
+</doxygen>
